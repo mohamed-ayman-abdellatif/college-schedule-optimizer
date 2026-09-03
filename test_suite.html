@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Automated Verification Test Suite</title>
+</head>
+<body>
+  <h1>Test Runner</h1>
+  <div id="test-results"></div>
+
+  <!-- Load Modules -->
+  <script src="js/parser.js"></script>
+  <script src="js/sampleData.js"></script>
+  <script src="js/optimizer.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/exporter.js"></script>
+
+  <script>
+    const results = [];
+    function assert(name, condition, extra = '') {
+      results.push({ name, passed: Boolean(condition), extra });
+      console.log(`[${condition ? 'PASS' : 'FAIL'}] ${name} ${extra}`);
+    }
+
+    // TEST 1: User's raw HTML parsing
+    const userRawHtml = `<span id="ctl00_ContentPlaceHolder1_lbl_Title" dir="rtl" style="color:Black;font-family:Tahoma;font-weight:bold;text-decoration:underline;">   جدول المقرر :   Applied Programming - ECE2102</span>
+    <span id="ctl00_ContentPlaceHolder1_Schedule1"><table cellspacing="0" rules="all" border="1">
+	<tbody><tr>
+		<th class="heading">&nbsp;</th><th class="heading"><span></span></th>
+		<th class="heading"><span> 1 </span></th><th class="heading"><span> 2 </span></th><th class="heading"><span> 3 </span></th><th class="heading"><span> 4 </span></th>
+		<th class="heading"><span> 5 </span></th><th class="heading"><span> 6 </span></th><th class="heading"><span> 7 </span></th><th class="heading"><span> 8 </span></th>
+		<th class="heading"><span> 9 </span></th><th class="heading"><span> 10 </span></th><th class="heading"><span> 11 </span></th><th class="heading"><span> 12 </span></th>
+		<th class="heading"><span> 13 </span></th><th class="heading"><span> 14 </span></th><th class="heading"><span> 15 </span></th><th class="heading"><span> 16 </span></th>
+	</tr><tr>
+		<th class="heading"><span>Saturday</span></th><td>&nbsp;</td>
+		<td colspan="2"><span id="ctl00_ContentPlaceHolder1_Schedule1_item21_lbSelect">Group: E <br \=""> Lab. </span>
+		<input type="hidden" name="item21_hd_Group" value="E"></td>
+		<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+	</tr><tr>
+		<th class="heading"><span>Sunday</span></th><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+		<td colspan="2"><span id="item20_lbSelect">Group: B <br \=""> Lab. <br \=""> مجد نبيل نصرى نعمه </span>
+		<input type="hidden" name="item20_hd_Group" value="B"></td>
+		<td>&nbsp;</td><td>&nbsp;</td>
+		<td colspan="2"><span id="item19_lbSelect">Group: L <br \=""> Lab. </span>
+		<input type="hidden" name="item19_hd_Group" value="L"></td>
+		<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+	</tr><tr>
+		<th class="heading" rowspan="4"><span>Tuesday</span></th><td rowspan="4">&nbsp;</td>
+		<td colspan="2"><span id="item17_lbSelect">Group: F <br \=""> Lect. <br \=""> هشام صلاح الدين محمد رشاد </span>
+		<input type="hidden" name="item17_hd_Group" value="F"></td>
+		<td colspan="2" rowspan="2"><span id="item15_lbSelect">Group: B <br \=""> Lect. <br \=""> هشام صلاح الدين محمد رشاد </span>
+		<input type="hidden" name="item15_hd_Group" value="B"></td>
+		<td colspan="2" rowspan="3"><span id="item13_lbSelect">Group: H <br \=""> Lect. <br \=""> دينا محمد علي ابو الدهب </span>
+		<input type="hidden" name="item13_hd_Group" value="H"></td>
+		<td rowspan="4">&nbsp;</td><td rowspan="4">&nbsp;</td><td rowspan="4">&nbsp;</td><td rowspan="4">&nbsp;</td><td rowspan="4">&nbsp;</td><td rowspan="4">&nbsp;</td><td rowspan="4">&nbsp;</td><td rowspan="4">&nbsp;</td><td rowspan="4">&nbsp;</td><td rowspan="4">&nbsp;</td>
+	</tr><tr>
+		<td colspan="2" rowspan="3"><span id="item16_lbSelect">Group: G <br \=""> Lect. <br \=""> هشام صلاح الدين محمد رشاد </span>
+		<input type="hidden" name="item16_hd_Group" value="G"></td>
+	</tr><tr>
+		<td colspan="2" rowspan="2"><span id="item14_lbSelect">Group: C <br \=""> Lect. <br \=""> هشام صلاح الدين محمد رشاد </span>
+		<input type="hidden" name="item14_hd_Group" value="C"></td>
+	</tr><tr>
+		<td colspan="2"><span id="item12_lbSelect">Group: I <br \=""> Lect. <br \=""> دينا محمد علي ابو الدهب </span>
+		<input type="hidden" name="item12_hd_Group" value="I"></td>
+	</tr>
+	</tbody></table></span>`;
+
+    const parsed = ScheduleParser.parseHtml(userRawHtml);
+    assert('Parser returns success', parsed.success === true);
+    assert('Extracted 1 course', parsed.courses.length === 1);
+    const c1 = parsed.courses[0];
+    assert('Course code is ECE2102', c1.code === 'ECE2102', c1.code);
+    assert('Course name is Applied Programming', c1.name.includes('Applied Programming'), c1.name);
+
+    // Check specific slots
+    const grpE_lab = c1.slots.find(s => s.group === 'E' && s.type === 'Lab.');
+    assert('Group E Lab is Saturday slots 1-2', grpE_lab && grpE_lab.day === 'Saturday' && grpE_lab.startSlot === 1 && grpE_lab.endSlot === 2);
+
+    console.log("Extracted slots count:", c1.slots.length);
+    const grpB_lab = c1.slots.find(s => s.group === 'B' && s.type === 'Lab.');
+    assert('Group B Lab exists', Boolean(grpB_lab));
+    assert('Group B Lab doctor extracted', grpB_lab && grpB_lab.instructor !== 'Not Specified', 'Doc is: ' + (grpB_lab ? grpB_lab.instructor : 'none'));
+
+
+    // TEST 2: Optimizer runs across 5 courses
+    const sampleCourses = SampleScheduleData.DEFAULT_COURSE_SET;
+    assert('Sample dataset has 5 courses', sampleCourses.length === 5);
+
+    const optResult = ScheduleOptimizer.findOptimalSchedules(sampleCourses, {
+      gapWeight: 80,
+      daysWeight: 40,
+      doctorWeight: 50
+    });
+
+    assert('Optimizer finds valid clash-free solutions', optResult.success && optResult.solutions.length > 0, `Count: ${optResult.solutions.length}`);
+    const bestSol = optResult.solutions[0];
+    assert('Best solution has clash-free sessions for all 5 courses', bestSol.selectedGroups.length === 5);
+    assert('Best solution has computed total gaps', typeof bestSol.totalGapSlots === 'number');
+    assert('Best solution has campus days count', bestSol.activeDaysCount >= 2 && bestSol.activeDaysCount <= 7);
+
+    // TEST 3: Doctor Preference Influence
+    // Let's set Dr. Hisham as preferred for Applied Programming
+    const optResultWithDoc = ScheduleOptimizer.findOptimalSchedules(sampleCourses, {
+      doctorPreferences: {
+        'ECE2102': { 'هشام صلاح الدين محمد رشاد': 'love' }
+      },
+      doctorWeight: 100,
+      gapWeight: 10
+    });
+
+    const topDocSol = optResultWithDoc.solutions[0];
+    const eceGroup = topDocSol.selectedGroups.find(g => g.courseCode === 'ECE2102');
+    assert('Top doctor preference picks a group with preferred doctor', eceGroup.instructors.some(d => d.includes('هشام صلاح الدين')));
+
+    // TEST 4: Exporter ICS Generation
+    const icsText = ScheduleExporter.downloadIcsFile ? true : false;
+    assert('Exporter module is defined and ready', Boolean(ScheduleExporter.exportToPng && ScheduleExporter.downloadIcsFile));
+
+    // TEST 5: Prohibited / Blocked Times (User's Training Request)
+    // Group E has Lab on Saturday slots 1-2. Let's block Saturday slots 1-2 (8:30 training).
+    const optResultWithBlocked = ScheduleOptimizer.findOptimalSchedules(sampleCourses, {
+      blockedTimes: [
+        { day: 'Saturday', startSlot: 1, endSlot: 2, label: 'Training ⚽' }
+      ]
+    });
+    assert('Optimizer succeeds with blocked training times', optResultWithBlocked.success && optResultWithBlocked.solutions.length > 0);
+    // Check that NO solution has any session on Saturday slots 1 or 2
+    let hasClashWithTraining = false;
+    optResultWithBlocked.solutions.forEach(sol => {
+      sol.sessions.forEach(sess => {
+        if (sess.day === 'Saturday' && (sess.startSlot <= 2 && sess.endSlot >= 1)) {
+          hasClashWithTraining = true;
+        }
+      });
+    });
+    assert('Zero sessions scheduled during prohibited Saturday 8:00 training', !hasClashWithTraining);
+
+    // TEST 6: Distinct Subject Color Highlighting
+    const colors = sampleCourses.map(c => c.color);
+    const uniqueColors = new Set(colors);
+    assert('All courses have distinct colors for timetable highlighting', uniqueColors.size === sampleCourses.length, `Colors: ${colors.join(', ')}`);
+    const rgbaTest = ScheduleRenderer.hexToRgba('#3B82F6', 0.25);
+    assert('hexToRgba correctly computes translucent background', rgbaTest === 'rgba(59, 130, 246, 0.25)', rgbaTest);
+
+    // Summary
+    const passedCount = results.filter(r => r.passed).length;
+    const failedCount = results.filter(r => !r.passed).length;
+    document.getElementById('test-results').innerHTML = `
+      <h2>Tests Passed: ${passedCount} / ${results.length} (Failed: ${failedCount})</h2>
+      <ul>${results.map(r => `<li style="color: ${r.passed ? 'green' : 'red'};">[${r.passed ? 'PASS' : 'FAIL'}] ${r.name} ${r.extra}</li>`).join('')}</ul>
+    `;
+    window.testSuiteComplete = true;
+    window.testSuitePassed = (failedCount === 0);
+  </script>
+</body>
+</html>

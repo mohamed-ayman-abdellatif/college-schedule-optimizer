@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>College Schedule Optimizer | محول ومحسن الجداول الجامعية</title>
+  
+  <!-- Google Fonts: Inter & Cairo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Core & Timetable CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/timetable.css" />
+</head>
+<body>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand-area">
+        <div class="brand-logo">🗓️</div>
+        <div class="brand-text">
+          <h1 data-i18n="appTitle">College Schedule Optimizer</h1>
+          <div class="brand-subtitle" data-i18n="appSubtitle">Convert college HTML & photos into optimal clash-free schedules</div>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button id="btn-load-sample" class="btn btn-secondary btn-sm" data-i18n="loadSampleBtn">
+          <span>📚</span> <span>Load Example Courses</span>
+        </button>
+        <button id="btn-find-schedules-header" class="btn btn-primary btn-sm" data-i18n="findSchedulesBtn">
+          <span>⚡</span> <span>Find Best Schedules</span>
+        </button>
+        <button id="btn-lang-toggle" class="btn btn-outline btn-sm">
+          العربية 🌐
+        </button>
+        <button id="btn-theme-toggle" class="btn btn-outline btn-icon btn-sm" title="Toggle Dark/Light theme">
+          ☀️
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-container">
+    
+    <!-- Top Step Tabs -->
+    <nav class="tabs-nav">
+      <button class="tab-btn active" data-tab="courses">
+        <span>📋</span> <span data-i18n="tabCourses">1. Add Courses</span>
+        <span id="courses-count-badge" class="mini-group-tag" style="background: var(--accent-primary); color: white;">0</span>
+      </button>
+      <button class="tab-btn" data-tab="preferences">
+        <span>👨‍🏫</span> <span data-i18n="tabPreferences">2. Doctor & Goals</span>
+      </button>
+      <button class="tab-btn" data-tab="timetable">
+        <span>🗓️</span> <span data-i18n="tabTimetable">3. Timetable Results</span>
+      </button>
+    </nav>
+
+    <!-- TAB 1: ADD COURSES -->
+    <section id="tab-courses" class="tab-content" style="display: block;">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">
+              <span>📥</span> <span>Import Course Schedule</span>
+            </div>
+            <div class="card-subtitle">
+              Paste HTML from your college portal or upload a photo of the schedule table
+            </div>
+          </div>
+          <div class="subtabs-container">
+            <button class="subtab-btn active" data-subtab="html" data-i18n="pasteHtmlTab">Paste HTML Code</button>
+            <button class="subtab-btn" data-subtab="image" data-i18n="uploadPhotoTab">Upload Schedule Photo</button>
+          </div>
+        </div>
+
+        <!-- Panel 1A: Paste HTML -->
+        <div id="panel-html" class="subtab-panel" style="display: block;">
+          <textarea id="html-input-text" class="textarea-input"
+                    placeholder="Paste HTML schedule content from your college portal here..."
+                    data-i18n-placeholder="htmlPlaceholder"></textarea>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px; flex-wrap: wrap; gap: 10px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <input type="file" id="input-html-file" accept=".html,.htm,.txt" style="display: none;" />
+              <button class="btn btn-secondary btn-sm" onclick="document.getElementById('input-html-file').click();">
+                <span>📁</span> <span>Upload .HTML File</span>
+              </button>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">(Tip: You can paste the whole page or just the &lt;table&gt;)</span>
+            </div>
+            <button id="btn-parse-html" class="btn btn-primary" data-i18n="parseBtn">
+              <span>🔍</span> <span>Parse & Add Course</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Panel 1B: Upload Schedule Photo -->
+        <div id="panel-image" class="subtab-panel" style="display: none;">
+          <input type="file" id="input-schedule-image" accept="image/*" style="display: none;" />
+          <div id="image-dropzone" class="dropzone">
+            <div class="dropzone-icon">📷</div>
+            <div class="dropzone-title" data-i18n="dropzoneTitle">Drag & drop schedule photo here, or click to browse</div>
+            <div class="dropzone-subtitle" data-i18n="dropzoneSub">Supports PNG, JPG screenshots of schedule tables</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Added Courses List -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">
+              <span>📚</span> <span>Registered Courses</span>
+            </div>
+            <div class="card-subtitle">
+              Review your course list, available groups, and session timings
+            </div>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button id="btn-clear-courses" class="btn btn-outline btn-sm" style="color: var(--danger);" data-i18n="clearAllCourses">
+              Clear All Courses
+            </button>
+            <button id="btn-find-schedules" class="btn btn-success" data-i18n="findSchedulesBtn">
+              <span>⚡</span> <span>Find Best Schedules</span>
+            </button>
+          </div>
+        </div>
+
+        <div id="courses-list-container" class="courses-grid">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: DOCTOR PREFERENCES & GOALS -->
+    <section id="tab-preferences" class="tab-content" style="display: none;">
+      <!-- Goals & Weights -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title" data-i18n="goalsTitle">Optimization Weights & Goals</div>
+            <div class="card-subtitle">Customize what matters most in your ideal weekly schedule</div>
+          </div>
+        </div>
+
+        <div class="pref-grid">
+          <!-- Gap Minimization -->
+          <div class="pref-box">
+            <div class="pref-label">
+              <span data-i18n="gapWeightLabel">Minimize Gaps between lectures</span>
+              <span style="color: var(--accent-primary);">⚡</span>
+            </div>
+            <input type="range" id="slider-gapWeight" min="0" max="100" value="50" class="slider-input" />
+            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">
+              <span>Don't care</span>
+              <span>Maximum priority</span>
+            </div>
+          </div>
+
+          <!-- Minimize Days on Campus -->
+          <div class="pref-box">
+            <div class="pref-label">
+              <span data-i18n="daysWeightLabel">Minimize Campus Days (More Days Off)</span>
+              <span style="color: var(--success);">🏖️</span>
+            </div>
+            <input type="range" id="slider-daysWeight" min="0" max="100" value="40" class="slider-input" />
+            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">
+              <span>Spread out</span>
+              <span>Pack into 3-4 days</span>
+            </div>
+          </div>
+
+          <!-- Doctor Preference Weight -->
+          <div class="pref-box">
+            <div class="pref-label">
+              <span data-i18n="doctorWeightLabel">Prioritize Preferred Doctors</span>
+              <span style="color: var(--purple);">👨‍🏫</span>
+            </div>
+            <input type="range" id="slider-doctorWeight" min="0" max="100" value="40" class="slider-input" />
+            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">
+              <span>Any doctor</span>
+              <span>Must have favorites</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Target Free Days -->
+        <div style="margin-top: 20px;">
+          <div style="font-weight: 600; font-size: 0.95rem;" data-i18n="freeDaysLabel">
+            Target Free Days (Days Completely Off):
+          </div>
+          <div class="free-days-selector">
+            <div class="day-chip" data-day="Saturday">Saturday (السبت)</div>
+            <div class="day-chip" data-day="Sunday">Sunday (الأحد)</div>
+            <div class="day-chip" data-day="Monday">Monday (الاثنين)</div>
+            <div class="day-chip" data-day="Tuesday">Tuesday (الثلاثاء)</div>
+            <div class="day-chip" data-day="Wednesday">Wednesday (الأربعاء)</div>
+            <div class="day-chip" data-day="Thursday">Thursday (الخميس)</div>
+            <div class="day-chip" data-day="Friday">Friday (الجمعة)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prohibited / Blocked Times Card -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">
+              <span>🚫</span> <span data-i18n="blockedTimesTitle">Prohibited / Blocked Times (Training & Busy Hours)</span>
+            </div>
+            <div class="card-subtitle" data-i18n="blockedTimesDesc">
+              Prohibit specific times (e.g. Saturday 8 AM training). The optimizer will guarantee zero classes are scheduled during these times!
+            </div>
+          </div>
+          <div class="blocked-presets-row">
+            <button class="btn btn-secondary btn-sm" onclick="App.applyBlockedPreset('evenings')">
+              <span data-i18n="presetEvenings">🌙 Block All Slots After 4 PM</span>
+            </button>
+            <button class="btn btn-outline btn-sm" style="color: var(--danger);" onclick="App.applyBlockedPreset('clear')">
+              <span data-i18n="presetClearBlocked">Clear All Blocked Slots</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Interactive 7-Day x 16-Slot Painter Grid -->
+        <div class="blocked-painter-scroll">
+          <div id="blocked-painter-grid" class="blocked-painter-grid">
+            <!-- Rendered by JavaScript -->
+          </div>
+        </div>
+
+        <!-- Active Blocked Chips List -->
+        <div style="margin-top: 14px;">
+          <div style="font-size: 0.85rem; font-weight: 700; margin-bottom: 6px;">
+            <span>Active Prohibited Slots:</span>
+          </div>
+          <div id="blocked-chips-container" class="blocked-presets-row">
+            <!-- Rendered by JavaScript -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Doctor Selection per Course -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title" data-i18n="doctorPrefTitle">Doctor & Instructor Preferences</div>
+            <div class="card-subtitle" data-i18n="doctorPrefDesc">
+              Prioritize your favorite professors or avoid instructors you do not want
+            </div>
+          </div>
+        </div>
+
+        <div id="doctor-preferences-container">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: TIMETABLE RESULTS -->
+    <section id="tab-timetable" class="tab-content" style="display: none;">
+      <!-- Solution Navigation Carousel -->
+      <div class="solutions-nav-container">
+        <div style="font-weight: 700; font-size: 1rem; color: var(--text-primary);">
+          <span>🎯 Ranked Clash-Free Options:</span>
+        </div>
+        <div id="solutions-chips-container" class="solutions-chips-wrapper">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+
+      <!-- Solution Summary Box -->
+      <div id="solution-summary-container">
+        <!-- Populated by JavaScript -->
+      </div>
+
+      <!-- Interactive Timetable Grid Card -->
+      <div class="card" id="timetable-card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">
+              <span>📅</span> <span>Weekly Timetable (Periods 1 - 16)</span>
+            </div>
+            <div class="card-subtitle">
+              Visual timetable showing your classes, selected groups, doctor names, and gap intervals
+            </div>
+          </div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button id="btn-export-png" class="btn btn-secondary btn-sm" data-i18n="exportPng">
+              <span>🖼️</span> <span>Export PNG</span>
+            </button>
+            <button id="btn-export-ics" class="btn btn-secondary btn-sm" data-i18n="exportIcs">
+              <span>📲</span> <span>Google Calendar (.ics)</span>
+            </button>
+            <button id="btn-print" class="btn btn-primary btn-sm" data-i18n="printSchedule">
+              <span>🖨️</span> <span>Print Timetable</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Render Target for Timetable Grid -->
+        <div id="timetable-render-container">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+
+      <!-- Backup / Export JSON -->
+      <div style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px;">
+        <input type="file" id="input-json-file" accept=".json" style="display: none;" />
+        <button id="btn-import-json" class="btn btn-outline btn-sm" data-i18n="importJson">
+          <span>📥</span> <span>Import Courses (JSON)</span>
+        </button>
+        <button id="btn-export-json" class="btn btn-outline btn-sm" data-i18n="exportJson">
+          <span>💾</span> <span>Save Courses (JSON)</span>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Image Calibration Modal -->
+  <div id="image-calibration-modal" class="modal-backdrop" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 style="font-size: 1.1rem; font-weight: 700;">Verify & Calibrate Photo Slots</h3>
+        <button class="btn btn-outline btn-sm" onclick="document.getElementById('image-calibration-modal').style.display='none';">✕</button>
+      </div>
+      <div class="modal-body" id="calibration-blocks-list">
+        <!-- Rendered by JavaScript -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="document.getElementById('image-calibration-modal').style.display='none';">Cancel</button>
+        <button class="btn btn-primary" onclick="App.saveImageDraftCourse()">Add Course to Optimizer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/parser.js"></script>
+  <script src="js/sampleData.js"></script>
+  <script src="js/optimizer.js"></script>
+  <script src="js/imageExtractor.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/exporter.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
