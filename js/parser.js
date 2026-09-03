@@ -309,6 +309,14 @@ const ScheduleParser = (() => {
             instructor = candidateLines.join(' ').replace(/\s+/g, ' ').trim();
           }
 
+          // If session is a Lecture, ensure doctor title prefix is present
+          if (type === 'Lect.' && instructor && instructor !== 'Not Specified') {
+            if (!/^(د\.|د\/|د\s+|Dr\.|Dr\s+|Doctor\s+|Prof\.|أ\.د\.?)/i.test(instructor)) {
+              const isArabic = /[\u0600-\u06FF]/.test(instructor);
+              instructor = (isArabic ? 'د. ' : 'Dr. ') + instructor;
+            }
+          }
+
           // Background color for visual styling
           const bgColor = cell.style.backgroundColor || getComputedStyleColor(cell) || '';
 

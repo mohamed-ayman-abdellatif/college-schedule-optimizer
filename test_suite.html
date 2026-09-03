@@ -77,9 +77,11 @@
     assert('Group E Lab is Saturday slots 1-2', grpE_lab && grpE_lab.day === 'Saturday' && grpE_lab.startSlot === 1 && grpE_lab.endSlot === 2);
 
     console.log("Extracted slots count:", c1.slots.length);
+    const grpF_lect = c1.slots.find(s => s.group === 'F' && s.type === 'Lect.');
+    assert('Group F Lecture doctor has د. prefix added automatically', grpF_lect && grpF_lect.instructor.startsWith('د. '), grpF_lect?.instructor);
     const grpB_lab = c1.slots.find(s => s.group === 'B' && s.type === 'Lab.');
     assert('Group B Lab exists', Boolean(grpB_lab));
-    assert('Group B Lab doctor extracted', grpB_lab && grpB_lab.instructor !== 'Not Specified', 'Doc is: ' + (grpB_lab ? grpB_lab.instructor : 'none'));
+    assert('Group B Lab instructor preserved without doctor title', grpB_lab && !grpB_lab.instructor.startsWith('د. ') && grpB_lab.instructor.includes('مجد نبيل'), grpB_lab?.instructor);
 
 
     // TEST 2: Optimizer runs across 5 courses
@@ -141,6 +143,22 @@
     assert('All courses have distinct colors for timetable highlighting', uniqueColors.size === sampleCourses.length, `Colors: ${colors.join(', ')}`);
     const rgbaTest = ScheduleRenderer.hexToRgba('#3B82F6', 0.25);
     assert('hexToRgba correctly computes translucent background', rgbaTest === 'rgba(59, 130, 246, 0.25)', rgbaTest);
+
+    // TEST 7: Doctor vs Instructor Classification & Dual Alphabetical Ordering
+    const ece = sampleCourses.find(c => c.code === 'ECE2102');
+    const getCleanSortName = n => (n || '').replace(/^(د\.|د\/|د\s+|Dr\.|Dr\s+|Doctor\s+|Prof\.|أ\.د\.?|م\.|Eng\.)\s*/i, '').trim();
+    const isDoc = name => /^(د\.|د\/|د\s+|Dr\.|Dr\s+|Doctor\s+|Prof\.|أ\.د\.?)/i.test(name) ||
+      ece.groups.some(g => g.sessions.some(s => s.instructor && s.instructor.includes(name) && (s.type === 'Lect.' || s.type.includes('Lect'))));
+    
+    const docs = ece.instructors.filter(i => isDoc(i));
+    const insts = ece.instructors.filter(i => !isDoc(i));
+    assert('Identified 3 doctors in ECE2102', docs.length === 3, docs.join(', '));
+    assert('Identified 3 instructors/TAs in ECE2102', insts.length === 3, insts.join(', '));
+    
+    docs.sort((a, b) => getCleanSortName(a).localeCompare(getCleanSortName(b)));
+    insts.sort((a, b) => getCleanSortName(a).localeCompare(getCleanSortName(b)));
+    assert('Doctors sorted alphabetically (Dina, Hesham, Yara)', docs[0].includes('دينا') && docs[1].includes('هشام') && docs[2].includes('يارا'));
+    assert('Instructors sorted alphabetically (Ahmed, Magd, Mohamed)', insts[0].includes('احمد') && insts[1].includes('مجد') && insts[2].includes('محمد'));
 
     // Summary
     const passedCount = results.filter(r => r.passed).length;

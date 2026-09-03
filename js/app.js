@@ -65,7 +65,11 @@ const App = (() => {
       exportJson: 'Save Courses (JSON)',
       importJson: 'Import Courses (JSON)',
       zeroGapsBadge: '⚡ Zero Gaps (No Waiting)',
-      clearAllCourses: 'Clear All Courses'
+      clearAllCourses: 'Clear All Courses',
+      doctorBadge: '🎓 Doctor',
+      instructorBadge: '🔬 TA / Instructor',
+      doctorsSubheading: '🎓 Doctors & Professors (Lectures)',
+      instructorsSubheading: '🔬 Teaching Assistants (Labs & Sections)'
     },
     ar: {
       appTitle: 'محول ومحسن الجداول الجامعية',
@@ -103,7 +107,11 @@ const App = (() => {
       exportJson: 'حفظ المقررات (JSON)',
       importJson: 'استيراد المقررات (JSON)',
       zeroGapsBadge: '⚡ بدون أي فترات فراغ (Zero Gaps)',
-      clearAllCourses: 'مسح جميع المقررات'
+      clearAllCourses: 'مسح جميع المقررات',
+      doctorBadge: '🎓 دكتور / أستاذ',
+      instructorBadge: '🔬 معيد / مساعد تدريس',
+      doctorsSubheading: '🎓 الدكاترة والأساتذة (المحاضرات)',
+      instructorsSubheading: '🔬 المعيدون ومساعدو التدريس (المعامل والتمارين)'
     }
   };
 
@@ -146,7 +154,10 @@ const App = (() => {
   function loadStateFromStorage() {
     try {
       const storedCourses = localStorage.getItem('sched_courses');
-      if (storedCourses) state.courses = JSON.parse(storedCourses);
+      if (storedCourses) {
+        state.courses = JSON.parse(storedCourses);
+        normalizeCourseDoctorTitles(state.courses);
+      }
 
       const storedDocPrefs = localStorage.getItem('sched_doc_prefs');
       if (storedDocPrefs) state.doctorPreferences = JSON.parse(storedDocPrefs);
@@ -633,6 +644,7 @@ const App = (() => {
    */
   function loadSampleCourses() {
     state.courses = JSON.parse(JSON.stringify(SampleScheduleData.DEFAULT_COURSE_SET));
+    normalizeCourseDoctorTitles(state.courses);
     saveStateToStorage();
     renderCoursesList();
     renderDoctorPreferences();
@@ -678,8 +690,8 @@ const App = (() => {
             </button>
           </div>
           <div class="course-stats-line">
-            <span><strong>${groupsCount}</strong> Groups</span> •
-            <span><strong>${instructorsCount}</strong> Doctors</span>
+            <span><strong>${groupsCount}</strong> ${state.currentLang === 'ar' ? 'مجموعات' : 'Groups'}</span> •
+            <span><strong>${instructorsCount}</strong> ${state.currentLang === 'ar' ? 'أعضاء هيئة تدريس' : 'Faculty/Staff'}</span>
           </div>
           <div class="groups-pill-preview">${groupsTags}${groupsCount > 8 ? `<span class="mini-group-tag">+${groupsCount - 8}</span>` : ''}</div>
         </div>
@@ -716,65 +728,292 @@ const App = (() => {
   }
 
   /**
+   * Cleans prefixes for pure alphabetical sorting of names
+   */
+  function getCleanSortName(name) {
+    return (name || '')
+      .replace(/^(د\.|د\/|د\s+|Dr\.|Dr\s+|Doctor\s+|Prof\.|أ\.د\.?|م\.|Eng\.)\s*/i, '')
+      .trim();
+  }
+
+  /**
+   * Determines if a person is a Doctor or an Instructor.
+   * True if has doctor prefix or teaches any lecture session.
+   */
+  function isPersonDoctor(personName, course) {
+    if (!personName || personName === 'Not Specified') return false;
+
+    // 1. Explicit doctor title prefix (د. / د / Dr. / Dr / Doctor / Prof. / أ.د)
+    if (/^(د\.|د\/|د\s+|Dr\.|Dr\s+|Doctor\s+|Prof\.|أ\.د\.?)/i.test(personName)) {
+      return true;
+    }
+
+    const cleanPerson = getCleanSortName(personName);
+
+    // 2. Check sessions in groups
+    if (course && course.groups) {
+      for (const grp of course.groups) {
+        if (grp.sessions) {
+          for (const sess of grp.sessions) {
+            const sInst = sess.instructor || '';
+            const cleanSInst = getCleanSortName(sInst);
+            if (sInst && (sInst === personName || cleanSInst === cleanPerson || sInst.includes(personName) || personName.includes(sInst))) {
+              if (sess.type === 'Lect.' || /Lect|محاضرة/i.test(sess.type || '')) {
+                return true;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // 3. Check slots
+    if (course && course.slots) {
+      for (const slot of course.slots) {
+        const sInst = slot.instructor || '';
+        const cleanSInst = getCleanSortName(sInst);
+        if (sInst && (sInst === personName || cleanSInst === cleanPerson || sInst.includes(personName) || personName.includes(sInst))) {
+          if (slot.type === 'Lect.' || /Lect|محاضرة/i.test(slot.type || '')) {
+            return true;
+          }
+        }
+      }
+    }
+
+    return false;
+  }
+
+  /**
+   * Formats a person's display name, prepending 'د. ' or 'Dr. ' if doctor.
+   */
+  function formatDoctorName(name, isDoc) {
+    if (!name || name === 'Not Specified') return name;
+    if (!isDoc) return name;
+
+    // If already starts with title, return as is
+    if (/^(د\.|د\/|د\s+|Dr\.|Dr\s+|Doctor\s+|Prof\.|أ\.د\.?)/i.test(name)) {
+      return name;
+    }
+
+    const isArabic = /[\u0600-\u06FF]/.test(name);
+    const prefix = isArabic ? 'د. ' : 'Dr. ';
+    return `${prefix}${name.trim()}`;
+  }
+
+  /**
+   * Normalizes doctor titles on courses and their sessions
+   */
+  function normalizeCourseDoctorTitles(courses) {
+    if (!courses || !Array.isArray(courses)) return;
+    courses.forEach(course => {
+      const doctorsSet = new Set();
+
+      if (course.groups) {
+        course.groups.forEach(grp => {
+          if (grp.sessions) {
+            grp.sessions.forEach(sess => {
+              const inst = sess.instructor || '';
+              if (inst && inst !== 'Not Specified') {
+                if (sess.type === 'Lect.' || /Lect|محاضرة/i.test(sess.type || '')) {
+                  const docFormatted = formatDoctorName(inst, true);
+                  sess.instructor = docFormatted;
+                  doctorsSet.add(docFormatted);
+                }
+              }
+            });
+          }
+
+          if (grp.instructors && Array.isArray(grp.instructors)) {
+            grp.instructors = grp.instructors.map(name => {
+              if (doctorsSet.has(name) || isPersonDoctor(name, course)) {
+                return formatDoctorName(name, true);
+              }
+              return name;
+            });
+          }
+        });
+      }
+
+      if (course.slots) {
+        course.slots.forEach(slot => {
+          const inst = slot.instructor || '';
+          if (inst && inst !== 'Not Specified') {
+            if (slot.type === 'Lect.' || /Lect|محاضرة/i.test(slot.type || '')) {
+              slot.instructor = formatDoctorName(inst, true);
+            }
+          }
+        });
+      }
+
+      if (course.instructors && Array.isArray(course.instructors)) {
+        course.instructors = course.instructors.map(name => {
+          if (isPersonDoctor(name, course)) {
+            return formatDoctorName(name, true);
+          }
+          return name;
+        });
+      }
+    });
+  }
+
+  function getRatingForPerson(courseCode, formatted, original) {
+    const prefs = state.doctorPreferences[courseCode];
+    if (!prefs) return 'neutral';
+    if (prefs[formatted]) return prefs[formatted];
+    if (original && prefs[original]) return prefs[original];
+    const clean = getCleanSortName(formatted);
+    if (clean && prefs[clean]) return prefs[clean];
+    return 'neutral';
+  }
+
+  /**
    * Render Doctor Preferences
+   * Doctors are highlighted, prefixed with Dr./د., and ordered first alphabetically,
+   * followed by Instructors ordered alphabetically.
    */
   function renderDoctorPreferences() {
     const container = document.getElementById('doctor-preferences-container');
     if (!container) return;
 
+    const t = TRANSLATIONS[state.currentLang];
+
     if (state.courses.length === 0) {
-      container.innerHTML = `<p style="color: var(--text-secondary);">No courses added yet.</p>`;
+      container.innerHTML = `<p style="color: var(--text-secondary);">${state.currentLang === 'ar' ? 'لم يتم إضافة مقررات حتى الآن.' : 'No courses added yet.'}</p>`;
       return;
     }
 
     let html = '';
 
     state.courses.forEach(course => {
-      const instructors = course.instructors || [];
-      if (instructors.length === 0) return;
+      // Collect all instructors from course, groups, and sessions
+      const rawInstructors = new Set(course.instructors || []);
+      if (course.groups) {
+        course.groups.forEach(g => {
+          (g.instructors || []).forEach(inst => rawInstructors.add(inst));
+          (g.sessions || []).forEach(s => {
+            if (s.instructor && s.instructor !== 'Not Specified') rawInstructors.add(s.instructor);
+          });
+        });
+      }
+
+      if (rawInstructors.size === 0) return;
 
       const courseCode = course.code || course.id;
       if (!state.doctorPreferences[courseCode]) {
         state.doctorPreferences[courseCode] = {};
       }
 
+      // Partition into Doctors and Instructors
+      const doctors = [];
+      const instructors = [];
+
+      rawInstructors.forEach(person => {
+        if (!person || person === 'Not Specified') return;
+        const isDoc = isPersonDoctor(person, course);
+        const formatted = formatDoctorName(person, isDoc);
+        if (isDoc) {
+          doctors.push({ original: person, formatted, isDoctor: true });
+        } else {
+          instructors.push({ original: person, formatted, isDoctor: false });
+        }
+      });
+
+      // Deduplicate by formatted name
+      const uniqueDocs = Array.from(new Map(doctors.map(d => [d.formatted, d])).values());
+      const uniqueInsts = Array.from(new Map(instructors.map(i => [i.formatted, i])).values());
+
+      // 1. Sort Doctors in alphabetical order
+      uniqueDocs.sort((a, b) => {
+        const nameA = getCleanSortName(a.formatted);
+        const nameB = getCleanSortName(b.formatted);
+        return nameA.localeCompare(nameB, undefined, { sensitivity: 'base' });
+      });
+
+      // 2. Sort Instructors in alphabetical order
+      uniqueInsts.sort((a, b) => {
+        const nameA = getCleanSortName(a.formatted);
+        const nameB = getCleanSortName(b.formatted);
+        return nameA.localeCompare(nameB, undefined, { sensitivity: 'base' });
+      });
+
       html += `
-        <div class="pref-box" style="margin-bottom: 16px;">
-          <div style="font-weight: 700; font-size: 1rem; margin-bottom: 8px; color: ${course.color};">
-            ${course.name} (${courseCode})
+        <div class="pref-box" style="margin-bottom: 20px;">
+          <div style="font-weight: 700; font-size: 1.05rem; margin-bottom: 10px; color: ${course.color}; display: flex; align-items: center; justify-content: space-between;">
+            <span>${course.name} (${courseCode})</span>
+            <span style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted);">
+              ${uniqueDocs.length} ${state.currentLang === 'ar' ? 'دكاترة' : 'Doctors'} • ${uniqueInsts.length} ${state.currentLang === 'ar' ? 'معيدين' : 'TAs'}
+            </span>
           </div>
           <div>
       `;
 
-      instructors.forEach(doc => {
-        const currentPref = state.doctorPreferences[courseCode][doc] || 'neutral';
+      // Render Doctors first (alphabetical order & highlighted)
+      if (uniqueDocs.length > 0) {
+        html += `<div class="pref-subgroup-header">${t.doctorsSubheading}</div>`;
+        uniqueDocs.forEach(item => {
+          const currentPref = getRatingForPerson(courseCode, item.formatted, item.original);
+          html += `
+            <div class="doctor-pref-item is-doctor">
+              <div class="doctor-name-col">
+                <span style="font-size: 16px;">🎓</span>
+                <span style="font-weight: 700; color: var(--text-primary);">${item.formatted}</span>
+                <span class="role-badge doctor-badge">${t.doctorBadge}</span>
+              </div>
+              <div class="doctor-rating-group">
+                <button class="rating-btn ${currentPref === 'love' ? 'active-love' : ''}"
+                        title="${state.currentLang === 'ar' ? 'دكتور مفضل (أولوية قصوى)' : 'Favorite doctor'}"
+                        onclick="App.setDoctorPreference('${courseCode}', '${escapeQuotes(item.formatted)}', 'love')">
+                  ⭐ ${state.currentLang === 'ar' ? 'مفضل' : 'Favorite'}
+                </button>
+                <button class="rating-btn ${currentPref === 'neutral' ? 'active-neutral' : ''}"
+                        title="${state.currentLang === 'ar' ? 'عادي' : 'Neutral'}"
+                        onclick="App.setDoctorPreference('${courseCode}', '${escapeQuotes(item.formatted)}', 'neutral')">
+                  ⚪ ${state.currentLang === 'ar' ? 'عادي' : 'Neutral'}
+                </button>
+                <button class="rating-btn ${currentPref === 'avoid' ? 'active-avoid' : ''}"
+                        title="${state.currentLang === 'ar' ? 'تجنب هذا الدكتور' : 'Avoid doctor'}"
+                        onclick="App.setDoctorPreference('${courseCode}', '${escapeQuotes(item.formatted)}', 'avoid')">
+                  🚫 ${state.currentLang === 'ar' ? 'تجنب' : 'Avoid'}
+                </button>
+              </div>
+            </div>
+          `;
+        });
+      }
 
-        html += `
-          <div class="doctor-pref-item">
-            <div class="doctor-name-col">
-              <span style="font-size: 14px;">👨‍🏫</span>
-              <span>${doc}</span>
+      // Render Instructors second (alphabetical order)
+      if (uniqueInsts.length > 0) {
+        html += `<div class="pref-subgroup-header">${t.instructorsSubheading}</div>`;
+        uniqueInsts.forEach(item => {
+          const currentPref = getRatingForPerson(courseCode, item.formatted, item.original);
+          html += `
+            <div class="doctor-pref-item">
+              <div class="doctor-name-col">
+                <span style="font-size: 16px;">🔬</span>
+                <span style="font-weight: 600; color: var(--text-secondary);">${item.formatted}</span>
+                <span class="role-badge instructor-badge">${t.instructorBadge}</span>
+              </div>
+              <div class="doctor-rating-group">
+                <button class="rating-btn ${currentPref === 'love' ? 'active-love' : ''}"
+                        title="${state.currentLang === 'ar' ? 'معيد مفضل' : 'Favorite instructor'}"
+                        onclick="App.setDoctorPreference('${courseCode}', '${escapeQuotes(item.formatted)}', 'love')">
+                  ⭐ ${state.currentLang === 'ar' ? 'مفضل' : 'Favorite'}
+                </button>
+                <button class="rating-btn ${currentPref === 'neutral' ? 'active-neutral' : ''}"
+                        title="${state.currentLang === 'ar' ? 'عادي' : 'Neutral'}"
+                        onclick="App.setDoctorPreference('${courseCode}', '${escapeQuotes(item.formatted)}', 'neutral')">
+                  ⚪ ${state.currentLang === 'ar' ? 'عادي' : 'Neutral'}
+                </button>
+                <button class="rating-btn ${currentPref === 'avoid' ? 'active-avoid' : ''}"
+                        title="${state.currentLang === 'ar' ? 'تجنب هذا المعيد' : 'Avoid instructor'}"
+                        onclick="App.setDoctorPreference('${courseCode}', '${escapeQuotes(item.formatted)}', 'avoid')">
+                  🚫 ${state.currentLang === 'ar' ? 'تجنب' : 'Avoid'}
+                </button>
+              </div>
             </div>
-            <div class="doctor-rating-group">
-              <button class="rating-btn ${currentPref === 'love' ? 'active-love' : ''}"
-                      title="Favorite doctor"
-                      onclick="App.setDoctorPreference('${courseCode}', '${escapeQuotes(doc)}', 'love')">
-                ⭐ Favorite
-              </button>
-              <button class="rating-btn ${currentPref === 'neutral' ? 'active-neutral' : ''}"
-                      title="Neutral"
-                      onclick="App.setDoctorPreference('${courseCode}', '${escapeQuotes(doc)}', 'neutral')">
-                ⚪ Neutral
-              </button>
-              <button class="rating-btn ${currentPref === 'avoid' ? 'active-avoid' : ''}"
-                      title="Avoid doctor"
-                      onclick="App.setDoctorPreference('${courseCode}', '${escapeQuotes(doc)}', 'avoid')">
-                🚫 Avoid
-              </button>
-            </div>
-          </div>
-        `;
-      });
+          `;
+        });
+      }
 
       html += `
           </div>
@@ -790,6 +1029,13 @@ const App = (() => {
       state.doctorPreferences[courseCode] = {};
     }
     state.doctorPreferences[courseCode][doctorName] = rating;
+
+    // Also store under cleaned name so both match in optimizer
+    const cleanName = getCleanSortName(doctorName);
+    if (cleanName && cleanName !== doctorName) {
+      state.doctorPreferences[courseCode][cleanName] = rating;
+    }
+
     saveStateToStorage();
     renderDoctorPreferences();
   }

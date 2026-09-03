@@ -13,9 +13,9 @@ const SampleScheduleData = (() => {
     code: 'ECE2102',
     color: '#3B82F6',
     instructors: [
-      'هشام صلاح الدين محمد رشاد',
-      'دينا محمد علي ابو الدهب',
-      'يارا اشرف كامل محمد',
+      'د. هشام صلاح الدين محمد رشاد',
+      'د. دينا محمد علي ابو الدهب',
+      'د. يارا اشرف كامل محمد',
       'مجد نبيل نصرى نعمه',
       'محمد حسام محمد علي',
       'احمد زكريا نور محمد طلحه'
@@ -23,81 +23,81 @@ const SampleScheduleData = (() => {
     groups: [
       {
         group: 'B',
-        instructors: ['هشام صلاح الدين محمد رشاد', 'مجد نبيل نصرى نعمه'],
+        instructors: ['د. هشام صلاح الدين محمد رشاد', 'مجد نبيل نصرى نعمه'],
         sessions: [
-          { type: 'Lect.', day: 'Tuesday', startSlot: 3, endSlot: 4, duration: 2, instructor: 'هشام صلاح الدين محمد رشاد' },
+          { type: 'Lect.', day: 'Tuesday', startSlot: 3, endSlot: 4, duration: 2, instructor: 'د. هشام صلاح الدين محمد رشاد' },
           { type: 'Lab.', day: 'Sunday', startSlot: 7, endSlot: 8, duration: 2, instructor: 'مجد نبيل نصرى نعمه' }
         ]
       },
       {
         group: 'C',
-        instructors: ['هشام صلاح الدين محمد رشاد', 'مجد نبيل نصرى نعمه'],
+        instructors: ['د. هشام صلاح الدين محمد رشاد', 'مجد نبيل نصرى نعمه'],
         sessions: [
-          { type: 'Lect.', day: 'Tuesday', startSlot: 3, endSlot: 4, duration: 2, instructor: 'هشام صلاح الدين محمد رشاد' },
+          { type: 'Lect.', day: 'Tuesday', startSlot: 3, endSlot: 4, duration: 2, instructor: 'د. هشام صلاح الدين محمد رشاد' },
           { type: 'Lab.', day: 'Thursday', startSlot: 5, endSlot: 6, duration: 2, instructor: 'مجد نبيل نصرى نعمه' }
         ]
       },
       {
         group: 'D',
-        instructors: ['هشام صلاح الدين محمد رشاد', 'مجد نبيل نصرى نعمه'],
+        instructors: ['د. هشام صلاح الدين محمد رشاد', 'مجد نبيل نصرى نعمه'],
         sessions: [
-          { type: 'Lect.', day: 'Wednesday', startSlot: 3, endSlot: 4, duration: 2, instructor: 'هشام صلاح الدين محمد رشاد' },
+          { type: 'Lect.', day: 'Wednesday', startSlot: 3, endSlot: 4, duration: 2, instructor: 'د. هشام صلاح الدين محمد رشاد' },
           { type: 'Lab.', day: 'Wednesday', startSlot: 5, endSlot: 6, duration: 2, instructor: 'مجد نبيل نصرى نعمه' }
         ]
       },
       {
         group: 'E',
-        instructors: ['هشام صلاح الدين محمد رشاد'],
+        instructors: ['د. هشام صلاح الدين محمد رشاد'],
         sessions: [
-          { type: 'Lect.', day: 'Wednesday', startSlot: 3, endSlot: 4, duration: 2, instructor: 'هشام صلاح الدين محمد رشاد' },
+          { type: 'Lect.', day: 'Wednesday', startSlot: 3, endSlot: 4, duration: 2, instructor: 'د. هشام صلاح الدين محمد رشاد' },
           { type: 'Lab.', day: 'Saturday', startSlot: 1, endSlot: 2, duration: 2, instructor: 'Not Specified' }
         ]
       },
       {
         group: 'F',
-        instructors: ['هشام صلاح الدين محمد رشاد', 'محمد حسام محمد علي'],
+        instructors: ['د. هشام صلاح الدين محمد رشاد', 'محمد حسام محمد علي'],
         sessions: [
-          { type: 'Lect.', day: 'Tuesday', startSlot: 1, endSlot: 2, duration: 2, instructor: 'هشام صلاح الدين محمد رشاد' },
+          { type: 'Lect.', day: 'Tuesday', startSlot: 1, endSlot: 2, duration: 2, instructor: 'د. هشام صلاح الدين محمد رشاد' },
           { type: 'Lab.', day: 'Thursday', startSlot: 3, endSlot: 4, duration: 2, instructor: 'محمد حسام محمد علي' }
         ]
       },
       {
         group: 'G',
-        instructors: ['هشام صلاح الدين محمد رشاد', 'محمد حسام محمد علي'],
+        instructors: ['د. هشام صلاح الدين محمد رشاد', 'محمد حسام محمد علي'],
         sessions: [
-          { type: 'Lect.', day: 'Tuesday', startSlot: 1, endSlot: 2, duration: 2, instructor: 'هشام صلاح الدين محمد رشاد' },
+          { type: 'Lect.', day: 'Tuesday', startSlot: 1, endSlot: 2, duration: 2, instructor: 'د. هشام صلاح الدين محمد رشاد' },
           { type: 'Lab.', day: 'Thursday', startSlot: 1, endSlot: 2, duration: 2, instructor: 'محمد حسام محمد علي' }
         ]
       },
       {
         group: 'H',
-        instructors: ['دينا محمد علي ابو الدهب', 'احمد زكريا نور محمد طلحه'],
+        instructors: ['د. دينا محمد علي ابو الدهب', 'احمد زكريا نور محمد طلحه'],
         sessions: [
-          { type: 'Lect.', day: 'Tuesday', startSlot: 5, endSlot: 6, duration: 2, instructor: 'دينا محمد علي ابو الدهب' },
+          { type: 'Lect.', day: 'Tuesday', startSlot: 5, endSlot: 6, duration: 2, instructor: 'د. دينا محمد علي ابو الدهب' },
           { type: 'Lab.', day: 'Wednesday', startSlot: 1, endSlot: 2, duration: 2, instructor: 'احمد زكريا نور محمد طلحه' }
         ]
       },
       {
         group: 'I',
-        instructors: ['دينا محمد علي ابو الدهب', 'احمد زكريا نور محمد طلحه'],
+        instructors: ['د. دينا محمد علي ابو الدهب', 'احمد زكريا نور محمد طلحه'],
         sessions: [
-          { type: 'Lect.', day: 'Tuesday', startSlot: 5, endSlot: 6, duration: 2, instructor: 'دينا محمد علي ابو الدهب' },
+          { type: 'Lect.', day: 'Tuesday', startSlot: 5, endSlot: 6, duration: 2, instructor: 'د. دينا محمد علي ابو الدهب' },
           { type: 'Lab.', day: 'Monday', startSlot: 5, endSlot: 6, duration: 2, instructor: 'احمد زكريا نور محمد طلحه' }
         ]
       },
       {
         group: 'J',
-        instructors: ['يارا اشرف كامل محمد', 'محمد حسام محمد علي'],
+        instructors: ['د. يارا اشرف كامل محمد', 'محمد حسام محمد علي'],
         sessions: [
-          { type: 'Lect.', day: 'Wednesday', startSlot: 7, endSlot: 8, duration: 2, instructor: 'يارا اشرف كامل محمد' },
+          { type: 'Lect.', day: 'Wednesday', startSlot: 7, endSlot: 8, duration: 2, instructor: 'د. يارا اشرف كامل محمد' },
           { type: 'Lab.', day: 'Thursday', startSlot: 7, endSlot: 8, duration: 2, instructor: 'محمد حسام محمد علي' }
         ]
       },
       {
         group: 'K',
-        instructors: ['يارا اشرف كامل محمد'],
+        instructors: ['د. يارا اشرف كامل محمد'],
         sessions: [
-          { type: 'Lect.', day: 'Wednesday', startSlot: 7, endSlot: 8, duration: 2, instructor: 'يارا اشرف كامل محمد' },
+          { type: 'Lect.', day: 'Wednesday', startSlot: 7, endSlot: 8, duration: 2, instructor: 'د. يارا اشرف كامل محمد' },
           { type: 'Lab.', day: 'Wednesday', startSlot: 11, endSlot: 12, duration: 2, instructor: 'Not Specified' }
         ]
       },

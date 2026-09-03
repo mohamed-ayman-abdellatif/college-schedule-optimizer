@@ -479,6 +479,31 @@ body {
   padding: 10px 12px;
   border-bottom: 1px solid var(--border-color);
   gap: 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.doctor-pref-item.is-doctor {
+  background: rgba(59, 130, 246, 0.08);
+  border-left: 3.5px solid #3B82F6;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.15);
+  margin-bottom: 4px;
+}
+
+[dir="rtl"] .doctor-pref-item.is-doctor {
+  border-left: none;
+  border-right: 3.5px solid #3B82F6;
+}
+
+[data-theme="dark"] .doctor-pref-item.is-doctor {
+  background: rgba(59, 130, 246, 0.14);
+  border-left-color: #60A5FA;
+  border-bottom-color: rgba(59, 130, 246, 0.25);
+}
+
+[dir="rtl"][data-theme="dark"] .doctor-pref-item.is-doctor {
+  border-left: none;
+  border-right-color: #60A5FA;
 }
 
 .doctor-name-col {
@@ -487,6 +512,54 @@ body {
   gap: 8px;
   font-size: 0.9rem;
   font-weight: 600;
+  flex-wrap: wrap;
+}
+
+.role-badge {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  white-space: nowrap;
+}
+
+.role-badge.doctor-badge {
+  background: rgba(59, 130, 246, 0.18);
+  color: #1D4ED8;
+  border: 1px solid rgba(59, 130, 246, 0.35);
+}
+
+[data-theme="dark"] .role-badge.doctor-badge {
+  background: rgba(59, 130, 246, 0.25);
+  color: #93C5FD;
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+.role-badge.instructor-badge {
+  background: rgba(107, 114, 128, 0.12);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.pref-subgroup-header {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  padding: 8px 10px 4px;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px dashed var(--border-color);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pref-subgroup-header:first-of-type {
+  margin-top: 0;
 }
 
 .doctor-rating-group {

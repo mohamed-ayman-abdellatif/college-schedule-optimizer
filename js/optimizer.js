@@ -86,7 +86,19 @@ const ScheduleOptimizer = (() => {
 
       instructors.forEach(doc => {
         totalDoctorChoices++;
-        const pref = coursePrefs[doc] || 'neutral';
+        let pref = coursePrefs[doc];
+        if (!pref) {
+          const cleanDoc = (doc || '').replace(/^(د\.|د\/|د\s+|Dr\.|Dr\s+|Doctor\s+|Prof\.|أ\.د\.?|م\.|Eng\.)\s*/i, '').trim();
+          for (const key of Object.keys(coursePrefs)) {
+            const cleanKey = key.replace(/^(د\.|د\/|د\s+|Dr\.|Dr\s+|Doctor\s+|Prof\.|أ\.د\.?|م\.|Eng\.)\s*/i, '').trim();
+            if (cleanKey && cleanDoc && (cleanKey === cleanDoc || cleanDoc.includes(cleanKey) || cleanKey.includes(cleanDoc))) {
+              pref = coursePrefs[key];
+              break;
+            }
+          }
+        }
+        if (!pref) pref = 'neutral';
+
         if (pref === 'love') {
           score += 30;
           matchedFavorites++;
