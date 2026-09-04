@@ -7,6 +7,9 @@
 .timetable-wrapper {
   width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  overscroll-behavior-x: contain;
   border-radius: var(--radius-md);
   border: 1px solid var(--border-color);
   background: var(--bg-secondary);
@@ -31,6 +34,16 @@
   justify-content: center;
   color: var(--text-secondary);
   border-bottom: 2px solid var(--border-color);
+  position: sticky;
+  left: 0;
+  z-index: 20;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.2);
+}
+
+[dir="rtl"] .grid-header-corner {
+  left: auto;
+  right: 0;
+  box-shadow: -2px 0 6px rgba(0, 0, 0, 0.2);
 }
 
 .grid-slot-header {
@@ -82,11 +95,18 @@
   flex-direction: column;
   justify-content: center;
   border-right: 2px solid var(--border-color);
+  position: sticky;
+  left: 0;
+  z-index: 10;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.2);
 }
 
 [dir="rtl"] .grid-day-header {
   border-right: none;
   border-left: 2px solid var(--border-color);
+  left: auto;
+  right: 0;
+  box-shadow: -2px 0 6px rgba(0, 0, 0, 0.2);
 }
 
 .grid-day-header.active-day {
@@ -455,6 +475,178 @@
   box-shadow: 0 0 10px var(--accent-glow);
 }
 
+/* ==========================================================================
+   Mobile & Tablet Timetable Responsive Styles
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Solutions Navigation Carousel */
+  .solutions-nav-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .solutions-chips-wrapper {
+    padding: 4px 2px 8px;
+    gap: 6px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .sol-chip {
+    padding: 6px 12px;
+    font-size: 0.78rem;
+    flex-shrink: 0;
+  }
+
+  /* Solution Summary Card */
+  .solution-header-card {
+    padding: 12px;
+    gap: 12px;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 14px;
+  }
+
+  .header-left {
+    gap: 8px;
+  }
+
+  .rank-title h3 {
+    font-size: 1.1rem;
+  }
+
+  .badges-row {
+    gap: 4px;
+  }
+
+  .solution-badge {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    width: 100%;
+  }
+
+  .stat-box {
+    background: var(--bg-primary);
+    padding: 8px 10px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+  }
+
+  .stat-val {
+    font-size: 1.15rem;
+  }
+
+  .stat-lbl {
+    font-size: 0.68rem;
+  }
+
+  .header-groups {
+    padding: 10px;
+    width: 100%;
+  }
+
+  .group-pill {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+  }
+
+  /* Timetable Header Action Buttons */
+  #timetable-card .card-header > div:last-child {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 6px;
+  }
+
+  #timetable-card .card-header > div:last-child .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+
+  /* Timetable Grid */
+  .timetable-grid {
+    min-width: 840px;
+  }
+
+  .grid-slot-header {
+    padding: 6px 2px;
+  }
+
+  .slot-num {
+    font-size: 0.82rem;
+  }
+
+  .period-badge {
+    font-size: 0.6rem;
+  }
+
+  .slot-time {
+    font-size: 0.58rem;
+  }
+
+  .grid-day-header {
+    padding: 8px 6px;
+  }
+
+  .day-title {
+    font-size: 0.82rem;
+  }
+
+  .day-status {
+    font-size: 0.65rem;
+  }
+
+  /* Session Cards */
+  .grid-session-card {
+    padding: 6px 6px;
+    min-height: 75px;
+  }
+
+  .session-code {
+    font-size: 0.78rem;
+  }
+
+  .session-badge {
+    font-size: 0.6rem;
+    padding: 1px 4px;
+  }
+
+  .session-group {
+    font-size: 0.68rem;
+  }
+
+  .session-doc {
+    font-size: 0.65rem;
+  }
+
+  .session-time {
+    font-size: 0.6rem;
+  }
+
+  .grid-blocked-cell {
+    padding: 6px 4px;
+    min-height: 75px;
+  }
+
+  .blocked-badge {
+    font-size: 0.68rem;
+    padding: 2px 5px;
+  }
+
+  .blocked-time {
+    font-size: 0.62rem;
+  }
+}
+
 /* Print Stylesheet */
 @media print {
   body {
@@ -467,7 +659,8 @@
   .card:not(#timetable-card),
   .solutions-nav-container,
   .btn,
-  .toast-container {
+  .toast-container,
+  .mobile-scroll-hint {
     display: none !important;
   }
 

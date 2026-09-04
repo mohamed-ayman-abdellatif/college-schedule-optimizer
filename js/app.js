@@ -73,7 +73,8 @@ const App = (() => {
       guideBtn: 'Guide ❓',
       guideModalTitle: 'Quick Guide: How to Use the Optimizer',
       dontShowAgain: "Don't show automatically on startup",
-      guideGotItBtn: "Got it, Let's Start! 🚀"
+      guideGotItBtn: "Got it, Let's Start! 🚀",
+      mobileSwipeHint: 'Swipe horizontally to view all 16 periods 👈👉'
     },
     ar: {
       appTitle: 'محول ومحسن الجداول الجامعية',
@@ -119,7 +120,8 @@ const App = (() => {
       guideBtn: 'دليل الاستخدام ❓',
       guideModalTitle: 'دليل الاستخدام السريع: كيف تستخدم الموقع؟',
       dontShowAgain: 'عدم الإظهار تلقائياً عند فتح الموقع',
-      guideGotItBtn: 'فهمت، لنبدأ الآن! 🚀'
+      guideGotItBtn: 'فهمت، لنبدأ الآن! 🚀',
+      mobileSwipeHint: 'اسحب أفقياً لتصفح جميع الفترات الـ 16 👉👈'
     }
   };
 

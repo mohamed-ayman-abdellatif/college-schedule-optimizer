@@ -11,8 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Core & Timetable CSS -->
-  <link rel="stylesheet" href="css/style.css?v=3.2" />
-  <link rel="stylesheet" href="css/timetable.css?v=3.2" />
+  <link rel="stylesheet" href="css/style.css?v=3.3" />
+  <link rel="stylesheet" href="css/timetable.css?v=3.3" />
 </head>
 <body>
 
@@ -229,6 +229,11 @@
           </div>
         </div>
 
+        <!-- Mobile Swipe Helper Hint -->
+        <div class="mobile-scroll-hint">
+          <span>👈</span> <span data-i18n="mobileSwipeHint">Swipe horizontally to view all 16 periods 👈👉</span> <span>👉</span>
+        </div>
+
         <!-- Interactive 7-Day x 16-Slot Painter Grid -->
         <div class="blocked-painter-scroll">
           <div id="blocked-painter-grid" class="blocked-painter-grid">
@@ -261,6 +266,13 @@
         <div id="doctor-preferences-container">
           <!-- Populated by JavaScript -->
         </div>
+      </div>
+
+      <!-- Mobile & Quick Bottom CTA to Solve -->
+      <div style="margin-top: 14px; margin-bottom: 24px;">
+        <button class="btn btn-primary" style="width: 100%; justify-content: center; padding: 14px; font-size: 1.05rem; font-weight: 700; box-shadow: 0 4px 14px var(--accent-glow);" onclick="App.findSchedules()" data-i18n="findSchedulesBtn">
+          <span>⚡</span> <span>Find Best Schedules</span>
+        </button>
       </div>
     </section>
 
@@ -303,6 +315,11 @@
               <span>🖨️</span> <span>Print Timetable</span>
             </button>
           </div>
+        </div>
+
+        <!-- Mobile Swipe Helper Hint -->
+        <div class="mobile-scroll-hint">
+          <span>👈</span> <span data-i18n="mobileSwipeHint">Swipe horizontally to view all 16 periods 👈👉</span> <span>👉</span>
         </div>
 
         <!-- Render Target for Timetable Grid -->
@@ -464,13 +481,13 @@
   <div id="toast-container" class="toast-container"></div>
 
   <!-- Scripts with Cache Busting -->
-  <script src="js/parser.js?v=3.2"></script>
-  <script src="js/sampleData.js?v=3.2"></script>
-  <script src="js/optimizer.js?v=3.2"></script>
-  <script src="js/imageExtractor.js?v=3.2"></script>
-  <script src="js/renderer.js?v=3.2"></script>
-  <script src="js/exporter.js?v=3.2"></script>
-  <script src="js/app.js?v=3.2"></script>
+  <script src="js/parser.js?v=3.3"></script>
+  <script src="js/sampleData.js?v=3.3"></script>
+  <script src="js/optimizer.js?v=3.3"></script>
+  <script src="js/imageExtractor.js?v=3.3"></script>
+  <script src="js/renderer.js?v=3.3"></script>
+  <script src="js/exporter.js?v=3.3"></script>
+  <script src="js/app.js?v=3.3"></script>
 
   <!-- Instant Startup Fallback -->
   <script>

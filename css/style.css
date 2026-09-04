@@ -46,6 +46,16 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+button, input, select, textarea, .tab-btn, .day-chip, .painter-slot-cell, .rating-btn, .sol-chip {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Cairo", Helvetica, Arial, sans-serif;
   background-color: var(--bg-primary);
@@ -723,10 +733,30 @@ body {
 
 .blocked-painter-scroll {
   overflow-x: auto;
-  margin-top: 12px;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  overscroll-behavior-x: contain;
+  margin-top: 10px;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   background: var(--bg-primary);
+}
+
+.mobile-scroll-hint {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.76rem;
+  color: var(--accent-primary);
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px dashed rgba(59, 130, 246, 0.3);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  margin-top: 10px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  user-select: none;
 }
 
 .blocked-painter-grid {
@@ -745,6 +775,20 @@ body {
   color: var(--text-secondary);
 }
 
+.painter-header-cell:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 10;
+  background: var(--bg-secondary);
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.2);
+}
+
+[dir="rtl"] .painter-header-cell:first-child {
+  left: auto;
+  right: 0;
+  box-shadow: -2px 0 6px rgba(0, 0, 0, 0.2);
+}
+
 .painter-day-cell {
   background: var(--bg-secondary);
   padding: 8px 10px;
@@ -752,11 +796,22 @@ body {
   font-weight: 700;
   display: flex;
   align-items: center;
+  position: sticky;
+  left: 0;
+  z-index: 8;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.2);
+}
+
+[dir="rtl"] .painter-day-cell {
+  left: auto;
+  right: 0;
+  box-shadow: -2px 0 6px rgba(0, 0, 0, 0.2);
 }
 
 .painter-slot-cell {
   background: var(--bg-card);
   height: 44px;
+  min-width: 46px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -764,6 +819,7 @@ body {
   cursor: pointer;
   transition: all 0.15s;
   user-select: none;
+  touch-action: manipulation;
 }
 
 .painter-slot-cell:hover {
@@ -912,5 +968,351 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+/* ==========================================================================
+   Comprehensive Mobile & Tablet Responsive Media Queries
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* Layout & Spacing */
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .main-container {
+    padding: 12px 10px 48px;
+  }
+
+  .card {
+    padding: 14px 12px;
+    margin-bottom: 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .card-header > div:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .card-header > div:last-child .btn {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+
+  .card-title {
+    font-size: 1.05rem;
+  }
+
+  .card-subtitle {
+    font-size: 0.78rem;
+    line-height: 1.35;
+  }
+
+  /* App Header */
+  .app-header {
+    padding: 10px 12px;
+  }
+
+  .header-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .brand-area {
+    gap: 10px;
+  }
+
+  .brand-logo {
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
+  }
+
+  .brand-text h1 {
+    font-size: 1.05rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.72rem;
+    line-height: 1.25;
+  }
+
+  .header-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    width: 100%;
+  }
+
+  #btn-find-schedules-header {
+    order: -1;
+    width: 100%;
+    justify-content: center;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  .header-actions .btn:not(#btn-find-schedules-header) {
+    flex: 1 1 calc(25% - 6px);
+    justify-content: center;
+    padding: 7px 6px;
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
+
+  #btn-theme-toggle {
+    flex: 0 0 auto !important;
+    padding: 7px 12px !important;
+  }
+
+  /* Step Tabs Nav */
+  .tabs-nav {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 16px;
+    padding: 4px;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+  }
+
+  .tab-btn {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 8px 4px;
+    font-size: 0.76rem;
+    text-align: center;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .tab-btn span:first-child {
+    font-size: 14px;
+  }
+
+  /* Textarea & Inputs */
+  .textarea-input {
+    font-size: 16px !important; /* Prevents iOS Safari auto-zoom */
+    height: 140px;
+    padding: 10px;
+  }
+
+  .subtabs-container {
+    width: 100%;
+    gap: 4px;
+  }
+
+  .subtab-btn {
+    flex: 1;
+    text-align: center;
+    padding: 8px 4px;
+    font-size: 0.8rem;
+  }
+
+  /* Registered Courses Grid */
+  .courses-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .course-item-card {
+    padding: 12px;
+  }
+
+  /* Preferences Grid */
+  .pref-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .pref-box {
+    padding: 12px;
+  }
+
+  .free-days-selector {
+    gap: 6px;
+  }
+
+  .day-chip {
+    flex: 1 1 calc(33.3% - 6px);
+    text-align: center;
+    padding: 6px 4px;
+    font-size: 0.72rem;
+  }
+
+  /* Doctor Preferences */
+  .doctor-pref-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 10px 8px;
+  }
+
+  .doctor-name-col {
+    width: 100%;
+    justify-content: space-between;
+    font-size: 0.88rem;
+  }
+
+  .doctor-rating-group {
+    display: flex;
+    width: 100%;
+    gap: 4px;
+  }
+
+  .doctor-rating-group .rating-btn {
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+    padding: 8px 2px;
+    font-size: 0.76rem;
+    touch-action: manipulation;
+  }
+
+  /* Blocked Chips & Presets */
+  .blocked-presets-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+
+  .blocked-presets-row .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .blocked-chip-tag {
+    font-size: 0.74rem;
+    padding: 4px 8px;
+  }
+
+  /* Guide Modal Mobile Optimization */
+  .modal-dialog {
+    width: 96%;
+    max-height: 94vh;
+    margin: 8px;
+    border-radius: var(--radius-md);
+  }
+
+  .modal-header {
+    padding: 10px 14px;
+  }
+
+  .modal-header .modal-title {
+    font-size: 0.95rem !important;
+  }
+
+  .modal-body {
+    padding: 12px 10px;
+    max-height: calc(94vh - 125px);
+  }
+
+  .guide-steps-container {
+    gap: 10px;
+  }
+
+  .guide-step-card {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .guide-step-badge {
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  .guide-step-title {
+    font-size: 0.9rem;
+  }
+
+  .guide-step-desc {
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+
+  .guide-step-desc ul {
+    margin: 4px 0 0 14px;
+  }
+
+  [dir="rtl"] .guide-step-desc ul {
+    margin: 4px 14px 0 0;
+  }
+
+  .guide-pro-tip {
+    padding: 6px 8px;
+    font-size: 0.74rem;
+    margin-top: 6px;
+  }
+
+  .guide-quick-action-box {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .guide-quick-action-box .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .modal-footer {
+    padding: 10px 14px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .modal-footer .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Toast Notifications */
+  .toast-container {
+    left: 12px !important;
+    right: 12px !important;
+    bottom: 12px;
+  }
+
+  .toast {
+    min-width: auto;
+    width: 100%;
+    font-size: 0.82rem;
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .brand-text h1 {
+    font-size: 0.95rem;
+  }
+
+  .tab-btn {
+    padding: 6px 2px;
+    font-size: 0.72rem;
+  }
+
+  .header-actions .btn:not(#btn-find-schedules-header) {
+    flex: 1 1 calc(50% - 6px);
+  }
+
+  .day-chip {
+    flex: 1 1 calc(50% - 6px);
+  }
 }
 
