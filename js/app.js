@@ -288,7 +288,15 @@ const App = (() => {
       const storedManual = localStorage.getItem('sched_manual_schedule');
       if (storedManual) {
         try {
-          state.manualSchedule = JSON.parse(storedManual) || {};
+          const parsed = JSON.parse(storedManual) || {};
+          const migrated = {};
+          for (const [k, v] of Object.entries(parsed)) {
+            if (v && v.courseId && v.group) {
+              const properKey = `${v.courseId}:::${v.group}`;
+              migrated[properKey] = v;
+            }
+          }
+          state.manualSchedule = migrated;
         } catch (e) {
           state.manualSchedule = {};
         }
@@ -911,8 +919,14 @@ const App = (() => {
     if (idx >= 0 && idx < state.courses.length) {
       const removed = state.courses.splice(idx, 1);
       if (removed[0]) {
-        delete state.manualSchedule[removed[0].id];
-        delete state.manualSchedule[removed[0].code];
+        const cid = removed[0].id;
+        const code = removed[0].code;
+        for (const key of Object.keys(state.manualSchedule)) {
+          const item = state.manualSchedule[key];
+          if (item && (item.courseId === cid || item.courseId === code || item.courseCode === code)) {
+            delete state.manualSchedule[key];
+          }
+        }
       }
       saveStateToStorage();
       renderCoursesList();
@@ -1717,7 +1731,10 @@ const App = (() => {
 
     matchingGroups.forEach(item => {
       const { courseId, courseName, courseCode, color, groupData } = item;
-      const isSelected = state.manualSchedule[courseId]?.group === groupData.group;
+      const key = `${courseId}:::${groupData.group}`;
+      const isSelected = !!state.manualSchedule[key];
+      const selectedForCourse = getSelectedGroupsForCourse(courseId);
+      const isMultiCourse = selectedForCourse.length > 1;
 
       const conflict = checkGroupConflictWithManualSchedule(courseId, groupData);
       const isClashing = !isSelected && conflict.clashing;
@@ -1731,7 +1748,10 @@ const App = (() => {
         <div class="${cardClass}" style="border-inline-start: 5px solid ${color || '#3B82F6'};">
           <div class="manual-group-header">
             <div class="manual-group-title">
-              <span style="color: ${color || 'var(--text-primary)'}; font-weight: 800;">${courseCode || courseName}</span>
+              <div style="display: flex; align-items: center; gap: 4px;">
+                <span style="color: ${color || 'var(--text-primary)'}; font-weight: 800;">${courseCode || courseName}</span>
+                ${isSelected && isMultiCourse ? getRedErrorTriangleSvg(isAr ? 'تم اختيار أكثر من مجموعة لهذه المادة' : 'Multiple groups selected for this subject') : ''}
+              </div>
               <span class="mini-group-tag" style="background: var(--bg-primary); border: 1px solid var(--border-color); font-weight: 800;">Group ${groupData.group}</span>
             </div>
             <div>
@@ -1780,6 +1800,39 @@ const App = (() => {
   }
 
   /**
+   * Helper: returns all selected groups for a course
+   */
+  function getSelectedGroupsForCourse(courseId) {
+    return Object.values(state.manualSchedule).filter(g => g.courseId === courseId || g.courseCode === courseId);
+  }
+
+  /**
+   * Helper: returns course IDs that have >1 group selected
+   */
+  function getMultiGroupCourses() {
+    const map = {};
+    Object.values(state.manualSchedule).forEach(g => {
+      map[g.courseId] = (map[g.courseId] || 0) + 1;
+    });
+    return Object.keys(map).filter(cid => map[cid] > 1);
+  }
+
+  /**
+   * Helper: red error triangle SVG with tooltip
+   */
+  function getRedErrorTriangleSvg(customTitle) {
+    const isAr = state.currentLang === 'ar';
+    const title = customTitle || (isAr ? 'تم اختيار أكثر من مجموعة لنفس المقرر' : 'Multiple groups selected for this subject');
+    return `<span class="red-error-triangle-icon" title="${title}">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="#EF4444" stroke="#EF4444" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: -2px; margin-inline: 2px;">
+        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" fill="#EF4444"></path>
+        <line x1="12" y1="9" x2="12" y2="13" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"></line>
+        <circle cx="12" cy="17" r="1.2" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.5"></circle>
+      </svg>
+    </span>`;
+  }
+
+  /**
    * Renders the complete course-by-course group selection list
    */
   function renderManualCoursesPicker() {
@@ -1793,8 +1846,8 @@ const App = (() => {
     let html = '';
 
     state.courses.forEach(course => {
-      const selectedGrp = state.manualSchedule[course.id];
-      const hasSelection = !!selectedGrp;
+      const selectedGroupsForCourse = getSelectedGroupsForCourse(course.id);
+      const isMultiCourse = selectedGroupsForCourse.length > 1;
 
       html += `
         <div class="manual-course-row">
@@ -1807,16 +1860,23 @@ const App = (() => {
               </div>
             </div>
             <div>
-              ${hasSelection
-                ? `<span class="selected-badge-pill" style="font-size: 0.82rem; padding: 4px 10px;">✓ ${isAr ? `المجموعة المختارة: ${selectedGrp.group}` : `Selected: Group ${selectedGrp.group}`}</span>`
-                : `<span style="font-size: 0.8rem; color: var(--text-muted);">${isAr ? 'لم يتم اختيار مجموعة بعد' : 'No group selected'}</span>`
+              ${selectedGroupsForCourse.length === 0
+                ? `<span style="font-size: 0.8rem; color: var(--text-muted);">${isAr ? 'لم يتم اختيار مجموعة بعد' : 'No group selected'}</span>`
+                : (isMultiCourse
+                    ? `<span class="multi-groups-badge" style="background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.4); color: #EF4444; font-weight: 700; font-size: 0.82rem; padding: 4px 10px; border-radius: 999px; display: inline-flex; align-items: center; gap: 6px;">
+                        ${getRedErrorTriangleSvg(isAr ? 'تم اختيار أكثر من مجموعة لنفس المقرر' : 'Multiple groups selected for this subject')}
+                        <span>${isAr ? `تم اختيار ${selectedGroupsForCourse.length} مجموعات: (${selectedGroupsForCourse.map(g => 'مجموعة ' + g.group).join('، ')})` : `${selectedGroupsForCourse.length} Groups Selected: (${selectedGroupsForCourse.map(g => 'Group ' + g.group).join(', ')})`}</span>
+                       </span>`
+                    : `<span class="selected-badge-pill" style="font-size: 0.82rem; padding: 4px 10px;">✓ ${isAr ? `المجموعة المختارة: ${selectedGroupsForCourse[0].group}` : `Selected: Group ${selectedGroupsForCourse[0].group}`}</span>`
+                  )
               }
             </div>
           </div>
 
           <div class="manual-course-groups-row">
             ${(course.groups || []).map(grp => {
-              const isSelected = hasSelection && selectedGrp.group === grp.group;
+              const key = `${course.id}:::${grp.group}`;
+              const isSelected = !!state.manualSchedule[key];
 
               let isDocMatch = false;
               if (targetDoctor) {
@@ -1841,7 +1901,10 @@ const App = (() => {
                 <div class="${cardClass}">
                   <div class="manual-group-header">
                     <div class="manual-group-title">
-                      <span>Group ${grp.group}</span>
+                      <div style="display: flex; align-items: center; gap: 4px;">
+                        <span>Group ${grp.group}</span>
+                        ${isSelected && isMultiCourse ? getRedErrorTriangleSvg(isAr ? 'تم اختيار أكثر من مجموعة لهذه المادة' : 'Multiple groups selected for this subject') : ''}
+                      </div>
                       ${isDocMatch ? `<span class="doc-highlight-pill">⭐ ${isAr ? 'مجموعة الدكتور' : "Doctor's Group"}</span>` : ''}
                     </div>
                     <div>
@@ -1894,8 +1957,8 @@ const App = (() => {
     const isAr = state.currentLang === 'ar';
     const candidateSessions = candidateGroup.sessions || [];
 
-    for (const [pickedCid, pickedGroup] of Object.entries(state.manualSchedule)) {
-      if (pickedCid === courseId) continue;
+    for (const [key, pickedGroup] of Object.entries(state.manualSchedule)) {
+      if (pickedGroup.courseId === courseId && pickedGroup.group === candidateGroup.group) continue;
 
       const pickedSessions = pickedGroup.sessions || [];
       for (const s1 of candidateSessions) {
@@ -1929,8 +1992,8 @@ const App = (() => {
 
     for (let i = 0; i < entries.length; i++) {
       for (let j = i + 1; j < entries.length; j++) {
-        const [cid1, grp1] = entries[i];
-        const [cid2, grp2] = entries[j];
+        const [k1, grp1] = entries[i];
+        const [k2, grp2] = entries[j];
 
         for (const s1 of (grp1.sessions || [])) {
           for (const s2 of (grp2.sessions || [])) {
@@ -1939,16 +2002,22 @@ const App = (() => {
                 Math.max(s1.startSlot, s2.startSlot),
                 Math.min(s1.endSlot, s2.endSlot)
               );
+              const sameCourse = grp1.courseId === grp2.courseId;
               conflicts.push({
                 course1: grp1.courseCode || grp1.courseName,
                 group1: grp1.group,
                 course2: grp2.courseCode || grp2.courseName,
                 group2: grp2.group,
+                sameCourse,
                 day: s1.day,
                 timeRange,
-                detail: isAr
-                  ? `تعارض بين ${grp1.courseCode || grp1.courseName} (مجموعة ${grp1.group}) و ${grp2.courseCode || grp2.courseName} (مجموعة ${grp2.group}) يوم ${s1.day} (${timeRange})`
-                  : `Clash between ${grp1.courseCode || grp1.courseName} (Group ${grp1.group}) and ${grp2.courseCode || grp2.courseName} (Group ${grp2.group}) on ${s1.day} (${timeRange})`
+                detail: sameCourse
+                  ? (isAr
+                      ? `تعارض بين مجموعتين مختارتين لنفس المقرر (${grp1.courseName}): مجموعة ${grp1.group} ومجموعة ${grp2.group} يوم ${s1.day} (${timeRange})`
+                      : `Clash between two groups of ${grp1.courseCode || grp1.courseName}: Group ${grp1.group} and Group ${grp2.group} on ${s1.day} (${timeRange})`)
+                  : (isAr
+                      ? `تعارض بين ${grp1.courseCode || grp1.courseName} (مجموعة ${grp1.group}) و ${grp2.courseCode || grp2.courseName} (مجموعة ${grp2.group}) يوم ${s1.day} (${timeRange})`
+                      : `Clash between ${grp1.courseCode || grp1.courseName} (Group ${grp1.group}) and ${grp2.courseCode || grp2.courseName} (Group ${grp2.group}) on ${s1.day} (${timeRange})`)
               });
             }
           }
@@ -1973,11 +2042,13 @@ const App = (() => {
     const groupData = (course.groups || []).find(g => g.group === groupName);
     if (!groupData) return;
 
-    if (state.manualSchedule[courseId]?.group === groupName) {
-      delete state.manualSchedule[courseId];
+    const key = `${course.id}:::${groupName}`;
+
+    if (state.manualSchedule[key]) {
+      delete state.manualSchedule[key];
       showToast(isAr ? `تم إلغاء اختيار مجموعة ${groupName} لمقرر ${course.name}` : `Deselected Group ${groupName} for ${course.name}`, 'info');
     } else {
-      state.manualSchedule[courseId] = {
+      state.manualSchedule[key] = {
         courseId: course.id,
         courseName: course.name,
         courseCode: course.code,
@@ -1994,9 +2065,12 @@ const App = (() => {
         }))
       };
 
-      const conflict = checkGroupConflictWithManualSchedule(courseId, groupData);
+      const conflict = checkGroupConflictWithManualSchedule(course.id, groupData);
+      const selectedForCourse = getSelectedGroupsForCourse(course.id);
       if (conflict.clashing) {
         showToast(`⚠️ ${conflict.detail}`, 'warning');
+      } else if (selectedForCourse.length > 1) {
+        showToast(isAr ? `⚠️ تم اختيار مجموعة ${groupName} (تم اختيار ${selectedForCourse.length} مجموعات لمقرر ${course.name})` : `⚠️ Selected Group ${groupName} (${selectedForCourse.length} groups selected for ${course.name})`, 'warning');
       } else {
         showToast(isAr ? `تم اختيار مجموعة ${groupName} لمقرر ${course.name}` : `Selected Group ${groupName} for ${course.name}`, 'success');
       }
@@ -2007,6 +2081,43 @@ const App = (() => {
     renderManualDoctorGroups();
     renderManualCoursesPicker();
     renderManualTimetable();
+  }
+
+  /**
+   * Deselects a group directly from a timetable card click or button
+   */
+  function deselectManualGroupFromTimetable(courseId, groupName, event) {
+    if (event) {
+      event.stopPropagation();
+      event.preventDefault();
+    }
+    const isAr = state.currentLang === 'ar';
+    const course = state.courses.find(c => c.id === courseId || c.code === courseId);
+    const courseTitle = course ? course.name : courseId;
+    const cid = course ? course.id : courseId;
+    const key = `${cid}:::${groupName}`;
+
+    if (state.manualSchedule[key]) {
+      delete state.manualSchedule[key];
+    } else {
+      delete state.manualSchedule[courseId];
+      delete state.manualSchedule[`${courseId}:::${groupName}`];
+    }
+
+    saveStateToStorage();
+    renderManualStatusBanner();
+    renderManualDoctorGroups();
+    renderManualCoursesPicker();
+    renderManualTimetable();
+
+    // If currently viewing timetable in Tab 3, re-sync Tab 3
+    if (state.currentTab === 'timetable' && state.solutions[state.activeSolutionIndex]?.id === 'sol_manual_custom') {
+      const sol = getManualSolution();
+      state.solutions[state.activeSolutionIndex] = sol;
+      renderCurrentSolution();
+    }
+
+    showToast(isAr ? `تم إلغاء اختيار مجموعة ${groupName} لمقرر ${courseTitle}` : `Deselected Group ${groupName} for ${courseTitle}`, 'info');
   }
 
   /**
@@ -2036,25 +2147,47 @@ const App = (() => {
 
     const isAr = state.currentLang === 'ar';
     const totalCourses = state.courses.length;
-    const selectedCount = Object.keys(state.manualSchedule).length;
+    const selectedEntries = Object.values(state.manualSchedule);
+    const selectedCount = selectedEntries.length;
+
+    // Group by courseId to detect multiple groups selected for same subject
+    const courseGroupsMap = {};
+    selectedEntries.forEach(g => {
+      courseGroupsMap[g.courseId] = (courseGroupsMap[g.courseId] || []);
+      courseGroupsMap[g.courseId].push(g);
+    });
+
+    const uniqueCoursesCount = Object.keys(courseGroupsMap).length;
+    const multiGroupCourses = Object.entries(courseGroupsMap).filter(([cid, grps]) => grps.length > 1);
+    const hasMultiGroup = multiGroupCourses.length > 0;
     const conflictResult = checkManualConflicts();
+    const hasConflict = conflictResult.hasConflict;
 
     const allSessions = [];
-    Object.values(state.manualSchedule).forEach(grp => {
+    selectedEntries.forEach(grp => {
       (grp.sessions || []).forEach(s => allSessions.push(s));
     });
     const daysSet = new Set(allSessions.map(s => s.day));
 
-    if (conflictResult.hasConflict) {
+    const multiWarnText = hasMultiGroup
+      ? `${getRedErrorTriangleSvg(isAr ? 'تم اختيار أكثر من مجموعة لنفس المقرر' : 'Multiple groups selected for this subject')} <span>${isAr ? `تنبيه: تم اختيار أكثر من مجموعة لنفس المقرر (${multiGroupCourses.map(([cid, grps]) => `${grps[0].courseName || cid} [${grps.map(g => g.group).join(', ')}]`).join('، ')})` : `Notice: More than one group selected for (${multiGroupCourses.map(([cid, grps]) => `${grps[0].courseCode || cid} [${grps.map(g => g.group).join(', ')}]`).join(', ')})`}</span>`
+      : '';
+
+    if (hasConflict) {
       banner.className = 'manual-status-banner is-conflict';
       banner.innerHTML = `
         <div class="manual-status-main">
-          <span>⚠️</span>
-          <span>${isAr ? `يوجد تعارض (${conflictResult.conflicts.length} تعارض)` : `Time Conflict Detected (${conflictResult.conflicts.length} Clash)`}</span>
-          <span style="font-size: 0.8rem; font-weight: 500; opacity: 0.9;">${conflictResult.conflicts[0].detail}</span>
+          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+            <span>⚠️</span>
+            <span style="font-weight: 800;">${isAr ? `يوجد تعارض في الجدول (${conflictResult.conflicts.length} تعارض)` : `Time Conflict Detected (${conflictResult.conflicts.length} Clash)`}</span>
+          </div>
+          <div style="font-size: 0.8rem; font-weight: 500; opacity: 0.95; margin-top: 2px;">
+            ${conflictResult.conflicts[0].detail}
+          </div>
+          ${hasMultiGroup ? `<div style="display: flex; align-items: center; gap: 6px; font-size: 0.78rem; margin-top: 4px;">${multiWarnText}</div>` : ''}
         </div>
         <div class="manual-status-stats">
-          <span>📚 ${selectedCount} / ${totalCourses} ${isAr ? 'مقررات تم اختيارها' : 'Courses Picked'}</span>
+          <span>📚 ${uniqueCoursesCount} / ${totalCourses} ${isAr ? 'مقررات' : 'Courses'} (${selectedCount} ${isAr ? 'مجموعات' : 'Groups'})</span>
           <span>📅 ${daysSet.size} ${isAr ? 'أيام نزول' : 'Days'}</span>
         </div>
       `;
@@ -2069,15 +2202,31 @@ const App = (() => {
           <span>📚 0 / ${totalCourses} ${isAr ? 'مقررات' : 'Courses'}</span>
         </div>
       `;
-    } else if (selectedCount < totalCourses) {
+    } else if (hasMultiGroup) {
+      banner.className = 'manual-status-banner is-conflict';
+      banner.innerHTML = `
+        <div class="manual-status-main">
+          <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+            ${multiWarnText}
+          </div>
+          <div style="font-size: 0.78rem; opacity: 0.9; margin-top: 2px;">
+            ${isAr ? 'الجدول خالٍ من التعارض الزمني لكن تم اختيار أكثر من مجموعة لمادة واحدة.' : 'No time clashes, but multiple groups are selected for the same course.'}
+          </div>
+        </div>
+        <div class="manual-status-stats">
+          <span>📚 ${uniqueCoursesCount} / ${totalCourses} ${isAr ? 'مقررات' : 'Courses'} (${selectedCount} ${isAr ? 'مجموعات' : 'Groups'})</span>
+          <span>📅 ${daysSet.size} ${isAr ? 'أيام' : 'Days'}</span>
+        </div>
+      `;
+    } else if (uniqueCoursesCount < totalCourses) {
       banner.className = 'manual-status-banner is-clean';
       banner.innerHTML = `
         <div class="manual-status-main">
           <span>✅</span>
-          <span>${isAr ? `الجدول خالٍ من التعارض حتى الآن (${selectedCount} من ${totalCourses} مواد)` : `Conflict-Free so far (${selectedCount} of ${totalCourses} courses)`}</span>
+          <span>${isAr ? `الجدول خالٍ من التعارض حتى الآن (${uniqueCoursesCount} من ${totalCourses} مواد)` : `Conflict-Free so far (${uniqueCoursesCount} of ${totalCourses} courses)`}</span>
         </div>
         <div class="manual-status-stats">
-          <span>📚 ${selectedCount} / ${totalCourses} ${isAr ? 'مقررات' : 'Courses'}</span>
+          <span>📚 ${uniqueCoursesCount} / ${totalCourses} ${isAr ? 'مقررات' : 'Courses'}</span>
           <span>📅 ${daysSet.size} ${isAr ? 'أيام' : 'Days'}</span>
         </div>
       `;
@@ -2089,7 +2238,7 @@ const App = (() => {
           <span>${isAr ? 'اكتمل جدولك بالكامل وهو خالٍ من أي تعارض بنسبة 100%!' : 'Your schedule is 100% complete and completely conflict-free!'}</span>
         </div>
         <div class="manual-status-stats">
-          <span>📚 ${selectedCount} / ${totalCourses} ${isAr ? 'مقررات' : 'Courses'}</span>
+          <span>📚 ${uniqueCoursesCount} / ${totalCourses} ${isAr ? 'مقررات' : 'Courses'}</span>
           <span>📅 ${daysSet.size} ${isAr ? 'أيام' : 'Days'}</span>
         </div>
       `;
@@ -2103,20 +2252,25 @@ const App = (() => {
     const isAr = state.currentLang === 'ar';
     const allSessions = [];
     const selectedGroups = [];
+    const courseGroupsMap = {};
 
-    Object.entries(state.manualSchedule).forEach(([cid, grp]) => {
+    Object.entries(state.manualSchedule).forEach(([key, grp]) => {
+      courseGroupsMap[grp.courseId] = (courseGroupsMap[grp.courseId] || []);
+      courseGroupsMap[grp.courseId].push(grp.group);
+
       selectedGroups.push({
-        courseId: cid,
+        courseId: grp.courseId,
         courseName: grp.courseName,
         courseCode: grp.courseCode,
         group: grp.group,
         color: grp.color,
         instructors: grp.instructors
       });
+
       (grp.sessions || []).forEach(s => {
         allSessions.push({
           ...s,
-          courseId: cid,
+          courseId: grp.courseId,
           courseName: grp.courseName,
           courseCode: grp.courseCode,
           group: grp.group,
@@ -2127,16 +2281,30 @@ const App = (() => {
 
     const conflictResult = checkManualConflicts();
     const daysSet = new Set(allSessions.map(s => s.day));
+    const multiGroupCourses = Object.entries(courseGroupsMap).filter(([cid, grps]) => grps.length > 1);
+
+    const badges = [
+      { text: isAr ? '✍️ جدول يدوي' : '✍️ Custom Schedule', type: 'manual' }
+    ];
+
+    if (conflictResult.hasConflict) {
+      badges.push({ text: isAr ? `⚠️ ${conflictResult.conflicts.length} تعارض` : `⚠️ ${conflictResult.conflicts.length} Clashes`, type: 'avoid' });
+    } else {
+      badges.push({ text: isAr ? '✅ بدون تعارض' : '✅ Conflict-Free', type: 'best' });
+    }
+
+    if (multiGroupCourses.length > 0) {
+      badges.push({
+        text: isAr ? `⚠️ ${multiGroupCourses.length} مواد بأكثر من مجموعة` : `⚠️ ${multiGroupCourses.length} Multi-Group Courses`,
+        type: 'avoid'
+      });
+    }
 
     return {
       id: 'sol_manual_custom',
+      isManual: true,
       rank: isAr ? 'يدوي' : 'Custom',
-      badges: [
-        { text: isAr ? '✍️ جدول يدوي' : '✍️ Custom Schedule', type: 'manual' },
-        conflictResult.hasConflict
-          ? { text: isAr ? '⚠️ به تعارض' : '⚠️ Clashing', type: 'avoid' }
-          : { text: isAr ? '✅ بدون تعارض' : '✅ Conflict-Free', type: 'best' }
-      ],
+      badges,
       compositeScore: conflictResult.hasConflict ? -1000 : 1000,
       totalGapSlots: 0,
       activeDaysCount: daysSet.size,
@@ -2695,6 +2863,7 @@ const App = (() => {
     loadSampleCourses,
     findSchedules: runOptimizer,
     selectManualGroup,
+    deselectManualGroupFromTimetable,
     clearManualSchedule,
     applyManualToTimetableTab,
     exportManualTimetable,

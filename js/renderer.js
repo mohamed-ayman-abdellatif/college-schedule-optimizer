@@ -104,6 +104,27 @@ const ScheduleRenderer = (() => {
 
     const isAr = lang === 'ar';
     const effectiveView = getEffectiveViewMode();
+    const canDeselect = !!(solution.isManual || solution.id === 'sol_manual_custom');
+
+    // Count selected groups per course to flag subjects with >1 group selected
+    const courseGroupCounts = {};
+    (solution.selectedGroups || []).forEach(g => {
+      if (g && g.courseId) {
+        courseGroupCounts[g.courseId] = (courseGroupCounts[g.courseId] || 0) + 1;
+      }
+    });
+    const isMultiCourse = (cid) => (courseGroupCounts[cid] || 0) > 1;
+
+    function getRedErrorTriangleSvg(customTitle) {
+      const title = customTitle || (isAr ? 'تم اختيار أكثر من مجموعة لنفس المقرر' : 'Multiple groups selected for this subject');
+      return `<span class="red-error-triangle-icon" title="${title}">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#EF4444" stroke="#EF4444" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: -2px; margin-inline: 2px;">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" fill="#EF4444"></path>
+          <line x1="12" y1="9" x2="12" y2="13" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"></line>
+          <circle cx="12" cy="17" r="1.2" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.5"></circle>
+        </svg>
+      </span>`;
+    }
 
     // Group sessions by day
     const sessionsByDay = {};
@@ -199,7 +220,7 @@ const ScheduleRenderer = (() => {
         `;
       });
 
-      // Render each session with gap detector
+      // Render each session with gap detector & clash detector
       let lastEnd = 0;
       sortedSessions.forEach(s => {
         if (lastEnd > 0 && s.startSlot > lastEnd + 1) {
@@ -213,20 +234,37 @@ const ScheduleRenderer = (() => {
             </div>
           `;
         }
-        lastEnd = s.endSlot;
+        lastEnd = Math.max(lastEnd, s.endSlot);
 
         const timeRange = formatSlotTimeRange(s.startSlot, s.endSlot);
         const typeClass = s.type === 'Lab.' ? 'type-lab' : (s.type === 'Sec.' ? 'type-sec' : 'type-lect');
         const typeLabel = isAr ? (s.type === 'Lab.' ? 'معمل' : (s.type === 'Sec.' ? 'سكشن' : 'محاضرة')) : s.type;
+        const isMulti = isMultiCourse(s.courseId);
+        const isClashing = sortedSessions.some(other =>
+          other !== s &&
+          (other.courseId !== s.courseId || other.group !== s.group) &&
+          s.startSlot <= other.endSlot && s.endSlot >= other.startSlot
+        );
 
         agendaHtml += `
-          <div class="agenda-session-card" style="border-inline-start: 4px solid ${s.color || '#3B82F6'};">
+          <div class="agenda-session-card ${isClashing ? 'is-clashing-session' : ''}" style="border-inline-start: 4px solid ${s.color || '#3B82F6'};">
             <div class="agenda-session-top">
-              <div class="agenda-session-code">
+              <div class="agenda-session-code" style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
                 <span style="color: ${s.color || 'var(--text-primary)'}; font-weight: 800;">${s.courseName}</span>
-                ${s.courseCode && s.courseCode !== s.courseName ? `<span style="font-size: 0.8rem; color: var(--text-muted); margin-inline-start: 4px;">(${s.courseCode})</span>` : ''}
+                ${s.courseCode && s.courseCode !== s.courseName ? `<span style="font-size: 0.8rem; color: var(--text-muted);">(${s.courseCode})</span>` : ''}
+                ${isMulti ? getRedErrorTriangleSvg(isAr ? 'تم اختيار أكثر من مجموعة لهذه المادة' : 'Multiple groups selected for this subject') : ''}
+                ${isClashing ? `<span class="agenda-clash-tag">⚠️ ${isAr ? 'تعارض' : 'CLASH'}</span>` : ''}
               </div>
-              <span class="session-badge ${typeClass}">${typeLabel}</span>
+              <div style="display: flex; align-items: center; gap: 6px;">
+                <span class="session-badge ${typeClass}">${typeLabel}</span>
+                ${canDeselect ? `
+                  <button class="agenda-deselect-btn" 
+                          title="${isAr ? `إلغاء اختيار مجموعة ${s.group}` : `Deselect Group ${s.group}`}"
+                          onclick="App.deselectManualGroupFromTimetable('${s.courseId}', '${s.group}', event)">
+                    ✕ ${isAr ? 'إلغاء' : 'Deselect'}
+                  </button>
+                ` : ''}
+              </div>
             </div>
             <div class="agenda-session-info">
               <span class="agenda-info-pill">
@@ -301,71 +339,163 @@ const ScheduleRenderer = (() => {
         </div>
       `;
 
-      // 16-slot tracker
-      const rowSlots = new Array(maxSlotUsed + 1).fill(null);
-
-      // Place sessions
+      // Connected components of overlapping sessions for this day
+      const clusters = [];
       daySessions.forEach(s => {
-        for (let i = s.startSlot; i <= s.endSlot; i++) {
-          rowSlots[i] = { kind: 'session', data: s };
+        const sStart = parseInt(s.startSlot, 10);
+        const sEnd = parseInt(s.endSlot, 10);
+        const overlappingIndices = [];
+
+        clusters.forEach((cl, idx) => {
+          const clStart = Math.min(...cl.map(item => parseInt(item.startSlot, 10)));
+          const clEnd = Math.max(...cl.map(item => parseInt(item.endSlot, 10)));
+          if (sStart <= clEnd && sEnd >= clStart) {
+            overlappingIndices.push(idx);
+          }
+        });
+
+        if (overlappingIndices.length === 0) {
+          clusters.push([s]);
+        } else {
+          const primaryIdx = overlappingIndices[0];
+          clusters[primaryIdx].push(s);
+          for (let k = overlappingIndices.length - 1; k >= 1; k--) {
+            const mergeIdx = overlappingIndices[k];
+            clusters[primaryIdx].push(...clusters[mergeIdx]);
+            clusters.splice(mergeIdx, 1);
+          }
         }
       });
 
-      // Place blocked slots
-      dayBlocked.forEach(b => {
-        for (let i = b.startSlot; i <= b.endSlot; i++) {
-          if (!rowSlots[i]) {
-            rowSlots[i] = { kind: 'blocked', data: b };
-          }
-        }
+      clusters.forEach(cl => {
+        cl.sort((a, b) => a.startSlot - b.startSlot);
+      });
+      clusters.sort((a, b) => {
+        const aStart = Math.min(...a.map(s => s.startSlot));
+        const bStart = Math.min(...b.map(s => s.startSlot));
+        return aStart - bStart;
       });
 
       // Render cells along this row
       let currSlot = 1;
       while (currSlot <= maxSlotUsed) {
-        const item = rowSlots[currSlot];
+        // Find cluster that covers currSlot
+        const matchingCluster = clusters.find(cl => {
+          const clStart = Math.min(...cl.map(s => s.startSlot));
+          const clEnd = Math.max(...cl.map(s => s.endSlot));
+          return currSlot >= clStart && currSlot <= clEnd;
+        });
 
-        if (item && item.kind === 'session' && item.data.startSlot === currSlot) {
-          const session = item.data;
-          const span = Math.min(session.endSlot, maxSlotUsed) - session.startSlot + 1;
-          const timeRange = formatSlotTimeRange(session.startSlot, session.endSlot);
-          const typeClass = session.type === 'Lab.' ? 'type-lab' : (session.type === 'Sec.' ? 'type-sec' : 'type-lect');
-          const typeLabel = isAr ? (session.type === 'Lab.' ? 'معمل' : (session.type === 'Sec.' ? 'سكشن' : 'محاضرة')) : session.type;
+        // Find blocked time that covers currSlot
+        const matchingBlocked = dayBlocked.find(b => currSlot >= b.startSlot && currSlot <= b.endSlot);
 
-          gridHtml += `
-            <div class="grid-session-card ${typeClass}"
-                 style="grid-column: span ${span}; border-inline-start-color: ${session.color || '#3B82F6'};"
-                 title="${session.courseName} (Group ${session.group})">
-              <div class="session-top">
-                <span class="session-code">${session.courseCode || session.courseName}</span>
-                <span class="session-badge ${typeClass}">${typeLabel}</span>
-              </div>
-              <div class="session-group">Group ${session.group}</div>
-              ${session.instructor && sessionHasInstructor(session) ? `
-                <div class="session-doc" title="${session.instructor}">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                  <span>${session.instructor}</span>
+        if (matchingCluster) {
+          const clStart = Math.min(...matchingCluster.map(s => s.startSlot));
+          const clEnd = Math.max(...matchingCluster.map(s => s.endSlot));
+          const span = Math.min(clEnd, maxSlotUsed) - currSlot + 1;
+
+          if (matchingCluster.length > 1) {
+            // CLASH: Multiple overlapping sessions in this slot!
+            const timeRange = formatSlotTimeRange(clStart, clEnd);
+
+            gridHtml += `
+              <div class="grid-clash-container"
+                   style="grid-column: span ${span};"
+                   title="${matchingCluster.length} clashing sessions">
+                <div class="clash-cell-header">
+                  <span class="clash-badge-pulse">⚠️ ${isAr ? 'تعارض' : 'CLASH'} (${matchingCluster.length})</span>
+                  <span class="clash-cell-time">${timeRange}</span>
                 </div>
-              ` : ''}
-              <div class="session-time">${timeRange}</div>
-            </div>
-          `;
+                <div class="clash-sessions-stack">
+                  ${matchingCluster.map(s => {
+                    const sTime = formatSlotTimeRange(s.startSlot, s.endSlot);
+                    const typeClass = s.type === 'Lab.' ? 'type-lab' : (s.type === 'Sec.' ? 'type-sec' : 'type-lect');
+                    const typeLabel = isAr ? (s.type === 'Lab.' ? 'معمل' : (s.type === 'Sec.' ? 'سكشن' : 'محاضرة')) : s.type;
+                    const isMulti = isMultiCourse(s.courseId);
+
+                    return `
+                      <div class="clash-mini-card" style="border-inline-start: 4px solid ${s.color || '#EF4444'};">
+                        <div class="clash-mini-top">
+                          <div style="display: flex; align-items: center; gap: 4px; overflow: hidden;">
+                            <span class="clash-mini-code" style="color: ${s.color || 'var(--text-primary)'};" title="${s.courseName}">
+                              ${s.courseCode || s.courseName}
+                            </span>
+                            ${isMulti ? getRedErrorTriangleSvg(isAr ? 'تم اختيار أكثر من مجموعة لهذه المادة' : 'Multiple groups selected for this subject') : ''}
+                          </div>
+                          <div style="display: flex; align-items: center; gap: 4px;">
+                            <span class="mini-group-pill">Grp ${s.group}</span>
+                            ${canDeselect ? `
+                              <button class="clash-mini-deselect-btn" 
+                                      title="${isAr ? `إلغاء اختيار مجموعة ${s.group}` : `Deselect Group ${s.group}`}"
+                                      onclick="App.deselectManualGroupFromTimetable('${s.courseId}', '${s.group}', event)">
+                                ✕
+                              </button>
+                            ` : ''}
+                          </div>
+                        </div>
+                        <div class="clash-mini-meta">
+                          <span class="session-badge ${typeClass}">${typeLabel}</span>
+                          ${s.instructor && sessionHasInstructor(s) ? `<span class="clash-mini-doc" title="${s.instructor}">👨‍🏫 ${s.instructor}</span>` : ''}
+                          <span class="clash-mini-time">⏰ ${sTime}</span>
+                        </div>
+                      </div>
+                    `;
+                  }).join('')}
+                </div>
+              </div>
+            `;
+          } else {
+            // Single non-clashing session
+            const session = matchingCluster[0];
+            const timeRange = formatSlotTimeRange(session.startSlot, session.endSlot);
+            const typeClass = session.type === 'Lab.' ? 'type-lab' : (session.type === 'Sec.' ? 'type-sec' : 'type-lect');
+            const typeLabel = isAr ? (session.type === 'Lab.' ? 'معمل' : (session.type === 'Sec.' ? 'سكشن' : 'محاضرة')) : session.type;
+            const isMulti = isMultiCourse(session.courseId);
+
+            gridHtml += `
+              <div class="grid-session-card ${typeClass}"
+                   style="grid-column: span ${span}; border-inline-start-color: ${session.color || '#3B82F6'};"
+                   title="${session.courseName} (Group ${session.group})">
+                ${canDeselect ? `
+                  <button class="timetable-deselect-btn" 
+                          title="${isAr ? `إلغاء اختيار مجموعة ${session.group}` : `Deselect Group ${session.group}`}"
+                          onclick="App.deselectManualGroupFromTimetable('${session.courseId}', '${session.group}', event)">
+                    ✕
+                  </button>
+                ` : ''}
+                <div class="session-top">
+                  <div style="display: flex; align-items: center; gap: 4px; overflow: hidden;">
+                    <span class="session-code">${session.courseCode || session.courseName}</span>
+                    ${isMulti ? getRedErrorTriangleSvg(isAr ? 'تم اختيار أكثر من مجموعة لهذه المادة' : 'Multiple groups selected for this subject') : ''}
+                  </div>
+                  <span class="session-badge ${typeClass}">${typeLabel}</span>
+                </div>
+                <div class="session-group">Group ${session.group}</div>
+                ${session.instructor && sessionHasInstructor(session) ? `
+                  <div class="session-doc" title="${session.instructor}">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    <span>${session.instructor}</span>
+                  </div>
+                ` : ''}
+                <div class="session-time">${timeRange}</div>
+              </div>
+            `;
+          }
           currSlot += span;
-        } else if (item && item.kind === 'blocked' && item.data.startSlot === currSlot) {
-          const bData = item.data;
-          const span = Math.min(bData.endSlot, maxSlotUsed) - bData.startSlot + 1;
-          const timeRange = formatSlotTimeRange(bData.startSlot, bData.endSlot);
+        } else if (matchingBlocked) {
+          const span = Math.min(matchingBlocked.endSlot, maxSlotUsed) - currSlot + 1;
+          const timeRange = formatSlotTimeRange(matchingBlocked.startSlot, matchingBlocked.endSlot);
 
           gridHtml += `
             <div class="grid-blocked-cell"
                  style="grid-column: span ${span};"
-                 title="${bData.label} (${timeRange})">
-              <div class="blocked-badge">🚫 ${bData.label}</div>
+                 title="${matchingBlocked.label} (${timeRange})">
+              <div class="blocked-badge">🚫 ${matchingBlocked.label}</div>
               <div class="blocked-time">${timeRange}</div>
             </div>
           `;
           currSlot += span;
-        } else if (!item) {
+        } else {
           const isGap = isSlotInGap(dayKey, currSlot, solution.gapDetails);
           gridHtml += `
             <div class="grid-empty-cell ${isGap ? 'gap-highlight' : ''}"
@@ -373,8 +503,6 @@ const ScheduleRenderer = (() => {
               ${isGap ? `<span class="gap-icon">☕</span>` : ''}
             </div>
           `;
-          currSlot++;
-        } else {
           currSlot++;
         }
       }
