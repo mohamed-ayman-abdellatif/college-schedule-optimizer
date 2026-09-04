@@ -72,6 +72,9 @@
       <button class="tab-btn" data-tab="timetable">
         <span>🗓️</span> <span data-i18n="tabTimetable">3. Timetable Results</span>
       </button>
+      <button class="tab-btn" data-tab="manual">
+        <span>🛠️</span> <span data-i18n="tabManual">4. Manual Mode</span>
+      </button>
     </nav>
 
     <!-- TAB 1: ADD COURSES -->
@@ -354,6 +357,128 @@
       </div>
     </section>
 
+    <!-- TAB 4: MANUAL MODE -->
+    <section id="tab-manual" class="tab-content" style="display: none;">
+      <!-- Dashboard & Instructions -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">
+              <span>🛠️</span> <span data-i18n="manualTitle">Manual Schedule Builder</span>
+            </div>
+            <div class="card-subtitle" data-i18n="manualSubtitle">
+              Select your favorite doctors to see all their groups, pick groups manually, and build your custom schedule with instant clash detection.
+            </div>
+          </div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button id="btn-clear-manual" class="btn btn-outline btn-sm" style="color: var(--danger);" data-i18n="clearManualSchedule">
+              <span>🔄</span> <span>Reset Schedule</span>
+            </button>
+            <button id="btn-apply-manual-to-opt" class="btn btn-primary btn-sm" data-i18n="viewInTimetable">
+              <span>🗓️</span> <span>View in Timetable Results</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Real-time Status / Conflict Banner -->
+        <div id="manual-status-banner" class="manual-status-banner">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+
+      <!-- Doctor Explorer & Group Finder Card -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">
+              <span>👨‍🏫</span> <span data-i18n="manualDocSearchTitle">Explore by Doctor / Professor</span>
+            </div>
+            <div class="card-subtitle" data-i18n="manualDocSearchDesc">
+              Choose any doctor to reveal all their lecture groups, days, times, and quickly add them to your schedule
+            </div>
+          </div>
+        </div>
+
+        <div class="manual-doctor-controls">
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-end;">
+            <div style="flex: 1; min-width: 260px;">
+              <label for="manual-doctor-select" style="font-size: 0.85rem; font-weight: 700; margin-bottom: 6px; display: block;" data-i18n="selectDoctorLabel">
+                Select Doctor / Professor:
+              </label>
+              <select id="manual-doctor-select" class="select-input" style="width: 100%; padding: 10px 14px; border-radius: var(--radius-md); background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-color); font-size: 0.95rem;">
+                <option value="">-- Choose a doctor to view their groups --</option>
+              </select>
+            </div>
+
+            <div style="flex: 1; min-width: 220px;">
+              <label for="manual-doctor-search-input" style="font-size: 0.85rem; font-weight: 700; margin-bottom: 6px; display: block;" data-i18n="searchDoctorLabel">
+                Or Search Doctor / Course:
+              </label>
+              <input type="text" id="manual-doctor-search-input" class="text-input" placeholder="Search doctor or course..." style="width: 100%; padding: 10px 14px; border-radius: var(--radius-md); background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-color); font-size: 0.95rem;" />
+            </div>
+          </div>
+
+          <!-- Doctor's Groups Showcase Container -->
+          <div id="manual-doctor-groups-container" style="margin-top: 16px;">
+            <!-- Rendered by JavaScript: Cards of groups taught by the chosen doctor -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Course-by-Course Group Selector Card -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">
+              <span>📚</span> <span data-i18n="manualCourseGroupsTitle">Course Groups & Instant Conflict Checker</span>
+            </div>
+            <div class="card-subtitle" data-i18n="manualCourseGroupsDesc">
+              Pick one group for each course. Groups with time clashes with your current picks will be highlighted in red.
+            </div>
+          </div>
+        </div>
+
+        <div id="manual-courses-picker-container" class="manual-courses-list">
+          <!-- Rendered by JavaScript: List of courses with their groups -->
+        </div>
+      </div>
+
+      <!-- Live Custom Timetable Card -->
+      <div class="card" id="manual-timetable-card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">
+              <span>📅</span> <span data-i18n="manualTimetableTitle">Your Custom Timetable Preview</span>
+            </div>
+            <div class="card-subtitle" data-i18n="manualTimetableDesc">
+              Interactive 16-period schedule showing your custom selections and any time overlaps
+            </div>
+          </div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button id="btn-manual-export-png" class="btn btn-secondary btn-sm" data-i18n="exportPng">
+              <span>🖼️</span> <span>Export PNG</span>
+            </button>
+            <button id="btn-manual-export-ics" class="btn btn-secondary btn-sm" data-i18n="exportIcs">
+              <span>📲</span> <span>Google Calendar (.ics)</span>
+            </button>
+            <button id="btn-manual-print" class="btn btn-primary btn-sm" data-i18n="printSchedule">
+              <span>🖨️</span> <span>Print Timetable</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Scroll Hint -->
+        <div class="mobile-scroll-hint">
+          <span>👈</span> <span data-i18n="mobileSwipeHint">Swipe horizontally to view all 16 periods 👈👉</span> <span>👉</span>
+        </div>
+
+        <!-- Render Target for Custom Timetable Grid -->
+        <div id="manual-timetable-render-container">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- Developer Prayer Note & Footer -->
@@ -575,18 +700,40 @@
     </div>
   </div>
 
+  <!-- Optimizer Loading Modal (Progress Bar & Live Steps) -->
+  <div id="optimizer-loading-modal" class="modal-backdrop" style="display: none !important;">
+    <div class="modal-dialog optimizer-loading-dialog">
+      <div class="optimizer-loading-content">
+        <div class="loading-animation-wrapper">
+          <div class="loading-pulse-ring"></div>
+          <div class="loading-center-icon">🗓️</div>
+        </div>
+        <h3 class="loading-title" data-i18n="loadingTitle">Generating Optimal Schedules...</h3>
+        <p class="loading-step-text" id="optimizer-loading-step" data-i18n="loadingStep1">Analyzing course combinations and lecture groups...</p>
+        
+        <div class="loading-progress-track">
+          <div class="loading-progress-bar" id="optimizer-progress-bar" style="width: 15%;"></div>
+        </div>
+
+        <div class="loading-footer-tip" data-i18n="loadingFooterTip">
+          ⚡ Please wait a moment while the optimizer computes the best clash-free schedules for you!
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Toast Notification Container -->
   <div id="toast-container" class="toast-container"></div>
 
   <!-- Scripts with Cache Busting -->
   <script src="js/parser.js?v=4.2"></script>
   <script src="js/sampleData.js?v=4.2"></script>
-  <script src="js/optimizer.js?v=4.5"></script>
+  <script src="js/optimizer.js?v=4.6"></script>
   <script src="js/imageExtractor.js?v=4.2"></script>
-  <script src="js/renderer.js?v=4.2"></script>
+  <script src="js/renderer.js?v=4.6"></script>
   <script src="js/exporter.js?v=4.2"></script>
   <script src="js/analytics.js?v=4.2"></script>
   <script src="js/telemetry.js?v=4.4"></script>
-  <script src="js/app.js?v=4.5"></script>
+  <script src="js/app.js?v=4.6"></script>
 </body>
 </html>

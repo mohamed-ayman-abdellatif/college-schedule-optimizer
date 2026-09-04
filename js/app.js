@@ -27,7 +27,10 @@ const App = (() => {
     currentTab: 'courses',
     currentLang: 'en',
     currentTheme: 'dark',
-    imageDetectionDraft: null
+    imageDetectionDraft: null,
+    manualSchedule: {},
+    manualSelectedDoctor: '',
+    manualSearchQuery: ''
   };
 
   // Translations
@@ -38,6 +41,7 @@ const App = (() => {
       tabCourses: '1. Add Courses',
       tabPreferences: '2. Doctor & Goals',
       tabTimetable: '3. Timetable Results',
+      tabManual: '4. Manual Mode',
       loadSampleBtn: 'Load Example Courses',
       findSchedulesBtn: 'Find Best Schedules',
       pasteHtmlTab: 'Paste HTML Code',
@@ -91,7 +95,25 @@ const App = (() => {
       privacyDesc: '🔒 100% Anonymous & Zero Cookies',
       howItWorksTitle: '⚡ How is this tracked?',
       howItWorksDesc: 'This counter runs completely serverlessly on GitHub Pages using an atomic presence heartbeat. When anyone opens the website, their browser sends a privacy-safe presence ping every 45s. When they close the tab, the active count updates in real-time.',
-      closeBtn: 'Close'
+      closeBtn: 'Close',
+      manualTitle: 'Manual Schedule Builder',
+      manualSubtitle: 'Select your favorite doctors to see all their groups, pick groups manually, and build your custom schedule with instant clash detection.',
+      clearManualSchedule: 'Reset Schedule',
+      viewInTimetable: 'View in Timetable Results',
+      manualDocSearchTitle: 'Explore by Doctor / Professor',
+      manualDocSearchDesc: 'Choose any doctor to reveal all their lecture groups, days, times, and quickly add them to your schedule',
+      selectDoctorLabel: 'Select Doctor / Professor:',
+      searchDoctorLabel: 'Or Search Doctor / Course:',
+      manualCourseGroupsTitle: 'Course Groups & Instant Conflict Checker',
+      manualCourseGroupsDesc: 'Pick one group for each course. Groups with time clashes with your current picks will be highlighted in red.',
+      manualTimetableTitle: 'Your Custom Timetable Preview',
+      manualTimetableDesc: 'Interactive 16-period schedule showing your custom selections and any time overlaps',
+      loadingTitle: 'Generating Optimal Schedules...',
+      loadingStep1: 'Analyzing course combinations and lecture groups...',
+      loadingStep2: 'Filtering blocked times and free days...',
+      loadingStep3: 'Applying doctor preferences and calculating gaps...',
+      loadingStep4: 'Ranking clash-free schedules...',
+      loadingFooterTip: '⚡ Please wait a moment while the optimizer computes the best clash-free schedules for you!'
     },
     ar: {
       appTitle: 'محول ومحسن الجداول الجامعية',
@@ -99,6 +121,7 @@ const App = (() => {
       tabCourses: '١. المقررات والسكاشن',
       tabPreferences: '٢. اختيار الدكاترة والأهداف',
       tabTimetable: '٣. الجدول النهائي',
+      tabManual: '٤. الوضع اليدوي',
       loadSampleBtn: 'تحميل المقررات التجريبية',
       findSchedulesBtn: 'توليد أفضل الجداول',
       pasteHtmlTab: 'نسخ ولصق كود HTML',
@@ -152,7 +175,25 @@ const App = (() => {
       privacyDesc: '🔒 مجهول 100% وبدون أي ملفات تعريف ارتباط (Cookies)',
       howItWorksTitle: '⚡ كيف يتم حساب هذا العداد؟',
       howItWorksDesc: 'يعمل هذا العداد بدون خادم تماماً (Serverless) على GitHub Pages عبر نبضات تواجد لحظية. بمجرد فتح الموقع، يرسل المتصفح إشارة نشاط كل 45 ثانية بأمان وخصوصية تامة، وتتحدث الأرقام لحظياً لجميع الطلاب.',
-      closeBtn: 'إغلاق'
+      closeBtn: 'إغلاق',
+      manualTitle: 'صانع الجدول اليدوي',
+      manualSubtitle: 'اختر دكتورك المفضل لرؤية كافة مجموعاته ومواعيد محاضراته، واختر المجموعات بنفسك لتكوين جدولك مع فحص فوري لأي تعارض.',
+      clearManualSchedule: 'إعادة ضبط الجدول',
+      viewInTimetable: 'عرض في شاشة الجداول',
+      manualDocSearchTitle: 'استكشاف المجموعات حسب الدكتور',
+      manualDocSearchDesc: 'اختر أي دكتور لمعرفة كافة المجموعات التي يقوم بتدريسها ومواعيدها وإضافتها لجدولك بضغطة واحدة',
+      selectDoctorLabel: 'اختر الدكتور / الأستاذ:',
+      searchDoctorLabel: 'أو ابحث بالاسم / المادة:',
+      manualCourseGroupsTitle: 'مجموعات المقررات والفحص الفوري للتعارض',
+      manualCourseGroupsDesc: 'اختر مجموعة واحدة لكل مادة. المجموعات التي تتعارض مع اختياراتك الحالية ستظهر باللون الأحمر فوراً.',
+      manualTimetableTitle: 'معاينة جدولك اليدوي المخصص',
+      manualTimetableDesc: 'جدول تفاعلي 16 فترة يعرض اختياراتك اليدوية وأي تعارضات بالألوان الفورية',
+      loadingTitle: 'جاري حساب أفضل الجداول الدراسية...',
+      loadingStep1: 'فحص وتجميع مجموعات المواد والمحاضرات...',
+      loadingStep2: 'استبعاد أوقات التدريب المحظورة وأيام الفراغ...',
+      loadingStep3: 'تطبيق تفضيلات الدكاترة وحساب فترات الفراغ...',
+      loadingStep4: 'ترتيب أفضل الجداول الخالية من التعارض...',
+      loadingFooterTip: '⚡ انتظر لحظات بينما يقوم المحسن باكتشاف أفضل توافقات الجداول بدون تعارض!'
     }
   };
 
@@ -218,6 +259,7 @@ const App = (() => {
       localStorage.setItem('sched_doc_prefs', JSON.stringify(state.doctorPreferences));
       localStorage.setItem('sched_prefs', JSON.stringify(state.preferences));
       localStorage.setItem('sched_blocked_times', JSON.stringify(state.blockedTimes));
+      localStorage.setItem('sched_manual_schedule', JSON.stringify(state.manualSchedule || {}));
       localStorage.setItem('sched_theme', state.currentTheme);
       localStorage.setItem('sched_lang', state.currentLang);
     } catch (e) {
@@ -240,6 +282,15 @@ const App = (() => {
           localStorage.setItem('sched_doc_prefs', JSON.stringify(state.doctorPreferences));
         } catch (e) {
           state.doctorPreferences = {};
+        }
+      }
+
+      const storedManual = localStorage.getItem('sched_manual_schedule');
+      if (storedManual) {
+        try {
+          state.manualSchedule = JSON.parse(storedManual) || {};
+        } catch (e) {
+          state.manualSchedule = {};
         }
       }
 
@@ -492,6 +543,26 @@ const App = (() => {
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') closeGuideModal();
     });
+
+    // Manual Mode Listeners
+    document.getElementById('manual-doctor-select')?.addEventListener('change', e => {
+      state.manualSelectedDoctor = e.target.value;
+      renderManualDoctorGroups();
+      renderManualCoursesPicker();
+    });
+
+    document.getElementById('manual-doctor-search-input')?.addEventListener('input', e => {
+      state.manualSearchQuery = e.target.value.trim().toLowerCase();
+      renderManualDoctorGroups();
+      renderManualCoursesPicker();
+    });
+
+    document.getElementById('btn-clear-manual')?.addEventListener('click', clearManualSchedule);
+    document.getElementById('btn-apply-manual-to-opt')?.addEventListener('click', applyManualToTimetableTab);
+
+    document.getElementById('btn-manual-export-png')?.addEventListener('click', () => exportManualTimetable('png'));
+    document.getElementById('btn-manual-export-ics')?.addEventListener('click', () => exportManualTimetable('ics'));
+    document.getElementById('btn-manual-print')?.addEventListener('click', () => exportManualTimetable('print'));
   }
 
   function switchTab(tabId) {
@@ -511,6 +582,8 @@ const App = (() => {
         renderSolutionsSelector();
         renderCurrentSolution();
       }
+    } else if (tabId === 'manual') {
+      renderManualMode();
     }
   }
 
@@ -761,6 +834,7 @@ const App = (() => {
     saveStateToStorage();
     renderCoursesList();
     renderDoctorPreferences();
+    if (state.currentTab === 'manual') renderManualMode();
     const isAr = state.currentLang === 'ar';
     showToast(isAr
       ? `تم تحميل ${state.courses.length} مقررات دراسية بنجاح!`
@@ -836,9 +910,14 @@ const App = (() => {
   function removeCourse(idx) {
     if (idx >= 0 && idx < state.courses.length) {
       const removed = state.courses.splice(idx, 1);
+      if (removed[0]) {
+        delete state.manualSchedule[removed[0].id];
+        delete state.manualSchedule[removed[0].code];
+      }
       saveStateToStorage();
       renderCoursesList();
       renderDoctorPreferences();
+      if (state.currentTab === 'manual') renderManualMode();
       showToast(`Removed course: ${removed[0]?.name}`, 'info');
     }
   }
@@ -1349,7 +1428,7 @@ const App = (() => {
   }
 
   /**
-   * Run Optimizer Engine
+   * Run Optimizer Engine with Animated Loading Modal & Progress Bar
    */
   function runOptimizer() {
     if (state.courses.length === 0) {
@@ -1357,49 +1436,760 @@ const App = (() => {
       return;
     }
 
-    showToast('Solving schedule constraints and minimizing gaps...', 'info');
+    const modal = document.getElementById('optimizer-loading-modal');
+    const stepEl = document.getElementById('optimizer-loading-step');
+    const progressBar = document.getElementById('optimizer-progress-bar');
+    const isAr = state.currentLang === 'ar';
 
+    if (modal) {
+      modal.style.setProperty('display', 'flex', 'important');
+    }
+    if (progressBar) progressBar.style.width = '15%';
+    if (stepEl) {
+      stepEl.textContent = isAr
+        ? 'فحص وتجميع مجموعات المواد والمحاضرات...'
+        : 'Analyzing course combinations and lecture groups...';
+    }
+
+    // Step 2: 120ms
     setTimeout(() => {
-      const result = ScheduleOptimizer.findOptimalSchedules(state.courses, {
-        doctorPreferences: state.doctorPreferences,
-        gapWeight: state.preferences.gapWeight,
-        daysWeight: state.preferences.daysWeight,
-        doctorWeight: state.preferences.doctorWeight,
-        earlyWeight: state.preferences.earlyWeight,
-        freeDays: state.preferences.freeDays,
-        blockedTimes: state.blockedTimes
-      });
-
-      if (!result.success || result.solutions.length === 0) {
-        showToast(result.message || 'No clash-free schedules found. Try relaxing free days or unblocking some times.', 'error');
-        return;
+      if (progressBar) progressBar.style.width = '45%';
+      if (stepEl) {
+        stepEl.textContent = isAr
+          ? 'استبعاد أوقات التدريب المحظورة وأيام الفراغ...'
+          : 'Filtering blocked times and free days...';
       }
 
-      state.solutions = result.solutions;
-      state.activeSolutionIndex = 0;
+      // Step 3: 240ms
+      setTimeout(() => {
+        if (progressBar) progressBar.style.width = '80%';
+        if (stepEl) {
+          stepEl.textContent = isAr
+            ? 'تطبيق تفضيلات الدكاترة وحساب فترات الفراغ...'
+            : 'Applying doctor preferences and calculating gaps...';
+        }
 
-      // Switch to Timetable tab
-      switchTab('timetable');
-      renderSolutionsSelector();
-      renderCurrentSolution();
+        // Run Optimizer solver asynchronously
+        setTimeout(() => {
+          let result;
+          try {
+            result = ScheduleOptimizer.findOptimalSchedules(state.courses, {
+              doctorPreferences: state.doctorPreferences,
+              gapWeight: state.preferences.gapWeight,
+              daysWeight: state.preferences.daysWeight,
+              doctorWeight: state.preferences.doctorWeight,
+              earlyWeight: state.preferences.earlyWeight,
+              freeDays: state.preferences.freeDays,
+              blockedTimes: state.blockedTimes
+            });
+          } catch (err) {
+            console.error('Optimizer error:', err);
+            result = { success: false, message: 'An unexpected error occurred during optimization.' };
+          }
 
+          if (progressBar) progressBar.style.width = '100%';
+          if (stepEl) {
+            stepEl.textContent = isAr
+              ? 'ترتيب أفضل الجداول الخالية من التعارض...'
+              : 'Ranking clash-free schedules...';
+          }
+
+          setTimeout(() => {
+            if (modal) modal.style.setProperty('display', 'none', 'important');
+
+            if (!result.success || !result.solutions || result.solutions.length === 0) {
+              showToast(result.message || 'No clash-free schedules found. Try relaxing free days or unblocking some times.', 'error');
+              return;
+            }
+
+            state.solutions = result.solutions;
+            state.activeSolutionIndex = 0;
+
+            // Switch to Timetable tab
+            switchTab('timetable');
+            renderSolutionsSelector();
+            renderCurrentSolution();
+
+            if (result.fallbackNotice) {
+              showToast(
+                isAr
+                  ? `⚠️ تم توليد الجداول! بعض الدكاترة الإجباريين أوقاتهم متعارضة، تم إدراج أكبر عدد ممكن منهم في الجداول الأولى.`
+                  : result.fallbackNotice,
+                'warning'
+              );
+            } else {
+              showToast(
+                isAr
+                  ? `تم بنجاح! تم العثور على ${result.validCount} جدول بدون أي تعارض.`
+                  : `Success! Found ${result.validCount} clash-free schedules. Top options ranked below.`,
+                'success'
+              );
+            }
+          }, 220);
+        }, 80);
+      }, 120);
+    }, 120);
+  }
+
+  /* ==========================================================================
+     Tab 4: Manual Mode (Build Your Own Schedule)
+     ========================================================================== */
+
+  /**
+   * Main render method for Tab 4
+   */
+  function renderManualMode() {
+    if (!state.courses || state.courses.length === 0) {
+      const banner = document.getElementById('manual-status-banner');
       const isAr = state.currentLang === 'ar';
-      if (result.fallbackNotice) {
-        showToast(
-          isAr
-            ? `⚠️ تم توليد الجداول! بعض الدكاترة الإجباريين أوقاتهم متعارضة، تم إدراج أكبر عدد ممكن منهم في الجداول الأولى.`
-            : result.fallbackNotice,
-          'warning'
-        );
-      } else {
-        showToast(
-          isAr
-            ? `تم بنجاح! تم العثور على ${result.validCount} جدول بدون أي تعارض.`
-            : `Success! Found ${result.validCount} clash-free schedules. Top options ranked below.`,
-          'success'
-        );
+      if (banner) {
+        banner.className = 'manual-status-banner';
+        banner.innerHTML = `
+          <div class="manual-status-main">
+            <span>ℹ️</span>
+            <span>${isAr ? 'لم يتم إضافة مقررات بعد. برجاء إضافة مواد في التبويب الأول أو الضغط على "تحميل المقررات التجريبية".' : 'No courses added yet. Please add courses in Tab 1 or click "Load Example Courses".'}</span>
+          </div>
+        `;
       }
-    }, 100);
+      const docContainer = document.getElementById('manual-doctor-groups-container');
+      if (docContainer) docContainer.innerHTML = '';
+      const coursesContainer = document.getElementById('manual-courses-picker-container');
+      if (coursesContainer) coursesContainer.innerHTML = '';
+      const ttContainer = document.getElementById('manual-timetable-render-container');
+      if (ttContainer) ttContainer.innerHTML = '';
+      return;
+    }
+
+    populateManualDoctorDropdown();
+    renderManualDoctorGroups();
+    renderManualCoursesPicker();
+    renderManualStatusBanner();
+    renderManualTimetable();
+  }
+
+  /**
+   * Populates the Doctor selection dropdown in Tab 4
+   */
+  function populateManualDoctorDropdown() {
+    const select = document.getElementById('manual-doctor-select');
+    if (!select) return;
+
+    const isAr = state.currentLang === 'ar';
+    const doctorMap = new Map();
+
+    state.courses.forEach(course => {
+      (course.groups || []).forEach(grp => {
+        (grp.instructors || []).forEach(rawInst => {
+          const inst = (rawInst || '').trim();
+          if (!inst || inst === 'Not Specified' || inst === 'غير محدد') return;
+          if (!doctorMap.has(inst)) doctorMap.set(inst, new Set());
+          doctorMap.get(inst).add(course.name || course.code);
+        });
+        (grp.sessions || []).forEach(sess => {
+          const inst = (sess.instructor || '').trim();
+          if (!inst || inst === 'Not Specified' || inst === 'غير محدد') return;
+          if (!doctorMap.has(inst)) doctorMap.set(inst, new Set());
+          doctorMap.get(inst).add(course.name || course.code);
+        });
+      });
+    });
+
+    const doctorsList = Array.from(doctorMap.keys());
+    doctorsList.sort((a, b) => {
+      const aIsDoc = a.includes('د.') || a.toLowerCase().includes('dr.');
+      const bIsDoc = b.includes('د.') || b.toLowerCase().includes('dr.');
+      if (aIsDoc && !bIsDoc) return -1;
+      if (!aIsDoc && bIsDoc) return 1;
+      return a.localeCompare(b, 'ar');
+    });
+
+    const currentVal = state.manualSelectedDoctor || '';
+    let html = `<option value="">${isAr ? '-- اختر دكتوراً لعرض كافة مجموعاته --' : '-- Choose a doctor to view their groups --'}</option>`;
+
+    doctorsList.forEach(doc => {
+      const coursesTaught = Array.from(doctorMap.get(doc)).join(', ');
+      const isSelected = doc === currentVal ? 'selected' : '';
+      const isDoc = doc.includes('د.') || doc.toLowerCase().includes('dr.');
+      const icon = isDoc ? '🎓' : '🔬';
+      html += `<option value="${doc}" ${isSelected}>${icon} ${doc} (${coursesTaught})</option>`;
+    });
+
+    select.innerHTML = html;
+  }
+
+  /**
+   * Renders the groups taught by the selected/searched doctor
+   */
+  function renderManualDoctorGroups() {
+    const container = document.getElementById('manual-doctor-groups-container');
+    if (!container) return;
+
+    const isAr = state.currentLang === 'ar';
+    const targetDoctor = (state.manualSelectedDoctor || '').trim();
+    const query = (state.manualSearchQuery || '').trim().toLowerCase();
+
+    if (!targetDoctor && !query) {
+      container.innerHTML = `
+        <div style="text-align: center; padding: 24px; color: var(--text-muted); font-size: 0.9rem; background: var(--bg-secondary); border-radius: var(--radius-md); border: 1px dashed var(--border-color);">
+          <span>👆</span> <span>${isAr ? 'اختر دكتوراً من القائمة أعلاه أو اكتب اسمه في خانة البحث لعرض كافة مواعيد مجموعاته هنا.' : 'Choose a doctor above or type their name to reveal all their lecture groups and timings here.'}</span>
+        </div>
+      `;
+      return;
+    }
+
+    const matchingGroups = [];
+
+    state.courses.forEach(course => {
+      (course.groups || []).forEach(grp => {
+        let matches = false;
+
+        if (targetDoctor) {
+          const inGrp = (grp.instructors || []).some(i => i.trim() === targetDoctor);
+          const inSess = (grp.sessions || []).some(s => (s.instructor || '').trim() === targetDoctor);
+          if (inGrp || inSess) matches = true;
+        }
+
+        if (query) {
+          const docMatches = (grp.instructors || []).some(i => i.toLowerCase().includes(query)) ||
+            (grp.sessions || []).some(s => (s.instructor || '').toLowerCase().includes(query));
+          const courseMatches = (course.name || '').toLowerCase().includes(query) || (course.code || '').toLowerCase().includes(query);
+          if (docMatches || courseMatches) matches = true;
+        }
+
+        if (matches) {
+          matchingGroups.push({
+            courseId: course.id,
+            courseName: course.name,
+            courseCode: course.code,
+            color: course.color,
+            groupData: grp
+          });
+        }
+      });
+    });
+
+    if (matchingGroups.length === 0) {
+      container.innerHTML = `
+        <div style="text-align: center; padding: 20px; color: var(--text-muted); font-size: 0.88rem;">
+          <span>🔍</span> <span>${isAr ? 'لم يتم العثور على مجموعات تطابق هذا الاختيار.' : 'No matching groups found for this selection.'}</span>
+        </div>
+      `;
+      return;
+    }
+
+    let html = `<div class="doctor-groups-grid">`;
+
+    matchingGroups.forEach(item => {
+      const { courseId, courseName, courseCode, color, groupData } = item;
+      const isSelected = state.manualSchedule[courseId]?.group === groupData.group;
+
+      const conflict = checkGroupConflictWithManualSchedule(courseId, groupData);
+      const isClashing = !isSelected && conflict.clashing;
+
+      let cardClass = 'manual-group-card';
+      if (isSelected) cardClass += ' is-selected';
+      else if (isClashing) cardClass += ' is-clashing';
+      else cardClass += ' is-doc-match';
+
+      html += `
+        <div class="${cardClass}" style="border-inline-start: 5px solid ${color || '#3B82F6'};">
+          <div class="manual-group-header">
+            <div class="manual-group-title">
+              <span style="color: ${color || 'var(--text-primary)'}; font-weight: 800;">${courseCode || courseName}</span>
+              <span class="mini-group-tag" style="background: var(--bg-primary); border: 1px solid var(--border-color); font-weight: 800;">Group ${groupData.group}</span>
+            </div>
+            <div>
+              ${isSelected ? `<span class="selected-badge-pill">✓ ${isAr ? 'تم اختياره' : 'Selected'}</span>` : ''}
+              ${isClashing ? `<span class="clash-warning-text">⚠️ ${isAr ? 'تعارض' : 'Clash'}</span>` : ''}
+            </div>
+          </div>
+
+          <div style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
+            <strong>${courseName}</strong>
+          </div>
+
+          <div class="manual-sessions-list">
+            ${(groupData.sessions || []).map(s => {
+              const timeStr = ScheduleRenderer.formatSlotTimeRange(s.startSlot, s.endSlot);
+              const typeClass = s.type === 'Lab.' ? 'lab-item' : (s.type === 'Sec.' ? 'sec-item' : 'lect-item');
+              const typeName = isAr ? (s.type === 'Lab.' ? 'معمل' : (s.type === 'Sec.' ? 'سكشن' : 'محاضرة')) : s.type;
+              return `
+                <div class="manual-session-item ${typeClass}">
+                  <span><strong>${typeName}</strong>: ${s.day} (${timeStr})</span>
+                  <span>${s.instructor ? `👨‍🏫 ${s.instructor}` : ''}</span>
+                </div>
+              `;
+            }).join('')}
+          </div>
+
+          ${isClashing ? `
+            <div class="clash-warning-text">
+              <span>⚠️ ${conflict.detail}</span>
+            </div>
+          ` : ''}
+
+          <div style="margin-top: 4px; display: flex; justify-content: flex-end;">
+            <button class="btn ${isSelected ? 'btn-outline' : (isClashing ? 'btn-secondary' : 'btn-primary')} btn-sm"
+                    style="${isSelected ? 'color: var(--danger); border-color: var(--danger);' : ''}"
+                    onclick="App.selectManualGroup('${courseId}', '${groupData.group}')">
+              <span>${isSelected ? (isAr ? '❌ إلغاء الاختيار' : '❌ Deselect Group') : (isAr ? '➕ اختيار المجموعة' : '➕ Select Group')}</span>
+            </button>
+          </div>
+        </div>
+      `;
+    });
+
+    html += `</div>`;
+    container.innerHTML = html;
+  }
+
+  /**
+   * Renders the complete course-by-course group selection list
+   */
+  function renderManualCoursesPicker() {
+    const container = document.getElementById('manual-courses-picker-container');
+    if (!container) return;
+
+    const isAr = state.currentLang === 'ar';
+    const targetDoctor = (state.manualSelectedDoctor || '').trim();
+    const query = (state.manualSearchQuery || '').trim().toLowerCase();
+
+    let html = '';
+
+    state.courses.forEach(course => {
+      const selectedGrp = state.manualSchedule[course.id];
+      const hasSelection = !!selectedGrp;
+
+      html += `
+        <div class="manual-course-row">
+          <div class="manual-course-row-header">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span class="course-color-swatch" style="background: ${course.color || '#3B82F6'}; width: 14px; height: 14px; border-radius: 50%;"></span>
+              <div>
+                <span style="font-weight: 800; font-size: 1.05rem; color: var(--text-primary);">${course.name}</span>
+                ${course.code && course.code !== course.name ? `<span style="font-size: 0.85rem; color: var(--text-muted); margin-inline-start: 6px;">(${course.code})</span>` : ''}
+              </div>
+            </div>
+            <div>
+              ${hasSelection
+                ? `<span class="selected-badge-pill" style="font-size: 0.82rem; padding: 4px 10px;">✓ ${isAr ? `المجموعة المختارة: ${selectedGrp.group}` : `Selected: Group ${selectedGrp.group}`}</span>`
+                : `<span style="font-size: 0.8rem; color: var(--text-muted);">${isAr ? 'لم يتم اختيار مجموعة بعد' : 'No group selected'}</span>`
+              }
+            </div>
+          </div>
+
+          <div class="manual-course-groups-row">
+            ${(course.groups || []).map(grp => {
+              const isSelected = hasSelection && selectedGrp.group === grp.group;
+
+              let isDocMatch = false;
+              if (targetDoctor) {
+                const inGrp = (grp.instructors || []).some(i => i.trim() === targetDoctor);
+                const inSess = (grp.sessions || []).some(s => (s.instructor || '').trim() === targetDoctor);
+                if (inGrp || inSess) isDocMatch = true;
+              } else if (query) {
+                const inGrp = (grp.instructors || []).some(i => i.toLowerCase().includes(query));
+                const inSess = (grp.sessions || []).some(s => (s.instructor || '').toLowerCase().includes(query));
+                if (inGrp || inSess) isDocMatch = true;
+              }
+
+              const conflict = checkGroupConflictWithManualSchedule(course.id, grp);
+              const isClashing = !isSelected && conflict.clashing;
+
+              let cardClass = 'manual-group-card';
+              if (isSelected) cardClass += ' is-selected';
+              else if (isClashing) cardClass += ' is-clashing';
+              else if (isDocMatch) cardClass += ' is-doc-match';
+
+              return `
+                <div class="${cardClass}">
+                  <div class="manual-group-header">
+                    <div class="manual-group-title">
+                      <span>Group ${grp.group}</span>
+                      ${isDocMatch ? `<span class="doc-highlight-pill">⭐ ${isAr ? 'مجموعة الدكتور' : "Doctor's Group"}</span>` : ''}
+                    </div>
+                    <div>
+                      ${isSelected ? `<span class="selected-badge-pill">✓</span>` : ''}
+                    </div>
+                  </div>
+
+                  <div class="manual-sessions-list">
+                    ${(grp.sessions || []).map(s => {
+                      const timeStr = ScheduleRenderer.formatSlotTimeRange(s.startSlot, s.endSlot);
+                      const typeClass = s.type === 'Lab.' ? 'lab-item' : (s.type === 'Sec.' ? 'sec-item' : 'lect-item');
+                      const typeName = isAr ? (s.type === 'Lab.' ? 'معمل' : (s.type === 'Sec.' ? 'سكشن' : 'محاضرة')) : s.type;
+                      return `
+                        <div class="manual-session-item ${typeClass}">
+                          <span><strong>${typeName}</strong>: ${s.day} (${timeStr})</span>
+                          <span>${s.instructor ? `👨‍🏫 ${s.instructor}` : ''}</span>
+                        </div>
+                      `;
+                    }).join('')}
+                  </div>
+
+                  ${isClashing ? `
+                    <div class="clash-warning-text">
+                      <span>⚠️ ${conflict.detail}</span>
+                    </div>
+                  ` : ''}
+
+                  <div style="margin-top: 4px; display: flex; justify-content: flex-end;">
+                    <button class="btn ${isSelected ? 'btn-outline' : (isClashing ? 'btn-secondary' : 'btn-primary')} btn-sm"
+                            style="${isSelected ? 'color: var(--danger); border-color: var(--danger);' : ''}"
+                            onclick="App.selectManualGroup('${course.id}', '${grp.group}')">
+                      <span>${isSelected ? (isAr ? '❌ إلغاء الاختيار' : '❌ Deselect') : (isAr ? 'اختيار هذه المجموعة' : 'Select Group')}</span>
+                    </button>
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        </div>
+      `;
+    });
+
+    container.innerHTML = html;
+  }
+
+  /**
+   * Checks if a candidate group has any time conflicts with currently selected manual schedule groups
+   */
+  function checkGroupConflictWithManualSchedule(courseId, candidateGroup) {
+    const isAr = state.currentLang === 'ar';
+    const candidateSessions = candidateGroup.sessions || [];
+
+    for (const [pickedCid, pickedGroup] of Object.entries(state.manualSchedule)) {
+      if (pickedCid === courseId) continue;
+
+      const pickedSessions = pickedGroup.sessions || [];
+      for (const s1 of candidateSessions) {
+        for (const s2 of pickedSessions) {
+          if (s1.day === s2.day && s1.startSlot <= s2.endSlot && s1.endSlot >= s2.startSlot) {
+            const timeRange = ScheduleRenderer.formatSlotTimeRange(
+              Math.max(s1.startSlot, s2.startSlot),
+              Math.min(s1.endSlot, s2.endSlot)
+            );
+            return {
+              clashing: true,
+              detail: isAr
+                ? `تعارض مع ${pickedGroup.courseName || pickedGroup.courseCode} (مجموعة ${pickedGroup.group}) يوم ${s1.day} (${timeRange})`
+                : `Clashes with ${pickedGroup.courseCode || pickedGroup.courseName} (Group ${pickedGroup.group}) on ${s1.day} (${timeRange})`
+            };
+          }
+        }
+      }
+    }
+
+    return { clashing: false };
+  }
+
+  /**
+   * Checks all conflicts within the entire current manual schedule
+   */
+  function checkManualConflicts() {
+    const isAr = state.currentLang === 'ar';
+    const conflicts = [];
+    const entries = Object.entries(state.manualSchedule);
+
+    for (let i = 0; i < entries.length; i++) {
+      for (let j = i + 1; j < entries.length; j++) {
+        const [cid1, grp1] = entries[i];
+        const [cid2, grp2] = entries[j];
+
+        for (const s1 of (grp1.sessions || [])) {
+          for (const s2 of (grp2.sessions || [])) {
+            if (s1.day === s2.day && s1.startSlot <= s2.endSlot && s1.endSlot >= s2.startSlot) {
+              const timeRange = ScheduleRenderer.formatSlotTimeRange(
+                Math.max(s1.startSlot, s2.startSlot),
+                Math.min(s1.endSlot, s2.endSlot)
+              );
+              conflicts.push({
+                course1: grp1.courseCode || grp1.courseName,
+                group1: grp1.group,
+                course2: grp2.courseCode || grp2.courseName,
+                group2: grp2.group,
+                day: s1.day,
+                timeRange,
+                detail: isAr
+                  ? `تعارض بين ${grp1.courseCode || grp1.courseName} (مجموعة ${grp1.group}) و ${grp2.courseCode || grp2.courseName} (مجموعة ${grp2.group}) يوم ${s1.day} (${timeRange})`
+                  : `Clash between ${grp1.courseCode || grp1.courseName} (Group ${grp1.group}) and ${grp2.courseCode || grp2.courseName} (Group ${grp2.group}) on ${s1.day} (${timeRange})`
+              });
+            }
+          }
+        }
+      }
+    }
+
+    return {
+      hasConflict: conflicts.length > 0,
+      conflicts
+    };
+  }
+
+  /**
+   * Selects or deselects a group for a course in Manual Mode
+   */
+  function selectManualGroup(courseId, groupName) {
+    const isAr = state.currentLang === 'ar';
+    const course = state.courses.find(c => c.id === courseId || c.code === courseId);
+    if (!course) return;
+
+    const groupData = (course.groups || []).find(g => g.group === groupName);
+    if (!groupData) return;
+
+    if (state.manualSchedule[courseId]?.group === groupName) {
+      delete state.manualSchedule[courseId];
+      showToast(isAr ? `تم إلغاء اختيار مجموعة ${groupName} لمقرر ${course.name}` : `Deselected Group ${groupName} for ${course.name}`, 'info');
+    } else {
+      state.manualSchedule[courseId] = {
+        courseId: course.id,
+        courseName: course.name,
+        courseCode: course.code,
+        group: groupName,
+        color: course.color,
+        instructors: groupData.instructors || [],
+        sessions: (groupData.sessions || []).map(s => ({
+          ...s,
+          courseId: course.id,
+          courseName: course.name,
+          courseCode: course.code,
+          group: groupName,
+          color: course.color
+        }))
+      };
+
+      const conflict = checkGroupConflictWithManualSchedule(courseId, groupData);
+      if (conflict.clashing) {
+        showToast(`⚠️ ${conflict.detail}`, 'warning');
+      } else {
+        showToast(isAr ? `تم اختيار مجموعة ${groupName} لمقرر ${course.name}` : `Selected Group ${groupName} for ${course.name}`, 'success');
+      }
+    }
+
+    saveStateToStorage();
+    renderManualStatusBanner();
+    renderManualDoctorGroups();
+    renderManualCoursesPicker();
+    renderManualTimetable();
+  }
+
+  /**
+   * Clears the manual schedule
+   */
+  function clearManualSchedule() {
+    const isAr = state.currentLang === 'ar';
+    if (Object.keys(state.manualSchedule).length === 0) return;
+
+    if (confirm(isAr ? 'هل أنت متأكد من رغبتك في إعادة ضبط واختيار جدول يدوي جديد؟' : 'Are you sure you want to reset your custom schedule selections?')) {
+      state.manualSchedule = {};
+      saveStateToStorage();
+      renderManualStatusBanner();
+      renderManualDoctorGroups();
+      renderManualCoursesPicker();
+      renderManualTimetable();
+      showToast(isAr ? 'تم إعادة ضبط الجدول اليدوي' : 'Custom schedule reset.', 'info');
+    }
+  }
+
+  /**
+   * Renders the top status banner in Tab 4
+   */
+  function renderManualStatusBanner() {
+    const banner = document.getElementById('manual-status-banner');
+    if (!banner) return;
+
+    const isAr = state.currentLang === 'ar';
+    const totalCourses = state.courses.length;
+    const selectedCount = Object.keys(state.manualSchedule).length;
+    const conflictResult = checkManualConflicts();
+
+    const allSessions = [];
+    Object.values(state.manualSchedule).forEach(grp => {
+      (grp.sessions || []).forEach(s => allSessions.push(s));
+    });
+    const daysSet = new Set(allSessions.map(s => s.day));
+
+    if (conflictResult.hasConflict) {
+      banner.className = 'manual-status-banner is-conflict';
+      banner.innerHTML = `
+        <div class="manual-status-main">
+          <span>⚠️</span>
+          <span>${isAr ? `يوجد تعارض (${conflictResult.conflicts.length} تعارض)` : `Time Conflict Detected (${conflictResult.conflicts.length} Clash)`}</span>
+          <span style="font-size: 0.8rem; font-weight: 500; opacity: 0.9;">${conflictResult.conflicts[0].detail}</span>
+        </div>
+        <div class="manual-status-stats">
+          <span>📚 ${selectedCount} / ${totalCourses} ${isAr ? 'مقررات تم اختيارها' : 'Courses Picked'}</span>
+          <span>📅 ${daysSet.size} ${isAr ? 'أيام نزول' : 'Days'}</span>
+        </div>
+      `;
+    } else if (selectedCount === 0) {
+      banner.className = 'manual-status-banner';
+      banner.innerHTML = `
+        <div class="manual-status-main">
+          <span>✍️</span>
+          <span>${isAr ? 'ابدأ باختيار دكتورك المفضل أو حدد المجموعات لكل مقرر من القوائم أدناه.' : 'Start by selecting your favorite doctor or picking groups for each course below.'}</span>
+        </div>
+        <div class="manual-status-stats">
+          <span>📚 0 / ${totalCourses} ${isAr ? 'مقررات' : 'Courses'}</span>
+        </div>
+      `;
+    } else if (selectedCount < totalCourses) {
+      banner.className = 'manual-status-banner is-clean';
+      banner.innerHTML = `
+        <div class="manual-status-main">
+          <span>✅</span>
+          <span>${isAr ? `الجدول خالٍ من التعارض حتى الآن (${selectedCount} من ${totalCourses} مواد)` : `Conflict-Free so far (${selectedCount} of ${totalCourses} courses)`}</span>
+        </div>
+        <div class="manual-status-stats">
+          <span>📚 ${selectedCount} / ${totalCourses} ${isAr ? 'مقررات' : 'Courses'}</span>
+          <span>📅 ${daysSet.size} ${isAr ? 'أيام' : 'Days'}</span>
+        </div>
+      `;
+    } else {
+      banner.className = 'manual-status-banner is-clean';
+      banner.innerHTML = `
+        <div class="manual-status-main">
+          <span>🎉</span>
+          <span>${isAr ? 'اكتمل جدولك بالكامل وهو خالٍ من أي تعارض بنسبة 100%!' : 'Your schedule is 100% complete and completely conflict-free!'}</span>
+        </div>
+        <div class="manual-status-stats">
+          <span>📚 ${selectedCount} / ${totalCourses} ${isAr ? 'مقررات' : 'Courses'}</span>
+          <span>📅 ${daysSet.size} ${isAr ? 'أيام' : 'Days'}</span>
+        </div>
+      `;
+    }
+  }
+
+  /**
+   * Builds a synthetic solution object representing the current manual schedule
+   */
+  function getManualSolution() {
+    const isAr = state.currentLang === 'ar';
+    const allSessions = [];
+    const selectedGroups = [];
+
+    Object.entries(state.manualSchedule).forEach(([cid, grp]) => {
+      selectedGroups.push({
+        courseId: cid,
+        courseName: grp.courseName,
+        courseCode: grp.courseCode,
+        group: grp.group,
+        color: grp.color,
+        instructors: grp.instructors
+      });
+      (grp.sessions || []).forEach(s => {
+        allSessions.push({
+          ...s,
+          courseId: cid,
+          courseName: grp.courseName,
+          courseCode: grp.courseCode,
+          group: grp.group,
+          color: grp.color
+        });
+      });
+    });
+
+    const conflictResult = checkManualConflicts();
+    const daysSet = new Set(allSessions.map(s => s.day));
+
+    return {
+      id: 'sol_manual_custom',
+      rank: isAr ? 'يدوي' : 'Custom',
+      badges: [
+        { text: isAr ? '✍️ جدول يدوي' : '✍️ Custom Schedule', type: 'manual' },
+        conflictResult.hasConflict
+          ? { text: isAr ? '⚠️ به تعارض' : '⚠️ Clashing', type: 'avoid' }
+          : { text: isAr ? '✅ بدون تعارض' : '✅ Conflict-Free', type: 'best' }
+      ],
+      compositeScore: conflictResult.hasConflict ? -1000 : 1000,
+      totalGapSlots: 0,
+      activeDaysCount: daysSet.size,
+      activeDays: Array.from(daysSet),
+      sessions: allSessions,
+      selectedGroups,
+      blockedTimes: state.blockedTimes
+    };
+  }
+
+  /**
+   * Renders the weekly timetable preview for the manual schedule in Tab 4
+   */
+  function renderManualTimetable() {
+    const container = document.getElementById('manual-timetable-render-container');
+    if (!container) return;
+
+    const sol = getManualSolution();
+    const isAr = state.currentLang === 'ar';
+
+    if (!sol.sessions || sol.sessions.length === 0) {
+      container.innerHTML = `
+        <div class="empty-state">
+          <div class="empty-icon">📅</div>
+          <h3>${isAr ? 'لم يتم اختيار أي مجموعة بعد' : 'No Groups Selected Yet'}</h3>
+          <p>${isAr ? 'اختر دكتوراً أو حدد مجموعات للمقررات من الأعلى لمعاينة جدولك الأسبوعي هنا.' : 'Select groups above to see your weekly timetable update here in real-time.'}</p>
+        </div>
+      `;
+      return;
+    }
+
+    const conflictResult = checkManualConflicts();
+    let prefixHtml = '';
+    if (conflictResult.hasConflict) {
+      prefixHtml = `
+        <div class="session-conflict-alert">
+          <span>⚠️</span>
+          <span><strong>${isAr ? 'تنبيه تعارض في الجدول:' : 'Schedule Conflict Alert:'}</strong> ${conflictResult.conflicts.map(c => c.detail).join(' • ')}</span>
+        </div>
+      `;
+    }
+
+    ScheduleRenderer.renderTimetable(sol, container, state.currentLang, state.blockedTimes);
+    if (prefixHtml) {
+      container.insertAdjacentHTML('afterbegin', prefixHtml);
+    }
+  }
+
+  /**
+   * Copies the manual schedule into Tab 3 solutions and switches to Tab 3
+   */
+  function applyManualToTimetableTab() {
+    const isAr = state.currentLang === 'ar';
+    const sol = getManualSolution();
+
+    if (!sol.sessions || sol.sessions.length === 0) {
+      showToast(isAr ? 'برجاء اختيار مجموعة واحدة على الأقل أولاً.' : 'Please select at least one course group first.', 'error');
+      return;
+    }
+
+    state.solutions = [sol, ...state.solutions.filter(s => s.id !== 'sol_manual_custom')];
+    state.activeSolutionIndex = 0;
+
+    switchTab('timetable');
+    renderSolutionsSelector();
+    renderCurrentSolution();
+
+    showToast(isAr ? 'تم تحميل جدولك اليدوي في شاشة الجداول النهائية!' : 'Loaded your custom schedule into Timetable Results!', 'success');
+  }
+
+  /**
+   * Exports the manual timetable to PNG, ICS, or Print
+   */
+  function exportManualTimetable(type) {
+    const isAr = state.currentLang === 'ar';
+    const sol = getManualSolution();
+
+    if (!sol.sessions || sol.sessions.length === 0) {
+      showToast(isAr ? 'لا يوجد جدول مخصص لتصديره.' : 'No custom schedule to export.', 'error');
+      return;
+    }
+
+    if (type === 'png') {
+      ScheduleExporter.exportToPng(sol);
+    } else if (type === 'ics') {
+      ScheduleExporter.downloadIcsFile(sol, 'custom_college_timetable.ics');
+    } else if (type === 'print') {
+      ScheduleExporter.printTimetable();
+    }
   }
 
   /**
@@ -1866,7 +2656,13 @@ const App = (() => {
     removeBlockedTime,
     openGuideModal,
     closeGuideModal,
-    loadSampleCourses
+    loadSampleCourses,
+    findSchedules: runOptimizer,
+    selectManualGroup,
+    clearManualSchedule,
+    applyManualToTimetableTab,
+    exportManualTimetable,
+    renderManualMode
   };
 
   return window.App;
