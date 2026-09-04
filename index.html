@@ -11,8 +11,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Core & Timetable CSS -->
-  <link rel="stylesheet" href="css/style.css?v=3.6" />
-  <link rel="stylesheet" href="css/timetable.css?v=3.6" />
+  <link rel="stylesheet" href="css/style.css?v=3.7" />
+  <link rel="stylesheet" href="css/timetable.css?v=3.7" />
+  <script>try { localStorage.setItem('sched_guide_dismissed', 'true'); } catch(e) {}</script>
 </head>
 <body>
 
@@ -29,7 +30,7 @@
       </div>
 
       <div class="header-actions">
-        <button id="btn-show-guide" class="btn btn-outline btn-sm" title="How to use the website" onclick="if(window.App&&window.App.openGuideModal){App.openGuideModal();}else{document.getElementById('guide-modal').style.display='flex';}">
+        <button id="btn-show-guide" class="btn btn-outline btn-sm" title="How to use the website" onclick="if(window.App&&window.App.openGuideModal){App.openGuideModal();}else{var m=document.getElementById('guide-modal');if(m)m.style.setProperty('display','flex','important');}">
           <span>❓</span> <span data-i18n="guideBtn">Guide</span>
         </button>
         <button id="btn-load-sample" class="btn btn-secondary btn-sm" data-i18n="loadSampleBtn">
@@ -355,7 +356,7 @@
   </footer>
 
   <!-- Guide / Tutorial Modal -->
-  <div id="guide-modal" class="modal-backdrop" style="display: none;">
+  <div id="guide-modal" class="modal-backdrop" style="display: none !important;" onclick="if(event.target===this){if(window.App&&window.App.closeGuideModal){App.closeGuideModal();}this.style.setProperty('display','none','important');}">
     <div class="modal-dialog guide-modal-dialog">
       <div class="modal-header">
         <div style="display: flex; align-items: center; gap: 8px;">
@@ -364,7 +365,7 @@
             Quick Guide: How to Use the Optimizer
           </h3>
         </div>
-        <button class="btn btn-outline btn-sm" onclick="App.closeGuideModal()">✕</button>
+        <button class="btn btn-outline btn-sm" onclick="if(window.App&&window.App.closeGuideModal){App.closeGuideModal();}var m=document.getElementById('guide-modal');if(m)m.style.setProperty('display','none','important');">✕</button>
       </div>
       <div class="modal-body" id="guide-modal-body">
         <div class="guide-steps-container">
@@ -455,13 +456,13 @@
             <div style="font-weight: 700; color: var(--text-primary);">💡 Want to test it immediately?</div>
             <div style="font-size: 0.85rem; color: var(--text-secondary);">Load pre-configured university courses with one click to see how the optimizer works right now.</div>
           </div>
-          <button class="btn btn-secondary btn-sm" onclick="if(window.App&&window.App.loadSampleCourses){App.loadSampleCourses();App.closeGuideModal();}else{document.getElementById('guide-modal').style.display='none';}">
+          <button class="btn btn-secondary btn-sm" onclick="if(window.App&&window.App.loadSampleCourses){App.loadSampleCourses();}if(window.App&&window.App.closeGuideModal){App.closeGuideModal();}var m=document.getElementById('guide-modal');if(m)m.style.setProperty('display','none','important');">
             📚 Load Example Courses Now
           </button>
         </div>
       </div>
       <div class="modal-footer" style="justify-content: flex-end;">
-        <button class="btn btn-primary" onclick="if(window.App&&window.App.closeGuideModal){App.closeGuideModal();}else{document.getElementById('guide-modal').style.display='none';}" data-i18n="guideGotItBtn">
+        <button class="btn btn-primary" onclick="if(window.App&&window.App.closeGuideModal){App.closeGuideModal();}var m=document.getElementById('guide-modal');if(m)m.style.setProperty('display','none','important');" data-i18n="guideGotItBtn">
           Got it, Close 🚀
         </button>
       </div>
@@ -489,12 +490,12 @@
   <div id="toast-container" class="toast-container"></div>
 
   <!-- Scripts with Cache Busting -->
-  <script src="js/parser.js?v=3.6"></script>
-  <script src="js/sampleData.js?v=3.6"></script>
-  <script src="js/optimizer.js?v=3.6"></script>
-  <script src="js/imageExtractor.js?v=3.6"></script>
-  <script src="js/renderer.js?v=3.6"></script>
-  <script src="js/exporter.js?v=3.6"></script>
-  <script src="js/app.js?v=3.6"></script>
+  <script src="js/parser.js?v=3.7"></script>
+  <script src="js/sampleData.js?v=3.7"></script>
+  <script src="js/optimizer.js?v=3.7"></script>
+  <script src="js/imageExtractor.js?v=3.7"></script>
+  <script src="js/renderer.js?v=3.7"></script>
+  <script src="js/exporter.js?v=3.7"></script>
+  <script src="js/app.js?v=3.7"></script>
 </body>
 </html>

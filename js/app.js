@@ -134,6 +134,12 @@ const App = (() => {
    * Initializes the application
    */
   function init() {
+    try {
+      localStorage.setItem('sched_guide_dismissed', 'true');
+      const gm = document.getElementById('guide-modal');
+      if (gm) gm.style.setProperty('display', 'none', 'important');
+    } catch(e) {}
+
     loadStateFromStorage();
     setupEventListeners();
     updateTheme();
@@ -1393,12 +1399,15 @@ const App = (() => {
     const modal = document.getElementById('guide-modal');
     if (!modal) return;
     renderGuideModalContent();
-    modal.style.display = 'flex';
+    modal.style.setProperty('display', 'flex', 'important');
   }
 
   function closeGuideModal() {
     const modal = document.getElementById('guide-modal');
-    if (modal) modal.style.display = 'none';
+    if (modal) {
+      modal.style.setProperty('display', 'none', 'important');
+    }
+    try { localStorage.setItem('sched_guide_dismissed', 'true'); } catch(e) {}
   }
 
   function renderGuideModalContent() {
@@ -1600,7 +1609,7 @@ const App = (() => {
     }
   }
 
-  return {
+  window.App = {
     init,
     removeCourse,
     updateCourseColor,
@@ -1616,6 +1625,8 @@ const App = (() => {
     closeGuideModal,
     loadSampleCourses
   };
+
+  return window.App;
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
