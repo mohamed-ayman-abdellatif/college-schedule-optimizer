@@ -1405,22 +1405,58 @@ const App = (() => {
     // Invalidate stale solutions since constraints changed
     state.solutions = [];
 
-    // Privately track avoid, love (prefer), and mandate actions for the developer
-    if (rating === 'avoid' || rating === 'love' || rating === 'mandate') {
-      const course = state.courses.find(c => c.code === courseCode || c.id === courseCode);
-      const courseName = course ? course.name : courseCode;
+    // Privately track avoid, love (prefer), and mandate actions for the developer (debounced to avoid duplicate triple-clicks)
+    queueDoctorTelemetryAction(courseCode, doctorName, rating);
+
+    saveStateToStorage();
+    renderDoctorPreferences();
+  }
+
+  const telemetryDebounceTimers = {};
+
+  /**
+   * Dispatches doctor preference telemetry with debouncing.
+   * Prevents rapid triple-clicks (to mandate) from firing 3 separate events.
+   * If a user triple-clicks to mandate, only 1 'mandate' event is dispatched.
+   */
+  function queueDoctorTelemetryAction(courseCode, doctorName, rating) {
+    const key = `${courseCode}:::${doctorName}`;
+
+    if (telemetryDebounceTimers[key]) {
+      clearTimeout(telemetryDebounceTimers[key]);
+      delete telemetryDebounceTimers[key];
+    }
+
+    if (!rating || rating === 'neutral') return;
+
+    const course = state.courses.find(c => c.code === courseCode || c.id === courseCode);
+    const courseName = course ? course.name : courseCode;
+
+    const dispatch = (action) => {
       if (window.SiteTelemetry && typeof window.SiteTelemetry.trackDoctorAction === 'function') {
         window.SiteTelemetry.trackDoctorAction({
           doctorName,
           courseCode,
           courseName,
-          action: rating
+          action
         });
       }
+    };
+
+    // If mandate or avoid, dispatch immediately!
+    if (rating === 'mandate' || rating === 'avoid') {
+      dispatch(rating);
+      return;
     }
 
-    saveStateToStorage();
-    renderDoctorPreferences();
+    // If love (prefer), debounce by 850ms to verify user is not doing a triple-click
+    telemetryDebounceTimers[key] = setTimeout(() => {
+      delete telemetryDebounceTimers[key];
+      const currentRating = getRatingForPerson(courseCode, doctorName);
+      if (currentRating === 'love') {
+        dispatch('love');
+      }
+    }, 850);
   }
 
   function escapeQuotes(str) {

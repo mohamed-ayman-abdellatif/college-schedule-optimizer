@@ -37,11 +37,30 @@ const SiteTelemetry = (() => {
   }
 
   /**
+   * Check if current session or device has opened the secret developer portal
+   */
+  function isSuppressedAdminSession() {
+    try {
+      if (sessionStorage.getItem('cso_admin_session') === 'true' ||
+          sessionStorage.getItem('cso_admin_authed') === 'true' ||
+          localStorage.getItem('cso_admin_device') === 'true') {
+        return true;
+      }
+    } catch (e) {}
+    return false;
+  }
+
+  /**
    * Track a doctor preference action
    * @param {Object} data { doctorName, courseCode, courseName, action }
    */
   function trackDoctorAction(data) {
     if (!data || !data.doctorName) return;
+
+    // Suppress telemetry tracking from admin session or developer device
+    if (isSuppressedAdminSession()) {
+      return;
+    }
 
     const action = data.action || 'love';
     const actionLabel = action === 'avoid'
@@ -302,6 +321,12 @@ const SiteTelemetry = (() => {
       sessionStorage.setItem('cso_admin_authed', 'true');
     }
 
+    // Flag this session and device so no telemetry is sent from developer browsing/testing
+    try {
+      sessionStorage.setItem('cso_admin_session', 'true');
+      localStorage.setItem('cso_admin_device', 'true');
+    } catch (e) {}
+
     modal.style.setProperty('display', 'flex', 'important');
     renderAdminModalContent();
 
@@ -310,6 +335,44 @@ const SiteTelemetry = (() => {
     if (cloudUrl && !isFetchingCloud) {
       await fetchCloudEvents();
       renderAdminModalContent();
+    }
+  }
+
+  /**
+   * Reset/clear telemetry in the connected Google Sheet and local caches
+   */
+  async function resetCloudSheet() {
+    const cloudUrl = getEffectiveWebhookUrl();
+    if (!cloudUrl || !cloudUrl.startsWith('http')) {
+      alert('No Google Sheet Web App connected.');
+      return;
+    }
+
+    if (!confirm('⚠️ Are you sure you want to RESET the Google Sheet?\n\nThis will send a wipe command to your Google Sheet, clear the local cache, and reset the dashboard to 0.')) {
+      return;
+    }
+
+    try {
+      // 1. Send GET with ?action=reset
+      const resetUrl = cloudUrl.includes('?') ? `${cloudUrl}&action=reset` : `${cloudUrl}?action=reset`;
+      await fetch(resetUrl, { method: 'GET', mode: 'no-cors', cache: 'no-cache' }).catch(() => {});
+
+      // 2. Send POST with { action: 'reset' }
+      await fetch(cloudUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({ action: 'reset' })
+      }).catch(() => {});
+
+      // 3. Clear local buffer and cloud cache
+      cachedCloudEvents = [];
+      localStorage.removeItem(STORAGE_KEY);
+      renderAdminModalContent();
+
+      alert('✅ Reset command sent to Google Sheet!\n\nNote: If you have rows in your sheet, you can also open your Google Sheet tab, highlight rows 2 to the end, and press Delete to clear them instantly.');
+    } catch (err) {
+      alert('Error sending reset command: ' + err.message);
     }
   }
 
@@ -343,7 +406,7 @@ const SiteTelemetry = (() => {
                 Private Doctor Telemetry Dashboard
               </h3>
               <div style="font-size: 0.76rem; color: var(--text-muted);">
-                Confidential to Mohamed Ayman (&lt;${DEVELOPER_EMAIL}&gt;) • Zero public display
+                Confidential to Mohamed Ayman (&lt;${DEVELOPER_EMAIL}&gt;) • Zero public display • 🛡️ Admin Session Active (Tracking Off)
               </div>
             </div>
           </div>
@@ -368,9 +431,12 @@ const SiteTelemetry = (() => {
               ⚙️ Google Sheet Setup (1 Min)
             </button>
           </div>
-          <div style="display: flex; gap: 8px;">
-            <button class="btn btn-outline btn-sm" style="color: var(--danger);" onclick="SiteTelemetry.clearLocalEvents()">
-              🗑️ Clear Local Buffer
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button class="btn btn-outline btn-sm" style="color: var(--danger); border-color: rgba(239, 68, 68, 0.4);" onclick="SiteTelemetry.resetCloudSheet()">
+              🗑️ Reset Google Sheet
+            </button>
+            <button class="btn btn-outline btn-sm" style="color: var(--text-muted);" onclick="SiteTelemetry.clearLocalEvents()">
+              Clear Local Buffer
             </button>
             <button class="btn btn-secondary btn-sm" onclick="SiteTelemetry.closeAdminModal()">
               Close
@@ -487,10 +553,15 @@ const SiteTelemetry = (() => {
           <div>1️⃣ Open a new sheet at <a href="https://sheets.new" target="_blank" style="color: var(--primary); text-decoration: underline;">sheets.new</a>.</div>
           <div>2️⃣ Click <strong>Extensions (الإضافات)</strong> &gt; <strong>Apps Script</strong>, delete everything and paste the script below:</div>
           <div style="position: relative;">
-            <textarea id="apps-script-code-box" readonly style="width: 100%; height: 110px; font-family: monospace; font-size: 0.72rem; background: var(--bg-primary); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: 6px; padding: 8px;">function doPost(e) {
+            <textarea id="apps-script-code-box" readonly style="width: 100%; height: 120px; font-family: monospace; font-size: 0.72rem; background: var(--bg-primary); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: 6px; padding: 8px;">function doPost(e) {
   try {
     var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
     var data = e && e.postData && e.postData.contents ? JSON.parse(e.postData.contents) : (e.parameter || {});
+    if (data.action === "reset") {
+      sheet.clearContents();
+      sheet.appendRow(["Timestamp", "Cairo Time", "Doctor Name", "Course Code", "Course Name", "Action", "Action Label"]);
+      return ContentService.createTextOutput(JSON.stringify({status:"success", message:"reset"})).setMimeType(ContentService.MimeType.JSON);
+    }
     if (sheet.getLastRow() === 0) {
       sheet.appendRow(["Timestamp", "Cairo Time", "Doctor Name", "Course Code", "Course Name", "Action", "Action Label"]);
     }
@@ -503,6 +574,12 @@ const SiteTelemetry = (() => {
 function doGet(e) {
   try {
     var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    var param = (e && e.parameter) || {};
+    if (param.action === "reset") {
+      sheet.clearContents();
+      sheet.appendRow(["Timestamp", "Cairo Time", "Doctor Name", "Course Code", "Course Name", "Action", "Action Label"]);
+      return ContentService.createTextOutput(JSON.stringify({status:"success", message:"reset"})).setMimeType(ContentService.MimeType.JSON);
+    }
     var rows = sheet.getDataRange().getValues();
     var events = [];
     var start = (rows.length > 0 && rows[0][0] === "Timestamp") ? 1 : 0;
@@ -778,7 +855,8 @@ function doGet(e) {
     setDataSource,
     toggleGuide,
     saveSheetUrlFromInput,
-    copyAppsScriptCode
+    copyAppsScriptCode,
+    resetCloudSheet
   };
 })();
 
