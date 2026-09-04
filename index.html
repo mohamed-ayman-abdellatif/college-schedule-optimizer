@@ -11,8 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Core & Timetable CSS -->
-  <link rel="stylesheet" href="css/style.css?v=3.8" />
-  <link rel="stylesheet" href="css/timetable.css?v=3.8" />
+  <link rel="stylesheet" href="css/style.css?v=3.9" />
+  <link rel="stylesheet" href="css/timetable.css?v=3.9" />
   <script>try { localStorage.setItem('sched_guide_dismissed', 'true'); } catch(e) {}</script>
 </head>
 <body>
@@ -25,7 +25,15 @@
         <div class="brand-text">
           <h1 data-i18n="appTitle">College Schedule Optimizer</h1>
           <div class="brand-subtitle" data-i18n="appSubtitle">Convert college HTML & photos into optimal clash-free schedules</div>
-          <div class="dev-prayer-badge" title="Developer message">🤲 متنساش تدعيلي دعوة حلوة ❤️</div>
+          <div class="brand-meta-row">
+            <div class="dev-prayer-badge" title="Developer message">🤲 متنساش تدعيلي دعوة حلوة ❤️</div>
+            <div class="header-live-badge" onclick="if(window.SiteAnalytics)SiteAnalytics.openStatsModal()" title="Live Users & Traffic (Click for details)" role="button" tabindex="0">
+              <span class="live-dot-pulse"></span>
+              <span id="header-active-count">1</span> <span data-i18n="onlineNow">Online</span>
+              <span class="counter-sep">•</span>
+              <span id="header-total-count">--</span> <span data-i18n="visitsShort">Visits</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -347,6 +355,19 @@
   <!-- Developer Prayer Note & Footer -->
   <!-- متنساش تدعيلي دعوة حلوة -->
   <footer class="app-footer">
+    <div class="footer-stats-box" onclick="if(window.SiteAnalytics)SiteAnalytics.openStatsModal()" title="Live Users & Traffic (Click for details)" role="button" tabindex="0">
+      <div class="stat-bubble live-bubble">
+        <span class="live-dot-pulse"></span>
+        <span class="stat-num" id="footer-active-count">1</span>
+        <span class="stat-label" data-i18n="activeUsersNow">Active Users Online</span>
+      </div>
+      <div class="stat-bubble total-bubble">
+        <span class="stat-icon">👥</span>
+        <span class="stat-num" id="footer-total-count">--</span>
+        <span class="stat-label" data-i18n="totalVisitors">Total Visits</span>
+      </div>
+    </div>
+
     <div class="dev-prayer-box">
       <span class="prayer-icon">🤲</span>
       <span class="prayer-text">متنساش تدعيلي دعوة حلوة</span>
@@ -486,16 +507,81 @@
     </div>
   </div>
 
+  <!-- Analytics & Live Traffic Modal -->
+  <div id="analytics-modal" class="modal-backdrop" style="display: none !important;" onclick="if(event.target===this){SiteAnalytics.closeStatsModal();}">
+    <div class="modal-dialog analytics-modal-dialog">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 1.3rem;">📊</span>
+          <h3 class="modal-title" data-i18n="statsModalTitle" style="font-size: 1.15rem; font-weight: 800;">
+            Live Users & Traffic Overview
+          </h3>
+        </div>
+        <button class="btn btn-outline btn-sm" onclick="SiteAnalytics.closeStatsModal()">✕</button>
+      </div>
+      <div class="modal-body" id="analytics-modal-body">
+        <!-- Real-time metrics grid -->
+        <div class="analytics-metrics-grid">
+          <div class="analytics-stat-card active-card">
+            <div class="analytics-card-header">
+              <span class="live-dot-pulse"></span>
+              <span data-i18n="activeUsersNow">Active Users Online</span>
+            </div>
+            <div class="analytics-card-val" id="modal-active-count">1</div>
+            <div class="analytics-card-desc" data-i18n="activeUsersDesc">Students currently browsing & optimizing schedules</div>
+          </div>
+
+          <div class="analytics-stat-card total-card">
+            <div class="analytics-card-header">
+              <span>👥</span>
+              <span data-i18n="totalVisitors">Total Unique Visits</span>
+            </div>
+            <div class="analytics-card-val" id="modal-total-count">--</div>
+            <div class="analytics-card-desc" data-i18n="totalVisitorsDesc">All-time unique visitor sessions</div>
+          </div>
+        </div>
+
+        <!-- Current User Session Status -->
+        <div class="analytics-session-info">
+          <div class="session-info-item">
+            <span class="session-info-label" data-i18n="sessionDurationLabel">Your current session time:</span>
+            <span class="session-info-val" id="modal-session-time">0m 0s</span>
+          </div>
+          <div class="session-info-item">
+            <span class="session-info-label" data-i18n="privacyLabel">Privacy & Safety:</span>
+            <span class="session-info-val privacy-badge" data-i18n="privacyDesc">🔒 100% Anonymous & Zero Cookies</span>
+          </div>
+        </div>
+
+        <!-- How it works info box -->
+        <div class="analytics-info-box">
+          <div style="font-weight: 700; color: var(--text-primary); margin-bottom: 6px;" data-i18n="howItWorksTitle">
+            ⚡ How is this tracked?
+          </div>
+          <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;" data-i18n="howItWorksDesc">
+            This counter runs completely serverlessly on GitHub Pages using an atomic presence heartbeat. When anyone opens the website, their browser sends a privacy-safe presence ping every 45s. When they close the tab, the active count updates in real-time.
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer" style="justify-content: flex-end;">
+        <button class="btn btn-primary" onclick="SiteAnalytics.closeStatsModal()" data-i18n="closeBtn">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Toast Notification Container -->
   <div id="toast-container" class="toast-container"></div>
 
   <!-- Scripts with Cache Busting -->
-  <script src="js/parser.js?v=3.8"></script>
-  <script src="js/sampleData.js?v=3.8"></script>
-  <script src="js/optimizer.js?v=3.8"></script>
-  <script src="js/imageExtractor.js?v=3.8"></script>
-  <script src="js/renderer.js?v=3.8"></script>
-  <script src="js/exporter.js?v=3.8"></script>
-  <script src="js/app.js?v=3.8"></script>
+  <script src="js/parser.js?v=3.9"></script>
+  <script src="js/sampleData.js?v=3.9"></script>
+  <script src="js/optimizer.js?v=3.9"></script>
+  <script src="js/imageExtractor.js?v=3.9"></script>
+  <script src="js/renderer.js?v=3.9"></script>
+  <script src="js/exporter.js?v=3.9"></script>
+  <script src="js/analytics.js?v=3.9"></script>
+  <script src="js/app.js?v=3.9"></script>
 </body>
 </html>

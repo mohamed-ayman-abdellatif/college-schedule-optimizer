@@ -78,7 +78,20 @@ const App = (() => {
       dontShowAgain: "Don't show automatically on startup",
       guideGotItBtn: "Got it, Let's Start! 🚀",
       mobileSwipeHint: 'Swipe horizontally to view all 16 periods 👈👉',
-      rankedOptionsTitle: '🎯 Ranked Clash-Free Options:'
+      rankedOptionsTitle: '🎯 Ranked Clash-Free Options:',
+      onlineNow: 'Online',
+      visitsShort: 'Visits',
+      activeUsersNow: 'Active Users Online',
+      totalVisitors: 'Total Unique Visits',
+      activeUsersDesc: 'Students currently browsing & optimizing schedules',
+      totalVisitorsDesc: 'All-time unique visitor sessions',
+      statsModalTitle: 'Live Users & Traffic Overview',
+      sessionDurationLabel: 'Your current session time:',
+      privacyLabel: 'Privacy & Safety:',
+      privacyDesc: '🔒 100% Anonymous & Zero Cookies',
+      howItWorksTitle: '⚡ How is this tracked?',
+      howItWorksDesc: 'This counter runs completely serverlessly on GitHub Pages using an atomic presence heartbeat. When anyone opens the website, their browser sends a privacy-safe presence ping every 45s. When they close the tab, the active count updates in real-time.',
+      closeBtn: 'Close'
     },
     ar: {
       appTitle: 'محول ومحسن الجداول الجامعية',
@@ -126,7 +139,20 @@ const App = (() => {
       dontShowAgain: 'عدم الإظهار تلقائياً عند فتح الموقع',
       guideGotItBtn: 'فهمت، لنبدأ الآن! 🚀',
       mobileSwipeHint: 'اسحب أفقياً لتصفح جميع الفترات الـ 16 👉👈',
-      rankedOptionsTitle: '🎯 الخيارات الأفضل مرتبة (بدون تعارض):'
+      rankedOptionsTitle: '🎯 الخيارات الأفضل مرتبة (بدون تعارض):',
+      onlineNow: 'متصل الآن',
+      visitsShort: 'زيارة',
+      activeUsersNow: 'المستخدمون المتواجدون حالياً',
+      totalVisitors: 'إجمالي الزيارات',
+      activeUsersDesc: 'طلاب يتصفحون وينظمون جداولهم في الوقت الحالي',
+      totalVisitorsDesc: 'إجمالي جلسات الزوار الفريدة منذ انطلاق الموقع',
+      statsModalTitle: 'المتواجدون حالياً وإحصائيات الزيارات',
+      sessionDurationLabel: 'مدة جلستك الحالية:',
+      privacyLabel: 'الخصوصية والأمان:',
+      privacyDesc: '🔒 مجهول 100% وبدون أي ملفات تعريف ارتباط (Cookies)',
+      howItWorksTitle: '⚡ كيف يتم حساب هذا العداد؟',
+      howItWorksDesc: 'يعمل هذا العداد بدون خادم تماماً (Serverless) على GitHub Pages عبر نبضات تواجد لحظية. بمجرد فتح الموقع، يرسل المتصفح إشارة نشاط كل 45 ثانية بأمان وخصوصية تامة، وتتحدث الأرقام لحظياً لجميع الطلاب.',
+      closeBtn: 'إغلاق'
     }
   };
 
@@ -287,6 +313,11 @@ const App = (() => {
     renderDoctorPreferences();
     if (state.solutions.length > 0) {
       renderCurrentSolution();
+    }
+
+    // Refresh live stats formatting with new locale
+    if (window.SiteAnalytics && typeof window.SiteAnalytics.updateUI === 'function') {
+      window.SiteAnalytics.updateUI();
     }
   }
 

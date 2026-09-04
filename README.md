@@ -78,8 +78,16 @@ An interactive, responsive, client-side web application designed for university 
 - **100% Client-Side**: All parsing, optimization, and exports run entirely inside your browser.
 - No university login credentials or schedule data ever leave your machine.
 
+### 5. 📊 Real-Time Active Users & Visitor Analytics
+- **Live Active Users Pulse**: Real-time counter of students currently browsing and optimizing schedules using a serverless 45s presence heartbeat.
+- **Total Unique Visitors**: Cumulative count of visitor sessions deduplicated per browser session.
+- **100% Serverless & Anonymous**: Built specifically for static hosting (GitHub Pages) with zero backend maintenance and no tracking cookies.
+- **Third-Party Dashboard Options (Optional)**:
+  - If you'd like deeper analytics (visitor countries, referral domains, OS/browser charts), you can add free, privacy-friendly [GoatCounter](https://www.goatcounter.com/) or Google Analytics 4 (GA4) with a single `<script>` tag.
+
 ---
 
 ### 🤲 كلمة من المطور
 > **متنساش تدعيلي دعوة حلوة** بالتوفيق والبركة ❤️
+
 
