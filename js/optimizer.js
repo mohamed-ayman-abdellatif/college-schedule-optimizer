@@ -72,12 +72,39 @@ const ScheduleOptimizer = (() => {
   }
 
   /**
+   * Normalizes doctor name for robust comparison
+   */
+  function cleanDoctorName(name) {
+    return (name || '')
+      .toLowerCase()
+      .replace(/^(د\.|د\/|د\s+|dr\.|dr\s+|doctor\s+|prof\.|أ\.د\.?|م\.|eng\.)\s*/i, '')
+      .replace(/[أإآ]/g, 'ا')
+      .replace(/ة/g, 'ه')
+      .replace(/ى/g, 'ي')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  /**
+   * Checks if doctor name matches target preference name
+   */
+  function matchesDoctor(docName, targetName) {
+    if (!docName || !targetName) return false;
+    if (docName === targetName) return true;
+    const c1 = cleanDoctorName(docName);
+    const c2 = cleanDoctorName(targetName);
+    if (!c1 || !c2) return false;
+    return c1 === c2 || c1.includes(c2) || c2.includes(c1);
+  }
+
+  /**
    * Evaluates doctor preference score.
    */
   function evaluateDoctorScore(selectedGroups, preferences) {
     const docPrefs = preferences.doctorPreferences || {};
     let score = 0;
     let matchedFavorites = 0;
+    let matchedMandates = 0;
     let totalDoctorChoices = 0;
 
     selectedGroups.forEach(item => {
@@ -88,10 +115,8 @@ const ScheduleOptimizer = (() => {
         totalDoctorChoices++;
         let pref = coursePrefs[doc];
         if (!pref) {
-          const cleanDoc = (doc || '').replace(/^(د\.|د\/|د\s+|Dr\.|Dr\s+|Doctor\s+|Prof\.|أ\.د\.?|م\.|Eng\.)\s*/i, '').trim();
           for (const key of Object.keys(coursePrefs)) {
-            const cleanKey = key.replace(/^(د\.|د\/|د\s+|Dr\.|Dr\s+|Doctor\s+|Prof\.|أ\.د\.?|م\.|Eng\.)\s*/i, '').trim();
-            if (cleanKey && cleanDoc && (cleanKey === cleanDoc || cleanDoc.includes(cleanKey) || cleanKey.includes(cleanDoc))) {
+            if (matchesDoctor(doc, key)) {
               pref = coursePrefs[key];
               break;
             }
@@ -99,18 +124,22 @@ const ScheduleOptimizer = (() => {
         }
         if (!pref) pref = 'neutral';
 
-        if (pref === 'love') {
+        if (pref === 'mandate' || pref === 'mandated') {
+          score += 80;
+          matchedMandates++;
+          matchedFavorites++;
+        } else if (pref === 'love') {
           score += 30;
           matchedFavorites++;
         } else if (pref === 'avoid') {
-          score -= 50;
+          score -= 500;
         } else {
           score += 5;
         }
       });
     });
 
-    return { score, matchedFavorites, totalDoctorChoices };
+    return { score, matchedFavorites, matchedMandates, totalDoctorChoices };
   }
 
   /**
@@ -227,11 +256,48 @@ const ScheduleOptimizer = (() => {
       const course = activeCourses[courseIndex];
       const groups = course.groups;
 
+      // Extract course doctor preferences (Avoid & Mandate)
+      const coursePrefs = (options.doctorPreferences && (options.doctorPreferences[course.code] || options.doctorPreferences[course.id])) || {};
+      const avoidedDocs = Object.keys(coursePrefs).filter(k => coursePrefs[k] === 'avoid');
+      const mandatedDocs = Object.keys(coursePrefs).filter(k => coursePrefs[k] === 'mandate' || coursePrefs[k] === 'mandated');
+      const courseReqDoc = requiredDoctors[course.code] || requiredDoctors[course.id];
+      if (courseReqDoc && !mandatedDocs.includes(courseReqDoc)) {
+        mandatedDocs.push(courseReqDoc);
+      }
+
       for (const grp of groups) {
-        // Constraint: Check Required Doctor
-        const courseReqDoc = requiredDoctors[course.code] || requiredDoctors[course.id];
-        if (courseReqDoc && (!grp.instructors || !grp.instructors.includes(courseReqDoc))) {
-          continue; // Skip group that doesn't have the required doctor
+        // Collect all instructors associated with this group
+        const grpInstructors = Array.from(new Set([
+          ...(grp.instructors || []),
+          ...((grp.sessions || []).map(s => s.instructor).filter(Boolean))
+        ]));
+
+        // Constraint 1: Avoided Doctor (Strict Pruning - Never in any schedule)
+        if (avoidedDocs.length > 0) {
+          let hasAvoided = false;
+          for (const av of avoidedDocs) {
+            if (grpInstructors.some(inst => matchesDoctor(inst, av))) {
+              hasAvoided = true;
+              break;
+            }
+          }
+          if (hasAvoided) {
+            continue; // Skip group containing avoided doctor!
+          }
+        }
+
+        // Constraint 2: Mandated Doctor (Strict Pruning - Must be chosen)
+        if (mandatedDocs.length > 0) {
+          let hasMandated = false;
+          for (const req of mandatedDocs) {
+            if (grpInstructors.some(inst => matchesDoctor(inst, req))) {
+              hasMandated = true;
+              break;
+            }
+          }
+          if (!hasMandated) {
+            continue; // Skip group that doesn't have the mandated doctor!
+          }
         }
 
         // Constraint: Free Days
@@ -296,10 +362,27 @@ const ScheduleOptimizer = (() => {
     backtrack(0, [], []);
 
     if (validSolutions.length === 0) {
+      const docPrefs = options.doctorPreferences || {};
+      let totalAvoided = 0;
+      let totalMandated = 0;
+      Object.values(docPrefs).forEach(cp => {
+        Object.values(cp).forEach(r => {
+          if (r === 'avoid') totalAvoided++;
+          if (r === 'mandate' || r === 'mandated') totalMandated++;
+        });
+      });
+
+      let message = 'No clash-free schedules found for this combination of courses.';
+      if (totalMandated > 0 || totalAvoided > 0) {
+        message = `No clash-free schedules found. You have ${totalMandated > 0 ? `${totalMandated} mandated doctor(s) (🌟🔒) ` : ''}${totalAvoided > 0 ? `${totalAvoided} avoided doctor(s) (🚫) ` : ''}which might be eliminating all available combinations. Try setting some to Neutral or relaxing free days.`;
+      } else {
+        message = 'No clash-free schedules found for this combination of courses. Try unchecking some free days or unblocking some times.';
+      }
+
       return {
         success: false,
         totalEvaluated,
-        message: 'No clash-free schedules found for this combination of courses. Try unchecking some free days or allowing all doctors.',
+        message,
         solutions: []
       };
     }
@@ -319,6 +402,9 @@ const ScheduleOptimizer = (() => {
 
       if (idx === 0) {
         sol.badges.push({ text: '⭐ Best Overall', type: 'best' });
+      }
+      if (sol.docEval && sol.docEval.matchedMandates > 0) {
+        sol.badges.push({ text: '🌟🔒 Mandated Doctor Included', type: 'mandate' });
       }
       if (sol.totalGapSlots === 0) {
         sol.badges.push({ text: '⚡ Zero Gaps (No Waiting)', type: 'zero-gap' });

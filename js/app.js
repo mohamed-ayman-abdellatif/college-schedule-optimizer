@@ -50,7 +50,7 @@ const App = (() => {
       noCoursesTitle: 'No Courses Added Yet',
       noCoursesDesc: 'Paste college HTML above or click "Load Example Courses" to test.',
       doctorPrefTitle: 'Doctor & Instructor Preferences',
-      doctorPrefDesc: 'Prioritize your favorite professors or avoid instructors you do not want.',
+      doctorPrefDesc: 'Prioritize preferred professors, triple-click "Favorite" to mandate (guarantee) a doctor (🌟🔒), or click "Avoid" to strictly exclude them from all schedules (🚫).',
       goalsTitle: 'Optimization Weights & Goals',
       gapWeightLabel: 'Minimize Gaps between lectures',
       daysWeightLabel: 'Minimize Campus Days (More Days Off)',
@@ -111,7 +111,7 @@ const App = (() => {
       noCoursesTitle: 'لم يتم إضافة مقررات حتى الآن',
       noCoursesDesc: 'الصق كود HTML من موقع الكلية أو اضغط "تحميل المقررات التجريبية" للتجربة الفورية.',
       doctorPrefTitle: 'تفضيلات الدكاترة والمعيدين',
-      doctorPrefDesc: 'اختر دكاترتك المفضلين لكل مادة أو تجنب الدكاترة غير المرغوب فيهم.',
+      doctorPrefDesc: 'اختر دكاترتك المفضلين، اضغط 3 مرات سريعاً على "مفضل" لتثبيت دكتور كإجباري (🌟🔒)، أو اضغط "تجنب" لاستبعاده نهائياً من كافة الجداول (🚫).',
       goalsTitle: 'أولويات وأهداف الجدول',
       gapWeightLabel: 'تقليل فترات الفراغ بين المحاضرات (Gaps)',
       daysWeightLabel: 'تقليل أيام النزول للكلية (أيام إجازة أكثر)',
@@ -1061,28 +1061,36 @@ const App = (() => {
         html += `<div class="pref-subgroup-header">${t.doctorsSubheading}</div>`;
         uniqueDocs.forEach(item => {
           const currentPref = getRatingForPerson(courseCode, item.formatted, item.original);
+          const isMandated = currentPref === 'mandate';
+          const isAvoided = currentPref === 'avoid';
+          const isLove = currentPref === 'love';
+
           html += `
-            <div class="doctor-pref-item is-doctor">
+            <div class="doctor-pref-item is-doctor ${isMandated ? 'is-mandated' : ''} ${isAvoided ? 'is-avoided' : ''}">
               <div class="doctor-name-col">
-                <span style="font-size: 16px;">🎓</span>
-                <span style="font-weight: 700; color: var(--text-primary);">${item.formatted}</span>
+                <span style="font-size: 16px;">${isMandated ? '🌟' : '🎓'}</span>
+                <span style="font-weight: 700; color: var(--text-primary); ${isAvoided ? 'text-decoration: line-through; opacity: 0.6;' : ''}">${item.formatted}</span>
                 <span class="role-badge doctor-badge">${t.doctorBadge}</span>
+                ${isMandated ? `<span class="role-badge badge-mandated" style="background: linear-gradient(135deg, #F59E0B, #D97706); color: white; font-weight: 800; box-shadow: 0 1px 6px rgba(245, 158, 11, 0.4);">🌟🔒 ${state.currentLang === 'ar' ? 'إجباري في الجدول' : 'Mandated'}</span>` : ''}
+                ${isAvoided ? `<span class="role-badge" style="background: rgba(239, 68, 68, 0.15); color: #EF4444; font-weight: 700;">🚫 ${state.currentLang === 'ar' ? 'مستبعد نهائياً' : 'Excluded'}</span>` : ''}
               </div>
               <div class="doctor-rating-group">
-                <button class="rating-btn ${currentPref === 'love' ? 'active-love' : ''}"
-                        title="${state.currentLang === 'ar' ? 'دكتور مفضل (أولوية قصوى)' : 'Favorite doctor'}"
-                        onclick="App.setDoctorPreference('${courseCode}', '${escapeQuotes(item.formatted)}', 'love')">
-                  ⭐ ${state.currentLang === 'ar' ? 'مفضل' : 'Favorite'}
+                <button class="rating-btn ${isMandated ? 'active-mandate' : (isLove ? 'active-love' : '')}"
+                        title="${isMandated 
+                          ? (state.currentLang === 'ar' ? 'دكتور إجباري ومفروض في جميع الجداول (انقر للإلغاء)' : 'Mandated doctor: Guaranteed in all schedules (click to unmandate)')
+                          : (state.currentLang === 'ar' ? 'دكتور مفضل - انقر 3 مرات سريعاً لتثبيته كإجباري 🌟🔒' : 'Favorite doctor - Triple-click to mandate 🌟🔒')}"
+                        onclick="App.handleDoctorPrefClick(event, '${courseCode}', '${escapeQuotes(item.formatted)}', 'love')">
+                  ${isMandated ? `🌟🔒 ${state.currentLang === 'ar' ? 'إجباري' : 'Mandated'}` : `⭐ ${state.currentLang === 'ar' ? 'مفضل' : 'Favorite'}`}
                 </button>
                 <button class="rating-btn ${currentPref === 'neutral' ? 'active-neutral' : ''}"
                         title="${state.currentLang === 'ar' ? 'عادي' : 'Neutral'}"
-                        onclick="App.setDoctorPreference('${courseCode}', '${escapeQuotes(item.formatted)}', 'neutral')">
+                        onclick="App.handleDoctorPrefClick(event, '${courseCode}', '${escapeQuotes(item.formatted)}', 'neutral')">
                   ⚪ ${state.currentLang === 'ar' ? 'عادي' : 'Neutral'}
                 </button>
-                <button class="rating-btn ${currentPref === 'avoid' ? 'active-avoid' : ''}"
-                        title="${state.currentLang === 'ar' ? 'تجنب هذا الدكتور' : 'Avoid doctor'}"
-                        onclick="App.setDoctorPreference('${courseCode}', '${escapeQuotes(item.formatted)}', 'avoid')">
-                  🚫 ${state.currentLang === 'ar' ? 'تجنب' : 'Avoid'}
+                <button class="rating-btn ${isAvoided ? 'active-avoid' : ''}"
+                        title="${state.currentLang === 'ar' ? 'استبعاد وحظر هذا الدكتور نهائياً من كافة الجداول 🚫' : 'Strictly exclude this doctor from all schedules 🚫'}"
+                        onclick="App.handleDoctorPrefClick(event, '${courseCode}', '${escapeQuotes(item.formatted)}', 'avoid')">
+                  🚫 ${state.currentLang === 'ar' ? 'تجنب (مستبعد)' : 'Avoid'}
                 </button>
               </div>
             </div>
@@ -1095,28 +1103,36 @@ const App = (() => {
         html += `<div class="pref-subgroup-header">${t.instructorsSubheading}</div>`;
         uniqueInsts.forEach(item => {
           const currentPref = getRatingForPerson(courseCode, item.formatted, item.original);
+          const isMandated = currentPref === 'mandate';
+          const isAvoided = currentPref === 'avoid';
+          const isLove = currentPref === 'love';
+
           html += `
-            <div class="doctor-pref-item">
+            <div class="doctor-pref-item ${isMandated ? 'is-mandated' : ''} ${isAvoided ? 'is-avoided' : ''}">
               <div class="doctor-name-col">
-                <span style="font-size: 16px;">🔬</span>
-                <span style="font-weight: 600; color: var(--text-secondary);">${item.formatted}</span>
+                <span style="font-size: 16px;">${isMandated ? '🌟' : '🔬'}</span>
+                <span style="font-weight: 600; color: var(--text-secondary); ${isAvoided ? 'text-decoration: line-through; opacity: 0.6;' : ''}">${item.formatted}</span>
                 <span class="role-badge instructor-badge">${t.instructorBadge}</span>
+                ${isMandated ? `<span class="role-badge badge-mandated" style="background: linear-gradient(135deg, #F59E0B, #D97706); color: white; font-weight: 800;">🌟🔒 ${state.currentLang === 'ar' ? 'إجباري' : 'Mandated'}</span>` : ''}
+                ${isAvoided ? `<span class="role-badge" style="background: rgba(239, 68, 68, 0.15); color: #EF4444; font-weight: 700;">🚫 ${state.currentLang === 'ar' ? 'مستبعد' : 'Excluded'}</span>` : ''}
               </div>
               <div class="doctor-rating-group">
-                <button class="rating-btn ${currentPref === 'love' ? 'active-love' : ''}"
-                        title="${state.currentLang === 'ar' ? 'معيد مفضل' : 'Favorite instructor'}"
-                        onclick="App.setDoctorPreference('${courseCode}', '${escapeQuotes(item.formatted)}', 'love')">
-                  ⭐ ${state.currentLang === 'ar' ? 'مفضل' : 'Favorite'}
+                <button class="rating-btn ${isMandated ? 'active-mandate' : (isLove ? 'active-love' : '')}"
+                        title="${isMandated 
+                          ? (state.currentLang === 'ar' ? 'معيد إجباري في جميع الجداول (انقر للإلغاء)' : 'Mandated instructor (click to unmandate)')
+                          : (state.currentLang === 'ar' ? 'معيد مفضل - انقر 3 مرات سريعاً لتثبيته كإجباري 🌟🔒' : 'Favorite instructor - Triple-click to mandate 🌟🔒')}"
+                        onclick="App.handleDoctorPrefClick(event, '${courseCode}', '${escapeQuotes(item.formatted)}', 'love')">
+                  ${isMandated ? `🌟🔒 ${state.currentLang === 'ar' ? 'إجباري' : 'Mandated'}` : `⭐ ${state.currentLang === 'ar' ? 'مفضل' : 'Favorite'}`}
                 </button>
                 <button class="rating-btn ${currentPref === 'neutral' ? 'active-neutral' : ''}"
                         title="${state.currentLang === 'ar' ? 'عادي' : 'Neutral'}"
-                        onclick="App.setDoctorPreference('${courseCode}', '${escapeQuotes(item.formatted)}', 'neutral')">
+                        onclick="App.handleDoctorPrefClick(event, '${courseCode}', '${escapeQuotes(item.formatted)}', 'neutral')">
                   ⚪ ${state.currentLang === 'ar' ? 'عادي' : 'Neutral'}
                 </button>
-                <button class="rating-btn ${currentPref === 'avoid' ? 'active-avoid' : ''}"
-                        title="${state.currentLang === 'ar' ? 'تجنب هذا المعيد' : 'Avoid instructor'}"
-                        onclick="App.setDoctorPreference('${courseCode}', '${escapeQuotes(item.formatted)}', 'avoid')">
-                  🚫 ${state.currentLang === 'ar' ? 'تجنب' : 'Avoid'}
+                <button class="rating-btn ${isAvoided ? 'active-avoid' : ''}"
+                        title="${state.currentLang === 'ar' ? 'استبعاد هذا المعيد نهائياً من كافة الجداول 🚫' : 'Strictly exclude this instructor from all schedules 🚫'}"
+                        onclick="App.handleDoctorPrefClick(event, '${courseCode}', '${escapeQuotes(item.formatted)}', 'avoid')">
+                  🚫 ${state.currentLang === 'ar' ? 'تجنب (مستبعد)' : 'Avoid'}
                 </button>
               </div>
             </div>
@@ -1133,10 +1149,116 @@ const App = (() => {
     container.innerHTML = html;
   }
 
+  // Click tracker for multi-clicks and triple-clicks
+  const doctorClickTracker = {};
+
+  /**
+   * Handles click events on doctor preference buttons.
+   * Supports single-click (Favorite / Avoid / Neutral),
+   * rapid triple-click (Mandate doctor 🌟🔒),
+   * and clicking a mandated doctor to toggle back to Favorite.
+   */
+  function handleDoctorPrefClick(event, courseCode, doctorName, ratingType) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    const key = `${courseCode}:::${doctorName}`;
+    const now = Date.now();
+    const isAr = state.currentLang === 'ar';
+
+    if (ratingType === 'love') {
+      const tracker = doctorClickTracker[key] || { count: 0, lastTime: 0 };
+      const timeDiff = now - tracker.lastTime;
+
+      // Track clicks within 800ms
+      if (timeDiff < 800) {
+        tracker.count += 1;
+      } else {
+        tracker.count = 1;
+      }
+      tracker.lastTime = now;
+      doctorClickTracker[key] = tracker;
+
+      const currentRating = getRatingForPerson(courseCode, doctorName);
+
+      // If already mandated, clicking it again toggles back to regular favorite
+      if (currentRating === 'mandate') {
+        tracker.count = 0;
+        setDoctorPreference(courseCode, doctorName, 'love');
+        showToast(
+          isAr
+            ? `تم إلغاء التثبيت الإجباري لـ ${doctorName} (أصبح مفضل فقط) ⭐`
+            : `Doctor ${doctorName} mandate removed (now regular favorite) ⭐`,
+          'info'
+        );
+        return;
+      }
+
+      // Check for triple-click: either 3 rapid clicks or event.detail >= 3
+      if (tracker.count >= 3 || (event && event.detail >= 3)) {
+        tracker.count = 0;
+        setDoctorPreference(courseCode, doctorName, 'mandate');
+        showToast(
+          isAr
+            ? `تم تثبيت ${doctorName} كإجباري ومفروض في كافة الجداول! 🌟🔒`
+            : `Doctor ${doctorName} is now MANDATED in all schedules! 🌟🔒`,
+          'success'
+        );
+        return;
+      }
+
+      if (tracker.count === 2) {
+        // Double clicked: inform user 1 more click to mandate
+        setDoctorPreference(courseCode, doctorName, 'love');
+        showToast(
+          isAr
+            ? `انقر نقرة ثالثة لتثبيت ${doctorName} كإجباري 🌟🔒`
+            : `Click one more time to MANDATE ${doctorName} 🌟🔒`,
+          'info'
+        );
+        return;
+      }
+
+      // Normal single click on Favorite
+      setDoctorPreference(courseCode, doctorName, 'love');
+      showToast(
+        isAr
+          ? `تم تحديد ${doctorName} كمفضل ⭐ (انقر 3 مرات للتثبيت الإجباري 🌟🔒)`
+          : `Marked ${doctorName} as Favorite ⭐ (Triple-click to mandate 🌟🔒)`,
+        'info'
+      );
+    } else if (ratingType === 'avoid') {
+      delete doctorClickTracker[key];
+      setDoctorPreference(courseCode, doctorName, 'avoid');
+      showToast(
+        isAr
+          ? `تم حظر واستبعاد ${doctorName} نهائياً من كافة الجداول 🚫`
+          : `Doctor ${doctorName} strictly excluded from all schedules 🚫`,
+        'warning'
+      );
+    } else {
+      // neutral
+      delete doctorClickTracker[key];
+      setDoctorPreference(courseCode, doctorName, 'neutral');
+    }
+  }
+
   function setDoctorPreference(courseCode, doctorName, rating) {
     if (!state.doctorPreferences[courseCode]) {
       state.doctorPreferences[courseCode] = {};
     }
+
+    // If setting to mandate, demote any previous mandated doctor in this course to avoid impossible conflicts
+    if (rating === 'mandate') {
+      Object.keys(state.doctorPreferences[courseCode]).forEach(doc => {
+        if (state.doctorPreferences[courseCode][doc] === 'mandate') {
+          state.doctorPreferences[courseCode][doc] = 'love';
+        }
+      });
+    }
+
     state.doctorPreferences[courseCode][doctorName] = rating;
 
     // Also store under cleaned name so both match in optimizer
@@ -1144,6 +1266,9 @@ const App = (() => {
     if (cleanName && cleanName !== doctorName) {
       state.doctorPreferences[courseCode][cleanName] = rating;
     }
+
+    // Invalidate stale solutions since constraints changed
+    state.solutions = [];
 
     saveStateToStorage();
     renderDoctorPreferences();
@@ -1646,6 +1771,7 @@ const App = (() => {
     removeCourse,
     updateCourseColor,
     setDoctorPreference,
+    handleDoctorPrefClick,
     selectSolution,
     updateDraftBlock,
     deleteDraftBlock,
