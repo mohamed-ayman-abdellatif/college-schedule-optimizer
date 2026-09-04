@@ -13,8 +13,28 @@ const SiteTelemetry = (() => {
   const WEBHOOK_STORAGE_KEY = 'cso_custom_webhook_url';
   const ADMIN_PIN = '2026';
 
+  // Optional central default webhook/Google Apps Script URL (syncs all devices globally)
+  const DEFAULT_CLOUD_URL = '';
+
   let clickCounter = 0;
   let clickTimer = null;
+
+  // Cloud sync state
+  let cachedCloudEvents = null;
+  let isFetchingCloud = false;
+  let cloudFetchError = null;
+  let activeDataSource = 'cloud'; // 'cloud' | 'local'
+
+  /**
+   * Returns effective cloud webhook URL
+   */
+  function getEffectiveWebhookUrl() {
+    try {
+      return (localStorage.getItem(WEBHOOK_STORAGE_KEY) || DEFAULT_CLOUD_URL || '').trim();
+    } catch (e) {
+      return DEFAULT_CLOUD_URL;
+    }
+  }
 
   /**
    * Track a doctor preference action
@@ -87,13 +107,15 @@ const SiteTelemetry = (() => {
       }).catch(() => {});
     } catch (err) {}
 
-    // Secondary: Custom Webhook URL (e.g. Google Sheets Web App or Discord)
-    const customWebhook = localStorage.getItem(WEBHOOK_STORAGE_KEY);
-    if (customWebhook && customWebhook.startsWith('http')) {
+    // Secondary: Cloud Webhook (e.g. Google Sheets Web App)
+    // Uses text/plain and mode: no-cors to prevent CORS preflight blocking
+    const cloudUrl = getEffectiveWebhookUrl();
+    if (cloudUrl && cloudUrl.startsWith('http')) {
       try {
-        fetch(customWebhook, {
+        fetch(cloudUrl, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
           body: JSON.stringify(eventObj)
         }).catch(() => {});
       } catch (err) {}
@@ -113,24 +135,78 @@ const SiteTelemetry = (() => {
   }
 
   /**
+   * Fetch all global events from central cloud (Google Sheets Web App)
+   */
+  async function fetchCloudEvents() {
+    const cloudUrl = getEffectiveWebhookUrl();
+    if (!cloudUrl || !cloudUrl.startsWith('http')) {
+      cachedCloudEvents = null;
+      activeDataSource = 'local';
+      return null;
+    }
+
+    isFetchingCloud = true;
+    cloudFetchError = null;
+
+    try {
+      const response = await fetch(cloudUrl, {
+        method: 'GET',
+        cache: 'no-cache'
+      });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const data = await response.json();
+      if (data && Array.isArray(data.events)) {
+        cachedCloudEvents = data.events;
+        activeDataSource = 'cloud';
+        return cachedCloudEvents;
+      } else {
+        throw new Error('Invalid response format');
+      }
+    } catch (err) {
+      console.warn('Could not fetch cloud telemetry:', err);
+      cloudFetchError = err.message || 'Network error';
+      if (!cachedCloudEvents) {
+        activeDataSource = 'local';
+      }
+      return null;
+    } finally {
+      isFetchingCloud = false;
+    }
+  }
+
+  /**
+   * Get active event list according to selected mode
+   */
+  function getActiveEvents() {
+    if (activeDataSource === 'cloud' && cachedCloudEvents) {
+      return cachedCloudEvents;
+    }
+    return getStoredEvents();
+  }
+
+  /**
    * Compute aggregated summary per doctor & subject
    */
-  function getDoctorSummary() {
-    const events = getStoredEvents();
+  function getDoctorSummary(eventsList) {
+    const events = eventsList || getActiveEvents();
     const map = {};
 
     events.forEach(evt => {
-      const key = `${evt.courseCode}:::${evt.doctorName}`;
+      const doctor = (evt.doctorName || '').trim();
+      const code = (evt.courseCode || '').trim();
+      if (!doctor) return;
+
+      const key = `${code}:::${doctor}`;
       if (!map[key]) {
         map[key] = {
-          doctorName: evt.doctorName,
-          courseCode: evt.courseCode,
-          courseName: evt.courseName,
+          doctorName: doctor,
+          courseCode: code,
+          courseName: evt.courseName || code,
           avoid: 0,
           prefer: 0,
           mandate: 0,
           total: 0,
-          lastTime: evt.cairoTime
+          lastTime: evt.cairoTime || evt.timestamp
         };
       }
       map[key].total++;
@@ -146,19 +222,20 @@ const SiteTelemetry = (() => {
    * Export all events as CSV
    */
   function exportEventsToCSV() {
-    const events = getStoredEvents();
+    const events = getActiveEvents();
     if (events.length === 0) {
       alert('No doctor preference events recorded yet.');
       return;
     }
 
-    const headers = ['Timestamp (Cairo)', 'Doctor Name', 'Course Code', 'Course Name', 'Action'];
+    const headers = ['Timestamp (Cairo)', 'Doctor Name', 'Course Code', 'Course Name', 'Action', 'Action Label'];
     const rows = events.map(e => [
       `"${e.cairoTime || e.timestamp}"`,
       `"${(e.doctorName || '').replace(/"/g, '""')}"`,
       `"${e.courseCode || ''}"`,
       `"${(e.courseName || '').replace(/"/g, '""')}"`,
-      `"${e.action}"`
+      `"${e.action || ''}"`,
+      `"${(e.actionLabel || '').replace(/"/g, '""')}"`
     ]);
 
     const csvContent = '\uFEFF' + [headers.join(','), ...rows.map(r => r.join(','))].join('\r\n');
@@ -166,7 +243,8 @@ const SiteTelemetry = (() => {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.setAttribute('href', url);
-    link.setAttribute('download', `doctor_preferences_report_${new Date().toISOString().slice(0, 10)}.csv`);
+    const modeLabel = activeDataSource === 'cloud' ? 'all_students_cloud' : 'local_device';
+    link.setAttribute('download', `doctor_preferences_${modeLabel}_${new Date().toISOString().slice(0, 10)}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -183,9 +261,31 @@ const SiteTelemetry = (() => {
   }
 
   /**
+   * Set active data source view
+   */
+  function setDataSource(source) {
+    activeDataSource = source;
+    if (source === 'cloud' && !cachedCloudEvents && !isFetchingCloud) {
+      fetchCloudEvents().then(() => renderAdminModalContent());
+    } else {
+      renderAdminModalContent();
+    }
+  }
+
+  /**
+   * Trigger refresh from cloud
+   */
+  async function refreshData() {
+    const refreshBtn = document.getElementById('telemetry-refresh-btn');
+    if (refreshBtn) refreshBtn.innerHTML = '🔄 Syncing...';
+    await fetchCloudEvents();
+    renderAdminModalContent();
+  }
+
+  /**
    * Open the secret Developer Admin Portal
    */
-  function openAdminModal() {
+  async function openAdminModal() {
     let modal = document.getElementById('telemetry-admin-modal');
     if (!modal) {
       createAdminModalDOM();
@@ -202,8 +302,15 @@ const SiteTelemetry = (() => {
       sessionStorage.setItem('cso_admin_authed', 'true');
     }
 
-    renderAdminModalContent();
     modal.style.setProperty('display', 'flex', 'important');
+    renderAdminModalContent();
+
+    // If cloud URL configured, fetch latest global events
+    const cloudUrl = getEffectiveWebhookUrl();
+    if (cloudUrl && !isFetchingCloud) {
+      await fetchCloudEvents();
+      renderAdminModalContent();
+    }
   }
 
   /**
@@ -227,38 +334,43 @@ const SiteTelemetry = (() => {
     div.onclick = (e) => { if (e.target === div) closeAdminModal(); };
 
     div.innerHTML = `
-      <div class="modal-dialog" style="max-width: 820px; width: 94%; max-height: 90vh; display: flex; flex-direction: column;">
-        <div class="modal-header" style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95)); border-bottom: 1px solid var(--border-color);">
+      <div class="modal-dialog" style="max-width: 860px; width: 95%; max-height: 92vh; display: flex; flex-direction: column;">
+        <div class="modal-header" style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.98), rgba(15, 23, 42, 0.98)); border-bottom: 1px solid var(--border-color); padding: 14px 18px;">
           <div style="display: flex; align-items: center; gap: 10px;">
-            <span style="font-size: 1.4rem;">🔐</span>
+            <span style="font-size: 1.5rem;">🔐</span>
             <div>
-              <h3 style="margin: 0; font-size: 1.15rem; font-weight: 800; color: #F59E0B;">
-                Private Doctor Telemetry & Preferences Portal
+              <h3 style="margin: 0; font-size: 1.18rem; font-weight: 800; color: #F59E0B; display: flex; align-items: center; gap: 8px;">
+                Private Doctor Telemetry Dashboard
               </h3>
-              <div style="font-size: 0.78rem; color: var(--text-muted);">
+              <div style="font-size: 0.76rem; color: var(--text-muted);">
                 Confidential to Mohamed Ayman (&lt;${DEVELOPER_EMAIL}&gt;) • Zero public display
               </div>
             </div>
           </div>
-          <button class="btn btn-outline btn-sm" onclick="SiteTelemetry.closeAdminModal()">✕</button>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <button class="btn btn-outline btn-sm" id="telemetry-refresh-btn" onclick="SiteTelemetry.refreshData()" title="Refresh latest data">
+              🔄 Refresh
+            </button>
+            <button class="btn btn-outline btn-sm" onclick="SiteTelemetry.closeAdminModal()">✕</button>
+          </div>
         </div>
 
-        <div class="modal-body" id="telemetry-admin-body" style="overflow-y: auto; padding: 20px;">
+        <div class="modal-body" id="telemetry-admin-body" style="overflow-y: auto; padding: 18px;">
           <!-- Content rendered dynamically -->
         </div>
 
-        <div class="modal-footer" style="justify-content: space-between; flex-wrap: wrap; gap: 8px; border-top: 1px solid var(--border-color);">
-          <div style="display: flex; gap: 8px;">
+        <div class="modal-footer" style="justify-content: space-between; flex-wrap: wrap; gap: 8px; border-top: 1px solid var(--border-color); padding: 12px 18px;">
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
             <button class="btn btn-primary btn-sm" onclick="SiteTelemetry.exportEventsToCSV()">
               📥 Export CSV / Excel
             </button>
-            <button class="btn btn-secondary btn-sm" onclick="SiteTelemetry.promptCustomWebhook()">
-              ⚙️ Webhook / Sheet URL
+            <button class="btn btn-secondary btn-sm" onclick="SiteTelemetry.toggleGuide()">
+              ⚙️ Google Sheet Setup (1 Min)
             </button>
           </div>
           <div style="display: flex; gap: 8px;">
             <button class="btn btn-outline btn-sm" style="color: var(--danger);" onclick="SiteTelemetry.clearLocalEvents()">
-              🗑️ Clear Buffer
+              🗑️ Clear Local Buffer
             </button>
             <button class="btn btn-secondary btn-sm" onclick="SiteTelemetry.closeAdminModal()">
               Close
@@ -272,15 +384,29 @@ const SiteTelemetry = (() => {
   }
 
   /**
+   * Toggle the Google Sheets setup guide inside the modal
+   */
+  function toggleGuide() {
+    const guideBox = document.getElementById('telemetry-sheet-guide-box');
+    if (guideBox) {
+      const isVisible = guideBox.style.display !== 'none';
+      guideBox.style.display = isVisible ? 'none' : 'block';
+    }
+  }
+
+  /**
    * Render content inside admin modal
    */
   function renderAdminModalContent() {
     const body = document.getElementById('telemetry-admin-body');
     if (!body) return;
 
-    const events = getStoredEvents();
-    const summary = getDoctorSummary();
-    const customWebhook = localStorage.getItem(WEBHOOK_STORAGE_KEY) || '';
+    const cloudUrl = getEffectiveWebhookUrl();
+    const hasCloudConfigured = Boolean(cloudUrl && cloudUrl.startsWith('http'));
+    const isCloudMode = hasCloudConfigured && (activeDataSource === 'cloud');
+
+    const events = isCloudMode && cachedCloudEvents ? cachedCloudEvents : getStoredEvents();
+    const summary = getDoctorSummary(events);
 
     let totalAvoid = 0;
     let totalPrefer = 0;
@@ -292,65 +418,171 @@ const SiteTelemetry = (() => {
     });
 
     let html = `
+      <!-- Connection & Mode Status Bar -->
+      <div style="background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: 10px; padding: 12px 16px; margin-bottom: 18px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+          <div>
+            <div style="font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; gap: 8px;">
+              ${hasCloudConfigured
+                ? `<span style="color: #10B981;">🟢 Live Cloud Connected</span>`
+                : `<span style="color: #F59E0B;">🟡 Local Device Mode</span>`
+              }
+              <span style="font-size: 0.78rem; font-weight: 500; color: var(--text-muted);">
+                (${events.length} records in this view)
+              </span>
+            </div>
+            <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 3px;">
+              📧 FormSubmit Email: <strong style="color: #10B981;">${DEVELOPER_EMAIL}</strong> (Active)
+              ${hasCloudConfigured ? ` • 🌐 Google Sheet: Connected` : ` • ⚠️ Clicks from other devices only reach your email until Google Sheet is connected`}
+            </div>
+          </div>
+
+          <!-- View Toggle Switch -->
+          <div style="display: flex; gap: 6px; background: var(--bg-secondary); padding: 4px; border-radius: 6px; border: 1px solid var(--border-color);">
+            <button 
+              class="btn btn-sm ${activeDataSource === 'cloud' ? 'btn-primary' : 'btn-outline'}" 
+              style="font-size: 0.75rem; padding: 4px 10px; ${!hasCloudConfigured ? 'opacity: 0.5;' : ''}"
+              onclick="SiteTelemetry.setDataSource('cloud')"
+              ${!hasCloudConfigured ? 'title="Connect Google Sheet to view global data"' : ''}
+            >
+              🌐 All Students (${hasCloudConfigured && cachedCloudEvents ? cachedCloudEvents.length : (hasCloudConfigured ? 'Sync' : 'Not Connected')})
+            </button>
+            <button 
+              class="btn btn-sm ${activeDataSource === 'local' ? 'btn-primary' : 'btn-outline'}" 
+              style="font-size: 0.75rem; padding: 4px 10px;"
+              onclick="SiteTelemetry.setDataSource('local')"
+            >
+              💻 This Browser (${getStoredEvents().length})
+            </button>
+          </div>
+        </div>
+
+        ${isFetchingCloud ? `
+          <div style="margin-top: 8px; font-size: 0.78rem; color: #3B82F6; display: flex; align-items: center; gap: 6px;">
+            <span>⏳ Fetching latest submissions from Google Sheets...</span>
+          </div>
+        ` : ''}
+
+        ${cloudFetchError ? `
+          <div style="margin-top: 8px; font-size: 0.78rem; color: #EF4444;">
+            ⚠️ Could not reach Google Sheet endpoint: ${cloudFetchError}. Showing local cached records.
+          </div>
+        ` : ''}
+      </div>
+
+      <!-- Quick 1-Minute Google Sheets Setup Guide Box (Collapsible) -->
+      <div id="telemetry-sheet-guide-box" style="display: ${hasCloudConfigured ? 'none' : 'block'}; background: rgba(59, 130, 246, 0.06); border: 1px dashed rgba(59, 130, 246, 0.4); border-radius: 10px; padding: 14px 16px; margin-bottom: 18px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+          <div style="font-weight: 700; color: var(--primary); font-size: 0.92rem;">
+            ⚡ Why only your device's preferences appear here, and how to see ALL students:
+          </div>
+          <button class="btn btn-outline btn-sm" style="font-size: 0.7rem; padding: 2px 6px;" onclick="SiteTelemetry.toggleGuide()">✕</button>
+        </div>
+        <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; margin: 0 0 10px 0;">
+          <strong>FormSubmit works 100%</strong> because every student's browser sends an email to <code>${DEVELOPER_EMAIL}</code> across the web.
+          However, browser <code>localStorage</code> is isolated to each student's phone. To collect and display <strong>ALL students' data together</strong> in this dashboard, connect your free Google Sheet (takes 60 seconds):
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.79rem; color: var(--text-primary); margin-bottom: 12px;">
+          <div>1️⃣ Open a new sheet at <a href="https://sheets.new" target="_blank" style="color: var(--primary); text-decoration: underline;">sheets.new</a>.</div>
+          <div>2️⃣ Click <strong>Extensions (الإضافات)</strong> &gt; <strong>Apps Script</strong>, delete everything and paste the script below:</div>
+          <div style="position: relative;">
+            <textarea id="apps-script-code-box" readonly style="width: 100%; height: 110px; font-family: monospace; font-size: 0.72rem; background: var(--bg-primary); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: 6px; padding: 8px;">function doPost(e) {
+  try {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    var data = e && e.postData && e.postData.contents ? JSON.parse(e.postData.contents) : (e.parameter || {});
+    if (sheet.getLastRow() === 0) {
+      sheet.appendRow(["Timestamp", "Cairo Time", "Doctor Name", "Course Code", "Course Name", "Action", "Action Label"]);
+    }
+    sheet.appendRow([new Date().toISOString(), data.cairoTime || "", data.doctorName || "", data.courseCode || "", data.courseName || "", data.action || "", data.actionLabel || ""]);
+    return ContentService.createTextOutput(JSON.stringify({status:"success"})).setMimeType(ContentService.MimeType.JSON);
+  } catch (err) {
+    return ContentService.createTextOutput(JSON.stringify({status:"error", error: err.toString()})).setMimeType(ContentService.MimeType.JSON);
+  }
+}
+function doGet(e) {
+  try {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    var rows = sheet.getDataRange().getValues();
+    var events = [];
+    var start = (rows.length > 0 && rows[0][0] === "Timestamp") ? 1 : 0;
+    for (var i = start; i < rows.length; i++) {
+      if (!rows[i][2] && !rows[i][3]) continue;
+      events.push({ id:"evt_"+i, timestamp:rows[i][0], cairoTime:rows[i][1], doctorName:String(rows[i][2]), courseCode:String(rows[i][3]), courseName:String(rows[i][4]), action:String(rows[i][5]), actionLabel:String(rows[i][6]) });
+    }
+    events.reverse();
+    return ContentService.createTextOutput(JSON.stringify({status:"success", count:events.length, events:events})).setMimeType(ContentService.MimeType.JSON);
+  } catch (err) {
+    return ContentService.createTextOutput(JSON.stringify({status:"error", error: err.toString()})).setMimeType(ContentService.MimeType.JSON);
+  }
+}</textarea>
+            <button class="btn btn-secondary btn-sm" style="position: absolute; top: 6px; right: 6px; font-size: 0.7rem; padding: 2px 8px;" onclick="SiteTelemetry.copyAppsScriptCode()">
+              📋 Copy Code
+            </button>
+          </div>
+          <div>3️⃣ Click <strong>Deploy (تطبيق)</strong> &gt; <strong>New deployment</strong> &gt; Select type: <strong>Web app</strong>. Set <em>Who has access</em> to <strong>Anyone (الجميع)</strong>.</div>
+          <div>4️⃣ Copy the resulting Web App URL and paste it below:</div>
+        </div>
+
+        <div style="display: flex; gap: 8px;">
+          <input 
+            type="text" 
+            id="telemetry-sheet-url-input" 
+            placeholder="https://script.google.com/macros/s/.../exec" 
+            value="${cloudUrl}"
+            style="flex: 1; padding: 8px 12px; font-size: 0.8rem; background: var(--bg-primary); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: 6px;"
+          />
+          <button class="btn btn-primary btn-sm" onclick="SiteTelemetry.saveSheetUrlFromInput()">
+            Save &amp; Sync Now
+          </button>
+        </div>
+      </div>
+
       <!-- Stats Overview Banner -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 20px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(135px, 1fr)); gap: 12px; margin-bottom: 20px;">
         <div style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 8px; padding: 12px; text-align: center;">
-          <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Total Actions</div>
+          <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: 600;">Total Actions</div>
           <div style="font-size: 1.8rem; font-weight: 800; color: #3B82F6;">${events.length}</div>
         </div>
         <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 8px; padding: 12px; text-align: center;">
-          <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Total Avoided 🚫</div>
+          <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: 600;">Total Avoided 🚫</div>
           <div style="font-size: 1.8rem; font-weight: 800; color: #EF4444;">${totalAvoid}</div>
         </div>
         <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 12px; text-align: center;">
-          <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Total Preferred ⭐</div>
+          <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: 600;">Total Preferred ⭐</div>
           <div style="font-size: 1.8rem; font-weight: 800; color: #10B981;">${totalPrefer}</div>
         </div>
         <div style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 8px; padding: 12px; text-align: center;">
-          <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Total Mandated 🌟🔒</div>
+          <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: 600;">Total Mandated 🌟🔒</div>
           <div style="font-size: 1.8rem; font-weight: 800; color: #F59E0B;">${totalMandate}</div>
         </div>
       </div>
 
-      <!-- Live Webhook Notification Status -->
-      <div style="background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: 8px; padding: 12px 14px; margin-bottom: 20px; font-size: 0.82rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
-        <div>
-          <span style="font-weight: 700; color: var(--text-primary);">📧 Direct Email Collector:</span>
-          <span style="color: #10B981; font-weight: 600;">${DEVELOPER_EMAIL}</span> (Active via FormSubmit)
-          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">
-            ${customWebhook ? `🔗 Custom Webhook: <code style="word-break: break-all;">${customWebhook.slice(0, 50)}...</code>` : 'No custom Google Sheets webhook connected yet.'}
-          </div>
-        </div>
-        <button class="btn btn-outline btn-sm" onclick="SiteTelemetry.promptCustomWebhook()">
-          ${customWebhook ? 'Edit Webhook' : '+ Connect Google Sheet'}
-        </button>
-      </div>
-
       <!-- Aggregated Doctor Breakdown Table -->
       <div style="font-weight: 700; font-size: 0.95rem; margin-bottom: 8px; color: var(--text-primary); display: flex; justify-content: space-between; align-items: center;">
-        <span>📊 Doctor Feedback Leaderboard</span>
-        <span style="font-size: 0.78rem; font-weight: 500; color: var(--text-muted);">${summary.length} unique professors/instructors</span>
+        <span>📊 Doctor Feedback Leaderboard ${isCloudMode ? '(Global - All Students)' : '(Local Device)'}</span>
+        <span style="font-size: 0.78rem; font-weight: 500; color: var(--text-muted);">${summary.length} unique instructors</span>
       </div>
     `;
 
     if (summary.length === 0) {
       html += `
-        <div style="text-align: center; padding: 24px; color: var(--text-muted); background: var(--bg-secondary); border-radius: 8px; margin-bottom: 20px;">
-          No doctor preferences recorded on this client session yet. When anyone marks Avoid 🚫, Prefer ⭐, or Mandate 🌟🔒, they will appear here and be transmitted to you!
+        <div style="text-align: center; padding: 24px; color: var(--text-muted); background: var(--bg-secondary); border-radius: 8px; margin-bottom: 20px; font-size: 0.85rem;">
+          No preferences found in this view. As students click Avoid 🚫, Prefer ⭐, or Mandate 🌟🔒, they will show here.
         </div>
       `;
     } else {
       html += `
-        <div style="overflow-x: auto; margin-bottom: 24px;">
+        <div style="overflow-x: auto; margin-bottom: 24px; border: 1px solid var(--border-color); border-radius: 8px;">
           <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; text-align: left;">
             <thead>
               <tr style="border-bottom: 2px solid var(--border-color); background: var(--bg-secondary); color: var(--text-secondary);">
-                <th style="padding: 8px 10px;">Doctor / Instructor</th>
-                <th style="padding: 8px 10px;">Subject (Code)</th>
-                <th style="padding: 8px 10px; text-align: center; color: #EF4444;">Avoid 🚫</th>
-                <th style="padding: 8px 10px; text-align: center; color: #10B981;">Prefer ⭐</th>
-                <th style="padding: 8px 10px; text-align: center; color: #F59E0B;">Mandate 🌟🔒</th>
-                <th style="padding: 8px 10px; text-align: center;">Total</th>
+                <th style="padding: 9px 12px;">Doctor / Instructor</th>
+                <th style="padding: 9px 12px;">Subject (Code)</th>
+                <th style="padding: 9px 12px; text-align: center; color: #EF4444;">Avoid 🚫</th>
+                <th style="padding: 9px 12px; text-align: center; color: #10B981;">Prefer ⭐</th>
+                <th style="padding: 9px 12px; text-align: center; color: #F59E0B;">Mandate 🌟🔒</th>
+                <th style="padding: 9px 12px; text-align: center;">Total</th>
               </tr>
             </thead>
             <tbody>
@@ -359,12 +591,12 @@ const SiteTelemetry = (() => {
       summary.forEach(s => {
         html += `
           <tr style="border-bottom: 1px solid var(--border-color);">
-            <td style="padding: 8px 10px; font-weight: 700; color: var(--text-primary);">${s.doctorName}</td>
-            <td style="padding: 8px 10px; color: var(--text-secondary);">${s.courseName} <span style="font-size: 0.75rem; color: var(--text-muted);">(${s.courseCode})</span></td>
-            <td style="padding: 8px 10px; text-align: center; font-weight: 700; color: #EF4444;">${s.avoid}</td>
-            <td style="padding: 8px 10px; text-align: center; font-weight: 700; color: #10B981;">${s.prefer}</td>
-            <td style="padding: 8px 10px; text-align: center; font-weight: 700; color: #F59E0B;">${s.mandate}</td>
-            <td style="padding: 8px 10px; text-align: center; font-weight: 800;">${s.total}</td>
+            <td style="padding: 9px 12px; font-weight: 700; color: var(--text-primary);">${s.doctorName}</td>
+            <td style="padding: 9px 12px; color: var(--text-secondary);">${s.courseName} <span style="font-size: 0.75rem; color: var(--text-muted);">(${s.courseCode})</span></td>
+            <td style="padding: 9px 12px; text-align: center; font-weight: 700; color: #EF4444;">${s.avoid}</td>
+            <td style="padding: 9px 12px; text-align: center; font-weight: 700; color: #10B981;">${s.prefer}</td>
+            <td style="padding: 9px 12px; text-align: center; font-weight: 700; color: #F59E0B;">${s.mandate}</td>
+            <td style="padding: 9px 12px; text-align: center; font-weight: 800;">${s.total}</td>
           </tr>
         `;
       });
@@ -379,16 +611,16 @@ const SiteTelemetry = (() => {
     // Recent Raw Event Stream
     html += `
       <div style="font-weight: 700; font-size: 0.95rem; margin-bottom: 8px; color: var(--text-primary);">
-        🕒 Recent Activity Stream (Latest 30 Events)
+        🕒 Recent Activity Feed (Latest ${Math.min(events.length, 30)} Submissions)
       </div>
       <div style="overflow-x: auto; max-height: 240px; overflow-y: auto; border: 1px solid var(--border-color); border-radius: 8px;">
         <table style="width: 100%; border-collapse: collapse; font-size: 0.8rem; text-align: left;">
           <thead>
             <tr style="background: var(--bg-secondary); border-bottom: 1px solid var(--border-color);">
-              <th style="padding: 6px 10px;">Time (Cairo)</th>
-              <th style="padding: 6px 10px;">Doctor</th>
-              <th style="padding: 6px 10px;">Subject</th>
-              <th style="padding: 6px 10px;">Action</th>
+              <th style="padding: 7px 12px;">Time (Cairo)</th>
+              <th style="padding: 7px 12px;">Doctor</th>
+              <th style="padding: 7px 12px;">Subject</th>
+              <th style="padding: 7px 12px;">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -405,12 +637,12 @@ const SiteTelemetry = (() => {
 
         html += `
           <tr style="border-bottom: 1px solid var(--border-color);">
-            <td style="padding: 6px 10px; color: var(--text-muted); font-size: 0.75rem;">${e.cairoTime || e.timestamp}</td>
-            <td style="padding: 6px 10px; font-weight: 600;">${e.doctorName}</td>
-            <td style="padding: 6px 10px; color: var(--text-secondary);">${e.courseCode}</td>
-            <td style="padding: 6px 10px;">
+            <td style="padding: 7px 12px; color: var(--text-muted); font-size: 0.75rem;">${e.cairoTime || e.timestamp}</td>
+            <td style="padding: 7px 12px; font-weight: 600;">${e.doctorName}</td>
+            <td style="padding: 7px 12px; color: var(--text-secondary);">${e.courseCode}</td>
+            <td style="padding: 7px 12px;">
               <span style="display: inline-block; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem; background: ${badgeColor}20; color: ${badgeColor}; border: 1px solid ${badgeColor}40;">
-                ${e.actionLabel}
+                ${e.actionLabel || e.action}
               </span>
             </td>
           </tr>
@@ -428,20 +660,57 @@ const SiteTelemetry = (() => {
   }
 
   /**
+   * Save Google Sheet URL from input field
+   */
+  async function saveSheetUrlFromInput() {
+    const input = document.getElementById('telemetry-sheet-url-input');
+    if (!input) return;
+    const url = input.value.trim();
+    if (url) {
+      localStorage.setItem(WEBHOOK_STORAGE_KEY, url);
+      alert('Google Sheet Web App connected! Syncing live data...');
+      await fetchCloudEvents();
+      renderAdminModalContent();
+    } else {
+      localStorage.removeItem(WEBHOOK_STORAGE_KEY);
+      cachedCloudEvents = null;
+      activeDataSource = 'local';
+      alert('Webhook removed. Switched to local device mode.');
+      renderAdminModalContent();
+    }
+  }
+
+  /**
+   * Copy Apps Script Code to clipboard
+   */
+  function copyAppsScriptCode() {
+    const box = document.getElementById('apps-script-code-box');
+    if (box) {
+      box.select();
+      navigator.clipboard.writeText(box.value).then(() => {
+        alert('Apps Script code copied to clipboard! Paste it into your Google Sheet Apps Script editor.');
+      }).catch(() => {
+        alert('Copied! (Use Ctrl+C to copy manually if needed)');
+      });
+    }
+  }
+
+  /**
    * Prompt to set custom webhook URL (e.g. Google Apps Script)
    */
   function promptCustomWebhook() {
-    const current = localStorage.getItem(WEBHOOK_STORAGE_KEY) || '';
-    const newUrl = prompt('Enter your Google Apps Script Web App URL or Discord Webhook URL:\n(Leave empty to remove)', current);
+    const current = getEffectiveWebhookUrl();
+    const newUrl = prompt('Enter your Google Apps Script Web App URL:\n(Leave empty to remove)', current);
     if (newUrl !== null) {
       if (newUrl.trim()) {
         localStorage.setItem(WEBHOOK_STORAGE_KEY, newUrl.trim());
-        alert('Custom webhook saved successfully! All future events will also stream to this endpoint.');
+        fetchCloudEvents().then(() => renderAdminModalContent());
       } else {
         localStorage.removeItem(WEBHOOK_STORAGE_KEY);
-        alert('Custom webhook removed.');
+        cachedCloudEvents = null;
+        activeDataSource = 'local';
+        renderAdminModalContent();
       }
-      renderAdminModalContent();
     }
   }
 
@@ -497,12 +766,19 @@ const SiteTelemetry = (() => {
   return {
     trackDoctorAction,
     getStoredEvents,
+    getActiveEvents,
     getDoctorSummary,
     exportEventsToCSV,
     clearLocalEvents,
     openAdminModal,
     closeAdminModal,
-    promptCustomWebhook
+    promptCustomWebhook,
+    fetchCloudEvents,
+    refreshData,
+    setDataSource,
+    toggleGuide,
+    saveSheetUrlFromInput,
+    copyAppsScriptCode
   };
 })();
 
