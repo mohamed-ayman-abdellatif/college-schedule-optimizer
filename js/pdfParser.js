@@ -147,22 +147,28 @@ const PdfScheduleParser = (() => {
 
   /**
    * Extracts group name from page header or element text
-   * e.g. "05EME01_144" -> "01", "05EME08_144" -> "08"
+   * e.g. "05EME01_144" -> "1", "05EME08_144" -> "8"
    */
   function extractGroupFromHeader(text) {
     if (!text) return null;
     const str = text.trim();
 
-    // Specific AAST / aSc format: 05EME01_144 -> Group 01
+    // Specific AAST / aSc format: 05EME01_144 -> Group 1
     const aastMatch = str.match(/\b\d{2}[A-Za-z]{2,5}(\d{1,2})_\d+\b/i);
     if (aastMatch) {
-      return aastMatch[1].padStart(2, '0');
+      return String(parseInt(aastMatch[1], 10));
     }
 
-    // Standard patterns: Group 1, Group A, G02, Sec 03
-    const stdMatch = str.match(/(?:Group|المجموعة|Sec|Section|G)\s*[:\-_]?\s*([A-Za-z0-9]+)/i);
-    if (stdMatch) {
-      return stdMatch[1];
+    // Standard Arabic pattern: المجموعة: B
+    const arMatch = str.match(/(?:المجموعة|مجموعة)\s*[:\-_]?\s*([A-Za-z0-9]+)/);
+    if (arMatch) {
+      return arMatch[1];
+    }
+
+    // Standard English pattern: Group 1, Group A, Sec 03
+    const enMatch = str.match(/\b(?:Group|Sec|Section)\s*[:\-_]?\s*([A-Za-z0-9]+)\b/i);
+    if (enMatch) {
+      return enMatch[1];
     }
 
     return null;
@@ -266,36 +272,18 @@ const PdfScheduleParser = (() => {
 
     if (elements.length === 0) return null;
 
-    // 1. Detect Group Header across ALL elements on the page (not restricted to top 15%)
-    let group = null;
-    let headerText = '';
+    // 1. Group assignment: Page 1 -> Group 1, Page 2 -> Group 2, etc.
+    // As requested: every subject in the first page is Group 1, in the 2nd page is Group 2, etc.
+    const group = String(pageNum || 1);
+    let headerText = `Group ${group}`;
 
-    // A) Search for AAST pattern: 05EME01_144, 05EME02_144, etc.
+    // Capture explicit header if present for info
     for (const el of elements) {
       const g = extractGroupFromHeader(el.str);
       if (g) {
-        group = g;
         headerText = el.str;
         break;
       }
-    }
-
-    // B) Search for "Group 1", "Group 2", etc.
-    if (!group) {
-      for (const el of elements) {
-        const m = el.str.match(/(?:Group|المجموعة|G)\s*[:\-_]?\s*([0-9]{1,2}|[A-Za-z])/i);
-        if (m) {
-          group = m[1].padStart(2, '0');
-          headerText = el.str;
-          break;
-        }
-      }
-    }
-
-    // C) Fallback to pageNum: Page 1 -> 01, Page 2 -> 02, ..., Page 8 -> 08
-    if (!group) {
-      group = String(pageNum || 1).padStart(2, '0');
-      headerText = `Group ${group}`;
     }
 
     // 2. Detect Day Labels (rows) on left side (x < 0.25 * viewport.width)
@@ -530,8 +518,8 @@ const PdfScheduleParser = (() => {
       if (!trimmed) return;
 
       const headerMatch = trimmed.match(/\b\d{2}[A-Za-z]{2,5}(\d{1,2})_\d+\b/i) ||
-                          trimmed.match(/(?:Group|المجموعة|G)\s*[:\-_]?\s*([A-Za-z0-9]+)/i);
-      const group = headerMatch ? (headerMatch[1].padStart(2, '0')) : String(idx + 1).padStart(2, '0');
+                          trimmed.match(/\b(?:Group|المجموعة|Sec|Section)\s*[:\-_]?\s*([A-Za-z0-9]+)\b/i);
+      const group = headerMatch ? String(parseInt(headerMatch[1], 10) || headerMatch[1]) : String(idx + 1);
       detectedGroups.add(group);
 
       const lines = trimmed.split('\n').map(l => l.trim()).filter(Boolean);

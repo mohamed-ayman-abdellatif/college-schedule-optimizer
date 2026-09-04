@@ -422,9 +422,9 @@
       PdfScheduleParser.normalizeDay('اربعاء') === 'Wednesday' &&
       PdfScheduleParser.normalizeDay('خميس') === 'Thursday'
     );
-    assert('extractGroupFromHeader parses aSc group format (05EME01_144 -> 01)',
-      PdfScheduleParser.extractGroupFromHeader('05EME01_144') === '01' &&
-      PdfScheduleParser.extractGroupFromHeader('05EME08_144') === '08'
+    assert('extractGroupFromHeader parses aSc group format (05EME01_144 -> 1)',
+      PdfScheduleParser.extractGroupFromHeader('05EME01_144') === '1' &&
+      PdfScheduleParser.extractGroupFromHeader('05EME08_144') === '8'
     );
     assert('extractGroupFromHeader parses standard group formats',
       PdfScheduleParser.extractGroupFromHeader('Group 3') === '3' &&
@@ -433,7 +433,7 @@
 
     // TEST 18: Cell Content Parsing
     const sampleCell1 = `EEC3301 Electronics 1 Sec\nBA E Asmaa Abdel Moteleb /\nالبشیر عادل يوسف محمد\nB 202|Class room`;
-    const parsedCell1 = PdfScheduleParser.parseCellContent(sampleCell1, 'Saturday', 1, '01');
+    const parsedCell1 = PdfScheduleParser.parseCellContent(sampleCell1, 'Saturday', 1, '1');
     assert('parseCellContent parses course code and clean name (using course number only)',
       parsedCell1 && parsedCell1.courseCode === 'EEC3301' && parsedCell1.courseName === 'EEC3301'
     );
@@ -559,14 +559,14 @@ ME D Abdelgawad Matar
 
     const pdfParseResult = PdfScheduleParser.parsePdfText(samplePdfRawText);
     assert('parsePdfText returns success on multi-page schedule text', pdfParseResult.success === true);
-    assert('parsePdfText detects both groups (01 and 02)',
-      pdfParseResult.detectedGroups.includes('01') && pdfParseResult.detectedGroups.includes('02')
+    assert('parsePdfText detects both groups (1 and 2)',
+      pdfParseResult.detectedGroups.includes('1') && pdfParseResult.detectedGroups.includes('2')
     );
     assert('parsePdfText extracts 7 distinct courses', pdfParseResult.courses.length === 7);
 
     // TEST 20: Course Structure & Group Aggregation
     const eecCourse = pdfParseResult.courses.find(c => c.code === 'EEC3301');
-    assert('EEC3301 has groups 01 and 02 with sessions',
+    assert('EEC3301 has groups 1 and 2 with sessions',
       eecCourse && eecCourse.groups.length >= 2 && eecCourse.slots.length >= 3
     );
     assert('EEC3301 has doctor identified',
