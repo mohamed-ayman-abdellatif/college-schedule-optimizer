@@ -263,6 +263,7 @@ const App = (() => {
    */
   function setupEventListeners() {
     // Top bar actions
+    document.getElementById('btn-show-guide')?.addEventListener('click', openGuideModal);
     document.getElementById('btn-theme-toggle')?.addEventListener('click', toggleTheme);
     document.getElementById('btn-lang-toggle')?.addEventListener('click', toggleLanguage);
     document.getElementById('btn-load-sample')?.addEventListener('click', loadSampleCourses);
