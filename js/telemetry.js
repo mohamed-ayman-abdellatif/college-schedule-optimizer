@@ -13,8 +13,8 @@ const SiteTelemetry = (() => {
   const WEBHOOK_STORAGE_KEY = 'cso_custom_webhook_url';
   const ADMIN_PIN = '2026';
 
-  // Optional central default webhook/Google Apps Script URL (syncs all devices globally)
-  const DEFAULT_CLOUD_URL = '';
+  // Central default Google Apps Script Web App URL (syncs all devices globally)
+  const DEFAULT_CLOUD_URL = 'https://script.google.com/macros/s/AKfycbzbz7yhI7eQjY2tPgd-107Q-bXLJjIXnSD5123Dax2XSrizi858F1-aybKRt8fo88NGYw/exec';
 
   let clickCounter = 0;
   let clickTimer = null;
