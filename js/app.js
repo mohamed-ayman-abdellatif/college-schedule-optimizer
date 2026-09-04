@@ -152,14 +152,6 @@ const App = (() => {
     }
     renderBlockedPainter();
     renderBlockedList();
-
-    // Automatically show onboarding guide on startup if not dismissed
-    const guideDismissed = localStorage.getItem('sched_guide_dismissed');
-    if (!guideDismissed) {
-      setTimeout(() => {
-        openGuideModal();
-      }, 500);
-    }
   }
 
   /**
@@ -450,6 +442,14 @@ const App = (() => {
         renderCurrentSolution();
         showToast('Courses cleared.', 'info');
       }
+    });
+
+    // Close guide modal when clicking backdrop or pressing Escape
+    document.getElementById('guide-modal')?.addEventListener('click', e => {
+      if (e.target.id === 'guide-modal') closeGuideModal();
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeGuideModal();
     });
   }
 
@@ -1399,11 +1399,6 @@ const App = (() => {
   function closeGuideModal() {
     const modal = document.getElementById('guide-modal');
     if (modal) modal.style.display = 'none';
-
-    const chk = document.getElementById('chk-dont-show-guide');
-    if (chk && chk.checked) {
-      localStorage.setItem('sched_guide_dismissed', 'true');
-    }
   }
 
   function renderGuideModalContent() {

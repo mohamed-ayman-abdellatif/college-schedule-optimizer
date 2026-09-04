@@ -11,8 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Core & Timetable CSS -->
-  <link rel="stylesheet" href="css/style.css?v=3.5" />
-  <link rel="stylesheet" href="css/timetable.css?v=3.5" />
+  <link rel="stylesheet" href="css/style.css?v=3.6" />
+  <link rel="stylesheet" href="css/timetable.css?v=3.6" />
 </head>
 <body>
 
@@ -460,13 +460,9 @@
           </button>
         </div>
       </div>
-      <div class="modal-footer" style="justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-        <label style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-secondary); cursor: pointer; user-select: none;">
-          <input type="checkbox" id="chk-dont-show-guide" />
-          <span data-i18n="dontShowAgain">Don't show automatically on startup</span>
-        </label>
+      <div class="modal-footer" style="justify-content: flex-end;">
         <button class="btn btn-primary" onclick="if(window.App&&window.App.closeGuideModal){App.closeGuideModal();}else{document.getElementById('guide-modal').style.display='none';}" data-i18n="guideGotItBtn">
-          Got it, Let's Start! 🚀
+          Got it, Close 🚀
         </button>
       </div>
     </div>
@@ -493,26 +489,12 @@
   <div id="toast-container" class="toast-container"></div>
 
   <!-- Scripts with Cache Busting -->
-  <script src="js/parser.js?v=3.5"></script>
-  <script src="js/sampleData.js?v=3.5"></script>
-  <script src="js/optimizer.js?v=3.5"></script>
-  <script src="js/imageExtractor.js?v=3.5"></script>
-  <script src="js/renderer.js?v=3.5"></script>
-  <script src="js/exporter.js?v=3.5"></script>
-  <script src="js/app.js?v=3.5"></script>
-
-  <!-- Instant Startup Fallback -->
-  <script>
-    try {
-      if (localStorage.getItem('sched_guide_dismissed') !== 'true') {
-        setTimeout(function() {
-          var m = document.getElementById('guide-modal');
-          if (m && m.style.display === 'none') {
-            m.style.display = 'flex';
-          }
-        }, 400);
-      }
-    } catch(e) {}
-  </script>
+  <script src="js/parser.js?v=3.6"></script>
+  <script src="js/sampleData.js?v=3.6"></script>
+  <script src="js/optimizer.js?v=3.6"></script>
+  <script src="js/imageExtractor.js?v=3.6"></script>
+  <script src="js/renderer.js?v=3.6"></script>
+  <script src="js/exporter.js?v=3.6"></script>
+  <script src="js/app.js?v=3.6"></script>
 </body>
 </html>
