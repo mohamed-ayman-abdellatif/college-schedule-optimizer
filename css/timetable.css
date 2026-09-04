@@ -589,23 +589,26 @@
 /* Solution Selector Carousel */
 .solutions-nav-container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: stretch;
   margin-bottom: 16px;
-  gap: 12px;
-  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .solutions-chips-wrapper {
   display: flex;
+  flex-wrap: wrap !important; /* Wraps options nicely onto multiple lines */
   gap: 8px;
-  overflow-x: auto;
-  padding: 4px 0;
-  flex: 1;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .sol-chip {
-  padding: 8px 16px;
+  padding: 8px 14px;
   border-radius: var(--radius-md);
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
@@ -613,47 +616,116 @@
   font-weight: 600;
   font-size: 0.85rem;
   cursor: pointer;
-  white-space: nowrap;
+  white-space: normal !important;
   transition: all 0.2s;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  box-sizing: border-box;
+  flex: 0 1 auto;
 }
 
 .sol-chip:hover {
   background: var(--bg-card-hover);
   color: var(--text-primary);
+  border-color: rgba(148, 163, 184, 0.3);
 }
 
 .sol-chip.active {
   background: var(--accent-primary);
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   border-color: var(--accent-primary);
-  box-shadow: 0 0 10px var(--accent-glow);
+  box-shadow: 0 2px 10px var(--accent-glow);
+}
+
+.sol-chip .sol-chip-title {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.sol-chip .sol-chip-meta {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.sol-chip.active .sol-chip-title,
+.sol-chip.active .sol-chip-meta {
+  color: #FFFFFF !important;
 }
 
 /* ==========================================================================
    Mobile & Tablet Timetable Responsive Styles
    ========================================================================== */
 @media (max-width: 768px) {
+  /* Timetable View Switcher */
+  .timetable-view-switcher {
+    flex-direction: column !important;
+    gap: 6px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
   /* Solutions Navigation Carousel */
   .solutions-nav-container {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 8px;
-    margin-bottom: 12px;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+    margin-bottom: 12px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .solutions-chips-wrapper {
-    padding: 4px 2px 8px;
-    gap: 6px;
-    -webkit-overflow-scrolling: touch;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important; /* Clean 2-column wrapped grid */
+    gap: 6px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
   }
 
   .sol-chip {
-    padding: 6px 12px;
-    font-size: 0.78rem;
-    flex-shrink: 0;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    padding: 8px 4px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 2px !important;
+    text-align: center !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    box-sizing: border-box !important;
+  }
+
+  .sol-chip .sol-chip-title {
+    font-size: 0.82rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .sol-chip .sol-chip-meta {
+    font-size: 0.68rem !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+  }
+
+  /* Strict width constraints on all Timetable tab elements to prevent page blowouts */
+  #tab-timetable,
+  #timetable-card,
+  #timetable-render-container,
+  .timetable-display-wrapper,
+  .timetable-view-panel {
+    max-width: 100% !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
   }
 
   /* Solution Summary Card */
@@ -820,6 +892,13 @@
 
   .blocked-time {
     font-size: 0.62rem;
+  }
+}
+
+/* Extra small screens (e.g. 320px - 360px) */
+@media (max-width: 360px) {
+  .solutions-chips-wrapper {
+    grid-template-columns: 1fr !important;
   }
 }
 

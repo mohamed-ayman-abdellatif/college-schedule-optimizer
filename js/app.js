@@ -77,7 +77,8 @@ const App = (() => {
       guideModalTitle: 'Quick Guide: How to Use the Optimizer',
       dontShowAgain: "Don't show automatically on startup",
       guideGotItBtn: "Got it, Let's Start! 🚀",
-      mobileSwipeHint: 'Swipe horizontally to view all 16 periods 👈👉'
+      mobileSwipeHint: 'Swipe horizontally to view all 16 periods 👈👉',
+      rankedOptionsTitle: '🎯 Ranked Clash-Free Options:'
     },
     ar: {
       appTitle: 'محول ومحسن الجداول الجامعية',
@@ -124,7 +125,8 @@ const App = (() => {
       guideModalTitle: 'دليل الاستخدام السريع: كيف تستخدم الموقع؟',
       dontShowAgain: 'عدم الإظهار تلقائياً عند فتح الموقع',
       guideGotItBtn: 'فهمت، لنبدأ الآن! 🚀',
-      mobileSwipeHint: 'اسحب أفقياً لتصفح جميع الفترات الـ 16 👉👈'
+      mobileSwipeHint: 'اسحب أفقياً لتصفح جميع الفترات الـ 16 👉👈',
+      rankedOptionsTitle: '🎯 الخيارات الأفضل مرتبة (بدون تعارض):'
     }
   };
 
@@ -1165,12 +1167,16 @@ const App = (() => {
     let html = '';
     topSolutions.forEach((sol, idx) => {
       const isActive = idx === state.activeSolutionIndex;
+      const titleText = isAr ? `الخيار #${sol.rank}` : `Option #${sol.rank}`;
+      const gapText = sol.totalGapSlots === 0
+        ? (isAr ? '⚡ 0 فترات فراغ' : '⚡ 0 Gaps')
+        : (isAr ? `☕ ${sol.totalGapSlots} فراغ` : `☕ ${sol.totalGapSlots} Gaps`);
+      const daysText = isAr ? `${sol.activeDaysCount} أيام` : `${sol.activeDaysCount} Days`;
 
       html += `
-        <button class="sol-chip ${isActive ? 'active' : ''}" onclick="App.selectSolution(${idx})">
-          <span>${isAr ? `الخيار ${sol.rank}` : `Option #${sol.rank}`}</span>
-          ${sol.totalGapSlots === 0 ? '⚡ 0 Gaps' : `☕ ${sol.totalGapSlots} Gaps`} •
-          <span>${sol.activeDaysCount} Days</span>
+        <button class="sol-chip ${isActive ? 'active' : ''}" onclick="App.selectSolution(${idx})" title="${titleText}: ${gapText}, ${daysText}">
+          <span class="sol-chip-title">${titleText}</span>
+          <span class="sol-chip-meta">${gapText} • ${daysText}</span>
         </button>
       `;
     });
