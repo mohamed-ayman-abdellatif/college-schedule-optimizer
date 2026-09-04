@@ -307,6 +307,18 @@ const App = (() => {
       const storedCourses = localStorage.getItem('sched_courses');
       if (storedCourses) {
         state.courses = JSON.parse(storedCourses);
+        // Self-repair any sessions affected by old Period 8 bug (startSlot 15 -> startSlot 1)
+        state.courses.forEach(c => {
+          (c.groups || []).forEach(g => {
+            (g.sessions || []).forEach(s => {
+              if ((s.startSlot === 15 && s.endSlot === 16) && (s.periodNum === 8 || !s.periodNum)) {
+                s.startSlot = 1;
+                s.endSlot = 2;
+                s.periodNum = 1;
+              }
+            });
+          });
+        });
         normalizeCourseDoctorTitles(state.courses);
       }
 
@@ -918,6 +930,16 @@ const App = (() => {
       return;
     }
 
+    // If the current courses in state are just the default sample courses,
+    // replace them with the user's imported timetable courses so they don't get mixed together.
+    const isOnlySampleCourses = state.courses.length > 0 &&
+      state.courses.every(c => (typeof SampleScheduleData !== 'undefined' && SampleScheduleData.DEFAULT_COURSE_SET.some(sc => sc.code === c.code)));
+
+    if (isOnlySampleCourses) {
+      state.courses = [];
+      state.doctorPreferences = {};
+    }
+
     let addedCount = 0;
     selectedIndices.forEach(idx => {
       const course = state.pendingPdfCourses[idx];
@@ -930,6 +952,8 @@ const App = (() => {
       addedCount++;
     });
 
+    state.solutions = [];
+    state.activeSolutionIndex = 0;
     saveStateToStorage();
     renderCoursesList();
     renderDoctorPreferences();

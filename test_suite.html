@@ -585,6 +585,35 @@ ME D Abdelgawad Matar
       pdfOptimizerResult.solutions[0].sessions.length >= 4
     );
 
+    // TEST 22: Guaranteed Pure Cohort Group Solutions Included
+    const fullPdfOptResult = ScheduleOptimizer.findOptimalSchedules(pdfParseResult.courses, {});
+    assert('ScheduleOptimizer finds solutions for full 7 PDF courses',
+      fullPdfOptResult.success === true && fullPdfOptResult.solutions.length > 0
+    );
+    const pureGrp1 = fullPdfOptResult.solutions.some(s => s.selectedGroups.every(g => g.group === '1'));
+    assert('Guaranteed inclusion of pure Group 1 cohort schedule', pureGrp1 === true);
+
+    // TEST 23: Period Column Header Detection Ignores Time Subheaders
+    const mockElements = [
+      { str: '1', x: 164, y: 89 },
+      { str: '8:30 - 10:10', x: 144, y: 102 },
+      { str: '2', x: 284, y: 89 },
+      { str: '3', x: 404, y: 89 },
+      { str: '4', x: 524, y: 89 },
+      { str: '5', x: 644, y: 89 },
+      { str: '6', x: 765, y: 89 },
+      { str: 'Saturday', x: 50, y: 150 },
+      { str: 'EEC3301', x: 164, y: 150 },
+      { str: 'Electronics', x: 164, y: 160 }
+    ];
+    const mockViewport = { width: 841, height: 595 };
+    const gridRes = PdfScheduleParser.parsePageSpatialGrid(mockElements, mockViewport, 1);
+    assert('parsePageSpatialGrid successfully parsed grid without throwing', !!gridRes);
+    const satSession = gridRes.sessions.find(s => s.courseCode === 'EEC3301');
+    assert('EEC3301 is mapped to Period 1 (Slots 1-2) instead of Period 8',
+      satSession && satSession.periodNum === 1 && satSession.startSlot === 1 && satSession.endSlot === 2
+    );
+
     // Summary
     const passedCount = results.filter(r => r.passed).length;
     const failedCount = results.filter(r => !r.passed).length;

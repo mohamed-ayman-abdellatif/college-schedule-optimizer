@@ -312,69 +312,182 @@ const ScheduleOptimizer = (() => {
 
     function runSearch(isStrictMandate, isStrictAvoid, isStrictDesired = false) {
       const solutions = [];
+      const seenCombinationKeys = new Set();
       let evaluated = 0;
 
-      function backtrack(courseIndex, currentSchedule, currentSessions) {
+      // Helper to generate a unique key for a candidate schedule
+      function getScheduleKey(schedule) {
+        return schedule.map(s => `${s.courseCode || s.courseId}:${s.group}`).sort().join('|');
+      }
+
+      // Helper to evaluate and add a completed candidate schedule
+      function addCandidateSolution(currentSchedule, currentSessions, isPureCohort = false, cohortGroup = null) {
+        const solKey = getScheduleKey(currentSchedule);
+        if (seenCombinationKeys.has(solKey)) return false;
+
+        const activeDays = new Set(currentSessions.map(s => s.day));
+        if (activeDays.size > maxDaysAllowed) return false;
+
+        const { totalGapSlots, gapDetails } = calculateGaps(currentSessions);
+        const docEval = evaluateDoctorScore(currentSchedule, options);
+
+        const groupCounts = {};
+        currentSchedule.forEach(item => {
+          groupCounts[item.group] = (groupCounts[item.group] || 0) + 1;
+        });
+        let maxSameGroupCount = 0;
+        for (const k in groupCounts) {
+          if (groupCounts[k] > maxSameGroupCount) maxSameGroupCount = groupCounts[k];
+        }
+
+        let earlyFinishScore = 0;
+        currentSessions.forEach(s => {
+          earlyFinishScore += (16 - s.endSlot);
+        });
+
+        // Boost pure cohort schedules by ensuring maximum group uniformity
+        const compositeScore =
+          (docEval.score * (weights.doctorWeight / 20)) -
+          (totalGapSlots * (weights.gapWeight / 5) * 8) -
+          (activeDays.size * (weights.daysWeight / 5) * 12) +
+          (maxSameGroupCount * (weights.uniformGroupWeight / 5) * 10) +
+          (earlyFinishScore * (weights.earlyWeight / 50)) +
+          (isPureCohort ? 50 : 0);
+
+        seenCombinationKeys.add(solKey);
+        solutions.push({
+          id: `sol_${solutions.length + 1}`,
+          compositeScore,
+          totalGapSlots,
+          gapDetails,
+          activeDaysCount: activeDays.size,
+          activeDays: Array.from(activeDays),
+          docEval,
+          maxSameGroupCount,
+          isPureCohort: Boolean(isPureCohort),
+          cohortGroup: cohortGroup || null,
+          selectedGroups: currentSchedule.map(s => ({
+            courseId: s.courseId,
+            courseName: s.courseName,
+            courseCode: s.courseCode,
+            group: s.group,
+            color: s.color,
+            instructors: s.instructors
+          })),
+          sessions: currentSessions.slice(),
+          blockedTimes: blockedRules
+        });
+        return true;
+      }
+
+      // Step 1: Pre-evaluate and seed pure-group cohort schedules
+      // When timetables are imported, each page/group represents a full cohort schedule (e.g. Group 1..8).
+      // We explicitly test each uniform group across all active courses so they are GUARANTEED to be found.
+      const candidateCohortGroups = [];
+      if (activeCourses.length > 0 && activeCourses[0].groups) {
+        activeCourses[0].groups.forEach(g => {
+          const gName = g.group;
+          if (activeCourses.every(c => c.groups.some(cg => cg.group === gName))) {
+            candidateCohortGroups.push(gName);
+          }
+        });
+      }
+
+      candidateCohortGroups.forEach(gName => {
+        const schedule = [];
+        const sessions = [];
+        let clash = false;
+
+        for (const course of activeCourses) {
+          const grp = course.groups.find(g => g.group === gName);
+          if (!grp) { clash = true; break; }
+
+          const grpInstructors = Array.from(new Set([
+            ...(grp.instructors || []),
+            ...((grp.sessions || []).map(s => s.instructor).filter(Boolean))
+          ]));
+
+          const coursePrefs = getCoursePreferences(options.doctorPreferences, course);
+          const avoidedDocs = Object.keys(coursePrefs).filter(k => coursePrefs[k] === 'avoid');
+          const mandatedDocs = Object.keys(coursePrefs).filter(k => coursePrefs[k] === 'mandate' || coursePrefs[k] === 'mandated');
+          const desiredDocs = Object.keys(coursePrefs).filter(k => coursePrefs[k] === 'mandate' || coursePrefs[k] === 'mandated' || coursePrefs[k] === 'love');
+          const courseReqDoc = requiredDoctors[course.code] || requiredDoctors[course.id];
+          if (courseReqDoc && !mandatedDocs.includes(courseReqDoc)) mandatedDocs.push(courseReqDoc);
+          if (courseReqDoc && !desiredDocs.includes(courseReqDoc)) desiredDocs.push(courseReqDoc);
+
+          if (isStrictAvoid && avoidedDocs.length > 0) {
+            if (grpInstructors.some(inst => avoidedDocs.some(av => matchesDoctor(inst, av)))) {
+              clash = true; break;
+            }
+          }
+          if (isStrictDesired && desiredDocs.length > 0) {
+            if (!grpInstructors.some(inst => desiredDocs.some(des => matchesDoctor(inst, des)))) {
+              clash = true; break;
+            }
+          }
+          if (isStrictMandate && !isStrictDesired && mandatedDocs.length > 0) {
+            if (!grpInstructors.some(inst => mandatedDocs.some(req => matchesDoctor(inst, req)))) {
+              clash = true; break;
+            }
+          }
+
+          const groupSessions = (grp.sessions || []).map(s => ({
+            ...s,
+            courseId: course.id,
+            courseName: course.name,
+            courseCode: course.code,
+            group: gName,
+            color: course.color
+          }));
+
+          for (const s of groupSessions) {
+            if (requestedFreeDays.has(s.day)) { clash = true; break; }
+            if (blockedSet.has(`${s.day}:${s.startSlot}`) || blockedSet.has(`${s.day}:${s.endSlot}`)) {
+              clash = true; break;
+            }
+            for (let sl = s.startSlot; sl <= s.endSlot; sl++) {
+              if (blockedSet.has(`${s.day}:${sl}`)) { clash = true; break; }
+            }
+            if (clash) break;
+            for (const existing of sessions) {
+              if (hasTimeOverlap(s, existing)) { clash = true; break; }
+            }
+            if (clash) break;
+          }
+          if (clash) break;
+
+          schedule.push({
+            courseId: course.id,
+            courseName: course.name,
+            courseCode: course.code,
+            group: gName,
+            color: course.color,
+            instructors: grpInstructors
+          });
+          sessions.push(...groupSessions);
+        }
+
+        if (!clash) {
+          addCandidateSolution(schedule, sessions, true, gName);
+        }
+      });
+
+      // Allocate quota per primary group to ensure diversity across all groups (e.g. Groups 1 through 8)
+      const numStartGroups = activeCourses[0] && activeCourses[0].groups ? activeCourses[0].groups.length : 1;
+      const quotaPerStartGroup = Math.max(300, Math.floor(MAX_SOLUTIONS_POOL / numStartGroups));
+      const solutionsCountByStartGroup = new Map();
+
+      function backtrack(courseIndex, currentSchedule, currentSessions, startGroupIdx) {
         if (solutions.length >= MAX_SOLUTIONS_POOL) return;
 
         if (courseIndex === activeCourses.length) {
           evaluated++;
-
-          // 1. Check Max Days Allowed
-          const activeDays = new Set(currentSessions.map(s => s.day));
-          if (activeDays.size > maxDaysAllowed) return;
-
-          // 2. Calculate Gaps
-          const { totalGapSlots, gapDetails } = calculateGaps(currentSessions);
-
-          // 3. Evaluate Doctor Score
-          const docEval = evaluateDoctorScore(currentSchedule, options);
-
-          // 4. Calculate Group Uniformity
-          const groupCounts = {};
-          currentSchedule.forEach(item => {
-            groupCounts[item.group] = (groupCounts[item.group] || 0) + 1;
-          });
-          let maxSameGroupCount = 0;
-          for (const k in groupCounts) {
-            if (groupCounts[k] > maxSameGroupCount) maxSameGroupCount = groupCounts[k];
+          if (addCandidateSolution(currentSchedule, currentSessions)) {
+            if (startGroupIdx !== undefined) {
+              const cur = solutionsCountByStartGroup.get(startGroupIdx) || 0;
+              solutionsCountByStartGroup.set(startGroupIdx, cur + 1);
+            }
           }
-
-          // 5. Calculate Early/Late preference
-          let earlyFinishScore = 0;
-          currentSessions.forEach(s => {
-            earlyFinishScore += (16 - s.endSlot);
-          });
-
-          // 6. Overall Composite Score (higher is better)
-          const compositeScore =
-            (docEval.score * (weights.doctorWeight / 20)) -
-            (totalGapSlots * (weights.gapWeight / 5) * 8) -
-            (activeDays.size * (weights.daysWeight / 5) * 12) +
-            (maxSameGroupCount * (weights.uniformGroupWeight / 5) * 10) +
-            (earlyFinishScore * (weights.earlyWeight / 50));
-
-          solutions.push({
-            id: `sol_${solutions.length + 1}`,
-            compositeScore,
-            totalGapSlots,
-            gapDetails,
-            activeDaysCount: activeDays.size,
-            activeDays: Array.from(activeDays),
-            docEval,
-            maxSameGroupCount,
-            selectedGroups: currentSchedule.map(s => ({
-              courseId: s.courseId,
-              courseName: s.courseName,
-              courseCode: s.courseCode,
-              group: s.group,
-              color: s.color,
-              instructors: s.instructors
-            })),
-            sessions: currentSessions.slice(),
-            blockedTimes: blockedRules
-          });
-
           return;
         }
 
@@ -394,8 +507,16 @@ const ScheduleOptimizer = (() => {
           desiredDocs.push(courseReqDoc);
         }
 
-        for (const grp of groups) {
+        for (let gIdx = 0; gIdx < groups.length; gIdx++) {
           if (solutions.length >= MAX_SOLUTIONS_POOL) break;
+
+          const effectiveStartIdx = (courseIndex === 0) ? gIdx : startGroupIdx;
+          if (courseIndex === 0 && numStartGroups > 1) {
+            const countForThisStart = solutionsCountByStartGroup.get(gIdx) || 0;
+            if (countForThisStart >= quotaPerStartGroup) continue;
+          }
+
+          const grp = groups[gIdx];
 
           // Collect all instructors associated with this group
           const grpInstructors = Array.from(new Set([
@@ -491,14 +612,15 @@ const ScheduleOptimizer = (() => {
           backtrack(
             courseIndex + 1,
             currentSchedule,
-            currentSessions.concat(enrichedSessions)
+            currentSessions.concat(enrichedSessions),
+            effectiveStartIdx
           );
 
           currentSchedule.pop();
         }
       }
 
-      backtrack(0, [], []);
+      backtrack(0, [], [], undefined);
       return { solutions, evaluated };
     }
 

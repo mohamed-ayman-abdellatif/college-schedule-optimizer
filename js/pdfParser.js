@@ -264,8 +264,8 @@ const PdfScheduleParser = (() => {
     // top-down Y = viewport.height - item.transform[5]
     const elements = items.map(item => ({
       str: (item.str || '').trim(),
-      x: item.transform[4],
-      y: viewport.height - item.transform[5],
+      x: item.transform ? item.transform[4] : (item.x || 0),
+      y: item.transform ? (viewport.height - item.transform[5]) : (item.y || 0),
       w: item.width || 0,
       h: item.height || 0
     })).filter(el => el.str.length > 0);
@@ -307,12 +307,16 @@ const PdfScheduleParser = (() => {
     const periodHeaders = [];
     elements.forEach(el => {
       if (el.y > viewport.height * 0.05 && el.y < viewport.height * 0.25) {
-        const pNum = parseInt(el.str, 10);
-        if (pNum >= 1 && pNum <= 8 && !periodHeaders.some(p => p.num === pNum)) {
-          periodHeaders.push({
-            num: pNum,
-            x: el.x
-          });
+        const trimmed = (el.str || '').trim();
+        const m = trimmed.match(/^([1-8])$/);
+        if (m) {
+          const pNum = parseInt(m[1], 10);
+          if (!periodHeaders.some(p => p.num === pNum)) {
+            periodHeaders.push({
+              num: pNum,
+              x: el.x
+            });
+          }
         }
       }
     });
@@ -680,6 +684,7 @@ const PdfScheduleParser = (() => {
     parsePdfFile,
     parsePdfText,
     parseCellContent,
+    parsePageSpatialGrid,
     mapPeriodToSlots,
     normalizeDay,
     extractGroupFromHeader,
