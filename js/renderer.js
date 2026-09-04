@@ -57,8 +57,37 @@ const ScheduleRenderer = (() => {
     return `${t1} - ${t2}`;
   }
 
+  let activeViewMode = 'auto'; // 'auto' (agenda on mobile <= 768, grid on desktop), 'agenda', 'grid'
+
+  function getEffectiveViewMode() {
+    if (activeViewMode === 'agenda' || activeViewMode === 'grid') {
+      return activeViewMode;
+    }
+    return (typeof window !== 'undefined' && window.innerWidth <= 768) ? 'agenda' : 'grid';
+  }
+
+  function setViewMode(mode) {
+    activeViewMode = mode;
+    const agendaEl = document.getElementById('timetable-view-agenda');
+    const gridEl = document.getElementById('timetable-view-grid');
+    const btnAgenda = document.getElementById('btn-view-agenda');
+    const btnGrid = document.getElementById('btn-view-grid');
+
+    const effective = getEffectiveViewMode();
+
+    if (agendaEl && gridEl) {
+      agendaEl.style.display = (effective === 'agenda') ? 'block' : 'none';
+      gridEl.style.display = (effective === 'grid') ? 'block' : 'none';
+    }
+    if (btnAgenda && btnGrid) {
+      btnAgenda.classList.toggle('active', effective === 'agenda');
+      btnGrid.classList.toggle('active', effective === 'grid');
+    }
+  }
+
   /**
    * Renders the complete timetable view for a solution.
+   * Provides both a Mobile-Friendly Daily Agenda and a Full 16-Period Grid.
    */
   function renderTimetable(solution, containerEl, lang = 'en', customBlockedTimes = []) {
     if (!containerEl) return;
@@ -74,6 +103,7 @@ const ScheduleRenderer = (() => {
     }
 
     const isAr = lang === 'ar';
+    const effectiveView = getEffectiveViewMode();
 
     // Group sessions by day
     const sessionsByDay = {};
@@ -114,9 +144,123 @@ const ScheduleRenderer = (() => {
     });
     maxSlotUsed = Math.min(16, Math.max(12, maxSlotUsed));
 
-    let html = `
+    // ==========================================
+    // 1. BUILD DAILY AGENDA CARDS (MOBILE OPTIMIZED)
+    // ==========================================
+    let agendaHtml = `<div class="agenda-cards-container">`;
+    DAYS.forEach(dayObj => {
+      const dayKey = dayObj.key;
+      const dayLabel = isAr ? dayObj.ar : dayObj.en;
+      const daySessions = sessionsByDay[dayKey] || [];
+      const dayBlocked = blockedByDay[dayKey] || [];
+      const isActiveDay = daySessions.length > 0 || dayBlocked.length > 0;
+
+      if (!isActiveDay) {
+        agendaHtml += `
+          <div class="agenda-day-card is-off-day">
+            <div class="agenda-day-header">
+              <span class="agenda-day-name">${dayLabel}</span>
+              <span class="agenda-day-badge" style="background: rgba(16, 185, 129, 0.15); color: #34D399; padding: 3px 10px; border-radius: 999px; font-weight: 700; font-size: 0.78rem;">
+                🏖️ ${isAr ? 'يوم إجازة كامل (Day Off)' : 'Full Day Off'}
+              </span>
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      // Sort sessions by startSlot
+      const sortedSessions = [...daySessions].sort((a, b) => a.startSlot - b.startSlot);
+      const timeSpanText = sortedSessions.length > 0
+        ? formatSlotTimeRange(sortedSessions[0].startSlot, sortedSessions[sortedSessions.length - 1].endSlot)
+        : '';
+
+      agendaHtml += `
+        <div class="agenda-day-card">
+          <div class="agenda-day-header">
+            <div class="agenda-day-name">
+              <span>📅</span> <span>${dayLabel}</span>
+            </div>
+            <div class="agenda-day-meta">
+              ${sortedSessions.length > 0 ? `<span>${sortedSessions.length} ${isAr ? 'حصص' : 'Classes'} • ${timeSpanText}</span>` : ''}
+            </div>
+          </div>
+          <div class="agenda-day-body">
+      `;
+
+      // Render any blocked times for this day
+      dayBlocked.forEach(b => {
+        const bTime = formatSlotTimeRange(b.startSlot, b.endSlot);
+        agendaHtml += `
+          <div class="agenda-blocked-badge">
+            <span>🚫</span>
+            <span>${b.label} (${bTime})</span>
+          </div>
+        `;
+      });
+
+      // Render each session with gap detector
+      let lastEnd = 0;
+      sortedSessions.forEach(s => {
+        if (lastEnd > 0 && s.startSlot > lastEnd + 1) {
+          const gapCount = s.startSlot - lastEnd - 1;
+          const gapFromTime = (PERIOD_TIMES[lastEnd] || '').split(' - ')[1] || '';
+          const gapToTime = (PERIOD_TIMES[s.startSlot] || '').split(' - ')[0] || '';
+          agendaHtml += `
+            <div class="agenda-gap-badge">
+              <span>☕</span>
+              <span>${isAr ? `بريك / فترة فراغ: ${gapCount} فترات (${gapFromTime} إلى ${gapToTime})` : `Break: ${gapCount} gap period(s) (${gapFromTime} - ${gapToTime})`}</span>
+            </div>
+          `;
+        }
+        lastEnd = s.endSlot;
+
+        const timeRange = formatSlotTimeRange(s.startSlot, s.endSlot);
+        const typeClass = s.type === 'Lab.' ? 'type-lab' : (s.type === 'Sec.' ? 'type-sec' : 'type-lect');
+        const typeLabel = isAr ? (s.type === 'Lab.' ? 'معمل' : (s.type === 'Sec.' ? 'سكشن' : 'محاضرة')) : s.type;
+
+        agendaHtml += `
+          <div class="agenda-session-card" style="border-inline-start: 4px solid ${s.color || '#3B82F6'};">
+            <div class="agenda-session-top">
+              <div class="agenda-session-code">
+                <span style="color: ${s.color || 'var(--text-primary)'}; font-weight: 800;">${s.courseName}</span>
+                ${s.courseCode && s.courseCode !== s.courseName ? `<span style="font-size: 0.8rem; color: var(--text-muted); margin-inline-start: 4px;">(${s.courseCode})</span>` : ''}
+              </div>
+              <span class="session-badge ${typeClass}">${typeLabel}</span>
+            </div>
+            <div class="agenda-session-info">
+              <span class="agenda-info-pill">
+                <strong>Group ${s.group}</strong>
+              </span>
+              <span class="agenda-info-pill">
+                ⏰ ${timeRange} (P${s.startSlot}${s.endSlot !== s.startSlot ? `-P${s.endSlot}` : ''})
+              </span>
+              ${s.instructor && sessionHasInstructor(s) ? `
+                <span class="agenda-info-pill">
+                  🎓 <strong>${s.instructor}</strong>
+                </span>
+              ` : ''}
+            </div>
+          </div>
+        `;
+      });
+
+      agendaHtml += `
+          </div>
+        </div>
+      `;
+    });
+    agendaHtml += `</div>`;
+
+    // ==========================================
+    // 2. BUILD FULL 16-PERIOD TIMETABLE GRID
+    // ==========================================
+    let gridHtml = `
       <div class="timetable-wrapper">
-        <div class="timetable-grid" style="grid-template-columns: 110px repeat(${maxSlotUsed}, minmax(75px, 1fr));">
+        <div class="mobile-scroll-hint" style="margin: 8px 10px;">
+          <span>👈</span> <span>${isAr ? 'اسحب أفقياً لتصفح جميع الفترات الـ 16' : 'Swipe horizontally to view all 16 periods'}</span> <span>👉</span>
+        </div>
+        <div class="timetable-grid" style="grid-template-columns: minmax(85px, 105px) repeat(${maxSlotUsed}, minmax(68px, 1fr));">
           <!-- Header Corner -->
           <div class="grid-header-corner">
             <span>${isAr ? 'اليوم / الفترة' : 'Day / Slot'}</span>
@@ -129,7 +273,7 @@ const ScheduleRenderer = (() => {
       const periodNum = Math.ceil(slot / 2);
       const isPeriodStart = slot % 2 === 1;
 
-      html += `
+      gridHtml += `
         <div class="grid-slot-header ${isPeriodStart ? 'period-start' : ''}">
           <div class="slot-num">${slot}</div>
           <div class="period-badge">P${periodNum}</div>
@@ -146,7 +290,7 @@ const ScheduleRenderer = (() => {
       const dayBlocked = blockedByDay[dayKey] || [];
       const isActiveDay = daySessions.length > 0;
 
-      html += `
+      gridHtml += `
         <!-- Day Label -->
         <div class="grid-day-header ${isActiveDay ? 'active-day' : 'day-off'}">
           <div class="day-title">${dayLabel}</div>
@@ -157,8 +301,7 @@ const ScheduleRenderer = (() => {
         </div>
       `;
 
-      // Build daily row content using a 16-slot tracker
-      // Slot tracker can hold: { kind: 'session', data } or { kind: 'blocked', data }
+      // 16-slot tracker
       const rowSlots = new Array(maxSlotUsed + 1).fill(null);
 
       // Place sessions
@@ -183,24 +326,22 @@ const ScheduleRenderer = (() => {
         const item = rowSlots[currSlot];
 
         if (item && item.kind === 'session' && item.data.startSlot === currSlot) {
-          // This slot begins a session block!
           const session = item.data;
           const span = Math.min(session.endSlot, maxSlotUsed) - session.startSlot + 1;
           const timeRange = formatSlotTimeRange(session.startSlot, session.endSlot);
           const typeClass = session.type === 'Lab.' ? 'type-lab' : (session.type === 'Sec.' ? 'type-sec' : 'type-lect');
           const typeLabel = isAr ? (session.type === 'Lab.' ? 'معمل' : (session.type === 'Sec.' ? 'سكشن' : 'محاضرة')) : session.type;
-          const courseColor = session.color || '#3B82F6';
 
-          html += `
+          gridHtml += `
             <div class="grid-session-card ${typeClass}"
-                 style="grid-column: span ${span}; border-left-color: ${session.color || '#3B82F6'};"
+                 style="grid-column: span ${span}; border-inline-start-color: ${session.color || '#3B82F6'};"
                  title="${session.courseName} (Group ${session.group})">
               <div class="session-top">
                 <span class="session-code">${session.courseCode || session.courseName}</span>
                 <span class="session-badge ${typeClass}">${typeLabel}</span>
               </div>
               <div class="session-group">Group ${session.group}</div>
-              ${session.instructor && session.instructor !== 'Not Specified' ? `
+              ${session.instructor && sessionHasInstructor(session) ? `
                 <div class="session-doc" title="${session.instructor}">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                   <span>${session.instructor}</span>
@@ -211,12 +352,11 @@ const ScheduleRenderer = (() => {
           `;
           currSlot += span;
         } else if (item && item.kind === 'blocked' && item.data.startSlot === currSlot) {
-          // This slot begins a blocked / training block!
           const bData = item.data;
           const span = Math.min(bData.endSlot, maxSlotUsed) - bData.startSlot + 1;
           const timeRange = formatSlotTimeRange(bData.startSlot, bData.endSlot);
 
-          html += `
+          gridHtml += `
             <div class="grid-blocked-cell"
                  style="grid-column: span ${span};"
                  title="${bData.label} (${timeRange})">
@@ -226,10 +366,8 @@ const ScheduleRenderer = (() => {
           `;
           currSlot += span;
         } else if (!item) {
-          // Empty slot - check if gap
           const isGap = isSlotInGap(dayKey, currSlot, solution.gapDetails);
-
-          html += `
+          gridHtml += `
             <div class="grid-empty-cell ${isGap ? 'gap-highlight' : ''}"
                  title="${isGap ? 'Break / Gap between lectures' : ''}">
               ${isGap ? `<span class="gap-icon">☕</span>` : ''}
@@ -242,12 +380,39 @@ const ScheduleRenderer = (() => {
       }
     });
 
-    html += `
+    gridHtml += `
         </div>
       </div>
     `;
 
-    containerEl.innerHTML = html;
+    // Combine views with view switcher
+    containerEl.innerHTML = `
+      <div class="timetable-display-wrapper">
+        <!-- View Mode Switcher -->
+        <div class="timetable-view-switcher">
+          <button id="btn-view-agenda" class="view-switch-btn ${effectiveView === 'agenda' ? 'active' : ''}" onclick="ScheduleRenderer.setViewMode('agenda')">
+            <span>📱</span> <span>${isAr ? 'جدول يومي (مخصص للموبايل)' : 'Daily Agenda (Mobile View)'}</span>
+          </button>
+          <button id="btn-view-grid" class="view-switch-btn ${effectiveView === 'grid' ? 'active' : ''}" onclick="ScheduleRenderer.setViewMode('grid')">
+            <span>🗓️</span> <span>${isAr ? 'الجدول الأسبوعي الكامل (16 فترة)' : 'Full 16-Period Grid'}</span>
+          </button>
+        </div>
+
+        <!-- View 1: Mobile-Optimized Daily Agenda -->
+        <div id="timetable-view-agenda" class="timetable-view-panel" style="display: ${effectiveView === 'agenda' ? 'block' : 'none'};">
+          ${agendaHtml}
+        </div>
+
+        <!-- View 2: Full 16-Period Timetable Grid -->
+        <div id="timetable-view-grid" class="timetable-view-panel" style="display: ${effectiveView === 'grid' ? 'block' : 'none'};">
+          ${gridHtml}
+        </div>
+      </div>
+    `;
+  }
+
+  function sessionHasInstructor(s) {
+    return s.instructor && s.instructor !== 'Not Specified' && s.instructor.trim() !== '';
   }
 
   function isSlotInGap(day, slot, gapDetails) {
@@ -314,7 +479,9 @@ const ScheduleRenderer = (() => {
     renderTimetable,
     renderSolutionSummary,
     formatSlotTimeRange,
-    hexToRgba
+    hexToRgba,
+    setViewMode,
+    getEffectiveViewMode
   };
 })();
 

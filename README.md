@@ -4,6 +4,8 @@
 [![Deploy to GitHub Pages](https://github.com/mohamed-ayman-abdellatif/college-schedule-optimizer/actions/workflows/deploy.yml/badge.svg)](https://github.com/mohamed-ayman-abdellatif/college-schedule-optimizer/actions/workflows/deploy.yml)
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-brightgreen?style=flat&logo=github)](https://mohamed-ayman-abdellatif.github.io/college-schedule-optimizer/)
 
+> 🤲 **متنساش تدعيلي دعوة حلوة** ❤️
+
 🌐 **Live App**: [https://mohamed-ayman-abdellatif.github.io/college-schedule-optimizer/](https://mohamed-ayman-abdellatif.github.io/college-schedule-optimizer/)
 
 An interactive, responsive, client-side web application designed for university students (specifically tuned for the **Arab Academy for Science, Technology & Maritime Transport (AASTMT)** and universities with period-based schedules). It converts college schedule HTML and photos into structured data, eliminates time clashes, allows prioritizing preferred doctors/instructors, and finds the best schedules that minimize gaps between lectures.
@@ -75,3 +77,9 @@ An interactive, responsive, client-side web application designed for university 
 
 - **100% Client-Side**: All parsing, optimization, and exports run entirely inside your browser.
 - No university login credentials or schedule data ever leave your machine.
+
+---
+
+### 🤲 كلمة من المطور
+> **متنساش تدعيلي دعوة حلوة** بالتوفيق والبركة ❤️
+

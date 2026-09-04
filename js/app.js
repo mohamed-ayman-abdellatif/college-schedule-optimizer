@@ -2,9 +2,12 @@
  * app.js
  * Main application coordinator: state management, local storage, user events,
  * tab switching, bilingual dictionary, and component integration.
+ *
+ * 🤲 متنساش تدعيلي دعوة حلوة ❤️
  */
 
 const App = (() => {
+  // متنساش تدعيلي دعوة حلوة
   // Application State
   const state = {
     courses: [],
@@ -140,6 +143,10 @@ const App = (() => {
     } else {
       renderCoursesList();
       renderDoctorPreferences();
+      // Pre-calculate schedules in background so Tab 3 is always ready
+      if (state.solutions.length === 0) {
+        calculateInitialSolutions();
+      }
     }
     renderBlockedPainter();
     renderBlockedList();
@@ -150,6 +157,32 @@ const App = (() => {
       setTimeout(() => {
         openGuideModal();
       }, 500);
+    }
+  }
+
+  /**
+   * Precalculate initial optimal solutions in background
+   */
+  function calculateInitialSolutions() {
+    if (!state.courses || state.courses.length === 0) return;
+    try {
+      const result = ScheduleOptimizer.findOptimalSchedules(state.courses, {
+        doctorPreferences: state.doctorPreferences,
+        gapWeight: state.preferences.gapWeight,
+        daysWeight: state.preferences.daysWeight,
+        doctorWeight: state.preferences.doctorWeight,
+        earlyWeight: state.preferences.earlyWeight,
+        freeDays: state.preferences.freeDays,
+        blockedTimes: state.blockedTimes
+      });
+      if (result && result.solutions && result.solutions.length > 0) {
+        state.solutions = result.solutions;
+        state.activeSolutionIndex = 0;
+        renderSolutionsSelector();
+        renderCurrentSolution();
+      }
+    } catch (err) {
+      console.warn('Initial solve background task error:', err);
     }
   }
 
@@ -426,6 +459,16 @@ const App = (() => {
     document.querySelectorAll('.tab-content').forEach(c => {
       c.style.display = c.id === `tab-${tabId}` ? 'block' : 'none';
     });
+
+    // When switching to Timetable Results tab, ensure content is rendered
+    if (tabId === 'timetable') {
+      if (state.solutions.length === 0 && state.courses.length > 0) {
+        runOptimizer();
+      } else {
+        renderSolutionsSelector();
+        renderCurrentSolution();
+      }
+    }
   }
 
   /**
@@ -673,6 +716,7 @@ const App = (() => {
     saveStateToStorage();
     renderCoursesList();
     renderDoctorPreferences();
+    calculateInitialSolutions();
     showToast(`Loaded ${state.courses.length} sample courses (including Applied Programming - ECE2102)!`, 'success');
   }
 

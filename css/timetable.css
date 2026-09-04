@@ -1,8 +1,165 @@
 /**
  * timetable.css
  * Styling for the 16-slot interactive timetable calendar, solution selector,
- * session cards, gap indicators, and clean print styles.
+ * session cards, gap indicators, mobile daily agenda, and clean print styles.
  */
+
+/* Timetable View Switcher */
+.timetable-view-switcher {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  background: var(--bg-secondary);
+  padding: 6px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.view-switch-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.view-switch-btn.active {
+  background: var(--accent-primary);
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px var(--accent-glow);
+}
+
+/* Daily Agenda View (Mobile-Optimized) */
+.agenda-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.agenda-day-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.agenda-day-card.is-off-day {
+  opacity: 0.75;
+}
+
+.agenda-day-header {
+  padding: 10px 14px;
+  background: rgba(59, 130, 246, 0.08);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.agenda-day-name {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.agenda-day-meta {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.agenda-day-body {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.agenda-session-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: transform 0.15s ease;
+}
+
+.agenda-session-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.agenda-session-code {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.agenda-session-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.agenda-info-pill {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.agenda-gap-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px dashed rgba(245, 158, 11, 0.4);
+  border-radius: 6px;
+  font-size: 0.78rem;
+  color: #FBBF24;
+  font-weight: 600;
+}
+
+.agenda-blocked-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px dashed rgba(239, 68, 68, 0.5);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: #F87171;
+  font-weight: 700;
+}
 
 .timetable-wrapper {
   width: 100%;
@@ -527,24 +684,25 @@
 
   .stats-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
     width: 100%;
   }
 
   .stat-box {
     background: var(--bg-primary);
-    padding: 8px 10px;
+    padding: 6px 8px;
     border-radius: var(--radius-sm);
     border: 1px solid var(--border-color);
+    text-align: center;
   }
 
   .stat-val {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
   }
 
   .stat-lbl {
-    font-size: 0.68rem;
+    font-size: 0.65rem;
   }
 
   .header-groups {
@@ -572,9 +730,27 @@
     font-size: 0.85rem;
   }
 
+  /* Grid items must NOT have sticky pinning on mobile to avoid row detachment and overlap */
+  .grid-header-corner,
+  .grid-day-header {
+    position: static !important;
+    box-shadow: none !important;
+    left: auto !important;
+    right: auto !important;
+  }
+
+  /* Allow cells to respect column minmax width without breaking tracks */
+  .grid-session-card,
+  .grid-slot-header,
+  .grid-day-header,
+  .grid-empty-cell,
+  .grid-blocked-cell {
+    min-width: 0 !important;
+  }
+
   /* Timetable Grid */
   .timetable-grid {
-    min-width: 840px;
+    min-width: 800px;
   }
 
   .grid-slot-header {
