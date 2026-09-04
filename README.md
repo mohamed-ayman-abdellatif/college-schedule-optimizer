@@ -85,9 +85,19 @@ An interactive, responsive, client-side web application designed for university 
 - **Third-Party Dashboard Options (Optional)**:
   - If you'd like deeper analytics (visitor countries, referral domains, OS/browser charts), you can add free, privacy-friendly [GoatCounter](https://www.goatcounter.com/) or Google Analytics 4 (GA4) with a single `<script>` tag.
 
+### 6. 🔐 Private Doctor Telemetry & Preferences Collection (Developer Only)
+- **Automatic Private Collection**: Whenever students set a doctor preference (**Avoid 🚫**, **Prefer ⭐**, or **Mandatory 🌟🔒**), the action, doctor name, and subject code are recorded and sent privately to the developer (`midogarcon@gmail.com`).
+- **Zero Public Visibility**: These metrics and names are **strictly private** and never displayed to ordinary visitors on the public site.
+- **Secret Developer Portal**:
+  - Open by pressing `Ctrl + Shift + D` (or clicking the developer prayer badge 5 times rapidly).
+  - PIN: `2026`.
+  - View total counts, doctor breakdown leaderboard, recent stream, and one-click **Export to CSV / Excel**.
+  - Connect a private **Google Sheets Web App** URL or Discord webhook anytime to stream live responses directly into a spreadsheet!
+
 ---
 
 ### 🤲 كلمة من المطور
 > **متنساش تدعيلي دعوة حلوة** بالتوفيق والبركة ❤️
+
 
 

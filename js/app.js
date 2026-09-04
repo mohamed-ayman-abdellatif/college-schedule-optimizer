@@ -1270,6 +1270,20 @@ const App = (() => {
     // Invalidate stale solutions since constraints changed
     state.solutions = [];
 
+    // Privately track avoid, love (prefer), and mandate actions for the developer
+    if (rating === 'avoid' || rating === 'love' || rating === 'mandate') {
+      const course = state.courses.find(c => c.code === courseCode || c.id === courseCode);
+      const courseName = course ? course.name : courseCode;
+      if (window.SiteTelemetry && typeof window.SiteTelemetry.trackDoctorAction === 'function') {
+        window.SiteTelemetry.trackDoctorAction({
+          doctorName,
+          courseCode,
+          courseName,
+          action: rating
+        });
+      }
+    }
+
     saveStateToStorage();
     renderDoctorPreferences();
   }
