@@ -1,4 +1,4 @@
-﻿# Archives
+# Archives
 *.zip
 
 # OS & Editor files
@@ -6,3 +6,7 @@
 Thumbs.db
 .vscode/
 .idea/
+
+# Large local recordings
+*.mht
+guide/

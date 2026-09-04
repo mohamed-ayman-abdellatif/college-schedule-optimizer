@@ -69,7 +69,11 @@ const App = (() => {
       doctorBadge: '🎓 Doctor',
       instructorBadge: '🔬 TA / Instructor',
       doctorsSubheading: '🎓 Doctors & Professors (Lectures)',
-      instructorsSubheading: '🔬 Teaching Assistants (Labs & Sections)'
+      instructorsSubheading: '🔬 Teaching Assistants (Labs & Sections)',
+      guideBtn: 'Guide ❓',
+      guideModalTitle: 'Quick Guide: How to Use the Optimizer',
+      dontShowAgain: "Don't show automatically on startup",
+      guideGotItBtn: "Got it, Let's Start! 🚀"
     },
     ar: {
       appTitle: 'محول ومحسن الجداول الجامعية',
@@ -111,7 +115,11 @@ const App = (() => {
       doctorBadge: '🎓 دكتور / أستاذ',
       instructorBadge: '🔬 معيد / مساعد تدريس',
       doctorsSubheading: '🎓 الدكاترة والأساتذة (المحاضرات)',
-      instructorsSubheading: '🔬 المعيدون ومساعدو التدريس (المعامل والتمارين)'
+      instructorsSubheading: '🔬 المعيدون ومساعدو التدريس (المعامل والتمارين)',
+      guideBtn: 'دليل الاستخدام ❓',
+      guideModalTitle: 'دليل الاستخدام السريع: كيف تستخدم الموقع؟',
+      dontShowAgain: 'عدم الإظهار تلقائياً عند فتح الموقع',
+      guideGotItBtn: 'فهمت، لنبدأ الآن! 🚀'
     }
   };
 
@@ -133,6 +141,14 @@ const App = (() => {
     }
     renderBlockedPainter();
     renderBlockedList();
+
+    // Automatically show onboarding guide on startup if not dismissed
+    const guideDismissed = localStorage.getItem('sched_guide_dismissed');
+    if (!guideDismissed) {
+      setTimeout(() => {
+        openGuideModal();
+      }, 500);
+    }
   }
 
   /**
@@ -227,6 +243,12 @@ const App = (() => {
         el.setAttribute('placeholder', t[key]);
       }
     });
+
+    // Re-render guide modal content if open
+    const guideModal = document.getElementById('guide-modal');
+    if (guideModal && guideModal.style.display !== 'none') {
+      renderGuideModalContent();
+    }
 
     // Re-render components in current language
     renderCoursesList();
@@ -1311,6 +1333,225 @@ const App = (() => {
     }, 3500);
   }
 
+  /**
+   * Guide Modal Controller
+   */
+  function openGuideModal() {
+    const modal = document.getElementById('guide-modal');
+    if (!modal) return;
+    renderGuideModalContent();
+    modal.style.display = 'flex';
+  }
+
+  function closeGuideModal() {
+    const modal = document.getElementById('guide-modal');
+    if (modal) modal.style.display = 'none';
+
+    const chk = document.getElementById('chk-dont-show-guide');
+    if (chk && chk.checked) {
+      localStorage.setItem('sched_guide_dismissed', 'true');
+    }
+  }
+
+  function renderGuideModalContent() {
+    const container = document.getElementById('guide-modal-body');
+    if (!container) return;
+
+    const isAr = state.currentLang === 'ar';
+
+    if (isAr) {
+      container.innerHTML = `
+        <div class="guide-steps-container">
+          <!-- Step 1 -->
+          <div class="guide-step-card">
+            <div class="guide-step-badge">١</div>
+            <div class="guide-step-content">
+              <div class="guide-step-title">
+                <span>🏛️</span>
+                <span>نسخ كود الجدول من موقع الكلية (بوابة طالب الأكاديمية)</span>
+              </div>
+              <div class="guide-step-desc">
+                <ul>
+                  <li>ادخل على موقع الأكاديمية أو كليتك <strong>(Student Portal ➔ جدول دراسي)</strong>.</li>
+                  <li>اختر الفصل الدراسي واضغط على خيار <strong>"جدول مقرر"</strong> (لعرض كافة مواعيد ومجموعات المادة).</li>
+                  <li>اختر القسم ثم اسم المادة المطلوبة (مثل <em>Applied Programming - ECE2102</em>).</li>
+                  <li>اضغط <strong>كليك يمين</strong> على جدول المواعيد واختر <strong>Inspect</strong> (أو اضغط <code>F12</code> أو <code>Ctrl+Shift+I</code>).</li>
+                  <li>في نافذة شجرة العناصر (Elements)، اضغط كليك يمين على وسم <code>&lt;table&gt;</code> أو وسم <code>&lt;html&gt;</code> بالكامل، ثم اختر <strong>Copy ➔ Copy element</strong>.</li>
+                </ul>
+                <div class="guide-pro-tip">
+                  💡 <strong>نصيحة ذهبية:</strong> يمكنك نسخ كود الصفحة بالكامل (<code>Ctrl+A</code> ثم <code>Ctrl+C</code> من نافذة Inspect) وموقعنا سيتولى استخراج الجدول بذكاء!
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="guide-step-card">
+            <div class="guide-step-badge">٢</div>
+            <div class="guide-step-content">
+              <div class="guide-step-title">
+                <span>📥</span>
+                <span>لصق وإضافة المقررات في الموقع</span>
+              </div>
+              <div class="guide-step-desc">
+                <ul>
+                  <li>ارجع إلى تبويب <strong>"١. المقررات والسكاشن"</strong> هنا في الموقع.</li>
+                  <li>الصق الكود المنسوخ داخل مربع النص بالضغط على <code>Ctrl + V</code>.</li>
+                  <li>اضغط الزر البنفسجي <strong>"استخراج وإضافة المقرر"</strong>.</li>
+                  <li>سيتعرف الموقع فوراً على جميع المجموعات (B إلى L)، ودكاترة المحاضرات بلقب <code>د.</code> والمعامل!</li>
+                  <li>كرر نفس الخطوة لباقي المواد التي تنوي تسجيلها هذا الترم.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="guide-step-card">
+            <div class="guide-step-badge">٣</div>
+            <div class="guide-step-content">
+              <div class="guide-step-title">
+                <span>👨‍🏫</span>
+                <span>تحديد مواعيد التمرين وتفضيلات الدكاترة</span>
+              </div>
+              <div class="guide-step-desc">
+                <ul>
+                  <li>انتقل لتبويب <strong>"٢. اختيار الدكاترة والأهداف"</strong>.</li>
+                  <li><strong>حظر الأوقات غير المناسبة:</strong> اضغط واسحب على شبكة الـ 16 فترة لحظر أي وقت (مثل تدريب السبت 8:30 صباحاً أو مواعيد المواصلات). الموقع يضمن 100% عدم وضع أي حصة فيها!</li>
+                  <li><strong>ترتيب الدكاترة:</strong> يظهر دكاترة المحاضرات في البداية مرتبين أبجدياً ومميزين بعلامة <code>🎓 دكتور</code>. اضغط <strong>⭐ مفضل</strong> للدكتور الأفضل لديك، أو <strong>🚫 تجنب</strong> لمن لا ترغب به.</li>
+                  <li><strong>أيام الإجازة:</strong> اختر يوماً ترغب بجعله إجازة بالكامل (مثل الثلاثاء) وسيقوم المحسن بضغط جدولك بأقل فترات فراغ.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="guide-step-card">
+            <div class="guide-step-badge">٤</div>
+            <div class="guide-step-content">
+              <div class="guide-step-title">
+                <span>⚡</span>
+                <span>توليد واختيار أفضل جدول وتصديره</span>
+              </div>
+              <div class="guide-step-desc">
+                <ul>
+                  <li>اضغط الزر الرئيسي <strong>"⚡ توليد أفضل الجداول"</strong>.</li>
+                  <li>تصفح الخيارات المقترحة بدون أي تعارض (مثل <strong>جدول #5: ⚡ بدون فترات فراغ • 4 أيام نزول</strong>).</li>
+                  <li>راجع جدولك الأسبوعي مع ألوان المواد وأسماء القاعات والدكاترة واستراحات القهوة (<code>☕</code>).</li>
+                  <li>صدّر جدولك كصورة <strong>PNG</strong> عالية الجودة لهاتفك، أو تقويم جوجل <strong>Google Calendar (.ics)</strong>، أو اطبعه مباشرة ليوم التسجيل!</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-quick-action-box">
+          <div>
+            <div style="font-weight: 700; color: var(--text-primary);">💡 تريد تجربة سريعة الآن؟</div>
+            <div style="font-size: 0.85rem; color: var(--text-secondary);">يمكنك تحميل مقررات هندسية تجريبية بضغطة زر لرؤية كيف يعمل المحسن فوراً.</div>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="App.loadSampleCourses(); App.closeGuideModal();">
+            📚 تحميل مواد تجريبية فوراً
+          </button>
+        </div>
+      `;
+    } else {
+      container.innerHTML = `
+        <div class="guide-steps-container">
+          <!-- Step 1 -->
+          <div class="guide-step-card">
+            <div class="guide-step-badge">1</div>
+            <div class="guide-step-content">
+              <div class="guide-step-title">
+                <span>🏛️</span>
+                <span>Copy Schedule HTML from College Portal</span>
+              </div>
+              <div class="guide-step-desc">
+                <ul>
+                  <li>Log in to your university portal (e.g. <strong>AASTMT Student Portal ➔ Schedule</strong>).</li>
+                  <li>Select your term and choose <strong>"Course Schedule (جدول مقرر)"</strong> to view all class groups.</li>
+                  <li>Select your Department and Subject (e.g. <em>Applied Programming - ECE2102</em>).</li>
+                  <li><strong>Right-click</strong> on the schedule table and select <strong>Inspect</strong> (or press <code>F12</code> / <code>Ctrl+Shift+I</code>).</li>
+                  <li>In the Elements DOM tree, right-click the <code>&lt;table&gt;</code> or the root <code>&lt;html&gt;</code> tag ➔ choose <strong>Copy ➔ Copy element</strong>.</li>
+                </ul>
+                <div class="guide-pro-tip">
+                  💡 <strong>Pro Tip:</strong> You can copy the entire page HTML code (<code>Ctrl+A</code> then <code>Ctrl+C</code> in DevTools) and our smart parser will detect the schedule automatically!
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="guide-step-card">
+            <div class="guide-step-badge">2</div>
+            <div class="guide-step-content">
+              <div class="guide-step-title">
+                <span>📥</span>
+                <span>Paste & Add Courses into the Optimizer</span>
+              </div>
+              <div class="guide-step-desc">
+                <ul>
+                  <li>Return to Tab <strong>"1. Add Courses"</strong> here in the optimizer.</li>
+                  <li>Paste the copied HTML into the text box using <code>Ctrl + V</code>.</li>
+                  <li>Click the purple <strong>"Parse & Add Course"</strong> button.</li>
+                  <li>The app extracts all groups (B to L), lecture doctors with <code>Dr.</code> title, labs, and time periods!</li>
+                  <li>Repeat for the other courses you want to register this semester.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="guide-step-card">
+            <div class="guide-step-badge">3</div>
+            <div class="guide-step-content">
+              <div class="guide-step-title">
+                <span>👨‍🏫</span>
+                <span>Set Busy Hours & Doctor Preferences</span>
+              </div>
+              <div class="guide-step-desc">
+                <ul>
+                  <li>Switch to Tab <strong>"2. Doctor & Goals"</strong>.</li>
+                  <li><strong>Block Busy Times:</strong> Click or drag across the 16-period weekly grid to prohibit slots (e.g. sports training on Saturday 8:30 AM or commutes). Zero classes will ever be placed there!</li>
+                  <li><strong>Rank Doctors:</strong> Lecture professors are highlighted in alphabetical order at the top with a <code>🎓 Doctor</code> badge. Click <strong>⭐ Favorite</strong> for preferred professors or <strong>🚫 Avoid</strong> to skip unwanted instructors.</li>
+                  <li><strong>Days Off:</strong> Select a target free day (e.g. Tuesday off) and set your gap minimization priority slider.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="guide-step-card">
+            <div class="guide-step-badge">4</div>
+            <div class="guide-step-content">
+              <div class="guide-step-title">
+                <span>⚡</span>
+                <span>Generate & Export Your Ideal Timetable</span>
+              </div>
+              <div class="guide-step-desc">
+                <ul>
+                  <li>Click the primary button <strong>"⚡ Find Best Schedules"</strong>.</li>
+                  <li>Browse clash-free options in the top carousel (e.g. <strong>Option #5: ⚡ 0 Gaps • 4 Days</strong>).</li>
+                  <li>Inspect your weekly calendar with doctor names, period times, and coffee-break gap indicators (<code>☕</code>).</li>
+                  <li>Export as <strong>PNG image</strong> for your phone, <strong>Google Calendar (.ics)</strong>, or <strong>Print</strong> for registration!</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-quick-action-box">
+          <div>
+            <div style="font-weight: 700; color: var(--text-primary);">💡 Want to test it immediately?</div>
+            <div style="font-size: 0.85rem; color: var(--text-secondary);">Load pre-configured university courses with one click to see how the optimizer works right now.</div>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="App.loadSampleCourses(); App.closeGuideModal();">
+            📚 Load Example Courses Now
+          </button>
+        </div>
+      `;
+    }
+  }
+
   return {
     init,
     removeCourse,
@@ -1322,7 +1563,10 @@ const App = (() => {
     saveImageDraftCourse,
     toggleBlockedSlot,
     applyBlockedPreset,
-    removeBlockedTime
+    removeBlockedTime,
+    openGuideModal,
+    closeGuideModal,
+    loadSampleCourses
   };
 })();
 

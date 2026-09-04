@@ -811,3 +811,106 @@ body {
   color: #FFFFFF;
 }
 
+/* Guide Modal Specific Styles */
+.guide-modal-dialog {
+  max-width: 840px;
+}
+
+.guide-steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.guide-step-card {
+  display: flex;
+  gap: 14px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.guide-step-card:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-1px);
+}
+
+.guide-step-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-primary), #8B5CF6);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+}
+
+.guide-step-content {
+  flex: 1;
+}
+
+.guide-step-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.guide-step-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.guide-step-desc ul {
+  margin: 6px 0 0 18px;
+  padding: 0;
+}
+
+[dir="rtl"] .guide-step-desc ul {
+  margin: 6px 18px 0 0;
+}
+
+.guide-step-desc li {
+  margin-bottom: 4px;
+}
+
+.guide-pro-tip {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: rgba(16, 185, 129, 0.1);
+  border-left: 3px solid var(--success);
+  border-radius: 4px;
+  font-size: 0.82rem;
+  color: var(--text-primary);
+}
+
+[dir="rtl"] .guide-pro-tip {
+  border-left: none;
+  border-right: 3px solid var(--success);
+}
+
+.guide-quick-action-box {
+  margin-top: 14px;
+  padding: 12px 16px;
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px dashed var(--accent-primary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+

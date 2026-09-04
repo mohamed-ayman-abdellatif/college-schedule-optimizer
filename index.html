@@ -28,6 +28,9 @@
       </div>
 
       <div class="header-actions">
+        <button id="btn-show-guide" class="btn btn-outline btn-sm" title="How to use the website" onclick="App.openGuideModal()">
+          <span>❓</span> <span data-i18n="guideBtn">Guide</span>
+        </button>
         <button id="btn-load-sample" class="btn btn-secondary btn-sm" data-i18n="loadSampleBtn">
           <span>📚</span> <span>Load Example Courses</span>
         </button>
@@ -321,6 +324,33 @@
     </section>
 
   </main>
+
+  <!-- Guide / Tutorial Modal -->
+  <div id="guide-modal" class="modal-backdrop" style="display: none;">
+    <div class="modal-dialog guide-modal-dialog">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 1.3rem;">📖</span>
+          <h3 class="modal-title" data-i18n="guideModalTitle" style="font-size: 1.15rem; font-weight: 800;">
+            Quick Guide: How to Use the Optimizer
+          </h3>
+        </div>
+        <button class="btn btn-outline btn-sm" onclick="App.closeGuideModal()">✕</button>
+      </div>
+      <div class="modal-body" id="guide-modal-body">
+        <!-- Rendered by JavaScript -->
+      </div>
+      <div class="modal-footer" style="justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+        <label style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-secondary); cursor: pointer; user-select: none;">
+          <input type="checkbox" id="chk-dont-show-guide" />
+          <span data-i18n="dontShowAgain">Don't show automatically on startup</span>
+        </label>
+        <button class="btn btn-primary" onclick="App.closeGuideModal()" data-i18n="guideGotItBtn">
+          Got it, Let's Start! 🚀
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- Image Calibration Modal -->
   <div id="image-calibration-modal" class="modal-backdrop" style="display: none;">
