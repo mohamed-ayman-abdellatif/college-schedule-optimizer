@@ -1888,6 +1888,83 @@ body {
   box-shadow: 0 0 10px rgba(245, 158, 11, 0.2);
 }
 
+.manual-group-card.has-avoided-doctor {
+  border-color: rgba(239, 68, 68, 0.5);
+  background: linear-gradient(to bottom, rgba(239, 68, 68, 0.05), var(--bg-secondary));
+}
+
+.manual-group-card.has-mandated-doctor {
+  border-color: rgba(245, 158, 11, 0.5);
+  background: linear-gradient(to bottom, rgba(245, 158, 11, 0.05), var(--bg-secondary));
+}
+
+.manual-group-card.has-preferred-doctor {
+  border-color: rgba(16, 185, 129, 0.5);
+  background: linear-gradient(to bottom, rgba(16, 185, 129, 0.05), var(--bg-secondary));
+}
+
+/* Doctor preference badges in Tab 4 */
+.manual-pref-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 999px;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.manual-pref-badge.badge-avoid {
+  background: rgba(239, 68, 68, 0.15);
+  color: #EF4444;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.manual-pref-badge.badge-mandate {
+  background: rgba(245, 158, 11, 0.18);
+  color: #D97706;
+  border: 1px solid rgba(245, 158, 11, 0.45);
+}
+
+.manual-pref-badge.badge-prefer {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10B981;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Timetable card doctor preference badges */
+.session-pref-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 999px;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.session-pref-badge.badge-avoid {
+  background: rgba(239, 68, 68, 0.18);
+  color: #EF4444;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.session-pref-badge.badge-mandate {
+  background: rgba(245, 158, 11, 0.18);
+  color: #D97706;
+  border: 1px solid rgba(245, 158, 11, 0.45);
+}
+
+.session-pref-badge.badge-prefer {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10B981;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
 .manual-group-header {
   display: flex;
   align-items: center;

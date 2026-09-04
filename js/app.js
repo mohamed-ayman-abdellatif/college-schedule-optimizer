@@ -1076,6 +1076,99 @@ const App = (() => {
   }
 
   /**
+   * Helper to retrieve preference for a doctor in a course, checking all possible keys
+   */
+  function getDoctorPrefForCourse(course, doctorName) {
+    if (!doctorName) return 'neutral';
+    const doc = String(doctorName).trim();
+    if (!doc || doc === 'Not Specified' || doc === 'غير محدد') return 'neutral';
+
+    const courseObj = (typeof course === 'object' && course !== null) ? course : {};
+    const courseKeys = [courseObj.code, courseObj.id, courseObj.name, course].filter(k => typeof k === 'string' && k.trim());
+
+    for (const key of courseKeys) {
+      const rating = getRatingForPerson(key, doc, doc);
+      if (rating && rating !== 'neutral') return rating;
+    }
+
+    // Direct check in state.doctorPreferences
+    for (const [cKey, prefs] of Object.entries(state.doctorPreferences || {})) {
+      if (courseKeys.includes(cKey)) {
+        if (prefs[doc]) return prefs[doc];
+        const clean = getCleanSortName(doc);
+        if (clean && prefs[clean]) return prefs[clean];
+        for (const [pDoc, pRating] of Object.entries(prefs)) {
+          if (pDoc.includes(doc) || doc.includes(pDoc)) return pRating;
+        }
+      }
+    }
+    return 'neutral';
+  }
+
+  /**
+   * Summarizes doctor preferences present in a course group.
+   */
+  function getGroupDoctorPrefSummary(course, grp) {
+    const courseDocs = new Set();
+    (grp.instructors || []).forEach(i => {
+      const s = (i || '').trim();
+      if (s && s !== 'Not Specified' && s !== 'غير محدد') courseDocs.add(s);
+    });
+    (grp.sessions || []).forEach(sess => {
+      const s = (sess.instructor || '').trim();
+      if (s && s !== 'Not Specified' && s !== 'غير محدد') courseDocs.add(s);
+    });
+
+    const ratedDocs = [];
+    courseDocs.forEach(doc => {
+      const r = getDoctorPrefForCourse(course, doc);
+      if (r && r !== 'neutral') {
+        ratedDocs.push({ doctor: doc, rating: r });
+      }
+    });
+
+    const hasMandate = ratedDocs.some(r => r.rating === 'mandate');
+    const hasAvoid = ratedDocs.some(r => r.rating === 'avoid');
+    const hasLove = ratedDocs.some(r => r.rating === 'love');
+
+    return {
+      ratedDocs,
+      hasMandate,
+      hasAvoid,
+      hasLove
+    };
+  }
+
+  function getGroupDoctorPrefBadgesHtml(prefSummary, isAr) {
+    let html = '';
+    if (prefSummary.hasMandate) {
+      html += `<span class="manual-pref-badge badge-mandate" title="${isAr ? 'تحتوي هذه المجموعة على دكتور محدد كإجباري' : 'This group includes a mandated doctor'}">🌟🔒 ${isAr ? 'دكتور إجباري' : 'Mandated Doctor'}</span>`;
+    }
+    if (prefSummary.hasAvoid) {
+      html += `<span class="manual-pref-badge badge-avoid" title="${isAr ? 'تحتوي هذه المجموعة على دكتور قمت باستبعاده (يمكنك اختياره يدوياً دون أي قيود)' : 'This group includes an avoided doctor (you can still select it manually)'}">🚫 ${isAr ? 'دكتور مستبعد' : 'Avoided Doctor'}</span>`;
+    }
+    if (prefSummary.hasLove && !prefSummary.hasMandate) {
+      html += `<span class="manual-pref-badge badge-prefer" title="${isAr ? 'تحتوي هذه المجموعة على دكتور مفضل لديك' : 'This group includes a preferred doctor'}">⭐ ${isAr ? 'دكتور مفضل' : 'Preferred Doctor'}</span>`;
+    }
+    return html;
+  }
+
+  function getSessionDoctorPrefBadgeHtml(course, instructor, isAr) {
+    if (!instructor) return '';
+    const rating = getDoctorPrefForCourse(course, instructor);
+    if (rating === 'avoid') {
+      return `<span class="manual-pref-badge badge-avoid" title="${isAr ? 'دكتور مستبعد في تفضيلاتك (مسموح باختياره يدوياً)' : 'Avoided Doctor (Allowed in manual mode)'}">🚫 ${isAr ? 'مستبعد' : 'Avoided'}</span>`;
+    }
+    if (rating === 'mandate') {
+      return `<span class="manual-pref-badge badge-mandate" title="${isAr ? 'دكتور إجباري في تفضيلاتك' : 'Mandated Doctor'}">🌟🔒 ${isAr ? 'إجباري' : 'Mandated'}</span>`;
+    }
+    if (rating === 'love') {
+      return `<span class="manual-pref-badge badge-prefer" title="${isAr ? 'دكتور مفضل في تفضيلاتك' : 'Preferred Doctor'}">⭐ ${isAr ? 'مفضل' : 'Preferred'}</span>`;
+    }
+    return '';
+  }
+
+  /**
    * Render Doctor Preferences
    * Doctors are highlighted, prefixed with Dr./د., and ordered first alphabetically,
    * followed by Instructors ordered alphabetically.
@@ -1661,7 +1754,16 @@ const App = (() => {
       const isSelected = doc === currentVal ? 'selected' : '';
       const isDoc = doc.includes('د.') || doc.toLowerCase().includes('dr.');
       const icon = isDoc ? '🎓' : '🔬';
-      html += `<option value="${doc}" ${isSelected}>${icon} ${doc} (${coursesTaught})</option>`;
+
+      let prefTag = '';
+      for (const course of state.courses) {
+        const r = getDoctorPrefForCourse(course, doc);
+        if (r === 'mandate') { prefTag = isAr ? ' 🌟🔒 [إجباري]' : ' 🌟🔒 [Mandated]'; break; }
+        if (r === 'avoid') { prefTag = isAr ? ' 🚫 [مستبعد]' : ' 🚫 [Avoided]'; }
+        else if (r === 'love' && !prefTag) { prefTag = isAr ? ' ⭐ [مفضل]' : ' ⭐ [Preferred]'; }
+      }
+
+      html += `<option value="${doc}" ${isSelected}>${icon} ${doc}${prefTag} (${coursesTaught})</option>`;
     });
 
     select.innerHTML = html;
@@ -1736,6 +1838,10 @@ const App = (() => {
       const selectedForCourse = getSelectedGroupsForCourse(courseId);
       const isMultiCourse = selectedForCourse.length > 1;
 
+      const courseObj = state.courses.find(c => c.id === courseId) || { id: courseId, name: courseName, code: courseCode };
+      const prefSummary = getGroupDoctorPrefSummary(courseObj, groupData);
+      const prefBadgesHtml = getGroupDoctorPrefBadgesHtml(prefSummary, isAr);
+
       const conflict = checkGroupConflictWithManualSchedule(courseId, groupData);
       const isClashing = !isSelected && conflict.clashing;
 
@@ -1744,15 +1850,20 @@ const App = (() => {
       else if (isClashing) cardClass += ' is-clashing';
       else cardClass += ' is-doc-match';
 
+      if (prefSummary.hasAvoid) cardClass += ' has-avoided-doctor';
+      if (prefSummary.hasMandate) cardClass += ' has-mandated-doctor';
+      if (prefSummary.hasLove) cardClass += ' has-preferred-doctor';
+
       html += `
         <div class="${cardClass}" style="border-inline-start: 5px solid ${color || '#3B82F6'};">
           <div class="manual-group-header">
             <div class="manual-group-title">
-              <div style="display: flex; align-items: center; gap: 4px;">
+              <div style="display: flex; align-items: center; gap: 4px; flex-wrap: wrap;">
                 <span style="color: ${color || 'var(--text-primary)'}; font-weight: 800;">${courseCode || courseName}</span>
                 ${isSelected && isMultiCourse ? getRedErrorTriangleSvg(isAr ? 'تم اختيار أكثر من مجموعة لهذه المادة' : 'Multiple groups selected for this subject') : ''}
               </div>
               <span class="mini-group-tag" style="background: var(--bg-primary); border: 1px solid var(--border-color); font-weight: 800;">Group ${groupData.group}</span>
+              ${prefBadgesHtml}
             </div>
             <div>
               ${isSelected ? `<span class="selected-badge-pill">✓ ${isAr ? 'تم اختياره' : 'Selected'}</span>` : ''}
@@ -1769,10 +1880,11 @@ const App = (() => {
               const timeStr = ScheduleRenderer.formatSlotTimeRange(s.startSlot, s.endSlot);
               const typeClass = s.type === 'Lab.' ? 'lab-item' : (s.type === 'Sec.' ? 'sec-item' : 'lect-item');
               const typeName = isAr ? (s.type === 'Lab.' ? 'معمل' : (s.type === 'Sec.' ? 'سكشن' : 'محاضرة')) : s.type;
+              const docBadge = s.instructor ? getSessionDoctorPrefBadgeHtml(courseObj, s.instructor, isAr) : '';
               return `
                 <div class="manual-session-item ${typeClass}">
                   <span><strong>${typeName}</strong>: ${s.day} (${timeStr})</span>
-                  <span>${s.instructor ? `👨‍🏫 ${s.instructor}` : ''}</span>
+                  <span>${s.instructor ? `👨‍🏫 ${s.instructor}` : ''} ${docBadge}</span>
                 </div>
               `;
             }).join('')}
@@ -1889,6 +2001,9 @@ const App = (() => {
                 if (inGrp || inSess) isDocMatch = true;
               }
 
+              const prefSummary = getGroupDoctorPrefSummary(course, grp);
+              const prefBadgesHtml = getGroupDoctorPrefBadgesHtml(prefSummary, isAr);
+
               const conflict = checkGroupConflictWithManualSchedule(course.id, grp);
               const isClashing = !isSelected && conflict.clashing;
 
@@ -1897,15 +2012,20 @@ const App = (() => {
               else if (isClashing) cardClass += ' is-clashing';
               else if (isDocMatch) cardClass += ' is-doc-match';
 
+              if (prefSummary.hasAvoid) cardClass += ' has-avoided-doctor';
+              if (prefSummary.hasMandate) cardClass += ' has-mandated-doctor';
+              if (prefSummary.hasLove) cardClass += ' has-preferred-doctor';
+
               return `
                 <div class="${cardClass}">
                   <div class="manual-group-header">
                     <div class="manual-group-title">
-                      <div style="display: flex; align-items: center; gap: 4px;">
+                      <div style="display: flex; align-items: center; gap: 4px; flex-wrap: wrap;">
                         <span>Group ${grp.group}</span>
                         ${isSelected && isMultiCourse ? getRedErrorTriangleSvg(isAr ? 'تم اختيار أكثر من مجموعة لهذه المادة' : 'Multiple groups selected for this subject') : ''}
                       </div>
                       ${isDocMatch ? `<span class="doc-highlight-pill">⭐ ${isAr ? 'مجموعة الدكتور' : "Doctor's Group"}</span>` : ''}
+                      ${prefBadgesHtml}
                     </div>
                     <div>
                       ${isSelected ? `<span class="selected-badge-pill">✓</span>` : ''}
@@ -1917,10 +2037,11 @@ const App = (() => {
                       const timeStr = ScheduleRenderer.formatSlotTimeRange(s.startSlot, s.endSlot);
                       const typeClass = s.type === 'Lab.' ? 'lab-item' : (s.type === 'Sec.' ? 'sec-item' : 'lect-item');
                       const typeName = isAr ? (s.type === 'Lab.' ? 'معمل' : (s.type === 'Sec.' ? 'سكشن' : 'محاضرة')) : s.type;
+                      const docBadge = s.instructor ? getSessionDoctorPrefBadgeHtml(course, s.instructor, isAr) : '';
                       return `
                         <div class="manual-session-item ${typeClass}">
                           <span><strong>${typeName}</strong>: ${s.day} (${timeStr})</span>
-                          <span>${s.instructor ? `👨‍🏫 ${s.instructor}` : ''}</span>
+                          <span>${s.instructor ? `👨‍🏫 ${s.instructor}` : ''} ${docBadge}</span>
                         </div>
                       `;
                     }).join('')}
@@ -2173,6 +2294,25 @@ const App = (() => {
       ? `${getRedErrorTriangleSvg(isAr ? 'تم اختيار أكثر من مجموعة لنفس المقرر' : 'Multiple groups selected for this subject')} <span>${isAr ? `تنبيه: تم اختيار أكثر من مجموعة لنفس المقرر (${multiGroupCourses.map(([cid, grps]) => `${grps[0].courseName || cid} [${grps.map(g => g.group).join(', ')}]`).join('، ')})` : `Notice: More than one group selected for (${multiGroupCourses.map(([cid, grps]) => `${grps[0].courseCode || cid} [${grps.map(g => g.group).join(', ')}]`).join(', ')})`}</span>`
       : '';
 
+    // Check if any selected group has an avoided doctor
+    const avoidedDocsInSchedule = [];
+    selectedEntries.forEach(grp => {
+      const courseObj = state.courses.find(c => c.id === grp.courseId) || { id: grp.courseId, code: grp.courseCode, name: grp.courseName };
+      const summary = getGroupDoctorPrefSummary(courseObj, grp);
+      if (summary.hasAvoid) {
+        summary.ratedDocs.filter(d => d.rating === 'avoid').forEach(d => {
+          if (!avoidedDocsInSchedule.includes(d.doctor)) avoidedDocsInSchedule.push(d.doctor);
+        });
+      }
+    });
+
+    const avoidedNotice = avoidedDocsInSchedule.length > 0
+      ? `<div style="font-size: 0.76rem; color: #EF4444; margin-top: 4px; display: flex; align-items: center; gap: 4px;">
+           <span>🚫</span>
+           <span>${isAr ? `تنبيه: يتضمن جدولك دكتوراً قمت باستبعاده (${avoidedDocsInSchedule.join('، ')}) - مسموح به في الوضع اليدوي.` : `Notice: Your custom schedule includes an avoided doctor (${avoidedDocsInSchedule.join(', ')}) - allowed in manual mode.`}</span>
+         </div>`
+      : '';
+
     if (hasConflict) {
       banner.className = 'manual-status-banner is-conflict';
       banner.innerHTML = `
@@ -2185,6 +2325,7 @@ const App = (() => {
             ${conflictResult.conflicts[0].detail}
           </div>
           ${hasMultiGroup ? `<div style="display: flex; align-items: center; gap: 6px; font-size: 0.78rem; margin-top: 4px;">${multiWarnText}</div>` : ''}
+          ${avoidedNotice}
         </div>
         <div class="manual-status-stats">
           <span>📚 ${uniqueCoursesCount} / ${totalCourses} ${isAr ? 'مقررات' : 'Courses'} (${selectedCount} ${isAr ? 'مجموعات' : 'Groups'})</span>
@@ -2212,6 +2353,7 @@ const App = (() => {
           <div style="font-size: 0.78rem; opacity: 0.9; margin-top: 2px;">
             ${isAr ? 'الجدول خالٍ من التعارض الزمني لكن تم اختيار أكثر من مجموعة لمادة واحدة.' : 'No time clashes, but multiple groups are selected for the same course.'}
           </div>
+          ${avoidedNotice}
         </div>
         <div class="manual-status-stats">
           <span>📚 ${uniqueCoursesCount} / ${totalCourses} ${isAr ? 'مقررات' : 'Courses'} (${selectedCount} ${isAr ? 'مجموعات' : 'Groups'})</span>
@@ -2224,6 +2366,7 @@ const App = (() => {
         <div class="manual-status-main">
           <span>✅</span>
           <span>${isAr ? `الجدول خالٍ من التعارض حتى الآن (${uniqueCoursesCount} من ${totalCourses} مواد)` : `Conflict-Free so far (${uniqueCoursesCount} of ${totalCourses} courses)`}</span>
+          ${avoidedNotice}
         </div>
         <div class="manual-status-stats">
           <span>📚 ${uniqueCoursesCount} / ${totalCourses} ${isAr ? 'مقررات' : 'Courses'}</span>
@@ -2236,6 +2379,7 @@ const App = (() => {
         <div class="manual-status-main">
           <span>🎉</span>
           <span>${isAr ? 'اكتمل جدولك بالكامل وهو خالٍ من أي تعارض بنسبة 100%!' : 'Your schedule is 100% complete and completely conflict-free!'}</span>
+          ${avoidedNotice}
         </div>
         <div class="manual-status-stats">
           <span>📚 ${uniqueCoursesCount} / ${totalCourses} ${isAr ? 'مقررات' : 'Courses'}</span>
@@ -2267,14 +2411,18 @@ const App = (() => {
         instructors: grp.instructors
       });
 
+      const courseObj = state.courses.find(c => c.id === grp.courseId) || { id: grp.courseId, code: grp.courseCode, name: grp.courseName };
+
       (grp.sessions || []).forEach(s => {
+        const docPref = s.instructor ? getDoctorPrefForCourse(courseObj, s.instructor) : 'neutral';
         allSessions.push({
           ...s,
           courseId: grp.courseId,
           courseName: grp.courseName,
           courseCode: grp.courseCode,
           group: grp.group,
-          color: grp.color
+          color: grp.color,
+          doctorPref: docPref
         });
       });
     });

@@ -276,6 +276,9 @@ const ScheduleRenderer = (() => {
               ${s.instructor && sessionHasInstructor(s) ? `
                 <span class="agenda-info-pill">
                   🎓 <strong>${s.instructor}</strong>
+                  ${s.doctorPref === 'avoid' ? `<span class="session-pref-badge badge-avoid">🚫 ${isAr ? 'مستبعد' : 'Avoided'}</span>` : ''}
+                  ${s.doctorPref === 'mandate' ? `<span class="session-pref-badge badge-mandate">🌟🔒 ${isAr ? 'إجباري' : 'Mandated'}</span>` : ''}
+                  ${s.doctorPref === 'love' ? `<span class="session-pref-badge badge-prefer">⭐ ${isAr ? 'مفضل' : 'Preferred'}</span>` : ''}
                 </span>
               ` : ''}
             </div>
@@ -475,6 +478,9 @@ const ScheduleRenderer = (() => {
                   <div class="session-doc" title="${session.instructor}">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                     <span>${session.instructor}</span>
+                    ${session.doctorPref === 'avoid' ? `<span class="session-pref-badge badge-avoid">🚫 ${isAr ? 'مستبعد' : 'Avoided'}</span>` : ''}
+                    ${session.doctorPref === 'mandate' ? `<span class="session-pref-badge badge-mandate">🌟🔒 ${isAr ? 'إجباري' : 'Mandated'}</span>` : ''}
+                    ${session.doctorPref === 'love' ? `<span class="session-pref-badge badge-prefer">⭐ ${isAr ? 'مفضل' : 'Preferred'}</span>` : ''}
                   </div>
                 ` : ''}
                 <div class="session-time">${timeRange}</div>

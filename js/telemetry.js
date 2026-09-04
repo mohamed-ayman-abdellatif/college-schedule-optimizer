@@ -411,6 +411,9 @@ const SiteTelemetry = (() => {
             </div>
           </div>
           <div style="display: flex; align-items: center; gap: 8px;">
+            <button class="btn btn-sm" id="telemetry-header-reset-btn" style="background: #EF4444; color: #FFFFFF; font-weight: 700; border: none; padding: 5px 12px; border-radius: 6px; display: inline-flex; align-items: center; gap: 6px;" onclick="SiteTelemetry.resetCloudSheet()" title="Reset Google Sheet & clear cloud telemetry">
+              🗑️ Reset Google Sheet
+            </button>
             <button class="btn btn-outline btn-sm" id="telemetry-refresh-btn" onclick="SiteTelemetry.refreshData()" title="Refresh latest data">
               🔄 Refresh
             </button>
@@ -432,8 +435,8 @@ const SiteTelemetry = (() => {
             </button>
           </div>
           <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-            <button class="btn btn-outline btn-sm" style="color: var(--danger); border-color: rgba(239, 68, 68, 0.4);" onclick="SiteTelemetry.resetCloudSheet()">
-              🗑️ Reset Google Sheet
+            <button class="btn btn-sm" style="background: #EF4444; color: #FFFFFF; font-weight: 700; border: none; padding: 6px 14px; border-radius: 6px;" onclick="SiteTelemetry.resetCloudSheet()">
+              🗑️ Reset Google Sheet (مسح الشيت)
             </button>
             <button class="btn btn-outline btn-sm" style="color: var(--text-muted);" onclick="SiteTelemetry.clearLocalEvents()">
               Clear Local Buffer
@@ -503,22 +506,32 @@ const SiteTelemetry = (() => {
             </div>
           </div>
 
-          <!-- View Toggle Switch -->
-          <div style="display: flex; gap: 6px; background: var(--bg-secondary); padding: 4px; border-radius: 6px; border: 1px solid var(--border-color);">
+          <!-- View Toggle Switch & Quick Reset -->
+          <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap;">
+            <div style="display: flex; gap: 6px; background: var(--bg-secondary); padding: 4px; border-radius: 6px; border: 1px solid var(--border-color);">
+              <button 
+                class="btn btn-sm ${activeDataSource === 'cloud' ? 'btn-primary' : 'btn-outline'}" 
+                style="font-size: 0.75rem; padding: 4px 10px; ${!hasCloudConfigured ? 'opacity: 0.5;' : ''}"
+                onclick="SiteTelemetry.setDataSource('cloud')"
+                ${!hasCloudConfigured ? 'title="Connect Google Sheet to view global data"' : ''}
+              >
+                🌐 All Students (${hasCloudConfigured && cachedCloudEvents ? cachedCloudEvents.length : (hasCloudConfigured ? 'Sync' : 'Not Connected')})
+              </button>
+              <button 
+                class="btn btn-sm ${activeDataSource === 'local' ? 'btn-primary' : 'btn-outline'}" 
+                style="font-size: 0.75rem; padding: 4px 10px;"
+                onclick="SiteTelemetry.setDataSource('local')"
+              >
+                💻 This Browser (${getStoredEvents().length})
+              </button>
+            </div>
             <button 
-              class="btn btn-sm ${activeDataSource === 'cloud' ? 'btn-primary' : 'btn-outline'}" 
-              style="font-size: 0.75rem; padding: 4px 10px; ${!hasCloudConfigured ? 'opacity: 0.5;' : ''}"
-              onclick="SiteTelemetry.setDataSource('cloud')"
-              ${!hasCloudConfigured ? 'title="Connect Google Sheet to view global data"' : ''}
+              class="btn btn-sm" 
+              style="background: rgba(239, 68, 68, 0.15); color: #EF4444; border: 1px solid rgba(239, 68, 68, 0.4); font-weight: 700; font-size: 0.75rem; padding: 4px 10px; border-radius: 6px;"
+              onclick="SiteTelemetry.resetCloudSheet()"
+              title="Wipe all entries in connected Google Sheet and reset counters"
             >
-              🌐 All Students (${hasCloudConfigured && cachedCloudEvents ? cachedCloudEvents.length : (hasCloudConfigured ? 'Sync' : 'Not Connected')})
-            </button>
-            <button 
-              class="btn btn-sm ${activeDataSource === 'local' ? 'btn-primary' : 'btn-outline'}" 
-              style="font-size: 0.75rem; padding: 4px 10px;"
-              onclick="SiteTelemetry.setDataSource('local')"
-            >
-              💻 This Browser (${getStoredEvents().length})
+              🗑️ Reset Sheet
             </button>
           </div>
         </div>
@@ -601,16 +614,19 @@ function doGet(e) {
           <div>4️⃣ Copy the resulting Web App URL and paste it below:</div>
         </div>
 
-        <div style="display: flex; gap: 8px;">
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
           <input 
             type="text" 
             id="telemetry-sheet-url-input" 
             placeholder="https://script.google.com/macros/s/.../exec" 
             value="${cloudUrl}"
-            style="flex: 1; padding: 8px 12px; font-size: 0.8rem; background: var(--bg-primary); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: 6px;"
+            style="flex: 1; min-width: 250px; padding: 8px 12px; font-size: 0.8rem; background: var(--bg-primary); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: 6px;"
           />
           <button class="btn btn-primary btn-sm" onclick="SiteTelemetry.saveSheetUrlFromInput()">
             Save &amp; Sync Now
+          </button>
+          <button class="btn btn-sm" style="background: #EF4444; color: #FFFFFF; font-weight: 700; border: none; padding: 6px 12px; border-radius: 6px;" onclick="SiteTelemetry.resetCloudSheet()">
+            🗑️ Reset Sheet
           </button>
         </div>
       </div>
@@ -835,6 +851,15 @@ function doGet(e) {
     if (window.location.hash === '#admin-telemetry' || window.location.search.includes('admin=dev')) {
       setTimeout(openAdminModal, 600);
     }
+
+    // 4. URL trigger for direct reset: #reset-sheet or ?reset=sheet
+    if (window.location.hash === '#reset-sheet' || window.location.search.includes('reset=sheet')) {
+      setTimeout(() => {
+        openAdminModal().then(() => {
+          resetCloudSheet();
+        });
+      }, 700);
+    }
   }
 
   // Initialize triggers
@@ -862,4 +887,6 @@ function doGet(e) {
 
 if (typeof window !== 'undefined') {
   window.SiteTelemetry = SiteTelemetry;
+  window.resetGoogleSheet = SiteTelemetry.resetCloudSheet;
+  window.openAdminPortal = SiteTelemetry.openAdminModal;
 }

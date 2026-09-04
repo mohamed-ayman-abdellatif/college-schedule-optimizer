@@ -179,44 +179,12 @@ const ScheduleOptimizer = (() => {
       }
     });
 
-    const validSolutions = [];
-    let totalEvaluated = 0;
-
     // Filter courses to those with available groups
     const activeCourses = courses.filter(c => c.groups && c.groups.length > 0);
     if (activeCourses.length === 0) {
       return { success: false, message: 'Selected courses have no group data.', solutions: [] };
     }
 
-    /**
-     * Recursive Backtracking Search with Early Branch Pruning
-     */
-    function backtrack(courseIndex, currentSchedule, currentSessions) {
-      if (courseIndex === activeCourses.length) {
-        // All courses scheduled clash-free!
-        totalEvaluated++;
-
-        // 1. Calculate Active Days
-        const activeDays = new Set(currentSessions.map(s => s.day));
-        if (activeDays.size > maxDaysAllowed) return;
-
-        // 2. Calculate Gaps
-        const { totalGapSlots, gapDetails } = calculateGaps(currentSessions);
-
-        // 3. Evaluate Doctor Score
-        const docEval = evaluateDoctorScore(currentSchedule, options);
-
-        // 4. Calculate Group Uniformity
-        const groupCounts = {};
-        currentSchedule.forEach(item => {
-          groupCounts[item.group] = (groupCounts[item.group] || 0) + 1;
-        });
-        const maxSameGroupCount = Math.max(...Object.values(groupCounts), 0);
-
-        // 5. Calculate Early/Late preference
-        // Early finish: penalize higher slot numbers
-        let earlyFinishScore = 0;
-        currentSessions.forEach(s => {
     // Identify all unique mandated and avoided instructors across courses
     const uniqueMandatedMap = {};
     const uniqueAvoidedMap = {};
