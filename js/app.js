@@ -234,7 +234,14 @@ const App = (() => {
       }
 
       const storedDocPrefs = localStorage.getItem('sched_doc_prefs');
-      if (storedDocPrefs) state.doctorPreferences = JSON.parse(storedDocPrefs);
+      if (storedDocPrefs) {
+        try {
+          state.doctorPreferences = sanitizeDoctorPreferencesObj(JSON.parse(storedDocPrefs));
+          localStorage.setItem('sched_doc_prefs', JSON.stringify(state.doctorPreferences));
+        } catch (e) {
+          state.doctorPreferences = {};
+        }
+      }
 
       const storedPrefs = localStorage.getItem('sched_prefs');
       if (storedPrefs) state.preferences = Object.assign(state.preferences, JSON.parse(storedPrefs));
@@ -1245,9 +1252,57 @@ const App = (() => {
     }
   }
 
+  /**
+   * Sanitizes doctor preferences object to ensure 1 canonical entry per instructor
+   * and at most 1 mandated doctor per course.
+   */
+  function sanitizeDoctorPreferencesObj(raw) {
+    if (!raw || typeof raw !== 'object') return {};
+    const clean = {};
+    Object.keys(raw).forEach(code => {
+      clean[code] = {};
+      const coursePrefs = raw[code] || {};
+      let mandateCount = 0;
+
+      // Deduplicate: merge titles and strip duplicate clean-name aliases
+      Object.keys(coursePrefs).forEach(name => {
+        const rating = coursePrefs[name];
+        if (!rating || rating === 'neutral') return;
+
+        const existingKey = Object.keys(clean[code]).find(k => getCleanSortName(k) === getCleanSortName(name));
+        if (existingKey) {
+          if (name.startsWith('د.') && !existingKey.startsWith('د.')) {
+            clean[code][name] = rating;
+            delete clean[code][existingKey];
+          }
+        } else {
+          clean[code][name] = rating;
+        }
+      });
+
+      // At most 1 mandated doctor per course
+      Object.keys(clean[code]).forEach(name => {
+        if (clean[code][name] === 'mandate') {
+          if (mandateCount > 0) {
+            clean[code][name] = 'love';
+          } else {
+            mandateCount++;
+          }
+        }
+      });
+    });
+    return clean;
+  }
+
   function setDoctorPreference(courseCode, doctorName, rating) {
     if (!state.doctorPreferences[courseCode]) {
       state.doctorPreferences[courseCode] = {};
+    }
+
+    // Clean up any old duplicate cleaned-name alias
+    const cleanName = getCleanSortName(doctorName);
+    if (cleanName && cleanName !== doctorName) {
+      delete state.doctorPreferences[courseCode][cleanName];
     }
 
     // If setting to mandate, demote any previous mandated doctor in this course to avoid impossible conflicts
@@ -1259,13 +1314,14 @@ const App = (() => {
       });
     }
 
-    state.doctorPreferences[courseCode][doctorName] = rating;
-
-    // Also store under cleaned name so both match in optimizer
-    const cleanName = getCleanSortName(doctorName);
-    if (cleanName && cleanName !== doctorName) {
-      state.doctorPreferences[courseCode][cleanName] = rating;
+    if (rating === 'neutral') {
+      delete state.doctorPreferences[courseCode][doctorName];
+    } else {
+      state.doctorPreferences[courseCode][doctorName] = rating;
     }
+
+    // Persist to localStorage immediately
+    localStorage.setItem('sched_doc_prefs', JSON.stringify(state.doctorPreferences));
 
     // Invalidate stale solutions since constraints changed
     state.solutions = [];
@@ -1327,7 +1383,22 @@ const App = (() => {
       renderSolutionsSelector();
       renderCurrentSolution();
 
-      showToast(`Success! Found ${result.validCount} clash-free schedules. Top options ranked below.`, 'success');
+      const isAr = state.currentLang === 'ar';
+      if (result.fallbackNotice) {
+        showToast(
+          isAr
+            ? `⚠️ تم توليد الجداول! بعض الدكاترة الإجباريين أوقاتهم متعارضة، تم إدراج أكبر عدد ممكن منهم في الجداول الأولى.`
+            : result.fallbackNotice,
+          'warning'
+        );
+      } else {
+        showToast(
+          isAr
+            ? `تم بنجاح! تم العثور على ${result.validCount} جدول بدون أي تعارض.`
+            : `Success! Found ${result.validCount} clash-free schedules. Top options ranked below.`,
+          'success'
+        );
+      }
     }, 100);
   }
 

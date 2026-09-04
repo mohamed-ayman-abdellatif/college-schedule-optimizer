@@ -109,7 +109,7 @@ const ScheduleOptimizer = (() => {
 
     selectedGroups.forEach(item => {
       const coursePrefs = docPrefs[item.courseCode] || docPrefs[item.courseId] || {};
-      const instructors = item.groupData.instructors || [];
+      const instructors = item.instructors || item.groupData.instructors || [];
 
       instructors.forEach(doc => {
         totalDoctorChoices++;
@@ -125,7 +125,7 @@ const ScheduleOptimizer = (() => {
         if (!pref) pref = 'neutral';
 
         if (pref === 'mandate' || pref === 'mandated') {
-          score += 80;
+          score += 10000;
           matchedMandates++;
           matchedFavorites++;
         } else if (pref === 'love') {
@@ -217,164 +217,234 @@ const ScheduleOptimizer = (() => {
         // Early finish: penalize higher slot numbers
         let earlyFinishScore = 0;
         currentSessions.forEach(s => {
-          earlyFinishScore += (16 - s.endSlot);
-        });
+    // Identify all unique mandated and avoided instructors across courses
+    const uniqueMandatedMap = {};
+    const uniqueAvoidedMap = {};
+    let totalUniqueMandated = 0;
+    let totalUniqueAvoided = 0;
 
-        // 6. Overall Composite Score
-        // Higher is better
-        const compositeScore =
-          (docEval.score * (weights.doctorWeight / 20)) -
-          (totalGapSlots * (weights.gapWeight / 5) * 8) -
-          (activeDays.size * (weights.daysWeight / 5) * 12) +
-          (maxSameGroupCount * (weights.uniformGroupWeight / 5) * 10) +
-          (earlyFinishScore * (weights.earlyWeight / 50));
-
-        validSolutions.push({
-          id: `sol_${validSolutions.length + 1}`,
-          compositeScore,
-          totalGapSlots,
-          gapDetails,
-          activeDaysCount: activeDays.size,
-          activeDays: Array.from(activeDays),
-          docEval,
-          maxSameGroupCount,
-          selectedGroups: currentSchedule.map(s => ({
-            courseId: s.courseId,
-            courseName: s.courseName,
-            courseCode: s.courseCode,
-            group: s.group,
-            color: s.color,
-            instructors: s.groupData.instructors || []
-          })),
-          sessions: currentSessions.slice(),
-          blockedTimes: blockedRules
-        });
-
-        return;
+    activeCourses.forEach(c => {
+      const cp = (options.doctorPreferences && (options.doctorPreferences[c.code] || options.doctorPreferences[c.id])) || {};
+      const courseReq = requiredDoctors[c.code] || requiredDoctors[c.id];
+      Object.keys(cp).forEach(raw => {
+        const rating = cp[raw];
+        const clean = cleanDoctorName(raw);
+        if (rating === 'mandate' || rating === 'mandated') {
+          if (!uniqueMandatedMap[`${c.code}:::${clean}`]) {
+            uniqueMandatedMap[`${c.code}:::${clean}`] = { code: c.code, target: raw };
+            totalUniqueMandated++;
+          }
+        } else if (rating === 'avoid') {
+          if (!uniqueAvoidedMap[`${c.code}:::${clean}`]) {
+            uniqueAvoidedMap[`${c.code}:::${clean}`] = { code: c.code, target: raw };
+            totalUniqueAvoided++;
+          }
+        }
+      });
+      if (courseReq) {
+        const clean = cleanDoctorName(courseReq);
+        if (!uniqueMandatedMap[`${c.code}:::${clean}`]) {
+          uniqueMandatedMap[`${c.code}:::${clean}`] = { code: c.code, target: courseReq };
+          totalUniqueMandated++;
+        }
       }
+    });
 
-      const course = activeCourses[courseIndex];
-      const groups = course.groups;
+    const MAX_SOLUTIONS_POOL = 2500;
 
-      // Extract course doctor preferences (Avoid & Mandate)
-      const coursePrefs = (options.doctorPreferences && (options.doctorPreferences[course.code] || options.doctorPreferences[course.id])) || {};
-      const avoidedDocs = Object.keys(coursePrefs).filter(k => coursePrefs[k] === 'avoid');
-      const mandatedDocs = Object.keys(coursePrefs).filter(k => coursePrefs[k] === 'mandate' || coursePrefs[k] === 'mandated');
-      const courseReqDoc = requiredDoctors[course.code] || requiredDoctors[course.id];
-      if (courseReqDoc && !mandatedDocs.includes(courseReqDoc)) {
-        mandatedDocs.push(courseReqDoc);
-      }
+    function runSearch(isStrictMandate) {
+      const solutions = [];
+      let evaluated = 0;
 
-      for (const grp of groups) {
-        // Collect all instructors associated with this group
-        const grpInstructors = Array.from(new Set([
-          ...(grp.instructors || []),
-          ...((grp.sessions || []).map(s => s.instructor).filter(Boolean))
-        ]));
+      function backtrack(courseIndex, currentSchedule, currentSessions) {
+        if (solutions.length >= MAX_SOLUTIONS_POOL) return;
 
-        // Constraint 1: Avoided Doctor (Strict Pruning - Never in any schedule)
-        if (avoidedDocs.length > 0) {
-          let hasAvoided = false;
-          for (const av of avoidedDocs) {
-            if (grpInstructors.some(inst => matchesDoctor(inst, av))) {
-              hasAvoided = true;
-              break;
-            }
+        if (courseIndex === activeCourses.length) {
+          evaluated++;
+
+          // 1. Check Max Days Allowed
+          const activeDays = new Set(currentSessions.map(s => s.day));
+          if (activeDays.size > maxDaysAllowed) return;
+
+          // 2. Calculate Gaps
+          const { totalGapSlots, gapDetails } = calculateGaps(currentSessions);
+
+          // 3. Evaluate Doctor Score
+          const docEval = evaluateDoctorScore(currentSchedule, options);
+
+          // 4. Calculate Group Uniformity
+          const groupCounts = {};
+          currentSchedule.forEach(item => {
+            groupCounts[item.group] = (groupCounts[item.group] || 0) + 1;
+          });
+          let maxSameGroupCount = 0;
+          for (const k in groupCounts) {
+            if (groupCounts[k] > maxSameGroupCount) maxSameGroupCount = groupCounts[k];
           }
-          if (hasAvoided) {
-            continue; // Skip group containing avoided doctor!
-          }
+
+          // 5. Calculate Early/Late preference
+          let earlyFinishScore = 0;
+          currentSessions.forEach(s => {
+            earlyFinishScore += (16 - s.endSlot);
+          });
+
+          // 6. Overall Composite Score (higher is better)
+          const compositeScore =
+            (docEval.score * (weights.doctorWeight / 20)) -
+            (totalGapSlots * (weights.gapWeight / 5) * 8) -
+            (activeDays.size * (weights.daysWeight / 5) * 12) +
+            (maxSameGroupCount * (weights.uniformGroupWeight / 5) * 10) +
+            (earlyFinishScore * (weights.earlyWeight / 50));
+
+          solutions.push({
+            id: `sol_${solutions.length + 1}`,
+            compositeScore,
+            totalGapSlots,
+            gapDetails,
+            activeDaysCount: activeDays.size,
+            activeDays: Array.from(activeDays),
+            docEval,
+            maxSameGroupCount,
+            selectedGroups: currentSchedule.map(s => ({
+              courseId: s.courseId,
+              courseName: s.courseName,
+              courseCode: s.courseCode,
+              group: s.group,
+              color: s.color,
+              instructors: s.instructors
+            })),
+            sessions: currentSessions.slice(),
+            blockedTimes: blockedRules
+          });
+
+          return;
         }
 
-        // Constraint 2: Mandated Doctor (Strict Pruning - Must be chosen)
-        if (mandatedDocs.length > 0) {
-          let hasMandated = false;
-          for (const req of mandatedDocs) {
-            if (grpInstructors.some(inst => matchesDoctor(inst, req))) {
-              hasMandated = true;
-              break;
-            }
-          }
-          if (!hasMandated) {
-            continue; // Skip group that doesn't have the mandated doctor!
-          }
+        const course = activeCourses[courseIndex];
+        const groups = course.groups;
+
+        // Extract course doctor preferences (Avoid & Mandate)
+        const coursePrefs = (options.doctorPreferences && (options.doctorPreferences[course.code] || options.doctorPreferences[course.id])) || {};
+        const avoidedDocs = Object.keys(coursePrefs).filter(k => coursePrefs[k] === 'avoid');
+        const mandatedDocs = Object.keys(coursePrefs).filter(k => coursePrefs[k] === 'mandate' || coursePrefs[k] === 'mandated');
+        const courseReqDoc = requiredDoctors[course.code] || requiredDoctors[course.id];
+        if (courseReqDoc && !mandatedDocs.includes(courseReqDoc)) {
+          mandatedDocs.push(courseReqDoc);
         }
 
-        // Constraint: Free Days
-        let landsOnFreeDay = false;
-        for (const s of grp.sessions) {
-          if (requestedFreeDays.has(s.day)) {
-            landsOnFreeDay = true;
-            break;
-          }
-        }
-        if (landsOnFreeDay) continue;
+        for (const grp of groups) {
+          if (solutions.length >= MAX_SOLUTIONS_POOL) break;
 
-        // Constraint: Check Prohibited / Blocked Times (e.g. Saturday 8 o'clock training)
-        let clashesWithBlockedTime = false;
-        if (blockedSet.size > 0) {
-          for (const s of grp.sessions) {
-            for (let sl = s.startSlot; sl <= s.endSlot; sl++) {
-              if (blockedSet.has(`${s.day}:${sl}`)) {
-                clashesWithBlockedTime = true;
+          // Collect all instructors associated with this group
+          const grpInstructors = Array.from(new Set([
+            ...(grp.instructors || []),
+            ...((grp.sessions || []).map(s => s.instructor).filter(Boolean))
+          ]));
+
+          // Constraint 1: Avoided Doctor (Strict Pruning ALWAYS - Never in any schedule)
+          if (avoidedDocs.length > 0) {
+            let hasAvoided = false;
+            for (const av of avoidedDocs) {
+              if (grpInstructors.some(inst => matchesDoctor(inst, av))) {
+                hasAvoided = true;
                 break;
               }
             }
-            if (clashesWithBlockedTime) break;
+            if (hasAvoided) continue;
           }
+
+          // Constraint 2: Mandated Doctor (Strict Pruning in strict mode)
+          if (isStrictMandate && mandatedDocs.length > 0) {
+            let hasMandated = false;
+            for (const req of mandatedDocs) {
+              if (grpInstructors.some(inst => matchesDoctor(inst, req))) {
+                hasMandated = true;
+                break;
+              }
+            }
+            if (!hasMandated) continue;
+          }
+
+          // Constraint: Free Days
+          let landsOnFreeDay = false;
+          for (const s of grp.sessions) {
+            if (requestedFreeDays.has(s.day)) {
+              landsOnFreeDay = true;
+              break;
+            }
+          }
+          if (landsOnFreeDay) continue;
+
+          // Constraint: Blocked Times (e.g. Training/Work)
+          let clashesWithBlockedTime = false;
+          if (blockedSet.size > 0) {
+            for (const s of grp.sessions) {
+              for (let sl = s.startSlot; sl <= s.endSlot; sl++) {
+                if (blockedSet.has(`${s.day}:${sl}`)) {
+                  clashesWithBlockedTime = true;
+                  break;
+                }
+              }
+              if (clashesWithBlockedTime) break;
+            }
+          }
+          if (clashesWithBlockedTime) continue;
+
+          // Constraint: No Clashes with already accepted sessions
+          const clashes = checkGroupClash(grp.sessions, currentSessions);
+          if (clashes) continue;
+
+          // Attach course details to sessions for display
+          const enrichedSessions = grp.sessions.map(s => ({
+            ...s,
+            courseId: course.id,
+            courseName: course.name,
+            courseCode: course.code,
+            group: grp.group,
+            color: course.color
+          }));
+
+          currentSchedule.push({
+            courseId: course.id,
+            courseName: course.name,
+            courseCode: course.code,
+            group: grp.group,
+            color: course.color,
+            instructors: grpInstructors,
+            groupData: grp
+          });
+
+          backtrack(
+            courseIndex + 1,
+            currentSchedule,
+            currentSessions.concat(enrichedSessions)
+          );
+
+          currentSchedule.pop();
         }
-        if (clashesWithBlockedTime) continue; // Prune group that conflicts with training/busy time!
-
-        // Constraint: No Clashes with already accepted sessions
-        const clashes = checkGroupClash(grp.sessions, currentSessions);
-        if (clashes) continue; // Prune branch immediately!
-
-        // Attach course details to sessions for display
-        const enrichedSessions = grp.sessions.map(s => ({
-          ...s,
-          courseId: course.id,
-          courseName: course.name,
-          courseCode: course.code,
-          group: grp.group,
-          color: course.color
-        }));
-
-        currentSchedule.push({
-          courseId: course.id,
-          courseName: course.name,
-          courseCode: course.code,
-          group: grp.group,
-          color: course.color,
-          groupData: grp
-        });
-
-        backtrack(
-          courseIndex + 1,
-          currentSchedule,
-          currentSessions.concat(enrichedSessions)
-        );
-
-        currentSchedule.pop();
       }
+
+      backtrack(0, [], []);
+      return { solutions, evaluated };
     }
 
-    // Launch Solver
-    backtrack(0, [], []);
+    // Step 1: Attempt search with Strict Mandates
+    let isFallback = false;
+    let searchResult = runSearch(totalUniqueMandated > 0);
+
+    // Step 2: If strict search found 0 solutions due to mandate overlaps, run fallback with maximum mandate scoring
+    if (searchResult.solutions.length === 0 && totalUniqueMandated > 0) {
+      isFallback = true;
+      searchResult = runSearch(false);
+    }
+
+    const validSolutions = searchResult.solutions;
+    const totalEvaluated = searchResult.evaluated;
 
     if (validSolutions.length === 0) {
-      const docPrefs = options.doctorPreferences || {};
-      let totalAvoided = 0;
-      let totalMandated = 0;
-      Object.values(docPrefs).forEach(cp => {
-        Object.values(cp).forEach(r => {
-          if (r === 'avoid') totalAvoided++;
-          if (r === 'mandate' || r === 'mandated') totalMandated++;
-        });
-      });
-
       let message = 'No clash-free schedules found for this combination of courses.';
-      if (totalMandated > 0 || totalAvoided > 0) {
-        message = `No clash-free schedules found. You have ${totalMandated > 0 ? `${totalMandated} mandated doctor(s) (🌟🔒) ` : ''}${totalAvoided > 0 ? `${totalAvoided} avoided doctor(s) (🚫) ` : ''}which might be eliminating all available combinations. Try setting some to Neutral or relaxing free days.`;
+      if (totalUniqueMandated > 0 || totalUniqueAvoided > 0) {
+        message = `No clash-free schedules found. You have ${totalUniqueMandated > 0 ? `${totalUniqueMandated} mandated doctor(s) (🌟🔒) ` : ''}${totalUniqueAvoided > 0 ? `${totalUniqueAvoided} avoided doctor(s) (🚫) ` : ''}which might be eliminating all available combinations. Try setting some to Neutral or relaxing free days.`;
       } else {
         message = 'No clash-free schedules found for this combination of courses. Try unchecking some free days or unblocking some times.';
       }
@@ -390,10 +460,19 @@ const ScheduleOptimizer = (() => {
     // Sort solutions descending by composite score
     validSolutions.sort((a, b) => b.compositeScore - a.compositeScore);
 
-    // Identify minimum days and minimum gaps among all solutions
-    const minDays = Math.min(...validSolutions.map(s => s.activeDaysCount));
-    const minGaps = Math.min(...validSolutions.map(s => s.totalGapSlots));
-    const maxDocScore = Math.max(...validSolutions.map(s => s.docEval.score));
+    // Identify minimum days and minimum gaps safely without spread operator to prevent call stack overflow
+    let minDays = Infinity;
+    let minGaps = Infinity;
+    let maxDocScore = -Infinity;
+    let maxMandatesMatched = 0;
+
+    for (let i = 0; i < validSolutions.length; i++) {
+      const s = validSolutions[i];
+      if (s.activeDaysCount < minDays) minDays = s.activeDaysCount;
+      if (s.totalGapSlots < minGaps) minGaps = s.totalGapSlots;
+      if (s.docEval && s.docEval.score > maxDocScore) maxDocScore = s.docEval.score;
+      if (s.docEval && s.docEval.matchedMandates > maxMandatesMatched) maxMandatesMatched = s.docEval.matchedMandates;
+    }
 
     // Assign contextual badges
     validSolutions.forEach((sol, idx) => {
@@ -403,9 +482,15 @@ const ScheduleOptimizer = (() => {
       if (idx === 0) {
         sol.badges.push({ text: '⭐ Best Overall', type: 'best' });
       }
+
       if (sol.docEval && sol.docEval.matchedMandates > 0) {
-        sol.badges.push({ text: '🌟🔒 Mandated Doctor Included', type: 'mandate' });
+        if (totalUniqueMandated > 0 && sol.docEval.matchedMandates >= totalUniqueMandated) {
+          sol.badges.push({ text: '🌟🔒 100% Mandated Doctors Included', type: 'mandate' });
+        } else {
+          sol.badges.push({ text: `🌟🔒 ${sol.docEval.matchedMandates}/${totalUniqueMandated} Mandated Included`, type: 'mandate' });
+        }
       }
+
       if (sol.totalGapSlots === 0) {
         sol.badges.push({ text: '⚡ Zero Gaps (No Waiting)', type: 'zero-gap' });
       } else if (sol.totalGapSlots === minGaps && minGaps > 0) {
@@ -425,11 +510,17 @@ const ScheduleOptimizer = (() => {
       }
     });
 
+    let fallbackNotice = null;
+    if (isFallback && totalUniqueMandated > 0) {
+      fallbackNotice = `Some mandated doctors have conflicting lecture hours. Showing the best clash-free schedules containing ${maxMandatesMatched} of your ${totalUniqueMandated} mandated doctors.`;
+    }
+
     return {
       success: true,
       totalEvaluated,
       validCount: validSolutions.length,
       solutions: validSolutions,
+      fallbackNotice,
       minGaps,
       minDays
     };
