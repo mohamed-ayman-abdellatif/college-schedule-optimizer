@@ -1825,6 +1825,12 @@ body {
   color: #EF4444;
 }
 
+.manual-status-banner.is-warning {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.45);
+  color: #D97706;
+}
+
 .manual-status-main {
   display: flex;
   align-items: center;
@@ -1881,6 +1887,11 @@ body {
 .manual-group-card.is-clashing {
   border-color: var(--danger);
   background: rgba(239, 68, 68, 0.08);
+}
+
+.manual-group-card.is-clashing-warning {
+  border-color: #F59E0B;
+  background: rgba(245, 158, 11, 0.08);
 }
 
 .manual-group-card.is-doc-match {
@@ -2024,6 +2035,12 @@ body {
   border: 1px solid rgba(239, 68, 68, 0.3);
 }
 
+.clash-warning-text.is-warning {
+  color: #D97706;
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
 .clean-compatible-text {
   font-size: 0.78rem;
   color: #10B981;
@@ -2103,6 +2120,32 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.session-conflict-alert.is-warning {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.45);
+  color: #D97706;
+}
+
+/* Strict Doctor Mode Card */
+.strict-mode-card {
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.strict-mode-card:hover {
+  background: rgba(59, 130, 246, 0.09) !important;
+  border-color: var(--accent-primary) !important;
+}
+
+[data-theme="light"] .strict-mode-card {
+  background: #F0F7FF !important;
+  border-color: #BFDBFE !important;
+}
+
+[data-theme="light"] .strict-mode-card:hover {
+  background: #E0EFFF !important;
+  border-color: #3B82F6 !important;
 }
 
 

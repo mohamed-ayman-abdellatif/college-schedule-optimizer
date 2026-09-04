@@ -530,6 +530,13 @@
   color: #FFFFFF;
 }
 
+.badge-avoid-included {
+  background: rgba(245, 158, 11, 0.18);
+  color: #D97706;
+  border: 1px solid #F59E0B;
+  font-weight: 700;
+}
+
 .stats-grid {
   display: flex;
   gap: 20px;
@@ -1134,6 +1141,56 @@
   justify-content: center;
   vertical-align: middle;
   cursor: help;
+}
+
+/* Merged Lecture styling in Timetable Grid */
+.grid-session-card.is-merged-lecture {
+  border-inline-start-color: #F59E0B !important;
+  box-shadow: 0 0 0 1.5px rgba(245, 158, 11, 0.4), 0 2px 8px rgba(245, 158, 11, 0.15);
+  background: linear-gradient(to bottom, rgba(245, 158, 11, 0.06), var(--bg-card));
+}
+
+.grid-session-card.is-merged-lecture .session-group {
+  color: #D97706;
+  font-weight: 800;
+}
+
+/* Agenda Merged Lecture styling */
+.agenda-session-card.is-merged-lecture {
+  border: 1.5px dashed #F59E0B !important;
+  background: rgba(245, 158, 11, 0.08) !important;
+}
+
+.agenda-clash-tag.is-warning {
+  background: #F59E0B !important;
+  color: #FFFFFF !important;
+}
+
+.timetable-deselect-group-btns {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  z-index: 12;
+}
+
+[dir="rtl"] .timetable-deselect-group-btns {
+  right: auto;
+  left: 4px;
+}
+
+.timetable-deselect-btn.is-merged {
+  position: static;
+  width: auto;
+  min-width: 22px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: 999px;
+  font-size: 10px;
+  display: inline-flex;
+  gap: 2px;
 }
 
 /* Print Stylesheet */

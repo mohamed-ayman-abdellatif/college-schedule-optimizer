@@ -19,7 +19,8 @@ const App = (() => {
       earlyWeight: 10,
       uniformGroupWeight: 20,
       maxDaysAllowed: 7,
-      freeDays: []
+      freeDays: [],
+      strictDoctorCombinations: true
     },
     solutions: [],
     activeSolutionIndex: 0,
@@ -55,6 +56,9 @@ const App = (() => {
       noCoursesDesc: 'Paste college HTML above or click "Load Example Courses" to test.',
       doctorPrefTitle: 'Doctor & Instructor Preferences',
       doctorPrefDesc: 'Prioritize preferred professors, triple-click "Favorite" to mandate (guarantee) a doctor (🌟🔒), or click "Avoid" to strictly exclude them from all schedules (🚫).',
+      strictDoctorModeTitle: 'Exhaustive Strict Doctor Search',
+      strictDoctorModeDesc: 'Exhaustively checks 100% of schedule combinations. Guarantees ZERO avoided doctors (🚫) and strictly seeks your desired professors (⭐/🌟). If no combination exists, it verifies all combinations to be mathematically certain.',
+      strictDoctorToggleLabel: 'Active (Strict)',
       goalsTitle: 'Optimization Weights & Goals',
       gapWeightLabel: 'Minimize Gaps between lectures',
       daysWeightLabel: 'Minimize Campus Days (More Days Off)',
@@ -135,6 +139,9 @@ const App = (() => {
       noCoursesDesc: 'الصق كود HTML من موقع الكلية أو اضغط "تحميل المقررات التجريبية" للتجربة الفورية.',
       doctorPrefTitle: 'تفضيلات الدكاترة والمعيدين',
       doctorPrefDesc: 'اختر دكاترتك المفضلين، اضغط 3 مرات سريعاً على "مفضل" لتثبيت دكتور كإجباري (🌟🔒)، أو اضغط "تجنب" لاستبعاده نهائياً من كافة الجداول (🚫).',
+      strictDoctorModeTitle: 'فحص شامل وصارم لكافة التباديل',
+      strictDoctorModeDesc: 'فحص شامل لكافة التباديل بنسبة 100%. يضمن عدم إدراج أي دكتور مستبعد نهائياً (🚫) واستيفاء الدكاترة المطلوبين (⭐/🌟). وفي حال الاستحالة يتم فحص كامل الاحتمالات للتأكد رياضياً.',
+      strictDoctorToggleLabel: 'مفعل (صارم)',
       goalsTitle: 'أولويات وأهداف الجدول',
       gapWeightLabel: 'تقليل فترات الفراغ بين المحاضرات (Gaps)',
       daysWeightLabel: 'تقليل أيام النزول للكلية (أيام إجازة أكثر)',
@@ -385,6 +392,22 @@ const App = (() => {
     if (window.SiteAnalytics && typeof window.SiteAnalytics.updateUI === 'function') {
       window.SiteAnalytics.updateUI();
     }
+
+    updateStrictDoctorToggleLabel();
+  }
+
+  function updateStrictDoctorToggleLabel() {
+    const label = document.getElementById('label-strict-doctor-toggle');
+    const cb = document.getElementById('check-strict-doctor-combinations');
+    if (!label || !cb) return;
+    const isAr = state.currentLang === 'ar';
+    if (cb.checked) {
+      label.textContent = isAr ? 'مفعل (صارم)' : 'Active (Strict)';
+      label.style.color = 'var(--accent-primary)';
+    } else {
+      label.textContent = isAr ? 'مرن' : 'Flexible';
+      label.style.color = 'var(--text-muted)';
+    }
   }
 
   /**
@@ -485,6 +508,28 @@ const App = (() => {
         });
       }
     });
+
+    // Strict Doctor Mode Checkbox
+    const strictCheckbox = document.getElementById('check-strict-doctor-combinations');
+    if (strictCheckbox) {
+      strictCheckbox.checked = state.preferences.strictDoctorCombinations !== false;
+      updateStrictDoctorToggleLabel();
+      strictCheckbox.addEventListener('change', e => {
+        state.preferences.strictDoctorCombinations = e.target.checked;
+        saveStateToStorage();
+        updateStrictDoctorToggleLabel();
+        showToast(
+          state.currentLang === 'ar'
+            ? (e.target.checked
+                ? 'تم تفعيل الفحص الصارم والشامل لجميع التباديل (بدون أي دكتور مستبعد نهائياً) 🎯'
+                : 'تم تفعيل الوضع المرن (السماح بأفضل التوفيقات الممكنة) 🔄')
+            : (e.target.checked
+                ? 'Strict Doctor Mode Enabled: Checking 100% of combinations with ZERO avoided doctors 🎯'
+                : 'Flexible Mode Enabled: Best-effort combinations allowed 🔄'),
+          'info'
+        );
+      });
+    }
 
     // Export Actions
     document.getElementById('btn-export-png')?.addEventListener('click', () => {
@@ -1098,7 +1143,11 @@ const App = (() => {
         const clean = getCleanSortName(doc);
         if (clean && prefs[clean]) return prefs[clean];
         for (const [pDoc, pRating] of Object.entries(prefs)) {
-          if (pDoc.includes(doc) || doc.includes(pDoc)) return pRating;
+          if (typeof ScheduleOptimizer !== 'undefined' && ScheduleOptimizer.matchesDoctor) {
+            if (ScheduleOptimizer.matchesDoctor(doc, pDoc)) return pRating;
+          } else if (pDoc.includes(doc) || doc.includes(pDoc)) {
+            return pRating;
+          }
         }
       }
     }
@@ -1623,7 +1672,8 @@ const App = (() => {
               doctorWeight: state.preferences.doctorWeight,
               earlyWeight: state.preferences.earlyWeight,
               freeDays: state.preferences.freeDays,
-              blockedTimes: state.blockedTimes
+              blockedTimes: state.blockedTimes,
+              strictDoctorMode: state.preferences.strictDoctorCombinations !== false
             });
           } catch (err) {
             console.error('Optimizer error:', err);
@@ -1641,7 +1691,8 @@ const App = (() => {
             if (modal) modal.style.setProperty('display', 'none', 'important');
 
             if (!result.success || !result.solutions || result.solutions.length === 0) {
-              showToast(result.message || 'No clash-free schedules found. Try relaxing free days or unblocking some times.', 'error');
+              const errMsg = isAr ? (result.messageAr || result.message) : (result.message || 'No clash-free schedules found. Try relaxing free days or unblocking some times.');
+              showToast(errMsg, 'error');
               return;
             }
 
@@ -1656,15 +1707,17 @@ const App = (() => {
             if (result.fallbackNotice) {
               showToast(
                 isAr
-                  ? `⚠️ تم توليد الجداول! بعض الدكاترة الإجباريين أوقاتهم متعارضة، تم إدراج أكبر عدد ممكن منهم في الجداول الأولى.`
+                  ? (result.fallbackNoticeAr || `⚠️ تم توليد الجداول! بعض الدكاترة أوقاتهم متعارضة، تم إدراج أفضل التوفيقات المتاحة.`)
                   : result.fallbackNotice,
                 'warning'
               );
             } else {
+              const combosChecked = result.totalCombinationsPossible ? ` (${result.totalCombinationsPossible.toLocaleString()} combinations checked)` : '';
+              const combosCheckedAr = result.totalCombinationsPossible ? ` (تم فحص ${result.totalCombinationsPossible.toLocaleString()} احتمال)` : '';
               showToast(
                 isAr
-                  ? `تم بنجاح! تم العثور على ${result.validCount} جدول بدون أي تعارض.`
-                  : `Success! Found ${result.validCount} clash-free schedules. Top options ranked below.`,
+                  ? `تم بنجاح! تم العثور على ${result.validCount} جدول بدون أي تعارض${combosCheckedAr}.`
+                  : `Success! Found ${result.validCount} clash-free schedules${combosChecked}. Top options ranked below.`,
                 'success'
               );
             }
@@ -1844,9 +1897,11 @@ const App = (() => {
 
       const conflict = checkGroupConflictWithManualSchedule(courseId, groupData);
       const isClashing = !isSelected && conflict.clashing;
+      const isSoftClash = isClashing && conflict.severity === 'warning';
 
       let cardClass = 'manual-group-card';
       if (isSelected) cardClass += ' is-selected';
+      else if (isSoftClash) cardClass += ' is-clashing-warning';
       else if (isClashing) cardClass += ' is-clashing';
       else cardClass += ' is-doc-match';
 
@@ -1867,7 +1922,11 @@ const App = (() => {
             </div>
             <div>
               ${isSelected ? `<span class="selected-badge-pill">✓ ${isAr ? 'تم اختياره' : 'Selected'}</span>` : ''}
-              ${isClashing ? `<span class="clash-warning-text">⚠️ ${isAr ? 'تعارض' : 'Clash'}</span>` : ''}
+              ${isClashing ? (
+                isSoftClash
+                  ? `<span class="clash-warning-text is-warning" style="padding: 2px 6px; font-size: 0.72rem;">⚠️ ${isAr ? 'محاضرة مشتركة' : 'Combined'}</span>`
+                  : `<span class="clash-warning-text" style="padding: 2px 6px; font-size: 0.72rem;">⚠️ ${isAr ? 'تعارض' : 'Clash'}</span>`
+              ) : ''}
             </div>
           </div>
 
@@ -1891,7 +1950,7 @@ const App = (() => {
           </div>
 
           ${isClashing ? `
-            <div class="clash-warning-text">
+            <div class="clash-warning-text ${isSoftClash ? 'is-warning' : ''}">
               <span>⚠️ ${conflict.detail}</span>
             </div>
           ` : ''}
@@ -2006,9 +2065,11 @@ const App = (() => {
 
               const conflict = checkGroupConflictWithManualSchedule(course.id, grp);
               const isClashing = !isSelected && conflict.clashing;
+              const isSoftClash = isClashing && conflict.severity === 'warning';
 
               let cardClass = 'manual-group-card';
               if (isSelected) cardClass += ' is-selected';
+              else if (isSoftClash) cardClass += ' is-clashing-warning';
               else if (isClashing) cardClass += ' is-clashing';
               else if (isDocMatch) cardClass += ' is-doc-match';
 
@@ -2029,6 +2090,11 @@ const App = (() => {
                     </div>
                     <div>
                       ${isSelected ? `<span class="selected-badge-pill">✓</span>` : ''}
+                      ${isClashing ? (
+                        isSoftClash
+                          ? `<span class="clash-warning-text is-warning" style="padding: 2px 6px; font-size: 0.72rem;">⚠️ ${isAr ? 'محاضرة مشتركة' : 'Combined'}</span>`
+                          : `<span class="clash-warning-text" style="padding: 2px 6px; font-size: 0.72rem;">⚠️ ${isAr ? 'تعارض' : 'Clash'}</span>`
+                      ) : ''}
                     </div>
                   </div>
 
@@ -2048,7 +2114,7 @@ const App = (() => {
                   </div>
 
                   ${isClashing ? `
-                    <div class="clash-warning-text">
+                    <div class="clash-warning-text ${isSoftClash ? 'is-warning' : ''}">
                       <span>⚠️ ${conflict.detail}</span>
                     </div>
                   ` : ''}
@@ -2077,6 +2143,8 @@ const App = (() => {
   function checkGroupConflictWithManualSchedule(courseId, candidateGroup) {
     const isAr = state.currentLang === 'ar';
     const candidateSessions = candidateGroup.sessions || [];
+    let foundHardClash = null;
+    let foundSoftClash = null;
 
     for (const [key, pickedGroup] of Object.entries(state.manualSchedule)) {
       if (pickedGroup.courseId === courseId && pickedGroup.group === candidateGroup.group) continue;
@@ -2089,17 +2157,39 @@ const App = (() => {
               Math.max(s1.startSlot, s2.startSlot),
               Math.min(s1.endSlot, s2.endSlot)
             );
-            return {
-              clashing: true,
-              detail: isAr
-                ? `تعارض مع ${pickedGroup.courseName || pickedGroup.courseCode} (مجموعة ${pickedGroup.group}) يوم ${s1.day} (${timeRange})`
-                : `Clashes with ${pickedGroup.courseCode || pickedGroup.courseName} (Group ${pickedGroup.group}) on ${s1.day} (${timeRange})`
-            };
+            const sameCourse = pickedGroup.courseId === courseId;
+            const isLect1 = ScheduleRenderer.isLectureSession(s1);
+            const isLect2 = ScheduleRenderer.isLectureSession(s2);
+            const sameDoc = ScheduleRenderer.isSameDoctor(s1.instructor, s2.instructor);
+            const isSoft = sameCourse && isLect1 && isLect2 && sameDoc;
+
+            if (isSoft) {
+              if (!foundSoftClash) {
+                foundSoftClash = {
+                  clashing: true,
+                  severity: 'warning',
+                  detail: isAr
+                    ? `محاضرة مشتركة لنفس الدكتور (${s1.instructor}) مع مجموعة ${pickedGroup.group} يوم ${s1.day} (${timeRange})`
+                    : `Combined lecture with same doctor (${s1.instructor}) with Group ${pickedGroup.group} on ${s1.day} (${timeRange})`
+                };
+              }
+            } else {
+              foundHardClash = {
+                clashing: true,
+                severity: 'danger',
+                detail: isAr
+                  ? `تعارض مع ${pickedGroup.courseName || pickedGroup.courseCode} (مجموعة ${pickedGroup.group}) يوم ${s1.day} (${timeRange})`
+                  : `Clashes with ${pickedGroup.courseCode || pickedGroup.courseName} (Group ${pickedGroup.group}) on ${s1.day} (${timeRange})`
+              };
+              return foundHardClash;
+            }
           }
         }
       }
     }
 
+    if (foundHardClash) return foundHardClash;
+    if (foundSoftClash) return foundSoftClash;
     return { clashing: false };
   }
 
@@ -2124,21 +2214,32 @@ const App = (() => {
                 Math.min(s1.endSlot, s2.endSlot)
               );
               const sameCourse = grp1.courseId === grp2.courseId;
+              const isLect1 = ScheduleRenderer.isLectureSession(s1);
+              const isLect2 = ScheduleRenderer.isLectureSession(s2);
+              const sameDoc = ScheduleRenderer.isSameDoctor(s1.instructor, s2.instructor);
+              const isSoftLectureClash = sameCourse && isLect1 && isLect2 && sameDoc;
+
               conflicts.push({
                 course1: grp1.courseCode || grp1.courseName,
                 group1: grp1.group,
                 course2: grp2.courseCode || grp2.courseName,
                 group2: grp2.group,
                 sameCourse,
+                isSoftLectureClash,
+                severity: isSoftLectureClash ? 'warning' : 'danger',
                 day: s1.day,
                 timeRange,
-                detail: sameCourse
+                detail: isSoftLectureClash
                   ? (isAr
-                      ? `تعارض بين مجموعتين مختارتين لنفس المقرر (${grp1.courseName}): مجموعة ${grp1.group} ومجموعة ${grp2.group} يوم ${s1.day} (${timeRange})`
-                      : `Clash between two groups of ${grp1.courseCode || grp1.courseName}: Group ${grp1.group} and Group ${grp2.group} on ${s1.day} (${timeRange})`)
-                  : (isAr
-                      ? `تعارض بين ${grp1.courseCode || grp1.courseName} (مجموعة ${grp1.group}) و ${grp2.courseCode || grp2.courseName} (مجموعة ${grp2.group}) يوم ${s1.day} (${timeRange})`
-                      : `Clash between ${grp1.courseCode || grp1.courseName} (Group ${grp1.group}) and ${grp2.courseCode || grp2.courseName} (Group ${grp2.group}) on ${s1.day} (${timeRange})`)
+                      ? `محاضرة مشتركة لنفس الدكتور (${s1.instructor}) لنفس المقرر (${grp1.courseName}): مجموعة ${grp1.group} ومجموعة ${grp2.group} يوم ${s1.day} (${timeRange})`
+                      : `Combined lecture with same doctor (${s1.instructor}) for ${grp1.courseCode || grp1.courseName}: Group ${grp1.group} & Group ${grp2.group} on ${s1.day} (${timeRange})`)
+                  : (sameCourse
+                      ? (isAr
+                          ? `تعارض بين مجموعتين مختارتين لنفس المقرر (${grp1.courseName}): مجموعة ${grp1.group} ومجموعة ${grp2.group} يوم ${s1.day} (${timeRange})`
+                          : `Clash between two groups of ${grp1.courseCode || grp1.courseName}: Group ${grp1.group} and Group ${grp2.group} on ${s1.day} (${timeRange})`)
+                      : (isAr
+                          ? `تعارض بين ${grp1.courseCode || grp1.courseName} (مجموعة ${grp1.group}) و ${grp2.courseCode || grp2.courseName} (مجموعة ${grp2.group}) يوم ${s1.day} (${timeRange})`
+                          : `Clash between ${grp1.courseCode || grp1.courseName} (Group ${grp1.group}) and ${grp2.courseCode || grp2.courseName} (Group ${grp2.group}) on ${s1.day} (${timeRange})`))
               });
             }
           }
@@ -2146,8 +2247,13 @@ const App = (() => {
       }
     }
 
+    const hasHardConflict = conflicts.some(c => c.severity === 'danger');
+    const hasSoftConflict = conflicts.some(c => c.severity === 'warning');
+
     return {
       hasConflict: conflicts.length > 0,
+      hasHardConflict,
+      hasSoftConflict,
       conflicts
     };
   }
@@ -2314,24 +2420,46 @@ const App = (() => {
       : '';
 
     if (hasConflict) {
-      banner.className = 'manual-status-banner is-conflict';
-      banner.innerHTML = `
-        <div class="manual-status-main">
-          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-            <span>⚠️</span>
-            <span style="font-weight: 800;">${isAr ? `يوجد تعارض في الجدول (${conflictResult.conflicts.length} تعارض)` : `Time Conflict Detected (${conflictResult.conflicts.length} Clash)`}</span>
+      if (conflictResult.hasHardConflict) {
+        banner.className = 'manual-status-banner is-conflict';
+        banner.innerHTML = `
+          <div class="manual-status-main">
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+              <span>⚠️</span>
+              <span style="font-weight: 800;">${isAr ? `يوجد تعارض في الجدول (${conflictResult.conflicts.filter(c => c.severity === 'danger').length} تعارض)` : `Time Conflict Detected (${conflictResult.conflicts.filter(c => c.severity === 'danger').length} Clash)`}</span>
+            </div>
+            <div style="font-size: 0.8rem; font-weight: 500; opacity: 0.95; margin-top: 2px;">
+              ${(conflictResult.conflicts.find(c => c.severity === 'danger') || conflictResult.conflicts[0]).detail}
+            </div>
+            ${hasMultiGroup ? `<div style="display: flex; align-items: center; gap: 6px; font-size: 0.78rem; margin-top: 4px;">${multiWarnText}</div>` : ''}
+            ${avoidedNotice}
           </div>
-          <div style="font-size: 0.8rem; font-weight: 500; opacity: 0.95; margin-top: 2px;">
-            ${conflictResult.conflicts[0].detail}
+          <div class="manual-status-stats">
+            <span>📚 ${uniqueCoursesCount} / ${totalCourses} ${isAr ? 'مقررات' : 'Courses'} (${selectedCount} ${isAr ? 'مجموعات' : 'Groups'})</span>
+            <span>📅 ${daysSet.size} ${isAr ? 'أيام نزول' : 'Days'}</span>
           </div>
-          ${hasMultiGroup ? `<div style="display: flex; align-items: center; gap: 6px; font-size: 0.78rem; margin-top: 4px;">${multiWarnText}</div>` : ''}
-          ${avoidedNotice}
-        </div>
-        <div class="manual-status-stats">
-          <span>📚 ${uniqueCoursesCount} / ${totalCourses} ${isAr ? 'مقررات' : 'Courses'} (${selectedCount} ${isAr ? 'مجموعات' : 'Groups'})</span>
-          <span>📅 ${daysSet.size} ${isAr ? 'أيام نزول' : 'Days'}</span>
-        </div>
-      `;
+        `;
+      } else {
+        // Soft conflict: Same doctor & subject lecture clash (YELLOW NOT RED)
+        banner.className = 'manual-status-banner is-warning';
+        banner.innerHTML = `
+          <div class="manual-status-main">
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+              <span>⚠️</span>
+              <span style="font-weight: 800;">${isAr ? `تنبيه: محاضرة مشتركة لنفس الدكتور (${conflictResult.conflicts.length})` : `Notice: Combined Lecture with Same Doctor (${conflictResult.conflicts.length})`}</span>
+            </div>
+            <div style="font-size: 0.8rem; font-weight: 500; opacity: 0.95; margin-top: 2px;">
+              ${conflictResult.conflicts[0].detail}
+            </div>
+            ${hasMultiGroup ? `<div style="display: flex; align-items: center; gap: 6px; font-size: 0.78rem; margin-top: 4px;">${multiWarnText}</div>` : ''}
+            ${avoidedNotice}
+          </div>
+          <div class="manual-status-stats">
+            <span>📚 ${uniqueCoursesCount} / ${totalCourses} ${isAr ? 'مقررات' : 'Courses'} (${selectedCount} ${isAr ? 'مجموعات' : 'Groups'})</span>
+            <span>📅 ${daysSet.size} ${isAr ? 'أيام نزول' : 'Days'}</span>
+          </div>
+        `;
+      }
     } else if (selectedCount === 0) {
       banner.className = 'manual-status-banner';
       banner.innerHTML = `
@@ -2344,7 +2472,7 @@ const App = (() => {
         </div>
       `;
     } else if (hasMultiGroup) {
-      banner.className = 'manual-status-banner is-conflict';
+      banner.className = 'manual-status-banner is-warning';
       banner.innerHTML = `
         <div class="manual-status-main">
           <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
@@ -2435,8 +2563,10 @@ const App = (() => {
       { text: isAr ? '✍️ جدول يدوي' : '✍️ Custom Schedule', type: 'manual' }
     ];
 
-    if (conflictResult.hasConflict) {
-      badges.push({ text: isAr ? `⚠️ ${conflictResult.conflicts.length} تعارض` : `⚠️ ${conflictResult.conflicts.length} Clashes`, type: 'avoid' });
+    if (conflictResult.hasHardConflict) {
+      badges.push({ text: isAr ? `⚠️ ${conflictResult.conflicts.filter(c => c.severity === 'danger').length} تعارض` : `⚠️ ${conflictResult.conflicts.filter(c => c.severity === 'danger').length} Clashes`, type: 'avoid' });
+    } else if (conflictResult.hasSoftConflict) {
+      badges.push({ text: isAr ? `⚠️ ${conflictResult.conflicts.length} محاضرة مشتركة` : `⚠️ ${conflictResult.conflicts.length} Combined Lecture(s)`, type: 'mandate' });
     } else {
       badges.push({ text: isAr ? '✅ بدون تعارض' : '✅ Conflict-Free', type: 'best' });
     }
@@ -2444,20 +2574,22 @@ const App = (() => {
     if (multiGroupCourses.length > 0) {
       badges.push({
         text: isAr ? `⚠️ ${multiGroupCourses.length} مواد بأكثر من مجموعة` : `⚠️ ${multiGroupCourses.length} Multi-Group Courses`,
-        type: 'avoid'
+        type: conflictResult.hasHardConflict ? 'avoid' : 'mandate'
       });
     }
+
+    const mergedAllSessions = ScheduleRenderer.mergeSameDoctorLectures ? ScheduleRenderer.mergeSameDoctorLectures(allSessions) : allSessions;
 
     return {
       id: 'sol_manual_custom',
       isManual: true,
       rank: isAr ? 'يدوي' : 'Custom',
       badges,
-      compositeScore: conflictResult.hasConflict ? -1000 : 1000,
+      compositeScore: conflictResult.hasHardConflict ? -1000 : (conflictResult.hasSoftConflict ? 800 : 1000),
       totalGapSlots: 0,
       activeDaysCount: daysSet.size,
       activeDays: Array.from(daysSet),
-      sessions: allSessions,
+      sessions: mergedAllSessions,
       selectedGroups,
       blockedTimes: state.blockedTimes
     };
@@ -2487,12 +2619,21 @@ const App = (() => {
     const conflictResult = checkManualConflicts();
     let prefixHtml = '';
     if (conflictResult.hasConflict) {
-      prefixHtml = `
-        <div class="session-conflict-alert">
-          <span>⚠️</span>
-          <span><strong>${isAr ? 'تنبيه تعارض في الجدول:' : 'Schedule Conflict Alert:'}</strong> ${conflictResult.conflicts.map(c => c.detail).join(' • ')}</span>
-        </div>
-      `;
+      if (conflictResult.hasHardConflict) {
+        prefixHtml = `
+          <div class="session-conflict-alert">
+            <span>⚠️</span>
+            <span><strong>${isAr ? 'تنبيه تعارض في الجدول:' : 'Schedule Conflict Alert:'}</strong> ${conflictResult.conflicts.filter(c => c.severity === 'danger').map(c => c.detail).join(' • ')}</span>
+          </div>
+        `;
+      } else {
+        prefixHtml = `
+          <div class="session-conflict-alert is-warning">
+            <span>⚠️</span>
+            <span><strong>${isAr ? 'تنبيه محاضرة مشتركة لنفس الدكتور:' : 'Combined Lecture Notice:'}</strong> ${conflictResult.conflicts.map(c => c.detail).join(' • ')}</span>
+          </div>
+        `;
+      }
     }
 
     ScheduleRenderer.renderTimetable(sol, container, state.currentLang, state.blockedTimes);

@@ -280,6 +280,25 @@
           </div>
         </div>
 
+        <!-- Strict Doctor Mode (Exhaustive Search) Toggle Box -->
+        <div class="strict-mode-card" style="margin: 0 0 18px 0; background: rgba(59, 130, 246, 0.06); border: 1.5px solid var(--accent-primary); border-radius: var(--radius-md); padding: 14px 18px;">
+          <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 240px;">
+              <label for="check-strict-doctor-combinations" style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 0.98rem; color: var(--text-primary); margin-bottom: 4px;">
+                <span>🎯</span>
+                <span data-i18n="strictDoctorModeTitle">Exhaustive Strict Doctor Search</span>
+              </label>
+              <div style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;" data-i18n="strictDoctorModeDesc">
+                Exhaustively checks 100% of schedule combinations. Guarantees <strong>ZERO avoided doctors (🚫)</strong> and strictly seeks your desired professors (⭐/🌟). If no combination exists, it verifies all combinations to be mathematically certain.
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; padding-top: 2px;">
+              <input type="checkbox" id="check-strict-doctor-combinations" class="custom-toggle-checkbox" style="width: 20px; height: 20px; cursor: pointer; accent-color: var(--accent-primary);" checked />
+              <label for="check-strict-doctor-combinations" id="label-strict-doctor-toggle" style="cursor: pointer; font-size: 0.85rem; font-weight: 700; color: var(--accent-primary);" data-i18n="strictDoctorToggleLabel">Active</label>
+            </div>
+          </div>
+        </div>
+
         <div id="doctor-preferences-container">
           <!-- Populated by JavaScript -->
         </div>

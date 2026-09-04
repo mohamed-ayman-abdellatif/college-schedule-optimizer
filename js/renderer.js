@@ -86,6 +86,122 @@ const ScheduleRenderer = (() => {
   }
 
   /**
+   * Checks if a session is a lecture
+   */
+  function isLectureSession(session) {
+    if (!session || !session.type) return false;
+    const t = session.type.toLowerCase();
+    return t.includes('lect') || t.includes('محاضرة');
+  }
+
+  /**
+   * Normalizes doctor name by removing honorific titles and extra spaces
+   */
+  function normalizeDoctorName(doc) {
+    if (!doc || typeof doc !== 'string') return '';
+    const clean = doc.trim();
+    if (!clean || clean === 'Not Specified' || clean === 'غير محدد') return '';
+    return clean
+      .replace(/^(د\.|د\/|د\s+|dr\.|dr\s+|doctor\s+|prof\.|أ\.د\.?)\s*/i, '')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .toLowerCase();
+  }
+
+  /**
+   * Determines if two instructors refer to the same doctor
+   */
+  function isSameDoctor(doc1, doc2) {
+    const n1 = normalizeDoctorName(doc1);
+    const n2 = normalizeDoctorName(doc2);
+    return n1.length > 0 && n1 === n2;
+  }
+
+  /**
+   * Merges overlapping lectures of the same subject and same doctor into a single session
+   */
+  function mergeSameDoctorLectures(sessions) {
+    if (!sessions || sessions.length <= 1) return [...(sessions || [])];
+
+    const result = [];
+    const processed = new Set();
+
+    for (let i = 0; i < sessions.length; i++) {
+      if (processed.has(i)) continue;
+      const s1 = sessions[i];
+
+      const isLect1 = isLectureSession(s1);
+      const hasDoc1 = s1.instructor && s1.instructor !== 'Not Specified';
+
+      if (!isLect1 || !hasDoc1) {
+        result.push(s1);
+        continue;
+      }
+
+      const matchingIndices = [i];
+      for (let j = i + 1; j < sessions.length; j++) {
+        if (processed.has(j)) continue;
+        const s2 = sessions[j];
+        const isLect2 = isLectureSession(s2);
+        const sameCourse = (s1.courseId && s2.courseId && s1.courseId === s2.courseId) ||
+                           (s1.courseCode && s2.courseCode && s1.courseCode === s2.courseCode);
+        const sameDoc = isSameDoctor(s1.instructor, s2.instructor);
+        const timeOverlap = (s1.startSlot <= s2.endSlot && s1.endSlot >= s2.startSlot);
+
+        if (isLect2 && sameCourse && sameDoc && timeOverlap) {
+          matchingIndices.push(j);
+        }
+      }
+
+      if (matchingIndices.length === 1) {
+        result.push(s1);
+      } else {
+        matchingIndices.forEach(idx => processed.add(idx));
+        const matched = matchingIndices.map(idx => sessions[idx]);
+
+        const allGroups = [];
+        matched.forEach(s => {
+          if (s.groups && Array.isArray(s.groups)) {
+            s.groups.forEach(g => { if (!allGroups.includes(g)) allGroups.push(g); });
+          } else if (s.group) {
+            s.group.toString().split(/,\s*/).forEach(g => {
+              const trimmed = g.trim();
+              if (trimmed && !allGroups.includes(trimmed)) allGroups.push(trimmed);
+            });
+          }
+        });
+        allGroups.sort();
+
+        const minStart = Math.min(...matched.map(s => parseInt(s.startSlot, 10)));
+        const maxEnd = Math.max(...matched.map(s => parseInt(s.endSlot, 10)));
+
+        let mergedPref = 'neutral';
+        if (matched.some(s => s.doctorPref === 'mandate')) mergedPref = 'mandate';
+        else if (matched.some(s => s.doctorPref === 'love')) mergedPref = 'love';
+        else if (matched.some(s => s.doctorPref === 'avoid')) mergedPref = 'avoid';
+
+        const merged = {
+          ...s1,
+          id: `merged_${s1.courseId || s1.courseCode}_${allGroups.join('_')}_${s1.day}_${minStart}`,
+          group: allGroups.join(', '),
+          groups: allGroups,
+          startSlot: minStart,
+          endSlot: maxEnd,
+          duration: maxEnd - minStart + 1,
+          doctorPref: mergedPref,
+          isMergedLecture: true,
+          isWarning: true,
+          originalSessions: matched
+        };
+
+        result.push(merged);
+      }
+    }
+
+    return result;
+  }
+
+  /**
    * Renders the complete timetable view for a solution.
    * Provides both a Mobile-Friendly Daily Agenda and a Full 16-Period Grid.
    */
@@ -133,6 +249,11 @@ const ScheduleRenderer = (() => {
       if (sessionsByDay[s.day]) {
         sessionsByDay[s.day].push(s);
       }
+    });
+
+    // Merge overlapping lectures of the same subject & doctor for each day
+    DAYS.forEach(d => {
+      sessionsByDay[d.key] = mergeSameDoctorLectures(sessionsByDay[d.key]);
     });
 
     // Group blocked times by day
@@ -247,23 +368,36 @@ const ScheduleRenderer = (() => {
         );
 
         agendaHtml += `
-          <div class="agenda-session-card ${isClashing ? 'is-clashing-session' : ''}" style="border-inline-start: 4px solid ${s.color || '#3B82F6'};">
+          <div class="agenda-session-card ${isClashing ? 'is-clashing-session' : (s.isMergedLecture ? 'is-merged-lecture' : '')}" style="border-inline-start: 4px solid ${s.isMergedLecture ? '#F59E0B' : (s.color || '#3B82F6')};">
             <div class="agenda-session-top">
               <div class="agenda-session-code" style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
                 <span style="color: ${s.color || 'var(--text-primary)'}; font-weight: 800;">${s.courseName}</span>
                 ${s.courseCode && s.courseCode !== s.courseName ? `<span style="font-size: 0.8rem; color: var(--text-muted);">(${s.courseCode})</span>` : ''}
                 ${isMulti ? getRedErrorTriangleSvg(isAr ? 'تم اختيار أكثر من مجموعة لهذه المادة' : 'Multiple groups selected for this subject') : ''}
                 ${isClashing ? `<span class="agenda-clash-tag">⚠️ ${isAr ? 'تعارض' : 'CLASH'}</span>` : ''}
+                ${s.isMergedLecture && !isClashing ? `<span class="agenda-clash-tag is-warning">⚠️ ${isAr ? 'محاضرة مشتركة' : 'Combined Lecture'}</span>` : ''}
               </div>
               <div style="display: flex; align-items: center; gap: 6px;">
                 <span class="session-badge ${typeClass}">${typeLabel}</span>
-                ${canDeselect ? `
-                  <button class="agenda-deselect-btn" 
-                          title="${isAr ? `إلغاء اختيار مجموعة ${s.group}` : `Deselect Group ${s.group}`}"
-                          onclick="App.deselectManualGroupFromTimetable('${s.courseId}', '${s.group}', event)">
-                    ✕ ${isAr ? 'إلغاء' : 'Deselect'}
-                  </button>
-                ` : ''}
+                ${canDeselect ? (
+                  s.isMergedLecture && s.groups && s.groups.length > 1 ? `
+                    <div style="display: flex; align-items: center; gap: 4px;">
+                      ${s.groups.map(grpName => `
+                        <button class="agenda-deselect-btn" 
+                                title="${isAr ? `إلغاء اختيار مجموعة ${grpName}` : `Deselect Group ${grpName}`}"
+                                onclick="App.deselectManualGroupFromTimetable('${s.courseId}', '${grpName}', event)">
+                          ✕ ${grpName}
+                        </button>
+                      `).join('')}
+                    </div>
+                  ` : `
+                    <button class="agenda-deselect-btn" 
+                            title="${isAr ? `إلغاء اختيار مجموعة ${s.group}` : `Deselect Group ${s.group}`}"
+                            onclick="App.deselectManualGroupFromTimetable('${s.courseId}', '${s.group}', event)">
+                      ✕ ${isAr ? 'إلغاء' : 'Deselect'}
+                    </button>
+                  `
+                ) : ''}
               </div>
             </div>
             <div class="agenda-session-info">
@@ -417,7 +551,7 @@ const ScheduleRenderer = (() => {
                     const isMulti = isMultiCourse(s.courseId);
 
                     return `
-                      <div class="clash-mini-card" style="border-inline-start: 4px solid ${s.color || '#EF4444'};">
+                      <div class="clash-mini-card" style="border-inline-start: 4px solid ${s.isMergedLecture ? '#F59E0B' : (s.color || '#EF4444')};">
                         <div class="clash-mini-top">
                           <div style="display: flex; align-items: center; gap: 4px; overflow: hidden;">
                             <span class="clash-mini-code" style="color: ${s.color || 'var(--text-primary)'};" title="${s.courseName}">
@@ -427,13 +561,25 @@ const ScheduleRenderer = (() => {
                           </div>
                           <div style="display: flex; align-items: center; gap: 4px;">
                             <span class="mini-group-pill">Grp ${s.group}</span>
-                            ${canDeselect ? `
-                              <button class="clash-mini-deselect-btn" 
-                                      title="${isAr ? `إلغاء اختيار مجموعة ${s.group}` : `Deselect Group ${s.group}`}"
-                                      onclick="App.deselectManualGroupFromTimetable('${s.courseId}', '${s.group}', event)">
-                                ✕
-                              </button>
-                            ` : ''}
+                            ${canDeselect ? (
+                              s.isMergedLecture && s.groups && s.groups.length > 1 ? `
+                                <div style="display: flex; gap: 2px;">
+                                  ${s.groups.map(grpName => `
+                                    <button class="clash-mini-deselect-btn" 
+                                            title="${isAr ? `إلغاء اختيار مجموعة ${grpName}` : `Deselect Group ${grpName}`}"
+                                            onclick="App.deselectManualGroupFromTimetable('${s.courseId}', '${grpName}', event)">
+                                      ✕ ${grpName}
+                                    </button>
+                                  `).join('')}
+                                </div>
+                              ` : `
+                                <button class="clash-mini-deselect-btn" 
+                                        title="${isAr ? `إلغاء اختيار مجموعة ${s.group}` : `Deselect Group ${s.group}`}"
+                                        onclick="App.deselectManualGroupFromTimetable('${s.courseId}', '${s.group}', event)">
+                                  ✕
+                                </button>
+                              `
+                            ) : ''}
                           </div>
                         </div>
                         <div class="clash-mini-meta">
@@ -448,7 +594,7 @@ const ScheduleRenderer = (() => {
               </div>
             `;
           } else {
-            // Single non-clashing session
+            // Single non-clashing session (or merged same-doctor lecture)
             const session = matchingCluster[0];
             const timeRange = formatSlotTimeRange(session.startSlot, session.endSlot);
             const typeClass = session.type === 'Lab.' ? 'type-lab' : (session.type === 'Sec.' ? 'type-sec' : 'type-lect');
@@ -456,22 +602,37 @@ const ScheduleRenderer = (() => {
             const isMulti = isMultiCourse(session.courseId);
 
             gridHtml += `
-              <div class="grid-session-card ${typeClass}"
-                   style="grid-column: span ${span}; border-inline-start-color: ${session.color || '#3B82F6'};"
+              <div class="grid-session-card ${typeClass} ${session.isMergedLecture ? 'is-merged-lecture' : ''}"
+                   style="grid-column: span ${span}; border-inline-start-color: ${session.isMergedLecture ? '#F59E0B' : (session.color || '#3B82F6')};"
                    title="${session.courseName} (Group ${session.group})">
-                ${canDeselect ? `
-                  <button class="timetable-deselect-btn" 
-                          title="${isAr ? `إلغاء اختيار مجموعة ${session.group}` : `Deselect Group ${session.group}`}"
-                          onclick="App.deselectManualGroupFromTimetable('${session.courseId}', '${session.group}', event)">
-                    ✕
-                  </button>
-                ` : ''}
+                ${canDeselect ? (
+                  session.isMergedLecture && session.groups && session.groups.length > 1 ? `
+                    <div class="timetable-deselect-group-btns">
+                      ${session.groups.map(grpName => `
+                        <button class="timetable-deselect-btn is-merged" 
+                                title="${isAr ? `إلغاء اختيار مجموعة ${grpName}` : `Deselect Group ${grpName}`}"
+                                onclick="App.deselectManualGroupFromTimetable('${session.courseId}', '${grpName}', event)">
+                          ✕ ${grpName}
+                        </button>
+                      `).join('')}
+                    </div>
+                  ` : `
+                    <button class="timetable-deselect-btn" 
+                            title="${isAr ? `إلغاء اختيار مجموعة ${session.group}` : `Deselect Group ${session.group}`}"
+                            onclick="App.deselectManualGroupFromTimetable('${session.courseId}', '${session.group}', event)">
+                      ✕
+                    </button>
+                  `
+                ) : ''}
                 <div class="session-top">
                   <div style="display: flex; align-items: center; gap: 4px; overflow: hidden;">
                     <span class="session-code">${session.courseCode || session.courseName}</span>
                     ${isMulti ? getRedErrorTriangleSvg(isAr ? 'تم اختيار أكثر من مجموعة لهذه المادة' : 'Multiple groups selected for this subject') : ''}
                   </div>
-                  <span class="session-badge ${typeClass}">${typeLabel}</span>
+                  <div style="display: flex; align-items: center; gap: 4px;">
+                    ${session.isMergedLecture ? `<span class="session-pref-badge badge-mandate" style="background: rgba(245, 158, 11, 0.2); color: #D97706; border-color: rgba(245, 158, 11, 0.45); font-size: 0.65rem;">⚠️ ${isAr ? 'محاضرة مشتركة' : 'Combined'}</span>` : ''}
+                    <span class="session-badge ${typeClass}">${typeLabel}</span>
+                  </div>
                 </div>
                 <div class="session-group">Group ${session.group}</div>
                 ${session.instructor && sessionHasInstructor(session) ? `
@@ -562,7 +723,7 @@ const ScheduleRenderer = (() => {
     const isAr = lang === 'ar';
 
     const badgesHtml = (solution.badges || []).map(b => `
-      <span class="solution-badge badge-${b.type}">${b.text}</span>
+      <span class="solution-badge badge-${b.type}">${(isAr && b.textAr) ? b.textAr : b.text}</span>
     `).join('');
 
     const groupsHtml = solution.selectedGroups.map(g => `
@@ -615,7 +776,11 @@ const ScheduleRenderer = (() => {
     formatSlotTimeRange,
     hexToRgba,
     setViewMode,
-    getEffectiveViewMode
+    getEffectiveViewMode,
+    isLectureSession,
+    normalizeDoctorName,
+    isSameDoctor,
+    mergeSameDoctorLectures
   };
 })();
 

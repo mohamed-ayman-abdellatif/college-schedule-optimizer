@@ -84,9 +84,9 @@
     assert('Group B Lab instructor preserved without doctor title', grpB_lab && !grpB_lab.instructor.startsWith('د. ') && grpB_lab.instructor.includes('مجد نبيل'), grpB_lab?.instructor);
 
 
-    // TEST 2: Optimizer runs across 5 courses
+    // TEST 2: Optimizer runs across sample courses
     const sampleCourses = SampleScheduleData.DEFAULT_COURSE_SET;
-    assert('Sample dataset has 5 courses', sampleCourses.length === 5);
+    assert('Sample dataset has 7 courses', sampleCourses.length === 7);
 
     const optResult = ScheduleOptimizer.findOptimalSchedules(sampleCourses, {
       gapWeight: 80,
@@ -96,7 +96,7 @@
 
     assert('Optimizer finds valid clash-free solutions', optResult.success && optResult.solutions.length > 0, `Count: ${optResult.solutions.length}`);
     const bestSol = optResult.solutions[0];
-    assert('Best solution has clash-free sessions for all 5 courses', bestSol.selectedGroups.length === 5);
+    assert('Best solution has clash-free sessions for all courses', bestSol.selectedGroups.length === sampleCourses.length);
     assert('Best solution has computed total gaps', typeof bestSol.totalGapSlots === 'number');
     assert('Best solution has campus days count', bestSol.activeDaysCount >= 2 && bestSol.activeDaysCount <= 7);
 
@@ -159,6 +159,246 @@
     insts.sort((a, b) => getCleanSortName(a).localeCompare(getCleanSortName(b)));
     assert('Doctors sorted alphabetically (Dina, Hesham, Yara)', docs[0].includes('دينا') && docs[1].includes('هشام') && docs[2].includes('يارا'));
     assert('Instructors sorted alphabetically (Ahmed, Magd, Mohamed)', insts[0].includes('احمد') && insts[1].includes('مجد') && insts[2].includes('محمد'));
+
+    // TEST 8: Same-Doctor Same-Subject Lecture Merging & Yellow Warning
+    assert('isLectureSession correctly identifies lectures',
+      ScheduleRenderer.isLectureSession({ type: 'Lect.' }) === true &&
+      ScheduleRenderer.isLectureSession({ type: 'محاضرة' }) === true &&
+      ScheduleRenderer.isLectureSession({ type: 'Lab.' }) === false
+    );
+
+    assert('isSameDoctor matches identical and title-prefixed doctor names',
+      ScheduleRenderer.isSameDoctor('د. هشام صلاح الدين', 'Dr. هشام صلاح الدين') === true &&
+      ScheduleRenderer.isSameDoctor('د. هشام صلاح الدين', 'هشام صلاح الدين') === true &&
+      ScheduleRenderer.isSameDoctor('د. هشام', 'د. دينا') === false &&
+      ScheduleRenderer.isSameDoctor('Not Specified', 'Not Specified') === false
+    );
+
+    // Group B and Group C both have Tuesday slots 3-4 lecture with Dr. Hesham
+    const grpB_lect = {
+      courseId: 'ECE2102',
+      courseCode: 'ECE2102',
+      courseName: 'Applied Programming',
+      group: 'B',
+      type: 'Lect.',
+      day: 'Tuesday',
+      startSlot: 3,
+      endSlot: 4,
+      instructor: 'د. هشام صلاح الدين محمد رشاد'
+    };
+    const grpC_lect = {
+      courseId: 'ECE2102',
+      courseCode: 'ECE2102',
+      courseName: 'Applied Programming',
+      group: 'C',
+      type: 'Lect.',
+      day: 'Tuesday',
+      startSlot: 3,
+      endSlot: 4,
+      instructor: 'د. هشام صلاح الدين محمد رشاد'
+    };
+
+    const merged = ScheduleRenderer.mergeSameDoctorLectures([grpB_lect, grpC_lect]);
+    assert('Same-doctor lectures merge into exactly 1 session', merged.length === 1);
+    assert('Merged session has group letters beside each other (B, C)', merged[0] && merged[0].group === 'B, C', merged[0]?.group);
+    assert('Merged session is flagged as isMergedLecture', merged[0] && merged[0].isMergedLecture === true);
+
+    // Verify non-matching sessions do not merge
+    const diffDocLect = {
+      courseId: 'ECE2102',
+      courseCode: 'ECE2102',
+      courseName: 'Applied Programming',
+      group: 'H',
+      type: 'Lect.',
+      day: 'Tuesday',
+      startSlot: 3,
+      endSlot: 4,
+      instructor: 'د. دينا محمد علي ابو الدهب'
+    };
+    const notMerged = ScheduleRenderer.mergeSameDoctorLectures([grpB_lect, diffDocLect]);
+    assert('Different doctor lectures do NOT merge', notMerged.length === 2);
+
+    const labSession = {
+      courseId: 'ECE2102',
+      courseCode: 'ECE2102',
+      courseName: 'Applied Programming',
+      group: 'B',
+      type: 'Lab.',
+      day: 'Tuesday',
+      startSlot: 3,
+      endSlot: 4,
+      instructor: 'مجد نبيل'
+    };
+    const labNotMerged = ScheduleRenderer.mergeSameDoctorLectures([grpB_lect, labSession]);
+    assert('Lab session does not merge with lecture', labNotMerged.length === 2);
+
+    // TEST 9: Robust Doctor Name Matching & Substring Collision Prevention
+    assert('matchesDoctor matches normalized Arabic names with titles',
+      ScheduleOptimizer.matchesDoctor('د. هشام صلاح الدين محمد رشاد', 'هشام صلاح الدين محمد رشاد') === true &&
+      ScheduleOptimizer.matchesDoctor('Dr. Hesham Salah', 'د. هشام صلاح') === false
+    );
+    assert('matchesDoctor matches prefix token names',
+      ScheduleOptimizer.matchesDoctor('د. هشام صلاح الدين', 'هشام صلاح الدين محمد رشاد') === true
+    );
+    assert('matchesDoctor PREVENTS false positive on shared father/common name (محمد)',
+      ScheduleOptimizer.matchesDoctor('د. هشام صلاح الدين محمد رشاد', 'د. محمد حسام') === false &&
+      ScheduleOptimizer.matchesDoctor('د. دينا محمد علي ابو الدهب', 'د. محمد علي') === false &&
+      ScheduleOptimizer.matchesDoctor('د. محمد', 'د. محمد علي') === false &&
+      ScheduleOptimizer.matchesDoctor('د. محمد حسام', 'د. محمد علي') === false
+    );
+
+    // TEST 10: Strict Avoid Exclusion when non-avoided alternatives exist
+    // ECE2102 has multiple doctors (Dr. Hesham, Dr. Dina, Dr. Yara).
+    // Avoiding Dr. Hesham should produce solutions strictly excluding Dr. Hesham when alternatives exist.
+    const optResultAvoidHesham = ScheduleOptimizer.findOptimalSchedules(sampleCourses, {
+      doctorPreferences: {
+        'ECE2102': { 'هشام صلاح الدين محمد رشاد': 'avoid' }
+      }
+    });
+    assert('Optimizer succeeds when an avoided doctor has valid alternatives', optResultAvoidHesham.success && optResultAvoidHesham.solutions.length > 0);
+    const hasAvoidedInSol = optResultAvoidHesham.solutions[0].selectedGroups
+      .find(g => g.courseCode === 'ECE2102')
+      .instructors.some(inst => ScheduleOptimizer.matchesDoctor(inst, 'هشام صلاح الدين محمد رشاد'));
+    assert('Solutions strictly exclude Dr. Hesham when valid alternative groups exist', !hasAvoidedInSol);
+
+    // TEST 11: Tier 3 Fallback - Avoided Doctor Never Falsely Fails When Forced
+    // Create a 2-course mini schedule where course 1 ONLY has 1 doctor (Dr. Sole)
+    const singleDocCourse = {
+      id: 'SOL101',
+      code: 'SOL101',
+      name: 'Sole Course',
+      instructors: ['د. سليمان فؤاد عزيز'],
+      groups: [
+        {
+          group: 'A',
+          sessions: [{ type: 'Lect.', day: 'Sunday', startSlot: 1, endSlot: 2, instructor: 'د. سليمان فؤاد عزيز' }],
+          instructors: ['د. سليمان فؤاد عزيز']
+        }
+      ]
+    };
+    const otherCourse = {
+      id: 'OTH101',
+      code: 'OTH101',
+      name: 'Other Course',
+      instructors: ['د. طارق محمود'],
+      groups: [
+        {
+          group: 'A',
+          sessions: [{ type: 'Lect.', day: 'Sunday', startSlot: 3, endSlot: 4, instructor: 'د. طارق محمود' }],
+          instructors: ['د. طارق محمود']
+        }
+      ]
+    };
+    // User strictly marks the sole professor as Avoid!
+    const optResultSoleAvoid = ScheduleOptimizer.findOptimalSchedules([singleDocCourse, otherCourse], {
+      doctorPreferences: {
+        'SOL101': { 'د. سليمان فؤاد عزيز': 'avoid' }
+      }
+    });
+    assert('Tier 3 fallback discovers clash-free schedule even if sole doctor is avoided', optResultSoleAvoid.success === true && optResultSoleAvoid.solutions.length > 0);
+    assert('Fallback notice accurately alerts user that an avoided doctor was necessary', Boolean(optResultSoleAvoid.fallbackNotice));
+    assert('Solution has avoid-included badge', optResultSoleAvoid.solutions[0].badges.some(b => b.type === 'avoid-included'));
+
+    // TEST 12: Tier 2 Fallback - Conflicting Mandates Return Best Schedules
+    // Create 2 courses where Group A of Course 1 and Group A of Course 2 clash at Sunday slots 1-2,
+    // and each has a different mandated doctor.
+    const clashCourse1 = {
+      id: 'CL1',
+      code: 'CL1',
+      name: 'Clash Course 1',
+      instructors: ['د. اشرف رفعت'],
+      groups: [
+        {
+          group: 'A',
+          sessions: [{ type: 'Lect.', day: 'Sunday', startSlot: 1, endSlot: 2, instructor: 'د. اشرف رفعت' }],
+          instructors: ['د. اشرف رفعت']
+        }
+      ]
+    };
+    const clashCourse2 = {
+      id: 'CL2',
+      code: 'CL2',
+      name: 'Clash Course 2',
+      instructors: ['د. حسام بدير', 'د. سامح كمال'],
+      groups: [
+        {
+          group: 'A',
+          sessions: [{ type: 'Lect.', day: 'Sunday', startSlot: 1, endSlot: 2, instructor: 'د. حسام بدير' }],
+          instructors: ['د. حسام بدير']
+        },
+        {
+          group: 'B',
+          sessions: [{ type: 'Lect.', day: 'Monday', startSlot: 1, endSlot: 2, instructor: 'د. سامح كمال' }],
+          instructors: ['د. سامح كمال']
+        }
+      ]
+    };
+    // User mandates BOTH Dr. Ashraf (CL1 Group A) and Dr. Hossam (CL2 Group A) who clash at Sunday 1-2!
+    const optResultConflictingMandates = ScheduleOptimizer.findOptimalSchedules([clashCourse1, clashCourse2], {
+      doctorPreferences: {
+        'CL1': { 'د. اشرف رفعت': 'mandate' },
+        'CL2': { 'د. حسام بدير': 'mandate' }
+      }
+    });
+    assert('Tier 2 fallback succeeds when mandated doctors clash with each other', optResultConflictingMandates.success === true && optResultConflictingMandates.solutions.length > 0);
+    assert('Tier 2 selects non-clashing alternative (Group B) for clash-free schedule',
+      optResultConflictingMandates.solutions[0].selectedGroups.find(g => g.courseCode === 'CL2').group === 'B'
+    );
+    assert('Fallback notice informs user of conflicting mandated hours', Boolean(optResultConflictingMandates.fallbackNotice));
+
+    // TEST 13: Strict Doctor Mode (Exhaustive Search)
+    const optResultStrictSuccess = ScheduleOptimizer.findOptimalSchedules(sampleCourses, {
+      strictDoctorMode: true,
+      doctorPreferences: {
+        'ECE2102': {
+          'هشام صلاح الدين محمد رشاد': 'avoid',
+          'دينا محمد علي ابو الدهب': 'love'
+        }
+      }
+    });
+    assert('Strict Doctor Mode succeeds when non-avoided desired combination exists',
+      optResultStrictSuccess.success === true && optResultStrictSuccess.solutions.length > 0
+    );
+    assert('Strict Doctor Mode calculates totalCombinationsPossible',
+      typeof optResultStrictSuccess.totalCombinationsPossible === 'number' && optResultStrictSuccess.totalCombinationsPossible > 0
+    );
+    const bestStrictSol = optResultStrictSuccess.solutions[0];
+    const ecePick = bestStrictSol.selectedGroups.find(g => g.courseCode === 'ECE2102');
+    assert('Strict Doctor Mode picks desired doctor (Dr. Dina)',
+      ecePick.instructors.some(inst => ScheduleOptimizer.matchesDoctor(inst, 'دينا محمد علي ابو الدهب'))
+    );
+    assert('Strict Doctor Mode strictly excludes avoided doctor (Dr. Hesham)',
+      !ecePick.instructors.some(inst => ScheduleOptimizer.matchesDoctor(inst, 'هشام صلاح الدين محمد رشاد'))
+    );
+
+    // TEST 14: Strict Doctor Mode - Never returns avoided doctor even if sole lecturer
+    const optResultStrictSoleAvoid = ScheduleOptimizer.findOptimalSchedules([singleDocCourse, otherCourse], {
+      strictDoctorMode: true,
+      doctorPreferences: {
+        'SOL101': { 'د. سليمان فؤاد عزيز': 'avoid' }
+      }
+    });
+    assert('Strict Doctor Mode refuses to return avoided doctor (returns success: false)',
+      optResultStrictSoleAvoid.success === false && optResultStrictSoleAvoid.solutions.length === 0
+    );
+    assert('Strict Doctor Mode provides total combinations and diagnostic message',
+      Boolean(optResultStrictSoleAvoid.totalCombinationsPossible && optResultStrictSoleAvoid.message)
+    );
+
+    // TEST 15: Strict Doctor Mode with Conflicting Desired Doctors
+    const optResultStrictConflict = ScheduleOptimizer.findOptimalSchedules([clashCourse1, clashCourse2], {
+      strictDoctorMode: true,
+      doctorPreferences: {
+        'CL1': { 'د. اشرف رفعت': 'love' },
+        'CL2': { 'د. حسام بدير': 'love', 'د. سامح كمال': 'neutral' }
+      }
+    });
+    assert('Strict Doctor Mode handles conflicting desired doctors gracefully',
+      optResultStrictConflict.success === true && optResultStrictConflict.solutions.length > 0
+    );
+    assert('Strict Doctor Mode falls back to non-clashing alternative with fallback notice',
+      Boolean(optResultStrictConflict.fallbackNotice)
+    );
 
     // Summary
     const passedCount = results.filter(r => r.passed).length;
