@@ -46,7 +46,21 @@ const App = (() => {
       loadSampleBtn: 'Load Example Courses',
       findSchedulesBtn: 'Find Best Schedules',
       pasteHtmlTab: 'Paste HTML Code',
+      uploadPdfTab: '📄 Upload PDF Timetable',
       uploadPhotoTab: 'Upload Schedule Photo',
+      importCardSubtitle: 'Paste HTML from your college portal, upload a PDF timetable, or upload a schedule photo',
+      pdfDropzoneTitle: 'Drag & drop your PDF timetable here, or click to browse',
+      pdfDropzoneSub: 'Supports aSc Timetables & AAST university schedule PDFs (all pages & groups)',
+      pdfParsingPages: 'Extracting pages from PDF...',
+      togglePdfText: 'Or paste copied text / OCR from PDF',
+      pdfTextPlaceholder: 'Paste copied text or OCR output from the PDF timetable here...',
+      parsePdfTextBtn: 'Parse PDF Text',
+      pdfModalTitle: 'Select Courses to Import',
+      pdfModalSubtitle: 'Choose which courses from your timetable PDF you want to add to your schedule:',
+      selectAll: 'Select All',
+      deselectAll: 'Deselect All',
+      importSelectedCourses: 'Import Selected Courses',
+      cancelBtn: 'Cancel',
       manualTab: 'Manual Quick Entry',
       htmlPlaceholder: 'Paste HTML schedule content from your college portal here...',
       parseBtn: 'Parse & Add Course',
@@ -129,7 +143,21 @@ const App = (() => {
       loadSampleBtn: 'تحميل المقررات التجريبية',
       findSchedulesBtn: 'توليد أفضل الجداول',
       pasteHtmlTab: 'نسخ ولصق كود HTML',
+      uploadPdfTab: '📄 رفع جدول PDF',
       uploadPhotoTab: 'رفع صورة / سكرين شوت للجدول',
+      importCardSubtitle: 'الصق كود HTML من موقع الكلية، أو ارفع ملف PDF للجدول، أو ارفع صورة الجدول',
+      pdfDropzoneTitle: 'اسحب وأفلت ملف PDF الخاص بالجدول هنا، أو اضغط للاختيار',
+      pdfDropzoneSub: 'يدعم جداول aSc Timetables وجداول الأكاديمية البحرية AAST (كل الصفحات والمجموعات)',
+      pdfParsingPages: 'جاري استخراج الصفحات من ملف PDF...',
+      togglePdfText: 'أو الصق النص المنسوخ / OCR من ملف PDF',
+      pdfTextPlaceholder: 'الصق النص المنسوخ أو ناتج OCR من ملف PDF هنا...',
+      parsePdfTextBtn: 'تحليل نص الـ PDF',
+      pdfModalTitle: 'اختر المواد المراد إضافتها',
+      pdfModalSubtitle: 'حدد المواد التي تريد تسجيلها من جدول الـ PDF:',
+      selectAll: 'تحديد الكل',
+      deselectAll: 'إلغاء تحديد الكل',
+      importSelectedCourses: 'إضافة المواد المحددة',
+      cancelBtn: 'إلغاء',
       manualTab: 'إدخال يدوي سريع',
       htmlPlaceholder: 'الصق كود HTML لجدول المقرر من موقع الأكاديمية أو كليتك هنا...',
       parseBtn: 'استخراج وإضافة المقرر',
@@ -482,6 +510,50 @@ const App = (() => {
       if (file) handleImageUpload(file);
     });
 
+    // PDF Upload & Dropzone
+    const pdfDropzone = document.getElementById('pdf-dropzone');
+    const pdfInput = document.getElementById('input-schedule-pdf');
+
+    pdfDropzone?.addEventListener('click', () => pdfInput?.click());
+    pdfDropzone?.addEventListener('dragover', e => {
+      e.preventDefault();
+      pdfDropzone.classList.add('dragover');
+    });
+    pdfDropzone?.addEventListener('dragleave', () => pdfDropzone.classList.remove('dragover'));
+    pdfDropzone?.addEventListener('drop', e => {
+      e.preventDefault();
+      pdfDropzone.classList.remove('dragover');
+      const file = e.dataTransfer.files[0];
+      if (file && (file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf'))) {
+        handlePdfUpload(file);
+      } else {
+        showToast(state.currentLang === 'ar' ? 'يرجى اختيار ملف PDF صالح' : 'Please select a valid PDF file', 'error');
+      }
+    });
+
+    pdfInput?.addEventListener('change', e => {
+      const file = e.target.files[0];
+      if (file) handlePdfUpload(file);
+    });
+
+    // Toggle PDF text paste box
+    document.getElementById('btn-toggle-pdf-text')?.addEventListener('click', () => {
+      const box = document.getElementById('pdf-text-container');
+      if (box) {
+        box.style.display = box.style.display === 'none' ? 'block' : 'none';
+      }
+    });
+
+    // Parse PDF text button
+    document.getElementById('btn-parse-pdf-text')?.addEventListener('click', handlePdfTextParse);
+
+    // PDF Course Selection Modal Events
+    document.getElementById('btn-close-pdf-modal')?.addEventListener('click', closePdfCoursesModal);
+    document.getElementById('btn-cancel-pdf-import')?.addEventListener('click', closePdfCoursesModal);
+    document.getElementById('btn-pdf-select-all')?.addEventListener('click', () => setAllPdfCoursesChecked(true));
+    document.getElementById('btn-pdf-deselect-all')?.addEventListener('click', () => setAllPdfCoursesChecked(false));
+    document.getElementById('btn-confirm-pdf-import')?.addEventListener('click', confirmPdfImport);
+
     // Free Day Chips
     document.querySelectorAll('.day-chip').forEach(chip => {
       chip.addEventListener('click', () => {
@@ -675,6 +747,200 @@ const App = (() => {
 
     // Clear textarea
     document.getElementById('html-input-text').value = '';
+  }
+
+  /**
+   * PDF File Upload & Extraction
+   */
+  async function handlePdfUpload(file) {
+    const isAr = state.currentLang === 'ar';
+    const progressContainer = document.getElementById('pdf-progress-container');
+    const progressBar = document.getElementById('pdf-progress-bar');
+    const progressText = document.getElementById('pdf-progress-text');
+    const progressPct = document.getElementById('pdf-progress-pct');
+
+    try {
+      if (progressContainer) progressContainer.style.display = 'block';
+      if (progressBar) progressBar.style.width = '5%';
+      if (progressPct) progressPct.textContent = '5%';
+      if (progressText) progressText.textContent = isAr ? 'جاري قراءة ملف PDF...' : 'Reading PDF file...';
+
+      const result = await PdfScheduleParser.parsePdfFile(file, (curr, total) => {
+        const pct = Math.round((curr / total) * 100);
+        if (progressBar) progressBar.style.width = `${pct}%`;
+        if (progressPct) progressPct.textContent = `${pct}%`;
+        if (progressText) {
+          progressText.textContent = isAr
+            ? `جاري استخراج صفحة ${curr} من ${total}...`
+            : `Extracting page ${curr} of ${total}...`;
+        }
+      });
+
+      if (!result.success || result.courses.length === 0) {
+        throw new Error(result.message || 'No courses found in PDF');
+      }
+
+      if (progressContainer) progressContainer.style.display = 'none';
+      openPdfCoursesModal(result);
+    } catch (err) {
+      console.error('PDF parsing error:', err);
+      if (progressContainer) progressContainer.style.display = 'none';
+      showToast(isAr ? `خطأ أثناء قراءة ملف الـ PDF: ${err.message}` : `PDF error: ${err.message}`, 'error');
+    }
+  }
+
+  /**
+   * PDF Copied Text / OCR Parsing
+   */
+  function handlePdfTextParse() {
+    const isAr = state.currentLang === 'ar';
+    const text = document.getElementById('pdf-input-text')?.value || '';
+    if (!text.trim()) {
+      showToast(isAr ? 'يرجى لصق نص الجدول أولاً' : 'Please paste timetable text first', 'error');
+      return;
+    }
+
+    try {
+      const result = PdfScheduleParser.parsePdfText(text);
+      if (!result.success || result.courses.length === 0) {
+        throw new Error(result.message || 'No courses found in text');
+      }
+
+      openPdfCoursesModal(result);
+    } catch (err) {
+      console.error('PDF text parse error:', err);
+      showToast(isAr ? `خطأ في تحليل النص: ${err.message}` : `Text parse error: ${err.message}`, 'error');
+    }
+  }
+
+  /**
+   * Open Course Selection Modal
+   */
+  function openPdfCoursesModal(result) {
+    const isAr = state.currentLang === 'ar';
+    state.pendingPdfCourses = result.courses;
+
+    const modal = document.getElementById('pdf-courses-modal');
+    const badge = document.getElementById('pdf-detected-groups-badge');
+    const listContainer = document.getElementById('pdf-courses-selection-list');
+
+    if (badge) {
+      badge.textContent = isAr
+        ? `تم العثور على ${result.detectedGroups.length} مجموعات (${result.detectedGroups.join(', ')})`
+        : `Found ${result.detectedGroups.length} Groups (${result.detectedGroups.join(', ')})`;
+    }
+
+    if (listContainer) {
+      listContainer.innerHTML = '';
+      result.courses.forEach((course, idx) => {
+        const card = document.createElement('div');
+        card.className = 'pdf-course-card is-selected';
+        card.dataset.courseIndex = idx;
+
+        const totalSessions = course.groups.reduce((acc, g) => acc + g.sessions.length, 0);
+        const uniqueDoctors = course.instructors.filter(i => i !== 'Not Specified');
+
+        card.innerHTML = `
+          <div class="pdf-course-card-left">
+            <input type="checkbox" class="pdf-course-checkbox" id="chk-pdf-course-${idx}" checked />
+            <div class="pdf-course-color-bar" style="background: ${course.color};"></div>
+            <div>
+              <div class="pdf-course-title">${course.name}</div>
+              <div class="pdf-course-meta">
+                <span class="pdf-group-pill">${course.groups.length} ${isAr ? 'مجموعات' : 'groups'}</span>
+                <span class="pdf-group-pill">${totalSessions} ${isAr ? 'حصص/فترات' : 'sessions'}</span>
+                ${uniqueDoctors.length > 0 ? `<span class="pdf-group-pill">👨‍🏫 ${uniqueDoctors.slice(0, 2).join(', ')}${uniqueDoctors.length > 2 ? '...' : ''}</span>` : ''}
+              </div>
+            </div>
+          </div>
+        `;
+
+        card.addEventListener('click', (e) => {
+          if (e.target.tagName !== 'INPUT') {
+            const chk = card.querySelector('.pdf-course-checkbox');
+            chk.checked = !chk.checked;
+          }
+          card.classList.toggle('is-selected', card.querySelector('.pdf-course-checkbox').checked);
+          updatePdfSelectedCount();
+        });
+
+        const chk = card.querySelector('.pdf-course-checkbox');
+        chk.addEventListener('change', () => {
+          card.classList.toggle('is-selected', chk.checked);
+          updatePdfSelectedCount();
+        });
+
+        listContainer.appendChild(card);
+      });
+    }
+
+    updatePdfSelectedCount();
+    if (modal) modal.style.display = 'flex';
+  }
+
+  function updatePdfSelectedCount() {
+    const isAr = state.currentLang === 'ar';
+    const checked = document.querySelectorAll('.pdf-course-checkbox:checked').length;
+    const label = document.getElementById('pdf-selected-count-label');
+    if (label) {
+      label.textContent = isAr
+        ? `المحدد: ${checked} مواد`
+        : `Selected: ${checked} courses`;
+    }
+  }
+
+  function setAllPdfCoursesChecked(val) {
+    document.querySelectorAll('.pdf-course-checkbox').forEach(chk => {
+      chk.checked = val;
+      const card = chk.closest('.pdf-course-card');
+      if (card) card.classList.toggle('is-selected', val);
+    });
+    updatePdfSelectedCount();
+  }
+
+  function closePdfCoursesModal() {
+    const modal = document.getElementById('pdf-courses-modal');
+    if (modal) modal.style.display = 'none';
+    state.pendingPdfCourses = null;
+  }
+
+  function confirmPdfImport() {
+    const isAr = state.currentLang === 'ar';
+    if (!state.pendingPdfCourses || state.pendingPdfCourses.length === 0) return;
+
+    const selectedIndices = [];
+    document.querySelectorAll('.pdf-course-checkbox').forEach((chk, idx) => {
+      if (chk.checked) selectedIndices.push(idx);
+    });
+
+    if (selectedIndices.length === 0) {
+      showToast(isAr ? 'يرجى اختيار مادة واحدة على الأقل' : 'Please select at least one course', 'error');
+      return;
+    }
+
+    let addedCount = 0;
+    selectedIndices.forEach(idx => {
+      const course = state.pendingPdfCourses[idx];
+      const existingIdx = state.courses.findIndex(c => c.code === course.code);
+      if (existingIdx > -1) {
+        state.courses[existingIdx] = course;
+      } else {
+        state.courses.push(course);
+      }
+      addedCount++;
+    });
+
+    saveStateToStorage();
+    renderCoursesList();
+    renderDoctorPreferences();
+    closePdfCoursesModal();
+
+    showToast(
+      isAr
+        ? `تم استيراد ${addedCount} مواد بنجاح من الجدول! 🎉`
+        : `Successfully imported ${addedCount} courses from PDF! 🎉`,
+      'success'
+    );
   }
 
   /**

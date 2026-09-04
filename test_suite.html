@@ -10,6 +10,7 @@
 
   <!-- Load Modules -->
   <script src="js/parser.js"></script>
+  <script src="js/pdfParser.js"></script>
   <script src="js/sampleData.js"></script>
   <script src="js/optimizer.js"></script>
   <script src="js/renderer.js"></script>
@@ -398,6 +399,190 @@
     );
     assert('Strict Doctor Mode falls back to non-clashing alternative with fallback notice',
       Boolean(optResultStrictConflict.fallbackNotice)
+    );
+
+    // ==========================================
+    // PDF TIMETABLE PARSER TESTS (aSc & AAST)
+    // ==========================================
+
+    // TEST 16: Period to Slot Mapping
+    const p1 = PdfScheduleParser.mapPeriodToSlots(1);
+    const p3 = PdfScheduleParser.mapPeriodToSlots(3);
+    const p6 = PdfScheduleParser.mapPeriodToSlots(6);
+    assert('Period 1 maps to slots 1-2 (08:30-10:20)', p1.startSlot === 1 && p1.endSlot === 2);
+    assert('Period 3 maps to slots 5-6 (12:30-14:20)', p3.startSlot === 5 && p3.endSlot === 6);
+    assert('Period 6 maps to slots 11-12 (18:30-20:20)', p6.startSlot === 11 && p6.endSlot === 12);
+
+    // TEST 17: Day Normalization & Group Header Extraction
+    assert('normalizeDay normalizes Arabic days',
+      PdfScheduleParser.normalizeDay('سبت') === 'Saturday' &&
+      PdfScheduleParser.normalizeDay('احد') === 'Sunday' &&
+      PdfScheduleParser.normalizeDay('اثنین') === 'Monday' &&
+      PdfScheduleParser.normalizeDay('ثلاثاء') === 'Tuesday' &&
+      PdfScheduleParser.normalizeDay('اربعاء') === 'Wednesday' &&
+      PdfScheduleParser.normalizeDay('خميس') === 'Thursday'
+    );
+    assert('extractGroupFromHeader parses aSc group format (05EME01_144 -> 01)',
+      PdfScheduleParser.extractGroupFromHeader('05EME01_144') === '01' &&
+      PdfScheduleParser.extractGroupFromHeader('05EME08_144') === '08'
+    );
+    assert('extractGroupFromHeader parses standard group formats',
+      PdfScheduleParser.extractGroupFromHeader('Group 3') === '3' &&
+      PdfScheduleParser.extractGroupFromHeader('المجموعة: B') === 'B'
+    );
+
+    // TEST 18: Cell Content Parsing
+    const sampleCell1 = `EEC3301 Electronics 1 Sec\nBA E Asmaa Abdel Moteleb /\nالبشیر عادل يوسف محمد\nB 202|Class room`;
+    const parsedCell1 = PdfScheduleParser.parseCellContent(sampleCell1, 'Saturday', 1, '01');
+    assert('parseCellContent parses course code and clean name (using course number only)',
+      parsedCell1 && parsedCell1.courseCode === 'EEC3301' && parsedCell1.courseName === 'EEC3301'
+    );
+    assert('parseCellContent parses section type and strips room number',
+      parsedCell1 && parsedCell1.sessionType === 'Sec.' && parsedCell1.room === ''
+    );
+    assert('parseCellContent maps period 1 to slots 1-2',
+      parsedCell1 && parsedCell1.startSlot === 1 && parsedCell1.endSlot === 2
+    );
+
+    const sampleCell2 = `EBA3208/ Probability and Statistics_Lec\nBA D Mohamed Hamdy\n401|Class room`;
+    const parsedCell2 = PdfScheduleParser.parseCellContent(sampleCell2, 'Sunday', 2, '01');
+    assert('parseCellContent formats Doctor title with د.',
+      parsedCell2 && parsedCell2.sessionType === 'Lect.' && parsedCell2.instructor.includes('Mohamed Hamdy')
+    );
+
+    // TEST 19: Full Timetable Parsing from Multi-page PDF text
+    const samplePdfRawText = `
+05EME01_144
+Arab Academy for Science and Technology
+سبت
+1
+EEC3301 Electronics 1 Sec
+BA E Asmaa Abdel Moteleb
+B 202|Class room
+احد
+2
+EBA3208/ Probability and Statistics_Lec
+BA D Mohamed Hamdy
+401|Class room
+3
+EEC3301 Electronics 1 Lec
+البشیر عادل يوسف محمد
+121|Class room
+اثنین
+4
+EME3901 Mechatronics_Lab
+ME E Muataz Ghanem
+221|ME Lab
+5
+ECE3112 Programming Applications_Lab
+على اسامه المرغني
+102|PC Lab
+اربعاء
+4
+EME3801 ICE1_Lec
+ME D Maged Galal
+110|Class room
+5
+EME3304 Heat Transfer
+عصام محروس الجنیدى الجندى
+111|Classroom
+خمیس
+3
+ECE3112 Programming Applications_Lec
+امل البرى
+401|Class room
+4
+EME3901 Mechatronics_Lec
+ME D Mostafa Fouz
+320|Class room
+5
+EME3506 Machine Design I
+ME D Abdelgawad Matar
+108|Class room
+
+05EME02_144
+Arab Academy for Science and Technology
+احد
+2
+EBA3208/ Probability and Statistics_Lec
+BA D Mohamed Hamdy
+401|Class room
+3
+EEC3301 Electronics 1 Lec
+البشیر عادل يوسف محمد
+121|Class room
+اثنین
+5
+EME3901 Mechatronics_Lab
+ME E Muataz Ghanem
+221|ME Lab
+6
+ECE3112 Programming Applications_Lab
+على اسامه المرغني
+102|PC Lab
+ثلاثاء
+3
+EME3801 ICE1_Sec
+ME E Asmaa Ashraf
+222|ME Lab
+4
+EBA3208/ Probability and Statistics_Sec
+BA E Salma Ramadan
+B 107|Class room
+5
+EEC3301 Electronics 1 Sec
+EC E Marwa Mohamed
+B 107|Class room
+اربعاء
+4
+EME3801 ICE1_Lec
+ME D Maged Galal
+110|Class room
+5
+EME3304 Heat Transfer
+عصام محروس الجنیدى الجندى
+111|Classroom
+خمیس
+3
+ECE3112 Programming Applications_Lec
+امل البرى
+401|Class room
+4
+EME3901 Mechatronics_Lec
+ME D Mostafa Fouz
+320|Class room
+5
+EME3506 Machine Design I
+ME D Abdelgawad Matar
+108|Class room
+`;
+
+    const pdfParseResult = PdfScheduleParser.parsePdfText(samplePdfRawText);
+    assert('parsePdfText returns success on multi-page schedule text', pdfParseResult.success === true);
+    assert('parsePdfText detects both groups (01 and 02)',
+      pdfParseResult.detectedGroups.includes('01') && pdfParseResult.detectedGroups.includes('02')
+    );
+    assert('parsePdfText extracts 7 distinct courses', pdfParseResult.courses.length === 7);
+
+    // TEST 20: Course Structure & Group Aggregation
+    const eecCourse = pdfParseResult.courses.find(c => c.code === 'EEC3301');
+    assert('EEC3301 has groups 01 and 02 with sessions',
+      eecCourse && eecCourse.groups.length >= 2 && eecCourse.slots.length >= 3
+    );
+    assert('EEC3301 has doctor identified',
+      eecCourse && eecCourse.instructors.some(i => i.includes('البشیر عادل يوسف محمد'))
+    );
+
+    // TEST 21: Optimizer Integration with PDF-extracted courses
+    const pdfOptimizerResult = ScheduleOptimizer.findOptimalSchedules(pdfParseResult.courses.slice(0, 4), {
+      gapWeight: 50,
+      daysWeight: 30
+    });
+    assert('ScheduleOptimizer finds clash-free combinations from PDF courses',
+      pdfOptimizerResult.success === true && pdfOptimizerResult.solutions.length > 0
+    );
+    assert('Best PDF solution has valid sessions for all selected courses',
+      pdfOptimizerResult.solutions[0].sessions.length >= 4
     );
 
     // Summary
