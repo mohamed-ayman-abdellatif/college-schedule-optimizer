@@ -7,7 +7,7 @@
 
 const SiteAnalytics = (() => {
   const NAMESPACE = 'cso-mohamed-ayman';
-  const TOTAL_KEY = 'total_visitors';
+  const TOTAL_KEY = 'unique_visitors';
   const HEARTBEAT_INTERVAL_MS = 45000; // Ping every 45 seconds
 
   let state = {
@@ -57,35 +57,40 @@ const SiteAnalytics = (() => {
   }
 
   /**
-   * Record visit and get all-time total visitor count
+   * Record visit and get all-time unique visitor count.
+   * Uses localStorage so that opening/closing/refreshing the page does NOT inflate the count.
+   * Only genuine new unique devices/browsers will increment the counter.
    */
   async function syncTotalVisitors() {
     // Check cached total first for immediate zero-lag display
-    const cached = localStorage.getItem('cso_cached_total');
+    const cached = localStorage.getItem('cso_cached_unique_total');
     if (cached) {
       state.totalVisitors = parseInt(cached, 10);
       updateUI();
     }
 
-    const sessionRecorded = sessionStorage.getItem('cso_session_recorded');
+    // Check if this browser/device has already been counted
+    const visitorRegistered = localStorage.getItem('cso_unique_visitor_registered');
     let endpoint = `https://abacus.jasoncameron.dev/get/${NAMESPACE}/${TOTAL_KEY}`;
 
-    // Only increment total visitor count once per browser session
-    if (!sessionRecorded) {
+    // Only increment total count ONCE per device/browser using localStorage
+    if (!visitorRegistered) {
       endpoint = `https://abacus.jasoncameron.dev/hit/${NAMESPACE}/${TOTAL_KEY}`;
-      sessionStorage.setItem('cso_session_recorded', 'true');
+      localStorage.setItem('cso_unique_visitor_registered', 'true');
     }
 
     const data = await fetchWithTimeout(endpoint);
     if (data && typeof data.value === 'number') {
       state.totalVisitors = data.value;
-      localStorage.setItem('cso_cached_total', data.value.toString());
+      localStorage.setItem('cso_cached_unique_total', data.value.toString());
       updateUI();
     }
   }
 
   /**
-   * Heartbeat to register this client in the current minute bucket and read active users
+   * Heartbeat to register this client in the current minute bucket and read active users.
+   * Uses localStorage to track the last registered minute so opening/closing the page
+   * or multiple heartbeats in the same minute will never double-increment the active count.
    */
   async function pingPresence() {
     if (document.visibilityState === 'hidden') return;
@@ -93,9 +98,22 @@ const SiteAnalytics = (() => {
     const currentM = getCurrentMinuteBucket();
     const prevM = currentM - 1;
 
-    // Ping current minute bucket to count as active
-    const hitUrl = `https://abacus.jasoncameron.dev/hit/${NAMESPACE}/active_m_${currentM}`;
-    const hitData = await fetchWithTimeout(hitUrl);
+    // Check if this client already registered presence in this minute bucket
+    const lastPingMinute = localStorage.getItem('cso_last_active_minute');
+    let hitData = null;
+
+    if (lastPingMinute !== currentM.toString()) {
+      // First ping for this client in the current minute: register with atomic hit
+      const hitUrl = `https://abacus.jasoncameron.dev/hit/${NAMESPACE}/active_m_${currentM}`;
+      hitData = await fetchWithTimeout(hitUrl);
+      if (hitData && typeof hitData.value === 'number') {
+        localStorage.setItem('cso_last_active_minute', currentM.toString());
+      }
+    } else {
+      // Already registered in this minute bucket: read current total without incrementing
+      const getUrl = `https://abacus.jasoncameron.dev/get/${NAMESPACE}/active_m_${currentM}`;
+      hitData = await fetchWithTimeout(getUrl);
+    }
 
     let currentMinuteCount = (hitData && typeof hitData.value === 'number') ? hitData.value : 1;
 
