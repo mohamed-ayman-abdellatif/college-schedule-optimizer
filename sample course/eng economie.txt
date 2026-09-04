@@ -1,0 +1,641 @@
+<html xmlns="http://www.w3.org/1999/xhtml" ml-update="aware"><head><title>Schedule</title>
+
+    
+<link href="css/DEMO2.CSS" rel="stylesheet" type="text/css">
+    
+    
+    
+    <style type="text/css">
+        .style1
+        {
+            color: #FF0000;
+        }
+        .style2
+        {
+            height: 107px;
+        }
+      </style>
+
+
+
+
+<style type="text/css"> 
+
+body {
+	background-color: #747d7f;
+}
+
+</style>
+
+<script type="text/javascript">
+<!--
+    function MM_swapImagesRestore() { //v3.0
+        var i, x, a = document.MM_sr; for (i = 0; a && i < a.length && (x = a[i]) && x.oSrc; i++) x.src = x.oSrc;
+    }
+    function MM_preloadImages() { //v3.0
+        var d = document; if (d.images) {
+            if (!d.MM_p) d.MM_p = new Array();
+            var i, j = d.MM_p.length, a = MM_preloadImages.arguments; for (i = 0; i < a.length; i++)
+                if (a[i].indexOf("#") != 0) { d.MM_p[j] = new Image; d.MM_p[j++].src = a[i]; }
+        }
+    }
+
+    function MM_findObj(n, d) { //v4.01
+        var p, i, x; if (!d) d = document; if ((p = n.indexOf("?")) > 0 && parent.frames.length) {
+            d = parent.frames[n.substring(p + 1)].document; n = n.substring(0, p);
+        }
+        if (!(x = d[n]) && d.all) x = d.all[n]; for (i = 0; !x && i < d.forms.length; i++) x = d.forms[i][n];
+        for (i = 0; !x && d.layers && i < d.layers.length; i++) x = MM_findObj(n, d.layers[i].document);
+        if (!x && d.getElementById) x = d.getElementById(n); return x;
+    }
+
+    function MM_swapImage() { //v3.0
+        var i, j = 0, x, a = MM_swapImage.arguments; document.MM_sr = new Array; for (i = 0; i < (a.length - 2); i += 3)
+            if ((x = MM_findObj(a[i])) != null) { document.MM_sr[j++] = x; if (!x.oSrc) x.oSrc = x.src; x.src = a[i + 2]; }
+    }
+//-->
+</script>
+
+<script type="text/javascript" language="javascript">
+    var previousRowindex = -1;
+    var previousClass;
+    var win;  
+    
+    
+document.onmousedown=disableclick;//status="Right Click Disabled";
+function disableclick(e)
+{
+if(event.button==2)
+{
+        //alert(status);
+        return false;
+}
+}
+     
+</script>  
+
+<link href="css/facilities-layout.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="scripts/adjustLayout.js"></script>
+<script type="text/javascript" src="scripts/jquery.min1.js"></script>
+<script type="text/javascript" src="Scripts/JScript.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"></head>
+<body>
+    <form name="aspnetForm" method="post" action="Registration_Schedule.aspx?m=7D11478DFE744F0AB299DE808EE048B23FE4811908866CDCF60CBA79E26DB84BC784B6D705E2202B" id="aspnetForm">
+<div>
+
+
+
+
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/Schedule_Reports/WebResource.axd?d=toPdX8qivfq-ZIiBV22md4jg7i4O65bZrbYqRQvnZEe6I0KwWDRvnJ6uAdcaOyM_Qgm4N_56ObaetjYHFjdtUdCcavU1&amp;t=637898246266297999" type="text/javascript"></script>
+
+
+<script src="/Schedule_Reports/ScriptResource.axd?d=FhA1NVxLROKrq2tMxl8PjPSKM9ZUDkuMjzoSuoUrG7BDect3B1i2pOZivEBU7KhRlJQe8aoiyOiICuYCUYFcn5lPCZQpOvldmf7iGa2I8vHrgS4eyuGT-ooVQqLAj8yS6zjp9mvji8q7PiVwAezgb6SzrWqGaVoX_Ux281G2L5LiLOCS0&amp;t=3f4a792d" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/Schedule_Reports/ScriptResource.axd?d=fNdCyHiUkEtmiuhLUQMKtSwDq4kdkCszpqUeMNfrZzx9QETLdZkD5le2BzFyVddyBgmtwLX3S_zUe9O2uaDHh6JwiymxS2_H2RlLz94xDfgYUYG-IUS1986S4M70fX3t066h0vZX-h3KyI2glp2kURQoPhLB7bHH6k1QncTOYIagQ2Km0&amp;t=3f4a792d" type="text/javascript"></script>
+<script src="Scripts/majax.js" type="text/javascript"></script>
+<script src="Scripts/majax.watermark.js" type="text/javascript"></script>
+<div>
+
+	
+	
+</div>
+    <div>
+    
+    <center>
+<!-- Header Start -->
+<div id="bannerDiv">
+	<div class="headerFirst"></div>
+   
+   
+    <!-- Tabs End -->
+    <div id="registrationDiv">
+  
+    </div>
+     
+                       
+    </div> 
+  
+<!--end bannerDiv-->
+
+</center>
+<!-- Header End -->
+
+    <!-- Body Start -->
+<center>
+               
+
+    <div id="bodyContainer">
+     
+    
+		<div id="content" class="container">
+		
+				
+ <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$MainScriptManager', document.getElementById('aspnetForm'));
+Sys.WebForms.PageRequestManager.getInstance()._updateControls(['tctl00$ContentPlaceHolder1$UpdatePanel1'], [], [], 90);
+//]]>
+</script>
+
+
+
+    <table>
+        <tbody><tr>
+            <td valign="top">
+            <!-- Start PANEL-->
+            
+        
+
+    <div id="ctl00_ContentPlaceHolder1_UpdatePanel1">
+        <table width="100%" dir="rtl">
+        <tbody><tr>
+            <td width="100%" align="center">
+            <br>
+    <div style="width: 980px">
+        <table style="text-align: right" class="Alternating" align="center">
+            <tbody><tr>
+                <th colspan="2">
+                    <span id="ctl00_ContentPlaceHolder1_lbl_Header"> الفصل الدراسي:    الصيفى 2025/2026 -- كلية الهندسة والتكنولوجيا مصر الجديدة             </span>
+                </th>
+                
+                </tr><tr id="TR_batch">
+                    <td>
+                        <span id="ctl00_ContentPlaceHolder1_Label1" style="font-family:Tahoma;font-weight:bold;">الفصل الدراسي:</span>
+                        <span class="style1">*</span></td>
+                    <td width="300">
+                        <select name="ctl00$ContentPlaceHolder1$ddl_Batch" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$ddl_Batch\',\'\')', 0)" id="ctl00_ContentPlaceHolder1_ddl_Batch" style="font-family:Tahoma;width:280px;">
+	<option value="-1">--اختر الفصل الدراسي--</option>
+	<option value="1021"> الصيفى  2027/2026</option>
+	<option value="1020"> الثانى  2027/2026</option>
+	<option selected="selected" value="1019"> الأول  2027/2026</option>
+	<option value="984"> الصيفى  2026/2025</option>
+	<option value="979"> الثانى  2026/2025</option>
+	<option value="974"> الأول  2026/2025</option>
+
+</select>
+                    </td>
+                </tr>
+                <tr align="TR_camp" style="display: none">
+                    <td>
+                        <span id="ctl00_ContentPlaceHolder1_Label2" style="font-family:Tahoma;font-weight:bold;">الفرع:</span>
+                        <span class="style1">*</span></td>
+                    <td width="300">
+                        <select name="ctl00$ContentPlaceHolder1$ddl_Camp" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$ddl_Camp\',\'\')', 0)" id="ctl00_ContentPlaceHolder1_ddl_Camp" style="font-family:Tahoma;width:280px;">
+
+</select>
+                    </td>
+                </tr>
+                <tr id="TR_fac" style="display: none">
+                    <td>
+                        <span id="ctl00_ContentPlaceHolder1_lbl_Fac" disabled="disabled" style="font-family:Tahoma;font-weight:bold;">الكلية:</span>
+                    </td>
+                    <td width="300">
+                        <select name="ctl00$ContentPlaceHolder1$ddl_Faculty" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$ddl_Faculty\',\'\')', 0)" id="ctl00_ContentPlaceHolder1_ddl_Faculty" disabled="disabled" style="font-family:Tahoma;width:280px;">
+	<option selected="selected" value="--اختر الكلية--">--اختر الكلية--</option>
+
+</select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span id="ctl00_ContentPlaceHolder1_lbl_Fac0" style="font-family:Tahoma;font-weight:bold;">نوع الجدول:</span>
+                    </td>
+                    <td width="300">
+                        <span id="ctl00_ContentPlaceHolder1_rbl_Schedule_Type" style="font-family:Tahoma;font-weight:normal;"><input id="ctl00_ContentPlaceHolder1_rbl_Schedule_Type_0" type="radio" name="ctl00$ContentPlaceHolder1$rbl_Schedule_Type" value="0" onclick="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$rbl_Schedule_Type$0\',\'\')', 0)"><label for="ctl00_ContentPlaceHolder1_rbl_Schedule_Type_0">جدول مجموعة</label><br><input id="ctl00_ContentPlaceHolder1_rbl_Schedule_Type_1" type="radio" name="ctl00$ContentPlaceHolder1$rbl_Schedule_Type" value="1" checked="checked"><label for="ctl00_ContentPlaceHolder1_rbl_Schedule_Type_1">جدول مقرر</label></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span id="ctl00_ContentPlaceHolder1_lbl_Dep" style="font-family:Tahoma;font-weight:bold;">القسم:</span>
+                    </td>
+                    <td width="300">
+                        <select name="ctl00$ContentPlaceHolder1$ddl_Department" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$ddl_Department\',\'\')', 0)" id="ctl00_ContentPlaceHolder1_ddl_Department" style="font-family:Tahoma;width:400px;">
+	<option value="-1,-1">--اختر القسم--</option>
+	<option value="432,11">الكترونيات ق م - Northamption //   </option>
+	<option value="432,10">الكترونيات ق م - Northamption*     </option>
+	<option value="432,21">حاسبات ق م - Northampton //        </option>
+	<option value="432,20">حاسبات ق م - Northampton*          </option>
+	<option value="432,4">ميكانيكا ق م -Northampton          </option>
+	<option value="432,41">ميكانيكا ق م -Northampton //       </option>
+	<option value="432,40">ميكانيكا ق م -Northampton*         </option>
+	<option value="25,11">هـ.الكترونات واتصالات ق.م //       </option>
+	<option value="25,10">هـ.الكترونات واتصالات ق.م*         </option>
+	<option value="58,1">هـ.ميكانيكية ق.م                   </option>
+	<option value="58,10">هـ.ميكانيكية ق.م*                  </option>
+	<option value="30,1">هندسة التشيد والبناء ق.م           </option>
+	<option value="30,12">هندسة التشيد والبناء ق.م //        </option>
+	<option value="30,10">هندسة التشيد والبناء ق.م*          </option>
+	<option value="26,1">هندسة الحاسبات ق.م                 </option>
+	<option selected="selected" value="26,11">هندسة الحاسبات ق.م //              </option>
+	<option value="26,10">هندسة الحاسبات ق.م*                </option>
+	<option value="432,31">هندسة كهربية ق م -Northampton //   </option>
+	<option value="432,30">هندسة كهربية ق م -Northampton*     </option>
+	<option value="56,1">هندسة كهربية وتحكم ق.م             </option>
+	<option value="56,11">هندسة كهربية وتحكم ق.م //          </option>
+	<option value="56,10">هندسة كهربية وتحكم ق.م*            </option>
+	<option value="27,1">هندسة معمارية ق.م                  </option>
+	<option value="27,11">هندسة معمارية ق.م //               </option>
+	<option value="27,10">هندسة معمارية ق.م*                 </option>
+	<option value="667,12">هندسة معمارية-Cardiff-ق م //       </option>
+	<option value="58,14">هندسة ميكانيكية-ق م //             </option>
+
+</select>
+                    </td>
+                </tr>
+                <tr id="ctl00_ContentPlaceHolder1_TR_Period">
+	<td>
+                        <span id="ctl00_ContentPlaceHolder1_lbl_Period" style="font-family:Tahoma;font-weight:bold;">الفترة:</span>
+                    </td>
+	<td width="300">
+                        <select name="ctl00$ContentPlaceHolder1$ddl_Period" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$ddl_Period\',\'\')', 0)" id="ctl00_ContentPlaceHolder1_ddl_Period" style="font-family:Tahoma;width:400px;">
+		<option value="-1">--اختر الفترة--</option>
+		<option value="0">كل الفترات</option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option selected="selected" value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+
+	</select>
+                    </td>
+</tr>
+
+                <tr id="ctl00_ContentPlaceHolder1_TR_Group" style="display:none;">
+	<td>
+                        <span id="ctl00_ContentPlaceHolder1_lbl_Group" disabled="disabled" style="font-family:Tahoma;font-weight:bold;">المجموعة:</span>
+                    </td>
+	<td width="300">
+                        <select name="ctl00$ContentPlaceHolder1$ddl_Group" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$ddl_Group\',\'\')', 0)" id="ctl00_ContentPlaceHolder1_ddl_Group" disabled="disabled" style="font-family:Tahoma;width:400px;">
+		<option selected="selected" value="-1">--اختر المجموعة--</option>
+
+	</select>
+                    </td>
+</tr>
+
+                <tr id="ctl00_ContentPlaceHolder1_TR_Course" style="display:;">
+	<td>
+                        <span id="ctl00_ContentPlaceHolder1_lbl_Course" style="font-family:Tahoma;font-weight:bold;">المقرر:</span>
+                    </td>
+	<td width="300">
+                        <select name="ctl00$ContentPlaceHolder1$ddl_Course" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$ddl_Course\',\'\')', 0)" id="ctl00_ContentPlaceHolder1_ddl_Course" style="font-family:Tahoma;width:400px;">
+		<option value="-1">--اختر المقرر--</option>
+		<option value="12645  ">Applied Programming - ECE2102</option>
+		<option value="12182  ">Differential Equations - EBA2201</option>
+		<option value="12324  ">Digital Logic Design - ECE2201</option>
+		<option value="16339  ">Electrical Circuits I - EEE2304</option>
+		<option selected="selected" value="12192  ">Engineering Economy - UNR2303</option>
+		<option value="15022  ">Introduction to Communication Systems - EEC2220</option>
+		<option value="15023  ">Numerical Methods - ECE2402</option>
+
+	</select>
+                    </td>
+</tr>
+
+            
+            </tbody></table>
+    </div>
+    <br>
+            </td>
+        </tr>
+        <tr>
+            <td dir="ltr">
+                <div id="PrintGrid" align="center" style="text-align: center; width: 950px;">
+                <span id="ctl00_ContentPlaceHolder1_lbl_Title" dir="rtl" style="color:Black;font-family:Tahoma;font-weight:bold;text-decoration:underline;">   جدول المقرر :   Engineering Economy - UNR2303</span>
+                    <br>
+                    <br>
+                <span id="ctl00_ContentPlaceHolder1_Schedule1" cellspacing="0" rules="all" style="border-collapse:collapse;"><table cellspacing="0" rules="all" border="1" style="border-collapse:collapse;">
+	<tbody><tr>
+		<th class="heading">&nbsp;</th><th class="heading"><span></span></th><th class="heading"><span>
+                1 </span></th><th class="heading"><span>
+                2 </span></th><th class="heading"><span>
+                3 </span></th><th class="heading"><span>
+                4 </span></th><th class="heading"><span>
+                5 </span></th><th class="heading"><span>
+                6 </span></th><th class="heading"><span>
+                7 </span></th><th class="heading"><span>
+                8 </span></th><th class="heading"><span>
+                9 </span></th><th class="heading"><span>
+                10 </span></th><th class="heading"><span>
+                11 </span></th><th class="heading"><span>
+                12 </span></th><th class="heading"><span>
+                13 </span></th><th class="heading"><span>
+                14 </span></th><th class="heading"><span>
+                15 </span></th><th class="heading"><span>
+                16 </span></th>
+	</tr><tr>
+		<th class="heading"><span>
+                Saturday</span></th><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+	</tr><tr>
+		<th class="heading"><span>
+                Sunday</span></th><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+	</tr><tr>
+		<th class="heading" rowspan="5"><span>
+                Monday</span></th><td rowspan="5">&nbsp;</td><td colspan="2" style="background-color:#E0F8F7;width:250px;"><span id="ctl00_ContentPlaceHolder1_Schedule1_item16">
+                <span id="ctl00_ContentPlaceHolder1_Schedule1_item16_lbSelect" style="font-family:Tahoma;font-size:8pt;font-weight:bold;">Group: W               <br \=""> Lect. <br \=""> محمود مصطفى محمد الاشوح </span>
+                <input type="hidden" name="ctl00$ContentPlaceHolder1$Schedule1$item16$hd_Group" id="ctl00_ContentPlaceHolder1_Schedule1_item16_hd_Group" value="W">
+            </span></td><td colspan="2" rowspan="5" style="background-color:#BDB76B;width:250px;"><span id="ctl00_ContentPlaceHolder1_Schedule1_item12">
+                <span id="ctl00_ContentPlaceHolder1_Schedule1_item12_lbSelect" style="font-family:Tahoma;font-size:8pt;font-weight:bold;">Group: F               <br \=""> Lect. <br \=""> خالد عبدالعاطى محمد صلاح الدين </span>
+                <input type="hidden" name="ctl00$ContentPlaceHolder1$Schedule1$item12$hd_Group" id="ctl00_ContentPlaceHolder1_Schedule1_item12_hd_Group" value="F">
+            </span></td><td colspan="2" rowspan="3" style="background-color:#66FFFF;width:250px;"><span id="ctl00_ContentPlaceHolder1_Schedule1_item11">
+                <span id="ctl00_ContentPlaceHolder1_Schedule1_item11_lbSelect" style="font-family:Tahoma;font-size:8pt;font-weight:bold;">Group: I               <br \=""> Lect. <br \=""> خالد عبدالعاطى محمد صلاح الدين </span>
+                <input type="hidden" name="ctl00$ContentPlaceHolder1$Schedule1$item11$hd_Group" id="ctl00_ContentPlaceHolder1_Schedule1_item11_hd_Group" value="I">
+            </span></td><td colspan="2" rowspan="4" style="background-color:#F7F8E0;width:250px;"><span id="ctl00_ContentPlaceHolder1_Schedule1_item9">
+                <span id="ctl00_ContentPlaceHolder1_Schedule1_item9_lbSelect" style="font-family:Tahoma;font-size:8pt;font-weight:bold;">Group: U               <br \=""> Lect. <br \=""> محمود مصطفى محمد الاشوح </span>
+                <input type="hidden" name="ctl00$ContentPlaceHolder1$Schedule1$item9$hd_Group" id="ctl00_ContentPlaceHolder1_Schedule1_item9_hd_Group" value="U">
+            </span></td><td rowspan="5">&nbsp;</td><td rowspan="5">&nbsp;</td><td rowspan="5">&nbsp;</td><td rowspan="5">&nbsp;</td><td rowspan="5">&nbsp;</td><td rowspan="5">&nbsp;</td><td rowspan="5">&nbsp;</td><td rowspan="5">&nbsp;</td>
+	</tr><tr>
+		<td colspan="2" style="background-color:#CEE36F;width:250px;"><span id="ctl00_ContentPlaceHolder1_Schedule1_item15">
+                <span id="ctl00_ContentPlaceHolder1_Schedule1_item15_lbSelect" style="font-family:Tahoma;font-size:8pt;font-weight:bold;">Group: X               <br \=""> Lect. <br \=""> محمود مصطفى محمد الاشوح </span>
+                <input type="hidden" name="ctl00$ContentPlaceHolder1$Schedule1$item15$hd_Group" id="ctl00_ContentPlaceHolder1_Schedule1_item15_hd_Group" value="X">
+            </span></td>
+	</tr><tr>
+		<td colspan="2" rowspan="2" style="background-color:#BDBDBD;width:250px;"><span id="ctl00_ContentPlaceHolder1_Schedule1_item14">
+                <span id="ctl00_ContentPlaceHolder1_Schedule1_item14_lbSelect" style="font-family:Tahoma;font-size:8pt;font-weight:bold;">Group: 0               <br \=""> Lect. <br \=""> خالد عبدالعاطى محمد صلاح الدين </span>
+                <input type="hidden" name="ctl00$ContentPlaceHolder1$Schedule1$item14$hd_Group" id="ctl00_ContentPlaceHolder1_Schedule1_item14_hd_Group" value="0">
+            </span></td>
+	</tr><tr>
+		<td colspan="2" rowspan="2" style="background-color:#8EC0C1;width:250px;"><span id="ctl00_ContentPlaceHolder1_Schedule1_item10">
+                <span id="ctl00_ContentPlaceHolder1_Schedule1_item10_lbSelect" style="font-family:Tahoma;font-size:8pt;font-weight:bold;">Group: G               <br \=""> Lect. <br \=""> محمود مصطفى محمد الاشوح </span>
+                <input type="hidden" name="ctl00$ContentPlaceHolder1$Schedule1$item10$hd_Group" id="ctl00_ContentPlaceHolder1_Schedule1_item10_hd_Group" value="G">
+            </span></td>
+	</tr><tr>
+		<td colspan="2" rowspan="1" style="background-color:#ADD8E6;width:250px;"><span id="ctl00_ContentPlaceHolder1_Schedule1_item13">
+                <span id="ctl00_ContentPlaceHolder1_Schedule1_item13_lbSelect" style="font-family:Tahoma;font-size:8pt;font-weight:bold;">Group: 1               <br \=""> Lect. <br \=""> خالد عبدالعاطى محمد صلاح الدين </span>
+                <input type="hidden" name="ctl00$ContentPlaceHolder1$Schedule1$item13$hd_Group" id="ctl00_ContentPlaceHolder1_Schedule1_item13_hd_Group" value="1">
+            </span></td><td colspan="2" style="background-color:#BFF2F9;width:250px;"><span id="ctl00_ContentPlaceHolder1_Schedule1_item8">
+                <span id="ctl00_ContentPlaceHolder1_Schedule1_item8_lbSelect" style="font-family:Tahoma;font-size:8pt;font-weight:bold;">Group: V               <br \=""> Lect. <br \=""> محمود مصطفى محمد الاشوح </span>
+                <input type="hidden" name="ctl00$ContentPlaceHolder1$Schedule1$item8$hd_Group" id="ctl00_ContentPlaceHolder1_Schedule1_item8_hd_Group" value="V">
+            </span></td>
+	</tr><tr>
+		<th class="heading" rowspan="4"><span>
+                Tuesday</span></th><td rowspan="4">&nbsp;</td><td colspan="2" rowspan="3" style="background-color:#D7DF01;width:250px;"><span id="ctl00_ContentPlaceHolder1_Schedule1_item7">
+                <span id="ctl00_ContentPlaceHolder1_Schedule1_item7_lbSelect" style="font-family:Tahoma;font-size:8pt;font-weight:bold;">Group: 2               <br \=""> Lect. <br \=""> باسم حسام عمر رشدى </span>
+                <input type="hidden" name="ctl00$ContentPlaceHolder1$Schedule1$item7$hd_Group" id="ctl00_ContentPlaceHolder1_Schedule1_item7_hd_Group" value="2">
+            </span></td><td rowspan="4">&nbsp;</td><td rowspan="4">&nbsp;</td><td rowspan="4">&nbsp;</td><td rowspan="4">&nbsp;</td><td colspan="2" style="background-color:#F8E0E0;width:250px;"><span id="ctl00_ContentPlaceHolder1_Schedule1_item5">
+                <span id="ctl00_ContentPlaceHolder1_Schedule1_item5_lbSelect" style="font-family:Tahoma;font-size:8pt;font-weight:bold;">Group: S               <br \=""> Lect. <br \=""> محمود مصطفى محمد الاشوح </span>
+                <input type="hidden" name="ctl00$ContentPlaceHolder1$Schedule1$item5$hd_Group" id="ctl00_ContentPlaceHolder1_Schedule1_item5_hd_Group" value="S">
+            </span></td><td rowspan="4">&nbsp;</td><td rowspan="4">&nbsp;</td><td colspan="2" rowspan="4" style="background-color:#66FF66;width:250px;"><span id="ctl00_ContentPlaceHolder1_Schedule1_item1">
+                <span id="ctl00_ContentPlaceHolder1_Schedule1_item1_lbSelect" style="font-family:Tahoma;font-size:8pt;font-weight:bold;">Group: J               <br \=""> Lect. <br \=""> محمود مصطفى محمد الاشوح </span>
+                <input type="hidden" name="ctl00$ContentPlaceHolder1$Schedule1$item1$hd_Group" id="ctl00_ContentPlaceHolder1_Schedule1_item1_hd_Group" value="J">
+            </span></td><td rowspan="4">&nbsp;</td><td rowspan="4">&nbsp;</td><td rowspan="4">&nbsp;</td><td rowspan="4">&nbsp;</td>
+	</tr><tr>
+		<td colspan="2" style="background-color:#F5D0A9;width:250px;"><span id="ctl00_ContentPlaceHolder1_Schedule1_item4">
+                <span id="ctl00_ContentPlaceHolder1_Schedule1_item4_lbSelect" style="font-family:Tahoma;font-size:8pt;font-weight:bold;">Group: T               <br \=""> Lect. <br \=""> محمود مصطفى محمد الاشوح </span>
+                <input type="hidden" name="ctl00$ContentPlaceHolder1$Schedule1$item4$hd_Group" id="ctl00_ContentPlaceHolder1_Schedule1_item4_hd_Group" value="T">
+            </span></td>
+	</tr><tr>
+		<td colspan="2" style="background-color:#E3CEF6;width:250px;"><span id="ctl00_ContentPlaceHolder1_Schedule1_item3">
+                <span id="ctl00_ContentPlaceHolder1_Schedule1_item3_lbSelect" style="font-family:Tahoma;font-size:8pt;font-weight:bold;">Group: Y               <br \=""> Lect. <br \=""> مجد الدين عبدالواحد محمد </span>
+                <input type="hidden" name="ctl00$ContentPlaceHolder1$Schedule1$item3$hd_Group" id="ctl00_ContentPlaceHolder1_Schedule1_item3_hd_Group" value="Y">
+            </span></td>
+	</tr><tr>
+		<td colspan="2" rowspan="1" style="background-color:#CC9933;width:250px;"><span id="ctl00_ContentPlaceHolder1_Schedule1_item6">
+                <span id="ctl00_ContentPlaceHolder1_Schedule1_item6_lbSelect" style="font-family:Tahoma;font-size:8pt;font-weight:bold;">Group: 3               <br \=""> Lect. <br \=""> باسم حسام عمر رشدى </span>
+                <input type="hidden" name="ctl00$ContentPlaceHolder1$Schedule1$item6$hd_Group" id="ctl00_ContentPlaceHolder1_Schedule1_item6_hd_Group" value="3">
+            </span></td><td colspan="2" style="background-color:#E6E6E6;width:250px;"><span id="ctl00_ContentPlaceHolder1_Schedule1_item2">
+                <span id="ctl00_ContentPlaceHolder1_Schedule1_item2_lbSelect" style="font-family:Tahoma;font-size:8pt;font-weight:bold;">Group: Z               <br \=""> Lect. <br \=""> مجد الدين عبدالواحد محمد </span>
+                <input type="hidden" name="ctl00$ContentPlaceHolder1$Schedule1$item2$hd_Group" id="ctl00_ContentPlaceHolder1_Schedule1_item2_hd_Group" value="Z">
+            </span></td>
+	</tr><tr>
+		<th class="heading"><span>
+                Wednesday</span></th><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td colspan="2" style="background-color:#E2D4F5;width:250px;"><span id="ctl00_ContentPlaceHolder1_Schedule1_item0">
+                <span id="ctl00_ContentPlaceHolder1_Schedule1_item0_lbSelect" style="font-family:Tahoma;font-size:8pt;font-weight:bold;">Group: H               <br \=""> Lect. <br \=""> محمود مصطفى محمد الاشوح </span>
+                <input type="hidden" name="ctl00$ContentPlaceHolder1$Schedule1$item0$hd_Group" id="ctl00_ContentPlaceHolder1_Schedule1_item0_hd_Group" value="H">
+            </span></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+	</tr><tr>
+		<th class="heading"><span>
+                Thursday</span></th><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+	</tr><tr>
+		<th class="heading"><span>
+                Friday</span></th><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+	</tr>
+</tbody></table></span>
+                    <br>
+                    <div align="left" dir="ltr">
+                    <table style="width: 470px">
+                        <tbody><tr>
+                            <td valign="top">
+                            
+                        <br>
+                        <div>
+
+</div>
+                        
+                                &nbsp;</td>
+                            <td valign="top">
+                            <div>
+	<table cellspacing="0" rules="all" border="1" id="ctl00_ContentPlaceHolder1_grd_Group_Color" style="border-collapse:collapse;">
+		<tbody><tr>
+			<td>
+                                    
+                                        <span id="ctl00_ContentPlaceHolder1_grd_Group_Color_ctl02_Label3" style="background-color:#F8E0E0;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    </td><td>S</td>
+		</tr><tr>
+			<td>
+                                    
+                                        <span id="ctl00_ContentPlaceHolder1_grd_Group_Color_ctl03_Label3" style="background-color:#F5D0A9;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    </td><td>T</td>
+		</tr><tr>
+			<td>
+                                    
+                                        <span id="ctl00_ContentPlaceHolder1_grd_Group_Color_ctl04_Label3" style="background-color:#F7F8E0;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    </td><td>U</td>
+		</tr><tr>
+			<td>
+                                    
+                                        <span id="ctl00_ContentPlaceHolder1_grd_Group_Color_ctl05_Label3" style="background-color:#BFF2F9;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    </td><td>V</td>
+		</tr><tr>
+			<td>
+                                    
+                                        <span id="ctl00_ContentPlaceHolder1_grd_Group_Color_ctl06_Label3" style="background-color:#E0F8F7;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    </td><td>W</td>
+		</tr><tr>
+			<td>
+                                    
+                                        <span id="ctl00_ContentPlaceHolder1_grd_Group_Color_ctl07_Label3" style="background-color:#CEE36F;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    </td><td>X</td>
+		</tr><tr>
+			<td>
+                                    
+                                        <span id="ctl00_ContentPlaceHolder1_grd_Group_Color_ctl08_Label3" style="background-color:#E3CEF6;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    </td><td>Y</td>
+		</tr><tr>
+			<td>
+                                    
+                                        <span id="ctl00_ContentPlaceHolder1_grd_Group_Color_ctl09_Label3" style="background-color:#E6E6E6;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    </td><td>Z</td>
+		</tr><tr>
+			<td>
+                                    
+                                        <span id="ctl00_ContentPlaceHolder1_grd_Group_Color_ctl10_Label3" style="background-color:#BDBDBD;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    </td><td>0</td>
+		</tr><tr>
+			<td>
+                                    
+                                        <span id="ctl00_ContentPlaceHolder1_grd_Group_Color_ctl11_Label3" style="background-color:#ADD8E6;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    </td><td>1</td>
+		</tr><tr>
+			<td>
+                                    
+                                        <span id="ctl00_ContentPlaceHolder1_grd_Group_Color_ctl12_Label3" style="background-color:#D7DF01;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    </td><td>2</td>
+		</tr><tr>
+			<td>
+                                    
+                                        <span id="ctl00_ContentPlaceHolder1_grd_Group_Color_ctl13_Label3" style="background-color:#CC9933;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    </td><td>3</td>
+		</tr><tr>
+			<td>
+                                    
+                                        <span id="ctl00_ContentPlaceHolder1_grd_Group_Color_ctl14_Label3" style="background-color:#66FF66;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    </td><td>J</td>
+		</tr><tr>
+			<td>
+                                    
+                                        <span id="ctl00_ContentPlaceHolder1_grd_Group_Color_ctl15_Label3" style="background-color:#66FFFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    </td><td>I</td>
+		</tr><tr>
+			<td>
+                                    
+                                        <span id="ctl00_ContentPlaceHolder1_grd_Group_Color_ctl16_Label3" style="background-color:#BDB76B;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    </td><td>F</td>
+		</tr><tr>
+			<td>
+                                    
+                                        <span id="ctl00_ContentPlaceHolder1_grd_Group_Color_ctl17_Label3" style="background-color:#8EC0C1;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    </td><td>G</td>
+		</tr><tr>
+			<td>
+                                    
+                                        <span id="ctl00_ContentPlaceHolder1_grd_Group_Color_ctl18_Label3" style="background-color:#E2D4F5;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    </td><td>H</td>
+		</tr>
+	</tbody></table>
+</div>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                
+                    </div>
+                </div>
+            </td>
+        </tr> 
+        <tr>
+        <td>
+            
+            <span id="ctl00_ContentPlaceHolder1_lbl_PrintMsg" style="color:Red;font-family:Tahoma;font-size:11pt;font-size: 10pt; color: #0066FF"><b>Note</b><br>To print in colors you should enable print background colors and images in the browser<br>In Firefox: Go to  File Menu&gt;&gt; Page Setup&gt;&gt; Then check the option <b>Print Background</b><br>In IE: Go to Tools Menu&gt;&gt;Advanced Tab&gt;&gt;Then Scroll to Printing and enable the option <b> Print BackGround Colors and Images</b></span>
+            
+        </td>
+    </tr>       
+        <tr>
+            <td dir="ltr" align="center">
+                <table align="center">
+                    <tbody><tr>
+                        <td align="center">
+                            <input type="image" name="ctl00$ContentPlaceHolder1$btnPrint" id="ctl00_ContentPlaceHolder1_btnPrint" src="Images/Print-icon1.png" onclick="javascript:PrintContent('PrintGrid');" style="height:47px;width:78px;border-width:0px;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a onclick="javascript:PrintContent('PrintGrid');" id="ctl00_ContentPlaceHolder1_lbtn_Print" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$lbtn_Print','')" style="font-family:Tahoma;">Print</a>
+                        </td>
+                    </tr>
+                </tbody></table>
+            </td>
+        </tr>
+
+        
+        </tbody></table> 
+    </div>    
+        
+          
+
+    <script type="text/javascript" language="javascript">
+
+
+        function PrintContent(strid) {
+
+            
+           var prtContent = document.getElementById(strid);
+           var WinPrint = window.open('', '', 'toolbar=1,scrollbars=1,status=0');
+           WinPrint.document.writeln('<HTML><HEAD>')
+
+           WinPrint.document.writeln('<link href="css/DEMO2.CSS" rel="stylesheet" type="text/css"/>');
+           //WinPrint.document.writeln('<link href="css/page_elements.css" rel="stylesheet" type="text/css" />');
+           //WinPrint.document.writeln('<LINK href=PrintStyle.css ' +
+           //           'type="text/css" rel="stylesheet" media="print">');
+           WinPrint.document.writeln('</HEAD>');
+
+           WinPrint.document.writeln('<body style = "text-align: center">');
+            
+           WinPrint.document.write(prtContent.innerHTML);
+           WinPrint.document.writeln('</body>');
+            
+           WinPrint.document.writeln('</HTML>');
+           WinPrint.document.close();
+           WinPrint.focus();
+           WinPrint.print();
+           WinPrint.close();
+        }
+    </script>
+
+
+            <!-- End PANEL -->
+            
+            </td>
+            
+                </tr>
+            </tbody></table>
+ 	
+        </div>
+    </div>
+</center>
+
+        <!-- Footer Start -->
+<center>
+<div id="footerDiv">Copyright @ 2011 Arab Academy for Science, Technology &amp; 
+    Maritime Transport.         
+    
+  </div>
+</center>
+
+    </div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.initialize();
+//]]>
+</script>
+<span style="display: none !important;"><input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value=""></span><span style="display: none !important;"><input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value=""></span><span style="display: none !important;"><input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value=""></span><span style="display: none !important;"><input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTIwOTI3Mzk5ODEPZBYCZg9kFgICAw9kFgICAw9kFgICAQ9kFgJmD2QWIgIBDw8WAh4EVGV4dAWMASDYp9mE2YHYtdmEINin2YTYr9ix2KfYs9mKOiAgICDYp9mE2LXZitmB2YkgMjAyNS8yMDI2IC0tINmD2YTZitipINin2YTZh9mG2K/Ys9ipINmI2KfZhNiq2YPZhtmI2YTZiNis2YrYpyDZhdi12LEg2KfZhNis2K/Zitiv2KkgICAgICAgICAgICAgZGQCBQ8QDxYGHg5EYXRhVmFsdWVGaWVsZAUIQmF0Y2hfSUQeDURhdGFUZXh0RmllbGQFCkJhdGNoX05hbWUeC18hRGF0YUJvdW5kZ2QQFQcmLS3Yp9iu2KrYsSDYp9mE2YHYtdmEINin2YTYr9ix2KfYs9mKLS0YINin2YTYtdmK2YHZiSAgMjAyNy8yMDI2GCDYp9mE2KvYp9mG2YkgIDIwMjcvMjAyNhYg2KfZhNij2YjZhCAgMjAyNy8yMDI2GCDYp9mE2LXZitmB2YkgIDIwMjYvMjAyNRgg2KfZhNir2KfZhtmJICAyMDI2LzIwMjUWINin2YTYo9mI2YQgIDIwMjYvMjAyNRUHAi0xBDEwMjEEMTAyMAQxMDE5Azk4NAM5NzkDOTc0FCsDB2dnZ2dnZ2cWAQIDZAIJDxBkZBYAZAINDxBkZBYBZmQCEQ8QZGQWAQIBZAIVDxAPFgYfAQUGbF9jb2RlHwIFCnN0dWR5X25hbWUfA2dkEBUcFy0t2KfYrtiq2LEg2KfZhNmC2LPZhS0tL9in2YTZg9iq2LHZiNmG2YrYp9iqINmCINmFIC0gTm9ydGhhbXB0aW9uIC8vICAgL9in2YTZg9iq2LHZiNmG2YrYp9iqINmCINmFIC0gTm9ydGhhbXB0aW9uKiAgICAgK9it2KfYs9io2KfYqiDZgiDZhSAtIE5vcnRoYW1wdG9uIC8vICAgICAgICAr2K3Yp9iz2KjYp9iqINmCINmFIC0gTm9ydGhhbXB0b24qICAgICAgICAgIC3ZhdmK2YPYp9mG2YrZg9inINmCINmFIC1Ob3J0aGFtcHRvbiAgICAgICAgICAt2YXZitmD2KfZhtmK2YPYpyDZgiDZhSAtTm9ydGhhbXB0b24gLy8gICAgICAgLdmF2YrZg9in2YbZitmD2Kcg2YIg2YUgLU5vcnRoYW1wdG9uKiAgICAgICAgIDjZh9mALtin2YTZg9iq2LHZiNmG2KfYqiDZiNin2KrYtdin2YTYp9iqINmCLtmFIC8vICAgICAgIDjZh9mALtin2YTZg9iq2LHZiNmG2KfYqiDZiNin2KrYtdin2YTYp9iqINmCLtmFKiAgICAgICAgIDDZh9mALtmF2YrZg9in2YbZitmD2YrYqSDZgi7ZhSAgICAgICAgICAgICAgICAgICAw2YfZgC7ZhdmK2YPYp9mG2YrZg9mK2Kkg2YIu2YUqICAgICAgICAgICAgICAgICAgN9mH2YbYr9iz2Kkg2KfZhNiq2LTZitivINmI2KfZhNio2YbYp9ihINmCLtmFICAgICAgICAgICA32YfZhtiv2LPYqSDYp9mE2KrYtNmK2K8g2YjYp9mE2KjZhtin2KEg2YIu2YUgLy8gICAgICAgIDfZh9mG2K/Ys9ipINin2YTYqti02YrYryDZiNin2YTYqNmG2KfYoSDZgi7ZhSogICAgICAgICAgMtmH2YbYr9iz2Kkg2KfZhNit2KfYs9io2KfYqiDZgi7ZhSAgICAgICAgICAgICAgICAgMtmH2YbYr9iz2Kkg2KfZhNit2KfYs9io2KfYqiDZgi7ZhSAvLyAgICAgICAgICAgICAgMtmH2YbYr9iz2Kkg2KfZhNit2KfYs9io2KfYqiDZgi7ZhSogICAgICAgICAgICAgICAgMNmH2YbYr9iz2Kkg2YPZh9ix2KjZitipINmCINmFIC1Ob3J0aGFtcHRvbiAvLyAgIDDZh9mG2K/Ys9ipINmD2YfYsdio2YrYqSDZgiDZhSAtTm9ydGhhbXB0b24qICAgICA12YfZhtiv2LPYqSDZg9mH2LHYqNmK2Kkg2YjYqtit2YPZhSDZgi7ZhSAgICAgICAgICAgICA12YfZhtiv2LPYqSDZg9mH2LHYqNmK2Kkg2YjYqtit2YPZhSDZgi7ZhSAvLyAgICAgICAgICA12YfZhtiv2LPYqSDZg9mH2LHYqNmK2Kkg2YjYqtit2YPZhSDZgi7ZhSogICAgICAgICAgICAx2YfZhtiv2LPYqSDZhdi52YXYp9ix2YrYqSDZgi7ZhSAgICAgICAgICAgICAgICAgIDHZh9mG2K/Ys9ipINmF2LnZhdin2LHZitipINmCLtmFIC8vICAgICAgICAgICAgICAgMdmH2YbYr9iz2Kkg2YXYudmF2KfYsdmK2Kkg2YIu2YUqICAgICAgICAgICAgICAgICAx2YfZhtiv2LPYqSDZhdi52YXYp9ix2YrYqS1DYXJkaWZmLdmCINmFIC8vICAgICAgIDPZh9mG2K/Ys9ipINmF2YrZg9in2YbZitmD2YrYqS3ZgiDZhSAvLyAgICAgICAgICAgICAVHAUtMSwtMQY0MzIsMTEGNDMyLDEwBjQzMiwyMQY0MzIsMjAFNDMyLDQGNDMyLDQxBjQzMiw0MAUyNSwxMQUyNSwxMAQ1OCwxBTU4LDEwBDMwLDEFMzAsMTIFMzAsMTAEMjYsMQUyNiwxMQUyNiwxMAY0MzIsMzEGNDMyLDMwBDU2LDEFNTYsMTEFNTYsMTAEMjcsMQUyNywxMQUyNywxMAY2NjcsMTIFNTgsMTQUKwMcZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZxYBAhBkAhcPZBYEZg9kFgICAQ8PFgQfAAUN2KfZhNmB2KrYsdipOh4HRW5hYmxlZGdkZAIBD2QWAgIBDxAPFggfAQUGUGVyaW9kHwIFBlBlcmlvZB8DZx8EZ2QQFQoZLS3Yp9iu2KrYsSDYp9mE2YHYqtix2KktLRPZg9mEINin2YTZgdiq2LHYp9iqATEBMgEzATQBNQE2ATcBOBUKAi0xATABMQEyATMBNAE1ATYBNwE4FCsDCmdnZ2dnZ2dnZ2cWAQIEZAIZDxYCHgVzdHlsZQUNZGlzcGxheTpub25lOxYEZg9kFgICAQ8PFgQfAAUR2KfZhNmF2KzZhdmI2LnYqTofBGhkZAIBD2QWAgIBDxAPFggfAQUGY3JzZ3JwHwIFBmNyc2dycB8DZx8EaGQQFQEdLS3Yp9iu2KrYsSDYp9mE2YXYrNmF2YjYudipLS0VAQItMRQrAwFnFgFmZAIbDxYCHwUFCWRpc3BsYXk6OxYEZg9kFgICAQ8PFgQfAAUN2KfZhNmF2YLYsdixOh8EZ2RkAgEPZBYCAgEPEA8WCB8BBQZjcnNudW0fAgUHY3JzbmFtZR8DZx8EZ2QQFQgZLS3Yp9iu2KrYsSDYp9mE2YXZgtix2LEtLR1BcHBsaWVkIFByb2dyYW1taW5nIC0gRUNFMjEwMiBEaWZmZXJlbnRpYWwgRXF1YXRpb25zIC0gRUJBMjIwMR5EaWdpdGFsIExvZ2ljIERlc2lnbiAtIEVDRTIyMDEfRWxlY3RyaWNhbCBDaXJjdWl0cyBJIC0gRUVFMjMwNB1FbmdpbmVlcmluZyBFY29ub215IC0gVU5SMjMwMy9JbnRyb2R1Y3Rpb24gdG8gQ29tbXVuaWNhdGlvbiBTeXN0ZW1zIC0gRUVDMjIyMBtOdW1lcmljYWwgTWV0aG9kcyAtIEVDRTI0MDIVCAItMQcxMjY0NSAgBzEyMTgyICAHMTIzMjQgIAcxNjMzOSAgBzEyMTkyICAHMTUwMjIgIAcxNTAyMyAgFCsDCGdnZ2dnZ2dnFgECBWQCHQ8PFgYfAAU6ICAg2KzYr9mI2YQg2KfZhNmF2YLYsdixIDogICBFbmdpbmVlcmluZyBFY29ub215IC0gVU5SMjMwMx4JRm9yZUNvbG9yCiMeBF8hU0ICBGRkAh8PDxYaHglTdGFydERhdGUGAIBYct6HzQgeCUl0ZW1Db3VudAIRHwNnHgtfIUl0ZW1Db3VudAIRHgdWaXNpYmxlZx4LYXJyRGF0YUtleXMUKXxTeXN0ZW0uQ29sbGVjdGlvbnMuU3BlY2lhbGl6ZWQuSU9yZGVyZWREaWN0aW9uYXJ5LCBTeXN0ZW0sIFZlcnNpb249Mi4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5EjLjAgABAAAA/////wEAAAAAAAAADAIAAABJU3lzdGVtLCBWZXJzaW9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OQUBAAAAMFN5c3RlbS5Db2xsZWN0aW9ucy5TcGVjaWFsaXplZC5PcmRlcmVkRGljdGlvbmFyeQQAAAALS2V5Q29tcGFyZXIIUmVhZE9ubHkPSW5pdGlhbENhcGFjaXR5CUFycmF5TGlzdAMAAAUkU3lzdGVtLkNvbGxlY3Rpb25zLklFcXVhbGl0eUNvbXBhcmVyAQgCAAAACgAAAAAACQMAAAAQAwAAAAEAAAAJBAAAAAQEAAAAIlN5c3RlbS5Db2xsZWN0aW9ucy5EaWN0aW9uYXJ5RW50cnkCAAAABF9rZXkGX3ZhbHVlAgIGBQAAAAtMZWN0X1NlcmlhbAgIBQAAAAsy4wIAAQAAAP////8BAAAAAAAAAAwCAAAASVN5c3RlbSwgVmVyc2lvbj0yLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAADBTeXN0ZW0uQ29sbGVjdGlvbnMuU3BlY2lhbGl6ZWQuT3JkZXJlZERpY3Rpb25hcnkEAAAAC0tleUNvbXBhcmVyCFJlYWRPbmx5D0luaXRpYWxDYXBhY2l0eQlBcnJheUxpc3QDAAAFJFN5c3RlbS5Db2xsZWN0aW9ucy5JRXF1YWxpdHlDb21wYXJlcgEIAgAAAAoAAAAAAAkDAAAAEAMAAAABAAAACQQAAAAEBAAAACJTeXN0ZW0uQ29sbGVjdGlvbnMuRGljdGlvbmFyeUVudHJ5AgAAAARfa2V5Bl92YWx1ZQICBgUAAAALTGVjdF9TZXJpYWwICAQAAAALMuMCAAEAAAD/////AQAAAAAAAAAMAgAAAElTeXN0ZW0sIFZlcnNpb249Mi4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAwU3lzdGVtLkNvbGxlY3Rpb25zLlNwZWNpYWxpemVkLk9yZGVyZWREaWN0aW9uYXJ5BAAAAAtLZXlDb21wYXJlcghSZWFkT25seQ9Jbml0aWFsQ2FwYWNpdHkJQXJyYXlMaXN0AwAABSRTeXN0ZW0uQ29sbGVjdGlvbnMuSUVxdWFsaXR5Q29tcGFyZXIBCAIAAAAKAAAAAAAJAwAAABADAAAAAQAAAAkEAAAABAQAAAAiU3lzdGVtLkNvbGxlY3Rpb25zLkRpY3Rpb25hcnlFbnRyeQIAAAAEX2tleQZfdmFsdWUCAgYFAAAAC0xlY3RfU2VyaWFsCAgEAAAACzLjAgABAAAA/////wEAAAAAAAAADAIAAABJU3lzdGVtLCBWZXJzaW9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OQUBAAAAMFN5c3RlbS5Db2xsZWN0aW9ucy5TcGVjaWFsaXplZC5PcmRlcmVkRGljdGlvbmFyeQQAAAALS2V5Q29tcGFyZXIIUmVhZE9ubHkPSW5pdGlhbENhcGFjaXR5CUFycmF5TGlzdAMAAAUkU3lzdGVtLkNvbGxlY3Rpb25zLklFcXVhbGl0eUNvbXBhcmVyAQgCAAAACgAAAAAACQMAAAAQAwAAAAEAAAAJBAAAAAQEAAAAIlN5c3RlbS5Db2xsZWN0aW9ucy5EaWN0aW9uYXJ5RW50cnkCAAAABF9rZXkGX3ZhbHVlAgIGBQAAAAtMZWN0X1NlcmlhbAgIBAAAAAsy4wIAAQAAAP////8BAAAAAAAAAAwCAAAASVN5c3RlbSwgVmVyc2lvbj0yLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAADBTeXN0ZW0uQ29sbGVjdGlvbnMuU3BlY2lhbGl6ZWQuT3JkZXJlZERpY3Rpb25hcnkEAAAAC0tleUNvbXBhcmVyCFJlYWRPbmx5D0luaXRpYWxDYXBhY2l0eQlBcnJheUxpc3QDAAAFJFN5c3RlbS5Db2xsZWN0aW9ucy5JRXF1YWxpdHlDb21wYXJlcgEIAgAAAAoAAAAAAAkDAAAAEAMAAAABAAAACQQAAAAEBAAAACJTeXN0ZW0uQ29sbGVjdGlvbnMuRGljdGlvbmFyeUVudHJ5AgAAAARfa2V5Bl92YWx1ZQICBgUAAAALTGVjdF9TZXJpYWwICAQAAAALMuMCAAEAAAD/////AQAAAAAAAAAMAgAAAElTeXN0ZW0sIFZlcnNpb249Mi4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAwU3lzdGVtLkNvbGxlY3Rpb25zLlNwZWNpYWxpemVkLk9yZGVyZWREaWN0aW9uYXJ5BAAAAAtLZXlDb21wYXJlcghSZWFkT25seQ9Jbml0aWFsQ2FwYWNpdHkJQXJyYXlMaXN0AwAABSRTeXN0ZW0uQ29sbGVjdGlvbnMuSUVxdWFsaXR5Q29tcGFyZXIBCAIAAAAKAAAAAAAJAwAAABADAAAAAQAAAAkEAAAABAQAAAAiU3lzdGVtLkNvbGxlY3Rpb25zLkRpY3Rpb25hcnlFbnRyeQIAAAAEX2tleQZfdmFsdWUCAgYFAAAAC0xlY3RfU2VyaWFsCAgEAAAACzLjAgABAAAA/////wEAAAAAAAAADAIAAABJU3lzdGVtLCBWZXJzaW9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OQUBAAAAMFN5c3RlbS5Db2xsZWN0aW9ucy5TcGVjaWFsaXplZC5PcmRlcmVkRGljdGlvbmFyeQQAAAALS2V5Q29tcGFyZXIIUmVhZE9ubHkPSW5pdGlhbENhcGFjaXR5CUFycmF5TGlzdAMAAAUkU3lzdGVtLkNvbGxlY3Rpb25zLklFcXVhbGl0eUNvbXBhcmVyAQgCAAAACgAAAAAACQMAAAAQAwAAAAEAAAAJBAAAAAQEAAAAIlN5c3RlbS5Db2xsZWN0aW9ucy5EaWN0aW9uYXJ5RW50cnkCAAAABF9rZXkGX3ZhbHVlAgIGBQAAAAtMZWN0X1NlcmlhbAgIBAAAAAsy4wIAAQAAAP////8BAAAAAAAAAAwCAAAASVN5c3RlbSwgVmVyc2lvbj0yLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAADBTeXN0ZW0uQ29sbGVjdGlvbnMuU3BlY2lhbGl6ZWQuT3JkZXJlZERpY3Rpb25hcnkEAAAAC0tleUNvbXBhcmVyCFJlYWRPbmx5D0luaXRpYWxDYXBhY2l0eQlBcnJheUxpc3QDAAAFJFN5c3RlbS5Db2xsZWN0aW9ucy5JRXF1YWxpdHlDb21wYXJlcgEIAgAAAAoAAAAAAAkDAAAAEAMAAAABAAAACQQAAAAEBAAAACJTeXN0ZW0uQ29sbGVjdGlvbnMuRGljdGlvbmFyeUVudHJ5AgAAAARfa2V5Bl92YWx1ZQICBgUAAAALTGVjdF9TZXJpYWwICAQAAAALMuMCAAEAAAD/////AQAAAAAAAAAMAgAAAElTeXN0ZW0sIFZlcnNpb249Mi4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAwU3lzdGVtLkNvbGxlY3Rpb25zLlNwZWNpYWxpemVkLk9yZGVyZWREaWN0aW9uYXJ5BAAAAAtLZXlDb21wYXJlcghSZWFkT25seQ9Jbml0aWFsQ2FwYWNpdHkJQXJyYXlMaXN0AwAABSRTeXN0ZW0uQ29sbGVjdGlvbnMuSUVxdWFsaXR5Q29tcGFyZXIBCAIAAAAKAAAAAAAJAwAAABADAAAAAQAAAAkEAAAABAQAAAAiU3lzdGVtLkNvbGxlY3Rpb25zLkRpY3Rpb25hcnlFbnRyeQIAAAAEX2tleQZfdmFsdWUCAgYFAAAAC0xlY3RfU2VyaWFsCAgDAAAACzLjAgABAAAA/////wEAAAAAAAAADAIAAABJU3lzdGVtLCBWZXJzaW9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OQUBAAAAMFN5c3RlbS5Db2xsZWN0aW9ucy5TcGVjaWFsaXplZC5PcmRlcmVkRGljdGlvbmFyeQQAAAALS2V5Q29tcGFyZXIIUmVhZE9ubHkPSW5pdGlhbENhcGFjaXR5CUFycmF5TGlzdAMAAAUkU3lzdGVtLkNvbGxlY3Rpb25zLklFcXVhbGl0eUNvbXBhcmVyAQgCAAAACgAAAAAACQMAAAAQAwAAAAEAAAAJBAAAAAQEAAAAIlN5c3RlbS5Db2xsZWN0aW9ucy5EaWN0aW9uYXJ5RW50cnkCAAAABF9rZXkGX3ZhbHVlAgIGBQAAAAtMZWN0X1NlcmlhbAgIAwAAAAsy4wIAAQAAAP////8BAAAAAAAAAAwCAAAASVN5c3RlbSwgVmVyc2lvbj0yLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAADBTeXN0ZW0uQ29sbGVjdGlvbnMuU3BlY2lhbGl6ZWQuT3JkZXJlZERpY3Rpb25hcnkEAAAAC0tleUNvbXBhcmVyCFJlYWRPbmx5D0luaXRpYWxDYXBhY2l0eQlBcnJheUxpc3QDAAAFJFN5c3RlbS5Db2xsZWN0aW9ucy5JRXF1YWxpdHlDb21wYXJlcgEIAgAAAAoAAAAAAAkDAAAAEAMAAAABAAAACQQAAAAEBAAAACJTeXN0ZW0uQ29sbGVjdGlvbnMuRGljdGlvbmFyeUVudHJ5AgAAAARfa2V5Bl92YWx1ZQICBgUAAAALTGVjdF9TZXJpYWwICAMAAAALMuMCAAEAAAD/////AQAAAAAAAAAMAgAAAElTeXN0ZW0sIFZlcnNpb249Mi4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAwU3lzdGVtLkNvbGxlY3Rpb25zLlNwZWNpYWxpemVkLk9yZGVyZWREaWN0aW9uYXJ5BAAAAAtLZXlDb21wYXJlcghSZWFkT25seQ9Jbml0aWFsQ2FwYWNpdHkJQXJyYXlMaXN0AwAABSRTeXN0ZW0uQ29sbGVjdGlvbnMuSUVxdWFsaXR5Q29tcGFyZXIBCAIAAAAKAAAAAAAJAwAAABADAAAAAQAAAAkEAAAABAQAAAAiU3lzdGVtLkNvbGxlY3Rpb25zLkRpY3Rpb25hcnlFbnRyeQIAAAAEX2tleQZfdmFsdWUCAgYFAAAAC0xlY3RfU2VyaWFsCAgDAAAACzLjAgABAAAA/////wEAAAAAAAAADAIAAABJU3lzdGVtLCBWZXJzaW9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OQUBAAAAMFN5c3RlbS5Db2xsZWN0aW9ucy5TcGVjaWFsaXplZC5PcmRlcmVkRGljdGlvbmFyeQQAAAALS2V5Q29tcGFyZXIIUmVhZE9ubHkPSW5pdGlhbENhcGFjaXR5CUFycmF5TGlzdAMAAAUkU3lzdGVtLkNvbGxlY3Rpb25zLklFcXVhbGl0eUNvbXBhcmVyAQgCAAAACgAAAAAACQMAAAAQAwAAAAEAAAAJBAAAAAQEAAAAIlN5c3RlbS5Db2xsZWN0aW9ucy5EaWN0aW9uYXJ5RW50cnkCAAAABF9rZXkGX3ZhbHVlAgIGBQAAAAtMZWN0X1NlcmlhbAgIAwAAAAsy4wIAAQAAAP////8BAAAAAAAAAAwCAAAASVN5c3RlbSwgVmVyc2lvbj0yLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAADBTeXN0ZW0uQ29sbGVjdGlvbnMuU3BlY2lhbGl6ZWQuT3JkZXJlZERpY3Rpb25hcnkEAAAAC0tleUNvbXBhcmVyCFJlYWRPbmx5D0luaXRpYWxDYXBhY2l0eQlBcnJheUxpc3QDAAAFJFN5c3RlbS5Db2xsZWN0aW9ucy5JRXF1YWxpdHlDb21wYXJlcgEIAgAAAAoAAAAAAAkDAAAAEAMAAAABAAAACQQAAAAEBAAAACJTeXN0ZW0uQ29sbGVjdGlvbnMuRGljdGlvbmFyeUVudHJ5AgAAAARfa2V5Bl92YWx1ZQICBgUAAAALTGVjdF9TZXJpYWwICAMAAAALMuMCAAEAAAD/////AQAAAAAAAAAMAgAAAElTeXN0ZW0sIFZlcnNpb249Mi4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAwU3lzdGVtLkNvbGxlY3Rpb25zLlNwZWNpYWxpemVkLk9yZGVyZWREaWN0aW9uYXJ5BAAAAAtLZXlDb21wYXJlcghSZWFkT25seQ9Jbml0aWFsQ2FwYWNpdHkJQXJyYXlMaXN0AwAABSRTeXN0ZW0uQ29sbGVjdGlvbnMuSUVxdWFsaXR5Q29tcGFyZXIBCAIAAAAKAAAAAAAJAwAAABADAAAAAQAAAAkEAAAABAQAAAAiU3lzdGVtLkNvbGxlY3Rpb25zLkRpY3Rpb25hcnlFbnRyeQIAAAAEX2tleQZfdmFsdWUCAgYFAAAAC0xlY3RfU2VyaWFsCAgDAAAACzLjAgABAAAA/////wEAAAAAAAAADAIAAABJU3lzdGVtLCBWZXJzaW9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OQUBAAAAMFN5c3RlbS5Db2xsZWN0aW9ucy5TcGVjaWFsaXplZC5PcmRlcmVkRGljdGlvbmFyeQQAAAALS2V5Q29tcGFyZXIIUmVhZE9ubHkPSW5pdGlhbENhcGFjaXR5CUFycmF5TGlzdAMAAAUkU3lzdGVtLkNvbGxlY3Rpb25zLklFcXVhbGl0eUNvbXBhcmVyAQgCAAAACgAAAAAACQMAAAAQAwAAAAEAAAAJBAAAAAQEAAAAIlN5c3RlbS5Db2xsZWN0aW9ucy5EaWN0aW9uYXJ5RW50cnkCAAAABF9rZXkGX3ZhbHVlAgIGBQAAAAtMZWN0X1NlcmlhbAgIAwAAAAsy4wIAAQAA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AgEPDxYEHxwJb+PO/x8HAghkZAIBDw8WAh8ABQFYZGQCBw9kFgRmD2QWAgIBDw8WBB8cCfbO4/8fBwIIZGQCAQ8PFgIfAAUBWWRkAggPZBYEZg9kFgICAQ8PFgQfHAnm5ub/HwcCCGRkAgEPDxYCHwAFAVpkZAIJD2QWBGYPZBYCAgEPDxYEHxwJvb29/x8HAghkZAIBDw8WAh8ABQEwZGQCCg9kFgRmD2QWAgIBDw8WBB8cCebYrf8fBwIIZGQCAQ8PFgIfAAUBMWRkAgsPZBYEZg9kFgICAQ8PFgQfHAkB39f/HwcCCGRkAgEPDxYCHwAFATJkZAIMD2QWBGYPZBYCAgEPDxYEHxwJM5nM/x8HAghkZAIBDw8WAh8ABQEzZGQCDQ9kFgRmD2QWAgIBDw8WBB8cCWb/Zv8fBwIIZGQCAQ8PFgIfAAUBSmRkAg4PZBYEZg9kFgICAQ8PFgQfHAn//2b/HwcCCGRkAgEPDxYCHwAFAUlkZAIPD2QWBGYPZBYCAgEPDxYEHxwJa7e9/x8HAghkZAIBDw8WAh8ABQFGZGQCEA9kFgRmD2QWAgIBDw8WBB8cCcHAjv8fBwIIZGQCAQ8PFgIfAAUBR2RkAhEPZBYEZg9kFgICAQ8PFgQfHAn11OL/HwcCCGRkAgEPDxYCHwAFAUhkZAISDw8WAh8LaGRkAicPDxYEHwAFxQI8Yj5Ob3RlPC9iPjxicj5UbyBwcmludCBpbiBjb2xvcnMgeW91IHNob3VsZCBlbmFibGUgcHJpbnQgYmFja2dyb3VuZCBjb2xvcnMgYW5kIGltYWdlcyBpbiB0aGUgYnJvd3Nlcjxicj5JbiBGaXJlZm94OiBHbyB0byAgRmlsZSBNZW51Pj4gUGFnZSBTZXR1cD4+IFRoZW4gY2hlY2sgdGhlIG9wdGlvbiA8Yj5QcmludCBCYWNrZ3JvdW5kPC9iPjxicj5JbiBJRTogR28gdG8gVG9vbHMgTWVudT4+QWR2YW5jZWQgVGFiPj5UaGVuIFNjcm9sbCB0byBQcmludGluZyBhbmQgZW5hYmxlIHRoZSBvcHRpb24gPGI+IFByaW50IEJhY2tHcm91bmQgQ29sb3JzIGFuZCBJbWFnZXM8L2I+HwtnZGQCKQ8PFgIfC2cWAh4Hb25jbGljawUlamF2YXNjcmlwdDpQcmludENvbnRlbnQoJ1ByaW50R3JpZCcpO2QCKw8PFgQfAAUFUHJpbnQfC2cWAh8hBSVqYXZhc2NyaXB0OlByaW50Q29udGVudCgnUHJpbnRHcmlkJyk7ZBgDBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WAQUiY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRidG5QcmludAUpY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRncmRfR3JvdXBfQ29sb3IPPCsACgEIAgFkBSJjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJGdyZF9EZXNjDzwrAAoBCGZkebhN4pgdOu2kX4ueywPr2qUBYrM="></span><span style="display: none !important;"><input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="F30B3194"></span><span style="display: none !important;"><input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWVQLPlu7VBgL3qv76BgL0xZiXCgKoqousDQKoqvfIAgKzvYngAQLq+dr1AgKD597fAgLq+Zb0AgKO4O2FAgLJloifBwKh38fMCgL31NmUAwLo1NmUAwLnu/P6DwLsgYeuCQKk/oLSCgLN5KSuDgLN5KCuDgLI5KSuDgLI5KCuDgLK5OCuDgLK5KSuDgLK5KCuDgKdgOGTBQKegOGTBQKFnbiFCAKjgJ3lBQKHnZiFCALjg/3sBQL9g/3sBQKAnYCFCAKdgOWSBQKegOWSBQLP5KSuDgLP5KCuDgKFnYCFCAK8gOWSBQKjgOWSBQKAnYSFCAKdgNmVBQKegNmVBQKK879HAr+AneUFAp7nrbINAp2Iy98BAo6Ih9wBApGIh9wBApCIh9wBApOIh9wBApKIh9wBApWIh9wBApSIh9wBApeIh9wBAoaIh9wBAv/2pMMDAvyZwq4PAu7NmtADAu2i/L0PAtLWjLEIAvSzwrQOAuTT24wCAunTh8gBAvSz3vQNArH2u6AOAo72u6AOAt+C5uYNAt+C1uYMAt+CioMLAuyIm4kFAt+C2oIMAt+CzqIMAt+C/qILAt+CgscMAuffmokFAubXmokFAujomokFAvTImokFAvO/mokFAvK3mokFAunwmokFAvXQmokFAu+fmokFAornioQHAuqT6u0JBlBj4TG/3TzJtzqmzbfywA+vW70="></span></form>
+
+</body></html>

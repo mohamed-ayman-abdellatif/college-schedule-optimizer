@@ -145,16 +145,13 @@ const App = (() => {
     updateTheme();
     updateLanguage();
 
-    // If no courses yet, automatically load the default sample courses
-    if (state.courses.length === 0) {
+    // If no courses or old sample set, load the updated 7-course set without calculating
+    const hasUpdatedCourses = state.courses.some(c => c.code === 'EEC2220' || c.code === 'ECE2402');
+    if (state.courses.length === 0 || (!hasUpdatedCourses && state.courses.length <= 5)) {
       loadSampleCourses();
     } else {
       renderCoursesList();
       renderDoctorPreferences();
-      // Pre-calculate schedules in background so Tab 3 is always ready
-      if (state.solutions.length === 0) {
-        calculateInitialSolutions();
-      }
     }
     renderBlockedPainter();
     renderBlockedList();
@@ -721,11 +718,15 @@ const App = (() => {
   function loadSampleCourses() {
     state.courses = JSON.parse(JSON.stringify(SampleScheduleData.DEFAULT_COURSE_SET));
     normalizeCourseDoctorTitles(state.courses);
+    state.solutions = [];
+    state.activeSolutionIndex = 0;
     saveStateToStorage();
     renderCoursesList();
     renderDoctorPreferences();
-    calculateInitialSolutions();
-    showToast(`Loaded ${state.courses.length} sample courses (including Applied Programming - ECE2102)!`, 'success');
+    const isAr = state.currentLang === 'ar';
+    showToast(isAr
+      ? `تم تحميل ${state.courses.length} مقررات دراسية بنجاح!`
+      : `Loaded ${state.courses.length} courses!`, 'success');
   }
 
   /**
