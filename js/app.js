@@ -31,7 +31,17 @@ const App = (() => {
     imageDetectionDraft: null,
     manualSchedule: {},
     manualSelectedDoctor: '',
-    manualSearchQuery: ''
+    manualSearchQuery: '',
+    manualHideAvoided: true,
+    timetableFilters: {
+      maxDays: 'any',
+      maxGaps: 'any',
+      maxClassesPerDay: 'any',
+      preset: 'balanced'
+    },
+    filteredSolutions: [],
+    filterMismatch: false,
+    mixMatchSelections: {}
   };
 
   // Translations
@@ -43,6 +53,7 @@ const App = (() => {
       tabPreferences: '2. Doctor & Goals',
       tabTimetable: '3. Timetable Results',
       tabManual: '4. Manual Mode',
+      tabMixMatch: '5. Mix & Match',
       loadSampleBtn: 'Load Example Courses',
       findSchedulesBtn: 'Find Best Schedules',
       pasteHtmlTab: 'Paste HTML Code',
@@ -77,6 +88,8 @@ const App = (() => {
       gapWeightLabel: 'Minimize Gaps between lectures',
       daysWeightLabel: 'Minimize Campus Days (More Days Off)',
       doctorWeightLabel: 'Prioritize Preferred Doctors',
+      freeDaysTitle: 'Target Free Days (Days Off)',
+      freeDaysDesc: 'Select the days of the week you prefer to take completely off',
       freeDaysLabel: 'Target Free Days (Days Completely Off):',
       blockedTimesTitle: 'Prohibited / Blocked Times (Training & Busy Hours)',
       blockedTimesDesc: 'Prohibit specific times (e.g. Saturday 8 AM training). The optimizer will guarantee zero classes are scheduled during these times!',
@@ -101,6 +114,22 @@ const App = (() => {
       guideGotItBtn: "Got it, Let's Start! 🚀",
       mobileSwipeHint: 'Swipe horizontally to view all 16 periods 👈👉',
       rankedOptionsTitle: '🎯 Ranked Clash-Free Options:',
+      schedulesFilterTitle: 'Schedules Filter & Optimization Priorities',
+      schedulesFilterDesc: 'Strict non-negotiable filters for campus days, gaps, and daily workload, plus instant ranking goals.',
+      filterMaxDays: 'Max Days / Week:',
+      filterMaxGaps: 'Max Gap Slots:',
+      filterMaxClasses: 'Max Classes / Day:',
+      optAny: 'Any (No restriction)',
+      rankingPresetLabel: 'Ranking Priority (Choose 1 of 4):',
+      presetMinDays: 'Minimum Days',
+      presetMinGaps: 'Minimal Gaps',
+      presetEarly: 'Early Schedule',
+      presetBalanced: 'Balanced',
+      filterMismatchBannerTitle: 'Non-negotiable Filter Mismatch: Showing 1 Unfiltered Schedule for Inspection',
+      filterConflictModalTitle: 'No Schedules Match Your Filters!',
+      filterConflictModalDesc: 'None of the generated schedules satisfy your strict non-negotiable filters. We have provided 1 unfiltered schedule on the timetable so you can inspect where the restriction is exceeded.',
+      resetFiltersBtn: '↺ Reset Filters',
+      viewUnfilteredBtn: 'View Unfiltered Schedule',
       onlineNow: 'Online',
       visitsShort: 'Visits',
       activeUsersNow: 'Active Users Online',
@@ -116,6 +145,8 @@ const App = (() => {
       closeBtn: 'Close',
       manualTitle: 'Manual Schedule Builder',
       manualSubtitle: 'Select your favorite doctors to see all their groups, pick groups manually, and build your custom schedule with instant clash detection.',
+      manualHideAvoidedLabel: 'Hide Avoided Doctors & Keep Only Mandated Doctors (When Set)',
+      manualHideAvoidedDesc: 'Automatically hides groups taught by avoided professors (🚫) and, if a course has mandated professors (🌟🔒), only shows their groups.',
       clearManualSchedule: 'Reset Schedule',
       viewInTimetable: 'View in Timetable Results',
       manualDocSearchTitle: 'Explore by Doctor / Professor',
@@ -126,6 +157,13 @@ const App = (() => {
       manualCourseGroupsDesc: 'Pick one group for each course. Groups with time clashes with your current picks will be highlighted in red.',
       manualTimetableTitle: 'Your Custom Timetable Preview',
       manualTimetableDesc: 'Interactive 16-period schedule showing your custom selections and any time overlaps',
+      mixMatchTitle: 'Mix & Match: Custom Doctors & TAs',
+      mixMatchDesc: 'Freely choose lecture professors from one group and TAs for sections/labs from another group with instant clash checking.',
+      mixMatchResetBtn: '↺ Reset Selections',
+      mixMatchApplyManualBtn: 'Apply to Manual Timetable',
+      mixMatchSaveGroupBtn: '💾 Save as Course Custom Group',
+      mixMatchTimetableTitle: 'Live Mixed Schedule Preview',
+      mixMatchTimetableDesc: 'Live timetable showing your mixed lecture, section, and lab picks across all courses',
       loadingTitle: 'Generating Optimal Schedules...',
       loadingStep1: 'Analyzing course combinations and lecture groups...',
       loadingStep2: 'Filtering blocked times and free days...',
@@ -140,6 +178,7 @@ const App = (() => {
       tabPreferences: '٢. اختيار الدكاترة والأهداف',
       tabTimetable: '٣. الجدول النهائي',
       tabManual: '٤. الوضع اليدوي',
+      tabMixMatch: '٥. دمج المجموعات (Mix & Match)',
       loadSampleBtn: 'تحميل المقررات التجريبية',
       findSchedulesBtn: 'توليد أفضل الجداول',
       pasteHtmlTab: 'نسخ ولصق كود HTML',
@@ -174,6 +213,8 @@ const App = (() => {
       gapWeightLabel: 'تقليل فترات الفراغ بين المحاضرات (Gaps)',
       daysWeightLabel: 'تقليل أيام النزول للكلية (أيام إجازة أكثر)',
       doctorWeightLabel: 'الأولوية للدكاترة المفضلين',
+      freeDaysTitle: 'أيام الإجازة المطلوبة (أيام بدون نزول بالكامل)',
+      freeDaysDesc: 'حدد أيام الأسبوع التي تفضل أن تكون إجازة تامة بدون أي حصص',
       freeDaysLabel: 'أيام إجازة مطلوبة بالكامل (بدون نزول):',
       blockedTimesTitle: 'الأوقات المحظورة (مواعيد التمرين والانشغالات)',
       blockedTimesDesc: 'احظر أوقات محددة (مثل تدريب السبت الساعة 8 صباحاً). يضمن المحسن عدم وضع أي حصة في هذه الفترات نهائياً!',
@@ -198,6 +239,22 @@ const App = (() => {
       guideGotItBtn: 'فهمت، لنبدأ الآن! 🚀',
       mobileSwipeHint: 'اسحب أفقياً لتصفح جميع الفترات الـ 16 👉👈',
       rankedOptionsTitle: '🎯 الخيارات الأفضل مرتبة (بدون تعارض):',
+      schedulesFilterTitle: 'تصفية الجداول وأولويات الترتيب',
+      schedulesFilterDesc: 'فلاتر إلزامية غير قابلة للتفاوض لعدد أيام النزول وفترات الفراغ والعبء اليومي مع ترتيب فوري.',
+      filterMaxDays: 'أقصى عدد أيام نزول / أسبوع:',
+      filterMaxGaps: 'أقصى فترات فراغ (Gaps):',
+      filterMaxClasses: 'أقصى فترات/حصص باليوم:',
+      optAny: 'أي عدد (بدون تقييد)',
+      rankingPresetLabel: 'الأولوية في ترتيب الجداول (اختر ١ من ٤):',
+      presetMinDays: 'أقل عدد أيام نزول',
+      presetMinGaps: 'أقل فترات فراغ',
+      presetEarly: 'انتهاء مبكر لليوم',
+      presetBalanced: 'متوازن وشامل',
+      filterMismatchBannerTitle: 'تعارض مع الفلاتر الإلزامية: يتم عرض جدول واحد بدون تصفية لمعرفة سبب الاستبعاد',
+      filterConflictModalTitle: 'لا يوجد جدول يطابق الفلاتر المحددة!',
+      filterConflictModalDesc: 'لا يوجد أي جدول يحقق فلاترك الإلزامية الصارمة. قمنا بعرض جدول واحد بدون تصفية في النتائج لتتمكن من معرفة الشرط المتجاوز وتعديل الفلتر.',
+      resetFiltersBtn: '↺ إعادة ضبط الفلاتر',
+      viewUnfilteredBtn: 'معاينة الجدول غير المصفى',
       onlineNow: 'متصل الآن',
       visitsShort: 'زيارة',
       activeUsersNow: 'المستخدمون المتواجدون حالياً',
@@ -213,6 +270,8 @@ const App = (() => {
       closeBtn: 'إغلاق',
       manualTitle: 'صانع الجدول اليدوي',
       manualSubtitle: 'اختر دكتورك المفضل لرؤية كافة مجموعاته ومواعيد محاضراته، واختر المجموعات بنفسك لتكوين جدولك مع فحص فوري لأي تعارض.',
+      manualHideAvoidedLabel: 'إخفاء الدكاترة المستبعدين وعرض الدكاترة الإجباريين فقط للمادة',
+      manualHideAvoidedDesc: 'يقوم تلقائياً بإخفاء مجموعات الدكاترة المستبعدين (🚫)، وفي حال وجود دكتور إجباري (🌟🔒) يتم حصر العرض على مجموعاته فقط.',
       clearManualSchedule: 'إعادة ضبط الجدول',
       viewInTimetable: 'عرض في شاشة الجداول',
       manualDocSearchTitle: 'استكشاف المجموعات حسب الدكتور',
@@ -223,6 +282,13 @@ const App = (() => {
       manualCourseGroupsDesc: 'اختر مجموعة واحدة لكل مادة. المجموعات التي تتعارض مع اختياراتك الحالية ستظهر باللون الأحمر فوراً.',
       manualTimetableTitle: 'معاينة جدولك اليدوي المخصص',
       manualTimetableDesc: 'جدول تفاعلي 16 فترة يعرض اختياراتك اليدوية وأي تعارضات بالألوان الفورية',
+      mixMatchTitle: 'دمج المجموعات: اختيار دكتور ومعيد من مجموعات مختلفة',
+      mixMatchDesc: 'حرية كاملة لاختيار دكتور المحاضرة من مجموعة، والمعيد للسكشن أو المعمل من مجموعة أخرى مع فحص فوري للتعارض.',
+      mixMatchResetBtn: '↺ إعادة ضبط الاختيارات',
+      mixMatchApplyManualBtn: 'تطبيق في الجدول اليدوي',
+      mixMatchSaveGroupBtn: '💾 حفظ كمجموعة مخصصة للمقرر',
+      mixMatchTimetableTitle: 'معاينة حية للجدول المدمج',
+      mixMatchTimetableDesc: 'عرض مباشر يوضح اختياراتك المدمجة من محاضرات وسكاشن ومعامل لجميع المواد',
       loadingTitle: 'جاري حساب أفضل الجداول الدراسية...',
       loadingStep1: 'فحص وتجميع مجموعات المواد والمحاضرات...',
       loadingStep2: 'استبعاد أوقات التدريب المحظورة وأيام الفراغ...',
@@ -295,6 +361,9 @@ const App = (() => {
       localStorage.setItem('sched_prefs', JSON.stringify(state.preferences));
       localStorage.setItem('sched_blocked_times', JSON.stringify(state.blockedTimes));
       localStorage.setItem('sched_manual_schedule', JSON.stringify(state.manualSchedule || {}));
+      localStorage.setItem('sched_manual_hide_avoided', JSON.stringify(state.manualHideAvoided !== false));
+      localStorage.setItem('sched_timetable_filters', JSON.stringify(state.timetableFilters || {}));
+      localStorage.setItem('sched_mixmatch_selections', JSON.stringify(state.mixMatchSelections || {}));
       localStorage.setItem('sched_theme', state.currentTheme);
       localStorage.setItem('sched_lang', state.currentLang);
     } catch (e) {
@@ -347,6 +416,29 @@ const App = (() => {
         } catch (e) {
           state.manualSchedule = {};
         }
+      }
+
+      const storedHideAvoided = localStorage.getItem('sched_manual_hide_avoided');
+      if (storedHideAvoided !== null) {
+        try {
+          state.manualHideAvoided = JSON.parse(storedHideAvoided);
+        } catch (e) {
+          state.manualHideAvoided = true;
+        }
+      }
+
+      const storedFilters = localStorage.getItem('sched_timetable_filters');
+      if (storedFilters) {
+        try {
+          state.timetableFilters = Object.assign(state.timetableFilters, JSON.parse(storedFilters));
+        } catch (e) {}
+      }
+
+      const storedMixMatch = localStorage.getItem('sched_mixmatch_selections');
+      if (storedMixMatch) {
+        try {
+          state.mixMatchSelections = JSON.parse(storedMixMatch);
+        } catch (e) {}
       }
 
       const storedPrefs = localStorage.getItem('sched_prefs');
@@ -617,7 +709,8 @@ const App = (() => {
 
     // Export Actions
     document.getElementById('btn-export-png')?.addEventListener('click', () => {
-      const sol = state.solutions[state.activeSolutionIndex];
+      const activeList = getActiveSolutions();
+      const sol = activeList[state.activeSolutionIndex];
       if (sol) ScheduleExporter.exportToPng(sol);
       else showToast('No schedule selected to export', 'error');
     });
@@ -627,7 +720,8 @@ const App = (() => {
     });
 
     document.getElementById('btn-export-ics')?.addEventListener('click', () => {
-      const sol = state.solutions[state.activeSolutionIndex];
+      const activeList = getActiveSolutions();
+      const sol = activeList[state.activeSolutionIndex];
       if (sol) ScheduleExporter.downloadIcsFile(sol);
       else showToast('No schedule selected to export', 'error');
     });
@@ -665,6 +759,7 @@ const App = (() => {
       if (confirm('Are you sure you want to clear all added courses?')) {
         state.courses = [];
         state.solutions = [];
+        state.filteredSolutions = [];
         saveStateToStorage();
         renderCoursesList();
         renderDoctorPreferences();
@@ -700,6 +795,27 @@ const App = (() => {
     document.getElementById('btn-manual-export-png')?.addEventListener('click', () => exportManualTimetable('png'));
     document.getElementById('btn-manual-export-ics')?.addEventListener('click', () => exportManualTimetable('ics'));
     document.getElementById('btn-manual-print')?.addEventListener('click', () => exportManualTimetable('print'));
+
+    // Initialize Timetable Filter UI values
+    const maxDaysEl = document.getElementById('filter-max-days');
+    if (maxDaysEl) maxDaysEl.value = state.timetableFilters.maxDays || 'any';
+    const maxGapsEl = document.getElementById('filter-max-gaps');
+    if (maxGapsEl) maxGapsEl.value = state.timetableFilters.maxGaps || 'any';
+    const maxClassesEl = document.getElementById('filter-max-classes-day');
+    if (maxClassesEl) maxClassesEl.value = state.timetableFilters.maxClassesPerDay || 'any';
+
+    const curPreset = state.timetableFilters.preset || 'balanced';
+    document.querySelectorAll('.preset-choice-card').forEach(card => card.classList.remove('is-active'));
+    const activePresetCard = document.getElementById(`preset-card-${curPreset}`);
+    if (activePresetCard) activePresetCard.classList.add('is-active');
+    const curPresetRadio = document.querySelector(`input[name="ranking-preset"][value="${curPreset}"]`);
+    if (curPresetRadio) curPresetRadio.checked = true;
+
+    // Initialize Manual Doctor Visibility Checkbox
+    const hideAvoidedCb = document.getElementById('check-manual-hide-avoided');
+    if (hideAvoidedCb) {
+      hideAvoidedCb.checked = state.manualHideAvoided !== false;
+    }
   }
 
   function switchTab(tabId) {
@@ -716,11 +832,12 @@ const App = (() => {
       if (state.solutions.length === 0 && state.courses.length > 0) {
         runOptimizer();
       } else {
-        renderSolutionsSelector();
-        renderCurrentSolution();
+        applyTimetableFilters();
       }
     } else if (tabId === 'manual') {
       renderManualMode();
+    } else if (tabId === 'mixmatch') {
+      renderMixMatchTab();
     }
   }
 
@@ -2067,10 +2184,9 @@ const App = (() => {
             state.solutions = result.solutions;
             state.activeSolutionIndex = 0;
 
-            // Switch to Timetable tab
+            // Switch to Timetable tab and apply strict filters & ranking presets
             switchTab('timetable');
-            renderSolutionsSelector();
-            renderCurrentSolution();
+            applyTimetableFilters();
 
             if (result.fallbackNotice) {
               showToast(
@@ -2251,6 +2367,11 @@ const App = (() => {
         }
 
         if (matches) {
+          if (state.manualHideAvoided !== false) {
+            const prefSummary = getGroupDoctorPrefSummary(course, grp);
+            const isSelected = !!state.manualSchedule[`${course.id}:::${grp.group}`];
+            if (!isSelected && prefSummary.hasAvoid) return;
+          }
           matchingGroups.push({
             courseId: course.id,
             courseName: course.name,
@@ -2393,6 +2514,16 @@ const App = (() => {
   }
 
   /**
+   * Toggle Manual Hide Avoided Doctors
+   */
+  function toggleManualHideAvoided(checked) {
+    state.manualHideAvoided = Boolean(checked);
+    saveStateToStorage();
+    renderManualCoursesPicker();
+    renderManualDoctorGroups();
+  }
+
+  /**
    * Renders the complete course-by-course group selection list
    */
   function renderManualCoursesPicker() {
@@ -2408,6 +2539,20 @@ const App = (() => {
     state.courses.forEach(course => {
       const selectedGroupsForCourse = getSelectedGroupsForCourse(course.id);
       const isMultiCourse = selectedGroupsForCourse.length > 1;
+
+      // Filter groups according to manualHideAvoided setting
+      const hideAvoided = state.manualHideAvoided !== false;
+      const courseHasMandate = (course.groups || []).some(g => getGroupDoctorPrefSummary(course, g).hasMandate);
+
+      const visibleGroups = (course.groups || []).filter(grp => {
+        if (!hideAvoided) return true;
+        const prefSummary = getGroupDoctorPrefSummary(course, grp);
+        const isSelected = !!state.manualSchedule[`${course.id}:::${grp.group}`];
+        if (isSelected) return true; // keep user's active picks visible
+        if (courseHasMandate && !prefSummary.hasMandate) return false;
+        if (prefSummary.hasAvoid) return false;
+        return true;
+      });
 
       html += `
         <div class="manual-course-row">
@@ -2434,7 +2579,13 @@ const App = (() => {
           </div>
 
           <div class="manual-course-groups-row">
-            ${(course.groups || []).map(grp => {
+            ${visibleGroups.length === 0 ? `
+              <div style="font-size: 0.82rem; color: var(--text-muted); padding: 12px 16px; background: var(--bg-secondary); border-radius: var(--radius-md); border: 1px dashed var(--border-color); font-style: italic; width: 100%;">
+                ${isAr
+                  ? 'تم إخفاء مجموعات هذا المقرر نظراً لاستبعاد دكاترتها أو وجود دكتور إجباري. يمكنك إلغاء تفعيل خيار "إخفاء الدكاترة المستبعدين" بالأعلى لعرض كافة المجموعات.'
+                  : 'All groups for this course are hidden by doctor preferences (avoided or mandated filter). Uncheck "Hide Avoided Doctors" above to display all groups.'}
+              </div>
+            ` : visibleGroups.map(grp => {
               const key = `${course.id}:::${grp.group}`;
               const isSelected = !!state.manualSchedule[key];
 
@@ -3083,6 +3234,59 @@ const App = (() => {
   }
 
   /**
+   * Helper: returns the list of solutions currently active (filtered solutions or all solutions)
+   */
+  function getActiveSolutions() {
+    if (state.filteredSolutions && state.filteredSolutions.length > 0) {
+      return state.filteredSolutions;
+    }
+    return state.solutions || [];
+  }
+
+  /**
+   * Helper session type predicates
+   */
+  function isLectureSession(s) {
+    const t = (s && s.type) || '';
+    return t === 'Lect.' || /Lect|محاضرة/i.test(t);
+  }
+
+  function isSectionSession(s) {
+    const t = (s && s.type) || '';
+    return t === 'Sec.' || /Sec|سكشن/i.test(t);
+  }
+
+  function isLabSession(s) {
+    const t = (s && s.type) || '';
+    return t === 'Lab.' || /Lab|معمل/i.test(t);
+  }
+
+  /**
+   * Helper: calculates max classes / sessions in a single day for a solution
+   */
+  function getMaxClassesPerDay(solution) {
+    if (!solution || !solution.sessions) return 0;
+    const dayCounts = {};
+    solution.sessions.forEach(s => {
+      dayCounts[s.day] = (dayCounts[s.day] || 0) + 1;
+    });
+    const counts = Object.values(dayCounts);
+    return counts.length > 0 ? Math.max(...counts) : 0;
+  }
+
+  /**
+   * Helper: calculates early finish score (higher = finishes earlier in the day)
+   */
+  function getEarlyScore(solution) {
+    if (!solution || !solution.sessions) return 0;
+    let score = 0;
+    solution.sessions.forEach(s => {
+      score += (16 - (s.endSlot || 16));
+    });
+    return score;
+  }
+
+  /**
    * Render solution chips / selector
    */
   function renderSolutionsSelector() {
@@ -3090,19 +3294,24 @@ const App = (() => {
     if (!container) return;
 
     const isAr = state.currentLang === 'ar';
-    const topSolutions = state.solutions.slice(0, 15);
+    const activeList = getActiveSolutions();
+    const topSolutions = activeList.slice(0, 15);
 
     let html = '';
     topSolutions.forEach((sol, idx) => {
       const isActive = idx === state.activeSolutionIndex;
-      const titleText = isAr ? `الخيار #${sol.rank}` : `Option #${sol.rank}`;
+      const titleText = state.filterMismatch
+        ? (isAr ? `معاينة غير مصفاة #${sol.rank || 1}` : `Unfiltered Inspection #${sol.rank || 1}`)
+        : (isAr ? `الخيار #${sol.rank || (idx + 1)}` : `Option #${sol.rank || (idx + 1)}`);
       const gapText = sol.totalGapSlots === 0
         ? (isAr ? '⚡ 0 فترات فراغ' : '⚡ 0 Gaps')
         : (isAr ? `☕ ${sol.totalGapSlots} فراغ` : `☕ ${sol.totalGapSlots} Gaps`);
       const daysText = isAr ? `${sol.activeDaysCount} أيام` : `${sol.activeDaysCount} Days`;
 
       html += `
-        <button class="sol-chip ${isActive ? 'active' : ''}" onclick="App.selectSolution(${idx})" title="${titleText}: ${gapText}, ${daysText}">
+        <button class="sol-chip ${isActive ? 'active' : ''} ${state.filterMismatch ? 'is-fallback-chip' : ''}"
+                onclick="App.selectSolution(${idx})"
+                title="${titleText}: ${gapText}, ${daysText}">
           <span class="sol-chip-title">${titleText}</span>
           <span class="sol-chip-meta">${gapText} • ${daysText}</span>
         </button>
@@ -3113,7 +3322,8 @@ const App = (() => {
   }
 
   function selectSolution(index) {
-    if (index >= 0 && index < state.solutions.length) {
+    const activeList = getActiveSolutions();
+    if (index >= 0 && index < activeList.length) {
       state.activeSolutionIndex = index;
       renderSolutionsSelector();
       renderCurrentSolution();
@@ -3121,7 +3331,8 @@ const App = (() => {
   }
 
   function renderCurrentSolution() {
-    const solution = state.solutions[state.activeSolutionIndex];
+    const activeList = getActiveSolutions();
+    const solution = activeList[state.activeSolutionIndex];
     const summaryContainer = document.getElementById('solution-summary-container');
     const timetableContainer = document.getElementById('timetable-render-container');
 
@@ -3138,6 +3349,617 @@ const App = (() => {
             <p style="color: var(--text-secondary);">${state.currentLang === 'ar' ? 'اضغط على زر "توليد أفضل الجداول" في الأعلى للبدء.' : 'Click "Find Best Schedules" to compute conflict-free options.'}</p>
           </div>
         `;
+      }
+    }
+  }
+
+  /* ==========================================================================
+     Timetable Non-Negotiable Filters & 4 Presets Logic
+     ========================================================================== */
+
+  function handleTimetableFilterChange() {
+    const maxDaysEl = document.getElementById('filter-max-days');
+    const maxGapsEl = document.getElementById('filter-max-gaps');
+    const maxClassesEl = document.getElementById('filter-max-classes-day');
+
+    if (maxDaysEl) state.timetableFilters.maxDays = maxDaysEl.value;
+    if (maxGapsEl) state.timetableFilters.maxGaps = maxGapsEl.value;
+    if (maxClassesEl) state.timetableFilters.maxClassesPerDay = maxClassesEl.value;
+
+    saveStateToStorage();
+    applyTimetableFilters();
+  }
+
+  function handlePresetChange(presetName) {
+    state.timetableFilters.preset = presetName;
+
+    document.querySelectorAll('.preset-choice-card').forEach(card => card.classList.remove('is-active'));
+    const activeCard = document.getElementById(`preset-card-${presetName}`);
+    if (activeCard) activeCard.classList.add('is-active');
+
+    const radio = document.querySelector(`input[name="ranking-preset"][value="${presetName}"]`);
+    if (radio) radio.checked = true;
+
+    saveStateToStorage();
+    applyTimetableFilters();
+  }
+
+  function resetTimetableFilters() {
+    state.timetableFilters = {
+      maxDays: 'any',
+      maxGaps: 'any',
+      maxClassesPerDay: 'any',
+      preset: 'balanced'
+    };
+
+    const maxDaysEl = document.getElementById('filter-max-days');
+    const maxGapsEl = document.getElementById('filter-max-gaps');
+    const maxClassesEl = document.getElementById('filter-max-classes-day');
+    if (maxDaysEl) maxDaysEl.value = 'any';
+    if (maxGapsEl) maxGapsEl.value = 'any';
+    if (maxClassesEl) maxClassesEl.value = 'any';
+
+    document.querySelectorAll('.preset-choice-card').forEach(card => card.classList.remove('is-active'));
+    const balCard = document.getElementById('preset-card-balanced');
+    if (balCard) balCard.classList.add('is-active');
+    const balRadio = document.querySelector('input[name="ranking-preset"][value="balanced"]');
+    if (balRadio) balRadio.checked = true;
+
+    closeFilterConflictModal();
+    const banner = document.getElementById('filter-mismatch-banner');
+    if (banner) banner.style.display = 'none';
+
+    saveStateToStorage();
+    applyTimetableFilters();
+    showToast(state.currentLang === 'ar' ? 'تمت إعادة ضبط فلاتر الجداول' : 'Timetable filters reset.', 'info');
+  }
+
+  function closeFilterConflictModal() {
+    const modal = document.getElementById('modal-filter-conflict');
+    if (modal) modal.style.display = 'none';
+  }
+
+  function applyTimetableFilters() {
+    if (!state.solutions || state.solutions.length === 0) {
+      state.filteredSolutions = [];
+      state.activeSolutionIndex = 0;
+      state.filterMismatch = false;
+      renderSolutionsSelector();
+      renderCurrentSolution();
+      return;
+    }
+
+    const { maxDays, maxGaps, maxClassesPerDay, preset } = state.timetableFilters;
+    const isAr = state.currentLang === 'ar';
+
+    const maxDaysNum = maxDays === 'any' ? Infinity : parseInt(maxDays, 10);
+    const maxGapsNum = maxGaps === 'any' ? Infinity : parseInt(maxGaps, 10);
+    const maxClassesNum = maxClassesPerDay === 'any' ? Infinity : parseInt(maxClassesPerDay, 10);
+
+    const matched = state.solutions.filter(s => {
+      const days = s.activeDaysCount;
+      const gaps = s.totalGapSlots;
+      const classes = getMaxClassesPerDay(s);
+      return days <= maxDaysNum && gaps <= maxGapsNum && classes <= maxClassesNum;
+    });
+
+    const banner = document.getElementById('filter-mismatch-banner');
+    const diagContainer = document.getElementById('filter-mismatch-diagnostics');
+    const modal = document.getElementById('modal-filter-conflict');
+    const modalDetails = document.getElementById('modal-filter-conflict-details');
+
+    if (matched.length > 0) {
+      // Sort matched solutions according to user's selected preset
+      if (preset === 'minimum_days') {
+        matched.sort((a, b) => (a.activeDaysCount - b.activeDaysCount) || (a.totalGapSlots - b.totalGapSlots) || (b.totalScore - a.totalScore));
+      } else if (preset === 'minimal_gaps') {
+        matched.sort((a, b) => (a.totalGapSlots - b.totalGapSlots) || (a.activeDaysCount - b.activeDaysCount) || (b.totalScore - a.totalScore));
+      } else if (preset === 'early_schedule') {
+        matched.sort((a, b) => (getEarlyScore(b) - getEarlyScore(a)) || (b.totalScore - a.totalScore));
+      } else {
+        // balanced
+        matched.sort((a, b) => b.totalScore - a.totalScore);
+      }
+
+      state.filteredSolutions = matched;
+      state.filterMismatch = false;
+      if (state.activeSolutionIndex >= matched.length) {
+        state.activeSolutionIndex = 0;
+      }
+
+      if (banner) banner.style.display = 'none';
+      if (modal) modal.style.display = 'none';
+    } else {
+      // 0 MATCHES: STRICT NON-NEGOTIABLE FILTER CONFLICT
+      // Provide 1 unfiltered schedule for inspection and trigger error modal & banner
+      state.filterMismatch = true;
+      const fallbackSol = state.solutions[0];
+      state.filteredSolutions = [fallbackSol];
+      state.activeSolutionIndex = 0;
+
+      const minAvailDays = Math.min(...state.solutions.map(s => s.activeDaysCount));
+      const minAvailGaps = Math.min(...state.solutions.map(s => s.totalGapSlots));
+      const minAvailClasses = Math.min(...state.solutions.map(s => getMaxClassesPerDay(s)));
+
+      const violations = [];
+      if (maxDays !== 'any' && fallbackSol.activeDaysCount > maxDaysNum) {
+        violations.push({
+          type: 'days',
+          label: isAr
+            ? `❌ أيام النزول: ${fallbackSol.activeDaysCount} أيام (الفلتر المطلوب: أقصى حد ${maxDays} • أقل متاح: ${minAvailDays} أيام)`
+            : `❌ Campus Days: ${fallbackSol.activeDaysCount} days (Your filter: Max ${maxDays} • Best available: ${minAvailDays} days)`
+        });
+      }
+      if (maxGaps !== 'any' && fallbackSol.totalGapSlots > maxGapsNum) {
+        violations.push({
+          type: 'gaps',
+          label: isAr
+            ? `❌ فترات الفراغ: ${fallbackSol.totalGapSlots} فترات (الفلتر المطلوب: أقصى حد ${maxGaps} • أقل متاح: ${minAvailGaps} فترات)`
+            : `❌ Gap Slots: ${fallbackSol.totalGapSlots} slots (Your filter: Max ${maxGaps} • Best available: ${minAvailGaps} slots)`
+        });
+      }
+      const fallbackClasses = getMaxClassesPerDay(fallbackSol);
+      if (maxClassesPerDay !== 'any' && fallbackClasses > maxClassesNum) {
+        violations.push({
+          type: 'classes',
+          label: isAr
+            ? `❌ أقصى حصص باليوم: ${fallbackClasses} حصص (الفلتر المطلوب: أقصى حد ${maxClassesPerDay} • أقل متاح: ${minAvailClasses} حصص)`
+            : `❌ Max Classes / Day: ${fallbackClasses} classes (Your filter: Max ${maxClassesPerDay} • Best available: ${minAvailClasses} classes)`
+        });
+      }
+
+      if (diagContainer) {
+        diagContainer.innerHTML = violations.map(v => `<span class="violation-pill">${v.label}</span>`).join('');
+      }
+      if (banner) banner.style.display = 'block';
+
+      if (modalDetails) {
+        modalDetails.innerHTML = `
+          <div style="margin-bottom: 8px; font-weight: 700; color: #EF4444;">
+            ${isAr ? '⚠️ أسباب عدم وجود جداول تطابق اختياراتك:' : '⚠️ Why no schedules matched your filters:'}
+          </div>
+          <ul style="margin: 0; padding-inline-start: 20px;">
+            ${violations.map(v => `<li style="margin-bottom: 6px;">${v.label}</li>`).join('')}
+          </ul>
+          <div style="margin-top: 10px; font-size: 0.85rem; color: var(--text-muted);">
+            ${isAr
+              ? 'تم إدراج جدول واحد بدون فلاتر في شاشة النتائج لتتمكن من معاينته ومعرفة الحصص التي تجاوزت الشروط.'
+              : 'One unfiltered schedule has been loaded into the timetable results below so you can inspect where the limits are exceeded.'}
+          </div>
+        `;
+      }
+      if (modal) modal.style.display = 'flex';
+    }
+
+    renderSolutionsSelector();
+    renderCurrentSolution();
+  }
+
+  /* ==========================================================================
+     Tab 5: Mix & Match (Decoupled Doctors & TAs)
+     ========================================================================== */
+
+  function initMixMatchSelections() {
+    if (!state.mixMatchSelections) state.mixMatchSelections = {};
+    state.courses.forEach(course => {
+      if (!state.mixMatchSelections[course.id]) {
+        const lectGroups = (course.groups || []).filter(g => (g.sessions || []).some(isLectureSession));
+        const secGroups = (course.groups || []).filter(g => (g.sessions || []).some(isSectionSession));
+        const labGroups = (course.groups || []).filter(g => (g.sessions || []).some(isLabSession));
+
+        state.mixMatchSelections[course.id] = {
+          lectGroup: lectGroups.length > 0 ? lectGroups[0].group : null,
+          secGroup: secGroups.length > 0 ? secGroups[0].group : null,
+          labGroup: labGroups.length > 0 ? labGroups[0].group : null
+        };
+      }
+    });
+  }
+
+  function getMixMatchAllSelectedSessions() {
+    initMixMatchSelections();
+    const allSessions = [];
+    state.courses.forEach(course => {
+      const sel = state.mixMatchSelections[course.id] || {};
+      (course.groups || []).forEach(grp => {
+        (grp.sessions || []).forEach(s => {
+          const isLect = isLectureSession(s);
+          const isSec = isSectionSession(s);
+          const isLab = isLabSession(s);
+
+          if ((isLect && sel.lectGroup === grp.group) ||
+              (isSec && sel.secGroup === grp.group) ||
+              (isLab && sel.labGroup === grp.group)) {
+            allSessions.push({
+              ...s,
+              courseId: course.id,
+              courseName: course.name,
+              courseCode: course.code,
+              color: course.color,
+              group: grp.group
+            });
+          }
+        });
+      });
+    });
+    return allSessions;
+  }
+
+  function findMixMatchCollisions(allSessions) {
+    const collisions = [];
+    for (let i = 0; i < allSessions.length; i++) {
+      for (let j = i + 1; j < allSessions.length; j++) {
+        const s1 = allSessions[i];
+        const s2 = allSessions[j];
+        if (s1.day === s2.day) {
+          if (Math.max(s1.startSlot, s2.startSlot) <= Math.min(s1.endSlot, s2.endSlot)) {
+            const isSame = s1.id && s2.id && s1.id === s2.id;
+            if (!isSame) {
+              collisions.push({ s1, s2 });
+            }
+          }
+        }
+      }
+    }
+    return collisions;
+  }
+
+  function checkMixMatchOptionConflict(courseId, type, candidateGrp) {
+    const isAr = state.currentLang === 'ar';
+    const candSessions = (candidateGrp.sessions || []).filter(s => {
+      if (type === 'lect') return isLectureSession(s);
+      if (type === 'sec') return isSectionSession(s);
+      if (type === 'lab') return isLabSession(s);
+      return true;
+    });
+
+    const otherSelectedSessions = [];
+    state.courses.forEach(course => {
+      const sel = state.mixMatchSelections[course.id] || {};
+      (course.groups || []).forEach(grp => {
+        (grp.sessions || []).forEach(s => {
+          const isLect = isLectureSession(s);
+          const isSec = isSectionSession(s);
+          const isLab = isLabSession(s);
+
+          if (course.id === courseId) {
+            if (type === 'lect' && isLect) return;
+            if (type === 'sec' && isSec) return;
+            if (type === 'lab' && isLab) return;
+          }
+
+          if ((isLect && sel.lectGroup === grp.group) ||
+              (isSec && sel.secGroup === grp.group) ||
+              (isLab && sel.labGroup === grp.group)) {
+            otherSelectedSessions.push({ ...s, courseCode: course.code, courseName: course.name });
+          }
+        });
+      });
+    });
+
+    for (const cSess of candSessions) {
+      for (const oSess of otherSelectedSessions) {
+        if (cSess.day === oSess.day) {
+          if (Math.max(cSess.startSlot, oSess.startSlot) <= Math.min(cSess.endSlot, oSess.endSlot)) {
+            const isSame = cSess.id && oSess.id && cSess.id === oSess.id;
+            if (!isSame) {
+              const name = oSess.courseCode || oSess.courseName;
+              return {
+                clashing: true,
+                detail: isAr
+                  ? `يتعارض مع ${name} (${oSess.type}) في ${cSess.day}`
+                  : `Clashes with ${name} (${oSess.type}) on ${cSess.day}`
+              };
+            }
+          }
+        }
+      }
+    }
+    return { clashing: false };
+  }
+
+  function selectMixMatchOption(courseId, sessionType, groupName) {
+    initMixMatchSelections();
+    if (!state.mixMatchSelections[courseId]) state.mixMatchSelections[courseId] = {};
+    const current = state.mixMatchSelections[courseId][sessionType];
+    state.mixMatchSelections[courseId][sessionType] = (current === groupName ? null : groupName);
+    saveStateToStorage();
+    renderMixMatchTab();
+  }
+
+  function resetMixMatchSelections() {
+    state.mixMatchSelections = {};
+    initMixMatchSelections();
+    saveStateToStorage();
+    renderMixMatchTab();
+    showToast(state.currentLang === 'ar' ? 'تمت إعادة ضبط اختيارات الدمج' : 'Mix & Match selections reset.', 'info');
+  }
+
+  function applyMixMatchToManual() {
+    const isAr = state.currentLang === 'ar';
+    const allMixed = getMixMatchAllSelectedSessions();
+    if (allMixed.length === 0) {
+      showToast(isAr ? 'برجاء اختيار حصة واحدة على الأقل أولاً.' : 'Please select at least one session in Mix & Match.', 'error');
+      return;
+    }
+
+    state.manualSchedule = {};
+    state.courses.forEach(course => {
+      const courseSessions = allMixed.filter(s => s.courseId === course.id);
+      if (courseSessions.length > 0) {
+        const docs = courseSessions.map(s => s.instructor).filter(Boolean);
+        state.manualSchedule[`${course.id}:::Mix`] = {
+          courseId: course.id,
+          courseName: course.name,
+          courseCode: course.code,
+          color: course.color,
+          group: 'Mix',
+          sessions: courseSessions,
+          instructors: Array.from(new Set(docs))
+        };
+      }
+    });
+
+    saveStateToStorage();
+    switchTab('manual');
+    showToast(isAr ? 'تم تطبيق جدول الـ Mix & Match في الوضع اليدوي بنجاح! 🎯' : 'Mixed schedule applied to Manual Mode! 🎯', 'success');
+  }
+
+  function saveMixMatchAsCourseGroups() {
+    const isAr = state.currentLang === 'ar';
+    const allMixed = getMixMatchAllSelectedSessions();
+    if (allMixed.length === 0) {
+      showToast(isAr ? 'برجاء اختيار حصة واحدة على الأقل أولاً.' : 'Please select at least one session in Mix & Match.', 'error');
+      return;
+    }
+
+    let updatedCount = 0;
+    state.courses.forEach(course => {
+      const courseSessions = allMixed.filter(s => s.courseId === course.id);
+      if (courseSessions.length > 0) {
+        if (!course.groups) course.groups = [];
+        const mixGrpIdx = course.groups.findIndex(g => g.group === 'Mix');
+        const docs = courseSessions.map(s => s.instructor).filter(Boolean);
+        const newGrp = {
+          group: 'Mix',
+          sessions: courseSessions,
+          hasLecture: courseSessions.some(isLectureSession),
+          hasSection: courseSessions.some(isSectionSession),
+          hasLab: courseSessions.some(isLabSession),
+          instructors: Array.from(new Set(docs))
+        };
+        if (mixGrpIdx > -1) {
+          course.groups[mixGrpIdx] = newGrp;
+        } else {
+          course.groups.push(newGrp);
+        }
+        updatedCount++;
+      }
+    });
+
+    saveStateToStorage();
+    showToast(
+      isAr
+        ? `تم حفظ التوفيقات كمجموعة "Mix" مخصصة في ${updatedCount} مادة! 💾 يمكنك استخدامها في الوضع اليدوي والمحسن.`
+        : `Saved mixed selections as custom group "Mix" in ${updatedCount} courses! 💾`,
+      'success'
+    );
+  }
+
+  function renderMixMatchTab() {
+    const container = document.getElementById('mixmatch-courses-container');
+    const ttContainer = document.getElementById('mixmatch-timetable-render-container');
+    const banner = document.getElementById('mixmatch-collision-banner');
+    if (!container) return;
+
+    const isAr = state.currentLang === 'ar';
+
+    if (!state.courses || state.courses.length === 0) {
+      container.innerHTML = `
+        <div class="empty-state" style="text-align: center; padding: 40px; background: var(--bg-card); border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
+          <div style="font-size: 48px; margin-bottom: 12px;">🔀</div>
+          <h3>${isAr ? 'لم يتم إضافة مقررات بعد' : 'No Courses Added Yet'}</h3>
+          <p style="color: var(--text-secondary);">${isAr ? 'يرجى إضافة مواد في التبويب الأول أو تحميل المقررات التجريبية.' : 'Please add courses in Tab 1 or click "Load Example Courses" first.'}</p>
+        </div>
+      `;
+      if (ttContainer) ttContainer.innerHTML = '';
+      if (banner) banner.style.display = 'none';
+      return;
+    }
+
+    initMixMatchSelections();
+    const allSelected = getMixMatchAllSelectedSessions();
+    const collisions = findMixMatchCollisions(allSelected);
+
+    if (banner) {
+      if (collisions.length > 0) {
+        banner.style.display = 'block';
+        const clashDetails = collisions.map(c => {
+          const c1Name = c.s1.courseCode || c.s1.courseName;
+          const c2Name = c.s2.courseCode || c.s2.courseName;
+          const day = c.s1.day;
+          const time = ScheduleRenderer.formatSlotTimeRange(Math.max(c.s1.startSlot, c.s2.startSlot), Math.min(c.s1.endSlot, c.s2.endSlot));
+          return `<strong>${c1Name}</strong> (${c.s1.type} Grp ${c.s1.group}) ⚡ <strong>${c2Name}</strong> (${c.s2.type} Grp ${c.s2.group}) [${day} ${time}]`;
+        }).join(' • ');
+        banner.innerHTML = `
+          <span>⚠️ <strong>${isAr ? 'تنبيه تعارض في التوفيقات المختارة:' : 'Mix Conflict Warning:'}</strong> ${clashDetails}</span>
+        `;
+      } else {
+        banner.style.display = 'none';
+      }
+    }
+
+    let coursesHtml = '';
+    state.courses.forEach(course => {
+      const sel = state.mixMatchSelections[course.id] || {};
+      const groups = course.groups || [];
+
+      const lectGroups = groups.filter(g => (g.sessions || []).some(isLectureSession));
+      const secGroups = groups.filter(g => (g.sessions || []).some(isSectionSession));
+      const labGroups = groups.filter(g => (g.sessions || []).some(isLabSession));
+
+      const selectedLect = lectGroups.find(g => g.group === sel.lectGroup);
+      const selectedSec = secGroups.find(g => g.group === sel.secGroup);
+      const selectedLab = labGroups.find(g => g.group === sel.labGroup);
+
+      const lectDocName = selectedLect ? ((selectedLect.sessions.find(isLectureSession) || {}).instructor || selectedLect.instructors?.[0] || '') : '';
+      const secDocName = selectedSec ? ((selectedSec.sessions.find(isSectionSession) || {}).instructor || selectedSec.instructors?.[0] || '') : '';
+      const labDocName = selectedLab ? ((selectedLab.sessions.find(isLabSession) || {}).instructor || selectedLab.instructors?.[0] || '') : '';
+
+      coursesHtml += `
+        <div class="mixmatch-course-card" style="border-inline-start: 5px solid ${course.color || '#3B82F6'};">
+          <div class="mixmatch-course-header">
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+              <span class="course-color-swatch" style="background: ${course.color || '#3B82F6'}; width: 14px; height: 14px; border-radius: 50%;"></span>
+              <span style="font-weight: 800; font-size: 1.05rem; color: var(--text-primary);">${course.name}</span>
+              ${course.code && course.code !== course.name ? `<span style="font-size: 0.85rem; color: var(--text-muted);">(${course.code})</span>` : ''}
+            </div>
+            <div class="mixmatch-summary-pills">
+              ${selectedLect ? `<span class="mixmatch-pick-pill lect-pill">🎓 Lect: Grp ${selectedLect.group} ${lectDocName ? `(${lectDocName})` : ''}</span>` : ''}
+              ${selectedSec ? `<span class="mixmatch-pick-pill sec-pill">🔬 Sec: Grp ${selectedSec.group} ${secDocName ? `(${secDocName})` : ''}</span>` : ''}
+              ${selectedLab ? `<span class="mixmatch-pick-pill lab-pill">⚗️ Lab: Grp ${selectedLab.group} ${labDocName ? `(${labDocName})` : ''}</span>` : ''}
+            </div>
+          </div>
+
+          <div class="mixmatch-columns">
+            <!-- Lecture Column -->
+            <div class="mixmatch-col">
+              <div class="mixmatch-col-title">
+                <span>🎓</span> <span>${isAr ? 'محاضرة (الدكتور)' : 'Lecture (Doctor)'}</span>
+              </div>
+              <div class="mixmatch-options-list">
+                ${lectGroups.length === 0 ? `<div class="mixmatch-empty-type">${isAr ? 'لا توجد محاضرات' : 'No Lectures'}</div>` : ''}
+                ${lectGroups.map(grp => {
+                  const isSelected = sel.lectGroup === grp.group;
+                  const lectSessions = (grp.sessions || []).filter(isLectureSession);
+                  const instructor = lectSessions[0]?.instructor || grp.instructors?.[0] || '';
+                  const prefSummary = getGroupDoctorPrefSummary(course, grp);
+                  const prefBadge = getGroupDoctorPrefBadgesHtml(prefSummary, isAr);
+                  const optClash = checkMixMatchOptionConflict(course.id, 'lect', grp);
+
+                  return `
+                    <div class="mixmatch-session-option ${isSelected ? 'is-selected' : ''} ${optClash.clashing ? 'is-clashing' : ''}"
+                         onclick="App.selectMixMatchOption('${course.id}', 'lectGroup', '${grp.group}')">
+                      <div class="mixmatch-option-head">
+                        <span class="mixmatch-group-tag">Group ${grp.group}</span>
+                        ${prefBadge}
+                        ${isSelected ? `<span class="mixmatch-selected-tick">✓</span>` : ''}
+                      </div>
+                      <div class="mixmatch-inst-name">👨‍🏫 ${instructor || (isAr ? 'غير محدد' : 'Not Specified')}</div>
+                      <div class="mixmatch-times-list">
+                        ${lectSessions.map(s => {
+                          const timeStr = ScheduleRenderer.formatSlotTimeRange(s.startSlot, s.endSlot);
+                          return `<div>📅 ${s.day} (${timeStr})</div>`;
+                        }).join('')}
+                      </div>
+                      ${optClash.clashing ? `<div class="mixmatch-clash-hint">⚠️ ${optClash.detail}</div>` : ''}
+                    </div>
+                  `;
+                }).join('')}
+              </div>
+            </div>
+
+            <!-- Section Column (only if course has sections) -->
+            ${secGroups.length > 0 ? `
+              <div class="mixmatch-col">
+                <div class="mixmatch-col-title">
+                  <span>🔬</span> <span>${isAr ? 'سكشن (المعيد)' : 'Section (TA)'}</span>
+                </div>
+                <div class="mixmatch-options-list">
+                  ${secGroups.map(grp => {
+                    const isSelected = sel.secGroup === grp.group;
+                    const secSessions = (grp.sessions || []).filter(isSectionSession);
+                    const instructor = secSessions[0]?.instructor || grp.instructors?.[0] || '';
+                    const prefSummary = getGroupDoctorPrefSummary(course, grp);
+                    const prefBadge = getGroupDoctorPrefBadgesHtml(prefSummary, isAr);
+                    const optClash = checkMixMatchOptionConflict(course.id, 'sec', grp);
+
+                    return `
+                      <div class="mixmatch-session-option ${isSelected ? 'is-selected' : ''} ${optClash.clashing ? 'is-clashing' : ''}"
+                           onclick="App.selectMixMatchOption('${course.id}', 'secGroup', '${grp.group}')">
+                        <div class="mixmatch-option-head">
+                          <span class="mixmatch-group-tag">Group ${grp.group}</span>
+                          ${prefBadge}
+                          ${isSelected ? `<span class="mixmatch-selected-tick">✓</span>` : ''}
+                        </div>
+                        <div class="mixmatch-inst-name">🔬 ${instructor || (isAr ? 'معيد السكشن' : 'Section TA')}</div>
+                        <div class="mixmatch-times-list">
+                          ${secSessions.map(s => {
+                            const timeStr = ScheduleRenderer.formatSlotTimeRange(s.startSlot, s.endSlot);
+                            return `<div>📅 ${s.day} (${timeStr})</div>`;
+                          }).join('')}
+                        </div>
+                        ${optClash.clashing ? `<div class="mixmatch-clash-hint">⚠️ ${optClash.detail}</div>` : ''}
+                      </div>
+                    `;
+                  }).join('')}
+                </div>
+              </div>
+            ` : ''}
+
+            <!-- Lab Column (only if course has labs) -->
+            ${labGroups.length > 0 ? `
+              <div class="mixmatch-col">
+                <div class="mixmatch-col-title">
+                  <span>⚗️</span> <span>${isAr ? 'معمل (المعيد)' : 'Lab (TA)'}</span>
+                </div>
+                <div class="mixmatch-options-list">
+                  ${labGroups.map(grp => {
+                    const isSelected = sel.labGroup === grp.group;
+                    const labSessions = (grp.sessions || []).filter(isLabSession);
+                    const instructor = labSessions[0]?.instructor || grp.instructors?.[0] || '';
+                    const prefSummary = getGroupDoctorPrefSummary(course, grp);
+                    const prefBadge = getGroupDoctorPrefBadgesHtml(prefSummary, isAr);
+                    const optClash = checkMixMatchOptionConflict(course.id, 'lab', grp);
+
+                    return `
+                      <div class="mixmatch-session-option ${isSelected ? 'is-selected' : ''} ${optClash.clashing ? 'is-clashing' : ''}"
+                           onclick="App.selectMixMatchOption('${course.id}', 'labGroup', '${grp.group}')">
+                        <div class="mixmatch-option-head">
+                          <span class="mixmatch-group-tag">Group ${grp.group}</span>
+                          ${prefBadge}
+                          ${isSelected ? `<span class="mixmatch-selected-tick">✓</span>` : ''}
+                        </div>
+                        <div class="mixmatch-inst-name">⚗️ ${instructor || (isAr ? 'معيد المعمل' : 'Lab TA')}</div>
+                        <div class="mixmatch-times-list">
+                          ${labSessions.map(s => {
+                            const timeStr = ScheduleRenderer.formatSlotTimeRange(s.startSlot, s.endSlot);
+                            return `<div>📅 ${s.day} (${timeStr})</div>`;
+                          }).join('')}
+                        </div>
+                        ${optClash.clashing ? `<div class="mixmatch-clash-hint">⚠️ ${optClash.detail}</div>` : ''}
+                      </div>
+                    `;
+                  }).join('')}
+                </div>
+              </div>
+            ` : ''}
+          </div>
+        </div>
+      `;
+    });
+
+    container.innerHTML = coursesHtml;
+
+    if (ttContainer) {
+      if (allSelected.length === 0) {
+        ttContainer.innerHTML = `
+          <div class="empty-state" style="text-align: center; padding: 30px;">
+            <div style="font-size: 36px; margin-bottom: 8px;">📅</div>
+            <h3>${isAr ? 'لم يتم اختيار حصص للمعاينة' : 'No Sessions Selected'}</h3>
+            <p style="color: var(--text-muted);">${isAr ? 'اختر دكاترة ومعيدين من المجموعات أعلاه لمعاينة الجدول المدمج لحظياً.' : 'Pick doctors and TAs above to preview your mixed schedule in real-time.'}</p>
+          </div>
+        `;
+      } else {
+        const mockSolution = {
+          id: 'sol_mixmatch_preview',
+          rank: 1,
+          totalScore: 100,
+          totalGapSlots: 0,
+          activeDaysCount: new Set(allSelected.map(s => s.day)).size,
+          sessions: allSelected
+        };
+        ScheduleRenderer.renderTimetable(mockSolution, ttContainer, state.currentLang, state.blockedTimes);
       }
     }
   }
@@ -3553,7 +4375,18 @@ const App = (() => {
     clearManualSchedule,
     applyManualToTimetableTab,
     exportManualTimetable,
-    renderManualMode
+    renderManualMode,
+    toggleManualHideAvoided,
+    handleTimetableFilterChange,
+    handlePresetChange,
+    resetTimetableFilters,
+    closeFilterConflictModal,
+    applyTimetableFilters,
+    renderMixMatchTab,
+    selectMixMatchOption,
+    resetMixMatchSelections,
+    applyMixMatchToManual,
+    saveMixMatchAsCourseGroups
   };
 
   return window.App;

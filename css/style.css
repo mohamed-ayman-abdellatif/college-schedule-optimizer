@@ -2233,3 +2233,239 @@ body {
   color: var(--text-secondary);
   border-radius: 12px;
 }
+
+/* ==========================================================================
+   Timetable Non-negotiable Filters & 4 Presets
+   ========================================================================== */
+.timetable-filters-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+}
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.filter-label {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filter-select {
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.filter-select:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+  outline: none;
+}
+
+.preset-checkboxes-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 10px;
+}
+
+.preset-choice-card {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+.preset-choice-card input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.preset-choice-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  border: 1.5px solid var(--border-color);
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.preset-choice-card:hover .preset-choice-content {
+  border-color: var(--accent-primary);
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.preset-choice-card.is-active .preset-choice-content,
+.preset-choice-card input[type="radio"]:checked + .preset-choice-content {
+  border-color: var(--accent-primary);
+  background: rgba(59, 130, 246, 0.12);
+  box-shadow: 0 2px 8px var(--accent-glow);
+  font-weight: 700;
+  color: var(--accent-primary);
+}
+
+.preset-icon {
+  font-size: 1.25rem;
+}
+
+.preset-text {
+  font-size: 0.88rem;
+  color: var(--text-primary);
+}
+
+.filter-mismatch-banner {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1.5px solid #EF4444;
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+}
+
+.filter-violations-list {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.violation-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  background: rgba(239, 68, 68, 0.18);
+  color: #DC2626;
+  border-radius: 9999px;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+[data-theme="dark"] .violation-pill {
+  color: #F87171;
+}
+
+/* ==========================================================================
+   Mix & Match Tab Styling
+   ========================================================================== */
+.mixmatch-courses-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mixmatch-course-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s;
+}
+
+.mixmatch-course-card:hover {
+  border-color: var(--border-color-hover);
+}
+
+.mixmatch-course-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.mixmatch-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.mixmatch-col {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mixmatch-col-header {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.mixmatch-session-option {
+  background: var(--bg-primary);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mixmatch-session-option:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-1px);
+}
+
+.mixmatch-session-option.is-selected {
+  border-color: var(--accent-primary);
+  background: rgba(59, 130, 246, 0.08);
+  box-shadow: 0 0 0 2px var(--accent-primary);
+}
+
+.mixmatch-session-option.has-clash {
+  border-color: #EF4444;
+  background: rgba(239, 68, 68, 0.06);
+}
+
+.mixmatch-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.82rem;
+}
+
+.mixmatch-group-tag {
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}

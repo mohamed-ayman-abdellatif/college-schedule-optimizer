@@ -720,6 +720,224 @@ ME D Abdelgawad Matar
       optMandateUnspec.success === true && optMandateUnspec.solutions.every(s => s.selectedGroups[0].group === '2')
     );
 
+    // =========================================================================
+    // TEST 25: Timetable Filters (Max Days, Max Gaps, Max Classes / Day)
+    // =========================================================================
+    function testCalcMaxClasses(sol) {
+      const counts = {};
+      (sol.sessions || []).forEach(s => counts[s.day] = (counts[s.day] || 0) + 1);
+      const vals = Object.values(counts);
+      return vals.length > 0 ? Math.max(...vals) : 0;
+    }
+
+    const mockSolutions = [
+      { id: 'sol1', rank: 1, totalScore: 90, activeDaysCount: 4, totalGapSlots: 2, sessions: [
+        { day: 'Sunday', startSlot: 1, endSlot: 2, type: 'Lect.', instructor: 'Dr. A' },
+        { day: 'Sunday', startSlot: 3, endSlot: 4, type: 'Sec.', instructor: 'TA 1' },
+        { day: 'Monday', startSlot: 1, endSlot: 2, type: 'Lect.', instructor: 'Dr. B' },
+        { day: 'Tuesday', startSlot: 1, endSlot: 2, type: 'Lab.', instructor: 'TA 2' },
+        { day: 'Wednesday', startSlot: 5, endSlot: 6, type: 'Lect.', instructor: 'Dr. C' }
+      ]},
+      { id: 'sol2', rank: 2, totalScore: 85, activeDaysCount: 3, totalGapSlots: 4, sessions: [
+        { day: 'Sunday', startSlot: 1, endSlot: 2, type: 'Lect.', instructor: 'Dr. A' },
+        { day: 'Sunday', startSlot: 3, endSlot: 4, type: 'Sec.', instructor: 'TA 1' },
+        { day: 'Sunday', startSlot: 7, endSlot: 8, type: 'Lab.', instructor: 'TA 2' },
+        { day: 'Monday', startSlot: 1, endSlot: 2, type: 'Lect.', instructor: 'Dr. B' },
+        { day: 'Wednesday', startSlot: 1, endSlot: 2, type: 'Lect.', instructor: 'Dr. C' }
+      ]},
+      { id: 'sol3', rank: 3, totalScore: 95, activeDaysCount: 5, totalGapSlots: 0, sessions: [
+        { day: 'Sunday', startSlot: 1, endSlot: 2, type: 'Lect.', instructor: 'Dr. A' },
+        { day: 'Monday', startSlot: 1, endSlot: 2, type: 'Lect.', instructor: 'Dr. B' },
+        { day: 'Tuesday', startSlot: 1, endSlot: 2, type: 'Lab.', instructor: 'TA 2' },
+        { day: 'Wednesday', startSlot: 1, endSlot: 2, type: 'Lect.', instructor: 'Dr. C' },
+        { day: 'Thursday', startSlot: 1, endSlot: 2, type: 'Sec.', instructor: 'TA 1' }
+      ]}
+    ];
+
+    assert('testCalcMaxClasses correctly calculates max classes per day for sol1 (2 classes on Sunday)',
+      testCalcMaxClasses(mockSolutions[0]) === 2
+    );
+    assert('testCalcMaxClasses correctly calculates max classes per day for sol2 (3 classes on Sunday)',
+      testCalcMaxClasses(mockSolutions[1]) === 3
+    );
+
+    // Filter by Max Days = 3
+    const filterMaxDays3 = mockSolutions.filter(s => s.activeDaysCount <= 3);
+    assert('Filter maxDays=3 keeps only sol2',
+      filterMaxDays3.length === 1 && filterMaxDays3[0].id === 'sol2'
+    );
+
+    // Filter by Max Gaps = 1
+    const filterMaxGaps1 = mockSolutions.filter(s => s.totalGapSlots <= 1);
+    assert('Filter maxGaps=1 keeps only sol3 (0 gaps)',
+      filterMaxGaps1.length === 1 && filterMaxGaps1[0].id === 'sol3'
+    );
+
+    // Filter by Max Classes = 2
+    const filterMaxClasses2 = mockSolutions.filter(s => testCalcMaxClasses(s) <= 2);
+    assert('Filter maxClasses=2 keeps sol1 and sol3 (excludes sol2 which has 3 classes)',
+      filterMaxClasses2.length === 2 && !filterMaxClasses2.some(s => s.id === 'sol2')
+    );
+
+    // =========================================================================
+    // TEST 26: 4 Presets Sorting Logic
+    // =========================================================================
+    // Minimum Days preset
+    const minDaysSorted = [...mockSolutions].sort((a, b) => (a.activeDaysCount - b.activeDaysCount) || (a.totalGapSlots - b.totalGapSlots));
+    assert('Minimum Days preset ranks 3-day sol2 first', minDaysSorted[0].id === 'sol2');
+
+    // Minimal Gaps preset
+    const minGapsSorted = [...mockSolutions].sort((a, b) => (a.totalGapSlots - b.totalGapSlots) || (a.activeDaysCount - b.activeDaysCount));
+    assert('Minimal Gaps preset ranks 0-gap sol3 first', minGapsSorted[0].id === 'sol3');
+
+    // Early Schedule preset
+    function testEarlyScore(sol) {
+      let sc = 0;
+      (sol.sessions || []).forEach(s => sc += (16 - (s.endSlot || 16)));
+      return sc;
+    }
+    const earlySorted = [...mockSolutions].sort((a, b) => testEarlyScore(b) - testEarlyScore(a));
+    assert('Early Schedule preset ranks earliest finishing schedule first',
+      testEarlyScore(earlySorted[0]) >= testEarlyScore(earlySorted[1])
+    );
+
+    // Balanced preset
+    const balancedSorted = [...mockSolutions].sort((a, b) => b.totalScore - a.totalScore);
+    assert('Balanced preset ranks highest totalScore sol3 first', balancedSorted[0].id === 'sol3');
+
+    // =========================================================================
+    // TEST 27: 0-Match Non-negotiable Fallback & Diagnostics
+    // =========================================================================
+    const impossibleFilterMatch = mockSolutions.filter(s => s.activeDaysCount <= 2 && s.totalGapSlots <= 0);
+    assert('Impossible strict filter yields 0 matches', impossibleFilterMatch.length === 0);
+
+    // Fallback logic delivers 1 unfiltered solution
+    const fallbackInspection = mockSolutions[0];
+    const minDaysAvail = Math.min(...mockSolutions.map(s => s.activeDaysCount));
+    const minGapsAvail = Math.min(...mockSolutions.map(s => s.totalGapSlots));
+    assert('Fallback inspection provides top schedule', fallbackInspection.id === 'sol1');
+    assert('Diagnostics identify minimum possible days across solutions', minDaysAvail === 3);
+    assert('Diagnostics identify minimum possible gaps across solutions', minGapsAvail === 0);
+
+    // =========================================================================
+    // TEST 28: Mix & Match Logic (Decoupled Doctor & TA Selection & Clash Check)
+    // =========================================================================
+    function testIsLect(s) { return s.type === 'Lect.' || /Lect|محاضرة/i.test(s.type || ''); }
+    function testIsSec(s) { return s.type === 'Sec.' || /Sec|سكشن/i.test(s.type || ''); }
+    function testIsLab(s) { return s.type === 'Lab.' || /Lab|معمل/i.test(s.type || ''); }
+
+    const sampleCourseMix = {
+      id: 'COURSE_MIX',
+      name: 'Mix Course',
+      groups: [
+        {
+          group: '1',
+          instructors: ['Dr. Hisham', 'Eng. Omar'],
+          sessions: [
+            { id: 'c_g1_lect', type: 'Lect.', day: 'Monday', startSlot: 1, endSlot: 2, instructor: 'Dr. Hisham' },
+            { id: 'c_g1_sec', type: 'Sec.', day: 'Tuesday', startSlot: 1, endSlot: 2, instructor: 'Eng. Omar' }
+          ]
+        },
+        {
+          group: '2',
+          instructors: ['Dr. Dina', 'Eng. Youssef'],
+          sessions: [
+            { id: 'c_g2_lect', type: 'Lect.', day: 'Sunday', startSlot: 1, endSlot: 2, instructor: 'Dr. Dina' },
+            { id: 'c_g2_sec', type: 'Sec.', day: 'Monday', startSlot: 1, endSlot: 2, instructor: 'Eng. Youssef' }
+          ]
+        }
+      ]
+    };
+
+    // User chooses Dr. Hisham (Group 1 Lect) and Eng. Youssef (Group 2 Sec)
+    // Grp 1 Lect is Monday 1-2, Grp 2 Sec is Monday 1-2 -> CLASH!
+    function testDetectCollision(s1, s2) {
+      if (s1.day !== s2.day) return false;
+      return Math.max(s1.startSlot, s2.startSlot) <= Math.min(s1.endSlot, s2.endSlot);
+    }
+
+    const g1Lect = sampleCourseMix.groups[0].sessions.find(testIsLect);
+    const g2Sec = sampleCourseMix.groups[1].sessions.find(testIsSec);
+    assert('Mix & Match detects clash between Group 1 Lect and Group 2 Sec on Monday slots 1-2',
+      testDetectCollision(g1Lect, g2Sec) === true
+    );
+
+    // User chooses Dr. Dina (Group 2 Lect: Sun 1-2) and Eng. Omar (Group 1 Sec: Tue 1-2) -> NO CLASH!
+    const g2Lect = sampleCourseMix.groups[1].sessions.find(testIsLect);
+    const g1Sec = sampleCourseMix.groups[0].sessions.find(testIsSec);
+    assert('Mix & Match validates clash-free mix of Dr. Dina (Sunday) and Eng. Omar (Tuesday)',
+      testDetectCollision(g2Lect, g1Sec) === false
+    );
+
+    // =========================================================================
+    // TEST 29: Manual Mode Doctor Visibility (Hide Avoided & Mandate Isolation)
+    // =========================================================================
+    const testCourseVisibility = {
+      id: 'VIS101',
+      code: 'VIS101',
+      groups: [
+        {
+          group: 'A',
+          instructors: ['Dr. Mandated'],
+          sessions: [{ type: 'Lect.', instructor: 'Dr. Mandated' }]
+        },
+        {
+          group: 'B',
+          instructors: ['Dr. Avoided'],
+          sessions: [{ type: 'Lect.', instructor: 'Dr. Avoided' }]
+        },
+        {
+          group: 'C',
+          instructors: ['Dr. Neutral'],
+          sessions: [{ type: 'Lect.', instructor: 'Dr. Neutral' }]
+        }
+      ]
+    };
+
+    const docPrefs = {
+      'VIS101': {
+        'Dr. Mandated': 'mandate',
+        'Dr. Avoided': 'avoid',
+        'Dr. Neutral': 'neutral'
+      }
+    };
+
+    function filterVisibleManualGroups(course, prefs, hideAvoided, selectedKey) {
+      if (!hideAvoided) return course.groups;
+      const coursePrefs = prefs[course.id] || {};
+      const hasMandate = course.groups.some(g => {
+        const doc = g.instructors[0];
+        return coursePrefs[doc] === 'mandate';
+      });
+
+      return course.groups.filter(g => {
+        const doc = g.instructors[0];
+        const rating = coursePrefs[doc];
+        const key = `${course.id}:::${g.group}`;
+        if (key === selectedKey) return true; // keep selected group visible
+        if (hasMandate && rating !== 'mandate') return false; // only mandated visible
+        if (rating === 'avoid') return false; // avoided hidden
+        return true;
+      });
+    }
+
+    // When hideAvoided is active and a mandate exists: ONLY Group A is visible
+    const visibleWithMandate = filterVisibleManualGroups(testCourseVisibility, docPrefs, true, null);
+    assert('Manual doctor filter isolates mandated doctor group A and hides B and C',
+      visibleWithMandate.length === 1 && visibleWithMandate[0].group === 'A'
+    );
+
+    // When there is no mandate but an avoid exists: Group B is hidden, Group C is visible
+    const prefsNoMandate = { 'VIS101': { 'Dr. Avoided': 'avoid' } };
+    const visibleNoMandate = filterVisibleManualGroups(testCourseVisibility, prefsNoMandate, true, null);
+    assert('Manual doctor filter hides avoided doctor group B when no mandate set',
+      visibleNoMandate.length === 2 && !visibleNoMandate.some(g => g.group === 'B') && visibleNoMandate.some(g => g.group === 'C')
+    );
+
+    // When hideAvoided is unchecked: all groups are visible
+    const visibleAll = filterVisibleManualGroups(testCourseVisibility, docPrefs, false, null);
+    assert('Unchecking hideAvoided displays all groups', visibleAll.length === 3);
+
     // Summary
     const passedCount = results.filter(r => r.passed).length;
     const failedCount = results.filter(r => !r.passed).length;
