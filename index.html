@@ -649,6 +649,9 @@
           <!-- Dynamic collision warnings -->
         </div>
 
+        <!-- Mix & Match Toolbar Container (Quick switcher & Expand/Collapse) -->
+        <div id="mixmatch-toolbar-container"></div>
+
         <!-- Courses Container -->
         <div id="mixmatch-courses-container" class="mixmatch-courses-list" style="margin-top: 14px;">
           <!-- Populated by JavaScript -->
@@ -657,7 +660,7 @@
 
       <!-- Live Mix & Match Timetable Preview Card -->
       <div class="card" id="mixmatch-timetable-card">
-        <div class="card-header">
+        <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
           <div>
             <div class="card-title">
               <span>📅</span> <span data-i18n="mixMatchTimetableTitle">Live Mixed Schedule Preview</span>
@@ -665,6 +668,11 @@
             <div class="card-subtitle" data-i18n="mixMatchTimetableDesc">
               Visualizes your custom doctor & TA combinations on the weekly timetable in real time
             </div>
+          </div>
+          <div>
+            <button class="btn btn-secondary btn-sm" onclick="App.jumpToMixMatchPicker()" data-i18n="mixMatchJumpToCourses">
+              <span>⬆️</span> <span>Back to Course Pickers</span>
+            </button>
           </div>
         </div>
         <div id="mixmatch-timetable-render-container">

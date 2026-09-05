@@ -41,7 +41,8 @@ const App = (() => {
     },
     filteredSolutions: [],
     filterMismatch: false,
-    mixMatchSelections: {}
+    mixMatchSelections: {},
+    mixMatchExpandedCourses: {}
   };
 
   // Translations
@@ -164,6 +165,14 @@ const App = (() => {
       mixMatchSaveGroupBtn: '💾 Save as Course Custom Group',
       mixMatchTimetableTitle: 'Live Mixed Schedule Preview',
       mixMatchTimetableDesc: 'Live timetable showing your mixed lecture, section, and lab picks across all courses',
+      mixMatchExpandAll: '📂 Expand All',
+      mixMatchCollapseAll: '📁 Collapse All',
+      mixMatchJumpToTimetable: '📅 Timetable Grid ⬇️',
+      mixMatchJumpToCourses: '⬆️ Back to Course Pickers',
+      mixMatchAllCourses: 'All Courses',
+      mixMatchSelectedCount: 'Selected',
+      mixMatchNoPicks: 'No picks yet',
+      mixMatchReady: 'Complete ✓',
       loadingTitle: 'Generating Optimal Schedules...',
       loadingStep1: 'Analyzing course combinations and lecture groups...',
       loadingStep2: 'Filtering blocked times and free days...',
@@ -289,6 +298,14 @@ const App = (() => {
       mixMatchSaveGroupBtn: '💾 حفظ كمجموعة مخصصة للمقرر',
       mixMatchTimetableTitle: 'معاينة حية للجدول المدمج',
       mixMatchTimetableDesc: 'عرض مباشر يوضح اختياراتك المدمجة من محاضرات وسكاشن ومعامل لجميع المواد',
+      mixMatchExpandAll: '📂 توسيع الكل',
+      mixMatchCollapseAll: '📁 طي الكل',
+      mixMatchJumpToTimetable: '📅 معاينة الجدول ⬇️',
+      mixMatchJumpToCourses: '⬆️ العودة لاختيار المواد',
+      mixMatchAllCourses: 'جميع المواد',
+      mixMatchSelectedCount: 'محدد',
+      mixMatchNoPicks: 'لم يتم الاختيار',
+      mixMatchReady: 'مكتمل ✓',
       loadingTitle: 'جاري حساب أفضل الجداول الدراسية...',
       loadingStep1: 'فحص وتجميع مجموعات المواد والمحاضرات...',
       loadingStep2: 'استبعاد أوقات التدريب المحظورة وأيام الفراغ...',
@@ -826,6 +843,16 @@ const App = (() => {
     document.querySelectorAll('.tab-content').forEach(c => {
       c.style.display = c.id === `tab-${tabId}` ? 'block' : 'none';
     });
+
+    // Auto-scroll active tab into view on mobile
+    const activeBtn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+    if (activeBtn && typeof activeBtn.scrollIntoView === 'function') {
+      try {
+        activeBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      } catch (e) {
+        activeBtn.scrollIntoView(false);
+      }
+    }
 
     // When switching to Timetable Results tab, ensure content is rendered
     if (tabId === 'timetable') {
@@ -3748,10 +3775,59 @@ const App = (() => {
     );
   }
 
+  function toggleMixMatchCourseCollapse(courseId) {
+    if (!state.mixMatchExpandedCourses) state.mixMatchExpandedCourses = {};
+    state.mixMatchExpandedCourses[courseId] = !state.mixMatchExpandedCourses[courseId];
+    renderMixMatchTab();
+  }
+
+  function expandAllMixMatchCourses() {
+    if (!state.mixMatchExpandedCourses) state.mixMatchExpandedCourses = {};
+    (state.courses || []).forEach(c => {
+      state.mixMatchExpandedCourses[c.id] = true;
+    });
+    renderMixMatchTab();
+  }
+
+  function collapseAllMixMatchCourses() {
+    if (!state.mixMatchExpandedCourses) state.mixMatchExpandedCourses = {};
+    (state.courses || []).forEach(c => {
+      state.mixMatchExpandedCourses[c.id] = false;
+    });
+    renderMixMatchTab();
+  }
+
+  function jumpToMixMatchCourse(courseId) {
+    if (!state.mixMatchExpandedCourses) state.mixMatchExpandedCourses = {};
+    state.mixMatchExpandedCourses[courseId] = true;
+    renderMixMatchTab();
+    setTimeout(() => {
+      const el = document.getElementById(`mixmatch-card-${courseId}`);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 40);
+  }
+
+  function jumpToMixMatchTimetable() {
+    const el = document.getElementById('mixmatch-timetable-card');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  function jumpToMixMatchPicker() {
+    const el = document.getElementById('tab-mixmatch');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
   function renderMixMatchTab() {
     const container = document.getElementById('mixmatch-courses-container');
     const ttContainer = document.getElementById('mixmatch-timetable-render-container');
     const banner = document.getElementById('mixmatch-collision-banner');
+    const toolbarContainer = document.getElementById('mixmatch-toolbar-container');
     if (!container) return;
 
     const isAr = state.currentLang === 'ar';
@@ -3764,15 +3840,26 @@ const App = (() => {
           <p style="color: var(--text-secondary);">${isAr ? 'يرجى إضافة مواد في التبويب الأول أو تحميل المقررات التجريبية.' : 'Please add courses in Tab 1 or click "Load Example Courses" first.'}</p>
         </div>
       `;
+      if (toolbarContainer) toolbarContainer.innerHTML = '';
       if (ttContainer) ttContainer.innerHTML = '';
       if (banner) banner.style.display = 'none';
       return;
     }
 
     initMixMatchSelections();
+
+    // Default expand state: first course open, remaining collapsed
+    if (!state.mixMatchExpandedCourses) state.mixMatchExpandedCourses = {};
+    if (Object.keys(state.mixMatchExpandedCourses).length === 0) {
+      state.courses.forEach((c, idx) => {
+        state.mixMatchExpandedCourses[c.id] = (idx === 0);
+      });
+    }
+
     const allSelected = getMixMatchAllSelectedSessions();
     const collisions = findMixMatchCollisions(allSelected);
 
+    // Collision Warning Banner
     if (banner) {
       if (collisions.length > 0) {
         banner.style.display = 'block';
@@ -3791,6 +3878,54 @@ const App = (() => {
       }
     }
 
+    // Mix & Match Top Toolbar: Course Pills + View Actions
+    if (toolbarContainer) {
+      const pillsHtml = state.courses.map(course => {
+        const sel = state.mixMatchSelections[course.id] || {};
+        const groups = course.groups || [];
+        const hasLect = groups.some(g => (g.sessions || []).some(isLectureSession));
+        const hasSec = groups.some(g => (g.sessions || []).some(isSectionSession));
+        const hasLab = groups.some(g => (g.sessions || []).some(isLabSession));
+        const totalReq = (hasLect ? 1 : 0) + (hasSec ? 1 : 0) + (hasLab ? 1 : 0);
+
+        let pickedCount = 0;
+        if (hasLect && sel.lectGroup) pickedCount++;
+        if (hasSec && sel.secGroup) pickedCount++;
+        if (hasLab && sel.labGroup) pickedCount++;
+
+        const isExpanded = !!state.mixMatchExpandedCourses[course.id];
+        return `
+          <button type="button" class="mixmatch-quick-pill ${isExpanded ? 'is-active' : ''}"
+                  onclick="App.jumpToMixMatchCourse('${course.id}')"
+                  title="${course.name}">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: ${course.color || '#3B82F6'}; display: inline-block; flex-shrink: 0;"></span>
+            <span>${course.code || course.name}</span>
+            <span class="mixmatch-pill-badge">${pickedCount}/${totalReq}</span>
+          </button>
+        `;
+      }).join('');
+
+      toolbarContainer.innerHTML = `
+        <div class="mixmatch-toolbar">
+          <div class="mixmatch-quick-pills">
+            ${pillsHtml}
+          </div>
+          <div class="mixmatch-view-actions">
+            <button type="button" class="btn btn-secondary btn-xs" onclick="App.expandAllMixMatchCourses()">
+              ${isAr ? '📂 توسيع الكل' : '📂 Expand All'}
+            </button>
+            <button type="button" class="btn btn-secondary btn-xs" onclick="App.collapseAllMixMatchCourses()">
+              ${isAr ? '📁 طي الكل' : '📁 Collapse All'}
+            </button>
+            <button type="button" class="btn btn-primary btn-xs" onclick="App.jumpToMixMatchTimetable()" style="font-weight: 700;">
+              ${isAr ? '📅 معاينة الجدول ⬇️' : '📅 Preview Grid ⬇️'} (${allSelected.length})
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    // Render Courses Accordion
     let coursesHtml = '';
     state.courses.forEach(course => {
       const sel = state.mixMatchSelections[course.id] || {};
@@ -3808,136 +3943,166 @@ const App = (() => {
       const secDocName = selectedSec ? ((selectedSec.sessions.find(isSectionSession) || {}).instructor || selectedSec.instructors?.[0] || '') : '';
       const labDocName = selectedLab ? ((selectedLab.sessions.find(isLabSession) || {}).instructor || selectedLab.instructors?.[0] || '') : '';
 
+      const totalReq = (lectGroups.length > 0 ? 1 : 0) + (secGroups.length > 0 ? 1 : 0) + (labGroups.length > 0 ? 1 : 0);
+      let pickedCount = 0;
+      if (selectedLect) pickedCount++;
+      if (selectedSec) pickedCount++;
+      if (selectedLab) pickedCount++;
+
+      let statusBadge = '';
+      if (pickedCount === totalReq && totalReq > 0) {
+        statusBadge = `<span class="mixmatch-status-badge complete">${isAr ? 'مكتمل ✓' : 'Complete ✓'}</span>`;
+      } else if (pickedCount > 0) {
+        statusBadge = `<span class="mixmatch-status-badge partial">${pickedCount}/${totalReq} ${isAr ? 'محدد' : 'Selected'}</span>`;
+      } else {
+        statusBadge = `<span class="mixmatch-status-badge empty">${isAr ? 'لم يتم الاختيار' : 'No picks yet'}</span>`;
+      }
+
+      const isExpanded = !!state.mixMatchExpandedCourses[course.id];
+
       coursesHtml += `
-        <div class="mixmatch-course-card" style="border-inline-start: 5px solid ${course.color || '#3B82F6'};">
-          <div class="mixmatch-course-header">
+        <div id="mixmatch-card-${course.id}" class="mixmatch-course-card ${isExpanded ? 'is-expanded' : 'is-collapsed'}" style="border-inline-start: 5px solid ${course.color || '#3B82F6'};">
+          <div class="mixmatch-course-header" onclick="App.toggleMixMatchCourseCollapse('${course.id}')" title="${isExpanded ? (isAr ? 'اضغط للطي' : 'Click to collapse') : (isAr ? 'اضغط للتوسيع' : 'Click to expand')}">
             <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-              <span class="course-color-swatch" style="background: ${course.color || '#3B82F6'}; width: 14px; height: 14px; border-radius: 50%;"></span>
-              <span style="font-weight: 800; font-size: 1.05rem; color: var(--text-primary);">${course.name}</span>
-              ${course.code && course.code !== course.name ? `<span style="font-size: 0.85rem; color: var(--text-muted);">(${course.code})</span>` : ''}
+              <span class="course-color-swatch" style="background: ${course.color || '#3B82F6'}; width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0;"></span>
+              <span style="font-weight: 800; font-size: 1.02rem; color: var(--text-primary);">${course.name}</span>
+              ${course.code && course.code !== course.name ? `<span style="font-size: 0.82rem; color: var(--text-muted);">(${course.code})</span>` : ''}
             </div>
-            <div class="mixmatch-summary-pills">
-              ${selectedLect ? `<span class="mixmatch-pick-pill lect-pill">🎓 Lect: Grp ${selectedLect.group} ${lectDocName ? `(${lectDocName})` : ''}</span>` : ''}
-              ${selectedSec ? `<span class="mixmatch-pick-pill sec-pill">🔬 Sec: Grp ${selectedSec.group} ${secDocName ? `(${secDocName})` : ''}</span>` : ''}
-              ${selectedLab ? `<span class="mixmatch-pick-pill lab-pill">⚗️ Lab: Grp ${selectedLab.group} ${labDocName ? `(${labDocName})` : ''}</span>` : ''}
-              ${(!selectedLect && !selectedSec && !selectedLab) ? `<span style="font-size: 0.8rem; color: var(--text-muted); font-style: italic;">${isAr ? 'لم يتم اختيار حصص' : 'No sessions selected'}</span>` : ''}
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+              <div class="mixmatch-summary-pills">
+                ${selectedLect ? `<span class="mixmatch-pick-pill lect-pill">🎓 Lect: Grp ${selectedLect.group} ${lectDocName ? `(${lectDocName})` : ''}</span>` : ''}
+                ${selectedSec ? `<span class="mixmatch-pick-pill sec-pill">🔬 Sec: Grp ${selectedSec.group} ${secDocName ? `(${secDocName})` : ''}</span>` : ''}
+                ${selectedLab ? `<span class="mixmatch-pick-pill lab-pill">⚗️ Lab: Grp ${selectedLab.group} ${labDocName ? `(${labDocName})` : ''}</span>` : ''}
+                ${statusBadge}
+              </div>
+              <span class="mixmatch-chevron ${isExpanded ? 'open' : ''}">▼</span>
             </div>
           </div>
 
-          <div class="mixmatch-columns">
-            <!-- Lecture Column -->
-            <div class="mixmatch-col">
-              <div class="mixmatch-col-title">
-                <span>🎓</span> <span>${isAr ? 'محاضرة (الدكتور)' : 'Lecture (Doctor)'}</span>
-              </div>
-              <div class="mixmatch-options-list">
-                ${lectGroups.length === 0 ? `<div class="mixmatch-empty-type">${isAr ? 'لا توجد محاضرات' : 'No Lectures'}</div>` : ''}
-                ${lectGroups.map(grp => {
-                  const isSelected = sel.lectGroup === grp.group;
-                  const lectSessions = (grp.sessions || []).filter(isLectureSession);
-                  const instructor = lectSessions[0]?.instructor || grp.instructors?.[0] || '';
-                  const prefSummary = getGroupDoctorPrefSummary(course, grp);
-                  const prefBadge = getGroupDoctorPrefBadgesHtml(prefSummary, isAr);
-                  const optClash = checkMixMatchOptionConflict(course.id, 'lect', grp);
+          ${isExpanded ? `
+            <div class="mixmatch-course-body">
+              <div class="mixmatch-columns">
+                <!-- Lecture Column -->
+                <div class="mixmatch-col">
+                  <div class="mixmatch-col-title">
+                    <span>🎓</span> <span>${isAr ? 'محاضرة (الدكتور)' : 'Lecture (Doctor)'}</span>
+                  </div>
+                  <div class="mixmatch-options-list">
+                    ${lectGroups.length === 0 ? `<div class="mixmatch-empty-type">${isAr ? 'لا توجد محاضرات' : 'No Lectures'}</div>` : ''}
+                    ${lectGroups.map(grp => {
+                      const isSelected = sel.lectGroup === grp.group;
+                      const lectSessions = (grp.sessions || []).filter(isLectureSession);
+                      const instructor = lectSessions[0]?.instructor || grp.instructors?.[0] || '';
+                      const prefSummary = getGroupDoctorPrefSummary(course, grp);
+                      const prefBadge = getGroupDoctorPrefBadgesHtml(prefSummary, isAr);
+                      const optClash = checkMixMatchOptionConflict(course.id, 'lect', grp);
 
-                  return `
-                    <div class="mixmatch-session-option ${isSelected ? 'is-selected' : ''} ${optClash.clashing ? 'is-clashing' : ''}"
-                         onclick="App.selectMixMatchOption('${course.id}', 'lectGroup', '${grp.group}')">
-                      <div class="mixmatch-option-head">
-                        <span class="mixmatch-group-tag">Group ${grp.group}</span>
-                        ${prefBadge}
-                        ${isSelected ? `<span class="mixmatch-selected-tick">✓</span>` : ''}
-                      </div>
-                      <div class="mixmatch-inst-name">👨‍🏫 ${instructor || (isAr ? 'غير محدد' : 'Not Specified')}</div>
-                      <div class="mixmatch-times-list">
-                        ${lectSessions.map(s => {
-                          const timeStr = ScheduleRenderer.formatSlotTimeRange(s.startSlot, s.endSlot);
-                          return `<div>📅 ${s.day} (${timeStr})</div>`;
-                        }).join('')}
-                      </div>
-                      ${optClash.clashing ? `<div class="mixmatch-clash-hint">⚠️ ${optClash.detail}</div>` : ''}
+                      return `
+                        <div class="mixmatch-session-option ${isSelected ? 'is-selected' : ''} ${optClash.clashing ? 'is-clashing' : ''}"
+                             onclick="event.stopPropagation(); App.selectMixMatchOption('${course.id}', 'lectGroup', '${grp.group}')">
+                          <div class="mixmatch-option-head">
+                            <div style="display: flex; align-items: center; gap: 6px;">
+                              <span class="mixmatch-group-tag">Group ${grp.group}</span>
+                              ${prefBadge}
+                            </div>
+                            ${isSelected ? `<span class="mixmatch-selected-tick">✓ ${isAr ? 'محدد' : 'Selected'}</span>` : ''}
+                          </div>
+                          <div class="mixmatch-inst-name" title="${instructor}">👨‍🏫 ${instructor || (isAr ? 'غير محدد' : 'Not Specified')}</div>
+                          <div class="mixmatch-times-list">
+                            ${lectSessions.map(s => {
+                              const timeStr = ScheduleRenderer.formatSlotTimeRange(s.startSlot, s.endSlot);
+                              return `<span class="mixmatch-time-chip">📅 ${s.day} (${timeStr})</span>`;
+                            }).join('')}
+                          </div>
+                          ${optClash.clashing ? `<div class="mixmatch-clash-hint">⚠️ ${optClash.detail}</div>` : ''}
+                        </div>
+                      `;
+                    }).join('')}
+                  </div>
+                </div>
+
+                <!-- Section Column (only if course has sections) -->
+                ${secGroups.length > 0 ? `
+                  <div class="mixmatch-col">
+                    <div class="mixmatch-col-title">
+                      <span>🔬</span> <span>${isAr ? 'سكشن (المعيد)' : 'Section (TA)'}</span>
                     </div>
-                  `;
-                }).join('')}
+                    <div class="mixmatch-options-list">
+                      ${secGroups.map(grp => {
+                        const isSelected = sel.secGroup === grp.group;
+                        const secSessions = (grp.sessions || []).filter(isSectionSession);
+                        const instructor = secSessions[0]?.instructor || grp.instructors?.[0] || '';
+                        const prefSummary = getGroupDoctorPrefSummary(course, grp);
+                        const prefBadge = getGroupDoctorPrefBadgesHtml(prefSummary, isAr);
+                        const optClash = checkMixMatchOptionConflict(course.id, 'sec', grp);
+
+                        return `
+                          <div class="mixmatch-session-option ${isSelected ? 'is-selected' : ''} ${optClash.clashing ? 'is-clashing' : ''}"
+                               onclick="event.stopPropagation(); App.selectMixMatchOption('${course.id}', 'secGroup', '${grp.group}')">
+                            <div class="mixmatch-option-head">
+                              <div style="display: flex; align-items: center; gap: 6px;">
+                                <span class="mixmatch-group-tag">Group ${grp.group}</span>
+                                ${prefBadge}
+                              </div>
+                              ${isSelected ? `<span class="mixmatch-selected-tick">✓ ${isAr ? 'محدد' : 'Selected'}</span>` : ''}
+                            </div>
+                            <div class="mixmatch-inst-name" title="${instructor}">🔬 ${instructor || (isAr ? 'معيد السكشن' : 'Section TA')}</div>
+                            <div class="mixmatch-times-list">
+                              ${secSessions.map(s => {
+                                const timeStr = ScheduleRenderer.formatSlotTimeRange(s.startSlot, s.endSlot);
+                                return `<span class="mixmatch-time-chip">📅 ${s.day} (${timeStr})</span>`;
+                              }).join('')}
+                            </div>
+                            ${optClash.clashing ? `<div class="mixmatch-clash-hint">⚠️ ${optClash.detail}</div>` : ''}
+                          </div>
+                        `;
+                      }).join('')}
+                    </div>
+                  </div>
+                ` : ''}
+
+                <!-- Lab Column (only if course has labs) -->
+                ${labGroups.length > 0 ? `
+                  <div class="mixmatch-col">
+                    <div class="mixmatch-col-title">
+                      <span>⚗️</span> <span>${isAr ? 'معمل (المعيد)' : 'Lab (TA)'}</span>
+                    </div>
+                    <div class="mixmatch-options-list">
+                      ${labGroups.map(grp => {
+                        const isSelected = sel.labGroup === grp.group;
+                        const labSessions = (grp.sessions || []).filter(isLabSession);
+                        const instructor = labSessions[0]?.instructor || grp.instructors?.[0] || '';
+                        const prefSummary = getGroupDoctorPrefSummary(course, grp);
+                        const prefBadge = getGroupDoctorPrefBadgesHtml(prefSummary, isAr);
+                        const optClash = checkMixMatchOptionConflict(course.id, 'lab', grp);
+
+                        return `
+                          <div class="mixmatch-session-option ${isSelected ? 'is-selected' : ''} ${optClash.clashing ? 'is-clashing' : ''}"
+                               onclick="event.stopPropagation(); App.selectMixMatchOption('${course.id}', 'labGroup', '${grp.group}')">
+                            <div class="mixmatch-option-head">
+                              <div style="display: flex; align-items: center; gap: 6px;">
+                                <span class="mixmatch-group-tag">Group ${grp.group}</span>
+                                ${prefBadge}
+                              </div>
+                              ${isSelected ? `<span class="mixmatch-selected-tick">✓ ${isAr ? 'محدد' : 'Selected'}</span>` : ''}
+                            </div>
+                            <div class="mixmatch-inst-name" title="${instructor}">⚗️ ${instructor || (isAr ? 'معيد المعمل' : 'Lab TA')}</div>
+                            <div class="mixmatch-times-list">
+                              ${labSessions.map(s => {
+                                const timeStr = ScheduleRenderer.formatSlotTimeRange(s.startSlot, s.endSlot);
+                                return `<span class="mixmatch-time-chip">📅 ${s.day} (${timeStr})</span>`;
+                              }).join('')}
+                            </div>
+                            ${optClash.clashing ? `<div class="mixmatch-clash-hint">⚠️ ${optClash.detail}</div>` : ''}
+                          </div>
+                        `;
+                      }).join('')}
+                    </div>
+                  </div>
+                ` : ''}
               </div>
             </div>
-
-            <!-- Section Column (only if course has sections) -->
-            ${secGroups.length > 0 ? `
-              <div class="mixmatch-col">
-                <div class="mixmatch-col-title">
-                  <span>🔬</span> <span>${isAr ? 'سكشن (المعيد)' : 'Section (TA)'}</span>
-                </div>
-                <div class="mixmatch-options-list">
-                  ${secGroups.map(grp => {
-                    const isSelected = sel.secGroup === grp.group;
-                    const secSessions = (grp.sessions || []).filter(isSectionSession);
-                    const instructor = secSessions[0]?.instructor || grp.instructors?.[0] || '';
-                    const prefSummary = getGroupDoctorPrefSummary(course, grp);
-                    const prefBadge = getGroupDoctorPrefBadgesHtml(prefSummary, isAr);
-                    const optClash = checkMixMatchOptionConflict(course.id, 'sec', grp);
-
-                    return `
-                      <div class="mixmatch-session-option ${isSelected ? 'is-selected' : ''} ${optClash.clashing ? 'is-clashing' : ''}"
-                           onclick="App.selectMixMatchOption('${course.id}', 'secGroup', '${grp.group}')">
-                        <div class="mixmatch-option-head">
-                          <span class="mixmatch-group-tag">Group ${grp.group}</span>
-                          ${prefBadge}
-                          ${isSelected ? `<span class="mixmatch-selected-tick">✓</span>` : ''}
-                        </div>
-                        <div class="mixmatch-inst-name">🔬 ${instructor || (isAr ? 'معيد السكشن' : 'Section TA')}</div>
-                        <div class="mixmatch-times-list">
-                          ${secSessions.map(s => {
-                            const timeStr = ScheduleRenderer.formatSlotTimeRange(s.startSlot, s.endSlot);
-                            return `<div>📅 ${s.day} (${timeStr})</div>`;
-                          }).join('')}
-                        </div>
-                        ${optClash.clashing ? `<div class="mixmatch-clash-hint">⚠️ ${optClash.detail}</div>` : ''}
-                      </div>
-                    `;
-                  }).join('')}
-                </div>
-              </div>
-            ` : ''}
-
-            <!-- Lab Column (only if course has labs) -->
-            ${labGroups.length > 0 ? `
-              <div class="mixmatch-col">
-                <div class="mixmatch-col-title">
-                  <span>⚗️</span> <span>${isAr ? 'معمل (المعيد)' : 'Lab (TA)'}</span>
-                </div>
-                <div class="mixmatch-options-list">
-                  ${labGroups.map(grp => {
-                    const isSelected = sel.labGroup === grp.group;
-                    const labSessions = (grp.sessions || []).filter(isLabSession);
-                    const instructor = labSessions[0]?.instructor || grp.instructors?.[0] || '';
-                    const prefSummary = getGroupDoctorPrefSummary(course, grp);
-                    const prefBadge = getGroupDoctorPrefBadgesHtml(prefSummary, isAr);
-                    const optClash = checkMixMatchOptionConflict(course.id, 'lab', grp);
-
-                    return `
-                      <div class="mixmatch-session-option ${isSelected ? 'is-selected' : ''} ${optClash.clashing ? 'is-clashing' : ''}"
-                           onclick="App.selectMixMatchOption('${course.id}', 'labGroup', '${grp.group}')">
-                        <div class="mixmatch-option-head">
-                          <span class="mixmatch-group-tag">Group ${grp.group}</span>
-                          ${prefBadge}
-                          ${isSelected ? `<span class="mixmatch-selected-tick">✓</span>` : ''}
-                        </div>
-                        <div class="mixmatch-inst-name">⚗️ ${instructor || (isAr ? 'معيد المعمل' : 'Lab TA')}</div>
-                        <div class="mixmatch-times-list">
-                          ${labSessions.map(s => {
-                            const timeStr = ScheduleRenderer.formatSlotTimeRange(s.startSlot, s.endSlot);
-                            return `<div>📅 ${s.day} (${timeStr})</div>`;
-                          }).join('')}
-                        </div>
-                        ${optClash.clashing ? `<div class="mixmatch-clash-hint">⚠️ ${optClash.detail}</div>` : ''}
-                      </div>
-                    `;
-                  }).join('')}
-                </div>
-              </div>
-            ` : ''}
-          </div>
+          ` : ''}
         </div>
       `;
     });
@@ -4389,7 +4554,13 @@ const App = (() => {
     selectMixMatchOption,
     resetMixMatchSelections,
     applyMixMatchToManual,
-    saveMixMatchAsCourseGroups
+    saveMixMatchAsCourseGroups,
+    toggleMixMatchCourseCollapse,
+    expandAllMixMatchCourses,
+    collapseAllMixMatchCourses,
+    jumpToMixMatchCourse,
+    jumpToMixMatchTimetable,
+    jumpToMixMatchPicker
   };
 
   return window.App;

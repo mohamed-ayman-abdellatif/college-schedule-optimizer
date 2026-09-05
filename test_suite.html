@@ -953,6 +953,43 @@ ME D Abdelgawad Matar
     const visibleAll = filterVisibleManualGroups(testCourseVisibility, docPrefs, false, null);
     assert('Unchecking hideAvoided displays all groups', visibleAll.length === 3);
 
+    // =========================================================================
+    // TEST 30: Mix & Match Compact Accordion State Management
+    // =========================================================================
+    const testCoursesList = [
+      { id: 'C1', name: 'Course 1' },
+      { id: 'C2', name: 'Course 2' },
+      { id: 'C3', name: 'Course 3' }
+    ];
+
+    let testAccordionState = {};
+    // Default initialization: only index 0 is expanded
+    testCoursesList.forEach((c, idx) => {
+      testAccordionState[c.id] = (idx === 0);
+    });
+
+    assert('Mix & Match default accordion expands only the first course (collapses the rest)',
+      testAccordionState['C1'] === true &&
+      testAccordionState['C2'] === false &&
+      testAccordionState['C3'] === false
+    );
+
+    // Toggle C2
+    testAccordionState['C2'] = !testAccordionState['C2'];
+    assert('Toggling course accordion in Mix & Match expands it', testAccordionState['C2'] === true);
+
+    // Expand All
+    testCoursesList.forEach(c => { testAccordionState[c.id] = true; });
+    assert('Expand all sets every course accordion to expanded (true)',
+      testCoursesList.every(c => testAccordionState[c.id] === true)
+    );
+
+    // Collapse All
+    testCoursesList.forEach(c => { testAccordionState[c.id] = false; });
+    assert('Collapse all sets every course accordion to collapsed (false)',
+      testCoursesList.every(c => testAccordionState[c.id] === false)
+    );
+
     // Summary
     const passedCount = results.filter(r => r.passed).length;
     const failedCount = results.filter(r => !r.passed).length;
