@@ -1272,6 +1272,15 @@ const App = (() => {
   }
 
   /**
+   * Helper to check if a doctor name refers to an unspecified / unassigned doctor
+   */
+  function isUnspecifiedDoctor(name) {
+    if (!name) return true;
+    const s = String(name).trim().toLowerCase();
+    return s === '' || s === 'not specified' || s === 'غير محدد' || s === 'unspecified' || s === 'دكتور غير محدد' || s === 'not specified (doctor)';
+  }
+
+  /**
    * Cleans prefixes for pure alphabetical sorting of names
    */
   function getCleanSortName(name) {
@@ -1282,10 +1291,11 @@ const App = (() => {
 
   /**
    * Determines if a person is a Doctor or an Instructor.
-   * True if has doctor prefix or teaches any lecture session.
+   * True if has doctor prefix, is unspecified doctor, or teaches any lecture session.
    */
   function isPersonDoctor(personName, course) {
-    if (!personName || personName === 'Not Specified') return false;
+    if (isUnspecifiedDoctor(personName)) return true;
+    if (!personName) return false;
 
     // 1. Explicit doctor title prefix (د. / د / Dr. / Dr / Doctor / Prof. / أ.د)
     if (/^(د\.|د\/|د\s+|Dr\.|Dr\s+|Doctor\s+|Prof\.|أ\.د\.?)/i.test(personName)) {
@@ -1331,7 +1341,7 @@ const App = (() => {
    * Formats a person's display name, prepending 'د. ' or 'Dr. ' if doctor.
    */
   function formatDoctorName(name, isDoc) {
-    if (!name || name === 'Not Specified') return name;
+    if (!name || isUnspecifiedDoctor(name)) return name;
     if (!isDoc) return name;
 
     // If already starts with title, return as is
@@ -1357,7 +1367,7 @@ const App = (() => {
           if (grp.sessions) {
             grp.sessions.forEach(sess => {
               const inst = sess.instructor || '';
-              if (inst && inst !== 'Not Specified') {
+              if (inst && !isUnspecifiedDoctor(inst)) {
                 if (sess.type === 'Lect.' || /Lect|محاضرة/i.test(sess.type || '')) {
                   const docFormatted = formatDoctorName(inst, true);
                   sess.instructor = docFormatted;
@@ -1369,7 +1379,7 @@ const App = (() => {
 
           if (grp.instructors && Array.isArray(grp.instructors)) {
             grp.instructors = grp.instructors.map(name => {
-              if (doctorsSet.has(name) || isPersonDoctor(name, course)) {
+              if (!isUnspecifiedDoctor(name) && (doctorsSet.has(name) || isPersonDoctor(name, course))) {
                 return formatDoctorName(name, true);
               }
               return name;
@@ -1381,7 +1391,7 @@ const App = (() => {
       if (course.slots) {
         course.slots.forEach(slot => {
           const inst = slot.instructor || '';
-          if (inst && inst !== 'Not Specified') {
+          if (inst && !isUnspecifiedDoctor(inst)) {
             if (slot.type === 'Lect.' || /Lect|محاضرة/i.test(slot.type || '')) {
               slot.instructor = formatDoctorName(inst, true);
             }
@@ -1391,7 +1401,7 @@ const App = (() => {
 
       if (course.instructors && Array.isArray(course.instructors)) {
         course.instructors = course.instructors.map(name => {
-          if (isPersonDoctor(name, course)) {
+          if (!isUnspecifiedDoctor(name) && isPersonDoctor(name, course)) {
             return formatDoctorName(name, true);
           }
           return name;
@@ -1403,6 +1413,12 @@ const App = (() => {
   function getRatingForPerson(courseCode, formatted, original) {
     const prefs = state.doctorPreferences[courseCode];
     if (!prefs) return 'neutral';
+    if (isUnspecifiedDoctor(formatted) || isUnspecifiedDoctor(original)) {
+      for (const [key, val] of Object.entries(prefs)) {
+        if (isUnspecifiedDoctor(key)) return val;
+      }
+      return 'neutral';
+    }
     if (prefs[formatted]) return prefs[formatted];
     if (original && prefs[original]) return prefs[original];
     const clean = getCleanSortName(formatted);
@@ -1414,12 +1430,24 @@ const App = (() => {
    * Helper to retrieve preference for a doctor in a course, checking all possible keys
    */
   function getDoctorPrefForCourse(course, doctorName) {
-    if (!doctorName) return 'neutral';
-    const doc = String(doctorName).trim();
-    if (!doc || doc === 'Not Specified' || doc === 'غير محدد') return 'neutral';
-
+    const doc = String(doctorName || '').trim();
     const courseObj = (typeof course === 'object' && course !== null) ? course : {};
     const courseKeys = [courseObj.code, courseObj.id, courseObj.name, course].filter(k => typeof k === 'string' && k.trim());
+
+    if (isUnspecifiedDoctor(doc)) {
+      for (const key of courseKeys) {
+        const rating = getRatingForPerson(key, 'Not Specified', 'غير محدد');
+        if (rating && rating !== 'neutral') return rating;
+      }
+      for (const [cKey, prefs] of Object.entries(state.doctorPreferences || {})) {
+        if (courseKeys.includes(cKey)) {
+          for (const [pDoc, pRating] of Object.entries(prefs)) {
+            if (isUnspecifiedDoctor(pDoc)) return pRating;
+          }
+        }
+      }
+      return 'neutral';
+    }
 
     for (const key of courseKeys) {
       const rating = getRatingForPerson(key, doc, doc);
@@ -1451,12 +1479,20 @@ const App = (() => {
     const courseDocs = new Set();
     (grp.instructors || []).forEach(i => {
       const s = (i || '').trim();
-      if (s && s !== 'Not Specified' && s !== 'غير محدد') courseDocs.add(s);
+      if (s && !isUnspecifiedDoctor(s)) courseDocs.add(s);
     });
     (grp.sessions || []).forEach(sess => {
       const s = (sess.instructor || '').trim();
-      if (s && s !== 'Not Specified' && s !== 'غير محدد') courseDocs.add(s);
+      if (s && !isUnspecifiedDoctor(s)) courseDocs.add(s);
     });
+
+    const hasUnspecifiedLect = (grp.sessions || []).some(s => {
+      const isLect = s.type === 'Lect.' || /Lect|محاضرة/i.test(s.type || '');
+      return isLect && (!s.instructor || isUnspecifiedDoctor(s.instructor));
+    });
+    if (hasUnspecifiedLect) {
+      courseDocs.add('Not Specified');
+    }
 
     const ratedDocs = [];
     courseDocs.forEach(doc => {
@@ -1493,8 +1529,9 @@ const App = (() => {
   }
 
   function getSessionDoctorPrefBadgeHtml(course, instructor, isAr) {
-    if (!instructor) return '';
-    const rating = getDoctorPrefForCourse(course, instructor);
+    const isUnspec = !instructor || isUnspecifiedDoctor(instructor);
+    const targetDoc = isUnspec ? 'Not Specified' : instructor;
+    const rating = getDoctorPrefForCourse(course, targetDoc);
     if (rating === 'avoid') {
       return `<span class="manual-pref-badge badge-avoid" title="${isAr ? 'دكتور مستبعد في تفضيلاتك (مسموح باختياره يدوياً)' : 'Avoided Doctor (Allowed in manual mode)'}">🚫 ${isAr ? 'مستبعد' : 'Avoided'}</span>`;
     }
@@ -1528,16 +1565,32 @@ const App = (() => {
     state.courses.forEach(course => {
       // Collect all instructors from course, groups, and sessions
       const rawInstructors = new Set(course.instructors || []);
+      let hasUnspecifiedLect = false;
       if (course.groups) {
         course.groups.forEach(g => {
-          (g.instructors || []).forEach(inst => rawInstructors.add(inst));
+          (g.instructors || []).forEach(inst => {
+            if (inst && !isUnspecifiedDoctor(inst)) rawInstructors.add(inst);
+          });
           (g.sessions || []).forEach(s => {
-            if (s.instructor && s.instructor !== 'Not Specified') rawInstructors.add(s.instructor);
+            if (s.instructor && !isUnspecifiedDoctor(s.instructor)) rawInstructors.add(s.instructor);
+            const isLect = s.type === 'Lect.' || /Lect|محاضرة/i.test(s.type || '');
+            if (isLect && (!s.instructor || isUnspecifiedDoctor(s.instructor))) {
+              hasUnspecifiedLect = true;
+            }
           });
         });
       }
+      if (course.slots) {
+        course.slots.forEach(s => {
+          if (s.instructor && !isUnspecifiedDoctor(s.instructor)) rawInstructors.add(s.instructor);
+          const isLect = s.type === 'Lect.' || /Lect|محاضرة/i.test(s.type || '');
+          if (isLect && (!s.instructor || isUnspecifiedDoctor(s.instructor))) {
+            hasUnspecifiedLect = true;
+          }
+        });
+      }
 
-      if (rawInstructors.size === 0) return;
+      if (rawInstructors.size === 0 && !hasUnspecifiedLect) return;
 
       const courseCode = course.code || course.id;
       if (!state.doctorPreferences[courseCode]) {
@@ -1549,7 +1602,7 @@ const App = (() => {
       const instructors = [];
 
       rawInstructors.forEach(person => {
-        if (!person || person === 'Not Specified') return;
+        if (!person || isUnspecifiedDoctor(person)) return;
         const isDoc = isPersonDoctor(person, course);
         const formatted = formatDoctorName(person, isDoc);
         if (isDoc) {
@@ -1559,16 +1612,29 @@ const App = (() => {
         }
       });
 
+      if (hasUnspecifiedLect) {
+        const unspecFormatted = state.currentLang === 'ar' ? 'غير محدد' : 'Not Specified';
+        doctors.push({
+          original: 'Not Specified',
+          formatted: unspecFormatted,
+          isDoctor: true,
+          isUnspecified: true
+        });
+      }
+
       // Deduplicate by formatted name
       const uniqueDocs = Array.from(new Map(doctors.map(d => [d.formatted, d])).values());
       const uniqueInsts = Array.from(new Map(instructors.map(i => [i.formatted, i])).values());
 
-      // 1. Sort Doctors in alphabetical order
-      uniqueDocs.sort((a, b) => {
+      // 1. Sort Doctors: Named doctors in alphabetical order, followed by Unspecified doctor at the end
+      const namedDocs = uniqueDocs.filter(d => !d.isUnspecified);
+      const unspecDocs = uniqueDocs.filter(d => d.isUnspecified);
+      namedDocs.sort((a, b) => {
         const nameA = getCleanSortName(a.formatted);
         const nameB = getCleanSortName(b.formatted);
         return nameA.localeCompare(nameB, undefined, { sensitivity: 'base' });
       });
+      const sortedDocs = [...namedDocs, ...unspecDocs];
 
       // 2. Sort Instructors in alphabetical order
       uniqueInsts.sort((a, b) => {
@@ -1582,16 +1648,16 @@ const App = (() => {
           <div style="font-weight: 700; font-size: 1.05rem; margin-bottom: 10px; color: ${course.color}; display: flex; align-items: center; justify-content: space-between;">
             <span>${course.name} (${courseCode})</span>
             <span style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted);">
-              ${uniqueDocs.length} ${state.currentLang === 'ar' ? 'دكاترة' : 'Doctors'} • ${uniqueInsts.length} ${state.currentLang === 'ar' ? 'معيدين' : 'TAs'}
+              ${sortedDocs.length} ${state.currentLang === 'ar' ? 'دكاترة' : 'Doctors'} • ${uniqueInsts.length} ${state.currentLang === 'ar' ? 'معيدين' : 'TAs'}
             </span>
           </div>
           <div>
       `;
 
       // Render Doctors first (alphabetical order & highlighted)
-      if (uniqueDocs.length > 0) {
+      if (sortedDocs.length > 0) {
         html += `<div class="pref-subgroup-header">${t.doctorsSubheading}</div>`;
-        uniqueDocs.forEach(item => {
+        sortedDocs.forEach(item => {
           const currentPref = getRatingForPerson(courseCode, item.formatted, item.original);
           const isMandated = currentPref === 'mandate';
           const isAvoided = currentPref === 'avoid';
@@ -1600,7 +1666,7 @@ const App = (() => {
           html += `
             <div class="doctor-pref-item is-doctor ${isMandated ? 'is-mandated' : ''} ${isAvoided ? 'is-avoided' : ''}">
               <div class="doctor-name-col">
-                <span style="font-size: 16px;">${isMandated ? '🌟' : '🎓'}</span>
+                <span style="font-size: 16px;">${isMandated ? '🌟' : (item.isUnspecified ? '❓' : '🎓')}</span>
                 <span style="font-weight: 700; color: var(--text-primary); ${isAvoided ? 'text-decoration: line-through; opacity: 0.6;' : ''}">${item.formatted}</span>
                 <span class="role-badge doctor-badge">${t.doctorBadge}</span>
                 ${isMandated ? `<span class="role-badge badge-mandated" style="background: linear-gradient(135deg, #F59E0B, #D97706); color: white; font-weight: 800; box-shadow: 0 1px 6px rgba(245, 158, 11, 0.4);">🌟🔒 ${state.currentLang === 'ar' ? 'إجباري في الجدول' : 'Mandated'}</span>` : ''}
@@ -1794,6 +1860,11 @@ const App = (() => {
         const rating = coursePrefs[name];
         if (!rating || rating === 'neutral') return;
 
+        if (isUnspecifiedDoctor(name)) {
+          clean[code]['Not Specified'] = rating;
+          return;
+        }
+
         const existingKey = Object.keys(clean[code]).find(k => getCleanSortName(k) === getCleanSortName(name));
         if (existingKey) {
           if (name.startsWith('د.') && !existingKey.startsWith('د.')) {
@@ -1824,10 +1895,17 @@ const App = (() => {
       state.doctorPreferences[courseCode] = {};
     }
 
+    const isUnspec = isUnspecifiedDoctor(doctorName);
+    const canonicalName = isUnspec ? 'Not Specified' : doctorName;
+
     // Clean up any old duplicate cleaned-name alias
     const cleanName = getCleanSortName(doctorName);
     if (cleanName && cleanName !== doctorName) {
       delete state.doctorPreferences[courseCode][cleanName];
+    }
+    if (isUnspec) {
+      delete state.doctorPreferences[courseCode]['غير محدد'];
+      delete state.doctorPreferences[courseCode]['Not Specified'];
     }
 
     // If setting to mandate, demote any previous mandated doctor in this course to avoid impossible conflicts
@@ -1840,9 +1918,9 @@ const App = (() => {
     }
 
     if (rating === 'neutral') {
-      delete state.doctorPreferences[courseCode][doctorName];
+      delete state.doctorPreferences[courseCode][canonicalName];
     } else {
-      state.doctorPreferences[courseCode][doctorName] = rating;
+      state.doctorPreferences[courseCode][canonicalName] = rating;
     }
 
     // Persist to localStorage immediately
@@ -2064,24 +2142,36 @@ const App = (() => {
     const doctorMap = new Map();
 
     state.courses.forEach(course => {
+      let hasUnspec = false;
       (course.groups || []).forEach(grp => {
         (grp.instructors || []).forEach(rawInst => {
           const inst = (rawInst || '').trim();
-          if (!inst || inst === 'Not Specified' || inst === 'غير محدد') return;
+          if (!inst || isUnspecifiedDoctor(inst)) return;
           if (!doctorMap.has(inst)) doctorMap.set(inst, new Set());
           doctorMap.get(inst).add(course.name || course.code);
         });
         (grp.sessions || []).forEach(sess => {
           const inst = (sess.instructor || '').trim();
-          if (!inst || inst === 'Not Specified' || inst === 'غير محدد') return;
+          const isLect = sess.type === 'Lect.' || /Lect|محاضرة/i.test(sess.type || '');
+          if (isLect && (!inst || isUnspecifiedDoctor(inst))) {
+            hasUnspec = true;
+          }
+          if (!inst || isUnspecifiedDoctor(inst)) return;
           if (!doctorMap.has(inst)) doctorMap.set(inst, new Set());
           doctorMap.get(inst).add(course.name || course.code);
         });
       });
+      if (hasUnspec) {
+        const unspecKey = isAr ? 'غير محدد' : 'Not Specified';
+        if (!doctorMap.has(unspecKey)) doctorMap.set(unspecKey, new Set());
+        doctorMap.get(unspecKey).add(course.name || course.code);
+      }
     });
 
     const doctorsList = Array.from(doctorMap.keys());
     doctorsList.sort((a, b) => {
+      if (isUnspecifiedDoctor(a)) return 1;
+      if (isUnspecifiedDoctor(b)) return -1;
       const aIsDoc = a.includes('د.') || a.toLowerCase().includes('dr.');
       const bIsDoc = b.includes('د.') || b.toLowerCase().includes('dr.');
       if (aIsDoc && !bIsDoc) return -1;
@@ -2096,7 +2186,8 @@ const App = (() => {
       const coursesTaught = Array.from(doctorMap.get(doc)).join(', ');
       const isSelected = doc === currentVal ? 'selected' : '';
       const isDoc = doc.includes('د.') || doc.toLowerCase().includes('dr.');
-      const icon = isDoc ? '🎓' : '🔬';
+      const isUnspec = isUnspecifiedDoctor(doc);
+      const icon = isUnspec ? '❓' : (isDoc ? '🎓' : '🔬');
 
       let prefTag = '';
       for (const course of state.courses) {
@@ -2139,8 +2230,16 @@ const App = (() => {
         let matches = false;
 
         if (targetDoctor) {
-          const inGrp = (grp.instructors || []).some(i => i.trim() === targetDoctor);
-          const inSess = (grp.sessions || []).some(s => (s.instructor || '').trim() === targetDoctor);
+          const isUnspecTarget = isUnspecifiedDoctor(targetDoctor);
+          const inGrp = (grp.instructors || []).some(i => {
+            if (isUnspecTarget) return isUnspecifiedDoctor(i);
+            return i.trim() === targetDoctor || (typeof ScheduleOptimizer !== 'undefined' && ScheduleOptimizer.matchesDoctor(i, targetDoctor));
+          });
+          const inSess = (grp.sessions || []).some(s => {
+            const isLect = s.type === 'Lect.' || /Lect|محاضرة/i.test(s.type || '');
+            if (isUnspecTarget) return isLect && (!s.instructor || isUnspecifiedDoctor(s.instructor));
+            return (s.instructor || '').trim() === targetDoctor || (typeof ScheduleOptimizer !== 'undefined' && ScheduleOptimizer.matchesDoctor(s.instructor, targetDoctor));
+          });
           if (inGrp || inSess) matches = true;
         }
 
@@ -2341,8 +2440,16 @@ const App = (() => {
 
               let isDocMatch = false;
               if (targetDoctor) {
-                const inGrp = (grp.instructors || []).some(i => i.trim() === targetDoctor);
-                const inSess = (grp.sessions || []).some(s => (s.instructor || '').trim() === targetDoctor);
+                const isUnspecTarget = isUnspecifiedDoctor(targetDoctor);
+                const inGrp = (grp.instructors || []).some(i => {
+                  if (isUnspecTarget) return isUnspecifiedDoctor(i);
+                  return i.trim() === targetDoctor || (typeof ScheduleOptimizer !== 'undefined' && ScheduleOptimizer.matchesDoctor(i, targetDoctor));
+                });
+                const inSess = (grp.sessions || []).some(s => {
+                  const isLect = s.type === 'Lect.' || /Lect|محاضرة/i.test(s.type || '');
+                  if (isUnspecTarget) return isLect && (!s.instructor || isUnspecifiedDoctor(s.instructor));
+                  return (s.instructor || '').trim() === targetDoctor || (typeof ScheduleOptimizer !== 'undefined' && ScheduleOptimizer.matchesDoctor(s.instructor, targetDoctor));
+                });
                 if (inGrp || inSess) isDocMatch = true;
               } else if (query) {
                 const inGrp = (grp.instructors || []).some(i => i.toLowerCase().includes(query));

@@ -72,10 +72,23 @@ const ScheduleOptimizer = (() => {
   }
 
   /**
+   * Helper to check if a doctor name refers to an unspecified / unassigned doctor
+   */
+  function isUnspecifiedDoctor(name) {
+    if (!name) return true;
+    const s = String(name).trim().toLowerCase();
+    return s === '' || s === 'not specified' || s === 'غير محدد' || s === 'unspecified' || s === 'دكتور غير محدد' || s === 'not specified (doctor)';
+  }
+
+  /**
    * Normalizes doctor name for robust comparison
    */
   function cleanDoctorName(name) {
     if (!name || typeof name !== 'string') return '';
+    const trimmed = name.trim();
+    if (/^(not specified|غير محدد|unspecified|دكتور غير محدد)$/i.test(trimmed)) {
+      return 'not specified';
+    }
     return name
       .toLowerCase()
       .replace(/[\u064B-\u065F\u0670]/g, '') // remove Arabic diacritics (tashkeel)
@@ -95,6 +108,11 @@ const ScheduleOptimizer = (() => {
    * unrelated doctors with shared father or grandfather names.
    */
   function matchesDoctor(docName, targetName) {
+    const unspecDoc = isUnspecifiedDoctor(docName);
+    const unspecTarget = isUnspecifiedDoctor(targetName);
+    if (unspecDoc && unspecTarget) return true;
+    if (unspecDoc || unspecTarget) return false;
+
     if (!docName || !targetName) return false;
     if (docName === targetName) return true;
     const c1 = cleanDoctorName(docName);
@@ -126,6 +144,26 @@ const ScheduleOptimizer = (() => {
   }
 
   /**
+   * Collects all instructors associated with a course group.
+   * If any lecture session has no doctor or is unspecified, ensures 'Not Specified' is included.
+   */
+  function getGroupInstructors(grp) {
+    if (!grp) return [];
+    const list = [
+      ...(grp.instructors || []),
+      ...((grp.sessions || []).map(s => s.instructor).filter(Boolean))
+    ];
+    const hasUnspecifiedLect = (grp.sessions || []).some(s => {
+      const isLect = s.type === 'Lect.' || /Lect|محاضرة/i.test(s.type || '');
+      return isLect && (!s.instructor || isUnspecifiedDoctor(s.instructor));
+    });
+    if (hasUnspecifiedLect && !list.some(isUnspecifiedDoctor)) {
+      list.push('Not Specified');
+    }
+    return Array.from(new Set(list));
+  }
+
+  /**
    * Evaluates doctor preference score with heavy penalty for avoided doctors.
    */
   function evaluateDoctorScore(selectedGroups, preferences) {
@@ -141,7 +179,7 @@ const ScheduleOptimizer = (() => {
       const courseCode = item.courseCode || item.courseId || '';
       const courseId = item.courseId || item.courseCode || '';
       const coursePrefs = docPrefs[courseCode] || docPrefs[courseId] || {};
-      const instructors = item.instructors || item.groupData.instructors || [];
+      const instructors = getGroupInstructors(item.groupData || item);
 
       instructors.forEach(doc => {
         totalDoctorChoices++;
@@ -402,10 +440,7 @@ const ScheduleOptimizer = (() => {
           const grp = course.groups.find(g => g.group === gName);
           if (!grp) { clash = true; break; }
 
-          const grpInstructors = Array.from(new Set([
-            ...(grp.instructors || []),
-            ...((grp.sessions || []).map(s => s.instructor).filter(Boolean))
-          ]));
+          const grpInstructors = getGroupInstructors(grp);
 
           const coursePrefs = getCoursePreferences(options.doctorPreferences, course);
           const avoidedDocs = Object.keys(coursePrefs).filter(k => coursePrefs[k] === 'avoid');
@@ -519,10 +554,7 @@ const ScheduleOptimizer = (() => {
           const grp = groups[gIdx];
 
           // Collect all instructors associated with this group
-          const grpInstructors = Array.from(new Set([
-            ...(grp.instructors || []),
-            ...((grp.sessions || []).map(s => s.instructor).filter(Boolean))
-          ]));
+          const grpInstructors = getGroupInstructors(grp);
 
           // Constraint 1: Avoided Doctor (Strict Pruning ONLY when isStrictAvoid is true)
           if (isStrictAvoid && avoidedDocs.length > 0) {
@@ -638,10 +670,7 @@ const ScheduleOptimizer = (() => {
         const avs = Object.keys(cp).filter(k => cp[k] === 'avoid');
         if (avs.length === 0) return false;
         return c.groups.every(grp => {
-          const grpInstructors = Array.from(new Set([
-            ...(grp.instructors || []),
-            ...((grp.sessions || []).map(s => s.instructor).filter(Boolean))
-          ]));
+          const grpInstructors = getGroupInstructors(grp);
           return avs.some(av => grpInstructors.some(inst => matchesDoctor(inst, av)));
         });
       });
@@ -690,11 +719,11 @@ const ScheduleOptimizer = (() => {
             const avsB = Object.keys(cpB).filter(k => cpB[k] === 'avoid');
 
             const validGrpsA = cA.groups.filter(g => {
-              const insts = Array.from(new Set([...(g.instructors || []), ...((g.sessions || []).map(s => s.instructor).filter(Boolean))]));
+              const insts = getGroupInstructors(g);
               return !avsA.some(av => insts.some(inst => matchesDoctor(inst, av)));
             });
             const validGrpsB = cB.groups.filter(g => {
-              const insts = Array.from(new Set([...(g.instructors || []), ...((g.sessions || []).map(s => s.instructor).filter(Boolean))]));
+              const insts = getGroupInstructors(g);
               return !avsB.some(av => insts.some(inst => matchesDoctor(inst, av)));
             });
 
@@ -874,7 +903,9 @@ const ScheduleOptimizer = (() => {
     calculateGaps,
     hasTimeOverlap,
     matchesDoctor,
-    cleanDoctorName
+    cleanDoctorName,
+    isUnspecifiedDoctor,
+    getGroupInstructors
   };
 })();
 

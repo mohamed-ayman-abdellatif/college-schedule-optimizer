@@ -614,6 +614,112 @@ ME D Abdelgawad Matar
       satSession && satSession.periodNum === 1 && satSession.startSlot === 1 && satSession.endSlot === 2
     );
 
+    // TEST 24: Unspecified Lecture Doctor Matching & Optimization
+    // 24.1: matchesDoctor handles Not Specified and غير محدد cross-matching
+    assert('matchesDoctor cross-matches Not Specified with Arabic غير محدد',
+      ScheduleOptimizer.matchesDoctor('Not Specified', 'غير محدد') === true
+    );
+    assert('matchesDoctor matches empty doctor with Not Specified',
+      ScheduleOptimizer.matchesDoctor('', 'Not Specified') === true
+    );
+    assert('matchesDoctor does not match real doctor with Not Specified',
+      ScheduleOptimizer.matchesDoctor('د. مصطفى فوز', 'Not Specified') === false &&
+      ScheduleOptimizer.matchesDoctor('Dr. Mostafa Fouz', 'غير محدد') === false
+    );
+
+    // 24.2: getGroupInstructors includes Not Specified ONLY when lecture has no doctor
+    const grpWithLectDoc = {
+      group: '1',
+      sessions: [{ type: 'Lect.', instructor: 'Dr. Mostafa Fouz' }, { type: 'Sec.', instructor: 'Eng. Asmaa' }]
+    };
+    const grpWithUnspecLect = {
+      group: '2',
+      sessions: [{ type: 'Lect.', instructor: 'Not Specified' }, { type: 'Sec.', instructor: 'Eng. Asmaa' }]
+    };
+    const grpWithEmptyLect = {
+      group: '3',
+      sessions: [{ type: 'Lect.', instructor: '' }, { type: 'Sec.', instructor: 'Eng. Asmaa' }]
+    };
+    const grpWithUnspecSecOnly = {
+      group: '4',
+      sessions: [{ type: 'Lect.', instructor: 'Dr. Mostafa Fouz' }, { type: 'Sec.', instructor: '' }]
+    };
+
+    assert('getGroupInstructors does not add Not Specified if lecture has doctor',
+      !ScheduleOptimizer.getGroupInstructors(grpWithLectDoc).includes('Not Specified')
+    );
+    assert('getGroupInstructors adds Not Specified if lecture instructor is Not Specified',
+      ScheduleOptimizer.getGroupInstructors(grpWithUnspecLect).includes('Not Specified')
+    );
+    assert('getGroupInstructors adds Not Specified if lecture instructor is empty',
+      ScheduleOptimizer.getGroupInstructors(grpWithEmptyLect).includes('Not Specified')
+    );
+    assert('getGroupInstructors does NOT add Not Specified if only Sec/Lab has no instructor',
+      !ScheduleOptimizer.getGroupInstructors(grpWithUnspecSecOnly).includes('Not Specified')
+    );
+
+    // 24.3: Optimizer avoids group with unspecified lecture doctor when avoided
+    const unspecCourse = {
+      id: 'UNSPEC101',
+      code: 'UNSPEC101',
+      name: 'Unspec Course',
+      color: '#4F46E5',
+      groups: [
+        {
+          group: '1',
+          instructors: ['Dr. Mostafa Fouz'],
+          sessions: [{ day: 'Sunday', startSlot: 1, endSlot: 2, type: 'Lect.', instructor: 'Dr. Mostafa Fouz' }]
+        },
+        {
+          group: '2',
+          instructors: [],
+          sessions: [{ day: 'Monday', startSlot: 1, endSlot: 2, type: 'Lect.', instructor: 'Not Specified' }]
+        }
+      ]
+    };
+
+    const optAvoidUnspec = ScheduleOptimizer.findOptimalSchedules([unspecCourse], {
+      strictDoctorMode: true,
+      doctorPreferences: {
+        'UNSPEC101': {
+          'Not Specified': 'avoid'
+        }
+      }
+    });
+
+    assert('ScheduleOptimizer finds solutions avoiding unspecified lecture doctor',
+      optAvoidUnspec.success === true && optAvoidUnspec.solutions.length > 0
+    );
+    assert('All solutions use Group 1 (Dr. Mostafa Fouz) and zero solutions use Group 2 (unspecified)',
+      optAvoidUnspec.solutions.every(s => s.selectedGroups[0].group === '1')
+    );
+
+    // 24.4: Optimizer respects Arabic preference key "غير محدد" as avoid
+    const optAvoidArabic = ScheduleOptimizer.findOptimalSchedules([unspecCourse], {
+      strictDoctorMode: true,
+      doctorPreferences: {
+        'UNSPEC101': {
+          'غير محدد': 'avoid'
+        }
+      }
+    });
+    assert('ScheduleOptimizer respects Arabic "غير محدد" key to avoid unspecified lecture group',
+      optAvoidArabic.success === true && optAvoidArabic.solutions.every(s => s.selectedGroups[0].group === '1')
+    );
+
+    // 24.5: Optimizer mandates group with unspecified lecture doctor when mandated
+    const optMandateUnspec = ScheduleOptimizer.findOptimalSchedules([unspecCourse], {
+      strictDoctorMode: true,
+      doctorPreferences: {
+        'UNSPEC101': {
+          'Not Specified': 'mandate'
+        }
+      }
+    });
+    assert('ScheduleOptimizer mandates group with unspecified lecture doctor when requested',
+      optMandateUnspec.success === true && optMandateUnspec.solutions.every(s => s.selectedGroups[0].group === '2')
+    );
+
     // Summary
     const passedCount = results.filter(r => r.passed).length;
     const failedCount = results.filter(r => !r.passed).length;
