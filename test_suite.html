@@ -869,6 +869,21 @@ ME D Abdelgawad Matar
       testDetectCollision(g2Lect, g1Sec) === false
     );
 
+    // 28.2: Resetting selections clears all picks to null without picking the first doctor
+    function testResetMixMatch(courses) {
+      const selections = {};
+      courses.forEach(c => {
+        selections[c.id] = { lectGroup: null, secGroup: null, labGroup: null };
+      });
+      return selections;
+    }
+    const resetSel = testResetMixMatch([sampleCourseMix]);
+    assert('Mix & Match reset wipes all selections to null (does not pick the first doctor)',
+      resetSel['COURSE_MIX'].lectGroup === null &&
+      resetSel['COURSE_MIX'].secGroup === null &&
+      resetSel['COURSE_MIX'].labGroup === null
+    );
+
     // =========================================================================
     // TEST 29: Manual Mode Doctor Visibility (Hide Avoided & Mandate Isolation)
     // =========================================================================

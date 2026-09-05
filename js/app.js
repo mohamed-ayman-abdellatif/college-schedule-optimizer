@@ -3543,14 +3543,10 @@ const App = (() => {
     if (!state.mixMatchSelections) state.mixMatchSelections = {};
     state.courses.forEach(course => {
       if (!state.mixMatchSelections[course.id]) {
-        const lectGroups = (course.groups || []).filter(g => (g.sessions || []).some(isLectureSession));
-        const secGroups = (course.groups || []).filter(g => (g.sessions || []).some(isSectionSession));
-        const labGroups = (course.groups || []).filter(g => (g.sessions || []).some(isLabSession));
-
         state.mixMatchSelections[course.id] = {
-          lectGroup: lectGroups.length > 0 ? lectGroups[0].group : null,
-          secGroup: secGroups.length > 0 ? secGroups[0].group : null,
-          labGroup: labGroups.length > 0 ? labGroups[0].group : null
+          lectGroup: null,
+          secGroup: null,
+          labGroup: null
         };
       }
     });
@@ -3669,10 +3665,16 @@ const App = (() => {
 
   function resetMixMatchSelections() {
     state.mixMatchSelections = {};
-    initMixMatchSelections();
+    state.courses.forEach(c => {
+      state.mixMatchSelections[c.id] = {
+        lectGroup: null,
+        secGroup: null,
+        labGroup: null
+      };
+    });
     saveStateToStorage();
     renderMixMatchTab();
-    showToast(state.currentLang === 'ar' ? 'تمت إعادة ضبط اختيارات الدمج' : 'Mix & Match selections reset.', 'info');
+    showToast(state.currentLang === 'ar' ? 'تم إلغاء كافة الاختيارات بنجاح' : 'All selections cleared.', 'info');
   }
 
   function applyMixMatchToManual() {
@@ -3818,6 +3820,7 @@ const App = (() => {
               ${selectedLect ? `<span class="mixmatch-pick-pill lect-pill">🎓 Lect: Grp ${selectedLect.group} ${lectDocName ? `(${lectDocName})` : ''}</span>` : ''}
               ${selectedSec ? `<span class="mixmatch-pick-pill sec-pill">🔬 Sec: Grp ${selectedSec.group} ${secDocName ? `(${secDocName})` : ''}</span>` : ''}
               ${selectedLab ? `<span class="mixmatch-pick-pill lab-pill">⚗️ Lab: Grp ${selectedLab.group} ${labDocName ? `(${labDocName})` : ''}</span>` : ''}
+              ${(!selectedLect && !selectedSec && !selectedLab) ? `<span style="font-size: 0.8rem; color: var(--text-muted); font-style: italic;">${isAr ? 'لم يتم اختيار حصص' : 'No sessions selected'}</span>` : ''}
             </div>
           </div>
 
