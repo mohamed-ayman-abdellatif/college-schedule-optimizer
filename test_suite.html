@@ -990,6 +990,53 @@ ME D Abdelgawad Matar
       testCoursesList.every(c => testAccordionState[c.id] === false)
     );
 
+    // =========================================================================
+    // TEST 31: Schedule Text File Export Format (<Course Code>: <Group>)
+    // =========================================================================
+    const sampleTxtSolution = {
+      rank: 1,
+      selectedGroups: [
+        { courseCode: 'CCS3203', courseName: 'Computer Graphics - CCS3203', group: 'F' },
+        { courseCode: 'CIT3200', courseName: 'Information Technology - CIT3200', group: 'Group F' },
+        { courseCode: 'CCS3501', courseName: 'Data Structures - CCS3501', group: 'A' },
+        { courseCode: 'CSE3402', courseName: 'Software Engineering - CSE3402', group: 'C' },
+        { courseCode: 'CGM3101', courseName: 'Game Development - CGM3101', group: 'Grp A' },
+        { courseCode: 'CAI3101', courseName: 'Artificial Intelligence - CAI3101', group: '6' }
+      ]
+    };
+
+    const generatedTxt = ScheduleExporter.generateScheduleText(sampleTxtSolution);
+    const expectedTxt = [
+      'CCS3203: F',
+      'CIT3200: F',
+      'CCS3501: A',
+      'CSE3402: C',
+      'CGM3101: A',
+      'CAI3101: 6'
+    ].join('\r\n');
+
+    assert('ScheduleExporter generates exact format for schedule text export', generatedTxt === expectedTxt);
+
+    // Test session-derived fallback when selectedGroups is not present
+    const sessionOnlySolution = {
+      rank: 2,
+      sessions: [
+        { courseCode: 'CCS3203', group: 'F', day: 'Monday', startSlot: 1, endSlot: 2 },
+        { courseCode: 'CIT3200', group: 'F', day: 'Tuesday', startSlot: 3, endSlot: 4 },
+        { courseCode: 'CAI3101', group: 'Group 6', day: 'Wednesday', startSlot: 5, endSlot: 6 }
+      ]
+    };
+
+    const sessionTxt = ScheduleExporter.generateScheduleText(sessionOnlySolution);
+    assert('ScheduleExporter extracts clean course codes and groups from sessions',
+      sessionTxt.includes('CCS3203: F') &&
+      sessionTxt.includes('CIT3200: F') &&
+      sessionTxt.includes('CAI3101: 6')
+    );
+
+    // Test line count
+    assert('Schedule text export is non-empty and has proper line breaks', generatedTxt.split('\r\n').length === 6);
+
     // Summary
     const passedCount = results.filter(r => r.passed).length;
     const failedCount = results.filter(r => !r.passed).length;

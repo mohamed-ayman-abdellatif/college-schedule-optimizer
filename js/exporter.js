@@ -214,11 +214,184 @@ const ScheduleExporter = (() => {
     a.remove();
   }
 
+  /**
+   * Generates formatted text content for a timetable solution.
+   * Format: <Course Code/ID>: <Group>
+   * Example:
+   * CCS3203: F
+   * CIT3200: F
+   * CCS3501: A
+   * CSE3402: C
+   * CGM3101: A
+   * CAI3101: 6
+   */
+  function generateScheduleText(solution, allCourses = []) {
+    if (!solution) return '';
+
+    const courseMap = new Map();
+
+    const findCourse = (id, code, name) => {
+      return (allCourses || []).find(c =>
+        (id && c.id === id) ||
+        (code && c.code === code) ||
+        (name && c.name === name)
+      );
+    };
+
+    // Priority 1: solution.selectedGroups (standard optimizer solutions)
+    if (solution.selectedGroups && Array.isArray(solution.selectedGroups) && solution.selectedGroups.length > 0) {
+      solution.selectedGroups.forEach(sg => {
+        const matching = findCourse(sg.courseId, sg.courseCode, sg.courseName);
+        const code = extractCleanCourseCode(sg.courseCode, sg.courseId, sg.courseName, matching);
+        const grp = cleanGroupName(sg.group);
+        const key = sg.courseId || code;
+        courseMap.set(key, { code, grp, courseId: sg.courseId, courseName: sg.courseName });
+      });
+    } else if (solution.sessions && Array.isArray(solution.sessions) && solution.sessions.length > 0) {
+      // Priority 2: Derive from sessions
+      const grouped = new Map();
+      solution.sessions.forEach(s => {
+        const cKey = s.courseId || s.courseCode || s.courseName;
+        if (!cKey) return;
+        if (!grouped.has(cKey)) {
+          grouped.set(cKey, {
+            courseId: s.courseId,
+            courseCode: s.courseCode,
+            courseName: s.courseName,
+            sessions: []
+          });
+        }
+        grouped.get(cKey).sessions.push(s);
+      });
+
+      grouped.forEach((data, cKey) => {
+        const matching = findCourse(data.courseId, data.courseCode, data.courseName);
+        const code = extractCleanCourseCode(data.courseCode, data.courseId, data.courseName, matching);
+
+        const grpSet = new Set(data.sessions.map(s => cleanGroupName(s.group)).filter(Boolean));
+        let grpStr = '';
+        if (grpSet.size === 1) {
+          grpStr = Array.from(grpSet)[0];
+        } else if (grpSet.size > 1) {
+          const parts = [];
+          const lectSess = data.sessions.filter(s => (s.type || '').toLowerCase().includes('lect'));
+          const secSess = data.sessions.filter(s => (s.type || '').toLowerCase().includes('sec'));
+          const labSess = data.sessions.filter(s => (s.type || '').toLowerCase().includes('lab'));
+
+          if (lectSess.length > 0) parts.push(`Lect ${cleanGroupName(lectSess[0].group)}`);
+          if (secSess.length > 0) parts.push(`Sec ${cleanGroupName(secSess[0].group)}`);
+          if (labSess.length > 0) parts.push(`Lab ${cleanGroupName(labSess[0].group)}`);
+
+          grpStr = parts.length > 0 ? parts.join(', ') : Array.from(grpSet).join(', ');
+        }
+        courseMap.set(cKey, { code, grp: grpStr, courseId: data.courseId, courseName: data.courseName });
+      });
+    }
+
+    const entries = Array.from(courseMap.values());
+    if (allCourses && allCourses.length > 0) {
+      entries.sort((a, b) => {
+        const idxA = allCourses.findIndex(c => c.id === a.courseId || c.code === a.code || c.name === a.courseName);
+        const idxB = allCourses.findIndex(c => c.id === b.courseId || c.code === b.code || c.name === b.courseName);
+        if (idxA !== -1 && idxB !== -1) return idxA - idxB;
+        if (idxA !== -1) return -1;
+        if (idxB !== -1) return 1;
+        return 0;
+      });
+    }
+
+    return entries.map(e => `${e.code}: ${e.grp}`).join('\r\n');
+  }
+
+  function extractCleanCourseCode(code, id, name, matchingCourse) {
+    const candidates = [
+      code,
+      matchingCourse?.code,
+      id,
+      matchingCourse?.id,
+      name,
+      matchingCourse?.name
+    ];
+
+    for (const cand of candidates) {
+      if (!cand || typeof cand !== 'string') continue;
+      const trimmed = cand.trim();
+      const m = trimmed.match(/\b([A-Za-z]{2,5})\s*(\d{3,4}[A-Za-z]?)\b/);
+      if (m) {
+        return `${m[1].toUpperCase()}${m[2].toUpperCase()}`;
+      }
+    }
+
+    if (matchingCourse && matchingCourse.code) return matchingCourse.code.trim();
+    if (code) return code.trim();
+    if (matchingCourse && matchingCourse.name) return matchingCourse.name.trim();
+    if (name) return name.trim();
+    if (id && !id.startsWith('course_')) return id.trim();
+    return 'COURSE';
+  }
+
+  function cleanGroupName(grp) {
+    if (!grp) return '';
+    return String(grp).replace(/^(?:Group|Grp|مجموعة|مجموعه)\s*[:\-]?\s*/i, '').trim();
+  }
+
+  /**
+   * Triggers download of schedule as a .txt file.
+   */
+  function downloadTxtFile(solution, fileName = null, allCourses = []) {
+    const textContent = generateScheduleText(solution, allCourses);
+    if (!textContent) return false;
+
+    const rank = solution.rank || 1;
+    const name = fileName || `Schedule_Option_${rank}_Groups.txt`;
+
+    const blob = new Blob([textContent], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = name;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    return true;
+  }
+
+  /**
+   * Generates and downloads all solutions formatted into a single text file.
+   */
+  function downloadAllSchedulesTxt(solutions, fileName = 'All_Schedules_Groups.txt', allCourses = []) {
+    if (!solutions || !solutions.length) return false;
+
+    const blocks = solutions.map((sol, idx) => {
+      const rank = sol.rank || (idx + 1);
+      const text = generateScheduleText(sol, allCourses);
+      return `=== Schedule Option #${rank} ===\r\n${text}`;
+    });
+
+    const fullContent = blocks.join('\r\n\r\n');
+    const blob = new Blob([fullContent], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    return true;
+  }
+
   return {
     downloadIcsFile,
     exportToPng,
     printTimetable,
-    exportCoursesJson
+    exportCoursesJson,
+    generateScheduleText,
+    downloadTxtFile,
+    downloadAllSchedulesTxt,
+    cleanGroupName,
+    extractCleanCourseCode
   };
 })();
 

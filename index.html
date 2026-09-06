@@ -451,6 +451,9 @@
             </div>
           </div>
           <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button id="btn-export-txt" class="btn btn-secondary btn-sm" data-i18n="exportTxt">
+              <span>📄</span> <span>Export TXT</span>
+            </button>
             <button id="btn-export-png" class="btn btn-secondary btn-sm" data-i18n="exportPng">
               <span>🖼️</span> <span>Export PNG</span>
             </button>
@@ -595,6 +598,9 @@
             </div>
           </div>
           <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button id="btn-manual-export-txt" class="btn btn-secondary btn-sm" data-i18n="exportTxt">
+              <span>📄</span> <span>Export TXT</span>
+            </button>
             <button id="btn-manual-export-png" class="btn btn-secondary btn-sm" data-i18n="exportPng">
               <span>🖼️</span> <span>Export PNG</span>
             </button>
@@ -669,7 +675,10 @@
               Visualizes your custom doctor & TA combinations on the weekly timetable in real time
             </div>
           </div>
-          <div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button id="btn-mixmatch-export-txt" class="btn btn-secondary btn-sm" onclick="App.exportMixMatchTxt()" data-i18n="exportTxt">
+              <span>📄</span> <span>Export TXT</span>
+            </button>
             <button class="btn btn-secondary btn-sm" onclick="App.jumpToMixMatchPicker()" data-i18n="mixMatchJumpToCourses">
               <span>⬆️</span> <span>Back to Course Pickers</span>
             </button>
@@ -995,6 +1004,44 @@
           <button type="button" class="btn btn-primary btn-sm" onclick="App.closeFilterConflictModal()" data-i18n="viewUnfilteredBtn">
             👁️ View Schedule & Diagnostics
           </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Schedule Text Export & Copy -->
+  <div id="modal-schedule-txt" class="modal-backdrop" style="display: none;" onclick="if(event.target===this)App.closeScheduleTxtModal();">
+    <div class="modal-dialog" style="max-width: 520px; width: 95%;">
+      <div class="modal-content" style="border-radius: var(--radius-lg); background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);">
+        <div class="modal-header" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid var(--border-color);">
+          <h3 class="modal-title" style="display: flex; align-items: center; gap: 8px; font-size: 1.1rem; font-weight: 800;">
+            <span>📄</span> <span id="schedule-txt-modal-title" data-i18n="scheduleTxtModalTitle">Schedule Groups Text</span>
+          </h3>
+          <button type="button" class="btn btn-outline btn-sm" onclick="App.closeScheduleTxtModal()">✕</button>
+        </div>
+        <div class="modal-body" style="padding: 18px 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
+            <span style="font-size: 0.84rem; color: var(--text-secondary);" data-i18n="scheduleTxtHelp">Format: Course Code: Group Number/Letter</span>
+            <div class="subtabs-container" style="display: inline-flex; width: auto;" id="schedule-txt-scope-tabs">
+              <button type="button" class="subtab-btn active" id="btn-tab-txt-current" onclick="App.toggleScheduleTxtScope('current')" data-i18n="txtCurrentSchedule">This Schedule</button>
+              <button type="button" class="subtab-btn" id="btn-tab-txt-all" onclick="App.toggleScheduleTxtScope('all')" data-i18n="txtAllSchedules">All Schedules</button>
+            </div>
+          </div>
+          <textarea id="schedule-txt-content" class="textarea-input" rows="8" readonly
+                    style="font-family: 'Consolas', 'Courier New', monospace; font-size: 0.95rem; line-height: 1.6; font-weight: 600; padding: 12px; background: var(--bg-primary); border: 1.5px solid var(--border-color); border-radius: var(--radius-md); width: 100%; resize: vertical;"></textarea>
+        </div>
+        <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 14px 20px; border-top: 1px solid var(--border-color); flex-wrap: wrap;">
+          <button type="button" class="btn btn-secondary btn-sm" onclick="App.copyScheduleTxtContent()">
+            <span>📋</span> <span data-i18n="copyTxtBtn">Copy to Clipboard</span>
+          </button>
+          <div style="display: flex; gap: 8px;">
+            <button type="button" class="btn btn-primary btn-sm" onclick="App.downloadScheduleTxtFromModal()">
+              <span>💾</span> <span data-i18n="downloadTxtBtn">Download .txt File</span>
+            </button>
+            <button type="button" class="btn btn-outline btn-sm" onclick="App.closeScheduleTxtModal()" data-i18n="closeBtn">
+              Close
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -98,6 +98,16 @@ const App = (() => {
       presetSatTraining: '⚽ Block Saturday 08:30 - 10:20 (Training)',
       presetEvenings: '🌙 Block All Slots After 4 PM',
       presetClearBlocked: 'Clear All Blocked Slots',
+      exportTxt: 'Export TXT',
+      copyTxt: 'Copy Codes',
+      scheduleTxtModalTitle: 'Schedule Groups Text',
+      scheduleTxtHelp: 'Format: Course Code: Group Number/Letter',
+      txtCurrentSchedule: 'This Schedule',
+      txtAllSchedules: 'All Schedules',
+      copyTxtBtn: '📋 Copy to Clipboard',
+      downloadTxtBtn: '💾 Download .txt File',
+      txtCopiedToast: 'Schedule text copied to clipboard! 📋',
+      txtDownloadedToast: 'Schedule exported to text file! 📄',
       exportPng: 'Export PNG Image',
       printSchedule: 'Print Schedule',
       exportIcs: 'Export to Google Calendar (.ics)',
@@ -231,6 +241,16 @@ const App = (() => {
       presetSatTraining: '⚽ حظر تدريب السبت 08:30 - 10:20',
       presetEvenings: '🌙 حظر الفترات المسائية بعد 4 عصراً',
       presetClearBlocked: 'مسح جميع الأوقات المحظورة',
+      exportTxt: 'تصدير ملف نصي (TXT)',
+      copyTxt: 'نسخ الأكواد',
+      scheduleTxtModalTitle: 'نص مجموعات المقررات',
+      scheduleTxtHelp: 'التنسيق: كود المادة: رقم أو حرف المجموعة',
+      txtCurrentSchedule: 'هذا الجدول',
+      txtAllSchedules: 'جميع الجداول',
+      copyTxtBtn: '📋 نسخ للحافظة',
+      downloadTxtBtn: '💾 تحميل كملف نصي (.txt)',
+      txtCopiedToast: 'تم نسخ نص الجدول للحافظة بنجاح! 📋',
+      txtDownloadedToast: 'تم تصدير الجدول كملف نصي بنجاح! 📄',
       exportPng: 'تصدير صورة عالية الجودة (PNG)',
       printSchedule: 'طباعة الجدول',
       exportIcs: 'تصدير لتقويم جوجل (Google Calendar)',
@@ -725,6 +745,10 @@ const App = (() => {
     }
 
     // Export Actions
+    document.getElementById('btn-export-txt')?.addEventListener('click', () => {
+      handleExportTxt('opt');
+    });
+
     document.getElementById('btn-export-png')?.addEventListener('click', () => {
       const activeList = getActiveSolutions();
       const sol = activeList[state.activeSolutionIndex];
@@ -809,6 +833,7 @@ const App = (() => {
     document.getElementById('btn-clear-manual')?.addEventListener('click', clearManualSchedule);
     document.getElementById('btn-apply-manual-to-opt')?.addEventListener('click', applyManualToTimetableTab);
 
+    document.getElementById('btn-manual-export-txt')?.addEventListener('click', () => exportManualTimetable('txt'));
     document.getElementById('btn-manual-export-png')?.addEventListener('click', () => exportManualTimetable('png'));
     document.getElementById('btn-manual-export-ics')?.addEventListener('click', () => exportManualTimetable('ics'));
     document.getElementById('btn-manual-print')?.addEventListener('click', () => exportManualTimetable('print'));
@@ -3251,12 +3276,179 @@ const App = (() => {
       return;
     }
 
-    if (type === 'png') {
+    if (type === 'txt') {
+      handleExportTxt('manual');
+    } else if (type === 'png') {
       ScheduleExporter.exportToPng(sol);
     } else if (type === 'ics') {
       ScheduleExporter.downloadIcsFile(sol, 'custom_college_timetable.ics');
     } else if (type === 'print') {
       ScheduleExporter.printTimetable();
+    }
+  }
+
+  let currentTxtSolution = null;
+  let currentTxtSource = 'opt'; // 'opt' | 'manual' | 'mixmatch'
+
+  /**
+   * Main text export handler for Tab 3 (Optimizer), Tab 4 (Manual), and Tab 5 (Mix & Match)
+   */
+  function handleExportTxt(source = 'opt') {
+    const isAr = state.currentLang === 'ar';
+    currentTxtSource = source;
+
+    let sol = null;
+    let fileName = null;
+
+    if (source === 'opt') {
+      const activeList = getActiveSolutions();
+      sol = activeList[state.activeSolutionIndex];
+      const rank = sol ? (sol.rank || state.activeSolutionIndex + 1) : 1;
+      fileName = `Schedule_Option_${rank}_Groups.txt`;
+    } else if (source === 'manual') {
+      sol = getManualSolution();
+      fileName = 'Manual_Schedule_Groups.txt';
+    } else if (source === 'mixmatch') {
+      sol = getMixMatchSolution();
+      fileName = 'Mixed_Schedule_Groups.txt';
+    }
+
+    if (!sol || !sol.sessions || sol.sessions.length === 0) {
+      showToast(isAr ? 'لا يوجد جدول محدد لتصديره كملف نصي.' : 'No schedule selected to export.', 'error');
+      return;
+    }
+
+    currentTxtSolution = sol;
+
+    // 1. Download formatted text file directly
+    ScheduleExporter.downloadTxtFile(sol, fileName, state.courses);
+
+    // 2. Copy formatted text to clipboard
+    const textContent = ScheduleExporter.generateScheduleText(sol, state.courses);
+    if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+      navigator.clipboard.writeText(textContent).catch(() => {});
+    }
+
+    // 3. Open modal showing the exact text with copy and download controls
+    openScheduleTxtModal(source, sol);
+
+    showToast(
+      isAr
+        ? 'تم تصدير الجدول كملف نصي ونسخه للحافظة بنجاح! 📄'
+        : 'Schedule exported to text file & copied to clipboard! 📄',
+      'success'
+    );
+  }
+
+  function getMixMatchSolution() {
+    const allSelected = getMixMatchAllSelectedSessions();
+    return {
+      id: 'sol_mixmatch_export',
+      rank: 1,
+      totalScore: 100,
+      totalGapSlots: 0,
+      activeDaysCount: new Set(allSelected.map(s => s.day)).size,
+      sessions: allSelected
+    };
+  }
+
+  function exportMixMatchTxt() {
+    handleExportTxt('mixmatch');
+  }
+
+  function openScheduleTxtModal(source = 'opt', sol = null) {
+    const modal = document.getElementById('modal-schedule-txt');
+    if (!modal) return;
+
+    currentTxtSource = source;
+    currentTxtSolution = sol || (source === 'opt' ? getActiveSolutions()[state.activeSolutionIndex] : (source === 'manual' ? getManualSolution() : getMixMatchSolution()));
+
+    const isAr = state.currentLang === 'ar';
+    const titleEl = document.getElementById('schedule-txt-modal-title');
+    const tabsEl = document.getElementById('schedule-txt-scope-tabs');
+
+    if (source === 'opt') {
+      if (tabsEl) tabsEl.style.display = 'inline-flex';
+      const rank = currentTxtSolution ? (currentTxtSolution.rank || state.activeSolutionIndex + 1) : 1;
+      if (titleEl) titleEl.textContent = isAr ? `نص مجموعات الجدول (خيار #${rank})` : `Schedule Groups Text (Option #${rank})`;
+    } else {
+      if (tabsEl) tabsEl.style.display = 'none';
+      if (titleEl) titleEl.textContent = isAr ? 'نص مجموعات المقررات المحددة' : 'Selected Course Groups Text';
+    }
+
+    toggleScheduleTxtScope('current');
+    modal.style.display = 'flex';
+  }
+
+  function closeScheduleTxtModal() {
+    const modal = document.getElementById('modal-schedule-txt');
+    if (modal) modal.style.display = 'none';
+  }
+
+  function toggleScheduleTxtScope(scope) {
+    const textarea = document.getElementById('schedule-txt-content');
+    const currentBtn = document.getElementById('btn-tab-txt-current');
+    const allBtn = document.getElementById('btn-tab-txt-all');
+    if (!textarea) return;
+
+    if (currentBtn) currentBtn.classList.toggle('active', scope === 'current');
+    if (allBtn) allBtn.classList.toggle('active', scope === 'all');
+
+    if (scope === 'current') {
+      const text = ScheduleExporter.generateScheduleText(currentTxtSolution, state.courses);
+      textarea.value = text;
+    } else {
+      const activeList = getActiveSolutions();
+      const blocks = activeList.map((sol, idx) => {
+        const rank = sol.rank || (idx + 1);
+        const text = ScheduleExporter.generateScheduleText(sol, state.courses);
+        return `=== Schedule Option #${rank} ===\r\n${text}`;
+      });
+      textarea.value = blocks.join('\r\n\r\n');
+    }
+  }
+
+  function copyScheduleTxtContent() {
+    const textarea = document.getElementById('schedule-txt-content');
+    const isAr = state.currentLang === 'ar';
+    if (textarea && textarea.value) {
+      if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+        navigator.clipboard.writeText(textarea.value).then(() => {
+          showToast(isAr ? 'تم نسخ النص إلى الحافظة بنجاح! 📋' : 'Schedule text copied to clipboard! 📋', 'success');
+        }).catch(() => {
+          textarea.select();
+          document.execCommand('copy');
+          showToast(isAr ? 'تم نسخ النص إلى الحافظة! 📋' : 'Schedule text copied! 📋', 'success');
+        });
+      } else {
+        textarea.select();
+        document.execCommand('copy');
+        showToast(isAr ? 'تم نسخ النص إلى الحافظة! 📋' : 'Schedule text copied! 📋', 'success');
+      }
+    }
+  }
+
+  function downloadScheduleTxtFromModal() {
+    const allBtn = document.getElementById('btn-tab-txt-all');
+    const isAll = allBtn && allBtn.classList.contains('active');
+    const isAr = state.currentLang === 'ar';
+
+    if (isAll && currentTxtSource === 'opt') {
+      const activeList = getActiveSolutions();
+      ScheduleExporter.downloadAllSchedulesTxt(activeList, 'All_Schedules_Groups.txt', state.courses);
+      showToast(isAr ? 'تم تحميل جميع الجداول كملف نصي! 📄' : 'Downloaded all schedules as text file! 📄', 'success');
+    } else {
+      let fileName = 'Schedule_Groups.txt';
+      if (currentTxtSource === 'opt') {
+        const rank = currentTxtSolution ? (currentTxtSolution.rank || state.activeSolutionIndex + 1) : 1;
+        fileName = `Schedule_Option_${rank}_Groups.txt`;
+      } else if (currentTxtSource === 'manual') {
+        fileName = 'Manual_Schedule_Groups.txt';
+      } else if (currentTxtSource === 'mixmatch') {
+        fileName = 'Mixed_Schedule_Groups.txt';
+      }
+      ScheduleExporter.downloadTxtFile(currentTxtSolution, fileName, state.courses);
+      showToast(isAr ? 'تم تحميل الجدول كملف نصي! 📄' : 'Downloaded schedule as text file! 📄', 'success');
     }
   }
 
@@ -4560,7 +4752,14 @@ const App = (() => {
     collapseAllMixMatchCourses,
     jumpToMixMatchCourse,
     jumpToMixMatchTimetable,
-    jumpToMixMatchPicker
+    jumpToMixMatchPicker,
+    handleExportTxt,
+    openScheduleTxtModal,
+    closeScheduleTxtModal,
+    toggleScheduleTxtScope,
+    copyScheduleTxtContent,
+    downloadScheduleTxtFromModal,
+    exportMixMatchTxt
   };
 
   return window.App;
