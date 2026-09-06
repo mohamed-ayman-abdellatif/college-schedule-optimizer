@@ -1072,8 +1072,22 @@ ME D Abdelgawad Matar
     );
 
     // =========================================================================
-    // TEST 33: Manual Mode Independent Doctor & TA Customization
+    // TEST 33: Manual Mode Independent Doctor, Section & Lab Customization
     // =========================================================================
+    assert('ScheduleRenderer provides isLabSession predicate', typeof ScheduleRenderer.isLabSession === 'function');
+    assert('ScheduleRenderer provides isSectionSession predicate', typeof ScheduleRenderer.isSectionSession === 'function');
+    assert('isLabSession identifies labs correctly',
+      ScheduleRenderer.isLabSession({ type: 'Lab.' }) === true &&
+      ScheduleRenderer.isLabSession({ type: 'معمل' }) === true &&
+      ScheduleRenderer.isLabSession({ type: 'Lect.' }) === false
+    );
+    assert('isSectionSession identifies sections correctly',
+      ScheduleRenderer.isSectionSession({ type: 'Sec.' }) === true &&
+      ScheduleRenderer.isSectionSession({ type: 'سكشن' }) === true &&
+      ScheduleRenderer.isSectionSession({ type: 'Lect.' }) === false &&
+      ScheduleRenderer.isSectionSession({ type: 'Lab.' }) === false
+    );
+
     const sampleCourseCustom = {
       id: 'CUSTOM101',
       code: 'CS101',
@@ -1081,18 +1095,29 @@ ME D Abdelgawad Matar
       groups: [
         {
           group: '1',
-          instructors: ['Dr. Alice', 'Eng. Bob'],
+          instructors: ['Dr. Alice', 'Eng. Bob', 'Eng. Carol'],
           sessions: [
             { type: 'Lect.', day: 'Sunday', startSlot: 1, endSlot: 2, instructor: 'Dr. Alice', location: 'Hall A' },
-            { type: 'Sec.', day: 'Monday', startSlot: 3, endSlot: 4, instructor: 'Eng. Bob', location: 'Lab 1' }
+            { type: 'Sec.', day: 'Monday', startSlot: 3, endSlot: 4, instructor: 'Eng. Bob', location: 'Lab 1' },
+            { type: 'Lab.', day: 'Wednesday', startSlot: 1, endSlot: 2, instructor: 'Eng. Carol', location: 'Lab 2' }
           ]
         },
         {
           group: '2',
-          instructors: ['Dr. Charlie', 'Eng. Dave'],
+          instructors: ['Dr. David', 'Eng. Eve', 'Eng. Frank'],
           sessions: [
-            { type: 'Lect.', day: 'Tuesday', startSlot: 1, endSlot: 2, instructor: 'Dr. Charlie', location: 'Hall B' },
-            { type: 'Sec.', day: 'Wednesday', startSlot: 5, endSlot: 6, instructor: 'Eng. Dave', location: 'Lab 2' }
+            { type: 'Lect.', day: 'Tuesday', startSlot: 1, endSlot: 2, instructor: 'Dr. David', location: 'Hall B' },
+            { type: 'Sec.', day: 'Wednesday', startSlot: 5, endSlot: 6, instructor: 'Eng. Eve', location: 'Lab 3' },
+            { type: 'Lab.', day: 'Thursday', startSlot: 3, endSlot: 4, instructor: 'Eng. Frank', location: 'Lab 4' }
+          ]
+        },
+        {
+          group: '3',
+          instructors: ['Dr. George', 'Eng. Grace', 'Eng. Henry'],
+          sessions: [
+            { type: 'Lect.', day: 'Monday', startSlot: 5, endSlot: 6, instructor: 'Dr. George', location: 'Hall C' },
+            { type: 'Sec.', day: 'Tuesday', startSlot: 7, endSlot: 8, instructor: 'Eng. Grace', location: 'Lab 5' },
+            { type: 'Lab.', day: 'Sunday', startSlot: 7, endSlot: 8, instructor: 'Eng. Henry', location: 'Lab 6' }
           ]
         }
       ]
@@ -1105,32 +1130,66 @@ ME D Abdelgawad Matar
       courses: [sampleCourseCustom],
       currentLang: 'en'
     };
-    assert('Manual Customize Doctor & TA is unchecked (false) by default', testState.manualCustomizeDocTA === false);
+    assert('Manual Customize Doctor, Section & Lab is unchecked (false) by default', testState.manualCustomizeDocTA === false);
 
-    // 33.2: Select Doctor only from Group 1
+    function testGetAvailableRoles(groupData) {
+      const roles = [];
+      const sessions = groupData.sessions || [];
+      if (sessions.some(ScheduleRenderer.isLectureSession)) roles.push('doctor');
+      if (sessions.some(ScheduleRenderer.isSectionSession)) roles.push('section');
+      if (sessions.some(ScheduleRenderer.isLabSession)) roles.push('lab');
+      return roles;
+    }
+
+    function testGetGroupSessionsForRole(groupData, role) {
+      const sessions = groupData.sessions || [];
+      if (role === 'doctor') return sessions.filter(ScheduleRenderer.isLectureSession);
+      if (role === 'lab') return sessions.filter(ScheduleRenderer.isLabSession);
+      if (role === 'section') return sessions.filter(ScheduleRenderer.isSectionSession);
+      return [];
+    }
+
     function testSelectComponent(state, courseId, groupName, role) {
       const course = state.courses.find(c => c.id === courseId || c.code === courseId);
       const groupData = course.groups.find(g => g.group === groupName);
-      const isDoctor = role === 'doctor';
-      const isLect = s => s.type === 'Lect.' || /Lect|محاضرة/i.test(s.type || '');
-      const sessions = groupData.sessions.filter(s => isDoctor ? isLect(s) : !isLect(s));
+      const sessions = testGetGroupSessionsForRole(groupData, role);
 
       const compKey = `${course.id}:::${groupName}:::${role}`;
       const fullGroupKey = `${course.id}:::${groupName}`;
 
-      // Remove existing for same role
+      // Remove any existing for same role in this course
       Object.keys(state.manualSchedule).forEach(k => {
         const entry = state.manualSchedule[k];
-        if (entry && entry.courseId === course.id && entry.componentType === role) {
-          delete state.manualSchedule[k];
+        if (entry && entry.courseId === course.id) {
+          if (entry.componentType === role) {
+            delete state.manualSchedule[k];
+          } else if (!entry.componentType || entry.componentType === 'all') {
+            const existingGrp = course.groups.find(g => g.group === entry.group);
+            delete state.manualSchedule[k];
+            if (existingGrp) {
+              const retained = testGetAvailableRoles(existingGrp).filter(r => r !== role);
+              retained.forEach(rRole => {
+                state.manualSchedule[`${course.id}:::${existingGrp.group}:::${rRole}`] = {
+                  courseId: course.id,
+                  group: existingGrp.group,
+                  componentType: rRole,
+                  sessions: testGetGroupSessionsForRole(existingGrp, rRole)
+                };
+              });
+            }
+          }
         }
       });
 
-      // Merge if other role already selected for same group
-      const otherRole = isDoctor ? 'ta' : 'doctor';
-      const otherKey = `${course.id}:::${groupName}:::${otherRole}`;
-      if (state.manualSchedule[otherKey]) {
-        delete state.manualSchedule[otherKey];
+      // Check if all OTHER available roles for this group are already selected
+      const availRoles = testGetAvailableRoles(groupData);
+      const otherRoles = availRoles.filter(r => r !== role);
+      const allOthersActive = otherRoles.length > 0 && otherRoles.every(r => !!state.manualSchedule[`${course.id}:::${groupName}:::${r}`]);
+
+      if (allOthersActive) {
+        otherRoles.forEach(r => {
+          delete state.manualSchedule[`${course.id}:::${groupName}:::${r}`];
+        });
         state.manualSchedule[fullGroupKey] = {
           courseId: course.id,
           group: groupName,
@@ -1147,6 +1206,43 @@ ME D Abdelgawad Matar
       }
     }
 
+    function testGetCourseGroupStatus(manualSchedule, courseId) {
+      const items = Object.values(manualSchedule).filter(g => g.courseId === courseId);
+      if (items.length === 0) return { hasSelection: false, isConflict: false, label: '' };
+      const docItems = items.filter(i => i.componentType === 'doctor');
+      const secItems = items.filter(i => i.componentType === 'section');
+      const labItems = items.filter(i => i.componentType === 'lab');
+      const fullItems = items.filter(i => !i.componentType || i.componentType === 'all');
+      const isConflict = items.length > 1 && (
+        fullItems.length > 1 ||
+        docItems.length > 1 ||
+        secItems.length > 1 ||
+        labItems.length > 1 ||
+        (fullItems.length > 0 && (docItems.length > 0 || secItems.length > 0 || labItems.length > 0))
+      );
+      let label = '';
+      if (isConflict) {
+        label = `${items.length} Groups Selected`;
+      } else if (fullItems.length === 1) {
+        label = `Selected: Group ${fullItems[0].group}`;
+      } else {
+        const parts = [];
+        if (docItems.length === 1) parts.push(`Dr: Group ${docItems[0].group}`);
+        if (secItems.length === 1) parts.push(`Sec: Group ${secItems[0].group}`);
+        if (labItems.length === 1) parts.push(`Lab: Group ${labItems[0].group}`);
+        label = `✓ ${parts.join(' | ')}`;
+      }
+      return {
+        hasSelection: true,
+        isConflict,
+        label,
+        docGroup: docItems[0]?.group || (fullItems.length > 0 ? fullItems[0]?.group : null),
+        secGroup: secItems[0]?.group || (fullItems.length > 0 ? fullItems[0]?.group : null),
+        labGroup: labItems[0]?.group || (fullItems.length > 0 ? fullItems[0]?.group : null)
+      };
+    }
+
+    // 33.2: Select Doctor from Group 1
     testSelectComponent(testState, 'CUSTOM101', '1', 'doctor');
     const doctorKey = 'CUSTOM101:::1:::doctor';
     assert('Selecting Doctor adds only lecture sessions with componentType doctor',
@@ -1155,66 +1251,62 @@ ME D Abdelgawad Matar
       testState.manualSchedule[doctorKey].sessions.every(s => s.type === 'Lect.')
     );
 
-    // 33.3: Select TA from Group 2 (independent customization)
-    testSelectComponent(testState, 'CUSTOM101', '2', 'ta');
-    const taKey = 'CUSTOM101:::2:::ta';
-    assert('Selecting TA adds only section sessions with componentType ta',
-      testState.manualSchedule[taKey] &&
-      testState.manualSchedule[taKey].componentType === 'ta' &&
-      testState.manualSchedule[taKey].sessions.every(s => s.type === 'Sec.')
+    // 33.3: Select Section from Group 2
+    testSelectComponent(testState, 'CUSTOM101', '2', 'section');
+    const secKey = 'CUSTOM101:::2:::section';
+    assert('Selecting Section adds only section sessions with componentType section',
+      testState.manualSchedule[secKey] &&
+      testState.manualSchedule[secKey].componentType === 'section' &&
+      testState.manualSchedule[secKey].sessions.every(s => s.type === 'Sec.')
     );
 
-    // 33.4: Both doctor and TA coexist without being flagged as conflict
-    function testGetCourseGroupStatus(manualSchedule, courseId) {
-      const items = Object.values(manualSchedule).filter(g => g.courseId === courseId);
-      if (items.length === 0) return { hasSelection: false, isConflict: false, label: '' };
-      const docItems = items.filter(i => i.componentType === 'doctor');
-      const taItems = items.filter(i => i.componentType === 'ta');
-      const fullItems = items.filter(i => !i.componentType || i.componentType === 'all');
-      const isConflict = items.length > 1 && (
-        fullItems.length > 1 ||
-        docItems.length > 1 ||
-        taItems.length > 1 ||
-        (fullItems.length > 0 && (docItems.length > 0 || taItems.length > 0))
-      );
-      let label = '';
-      if (isConflict) {
-        label = `${items.length} Groups Selected`;
-      } else if (docItems.length === 1 && taItems.length === 1) {
-        label = `✓ Dr: Group ${docItems[0].group} | TA: Group ${taItems[0].group}`;
-      } else if (docItems.length === 1) {
-        label = `✓ Doctor: Group ${docItems[0].group} (Lectures only)`;
-      } else if (taItems.length === 1) {
-        label = `✓ TA: Group ${taItems[0].group} (Sections/Labs only)`;
-      } else {
-        label = `Selected: Group ${items[0].group}`;
-      }
-      return { hasSelection: true, isConflict, label, docGroup: docItems[0]?.group, taGroup: taItems[0]?.group };
-    }
+    // 33.4: Select Lab from Group 3
+    testSelectComponent(testState, 'CUSTOM101', '3', 'lab');
+    const labKey = 'CUSTOM101:::3:::lab';
+    assert('Selecting Lab adds only lab sessions with componentType lab',
+      testState.manualSchedule[labKey] &&
+      testState.manualSchedule[labKey].componentType === 'lab' &&
+      testState.manualSchedule[labKey].sessions.every(s => s.type === 'Lab.')
+    );
 
+    // 33.5: All 3 components (Dr from 1, Sec from 2, Lab from 3) coexist without conflict
     const customStatus = testGetCourseGroupStatus(testState.manualSchedule, 'CUSTOM101');
-    assert('Customized Dr (Grp 1) + TA (Grp 2) is recognized without false multi-group conflict',
+    assert('Customized Dr (Grp 1) + Sec (Grp 2) + Lab (Grp 3) is recognized without false conflict',
       customStatus.hasSelection === true &&
       customStatus.isConflict === false &&
-      customStatus.label === '✓ Dr: Group 1 | TA: Group 2'
+      customStatus.label === '✓ Dr: Group 1 | Sec: Group 2 | Lab: Group 3' &&
+      customStatus.docGroup === '1' &&
+      customStatus.secGroup === '2' &&
+      customStatus.labGroup === '3'
     );
 
-    // 33.5: Selecting Doctor from Group 2 replaces Group 1 Doctor and merges with Group 2 TA into full group
-    testSelectComponent(testState, 'CUSTOM101', '2', 'doctor');
-    const fullKey = 'CUSTOM101:::2';
-    assert('Selecting Doctor of Group 2 when TA of Group 2 is active merges into full group',
+    // 33.6: Switching Section to Group 1 replaces Group 2 Section, while keeping Group 1 Doctor and Group 3 Lab
+    testSelectComponent(testState, 'CUSTOM101', '1', 'section');
+    const sec1Key = 'CUSTOM101:::1:::section';
+    assert('Replacing Section with Group 1 keeps Doctor 1 and Lab 3 intact',
+      testState.manualSchedule[doctorKey] &&
+      testState.manualSchedule[sec1Key] &&
+      !testState.manualSchedule[secKey] &&
+      testState.manualSchedule[labKey]
+    );
+
+    // 33.7: Switching Lab to Group 1 merges all 3 components of Group 1 into full group
+    testSelectComponent(testState, 'CUSTOM101', '1', 'lab');
+    const full1Key = 'CUSTOM101:::1';
+    assert('Selecting all 3 roles of Group 1 merges them into full group',
       !testState.manualSchedule[doctorKey] &&
-      !testState.manualSchedule[taKey] &&
-      testState.manualSchedule[fullKey] &&
-      testState.manualSchedule[fullKey].componentType === 'all'
+      !testState.manualSchedule[sec1Key] &&
+      !testState.manualSchedule[labKey] &&
+      testState.manualSchedule[full1Key] &&
+      testState.manualSchedule[full1Key].componentType === 'all'
     );
 
-    // 33.6: Status for full group shows single group selection
+    // 33.8: Status for merged full group shows standard single selection
     const fullStatus = testGetCourseGroupStatus(testState.manualSchedule, 'CUSTOM101');
     assert('Merged full group shows standard single selection without conflict',
       fullStatus.hasSelection === true &&
       fullStatus.isConflict === false &&
-      fullStatus.label === 'Selected: Group 2'
+      fullStatus.label === 'Selected: Group 1'
     );
 
     // Summary

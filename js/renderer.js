@@ -95,6 +95,24 @@ const ScheduleRenderer = (() => {
   }
 
   /**
+   * Checks if a session is a lab
+   */
+  function isLabSession(session) {
+    if (!session || !session.type) return false;
+    const t = session.type.toLowerCase();
+    return t.includes('lab') || t.includes('معمل');
+  }
+
+  /**
+   * Checks if a session is a section / tutorial
+   */
+  function isSectionSession(session) {
+    if (!session || !session.type) return false;
+    const t = session.type.toLowerCase();
+    return t.includes('sec') || t.includes('سكشن') || t.includes('تمارين') || (!isLectureSession(session) && !isLabSession(session));
+  }
+
+  /**
    * Normalizes doctor name by removing honorific titles and extra spaces
    */
   function normalizeDoctorName(doc) {
@@ -778,6 +796,8 @@ const ScheduleRenderer = (() => {
     setViewMode,
     getEffectiveViewMode,
     isLectureSession,
+    isLabSession,
+    isSectionSession,
     normalizeDoctorName,
     isSameDoctor,
     mergeSameDoctorLectures

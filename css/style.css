@@ -2791,9 +2791,15 @@ body {
   background: rgba(59, 130, 246, 0.12);
 }
 
+.manual-component-btn.is-section.is-selected,
 .manual-component-btn.is-ta.is-selected {
   border-color: #10B981;
   background: rgba(16, 185, 129, 0.12);
+}
+
+.manual-component-btn.is-lab.is-selected {
+  border-color: #8B5CF6;
+  background: rgba(139, 92, 246, 0.12);
 }
 
 .manual-component-action-chip {
@@ -2814,10 +2820,17 @@ body {
   border: 1px solid var(--accent-primary);
 }
 
+.manual-component-btn.is-section .manual-component-action-chip.is-active,
 .manual-component-btn.is-ta .manual-component-action-chip.is-active {
   background: #10B981;
   color: #FFFFFF;
   border: 1px solid #10B981;
+}
+
+.manual-component-btn.is-lab .manual-component-action-chip.is-active {
+  background: #8B5CF6;
+  color: #FFFFFF;
+  border: 1px solid #8B5CF6;
 }
 
 .manual-component-btn .manual-component-action-chip.is-inactive {
