@@ -37,6 +37,7 @@ const App = (() => {
       maxDays: 'any',
       maxGaps: 'any',
       maxClassesPerDay: 'any',
+      maxOptions: 'all',
       preset: 'balanced'
     },
     filteredSolutions: [],
@@ -138,6 +139,13 @@ const App = (() => {
       filterMaxDays: 'Max Days / Week:',
       filterMaxGaps: 'Max Gap Slots:',
       filterMaxClasses: 'Max Classes / Day:',
+      filterMaxOptions: 'Max Schedules to Show:',
+      optAllSchedules: 'All Schedules',
+      optTop15: 'Top 15 Schedules',
+      optTop25: 'Top 25 Schedules',
+      optTop50: 'Top 50 Schedules',
+      optTop100: 'Top 100 Schedules',
+      optTop250: 'Top 250 Schedules',
       optAny: 'Any (No restriction)',
       rankingPresetLabel: 'Ranking Priority (Choose 1 of 4):',
       presetMinDays: 'Minimum Days',
@@ -304,6 +312,13 @@ const App = (() => {
       filterMaxDays: 'أقصى عدد أيام نزول / أسبوع:',
       filterMaxGaps: 'أقصى فترات فراغ (Gaps):',
       filterMaxClasses: 'أقصى فترات/حصص باليوم:',
+      filterMaxOptions: 'أقصى عدد جداول معروضة:',
+      optAllSchedules: 'جميع الجداول (بدون تقييد)',
+      optTop15: 'أفضل 15 جدول',
+      optTop25: 'أفضل 25 جدول',
+      optTop50: 'أفضل 50 جدول',
+      optTop100: 'أفضل 100 جدول',
+      optTop250: 'أفضل 250 جدول',
       optAny: 'أي عدد (بدون تقييد)',
       rankingPresetLabel: 'الأولوية في ترتيب الجداول (اختر ١ من ٤):',
       presetMinDays: 'أقل عدد أيام نزول',
@@ -930,6 +945,8 @@ const App = (() => {
     if (maxGapsEl) maxGapsEl.value = state.timetableFilters.maxGaps || 'any';
     const maxClassesEl = document.getElementById('filter-max-classes-day');
     if (maxClassesEl) maxClassesEl.value = state.timetableFilters.maxClassesPerDay || 'any';
+    const maxOptionsEl = document.getElementById('filter-max-options');
+    if (maxOptionsEl) maxOptionsEl.value = state.timetableFilters.maxOptions || 'all';
 
     const curPreset = state.timetableFilters.preset || 'balanced';
     document.querySelectorAll('.preset-choice-card').forEach(card => card.classList.remove('is-active'));
@@ -4178,6 +4195,28 @@ const App = (() => {
   }
 
   /**
+   * Helper: returns maximum number of solutions to display/navigate
+   */
+  function getMaxDisplayedLimit() {
+    const raw = state.timetableFilters && state.timetableFilters.maxOptions;
+    if (!raw || raw === 'all') return Infinity;
+    const parsed = parseInt(raw, 10);
+    return isNaN(parsed) || parsed <= 0 ? Infinity : parsed;
+  }
+
+  /**
+   * Helper: returns the list of solutions to display/navigate based on user's maxOptions limit
+   */
+  function getDisplayedSolutions() {
+    const activeList = getActiveSolutions();
+    const limit = getMaxDisplayedLimit();
+    if (limit === Infinity || activeList.length <= limit) {
+      return activeList;
+    }
+    return activeList.slice(0, limit);
+  }
+
+  /**
    * Helper: calculates max classes / sessions in a single day for a solution
    */
   function getMaxClassesPerDay(solution) {
@@ -4210,21 +4249,20 @@ const App = (() => {
     if (!container) return;
 
     const isAr = state.currentLang === 'ar';
-    const activeList = getActiveSolutions();
-    const topSolutions = activeList.slice(0, 15);
+    const displayedSolutions = getDisplayedSolutions();
 
-    if (state.activeSolutionIndex >= topSolutions.length && topSolutions.length > 0) {
+    if (state.activeSolutionIndex >= displayedSolutions.length && displayedSolutions.length > 0) {
       state.activeSolutionIndex = 0;
     }
 
     const existingChips = container.querySelectorAll('.sol-chip');
-    if (existingChips.length === topSolutions.length && existingChips.length > 0) {
+    if (existingChips.length === displayedSolutions.length && existingChips.length > 0) {
       existingChips.forEach((chip, idx) => {
         chip.classList.toggle('active', idx === state.activeSolutionIndex);
       });
     } else {
       let html = '';
-      topSolutions.forEach((sol, idx) => {
+      displayedSolutions.forEach((sol, idx) => {
         const isActive = idx === state.activeSolutionIndex;
         const titleText = state.filterMismatch
           ? (isAr ? `معاينة غير مصفاة #${sol.rank || 1}` : `Unfiltered Inspection #${sol.rank || 1}`)
@@ -4250,9 +4288,8 @@ const App = (() => {
   }
 
   function updateScheduleNavControls() {
-    const activeList = getActiveSolutions();
-    const topSolutions = activeList.slice(0, 15);
-    const total = topSolutions.length;
+    const displayedSolutions = getDisplayedSolutions();
+    const total = displayedSolutions.length;
     const current = total > 0 ? (state.activeSolutionIndex + 1) : 0;
     const isAr = state.currentLang === 'ar';
 
@@ -4296,8 +4333,8 @@ const App = (() => {
   }
 
   function nextSchedule() {
-    const activeList = getActiveSolutions();
-    const maxLen = Math.min(activeList.length, 15);
+    const displayedSolutions = getDisplayedSolutions();
+    const maxLen = displayedSolutions.length;
     if (maxLen <= 1) return;
     if (state.activeSolutionIndex < maxLen - 1) {
       selectSolution(state.activeSolutionIndex + 1);
@@ -4305,8 +4342,8 @@ const App = (() => {
   }
 
   function prevSchedule() {
-    const activeList = getActiveSolutions();
-    const maxLen = Math.min(activeList.length, 15);
+    const displayedSolutions = getDisplayedSolutions();
+    const maxLen = displayedSolutions.length;
     if (maxLen <= 1) return;
     if (state.activeSolutionIndex > 0) {
       selectSolution(state.activeSolutionIndex - 1);
@@ -4328,8 +4365,8 @@ const App = (() => {
     const openModal = document.querySelector('.modal.active, .modal[style*="display: block"], .modal[style*="display: flex"]');
     if (openModal) return;
 
-    const activeList = getActiveSolutions();
-    const maxLen = Math.min(activeList.length, 15);
+    const displayedSolutions = getDisplayedSolutions();
+    const maxLen = displayedSolutions.length;
     if (maxLen <= 1) return;
 
     if (e.key === 'ArrowRight') {
@@ -4342,8 +4379,8 @@ const App = (() => {
   }
 
   function selectSolution(index) {
-    const activeList = getActiveSolutions();
-    const maxLen = Math.min(activeList.length, 15);
+    const displayedSolutions = getDisplayedSolutions();
+    const maxLen = displayedSolutions.length;
     if (index >= 0 && index < maxLen) {
       // Capture current vertical and horizontal scroll positions
       const currentScrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
@@ -4396,10 +4433,12 @@ const App = (() => {
     const maxDaysEl = document.getElementById('filter-max-days');
     const maxGapsEl = document.getElementById('filter-max-gaps');
     const maxClassesEl = document.getElementById('filter-max-classes-day');
+    const maxOptionsEl = document.getElementById('filter-max-options');
 
     if (maxDaysEl) state.timetableFilters.maxDays = maxDaysEl.value;
     if (maxGapsEl) state.timetableFilters.maxGaps = maxGapsEl.value;
     if (maxClassesEl) state.timetableFilters.maxClassesPerDay = maxClassesEl.value;
+    if (maxOptionsEl) state.timetableFilters.maxOptions = maxOptionsEl.value;
 
     saveStateToStorage();
     applyTimetableFilters();
@@ -4424,15 +4463,18 @@ const App = (() => {
       maxDays: 'any',
       maxGaps: 'any',
       maxClassesPerDay: 'any',
+      maxOptions: 'all',
       preset: 'balanced'
     };
 
     const maxDaysEl = document.getElementById('filter-max-days');
     const maxGapsEl = document.getElementById('filter-max-gaps');
     const maxClassesEl = document.getElementById('filter-max-classes-day');
+    const maxOptionsEl = document.getElementById('filter-max-options');
     if (maxDaysEl) maxDaysEl.value = 'any';
     if (maxGapsEl) maxGapsEl.value = 'any';
     if (maxClassesEl) maxClassesEl.value = 'any';
+    if (maxOptionsEl) maxOptionsEl.value = 'all';
 
     document.querySelectorAll('.preset-choice-card').forEach(card => card.classList.remove('is-active'));
     const balCard = document.getElementById('preset-card-balanced');
@@ -5638,7 +5680,9 @@ const App = (() => {
     clearPreferencesAndBlocked,
     nextSchedule,
     prevSchedule,
-    handleTimetableArrowNavigation
+    handleTimetableArrowNavigation,
+    getDisplayedSolutions,
+    getMaxDisplayedLimit
   };
 
   return window.App;

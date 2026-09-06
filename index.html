@@ -380,6 +380,21 @@
               <option value="5">Max 5 Classes / Day (5 محاضرات)</option>
             </select>
           </div>
+
+          <div class="filter-group">
+            <label for="filter-max-options" class="filter-label">
+              <span data-i18n="filterMaxOptions">Max Schedules to Show:</span>
+              <span style="color: var(--accent-primary);">🔢</span>
+            </label>
+            <select id="filter-max-options" class="select-input filter-select" onchange="App.handleTimetableFilterChange()">
+              <option value="all" data-i18n="optAllSchedules">All Schedules (جميع الجداول)</option>
+              <option value="15" data-i18n="optTop15">Top 15 (أفضل 15 جدول)</option>
+              <option value="25" data-i18n="optTop25">Top 25 (أفضل 25 جدول)</option>
+              <option value="50" data-i18n="optTop50">Top 50 (أفضل 50 جدول)</option>
+              <option value="100" data-i18n="optTop100">Top 100 (أفضل 100 جدول)</option>
+              <option value="250" data-i18n="optTop250">Top 250 (أفضل 250 جدول)</option>
+            </select>
+          </div>
         </div>
 
         <!-- 4 Preset Choices Row -->

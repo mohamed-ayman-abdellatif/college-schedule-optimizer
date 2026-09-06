@@ -1323,11 +1323,22 @@ ME D Abdelgawad Matar
       activeSolutionIndex: 0,
       solutions: mockNavSolutions,
       filteredSolutions: mockNavSolutions,
+      timetableFilters: { maxOptions: 'all' },
       currentLang: 'en'
     };
 
+    function testGetDisplayedSolutions(s) {
+      const raw = s.timetableFilters && s.timetableFilters.maxOptions;
+      const limit = (!raw || raw === 'all') ? Infinity : parseInt(raw, 10);
+      if (limit === Infinity || s.filteredSolutions.length <= limit) {
+        return s.filteredSolutions;
+      }
+      return s.filteredSolutions.slice(0, limit);
+    }
+
     function testNextSchedule(s) {
-      const maxLen = Math.min(s.filteredSolutions.length, 15);
+      const displayed = testGetDisplayedSolutions(s);
+      const maxLen = displayed.length;
       if (maxLen <= 1) return;
       if (s.activeSolutionIndex < maxLen - 1) {
         s.activeSolutionIndex++;
@@ -1335,7 +1346,8 @@ ME D Abdelgawad Matar
     }
 
     function testPrevSchedule(s) {
-      const maxLen = Math.min(s.filteredSolutions.length, 15);
+      const displayed = testGetDisplayedSolutions(s);
+      const maxLen = displayed.length;
       if (maxLen <= 1) return;
       if (s.activeSolutionIndex > 0) {
         s.activeSolutionIndex--;
@@ -1347,7 +1359,8 @@ ME D Abdelgawad Matar
       if (activeTagName === 'INPUT' || activeTagName === 'TEXTAREA' || activeTagName === 'SELECT') return false;
       if (hasModal) return false;
 
-      const maxLen = Math.min(s.filteredSolutions.length, 15);
+      const displayed = testGetDisplayedSolutions(s);
+      const maxLen = displayed.length;
       if (maxLen <= 1) return false;
 
       if (key === 'ArrowRight') {
@@ -1411,7 +1424,8 @@ ME D Abdelgawad Matar
     };
 
     function testSelectSolutionWithScroll(s, index, currentScrollY) {
-      const maxLen = Math.min(s.filteredSolutions.length, 15);
+      const displayed = testGetDisplayedSolutions(s);
+      const maxLen = displayed.length;
       if (index >= 0 && index < maxLen) {
         s.activeSolutionIndex = index;
         window.scrollTo(0, currentScrollY);
@@ -1686,6 +1700,117 @@ ME D Abdelgawad Matar
     ];
     assert('User imported courses with real group codes are NOT identified as sample (never wiped)',
       testIsOnlySample(userImportedCourses, false) === false
+    );
+
+    // =========================================================================
+    // TEST 36: Switching Through All Schedules & Configurable Maximum Options Limit
+    // =========================================================================
+    const mock35Solutions = Array.from({ length: 35 }, (_, i) => ({
+      id: `sol_${i + 1}`,
+      rank: i + 1,
+      totalScore: 100 - i,
+      activeDaysCount: 3 + (i % 2),
+      totalGapSlots: i % 3,
+      sessions: []
+    }));
+
+    const testState36 = {
+      currentTab: 'timetable',
+      activeSolutionIndex: 0,
+      solutions: mock35Solutions,
+      filteredSolutions: mock35Solutions,
+      timetableFilters: {
+        maxDays: 'any',
+        maxGaps: 'any',
+        maxClassesPerDay: 'any',
+        maxOptions: 'all',
+        preset: 'balanced'
+      },
+      currentLang: 'en'
+    };
+
+    // 36.1: When maxOptions is 'all', all 35 solutions are displayed
+    let displayed36 = testGetDisplayedSolutions(testState36);
+    assert('When maxOptions is "all", all 35 solutions are displayed (not limited to 15)',
+      displayed36.length === 35
+    );
+
+    // 36.2: Able to navigate sequentially past the 15th solution (up to index 34)
+    for (let i = 0; i < 20; i++) {
+      testHandleArrow(testState36, 'ArrowRight');
+    }
+    assert('Can navigate past 15th solution: reached index 20',
+      testState36.activeSolutionIndex === 20
+    );
+
+    // Navigate to the 35th solution (index 34)
+    for (let i = 0; i < 20; i++) {
+      testHandleArrow(testState36, 'ArrowRight');
+    }
+    assert('Can navigate all the way to last solution (index 34)',
+      testState36.activeSolutionIndex === 34
+    );
+
+    // Clamps at 35th solution
+    testHandleArrow(testState36, 'ArrowRight');
+    assert('ArrowRight at 35th solution clamps at index 34',
+      testState36.activeSolutionIndex === 34
+    );
+
+    // 36.3: Can navigate backward from index 34
+    testHandleArrow(testState36, 'ArrowLeft');
+    assert('ArrowLeft retreats from index 34 to index 33',
+      testState36.activeSolutionIndex === 33
+    );
+
+    // 36.4: Setting maxOptions to '15' limits options to 15
+    testState36.timetableFilters.maxOptions = '15';
+    displayed36 = testGetDisplayedSolutions(testState36);
+    assert('Setting maxOptions to "15" limits displayed solutions to exactly 15',
+      displayed36.length === 15
+    );
+
+    // If index was 33, clamping brings activeSolutionIndex to valid range
+    if (testState36.activeSolutionIndex >= displayed36.length) {
+      testState36.activeSolutionIndex = 0;
+    }
+    assert('activeSolutionIndex resets safely when new maxOptions limit is smaller',
+      testState36.activeSolutionIndex === 0
+    );
+
+    // Navigation with limit 15 clamps at index 14
+    for (let i = 0; i < 25; i++) {
+      testHandleArrow(testState36, 'ArrowRight');
+    }
+    assert('Navigation with maxOptions "15" clamps at index 14',
+      testState36.activeSolutionIndex === 14
+    );
+
+    // 36.5: Setting maxOptions to '25' limits options to 25
+    testState36.timetableFilters.maxOptions = '25';
+    displayed36 = testGetDisplayedSolutions(testState36);
+    assert('Setting maxOptions to "25" limits displayed solutions to exactly 25',
+      displayed36.length === 25
+    );
+
+    for (let i = 0; i < 20; i++) {
+      testHandleArrow(testState36, 'ArrowRight');
+    }
+    assert('Navigation with maxOptions "25" advances and clamps at index 24',
+      testState36.activeSolutionIndex === 24
+    );
+
+    // 36.6: Resetting filters resets maxOptions to 'all'
+    testState36.timetableFilters = {
+      maxDays: 'any',
+      maxGaps: 'any',
+      maxClassesPerDay: 'any',
+      maxOptions: 'all',
+      preset: 'balanced'
+    };
+    displayed36 = testGetDisplayedSolutions(testState36);
+    assert('Resetting timetable filters restores maxOptions to "all" (all 35 solutions available)',
+      displayed36.length === 35
     );
 
     // Summary
