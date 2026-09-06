@@ -98,6 +98,9 @@ const App = (() => {
       presetSatTraining: '⚽ Block Saturday 08:30 - 10:20 (Training)',
       presetEvenings: '🌙 Block All Slots After 4 PM',
       presetClearBlocked: 'Clear All Blocked Slots',
+      clearCacheBtn: 'Clear Cache & Reset',
+      freshStartBtn: 'Fresh Start (Reset All)',
+      resetAllPrefsBtn: 'Reset Preferences & Blocked Slots',
       exportTxt: 'Export TXT',
       copyTxt: 'Copy Codes',
       scheduleTxtModalTitle: 'Schedule Groups Text',
@@ -241,6 +244,9 @@ const App = (() => {
       presetSatTraining: '⚽ حظر تدريب السبت 08:30 - 10:20',
       presetEvenings: '🌙 حظر الفترات المسائية بعد 4 عصراً',
       presetClearBlocked: 'مسح جميع الأوقات المحظورة',
+      clearCacheBtn: 'تفريغ الذاكرة وإعادة الضبط',
+      freshStartBtn: 'بداية جديدة (إعادة ضبط شاملة)',
+      resetAllPrefsBtn: 'إعادة ضبط التفضيلات والأوقات المحظورة',
       exportTxt: 'تصدير ملف نصي (TXT)',
       copyTxt: 'نسخ الأكواد',
       scheduleTxtModalTitle: 'نص مجموعات المقررات',
@@ -480,9 +486,25 @@ const App = (() => {
 
       const storedPrefs = localStorage.getItem('sched_prefs');
       if (storedPrefs) state.preferences = Object.assign(state.preferences, JSON.parse(storedPrefs));
+      if (state.preferences && Array.isArray(state.preferences.freeDays)) {
+        if (state.preferences.freeDays.length >= 5) {
+          state.preferences.freeDays = [];
+        }
+      }
 
       const storedBlocked = localStorage.getItem('sched_blocked_times');
-      if (storedBlocked) state.blockedTimes = JSON.parse(storedBlocked);
+      if (storedBlocked) {
+        try {
+          const parsedBlocked = JSON.parse(storedBlocked);
+          if (Array.isArray(parsedBlocked)) {
+            state.blockedTimes = parsedBlocked.filter(b => b && b.day && (b.slot || (b.startSlot && b.endSlot)));
+          } else {
+            state.blockedTimes = [];
+          }
+        } catch (e) {
+          state.blockedTimes = [];
+        }
+      }
 
       const storedTheme = localStorage.getItem('sched_theme');
       if (storedTheme) state.currentTheme = storedTheme;
@@ -2228,8 +2250,11 @@ const App = (() => {
             if (modal) modal.style.setProperty('display', 'none', 'important');
 
             if (!result.success || !result.solutions || result.solutions.length === 0) {
-              const errMsg = isAr ? (result.messageAr || result.message) : (result.message || 'No clash-free schedules found. Try relaxing free days or unblocking some times.');
-              showToast(errMsg, 'error');
+              const baseMsg = isAr ? (result.messageAr || result.message) : (result.message || 'No clash-free schedules found.');
+              const tip = isAr
+                ? ' 💡 يمكنك الضغط على زر "تفريغ الذاكرة 🧹" بأعلى الصفحة للبدء بحالة نظيفة تماماً مثل التصفح المتخفي.'
+                : ' 💡 You can click "Clear Cache 🧹" at the top to reset everything to fresh defaults (like incognito mode).';
+              showToast(baseMsg + tip, 'error');
               return;
             }
 
@@ -4406,6 +4431,61 @@ const App = (() => {
     }
   }
 
+  /**
+   * Reset doctor preferences, free days, and blocked times to default clean slate
+   */
+  function clearPreferencesAndBlocked() {
+    const isAr = state.currentLang === 'ar';
+    state.blockedTimes = [];
+    state.doctorPreferences = {};
+    state.preferences.freeDays = [];
+    saveStateToStorage();
+
+    // Reset UI chips
+    document.querySelectorAll('.day-chip.active').forEach(el => el.classList.remove('active'));
+    renderBlockedPainter();
+    renderBlockedList();
+    renderDoctorPreferences();
+    showToast(
+      isAr
+        ? 'تمت إعادة ضبط تفضيلات الدكاترة وأيام الإجازة والأوقات المحظورة بنجاح!'
+        : 'Reset all doctor preferences, free days, and blocked slots to defaults!',
+      'success'
+    );
+  }
+
+  /**
+   * Complete Fresh Start / Clear Cache: Clears all localStorage and hard reloads page
+   */
+  function clearCacheAndReset() {
+    const isAr = state.currentLang === 'ar';
+    const confirmed = confirm(
+      isAr
+        ? 'هل ترغب في مسح الذاكرة المؤقتة وإعادة ضبط التطبيق بالكامل كأنك تفتح الموقع لأول مرة (مثل وضع التصفح المتخفي Incognito)؟'
+        : 'Do you want to clear cache, reset all saved courses & preferences, and start fresh (exactly like incognito mode)?'
+    );
+    if (!confirmed) return;
+
+    try {
+      const keys = [
+        'sched_courses',
+        'sched_doc_prefs',
+        'sched_prefs',
+        'sched_blocked_times',
+        'sched_manual_schedule',
+        'sched_manual_hide_avoided',
+        'sched_timetable_filters',
+        'sched_mixmatch_selections'
+      ];
+      keys.forEach(k => localStorage.removeItem(k));
+    } catch (e) {
+      console.warn('LocalStorage clear failed:', e);
+    }
+
+    // Force hard reload bypassing HTTP cache
+    window.location.reload(true);
+  }
+
   function renderBlockedPainter() {
     const container = document.getElementById('blocked-painter-grid');
     if (!container) return;
@@ -4759,7 +4839,9 @@ const App = (() => {
     toggleScheduleTxtScope,
     copyScheduleTxtContent,
     downloadScheduleTxtFromModal,
-    exportMixMatchTxt
+    exportMixMatchTxt,
+    clearCacheAndReset,
+    clearPreferencesAndBlocked
   };
 
   return window.App;

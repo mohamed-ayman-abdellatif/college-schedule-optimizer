@@ -1037,6 +1037,40 @@ ME D Abdelgawad Matar
     // Test line count
     assert('Schedule text export is non-empty and has proper line breaks', generatedTxt.split('\r\n').length === 6);
 
+    // =========================================================================
+    // TEST 32: Progressive Constraint Relaxation (Free Days, Blocked Times, Doctor Mode)
+    // =========================================================================
+    // Scenario A: When user has impossible free days (e.g. 3 days off that leave no room for 7 courses)
+    const impossibleFreeDays = ['Sunday', 'Tuesday', 'Thursday'];
+    const relaxedFreeDaysRes = ScheduleOptimizer.findOptimalSchedules(sampleCourses, {
+      freeDays: impossibleFreeDays
+    });
+    assert('Optimizer automatically relaxes impossible free days to find clash-free schedules',
+      relaxedFreeDaysRes.success === true && relaxedFreeDaysRes.solutions.length > 0 &&
+      relaxedFreeDaysRes.fallbackMode === 'relaxed-free-days'
+    );
+
+    // Scenario B: When all groups of courses overlap with evening blocked times
+    const heavyEveningBlocked = [];
+    ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'].forEach(day => {
+      for (let sl = 1; sl <= 16; sl++) {
+        // Block afternoon/evening
+        if (sl >= 5) heavyEveningBlocked.push({ day, slot: sl, startSlot: sl, endSlot: sl });
+      }
+    });
+    const relaxedBlockedRes = ScheduleOptimizer.findOptimalSchedules(sampleCourses, {
+      blockedTimes: heavyEveningBlocked
+    });
+    assert('Optimizer automatically relaxes conflicting blocked times to find clash-free schedules',
+      relaxedBlockedRes.success === true && relaxedBlockedRes.solutions.length > 0 &&
+      (relaxedBlockedRes.fallbackMode === 'relaxed-blocked-times' || relaxedBlockedRes.fallbackMode === 'relaxed-free-and-blocked')
+    );
+
+    // Scenario C: Badges are populated for relaxed solutions
+    assert('Relaxed solutions receive descriptive badges explaining the relaxation',
+      relaxedFreeDaysRes.solutions[0].badges.some(b => b.type === 'free-days-relaxed')
+    );
+
     // Summary
     const passedCount = results.filter(r => r.passed).length;
     const failedCount = results.filter(r => !r.passed).length;

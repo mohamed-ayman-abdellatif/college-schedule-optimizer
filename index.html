@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <title>College Schedule Optimizer | محول ومحسن الجداول الجامعية</title>
   
   <!-- Google Fonts: Inter & Cairo -->
@@ -11,8 +14,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Core & Timetable CSS -->
-  <link rel="stylesheet" href="css/style.css?v=5.2" />
-  <link rel="stylesheet" href="css/timetable.css?v=5.2" />
+  <link rel="stylesheet" href="css/style.css?v=6.0" />
+  <link rel="stylesheet" href="css/timetable.css?v=6.0" />
   <script>try { localStorage.setItem('sched_guide_dismissed', 'true'); } catch(e) {}</script>
 </head>
 <body>
@@ -43,6 +46,9 @@
         </button>
         <button id="btn-load-sample" class="btn btn-secondary btn-sm" data-i18n="loadSampleBtn">
           <span>📚</span> <span>Load Example Courses</span>
+        </button>
+        <button id="btn-clear-cache" class="btn btn-outline btn-sm" onclick="App.clearCacheAndReset()" title="Clear cache, reset preferences and start fresh (like incognito mode)">
+          <span>🧹</span> <span data-i18n="clearCacheBtn">Clear Cache</span>
         </button>
         <button id="btn-find-schedules-header" class="btn btn-primary btn-sm" data-i18n="findSchedulesBtn">
           <span>⚡</span> <span>Find Best Schedules</span>
@@ -177,7 +183,10 @@
               Review your course list, available groups, and session timings
             </div>
           </div>
-          <div style="display: flex; gap: 8px;">
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button id="btn-fresh-start" class="btn btn-outline btn-sm" onclick="App.clearCacheAndReset()" title="Reset everything to fresh default incognito state">
+              <span>🧹</span> <span data-i18n="freshStartBtn">Fresh Start (Reset All)</span>
+            </button>
             <button id="btn-clear-courses" class="btn btn-outline btn-sm" style="color: var(--danger);" data-i18n="clearAllCourses">
               Clear All Courses
             </button>
@@ -232,6 +241,9 @@
             </button>
             <button class="btn btn-outline btn-sm" style="color: var(--danger);" onclick="App.applyBlockedPreset('clear')">
               <span data-i18n="presetClearBlocked">Clear All Blocked Slots</span>
+            </button>
+            <button class="btn btn-outline btn-sm" onclick="App.clearPreferencesAndBlocked()" title="Reset doctor preferences, free days and blocked slots">
+              <span>🔄</span> <span data-i18n="resetAllPrefsBtn">Reset Preferences & Blocked Slots</span>
             </button>
           </div>
         </div>
@@ -1052,15 +1064,15 @@
 
   <!-- Scripts with Cache Busting -->
   <script src="js/pdf.min.js"></script>
-  <script src="js/pdfParser.js?v=5.3"></script>
-  <script src="js/parser.js?v=5.3"></script>
-  <script src="js/sampleData.js?v=5.3"></script>
-  <script src="js/optimizer.js?v=5.3"></script>
-  <script src="js/imageExtractor.js?v=5.3"></script>
-  <script src="js/renderer.js?v=5.3"></script>
-  <script src="js/exporter.js?v=5.3"></script>
-  <script src="js/analytics.js?v=5.3"></script>
-  <script src="js/telemetry.js?v=5.3"></script>
-  <script src="js/app.js?v=5.3"></script>
+  <script src="js/pdfParser.js?v=6.0"></script>
+  <script src="js/parser.js?v=6.0"></script>
+  <script src="js/sampleData.js?v=6.0"></script>
+  <script src="js/optimizer.js?v=6.0"></script>
+  <script src="js/imageExtractor.js?v=6.0"></script>
+  <script src="js/renderer.js?v=6.0"></script>
+  <script src="js/exporter.js?v=6.0"></script>
+  <script src="js/analytics.js?v=6.0"></script>
+  <script src="js/telemetry.js?v=6.0"></script>
+  <script src="js/app.js?v=6.0"></script>
 </body>
 </html>

@@ -348,7 +348,7 @@ const ScheduleOptimizer = (() => {
 
     const MAX_SOLUTIONS_POOL = 2500;
 
-    function runSearch(isStrictMandate, isStrictAvoid, isStrictDesired = false) {
+    function runSearch(isStrictMandate, isStrictAvoid, isStrictDesired = false, customFreeDays = requestedFreeDays, customBlockedSet = blockedSet) {
       const solutions = [];
       const seenCombinationKeys = new Set();
       let evaluated = 0;
@@ -476,12 +476,12 @@ const ScheduleOptimizer = (() => {
           }));
 
           for (const s of groupSessions) {
-            if (requestedFreeDays.has(s.day)) { clash = true; break; }
-            if (blockedSet.has(`${s.day}:${s.startSlot}`) || blockedSet.has(`${s.day}:${s.endSlot}`)) {
+            if (customFreeDays.has(s.day)) { clash = true; break; }
+            if (customBlockedSet.has(`${s.day}:${s.startSlot}`) || customBlockedSet.has(`${s.day}:${s.endSlot}`)) {
               clash = true; break;
             }
             for (let sl = s.startSlot; sl <= s.endSlot; sl++) {
-              if (blockedSet.has(`${s.day}:${sl}`)) { clash = true; break; }
+              if (customBlockedSet.has(`${s.day}:${sl}`)) { clash = true; break; }
             }
             if (clash) break;
             for (const existing of sessions) {
@@ -595,7 +595,7 @@ const ScheduleOptimizer = (() => {
           // Constraint: Free Days
           let landsOnFreeDay = false;
           for (const s of grp.sessions) {
-            if (requestedFreeDays.has(s.day)) {
+            if (customFreeDays.has(s.day)) {
               landsOnFreeDay = true;
               break;
             }
@@ -604,10 +604,10 @@ const ScheduleOptimizer = (() => {
 
           // Constraint: Blocked Times (e.g. Training/Work)
           let clashesWithBlockedTime = false;
-          if (blockedSet.size > 0) {
+          if (customBlockedSet.size > 0) {
             for (const s of grp.sessions) {
               for (let sl = s.startSlot; sl <= s.endSlot; sl++) {
-                if (blockedSet.has(`${s.day}:${sl}`)) {
+                if (customBlockedSet.has(`${s.day}:${sl}`)) {
                   clashesWithBlockedTime = true;
                   break;
                 }
@@ -704,56 +704,9 @@ const ScheduleOptimizer = (() => {
         }
       }
 
-      // Step 3: If STILL 0 solutions, all combinations of non-avoided groups clash!
-      // NEVER include avoided doctors in Strict Doctor Mode!
+      // Step 3: If STILL 0 solutions with strict doctor preferences, mark for progressive relaxation
       if (searchResult.solutions.length === 0) {
-        // Analyze conflict diagnostics between course pairs
-        let conflictPair = null;
-        for (let i = 0; i < activeCourses.length; i++) {
-          for (let j = i + 1; j < activeCourses.length; j++) {
-            const cA = activeCourses[i];
-            const cB = activeCourses[j];
-            const cpA = getCoursePreferences(options.doctorPreferences, cA);
-            const cpB = getCoursePreferences(options.doctorPreferences, cB);
-            const avsA = Object.keys(cpA).filter(k => cpA[k] === 'avoid');
-            const avsB = Object.keys(cpB).filter(k => cpB[k] === 'avoid');
-
-            const validGrpsA = cA.groups.filter(g => {
-              const insts = getGroupInstructors(g);
-              return !avsA.some(av => insts.some(inst => matchesDoctor(inst, av)));
-            });
-            const validGrpsB = cB.groups.filter(g => {
-              const insts = getGroupInstructors(g);
-              return !avsB.some(av => insts.some(inst => matchesDoctor(inst, av)));
-            });
-
-            if (validGrpsA.length > 0 && validGrpsB.length > 0) {
-              const allClash = validGrpsA.every(gA => validGrpsB.every(gB => checkGroupClash(gA.sessions, gB.sessions)));
-              if (allClash) {
-                conflictPair = { cA: cA.name || cA.code, cB: cB.name || cB.code };
-                break;
-              }
-            }
-          }
-          if (conflictPair) break;
-        }
-
-        let diagMsg = `Checked all ${totalCombinationsPossible.toLocaleString()} combinations (${searchResult.evaluated.toLocaleString()} paths evaluated): No clash-free schedule exists that avoids all excluded doctors.`;
-        let diagMsgAr = `تم فحص كافة التباديل (${totalCombinationsPossible.toLocaleString()} احتمال، تم تقييم ${searchResult.evaluated.toLocaleString()} مساراً): لا يوجد أي جدول خالٍ من التعارض بدون إدراج دكتور مستبعد.`;
-        if (conflictPair) {
-          diagMsg += ` All available non-avoided groups of "${conflictPair.cA}" clash with "${conflictPair.cB}".`;
-          diagMsgAr += ` جميع مجموعات "${conflictPair.cA}" تتعارض مع "${conflictPair.cB}" في نفس المواعيد.`;
-        }
-
-        return {
-          success: false,
-          totalCombinationsPossible,
-          totalEvaluated: searchResult.evaluated,
-          isStrictDoctorMode: true,
-          message: diagMsg,
-          messageAr: diagMsgAr,
-          solutions: []
-        };
+        // Will proceed to progressive relaxation below
       }
     } else {
       // ----------------------------------------------------
@@ -775,6 +728,62 @@ const ScheduleOptimizer = (() => {
         if (searchResult.solutions.length > 0) {
           fallbackMode = totalUniqueMandated > 0 ? 'both' : 'avoid';
         }
+      }
+    }
+
+    // ====================================================
+    // PROGRESSIVE CONSTRAINT RELAXATION (Avoid false 0-solution deadlocks)
+    // ====================================================
+    const emptyFreeDays = new Set();
+    const emptyBlockedSet = new Set();
+
+    // Relaxation Tier 1: Free Days relaxation
+    if (searchResult.solutions.length === 0 && requestedFreeDays.size > 0) {
+      if (isStrictDoctorMode) {
+        searchResult = runSearch(false, true, false, emptyFreeDays, blockedSet);
+      } else {
+        searchResult = runSearch(false, totalUniqueAvoided > 0, false, emptyFreeDays, blockedSet);
+        if (searchResult.solutions.length === 0) {
+          searchResult = runSearch(false, false, false, emptyFreeDays, blockedSet);
+        }
+      }
+      if (searchResult.solutions.length > 0) {
+        fallbackMode = 'relaxed-free-days';
+      }
+    }
+
+    // Relaxation Tier 2: Blocked Times relaxation
+    if (searchResult.solutions.length === 0 && blockedSet.size > 0) {
+      if (isStrictDoctorMode) {
+        searchResult = runSearch(false, true, false, requestedFreeDays, emptyBlockedSet);
+      } else {
+        searchResult = runSearch(false, totalUniqueAvoided > 0, false, requestedFreeDays, emptyBlockedSet);
+        if (searchResult.solutions.length === 0) {
+          searchResult = runSearch(false, false, false, requestedFreeDays, emptyBlockedSet);
+        }
+      }
+      if (searchResult.solutions.length > 0) {
+        fallbackMode = 'relaxed-blocked-times';
+      }
+    }
+
+    // Relaxation Tier 3: Relax BOTH Free Days and Blocked Times
+    if (searchResult.solutions.length === 0 && (requestedFreeDays.size > 0 || blockedSet.size > 0)) {
+      if (isStrictDoctorMode) {
+        searchResult = runSearch(false, true, false, emptyFreeDays, emptyBlockedSet);
+      } else {
+        searchResult = runSearch(false, false, false, emptyFreeDays, emptyBlockedSet);
+      }
+      if (searchResult.solutions.length > 0) {
+        fallbackMode = 'relaxed-free-and-blocked';
+      }
+    }
+
+    // Relaxation Tier 4: Relax Strict Doctor Mode and all constraints
+    if (searchResult.solutions.length === 0 && (isStrictDoctorMode || totalUniqueAvoided > 0 || totalUniqueMandated > 0 || requestedFreeDays.size > 0 || blockedSet.size > 0)) {
+      searchResult = runSearch(false, false, false, emptyFreeDays, emptyBlockedSet);
+      if (searchResult.solutions.length > 0) {
+        fallbackMode = 'relaxed-all-constraints';
       }
     }
 
@@ -861,14 +870,32 @@ const ScheduleOptimizer = (() => {
         sol.badges.push({ text: '👨‍🏫 Top Doctor Match', textAr: '👨‍🏫 التوافق الأعلى مع الدكاترة', type: 'doctor' });
       }
 
-      if (sol.maxSameGroupCount === activeCourses.length && activeCourses.length > 1) {
-        sol.badges.push({ text: '🎯 100% Same Group Letter', textAr: '🎯 100% نفس حرف المجموعة', type: 'uniform' });
+      if (fallbackMode === 'relaxed-free-days') {
+        sol.badges.push({ text: '🏖️ Relaxed Free Days', textAr: '🏖️ تم استثناء أيام الإجازة', type: 'free-days-relaxed' });
+      } else if (fallbackMode === 'relaxed-blocked-times') {
+        sol.badges.push({ text: '⏰ Relaxed Blocked Times', textAr: '⏰ تم استثناء الأوقات المحظورة', type: 'blocked-times-relaxed' });
+      } else if (fallbackMode === 'relaxed-free-and-blocked') {
+        sol.badges.push({ text: '🔄 Relaxed Preferences', textAr: '🔄 تم تخفيف القيود', type: 'free-days-relaxed' });
+      } else if (fallbackMode === 'relaxed-all-constraints') {
+        sol.badges.push({ text: '⚠️ Preferences Relaxed', textAr: '⚠️ تم تخفيف التفضيلات', type: 'avoid-included' });
       }
     });
 
     let fallbackNotice = null;
     let fallbackNoticeAr = null;
-    if (isStrictDoctorMode) {
+    if (fallbackMode === 'relaxed-free-days') {
+      fallbackNotice = `Checked all ${totalCombinationsPossible.toLocaleString()} combinations. No clash-free schedule could fit within your selected Free Days. Free days were temporarily relaxed to display all valid clash-free schedules.`;
+      fallbackNoticeAr = `تم فحص كافة التباديل (${totalCombinationsPossible.toLocaleString()} احتمال). تعذر إيجاد جدول بدون تعارض مع أيام الإجازة المحددة. تم استثناء أيام الإجازة مؤقتاً لعرض أفضل الجداول الخالية من التعارض.`;
+    } else if (fallbackMode === 'relaxed-blocked-times') {
+      fallbackNotice = `Checked all ${totalCombinationsPossible.toLocaleString()} combinations. All available groups conflict with your Blocked Times. Blocked times were temporarily relaxed to display all valid clash-free schedules.`;
+      fallbackNoticeAr = `تم فحص كافة التباديل (${totalCombinationsPossible.toLocaleString()} احتمال). تتعارض المجموعات المتاحة مع أوقاتك المحظورة. تم استثناء الأوقات المحظورة مؤقتاً لعرض الجداول المتاحة.`;
+    } else if (fallbackMode === 'relaxed-free-and-blocked') {
+      fallbackNotice = `Checked all ${totalCombinationsPossible.toLocaleString()} combinations. Your combination of Free Days and Blocked Times prevented any valid schedule. Constraints were relaxed to display all clash-free options.`;
+      fallbackNoticeAr = `تم فحص كافة التباديل (${totalCombinationsPossible.toLocaleString()} احتمال). تسببت أيام الإجازة والأوقات المحظورة معاً في منع أي جدول. تم تخفيف القيود مؤقتاً لعرض الجداول المتاحة.`;
+    } else if (fallbackMode === 'relaxed-all-constraints') {
+      fallbackNotice = `Checked all ${totalCombinationsPossible.toLocaleString()} combinations. Strict doctor preferences or time constraints prevented any schedule. Preferences were relaxed to provide valid clash-free schedules with minimal penalties.`;
+      fallbackNoticeAr = `تم فحص كافة التباديل (${totalCombinationsPossible.toLocaleString()} احتمال). تسببت تفضيلات الدكاترة والقيود في تعذر إيجاد جدول. تم تخفيف التفضيلات لعرض أفضل الجداول الخالية من التعارض.`;
+    } else if (isStrictDoctorMode) {
       if (fallbackMode === 'strict-partial-desired') {
         fallbackNotice = `Checked all ${totalCombinationsPossible.toLocaleString()} combinations. Having 100% of your desired doctors is physically impossible due to class overlaps. Showing clash-free schedules with ${maxFavoritesMatched}/${totalUniqueDesired} desired doctors and STRICTLY ZERO avoided doctors.`;
         fallbackNoticeAr = `تم فحص كافة التباديل (${totalCombinationsPossible.toLocaleString()} احتمال). لا يمكن الجمع بين جميع الدكاترة المطلوبين بنسبة 100% لتعارض المواعيد. تم عرض جداول خالية من التعارض تتضمن ${maxFavoritesMatched} من أصل ${totalUniqueDesired} دكتور مطلوب وبدون أي دكتور مستبعد نهائياً.`;
