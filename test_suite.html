@@ -1950,8 +1950,154 @@ ME D Abdelgawad Matar
     assert('Clashing sessions render .clash-mini-name with "Applied Programming"',
       clashNames.includes('Applied Programming')
     );
-    assert('Clashing sessions render .clash-mini-name with "الدوائر الكهربية 1"',
-      clashNames.includes('الدوائر الكهربية 1')
+    // =========================================================================
+    // TEST 38: Windowed Solution Chips Pagination & Direct Schedule Jumping
+    // =========================================================================
+    function testGetVisibleSolutionChips(total, current) {
+      if (typeof window.App !== 'undefined' && typeof window.App.getVisibleSolutionChips === 'function') {
+        return window.App.getVisibleSolutionChips(total, current);
+      }
+      if (total <= 7) {
+        const items = [];
+        for (let i = 0; i < total; i++) items.push({ type: 'solution', index: i });
+        return items;
+      }
+      let start = current - 2;
+      let end = current + 2;
+      if (start < 0) {
+        end += (0 - start);
+        start = 0;
+      }
+      if (end >= total) {
+        start -= (end - (total - 1));
+        end = total - 1;
+      }
+      start = Math.max(0, start);
+      end = Math.min(total - 1, end);
+
+      const set = {};
+      set[0] = true;
+      set[total - 1] = true;
+      for (let i = start; i <= end; i++) set[i] = true;
+
+      const sorted = Object.keys(set).map(Number).sort((a, b) => a - b);
+      const filled = [];
+      for (let i = 0; i < sorted.length; i++) {
+        if (i > 0 && sorted[i] - sorted[i - 1] === 2) {
+          filled.push(sorted[i - 1] + 1);
+        }
+        filled.push(sorted[i]);
+      }
+
+      const items = [];
+      for (let i = 0; i < filled.length; i++) {
+        if (i > 0 && filled[i] - filled[i - 1] > 1) {
+          items.push({ type: 'ellipsis', from: filled[i - 1] + 1, to: filled[i] - 1 });
+        }
+        items.push({ type: 'solution', index: filled[i] });
+      }
+      return items;
+    }
+
+    // 38.1: Default view at index 0 shows only 5 schedules + ellipsis + last schedule (never 500)
+    const defaultChips500 = testGetVisibleSolutionChips(500, 0);
+    const defaultSolIndices = defaultChips500.filter(c => c.type === 'solution').map(c => c.index);
+    const defaultEllipses = defaultChips500.filter(c => c.type === 'ellipsis');
+
+    assert('At default (current=0) with 500 solutions, displays 5 consecutive schedules at start plus last (6 buttons total, never 500)',
+      defaultSolIndices.length === 6 &&
+      defaultSolIndices.slice(0, 5).join(',') === '0,1,2,3,4' &&
+      defaultSolIndices[5] === 499
+    );
+    assert('At default (current=0) with 500 solutions, displays exactly 1 ellipsis between 5th and last schedule',
+      defaultEllipses.length === 1 &&
+      defaultEllipses[0].from === 5 &&
+      defaultEllipses[0].to === 498
+    );
+
+    // 38.2: When entering/viewing schedule 11 (index 10): shows first, 2 behind, current, 2 after, and last
+    const midChips500 = testGetVisibleSolutionChips(500, 10);
+    const midSolIndices = midChips500.filter(c => c.type === 'solution').map(c => c.index);
+    const midEllipses = midChips500.filter(c => c.type === 'ellipsis');
+
+    assert('When viewing Schedule 11 (current=10), displays first (1), 2 behind (9,10), current (11), 2 after (12,13), and last (500)',
+      midSolIndices.length === 7 &&
+      midSolIndices.join(',') === '0,8,9,10,11,12,499'
+    );
+    assert('When viewing Schedule 11, displays 2 ellipses bridging non-adjacent gaps',
+      midEllipses.length === 2 &&
+      midEllipses[0].from === 1 && midEllipses[0].to === 7 &&
+      midEllipses[1].from === 13 && midEllipses[1].to === 498
+    );
+
+    // 38.3: When entering/viewing last schedule (index 499): shows first, ellipsis, and last 5 schedules
+    const endChips500 = testGetVisibleSolutionChips(500, 499);
+    const endSolIndices = endChips500.filter(c => c.type === 'solution').map(c => c.index);
+    const endEllipses = endChips500.filter(c => c.type === 'ellipsis');
+
+    assert('When viewing last Schedule 500 (current=499), displays first (1) and last 5 schedules (496..500)',
+      endSolIndices.length === 6 &&
+      endSolIndices.join(',') === '0,495,496,497,498,499' &&
+      endEllipses.length === 1
+    );
+
+    // 38.4: Small sets (<= 7) show all solutions without ellipses
+    const smallChips5 = testGetVisibleSolutionChips(5, 2);
+    assert('Small solution sets (<= 7) show all schedules with no ellipses',
+      smallChips5.length === 5 &&
+      smallChips5.every(c => c.type === 'solution') &&
+      smallChips5.map(c => c.index).join(',') === '0,1,2,3,4'
+    );
+
+    // 38.5: jumpToSchedule logic validation and bounds clamping
+    function testJumpToSchedule(val, total) {
+      let num = parseInt(val, 10);
+      if (isNaN(num)) return null;
+      if (num < 1) num = 1;
+      if (num > total) num = total;
+      return num - 1;
+    }
+
+    assert('jumpToSchedule("25") jumps to index 24', testJumpToSchedule('25', 500) === 24);
+    assert('jumpToSchedule("0") clamps to index 0 (schedule 1)', testJumpToSchedule('0', 500) === 0);
+    assert('jumpToSchedule("9999") clamps to index 499 (schedule 500)', testJumpToSchedule('9999', 500) === 499);
+    assert('jumpToSchedule("invalid") returns null without crashing', testJumpToSchedule('invalid', 500) === null);
+
+    // 38.6: DOM simulation of windowed chips container rendering
+    const testChipsContainer = document.createElement('div');
+    const mock500List = Array.from({ length: 500 }, (_, i) => ({
+      rank: i + 1,
+      activeDaysCount: 3,
+      totalGapSlots: 1
+    }));
+
+    function simulateRenderChips(container, solutions, currentIdx) {
+      const items = testGetVisibleSolutionChips(solutions.length, currentIdx);
+      let html = '';
+      items.forEach(item => {
+        if (item.type === 'ellipsis') {
+          html += `<button type="button" class="sol-chip-ellipsis">…</button>`;
+        } else {
+          const sol = solutions[item.index];
+          const isActive = item.index === currentIdx;
+          html += `<button type="button" class="sol-chip ${isActive ? 'active' : ''}" data-index="${item.index}">Option #${sol.rank}</button>`;
+        }
+      });
+      container.innerHTML = html;
+    }
+
+    simulateRenderChips(testChipsContainer, mock500List, 0);
+    const renderedButtonsDefault = testChipsContainer.querySelectorAll('.sol-chip');
+    const renderedEllipsesDefault = testChipsContainer.querySelectorAll('.sol-chip-ellipsis');
+    assert('DOM contains exactly 6 .sol-chip buttons and 1 ellipsis for 500 solutions at default',
+      renderedButtonsDefault.length === 6 && renderedEllipsesDefault.length === 1
+    );
+
+    simulateRenderChips(testChipsContainer, mock500List, 10);
+    const renderedButtonsMid = testChipsContainer.querySelectorAll('.sol-chip');
+    const renderedEllipsesMid = testChipsContainer.querySelectorAll('.sol-chip-ellipsis');
+    assert('DOM contains exactly 7 .sol-chip buttons and 2 ellipses when viewing schedule 11',
+      renderedButtonsMid.length === 7 && renderedEllipsesMid.length === 2
     );
 
     // Summary

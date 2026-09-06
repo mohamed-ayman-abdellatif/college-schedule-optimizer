@@ -141,6 +141,7 @@ const App = (() => {
       filterMaxClasses: 'Max Classes / Day:',
       filterMaxOptions: 'Max Schedules to Show:',
       optAllSchedules: 'All Schedules',
+      optTop5: 'Top 5 Schedules',
       optTop15: 'Top 15 Schedules',
       optTop25: 'Top 25 Schedules',
       optTop50: 'Top 50 Schedules',
@@ -314,6 +315,7 @@ const App = (() => {
       filterMaxClasses: 'أقصى فترات/حصص باليوم:',
       filterMaxOptions: 'أقصى عدد جداول معروضة:',
       optAllSchedules: 'جميع الجداول (بدون تقييد)',
+      optTop5: 'أفضل 5 جداول',
       optTop15: 'أفضل 15 جدول',
       optTop25: 'أفضل 25 جدول',
       optTop50: 'أفضل 50 جدول',
@@ -4242,6 +4244,119 @@ const App = (() => {
   }
 
   /**
+   * Helper: returns array of visible chip items to display in the selector.
+   * Windowed pagination prevents flooding the DOM with hundreds of buttons:
+   * Shows: First schedule (#1), Last schedule (#total), and a 5-schedule window
+   * (2 behind, current, and 2 after the active schedule).
+   */
+  function getVisibleSolutionChips(total, current) {
+    if (total <= 7) {
+      const items = [];
+      for (let i = 0; i < total; i++) {
+        items.push({ type: 'solution', index: i });
+      }
+      return items;
+    }
+
+    let start = current - 2;
+    let end = current + 2;
+
+    // When near the start (e.g. default view at index 0), show 5 consecutive options (0, 1, 2, 3, 4)
+    if (start < 0) {
+      end += (0 - start);
+      start = 0;
+    }
+    // When near the end, show 5 consecutive options up to the last
+    if (end >= total) {
+      start -= (end - (total - 1));
+      end = total - 1;
+    }
+    start = Math.max(0, start);
+    end = Math.min(total - 1, end);
+
+    const set = {};
+    set[0] = true;
+    set[total - 1] = true;
+    for (let i = start; i <= end; i++) {
+      set[i] = true;
+    }
+
+    const sorted = Object.keys(set).map(Number).sort((a, b) => a - b);
+
+    // If gap between consecutive indices is 2 (e.g. index 0 and 2), fill single missing item (1)
+    const filled = [];
+    for (let i = 0; i < sorted.length; i++) {
+      if (i > 0 && sorted[i] - sorted[i - 1] === 2) {
+        filled.push(sorted[i - 1] + 1);
+      }
+      filled.push(sorted[i]);
+    }
+
+    const items = [];
+    for (let i = 0; i < filled.length; i++) {
+      if (i > 0 && filled[i] - filled[i - 1] > 1) {
+        items.push({
+          type: 'ellipsis',
+          from: filled[i - 1] + 1,
+          to: filled[i] - 1
+        });
+      }
+      items.push({ type: 'solution', index: filled[i] });
+    }
+
+    return items;
+  }
+
+  /**
+   * Jump directly to a schedule number (1-based index)
+   */
+  function jumpToSchedule(value) {
+    const displayedSolutions = getDisplayedSolutions();
+    const total = displayedSolutions.length;
+    if (total <= 0) return;
+
+    let num = parseInt(value, 10);
+    if (isNaN(num)) {
+      const jumpInput = document.getElementById('schedule-jump-input');
+      if (jumpInput) jumpInput.value = state.activeSolutionIndex + 1;
+      return;
+    }
+
+    if (num < 1) num = 1;
+    if (num > total) num = total;
+
+    selectSolution(num - 1);
+  }
+
+  /**
+   * Prompt user to jump to a schedule number when clicking ellipsis
+   */
+  function promptJumpToSchedule(from, to) {
+    const isAr = state.currentLang === 'ar';
+    const displayedSolutions = getDisplayedSolutions();
+    const total = displayedSolutions.length;
+    if (total <= 1) return;
+
+    const jumpInput = document.getElementById('schedule-jump-input');
+    if (jumpInput) {
+      jumpInput.focus();
+      jumpInput.select();
+    }
+
+    const defaultVal = from ? Math.round((from + to) / 2) : (state.activeSolutionIndex + 1);
+    const promptMsg = isAr
+      ? `أدخل رقم الجدول الذي تريد الانتقال إليه (1 إلى ${total}):`
+      : `Enter schedule number to jump to (1 to ${total}):`;
+
+    if (typeof window.prompt === 'function') {
+      const userVal = window.prompt(promptMsg, String(defaultVal));
+      if (userVal !== null && userVal.trim() !== '') {
+        jumpToSchedule(userVal);
+      }
+    }
+  }
+
+  /**
    * Render solution chips / selector
    */
   function renderSolutionsSelector() {
@@ -4250,19 +4365,38 @@ const App = (() => {
 
     const isAr = state.currentLang === 'ar';
     const displayedSolutions = getDisplayedSolutions();
+    const total = displayedSolutions.length;
 
-    if (state.activeSolutionIndex >= displayedSolutions.length && displayedSolutions.length > 0) {
+    if (total === 0) {
+      container.innerHTML = '';
+      updateScheduleNavControls();
+      return;
+    }
+
+    if (state.activeSolutionIndex >= total) {
       state.activeSolutionIndex = 0;
     }
 
-    const existingChips = container.querySelectorAll('.sol-chip');
-    if (existingChips.length === displayedSolutions.length && existingChips.length > 0) {
-      existingChips.forEach((chip, idx) => {
-        chip.classList.toggle('active', idx === state.activeSolutionIndex);
-      });
-    } else {
-      let html = '';
-      displayedSolutions.forEach((sol, idx) => {
+    const visibleItems = getVisibleSolutionChips(total, state.activeSolutionIndex);
+
+    let html = '';
+    visibleItems.forEach(item => {
+      if (item.type === 'ellipsis') {
+        const jumpText = isAr
+          ? `انتقال إلى جدول (${item.from + 1} - ${item.to + 1})`
+          : `Jump to schedule (${item.from + 1} - ${item.to + 1})`;
+        html += `
+          <button type="button" class="sol-chip-ellipsis"
+                  onclick="App.promptJumpToSchedule(${item.from + 1}, ${item.to + 1})"
+                  title="${jumpText}" aria-label="${jumpText}">
+            …
+          </button>
+        `;
+      } else {
+        const idx = item.index;
+        const sol = displayedSolutions[idx];
+        if (!sol) return;
+
         const isActive = idx === state.activeSolutionIndex;
         const titleText = state.filterMismatch
           ? (isAr ? `معاينة غير مصفاة #${sol.rank || 1}` : `Unfiltered Inspection #${sol.rank || 1}`)
@@ -4274,16 +4408,17 @@ const App = (() => {
 
         html += `
           <button type="button" class="sol-chip ${isActive ? 'active' : ''} ${state.filterMismatch ? 'is-fallback-chip' : ''}"
+                  data-index="${idx}"
                   onclick="App.selectSolution(${idx})"
                   title="${titleText}: ${gapText}, ${daysText}">
             <span class="sol-chip-title">${titleText}</span>
             <span class="sol-chip-meta">${gapText} • ${daysText}</span>
           </button>
         `;
-      });
-      container.innerHTML = html;
-    }
+      }
+    });
 
+    container.innerHTML = html;
     updateScheduleNavControls();
   }
 
@@ -4298,6 +4433,14 @@ const App = (() => {
       counterBadge.textContent = total > 0
         ? (isAr ? `${current} من ${total}` : `${current} / ${total}`)
         : (isAr ? '0 من 0' : '0 / 0');
+    }
+
+    const jumpInput = document.getElementById('schedule-jump-input');
+    if (jumpInput) {
+      jumpInput.value = current || '';
+      jumpInput.min = '1';
+      jumpInput.max = String(total || 1);
+      jumpInput.disabled = total <= 1;
     }
 
     const prevBtn = document.getElementById('btn-prev-schedule');
@@ -5680,6 +5823,9 @@ const App = (() => {
     clearPreferencesAndBlocked,
     nextSchedule,
     prevSchedule,
+    jumpToSchedule,
+    promptJumpToSchedule,
+    getVisibleSolutionChips,
     handleTimetableArrowNavigation,
     getDisplayedSolutions,
     getMaxDisplayedLimit,

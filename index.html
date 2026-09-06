@@ -388,6 +388,7 @@
             </label>
             <select id="filter-max-options" class="select-input filter-select" onchange="App.handleTimetableFilterChange()">
               <option value="all" data-i18n="optAllSchedules">All Schedules (جميع الجداول)</option>
+              <option value="5" data-i18n="optTop5">Top 5 (أفضل 5 جداول)</option>
               <option value="15" data-i18n="optTop15">Top 15 (أفضل 15 جدول)</option>
               <option value="25" data-i18n="optTop25">Top 25 (أفضل 25 جدول)</option>
               <option value="50" data-i18n="optTop50">Top 50 (أفضل 50 جدول)</option>
@@ -465,6 +466,15 @@
             <button type="button" id="btn-next-schedule" class="btn btn-outline btn-xs" onclick="App.nextSchedule()" title="Next Schedule (→)" disabled>
               <span class="arrow-btn-text" data-i18n="nextSchedule">Next</span> <span>▶</span>
             </button>
+            <div class="schedule-jump-wrapper" title="Enter schedule number to jump directly">
+              <span class="jump-icon" aria-hidden="true">🎯</span>
+              <input type="number" id="schedule-jump-input" class="schedule-jump-input" min="1" max="1" value="1"
+                     placeholder="#"
+                     title="Enter schedule # to jump (press Enter)"
+                     aria-label="Enter schedule number"
+                     onchange="App.jumpToSchedule(this.value)"
+                     onkeydown="if(event.key==='Enter'){App.jumpToSchedule(this.value); this.blur();}">
+            </div>
           </div>
         </div>
         <div id="solutions-chips-container" class="solutions-chips-wrapper">
