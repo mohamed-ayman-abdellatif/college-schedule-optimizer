@@ -2747,3 +2747,82 @@ body {
     padding: 10px 12px;
   }
 }
+
+/* ==========================================================================
+   Manual Mode: Independent Doctor & TA Customization Controls
+   ========================================================================== */
+.manual-customize-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 10px 0 8px;
+  padding: 8px 10px;
+  background: var(--bg-primary);
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--border-color);
+  transition: all 0.2s ease;
+}
+
+.manual-component-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-color);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  cursor: pointer;
+  text-align: start;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.manual-component-btn:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.manual-component-btn.is-doctor.is-selected {
+  border-color: var(--accent-primary);
+  background: rgba(59, 130, 246, 0.12);
+}
+
+.manual-component-btn.is-ta.is-selected {
+  border-color: #10B981;
+  background: rgba(16, 185, 129, 0.12);
+}
+
+.manual-component-action-chip {
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.15s ease;
+}
+
+.manual-component-btn.is-doctor .manual-component-action-chip.is-active {
+  background: var(--accent-primary);
+  color: #FFFFFF;
+  border: 1px solid var(--accent-primary);
+}
+
+.manual-component-btn.is-ta .manual-component-action-chip.is-active {
+  background: #10B981;
+  color: #FFFFFF;
+  border: 1px solid #10B981;
+}
+
+.manual-component-btn .manual-component-action-chip.is-inactive {
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+

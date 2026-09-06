@@ -81,9 +81,6 @@
       <button class="tab-btn" data-tab="manual">
         <span>🛠️</span> <span data-i18n="tabManual">4. Manual Mode</span>
       </button>
-      <button class="tab-btn" data-tab="mixmatch">
-        <span>🔀</span> <span data-i18n="tabMixMatch">5. Mix & Match</span>
-      </button>
     </nav>
 
     <!-- TAB 1: ADD COURSES -->
@@ -582,15 +579,31 @@
           </div>
         </div>
 
-        <!-- Doctor Visibility Filter Toggle -->
-        <div class="manual-filter-bar" style="margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; background: var(--bg-secondary); padding: 12px 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color); flex-wrap: wrap; gap: 10px;">
-          <label for="check-manual-hide-avoided" style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 0.92rem; color: var(--text-primary); margin: 0;">
-            <input type="checkbox" id="check-manual-hide-avoided" style="width: 18px; height: 18px; cursor: pointer; accent-color: var(--accent-primary);" checked onchange="App.toggleManualHideAvoided(this.checked)" />
-            <span data-i18n="manualHideAvoidedLabel">🚫 Hide Avoided Doctors & Focus Mandated</span>
-          </label>
-          <span style="font-size: 0.8rem; color: var(--text-muted);" data-i18n="manualHideAvoidedDesc">
-            Groups with avoided doctors (🚫) are hidden; subjects with mandatory doctors (🌟🔒) show only mandatory groups.
-          </span>
+        <!-- Doctor Visibility Filter & Independent Doctor/TA Customization Bar -->
+        <div class="manual-filter-bar" style="margin-bottom: 16px; display: flex; flex-direction: column; gap: 12px; background: var(--bg-secondary); padding: 14px 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <!-- Toggle 1: Hide Avoided Doctors -->
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+            <label for="check-manual-hide-avoided" style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 0.92rem; color: var(--text-primary); margin: 0;">
+              <input type="checkbox" id="check-manual-hide-avoided" style="width: 18px; height: 18px; cursor: pointer; accent-color: var(--accent-primary);" checked onchange="App.toggleManualHideAvoided(this.checked)" />
+              <span data-i18n="manualHideAvoidedLabel">🚫 Hide Avoided Doctors & Focus Mandated</span>
+            </label>
+            <span style="font-size: 0.8rem; color: var(--text-muted);" data-i18n="manualHideAvoidedDesc">
+              Groups with avoided doctors (🚫) are hidden; subjects with mandatory doctors (🌟🔒) show only mandatory groups.
+            </span>
+          </div>
+
+          <div style="height: 1px; background: var(--border-color); opacity: 0.5;"></div>
+
+          <!-- Toggle 2: Customize Doctor & TA Checkbox (Default: UNCHECKED) -->
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+            <label for="check-manual-customize-doc-ta" style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 0.92rem; color: var(--accent-primary); margin: 0;">
+              <input type="checkbox" id="check-manual-customize-doc-ta" style="width: 18px; height: 18px; cursor: pointer; accent-color: var(--accent-primary);" onchange="App.toggleManualCustomizeDocTA(this.checked)" />
+              <span data-i18n="manualCustomizeDocTALabel">🔀 Customize Doctor & TA Independently</span>
+            </label>
+            <span style="font-size: 0.8rem; color: var(--text-muted);" data-i18n="manualCustomizeDocTADesc">
+              Click a Doctor to add their lectures or click a TA to add their sections/labs to the timetable independently.
+            </span>
+          </div>
         </div>
 
         <div id="manual-courses-picker-container" class="manual-courses-list">
@@ -632,71 +645,6 @@
 
         <!-- Render Target for Custom Timetable Grid -->
         <div id="manual-timetable-render-container">
-          <!-- Populated by JavaScript -->
-        </div>
-      </div>
-    </section>
-
-    <!-- TAB 5: MIX & MATCH -->
-    <section id="tab-mixmatch" class="tab-content" style="display: none;">
-      <div class="card">
-        <div class="card-header" style="flex-wrap: wrap; gap: 12px; align-items: flex-start;">
-          <div>
-            <div class="card-title">
-              <span>🔀</span> <span data-i18n="mixMatchTitle">Mix & Match: Custom Doctors & TAs</span>
-            </div>
-            <div class="card-subtitle" data-i18n="mixMatchDesc">
-              Pair your preferred lecture professor from one group with your favorite section/lab TAs from another group!
-            </div>
-          </div>
-          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-            <button class="btn btn-secondary btn-sm" onclick="App.resetMixMatchSelections()" data-i18n="mixMatchResetBtn">
-              <span>🔄</span> <span>Reset to Default</span>
-            </button>
-            <button class="btn btn-primary btn-sm" onclick="App.applyMixMatchToManual()" data-i18n="mixMatchApplyManualBtn">
-              <span>🛠️</span> <span>Apply to Manual Schedule</span>
-            </button>
-            <button class="btn btn-primary btn-sm" style="background: linear-gradient(135deg, #10B981, #059669);" onclick="App.saveMixMatchAsCourseGroups()" data-i18n="mixMatchSaveGroupBtn">
-              <span>💾</span> <span>Save as Custom Mixed Groups</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Live Collision Alert Banner -->
-        <div id="mixmatch-collision-banner" style="display: none; margin: 12px 0; padding: 12px 16px; border-radius: var(--radius-md); background: rgba(239, 68, 68, 0.1); border: 1.5px solid #EF4444; color: #EF4444; font-size: 0.9rem; font-weight: 600;">
-          <!-- Dynamic collision warnings -->
-        </div>
-
-        <!-- Mix & Match Toolbar Container (Quick switcher & Expand/Collapse) -->
-        <div id="mixmatch-toolbar-container"></div>
-
-        <!-- Courses Container -->
-        <div id="mixmatch-courses-container" class="mixmatch-courses-list" style="margin-top: 14px;">
-          <!-- Populated by JavaScript -->
-        </div>
-      </div>
-
-      <!-- Live Mix & Match Timetable Preview Card -->
-      <div class="card" id="mixmatch-timetable-card">
-        <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-          <div>
-            <div class="card-title">
-              <span>📅</span> <span data-i18n="mixMatchTimetableTitle">Live Mixed Schedule Preview</span>
-            </div>
-            <div class="card-subtitle" data-i18n="mixMatchTimetableDesc">
-              Visualizes your custom doctor & TA combinations on the weekly timetable in real time
-            </div>
-          </div>
-          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-            <button id="btn-mixmatch-export-txt" class="btn btn-secondary btn-sm" onclick="App.exportMixMatchTxt()" data-i18n="exportTxt">
-              <span>📄</span> <span>Export TXT</span>
-            </button>
-            <button class="btn btn-secondary btn-sm" onclick="App.jumpToMixMatchPicker()" data-i18n="mixMatchJumpToCourses">
-              <span>⬆️</span> <span>Back to Course Pickers</span>
-            </button>
-          </div>
-        </div>
-        <div id="mixmatch-timetable-render-container">
           <!-- Populated by JavaScript -->
         </div>
       </div>

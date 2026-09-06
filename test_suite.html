@@ -1071,6 +1071,152 @@ ME D Abdelgawad Matar
       relaxedFreeDaysRes.solutions[0].badges.some(b => b.type === 'free-days-relaxed')
     );
 
+    // =========================================================================
+    // TEST 33: Manual Mode Independent Doctor & TA Customization
+    // =========================================================================
+    const sampleCourseCustom = {
+      id: 'CUSTOM101',
+      code: 'CS101',
+      name: 'Computer Architecture',
+      groups: [
+        {
+          group: '1',
+          instructors: ['Dr. Alice', 'Eng. Bob'],
+          sessions: [
+            { type: 'Lect.', day: 'Sunday', startSlot: 1, endSlot: 2, instructor: 'Dr. Alice', location: 'Hall A' },
+            { type: 'Sec.', day: 'Monday', startSlot: 3, endSlot: 4, instructor: 'Eng. Bob', location: 'Lab 1' }
+          ]
+        },
+        {
+          group: '2',
+          instructors: ['Dr. Charlie', 'Eng. Dave'],
+          sessions: [
+            { type: 'Lect.', day: 'Tuesday', startSlot: 1, endSlot: 2, instructor: 'Dr. Charlie', location: 'Hall B' },
+            { type: 'Sec.', day: 'Wednesday', startSlot: 5, endSlot: 6, instructor: 'Eng. Dave', location: 'Lab 2' }
+          ]
+        }
+      ]
+    };
+
+    // 33.1: Checkbox default state is false (unchecked)
+    const testState = {
+      manualCustomizeDocTA: false,
+      manualSchedule: {},
+      courses: [sampleCourseCustom],
+      currentLang: 'en'
+    };
+    assert('Manual Customize Doctor & TA is unchecked (false) by default', testState.manualCustomizeDocTA === false);
+
+    // 33.2: Select Doctor only from Group 1
+    function testSelectComponent(state, courseId, groupName, role) {
+      const course = state.courses.find(c => c.id === courseId || c.code === courseId);
+      const groupData = course.groups.find(g => g.group === groupName);
+      const isDoctor = role === 'doctor';
+      const isLect = s => s.type === 'Lect.' || /Lect|محاضرة/i.test(s.type || '');
+      const sessions = groupData.sessions.filter(s => isDoctor ? isLect(s) : !isLect(s));
+
+      const compKey = `${course.id}:::${groupName}:::${role}`;
+      const fullGroupKey = `${course.id}:::${groupName}`;
+
+      // Remove existing for same role
+      Object.keys(state.manualSchedule).forEach(k => {
+        const entry = state.manualSchedule[k];
+        if (entry && entry.courseId === course.id && entry.componentType === role) {
+          delete state.manualSchedule[k];
+        }
+      });
+
+      // Merge if other role already selected for same group
+      const otherRole = isDoctor ? 'ta' : 'doctor';
+      const otherKey = `${course.id}:::${groupName}:::${otherRole}`;
+      if (state.manualSchedule[otherKey]) {
+        delete state.manualSchedule[otherKey];
+        state.manualSchedule[fullGroupKey] = {
+          courseId: course.id,
+          group: groupName,
+          componentType: 'all',
+          sessions: groupData.sessions
+        };
+      } else {
+        state.manualSchedule[compKey] = {
+          courseId: course.id,
+          group: groupName,
+          componentType: role,
+          sessions: sessions
+        };
+      }
+    }
+
+    testSelectComponent(testState, 'CUSTOM101', '1', 'doctor');
+    const doctorKey = 'CUSTOM101:::1:::doctor';
+    assert('Selecting Doctor adds only lecture sessions with componentType doctor',
+      testState.manualSchedule[doctorKey] &&
+      testState.manualSchedule[doctorKey].componentType === 'doctor' &&
+      testState.manualSchedule[doctorKey].sessions.every(s => s.type === 'Lect.')
+    );
+
+    // 33.3: Select TA from Group 2 (independent customization)
+    testSelectComponent(testState, 'CUSTOM101', '2', 'ta');
+    const taKey = 'CUSTOM101:::2:::ta';
+    assert('Selecting TA adds only section sessions with componentType ta',
+      testState.manualSchedule[taKey] &&
+      testState.manualSchedule[taKey].componentType === 'ta' &&
+      testState.manualSchedule[taKey].sessions.every(s => s.type === 'Sec.')
+    );
+
+    // 33.4: Both doctor and TA coexist without being flagged as conflict
+    function testGetCourseGroupStatus(manualSchedule, courseId) {
+      const items = Object.values(manualSchedule).filter(g => g.courseId === courseId);
+      if (items.length === 0) return { hasSelection: false, isConflict: false, label: '' };
+      const docItems = items.filter(i => i.componentType === 'doctor');
+      const taItems = items.filter(i => i.componentType === 'ta');
+      const fullItems = items.filter(i => !i.componentType || i.componentType === 'all');
+      const isConflict = items.length > 1 && (
+        fullItems.length > 1 ||
+        docItems.length > 1 ||
+        taItems.length > 1 ||
+        (fullItems.length > 0 && (docItems.length > 0 || taItems.length > 0))
+      );
+      let label = '';
+      if (isConflict) {
+        label = `${items.length} Groups Selected`;
+      } else if (docItems.length === 1 && taItems.length === 1) {
+        label = `✓ Dr: Group ${docItems[0].group} | TA: Group ${taItems[0].group}`;
+      } else if (docItems.length === 1) {
+        label = `✓ Doctor: Group ${docItems[0].group} (Lectures only)`;
+      } else if (taItems.length === 1) {
+        label = `✓ TA: Group ${taItems[0].group} (Sections/Labs only)`;
+      } else {
+        label = `Selected: Group ${items[0].group}`;
+      }
+      return { hasSelection: true, isConflict, label, docGroup: docItems[0]?.group, taGroup: taItems[0]?.group };
+    }
+
+    const customStatus = testGetCourseGroupStatus(testState.manualSchedule, 'CUSTOM101');
+    assert('Customized Dr (Grp 1) + TA (Grp 2) is recognized without false multi-group conflict',
+      customStatus.hasSelection === true &&
+      customStatus.isConflict === false &&
+      customStatus.label === '✓ Dr: Group 1 | TA: Group 2'
+    );
+
+    // 33.5: Selecting Doctor from Group 2 replaces Group 1 Doctor and merges with Group 2 TA into full group
+    testSelectComponent(testState, 'CUSTOM101', '2', 'doctor');
+    const fullKey = 'CUSTOM101:::2';
+    assert('Selecting Doctor of Group 2 when TA of Group 2 is active merges into full group',
+      !testState.manualSchedule[doctorKey] &&
+      !testState.manualSchedule[taKey] &&
+      testState.manualSchedule[fullKey] &&
+      testState.manualSchedule[fullKey].componentType === 'all'
+    );
+
+    // 33.6: Status for full group shows single group selection
+    const fullStatus = testGetCourseGroupStatus(testState.manualSchedule, 'CUSTOM101');
+    assert('Merged full group shows standard single selection without conflict',
+      fullStatus.hasSelection === true &&
+      fullStatus.isConflict === false &&
+      fullStatus.label === 'Selected: Group 2'
+    );
+
     // Summary
     const passedCount = results.filter(r => r.passed).length;
     const failedCount = results.filter(r => !r.passed).length;
