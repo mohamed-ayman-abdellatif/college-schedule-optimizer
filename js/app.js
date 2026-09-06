@@ -991,22 +991,86 @@ const App = (() => {
       return;
     }
 
-    // Add courses to state, avoiding duplicate IDs
+    // If the current courses in state are just the default sample courses,
+    // clear them so imported schedules don't get mixed with demo data.
+    const isOnlySampleCourses = state.courses.length > 0 &&
+      state.courses.every(c => (typeof SampleScheduleData !== 'undefined' && SampleScheduleData.DEFAULT_COURSE_SET.some(sc => sc.code === c.code)));
+
+    if (isOnlySampleCourses) {
+      state.courses = [];
+      state.doctorPreferences = {};
+    }
+
+    // Add or merge courses into state, accumulating groups when importing multiple group schedules
     let addedCount = 0;
+    let mergedCount = 0;
+
     result.courses.forEach(newCourse => {
-      const existingIdx = state.courses.findIndex(c => c.code === newCourse.code || c.id === newCourse.id);
-      if (existingIdx > -1) {
-        state.courses[existingIdx] = newCourse; // Update
+      const existingCourse = state.courses.find(c => c.code === newCourse.code || c.id === newCourse.id);
+      if (existingCourse) {
+        if (!existingCourse.groups) existingCourse.groups = [];
+
+        (newCourse.groups || []).forEach(newG => {
+          const exGIdx = existingCourse.groups.findIndex(g => g.group === newG.group);
+          if (exGIdx > -1) {
+            existingCourse.groups[exGIdx] = newG;
+          } else {
+            existingCourse.groups.push(newG);
+          }
+        });
+
+        // Re-aggregate all slots from all groups
+        const allSlots = [];
+        existingCourse.groups.forEach(g => {
+          if (Array.isArray(g.sessions)) {
+            allSlots.push(...g.sessions);
+          }
+        });
+        existingCourse.slots = allSlots;
+
+        // Merge instructors
+        const instSet = new Set(existingCourse.instructors || []);
+        (newCourse.instructors || []).forEach(inst => {
+          if (inst && inst !== 'Not Specified') instSet.add(inst);
+        });
+        existingCourse.instructors = Array.from(instSet);
+
+        // Update name if newCourse has a better title
+        if (newCourse.name && (!existingCourse.name || existingCourse.name === existingCourse.code)) {
+          existingCourse.name = newCourse.name;
+        }
+
+        mergedCount++;
       } else {
         state.courses.push(newCourse);
         addedCount++;
       }
     });
 
+    // Reset solutions so optimizer re-calculates combinations with new groups/courses
+    state.solutions = [];
+    state.filteredSolutions = [];
+    state.activeSolutionIndex = 0;
+
     saveStateToStorage();
     renderCoursesList();
     renderDoctorPreferences();
-    showToast(result.message, 'success');
+
+    const isAr = state.currentLang === 'ar';
+    let feedbackMsg = result.message;
+    if (result.scheduleType === 'group' && result.groupCode) {
+      if (mergedCount > 0 && addedCount === 0) {
+        feedbackMsg = isAr
+          ? `تم دمج المجموعة (${result.groupCode}) في ${mergedCount} مواد بنجاح.`
+          : `Merged group (${result.groupCode}) into ${mergedCount} existing course(s).`;
+      } else if (mergedCount > 0 && addedCount > 0) {
+        feedbackMsg = isAr
+          ? `تم إضافة ${addedCount} مواد جديدة ودمج المجموعة (${result.groupCode}) في ${mergedCount} مواد.`
+          : `Added ${addedCount} new course(s) and merged group (${result.groupCode}) into ${mergedCount} course(s).`;
+      }
+    }
+
+    showToast(feedbackMsg, 'success');
 
     // Clear textarea
     document.getElementById('html-input-text').value = '';

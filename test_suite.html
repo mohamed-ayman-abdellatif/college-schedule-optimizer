@@ -1401,6 +1401,219 @@ ME D Abdelgawad Matar
     handled = testHandleArrow(testNavState, 'ArrowRight', 'BODY', true);
     assert('Arrow keys ignored when a modal dialog is open', handled === false && testNavState.activeSolutionIndex === 0);
 
+    // =========================================================================
+    // TEST 35: Distinction Between Course (جدول مقرر) and Group (جدول مجموعة) Schedules & Multi-Group Accumulation
+    // =========================================================================
+    assert('ScheduleParser.detectScheduleType and extractGroupCode are exported and callable',
+      typeof ScheduleParser.detectScheduleType === 'function' &&
+      typeof ScheduleParser.extractGroupCode === 'function'
+    );
+
+    // 35.1: Distinguish between course schedule and group schedule
+    const mockCourseSchedHtml = `
+      <html>
+        <body>
+          <input id="ctl00_ContentPlaceHolder1_rbl_Schedule_Type_1" type="radio" name="rbl_Schedule_Type" value="1" checked="checked" />
+          <span id="ctl00_ContentPlaceHolder1_lbl_Title">جدول المقرر : Applied Programming - ECE2102</span>
+          <table>
+            <tr><th>Day</th><th>1</th><th>2</th><th>3</th><th>4</th></tr>
+            <tr>
+              <td>Saturday</td>
+              <td colspan="2">Group: A<br>Lect.<br>Dr. Mostafa Fouz</td>
+              <td colspan="2">Group: B<br>Lect.<br>Dr. Ahmed Samir</td>
+            </tr>
+          </table>
+        </body>
+      </html>
+    `;
+
+    const parsedCourseSched = ScheduleParser.parseHtml(mockCourseSchedHtml);
+    assert('Correctly detects Course Schedule (جدول مقرر)',
+      parsedCourseSched.success === true &&
+      parsedCourseSched.scheduleType === 'course' &&
+      parsedCourseSched.courses.length === 1 &&
+      parsedCourseSched.courses[0].code === 'ECE2102'
+    );
+
+    // 35.2: Detects and parses Group Schedule 1 (03CE01_144)
+    const mockGroup1Html = `
+      <html>
+        <body>
+          <input id="ctl00_ContentPlaceHolder1_rbl_Schedule_Type_0" type="radio" name="rbl_Schedule_Type" value="0" checked="checked" />
+          <span id="ctl00_ContentPlaceHolder1_lbl_Title">جدول مجموعة : 03CE01_144</span>
+          <select id="ctl00_ContentPlaceHolder1_ddl_Group"><option selected="selected" value="03CE01_144">03CE01_144</option></select>
+          <select id="ctl00_ContentPlaceHolder1_ddl_Course">
+            <option value="EEE2304">Electrical Circuits I - EEE2304</option>
+            <option value="ECE2201">Digital Logic Design - ECE2201</option>
+          </select>
+          <table id="ctl00_ContentPlaceHolder1_grd_Group_Color">
+            <tr><td>EEE2304</td><td style="background-color:#E6B8B7;">Color 1</td></tr>
+            <tr><td>ECE2201</td><td style="background-color:#CCC0DA;">Color 2</td></tr>
+          </table>
+          <table>
+            <tr><th>اليوم</th><th>&nbsp;</th><th>1</th><th>2</th><th>3</th><th>4</th></tr>
+            <tr>
+              <td>Saturday</td>
+              <td>&nbsp;</td>
+              <td colspan="2">Electrical Circuits I (EEE2304)<br>Lect.<br>Dr. Ahmed Samir<br>Hall 101<input type="hidden" name="item1_hd_Group" value="EEE2304" /></td>
+              <td colspan="2">Digital Logic Design (ECE2201)<br>Lect.<br>Dr. Mostafa Fouz<br>Hall 102<input type="hidden" name="item2_hd_Group" value="ECE2201" /></td>
+            </tr>
+            <tr>
+              <td>Sunday</td>
+              <td>&nbsp;</td>
+              <td colspan="2">Electrical Circuits I (EEE2304)<br>Lab.<br>Eng. Sarah Ali<br>Lab 201<input type="hidden" name="item3_hd_Group" value="EEE2304" /></td>
+              <td colspan="2">Digital Logic Design (ECE2201)<br>Sec.<br>Eng. Kareem<br>Room 302<input type="hidden" name="item4_hd_Group" value="ECE2201" /></td>
+            </tr>
+          </table>
+        </body>
+      </html>
+    `;
+
+    const parsedGroup1 = ScheduleParser.parseHtml(mockGroup1Html);
+    assert('Correctly detects Group Schedule (جدول مجموعة) and extracts groupCode',
+      parsedGroup1.success === true &&
+      parsedGroup1.scheduleType === 'group' &&
+      parsedGroup1.groupCode === '03CE01_144'
+    );
+
+    assert('Extracts individual courses from Group Schedule 1',
+      parsedGroup1.courses.length === 2 &&
+      parsedGroup1.courses.some(c => c.code === 'EEE2304') &&
+      parsedGroup1.courses.some(c => c.code === 'ECE2201')
+    );
+
+    const eeeCourse1 = parsedGroup1.courses.find(c => c.code === 'EEE2304');
+    assert('Course EEE2304 in Group 1 has group 03CE01_144, correct sessions and instructors',
+      eeeCourse1 &&
+      eeeCourse1.groups.length === 1 &&
+      eeeCourse1.groups[0].group === '03CE01_144' &&
+      eeeCourse1.groups[0].sessions.length === 2 &&
+      eeeCourse1.instructors.includes('Dr. Ahmed Samir') &&
+      eeeCourse1.instructors.includes('Eng. Sarah Ali') &&
+      eeeCourse1.color === '#E6B8B7'
+    );
+
+    // 35.3: Detects and parses Group Schedule 2 (03CE02_144)
+    const mockGroup2Html = `
+      <html>
+        <body>
+          <input id="ctl00_ContentPlaceHolder1_rbl_Schedule_Type_0" type="radio" name="rbl_Schedule_Type" value="0" checked="checked" />
+          <span id="ctl00_ContentPlaceHolder1_lbl_Title">جدول مجموعة : 03CE02_144</span>
+          <select id="ctl00_ContentPlaceHolder1_ddl_Group"><option selected="selected" value="03CE02_144">03CE02_144</option></select>
+          <table>
+            <tr><th>اليوم</th><th>&nbsp;</th><th>1</th><th>2</th><th>3</th><th>4</th></tr>
+            <tr>
+              <td>Monday</td>
+              <td>&nbsp;</td>
+              <td colspan="2">Electrical Circuits I (EEE2304)<br>Lect.<br>Dr. Mahmoud Gamal<br>Hall 105<input type="hidden" name="item1_hd_Group" value="EEE2304" /></td>
+              <td colspan="2">Digital Logic Design (ECE2201)<br>Lect.<br>Dr. Mostafa Fouz<br>Hall 102<input type="hidden" name="item2_hd_Group" value="ECE2201" /></td>
+            </tr>
+            <tr>
+              <td>Tuesday</td>
+              <td>&nbsp;</td>
+              <td colspan="2">Digital Logic Design (ECE2201)<br>Sec.<br>Eng. Omar<br>Room 304<input type="hidden" name="item3_hd_Group" value="ECE2201" /></td>
+              <td colspan="2">Electrical Circuits I (EEE2304)<br>Lab.<br>Eng. Hany<br>Lab 203<input type="hidden" name="item4_hd_Group" value="EEE2304" /></td>
+            </tr>
+          </table>
+        </body>
+      </html>
+    `;
+
+    const parsedGroup2 = ScheduleParser.parseHtml(mockGroup2Html);
+    assert('Correctly parses second Group Schedule with groupCode 03CE02_144',
+      parsedGroup2.success === true &&
+      parsedGroup2.groupCode === '03CE02_144' &&
+      parsedGroup2.courses.length === 2
+    );
+
+    // 35.4: Simulating sequential import in app state (accumulating groups)
+    const testAppState = {
+      courses: [],
+      doctorPreferences: {},
+      solutions: [],
+      filteredSolutions: []
+    };
+
+    function simulateImportCourses(appState, parseResult) {
+      parseResult.courses.forEach(newCourse => {
+        const existingCourse = appState.courses.find(c => c.code === newCourse.code || c.id === newCourse.id);
+        if (existingCourse) {
+          if (!existingCourse.groups) existingCourse.groups = [];
+          (newCourse.groups || []).forEach(newG => {
+            const exGIdx = existingCourse.groups.findIndex(g => g.group === newG.group);
+            if (exGIdx > -1) {
+              existingCourse.groups[exGIdx] = newG;
+            } else {
+              existingCourse.groups.push(newG);
+            }
+          });
+          const allSlots = [];
+          existingCourse.groups.forEach(g => {
+            if (Array.isArray(g.sessions)) allSlots.push(...g.sessions);
+          });
+          existingCourse.slots = allSlots;
+          const instSet = new Set(existingCourse.instructors || []);
+          (newCourse.instructors || []).forEach(i => {
+            if (i && i !== 'Not Specified') instSet.add(i);
+          });
+          existingCourse.instructors = Array.from(instSet);
+        } else {
+          appState.courses.push(JSON.parse(JSON.stringify(newCourse)));
+        }
+      });
+      appState.solutions = [];
+      appState.filteredSolutions = [];
+    }
+
+    // Import Group 1
+    simulateImportCourses(testAppState, parsedGroup1);
+    assert('After importing Group 1, app state has 2 courses, each with group 03CE01_144',
+      testAppState.courses.length === 2 &&
+      testAppState.courses.every(c => c.groups.length === 1 && c.groups[0].group === '03CE01_144')
+    );
+
+    // Import Group 2 into same app state
+    simulateImportCourses(testAppState, parsedGroup2);
+    assert('After importing Group 2, courses are accumulated without duplicates (still 2 courses)',
+      testAppState.courses.length === 2
+    );
+
+    const accumulatedEee = testAppState.courses.find(c => c.code === 'EEE2304');
+    const accumulatedEce = testAppState.courses.find(c => c.code === 'ECE2201');
+
+    assert('EEE2304 now has both 03CE01_144 and 03CE02_144 groups',
+      accumulatedEee &&
+      accumulatedEee.groups.length === 2 &&
+      accumulatedEee.groups.some(g => g.group === '03CE01_144') &&
+      accumulatedEee.groups.some(g => g.group === '03CE02_144')
+    );
+
+    assert('EEE2304 accumulated all 4 sessions and instructors from both groups',
+      accumulatedEee.slots.length === 4 &&
+      accumulatedEee.instructors.includes('Dr. Ahmed Samir') &&
+      accumulatedEee.instructors.includes('Dr. Mahmoud Gamal') &&
+      accumulatedEee.instructors.includes('Eng. Sarah Ali') &&
+      accumulatedEee.instructors.includes('Eng. Hany')
+    );
+
+    assert('ECE2201 now has both groups and accumulated all sessions',
+      accumulatedEce &&
+      accumulatedEce.groups.length === 2 &&
+      accumulatedEce.slots.length === 4
+    );
+
+    // 35.5: Optimizer can find clash-free schedules from accumulated multi-group courses
+    const multiGroupOpt = ScheduleOptimizer.findOptimalSchedules(testAppState.courses, {
+      maxDays: 5,
+      allowGroupMix: true
+    });
+
+    assert('Optimizer finds clash-free schedule combinations using the accumulated groups',
+      multiGroupOpt.success === true &&
+      multiGroupOpt.solutions.length > 0 &&
+      multiGroupOpt.solutions[0].selectedGroups.length === 2
+    );
+
     // Summary
     const passedCount = results.filter(r => r.passed).length;
     const failedCount = results.filter(r => !r.passed).length;
