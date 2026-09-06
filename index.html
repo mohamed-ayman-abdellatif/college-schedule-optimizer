@@ -435,8 +435,22 @@
 
       <!-- Solution Navigation Carousel -->
       <div class="solutions-nav-container">
-        <div style="font-weight: 700; font-size: 1rem; color: var(--text-primary);">
-          <span data-i18n="rankedOptionsTitle">🎯 Ranked Clash-Free Options:</span>
+        <div class="solutions-nav-header">
+          <div style="font-weight: 700; font-size: 1rem; color: var(--text-primary); display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+            <span data-i18n="rankedOptionsTitle">🎯 Ranked Clash-Free Options:</span>
+            <span class="keyboard-nav-hint" title="Use keyboard arrow keys (← / →) to switch schedules">
+              <kbd>←</kbd> <kbd>→</kbd> <span data-i18n="arrowKeysHint">Use keyboard arrows</span>
+            </span>
+          </div>
+          <div class="solutions-nav-controls">
+            <button id="btn-prev-schedule" class="btn btn-outline btn-xs" onclick="App.prevSchedule()" title="Previous Schedule (←)" disabled>
+              <span>◀</span> <span class="arrow-btn-text" data-i18n="prevSchedule">Previous</span>
+            </button>
+            <span id="schedule-counter-badge" class="schedule-counter-badge">1 / 1</span>
+            <button id="btn-next-schedule" class="btn btn-outline btn-xs" onclick="App.nextSchedule()" title="Next Schedule (→)" disabled>
+              <span class="arrow-btn-text" data-i18n="nextSchedule">Next</span> <span>▶</span>
+            </button>
+          </div>
         </div>
         <div id="solutions-chips-container" class="solutions-chips-wrapper">
           <!-- Populated by JavaScript -->

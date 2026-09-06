@@ -128,6 +128,11 @@ const App = (() => {
       guideGotItBtn: "Got it, Let's Start! 🚀",
       mobileSwipeHint: 'Swipe horizontally to view all 16 periods 👈👉',
       rankedOptionsTitle: '🎯 Ranked Clash-Free Options:',
+      arrowKeysHint: 'Use keyboard arrows',
+      prevScheduleBtn: '◀ Previous',
+      nextScheduleBtn: 'Next ▶',
+      prevSchedule: 'Previous',
+      nextSchedule: 'Next',
       schedulesFilterTitle: 'Schedules Filter & Optimization Priorities',
       schedulesFilterDesc: 'Strict non-negotiable filters for campus days, gaps, and daily workload, plus instant ranking goals.',
       filterMaxDays: 'Max Days / Week:',
@@ -289,6 +294,11 @@ const App = (() => {
       guideGotItBtn: 'فهمت، لنبدأ الآن! 🚀',
       mobileSwipeHint: 'اسحب أفقياً لتصفح جميع الفترات الـ 16 👉👈',
       rankedOptionsTitle: '🎯 الخيارات الأفضل مرتبة (بدون تعارض):',
+      arrowKeysHint: 'استخدم أسهم الكيبورد',
+      prevScheduleBtn: '◀ السابق',
+      nextScheduleBtn: 'التالي ▶',
+      prevSchedule: 'السابق',
+      nextSchedule: 'التالي',
       schedulesFilterTitle: 'تصفية الجداول وأولويات الترتيب',
       schedulesFilterDesc: 'فلاتر إلزامية غير قابلة للتفاوض لعدد أيام النزول وفترات الفراغ والعبء اليومي مع ترتيب فوري.',
       filterMaxDays: 'أقصى عدد أيام نزول / أسبوع:',
@@ -620,6 +630,7 @@ const App = (() => {
     renderCoursesList();
     renderDoctorPreferences();
     if (state.solutions.length > 0) {
+      renderSolutionsSelector();
       renderCurrentSolution();
     }
 
@@ -881,6 +892,9 @@ const App = (() => {
     });
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') closeGuideModal();
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        handleTimetableArrowNavigation(e);
+      }
     });
 
     // Manual Mode Listeners
@@ -4067,6 +4081,10 @@ const App = (() => {
     const activeList = getActiveSolutions();
     const topSolutions = activeList.slice(0, 15);
 
+    if (state.activeSolutionIndex >= topSolutions.length && topSolutions.length > 0) {
+      state.activeSolutionIndex = 0;
+    }
+
     let html = '';
     topSolutions.forEach((sol, idx) => {
       const isActive = idx === state.activeSolutionIndex;
@@ -4089,11 +4107,96 @@ const App = (() => {
     });
 
     container.innerHTML = html;
+    updateScheduleNavControls();
+  }
+
+  function updateScheduleNavControls() {
+    const activeList = getActiveSolutions();
+    const topSolutions = activeList.slice(0, 15);
+    const total = topSolutions.length;
+    const current = total > 0 ? (state.activeSolutionIndex + 1) : 0;
+    const isAr = state.currentLang === 'ar';
+
+    const counterBadge = document.getElementById('schedule-counter-badge');
+    if (counterBadge) {
+      counterBadge.textContent = total > 0
+        ? (isAr ? `${current} من ${total}` : `${current} / ${total}`)
+        : (isAr ? '0 من 0' : '0 / 0');
+    }
+
+    const prevBtn = document.getElementById('btn-prev-schedule');
+    if (prevBtn) {
+      prevBtn.disabled = total <= 1 || state.activeSolutionIndex <= 0;
+    }
+
+    const nextBtn = document.getElementById('btn-next-schedule');
+    if (nextBtn) {
+      nextBtn.disabled = total <= 1 || state.activeSolutionIndex >= total - 1;
+    }
+
+    const container = document.getElementById('solutions-chips-container');
+    if (container) {
+      const activeChip = container.querySelector('.sol-chip.active');
+      if (activeChip && typeof activeChip.scrollIntoView === 'function') {
+        try {
+          activeChip.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+        } catch (e) {
+          activeChip.scrollIntoView(false);
+        }
+      }
+    }
+  }
+
+  function nextSchedule() {
+    const activeList = getActiveSolutions();
+    const maxLen = Math.min(activeList.length, 15);
+    if (maxLen <= 1) return;
+    if (state.activeSolutionIndex < maxLen - 1) {
+      selectSolution(state.activeSolutionIndex + 1);
+    }
+  }
+
+  function prevSchedule() {
+    const activeList = getActiveSolutions();
+    const maxLen = Math.min(activeList.length, 15);
+    if (maxLen <= 1) return;
+    if (state.activeSolutionIndex > 0) {
+      selectSolution(state.activeSolutionIndex - 1);
+    }
+  }
+
+  function handleTimetableArrowNavigation(e) {
+    if (state.currentTab !== 'timetable') return;
+
+    const timetableSection = document.getElementById('tab-timetable');
+    if (!timetableSection || timetableSection.style.display === 'none') return;
+
+    const activeEl = document.activeElement;
+    const tagName = activeEl?.tagName?.toUpperCase();
+    if (tagName === 'INPUT' || tagName === 'TEXTAREA' || tagName === 'SELECT' || activeEl?.isContentEditable) {
+      return;
+    }
+
+    const openModal = document.querySelector('.modal.active, .modal[style*="display: block"], .modal[style*="display: flex"]');
+    if (openModal) return;
+
+    const activeList = getActiveSolutions();
+    const maxLen = Math.min(activeList.length, 15);
+    if (maxLen <= 1) return;
+
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      nextSchedule();
+    } else if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      prevSchedule();
+    }
   }
 
   function selectSolution(index) {
     const activeList = getActiveSolutions();
-    if (index >= 0 && index < activeList.length) {
+    const maxLen = Math.min(activeList.length, 15);
+    if (index >= 0 && index < maxLen) {
       state.activeSolutionIndex = index;
       renderSolutionsSelector();
       renderCurrentSolution();
@@ -5370,7 +5473,10 @@ const App = (() => {
     downloadScheduleTxtFromModal,
     exportMixMatchTxt,
     clearCacheAndReset,
-    clearPreferencesAndBlocked
+    clearPreferencesAndBlocked,
+    nextSchedule,
+    prevSchedule,
+    handleTimetableArrowNavigation
   };
 
   return window.App;

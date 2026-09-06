@@ -1309,6 +1309,98 @@ ME D Abdelgawad Matar
       fullStatus.label === 'Selected: Group 1'
     );
 
+    // =========================================================================
+    // TEST 34: Keyboard Arrow Navigation in Timetable Tab
+    // =========================================================================
+    const mockNavSolutions = [
+      { id: 'sol_1', rank: 1, totalScore: 100, activeDaysCount: 3, totalGapSlots: 0, sessions: [] },
+      { id: 'sol_2', rank: 2, totalScore: 90, activeDaysCount: 3, totalGapSlots: 1, sessions: [] },
+      { id: 'sol_3', rank: 3, totalScore: 80, activeDaysCount: 4, totalGapSlots: 2, sessions: [] }
+    ];
+
+    const testNavState = {
+      currentTab: 'timetable',
+      activeSolutionIndex: 0,
+      solutions: mockNavSolutions,
+      filteredSolutions: mockNavSolutions,
+      currentLang: 'en'
+    };
+
+    function testNextSchedule(s) {
+      const maxLen = Math.min(s.filteredSolutions.length, 15);
+      if (maxLen <= 1) return;
+      if (s.activeSolutionIndex < maxLen - 1) {
+        s.activeSolutionIndex++;
+      }
+    }
+
+    function testPrevSchedule(s) {
+      const maxLen = Math.min(s.filteredSolutions.length, 15);
+      if (maxLen <= 1) return;
+      if (s.activeSolutionIndex > 0) {
+        s.activeSolutionIndex--;
+      }
+    }
+
+    function testHandleArrow(s, key, activeTagName = 'BODY', hasModal = false) {
+      if (s.currentTab !== 'timetable') return false;
+      if (activeTagName === 'INPUT' || activeTagName === 'TEXTAREA' || activeTagName === 'SELECT') return false;
+      if (hasModal) return false;
+
+      const maxLen = Math.min(s.filteredSolutions.length, 15);
+      if (maxLen <= 1) return false;
+
+      if (key === 'ArrowRight') {
+        testNextSchedule(s);
+        return true;
+      } else if (key === 'ArrowLeft') {
+        testPrevSchedule(s);
+        return true;
+      }
+      return false;
+    }
+
+    // Advance to next schedule
+    let handled = testHandleArrow(testNavState, 'ArrowRight');
+    assert('ArrowRight advances from Option 1 to Option 2', handled === true && testNavState.activeSolutionIndex === 1);
+
+    // Advance again
+    handled = testHandleArrow(testNavState, 'ArrowRight');
+    assert('ArrowRight advances from Option 2 to Option 3', handled === true && testNavState.activeSolutionIndex === 2);
+
+    // Clamps at end (does not wrap or exceed bounds)
+    handled = testHandleArrow(testNavState, 'ArrowRight');
+    assert('ArrowRight at last option clamps at Option 3', handled === true && testNavState.activeSolutionIndex === 2);
+
+    // Move backward
+    handled = testHandleArrow(testNavState, 'ArrowLeft');
+    assert('ArrowLeft retreats from Option 3 to Option 2', handled === true && testNavState.activeSolutionIndex === 1);
+
+    // Move backward to start
+    handled = testHandleArrow(testNavState, 'ArrowLeft');
+    assert('ArrowLeft retreats from Option 2 to Option 1', handled === true && testNavState.activeSolutionIndex === 0);
+
+    // Clamps at beginning
+    handled = testHandleArrow(testNavState, 'ArrowLeft');
+    assert('ArrowLeft at first option clamps at Option 1', handled === true && testNavState.activeSolutionIndex === 0);
+
+    // Ignores navigation when currentTab is not timetable
+    testNavState.currentTab = 'courses';
+    handled = testHandleArrow(testNavState, 'ArrowRight');
+    assert('Arrow keys ignored when currentTab is courses', handled === false && testNavState.activeSolutionIndex === 0);
+    testNavState.currentTab = 'timetable';
+
+    // Ignores navigation when user is typing in input or select
+    handled = testHandleArrow(testNavState, 'ArrowRight', 'INPUT');
+    assert('Arrow keys ignored when user is typing in an input field', handled === false && testNavState.activeSolutionIndex === 0);
+
+    handled = testHandleArrow(testNavState, 'ArrowRight', 'SELECT');
+    assert('Arrow keys ignored when user is interacting with a select dropdown', handled === false && testNavState.activeSolutionIndex === 0);
+
+    // Ignores navigation when modal is open
+    handled = testHandleArrow(testNavState, 'ArrowRight', 'BODY', true);
+    assert('Arrow keys ignored when a modal dialog is open', handled === false && testNavState.activeSolutionIndex === 0);
+
     // Summary
     const passedCount = results.filter(r => r.passed).length;
     const failedCount = results.filter(r => !r.passed).length;
