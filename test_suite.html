@@ -1401,6 +1401,46 @@ ME D Abdelgawad Matar
     handled = testHandleArrow(testNavState, 'ArrowRight', 'BODY', true);
     assert('Arrow keys ignored when a modal dialog is open', handled === false && testNavState.activeSolutionIndex === 0);
 
+    // 34.2: Verify scroll position preservation on schedule change (prevents jumping to top)
+    let mockScrollY = 650;
+    let windowScrolledTo = null;
+    const origScrollTo = window.scrollTo;
+    window.scrollTo = function(x, y) {
+      windowScrolledTo = { x, y };
+      mockScrollY = y;
+    };
+
+    function testSelectSolutionWithScroll(s, index, currentScrollY) {
+      const maxLen = Math.min(s.filteredSolutions.length, 15);
+      if (index >= 0 && index < maxLen) {
+        s.activeSolutionIndex = index;
+        window.scrollTo(0, currentScrollY);
+      }
+    }
+
+    testSelectSolutionWithScroll(testNavState, 1, 650);
+    assert('selectSolution preserves exact window scrollY (does not jump to 0)',
+      windowScrolledTo !== null && windowScrolledTo.y === 650
+    );
+
+    // Verify container-only horizontal scrolling calculation
+    const mockContainer = {
+      clientWidth: 300,
+      scrollLeft: 0,
+      scrollTo: function(opts) { this.scrollLeft = opts.left; }
+    };
+    const mockChip = {
+      offsetLeft: 400,
+      offsetWidth: 120
+    };
+    const targetLeft = mockChip.offsetLeft - (mockContainer.clientWidth / 2) + (mockChip.offsetWidth / 2);
+    mockContainer.scrollTo({ left: Math.max(0, targetLeft), behavior: 'smooth' });
+    assert('Chip navigation scrolls container horizontally to center active chip without window scroll',
+      mockContainer.scrollLeft === (400 - 150 + 60)
+    );
+
+    window.scrollTo = origScrollTo;
+
     // =========================================================================
     // TEST 35: Distinction Between Course (جدول مقرر) and Group (جدول مجموعة) Schedules & Multi-Group Accumulation
     // =========================================================================

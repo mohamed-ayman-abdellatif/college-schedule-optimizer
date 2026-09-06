@@ -4149,28 +4149,35 @@ const App = (() => {
       state.activeSolutionIndex = 0;
     }
 
-    let html = '';
-    topSolutions.forEach((sol, idx) => {
-      const isActive = idx === state.activeSolutionIndex;
-      const titleText = state.filterMismatch
-        ? (isAr ? `معاينة غير مصفاة #${sol.rank || 1}` : `Unfiltered Inspection #${sol.rank || 1}`)
-        : (isAr ? `الخيار #${sol.rank || (idx + 1)}` : `Option #${sol.rank || (idx + 1)}`);
-      const gapText = sol.totalGapSlots === 0
-        ? (isAr ? '⚡ 0 فترات فراغ' : '⚡ 0 Gaps')
-        : (isAr ? `☕ ${sol.totalGapSlots} فراغ` : `☕ ${sol.totalGapSlots} Gaps`);
-      const daysText = isAr ? `${sol.activeDaysCount} أيام` : `${sol.activeDaysCount} Days`;
+    const existingChips = container.querySelectorAll('.sol-chip');
+    if (existingChips.length === topSolutions.length && existingChips.length > 0) {
+      existingChips.forEach((chip, idx) => {
+        chip.classList.toggle('active', idx === state.activeSolutionIndex);
+      });
+    } else {
+      let html = '';
+      topSolutions.forEach((sol, idx) => {
+        const isActive = idx === state.activeSolutionIndex;
+        const titleText = state.filterMismatch
+          ? (isAr ? `معاينة غير مصفاة #${sol.rank || 1}` : `Unfiltered Inspection #${sol.rank || 1}`)
+          : (isAr ? `الخيار #${sol.rank || (idx + 1)}` : `Option #${sol.rank || (idx + 1)}`);
+        const gapText = sol.totalGapSlots === 0
+          ? (isAr ? '⚡ 0 فترات فراغ' : '⚡ 0 Gaps')
+          : (isAr ? `☕ ${sol.totalGapSlots} فراغ` : `☕ ${sol.totalGapSlots} Gaps`);
+        const daysText = isAr ? `${sol.activeDaysCount} أيام` : `${sol.activeDaysCount} Days`;
 
-      html += `
-        <button class="sol-chip ${isActive ? 'active' : ''} ${state.filterMismatch ? 'is-fallback-chip' : ''}"
-                onclick="App.selectSolution(${idx})"
-                title="${titleText}: ${gapText}, ${daysText}">
-          <span class="sol-chip-title">${titleText}</span>
-          <span class="sol-chip-meta">${gapText} • ${daysText}</span>
-        </button>
-      `;
-    });
+        html += `
+          <button type="button" class="sol-chip ${isActive ? 'active' : ''} ${state.filterMismatch ? 'is-fallback-chip' : ''}"
+                  onclick="App.selectSolution(${idx})"
+                  title="${titleText}: ${gapText}, ${daysText}">
+            <span class="sol-chip-title">${titleText}</span>
+            <span class="sol-chip-meta">${gapText} • ${daysText}</span>
+          </button>
+        `;
+      });
+      container.innerHTML = html;
+    }
 
-    container.innerHTML = html;
     updateScheduleNavControls();
   }
 
@@ -4201,11 +4208,20 @@ const App = (() => {
     const container = document.getElementById('solutions-chips-container');
     if (container) {
       const activeChip = container.querySelector('.sol-chip.active');
-      if (activeChip && typeof activeChip.scrollIntoView === 'function') {
+      if (activeChip) {
+        // Horizontally scroll the chips container only, without scrolling the main window/page
         try {
-          activeChip.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+          const chipLeft = activeChip.offsetLeft;
+          const chipWidth = activeChip.offsetWidth;
+          const containerWidth = container.clientWidth;
+          const scrollTarget = chipLeft - (containerWidth / 2) + (chipWidth / 2);
+          if (typeof container.scrollTo === 'function') {
+            container.scrollTo({ left: Math.max(0, scrollTarget), behavior: 'smooth' });
+          } else {
+            container.scrollLeft = Math.max(0, scrollTarget);
+          }
         } catch (e) {
-          activeChip.scrollIntoView(false);
+          // Do not call activeChip.scrollIntoView as it forces the page/window to jump
         }
       }
     }
@@ -4261,9 +4277,23 @@ const App = (() => {
     const activeList = getActiveSolutions();
     const maxLen = Math.min(activeList.length, 15);
     if (index >= 0 && index < maxLen) {
+      // Capture current vertical and horizontal scroll positions
+      const currentScrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+      const currentScrollX = window.scrollX || window.pageXOffset || document.documentElement.scrollLeft || 0;
+
       state.activeSolutionIndex = index;
       renderSolutionsSelector();
       renderCurrentSolution();
+
+      // Maintain exact page scroll position so user doesn't jump to the top
+      if (typeof window.scrollTo === 'function') {
+        window.scrollTo(currentScrollX, currentScrollY);
+      }
+      if (typeof requestAnimationFrame === 'function') {
+        requestAnimationFrame(() => {
+          window.scrollTo(currentScrollX, currentScrollY);
+        });
+      }
     }
   }
 
