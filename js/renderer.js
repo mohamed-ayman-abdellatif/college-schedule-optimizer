@@ -220,10 +220,57 @@ const ScheduleRenderer = (() => {
   }
 
   /**
+   * Cleans course title by stripping redundant course codes, brackets, and prefixes/suffixes
+   */
+  function getCleanCourseName(courseName, courseCode) {
+    if (!courseName) return courseCode || '';
+    let name = String(courseName).trim();
+    if (!name) return courseCode || '';
+    if (courseCode) {
+      const escapedCode = String(courseCode).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      name = name
+        .replace(new RegExp(`(?:\\s*[-–—:]\\s*|\\s*\\()\\s*${escapedCode}\\s*\\)?\\s*$`, 'i'), '')
+        .replace(new RegExp(`\\s*\\(?\\s*${escapedCode}\\s*\\)?\\s*$`, 'i'), '')
+        .replace(new RegExp(`^\\s*\\(?\\s*${escapedCode}\\s*\\)?\\s*[-–—:]?\\s*`, 'i'), '')
+        .replace(new RegExp(`\\s*[-–—:]\\s*${escapedCode}\\b`, 'i'), '')
+        .replace(new RegExp(`\\(${escapedCode}\\)`, 'i'), '')
+        .replace(/\s*[-–—:]\s*$/, '')
+        .trim();
+    }
+    return name || courseName;
+  }
+
+  /**
+   * Resolves the cleanest subject / course name for display on the timetable
+   */
+  function resolveSubjectName(session, allCourses = []) {
+    if (!session) return '';
+    let rawName = session.courseName || '';
+    if ((!rawName || rawName === session.courseCode) && allCourses && allCourses.length > 0) {
+      const found = allCourses.find(c => c && (c.id === session.courseId || c.code === session.courseCode || c.id === session.courseCode));
+      if (found && found.name) {
+        rawName = found.name;
+      }
+    }
+    if ((!rawName || rawName === session.courseCode) && typeof window !== 'undefined' && window.App && typeof window.App.getCourses === 'function') {
+      try {
+        const appCourses = window.App.getCourses();
+        if (Array.isArray(appCourses)) {
+          const found = appCourses.find(c => c && (c.id === session.courseId || c.code === session.courseCode || c.id === session.courseCode));
+          if (found && found.name) {
+            rawName = found.name;
+          }
+        }
+      } catch (e) {}
+    }
+    return getCleanCourseName(rawName, session.courseCode);
+  }
+
+  /**
    * Renders the complete timetable view for a solution.
    * Provides both a Mobile-Friendly Daily Agenda and a Full 16-Period Grid.
    */
-  function renderTimetable(solution, containerEl, lang = 'en', customBlockedTimes = []) {
+  function renderTimetable(solution, containerEl, lang = 'en', customBlockedTimes = [], allCourses = []) {
     if (!containerEl) return;
     if (!solution || !solution.sessions) {
       containerEl.innerHTML = `
@@ -567,13 +614,15 @@ const ScheduleRenderer = (() => {
                     const typeClass = s.type === 'Lab.' ? 'type-lab' : (s.type === 'Sec.' ? 'type-sec' : 'type-lect');
                     const typeLabel = isAr ? (s.type === 'Lab.' ? 'معمل' : (s.type === 'Sec.' ? 'سكشن' : 'محاضرة')) : s.type;
                     const isMulti = isMultiCourse(s.courseId);
+                    const sSubjectName = resolveSubjectName(s, allCourses);
+                    const sShowSubject = sSubjectName && sSubjectName.toLowerCase() !== (s.courseCode || '').toLowerCase();
 
                     return `
                       <div class="clash-mini-card" style="border-inline-start: 4px solid ${s.isMergedLecture ? '#F59E0B' : (s.color || '#EF4444')};">
                         <div class="clash-mini-top">
                           <div style="display: flex; align-items: center; gap: 4px; overflow: hidden;">
-                            <span class="clash-mini-code" style="color: ${s.color || 'var(--text-primary)'};" title="${s.courseName}">
-                              ${s.courseCode || s.courseName}
+                            <span class="clash-mini-code" style="color: ${s.color || 'var(--text-primary)'};" title="${sSubjectName || s.courseName}">
+                              ${s.courseCode || sSubjectName || s.courseName}
                             </span>
                             ${isMulti ? getRedErrorTriangleSvg(isAr ? 'تم اختيار أكثر من مجموعة لهذه المادة' : 'Multiple groups selected for this subject') : ''}
                           </div>
@@ -600,6 +649,7 @@ const ScheduleRenderer = (() => {
                             ) : ''}
                           </div>
                         </div>
+                        ${sShowSubject ? `<div class="clash-mini-name" title="${sSubjectName}">${sSubjectName}</div>` : ''}
                         <div class="clash-mini-meta">
                           <span class="session-badge ${typeClass}">${typeLabel}</span>
                           ${s.instructor && sessionHasInstructor(s) ? `<span class="clash-mini-doc" title="${s.instructor}">👨‍🏫 ${s.instructor}</span>` : ''}
@@ -618,11 +668,13 @@ const ScheduleRenderer = (() => {
             const typeClass = session.type === 'Lab.' ? 'type-lab' : (session.type === 'Sec.' ? 'type-sec' : 'type-lect');
             const typeLabel = isAr ? (session.type === 'Lab.' ? 'معمل' : (session.type === 'Sec.' ? 'سكشن' : 'محاضرة')) : session.type;
             const isMulti = isMultiCourse(session.courseId);
+            const subjectName = resolveSubjectName(session, allCourses);
+            const showSubjectName = subjectName && subjectName.toLowerCase() !== (session.courseCode || '').toLowerCase();
 
             gridHtml += `
               <div class="grid-session-card ${typeClass} ${session.isMergedLecture ? 'is-merged-lecture' : ''}"
                    style="grid-column: span ${span}; border-inline-start-color: ${session.isMergedLecture ? '#F59E0B' : (session.color || '#3B82F6')};"
-                   title="${session.courseName} (Group ${session.group})">
+                   title="${subjectName || session.courseName} (Group ${session.group})">
                 ${canDeselect ? (
                   session.isMergedLecture && session.groups && session.groups.length > 1 ? `
                     <div class="timetable-deselect-group-btns">
@@ -644,7 +696,7 @@ const ScheduleRenderer = (() => {
                 ) : ''}
                 <div class="session-top">
                   <div style="display: flex; align-items: center; gap: 4px; overflow: hidden;">
-                    <span class="session-code">${session.courseCode || session.courseName}</span>
+                    <span class="session-code">${session.courseCode || subjectName || session.courseName}</span>
                     ${isMulti ? getRedErrorTriangleSvg(isAr ? 'تم اختيار أكثر من مجموعة لهذه المادة' : 'Multiple groups selected for this subject') : ''}
                   </div>
                   <div style="display: flex; align-items: center; gap: 4px;">
@@ -652,6 +704,7 @@ const ScheduleRenderer = (() => {
                     <span class="session-badge ${typeClass}">${typeLabel}</span>
                   </div>
                 </div>
+                ${showSubjectName ? `<div class="session-name" title="${subjectName}">${subjectName}</div>` : ''}
                 <div class="session-group">Group ${session.group}</div>
                 ${session.instructor && sessionHasInstructor(session) ? `
                   <div class="session-doc" title="${session.instructor}">
@@ -800,7 +853,9 @@ const ScheduleRenderer = (() => {
     isSectionSession,
     normalizeDoctorName,
     isSameDoctor,
-    mergeSameDoctorLectures
+    mergeSameDoctorLectures,
+    getCleanCourseName,
+    resolveSubjectName
   };
 })();
 

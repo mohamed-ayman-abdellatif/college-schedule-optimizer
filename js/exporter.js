@@ -174,16 +174,42 @@ const ScheduleExporter = (() => {
       // Card Content
       ctx.fillStyle = '#FFFFFF';
       ctx.textAlign = 'left';
-      ctx.font = 'bold 14px sans-serif';
-      ctx.fillText(`${session.courseCode || session.courseName}`, x + 8, y + 20);
+      ctx.font = 'bold 13px sans-serif';
+      ctx.fillText(`${session.courseCode || session.courseName}`, x + 8, y + 18);
 
-      ctx.font = '12px sans-serif';
-      ctx.fillText(`${session.type} - Group ${session.group}`, x + 8, y + 40);
+      let cleanSubject = session.courseName || '';
+      if (session.courseCode) {
+        cleanSubject = cleanSubject
+          .replace(new RegExp(`\\s*\\(?\\s*${session.courseCode}\\s*\\)?\\s*$`, 'i'), '')
+          .replace(new RegExp(`^\\s*\\(?\\s*${session.courseCode}\\s*\\)?\\s*[-–—:]?\\s*`, 'i'), '')
+          .replace(new RegExp(`\\s*[-–—:]\\s*${session.courseCode}\\b`, 'i'), '')
+          .replace(new RegExp(`\\(${session.courseCode}\\)`, 'i'), '')
+          .trim();
+      }
+      const hasDistinctSubject = cleanSubject && cleanSubject.toLowerCase() !== (session.courseCode || '').toLowerCase();
 
-      if (session.instructor && session.instructor !== 'Not Specified') {
-        ctx.font = '11px sans-serif';
+      let textY = y + 33;
+      if (hasDistinctSubject) {
+        ctx.font = '600 11px sans-serif';
+        ctx.fillStyle = '#F8FAFC';
+        let disp = cleanSubject;
+        while (disp.length > 3 && ctx.measureText(disp + '...').width > spanW - 14) {
+          disp = disp.slice(0, -1);
+        }
+        if (disp !== cleanSubject) disp += '...';
+        ctx.fillText(disp, x + 8, textY);
+        textY += 15;
+      }
+
+      ctx.font = '11px sans-serif';
+      ctx.fillStyle = '#E2E8F0';
+      ctx.fillText(`${session.type} - Group ${session.group}`, x + 8, textY);
+      textY += 15;
+
+      if (session.instructor && session.instructor !== 'Not Specified' && textY <= y + spanH - 4) {
+        ctx.font = '10px sans-serif';
         ctx.fillStyle = '#E0F2FE';
-        ctx.fillText(session.instructor, x + 8, y + 60);
+        ctx.fillText(session.instructor, x + 8, textY);
       }
     });
 

@@ -1813,6 +1813,147 @@ ME D Abdelgawad Matar
       displayed36.length === 35
     );
 
+    // =========================================================================
+    // TEST 37: Subject Name Displayed in Timetable
+    // =========================================================================
+    // 37.1: getCleanCourseName helper
+    assert('getCleanCourseName removes trailing code "- ECE2102"',
+      ScheduleRenderer.getCleanCourseName('Applied Programming - ECE2102', 'ECE2102') === 'Applied Programming'
+    );
+    assert('getCleanCourseName removes parenthesized code "(EEE2304)"',
+      ScheduleRenderer.getCleanCourseName('الدوائر الكهربية 1 (EEE2304)', 'EEE2304') === 'الدوائر الكهربية 1'
+    );
+    assert('getCleanCourseName preserves clean name without code',
+      ScheduleRenderer.getCleanCourseName('Differential Equations', 'EBA2201') === 'Differential Equations'
+    );
+    assert('getCleanCourseName returns code if name is identical to code',
+      ScheduleRenderer.getCleanCourseName('ECE2102', 'ECE2102') === 'ECE2102'
+    );
+
+    // 37.2: resolveSubjectName helper
+    const testMockCourses = [
+      { id: 'ECE2102', code: 'ECE2102', name: 'Applied Programming - ECE2102' },
+      { id: 'EEE2304', code: 'EEE2304', name: 'الدوائر الكهربية 1 (EEE2304)' }
+    ];
+
+    const sessionWithFullTitle = {
+      courseId: 'ECE2102',
+      courseCode: 'ECE2102',
+      courseName: 'Applied Programming - ECE2102'
+    };
+    assert('resolveSubjectName cleans subject name from session.courseName',
+      ScheduleRenderer.resolveSubjectName(sessionWithFullTitle) === 'Applied Programming'
+    );
+
+    const sessionWithCodeOnly = {
+      courseId: 'ECE2102',
+      courseCode: 'ECE2102',
+      courseName: 'ECE2102'
+    };
+    assert('resolveSubjectName retrieves subject name from courses list when session only has code',
+      ScheduleRenderer.resolveSubjectName(sessionWithCodeOnly, testMockCourses) === 'Applied Programming'
+    );
+
+    // 37.3: renderTimetable outputs .session-name element in DOM
+    const testDomContainer = document.createElement('div');
+    const mockSolForRender = {
+      id: 'sol_test_subject_names',
+      activeDaysCount: 2,
+      totalGapSlots: 0,
+      sessions: [
+        {
+          id: 's_ece',
+          courseId: 'ECE2102',
+          courseCode: 'ECE2102',
+          courseName: 'Applied Programming - ECE2102',
+          group: 'E',
+          type: 'Lect.',
+          day: 'Saturday',
+          startSlot: 1,
+          endSlot: 2,
+          instructor: 'د. هشام صلاح الدين',
+          color: '#3B82F6'
+        },
+        {
+          id: 's_eee',
+          courseId: 'EEE2304',
+          courseCode: 'EEE2304',
+          courseName: 'الدوائر الكهربية 1 (EEE2304)',
+          group: '03CE01_144',
+          type: 'Sec.',
+          day: 'Sunday',
+          startSlot: 3,
+          endSlot: 4,
+          instructor: 'م. أحمد نور',
+          color: '#10B981'
+        }
+      ]
+    };
+
+    ScheduleRenderer.renderTimetable(mockSolForRender, testDomContainer, 'en', [], testMockCourses);
+
+    const sessionNames = Array.from(testDomContainer.querySelectorAll('.session-name')).map(el => el.textContent.trim());
+    const sessionCodes = Array.from(testDomContainer.querySelectorAll('.session-code')).map(el => el.textContent.trim());
+
+    assert('Timetable grid renders .session-name with "Applied Programming"',
+      sessionNames.includes('Applied Programming')
+    );
+    assert('Timetable grid renders .session-name with "الدوائر الكهربية 1"',
+      sessionNames.includes('الدوائر الكهربية 1')
+    );
+    assert('Timetable grid renders .session-code with "ECE2102"',
+      sessionCodes.includes('ECE2102')
+    );
+    assert('Timetable grid renders .session-code with "EEE2304"',
+      sessionCodes.includes('EEE2304')
+    );
+
+    // 37.4: Clashing sessions also display subject name via .clash-mini-name
+    const mockClashSol = {
+      id: 'sol_test_clash_names',
+      activeDaysCount: 1,
+      totalGapSlots: 0,
+      sessions: [
+        {
+          id: 's_clash1',
+          courseId: 'ECE2102',
+          courseCode: 'ECE2102',
+          courseName: 'Applied Programming - ECE2102',
+          group: 'A',
+          type: 'Lect.',
+          day: 'Monday',
+          startSlot: 1,
+          endSlot: 2,
+          instructor: 'د. هشام',
+          color: '#3B82F6'
+        },
+        {
+          id: 's_clash2',
+          courseId: 'EEE2304',
+          courseCode: 'EEE2304',
+          courseName: 'الدوائر الكهربية 1 (EEE2304)',
+          group: 'B',
+          type: 'Lab.',
+          day: 'Monday',
+          startSlot: 1,
+          endSlot: 2,
+          instructor: 'م. سامي',
+          color: '#EF4444'
+        }
+      ]
+    };
+
+    const clashDomContainer = document.createElement('div');
+    ScheduleRenderer.renderTimetable(mockClashSol, clashDomContainer, 'en', [], testMockCourses);
+    const clashNames = Array.from(clashDomContainer.querySelectorAll('.clash-mini-name')).map(el => el.textContent.trim());
+
+    assert('Clashing sessions render .clash-mini-name with "Applied Programming"',
+      clashNames.includes('Applied Programming')
+    );
+    assert('Clashing sessions render .clash-mini-name with "الدوائر الكهربية 1"',
+      clashNames.includes('الدوائر الكهربية 1')
+    );
+
     // Summary
     const passedCount = results.filter(r => r.passed).length;
     const failedCount = results.filter(r => !r.passed).length;

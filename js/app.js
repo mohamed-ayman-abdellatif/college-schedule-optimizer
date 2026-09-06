@@ -3968,7 +3968,7 @@ const App = (() => {
       }
     }
 
-    ScheduleRenderer.renderTimetable(sol, container, state.currentLang, state.blockedTimes);
+    ScheduleRenderer.renderTimetable(sol, container, state.currentLang, state.blockedTimes, state.courses);
     if (prefixHtml) {
       container.insertAdjacentHTML('afterbegin', prefixHtml);
     }
@@ -4410,7 +4410,7 @@ const App = (() => {
 
     if (solution) {
       ScheduleRenderer.renderSolutionSummary(solution, summaryContainer, state.currentLang);
-      ScheduleRenderer.renderTimetable(solution, timetableContainer, state.currentLang, state.blockedTimes);
+      ScheduleRenderer.renderTimetable(solution, timetableContainer, state.currentLang, state.blockedTimes, state.courses);
     } else {
       if (summaryContainer) summaryContainer.innerHTML = '';
       if (timetableContainer) {
@@ -5177,7 +5177,7 @@ const App = (() => {
           activeDaysCount: new Set(allSelected.map(s => s.day)).size,
           sessions: allSelected
         };
-        ScheduleRenderer.renderTimetable(mockSolution, ttContainer, state.currentLang, state.blockedTimes);
+        ScheduleRenderer.renderTimetable(mockSolution, ttContainer, state.currentLang, state.blockedTimes, state.courses);
       }
     }
   }
@@ -5682,7 +5682,8 @@ const App = (() => {
     prevSchedule,
     handleTimetableArrowNavigation,
     getDisplayedSolutions,
-    getMaxDisplayedLimit
+    getMaxDisplayedLimit,
+    getCourses: () => state.courses
   };
 
   return window.App;
