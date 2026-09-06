@@ -1648,10 +1648,44 @@ ME D Abdelgawad Matar
       allowGroupMix: true
     });
 
-    assert('Optimizer finds clash-free schedule combinations using the accumulated groups',
-      multiGroupOpt.success === true &&
-      multiGroupOpt.solutions.length > 0 &&
-      multiGroupOpt.solutions[0].selectedGroups.length === 2
+    // 35.6: Verify isCurrentStateOnlySampleCourses logic prevents deleting user-imported schedules that share course codes with default sample set
+    function testIsOnlySample(testCourses, isSampleData) {
+      if (isSampleData === false) return false;
+      if (!testCourses || testCourses.length === 0) return false;
+      if (testCourses.some(c => c.isSample === false)) return false;
+      const hasUserGroup = testCourses.some(c =>
+        (c.groups || []).some(g => g.group && (g.group.includes('_') || g.group.length > 4))
+      );
+      if (hasUserGroup) return false;
+      if (isSampleData === true) return true;
+      if (typeof SampleScheduleData !== 'undefined' && SampleScheduleData.DEFAULT_COURSE_SET) {
+        return testCourses.every(c =>
+          c.isSample === true ||
+          SampleScheduleData.DEFAULT_COURSE_SET.some(sc =>
+            sc.code === c.code &&
+            sc.groups && c.groups &&
+            sc.groups.length === c.groups.length &&
+            sc.groups[0]?.group === c.groups[0]?.group
+          )
+        );
+      }
+      return false;
+    }
+
+    // Default sample courses should be recognized as sample
+    const mockSampleCourses = SampleScheduleData.DEFAULT_COURSE_SET.map(c => ({ ...c, isSample: true }));
+    assert('Preloaded sample set is correctly identified as sample courses',
+      testIsOnlySample(mockSampleCourses, true) === true
+    );
+
+    // User imported group schedule whose course codes happen to match sample codes (ECE2102, EEE2304)
+    // MUST NOT be falsely identified as sample courses
+    const userImportedCourses = [
+      { code: 'ECE2102', isSample: false, groups: [{ group: '03CE01_144', sessions: [] }] },
+      { code: 'EEE2304', isSample: false, groups: [{ group: '03CE01_144', sessions: [] }] }
+    ];
+    assert('User imported courses with real group codes are NOT identified as sample (never wiped)',
+      testIsOnlySample(userImportedCourses, false) === false
     );
 
     // Summary

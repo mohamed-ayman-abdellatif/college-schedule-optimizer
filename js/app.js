@@ -449,6 +449,7 @@ const App = (() => {
       localStorage.setItem('sched_manual_customize_doc_ta', JSON.stringify(state.manualCustomizeDocTA === true));
       localStorage.setItem('sched_timetable_filters', JSON.stringify(state.timetableFilters || {}));
       localStorage.setItem('sched_mixmatch_selections', JSON.stringify(state.mixMatchSelections || {}));
+      localStorage.setItem('sched_is_sample', JSON.stringify(state.isSampleData === true));
       localStorage.setItem('sched_theme', state.currentTheme);
       localStorage.setItem('sched_lang', state.currentLang);
     } catch (e) {
@@ -458,6 +459,10 @@ const App = (() => {
 
   function loadStateFromStorage() {
     try {
+      const storedIsSample = localStorage.getItem('sched_is_sample');
+      if (storedIsSample !== null) {
+        state.isSampleData = (storedIsSample === 'true');
+      }
       const storedCourses = localStorage.getItem('sched_courses');
       if (storedCourses) {
         state.courses = JSON.parse(storedCourses);
@@ -976,6 +981,41 @@ const App = (() => {
   }
 
   /**
+   * Helper to check if current courses in state are strictly the preloaded demo/sample dataset.
+   * Prevents false positives when real user-imported courses share course codes with sample data.
+   */
+  function isCurrentStateOnlySampleCourses() {
+    if (state.isSampleData === false) return false;
+    if (!state.courses || state.courses.length === 0) return false;
+
+    // Any course explicitly marked as non-sample is real user data
+    if (state.courses.some(c => c.isSample === false)) return false;
+
+    // Any group that has a real group code (contains underscore or is longer than 4 chars like 03CE01_144) is real user data
+    const hasUserGroup = state.courses.some(c =>
+      (c.groups || []).some(g => g.group && (g.group.includes('_') || g.group.length > 4))
+    );
+    if (hasUserGroup) return false;
+
+    if (state.isSampleData === true) return true;
+
+    // Check if current state courses strictly match default sample set by both code and sample group structure
+    if (typeof SampleScheduleData !== 'undefined' && SampleScheduleData.DEFAULT_COURSE_SET) {
+      return state.courses.every(c =>
+        c.isSample === true ||
+        SampleScheduleData.DEFAULT_COURSE_SET.some(sc =>
+          sc.code === c.code &&
+          sc.groups && c.groups &&
+          sc.groups.length === c.groups.length &&
+          sc.groups[0]?.group === c.groups[0]?.group
+        )
+      );
+    }
+
+    return false;
+  }
+
+  /**
    * HTML Parsing Action
    */
   function handleParseHtml() {
@@ -991,23 +1031,24 @@ const App = (() => {
       return;
     }
 
-    // If the current courses in state are just the default sample courses,
+    // If the current courses in state are strictly the default sample courses,
     // clear them so imported schedules don't get mixed with demo data.
-    const isOnlySampleCourses = state.courses.length > 0 &&
-      state.courses.every(c => (typeof SampleScheduleData !== 'undefined' && SampleScheduleData.DEFAULT_COURSE_SET.some(sc => sc.code === c.code)));
-
-    if (isOnlySampleCourses) {
+    if (isCurrentStateOnlySampleCourses()) {
       state.courses = [];
       state.doctorPreferences = {};
     }
+    state.isSampleData = false;
+    try { localStorage.setItem('sched_is_sample', 'false'); } catch (e) {}
 
     // Add or merge courses into state, accumulating groups when importing multiple group schedules
     let addedCount = 0;
     let mergedCount = 0;
 
     result.courses.forEach(newCourse => {
+      newCourse.isSample = false;
       const existingCourse = state.courses.find(c => c.code === newCourse.code || c.id === newCourse.id);
       if (existingCourse) {
+        existingCourse.isSample = false;
         if (!existingCourse.groups) existingCourse.groups = [];
 
         (newCourse.groups || []).forEach(newG => {
@@ -1245,26 +1286,50 @@ const App = (() => {
       return;
     }
 
-    // If the current courses in state are just the default sample courses,
+    // If the current courses in state are strictly the default sample courses,
     // replace them with the user's imported timetable courses so they don't get mixed together.
-    const isOnlySampleCourses = state.courses.length > 0 &&
-      state.courses.every(c => (typeof SampleScheduleData !== 'undefined' && SampleScheduleData.DEFAULT_COURSE_SET.some(sc => sc.code === c.code)));
-
-    if (isOnlySampleCourses) {
+    if (isCurrentStateOnlySampleCourses()) {
       state.courses = [];
       state.doctorPreferences = {};
     }
+    state.isSampleData = false;
+    try { localStorage.setItem('sched_is_sample', 'false'); } catch (e) {}
 
     let addedCount = 0;
+    let mergedCount = 0;
     selectedIndices.forEach(idx => {
       const course = state.pendingPdfCourses[idx];
-      const existingIdx = state.courses.findIndex(c => c.code === course.code);
-      if (existingIdx > -1) {
-        state.courses[existingIdx] = course;
+      course.isSample = false;
+      const existingCourse = state.courses.find(c => c.code === course.code || c.id === course.id);
+      if (existingCourse) {
+        existingCourse.isSample = false;
+        if (!existingCourse.groups) existingCourse.groups = [];
+        (course.groups || []).forEach(newG => {
+          const exGIdx = existingCourse.groups.findIndex(g => g.group === newG.group);
+          if (exGIdx > -1) {
+            existingCourse.groups[exGIdx] = newG;
+          } else {
+            existingCourse.groups.push(newG);
+          }
+        });
+        const allSlots = [];
+        existingCourse.groups.forEach(g => {
+          if (Array.isArray(g.sessions)) allSlots.push(...g.sessions);
+        });
+        existingCourse.slots = allSlots;
+        const instSet = new Set(existingCourse.instructors || []);
+        (course.instructors || []).forEach(inst => {
+          if (inst && inst !== 'Not Specified') instSet.add(inst);
+        });
+        existingCourse.instructors = Array.from(instSet);
+        if (course.name && (!existingCourse.name || existingCourse.name === existingCourse.code)) {
+          existingCourse.name = course.name;
+        }
+        mergedCount++;
       } else {
         state.courses.push(course);
+        addedCount++;
       }
-      addedCount++;
     });
 
     state.solutions = [];
@@ -1487,6 +1552,9 @@ const App = (() => {
   function loadSampleCourses() {
     state.courses = JSON.parse(JSON.stringify(SampleScheduleData.DEFAULT_COURSE_SET));
     normalizeCourseDoctorTitles(state.courses);
+    state.courses.forEach(c => { c.isSample = true; });
+    state.isSampleData = true;
+    try { localStorage.setItem('sched_is_sample', 'true'); } catch (e) {}
     state.solutions = [];
     state.activeSolutionIndex = 0;
     saveStateToStorage();
