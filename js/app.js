@@ -1988,6 +1988,18 @@ const App = (() => {
     populateMajorDepartmentSelector();
   }
 
+  function getMajorDepartmentDisplayName(deptVal) {
+    if (!deptVal) return '';
+    if (state.majorData) {
+      const depts = ScheduleParser.getMajorDepartments(state.majorData);
+      const found = depts.find(d => (d.key && d.key === deptVal) || d.name === deptVal || d.rawLabel === deptVal || d.displayLabel === deptVal);
+      if (found && (found.displayLabel || found.rawLabel)) {
+        return found.displayLabel || found.rawLabel;
+      }
+    }
+    return String(deptVal).replace(/_+$/, '*');
+  }
+
   function populateMajorDepartmentSelector() {
     const deptSelect = document.getElementById('select-major-department');
     if (!deptSelect || !state.majorData) return;
@@ -1998,7 +2010,8 @@ const App = (() => {
 
     depts.forEach(d => {
       const countLabel = d.totalSchedules > 0 ? ` (${d.totalSchedules} ${isAr ? 'جدول' : 'schedules'})` : '';
-      html += `<option value="${d.name}">${d.rawLabel || d.name}${countLabel}</option>`;
+      const display = d.displayLabel || d.rawLabel || d.name;
+      html += `<option value="${d.key || d.name}">${display}${countLabel}</option>`;
     });
 
     deptSelect.innerHTML = html;
@@ -2017,8 +2030,9 @@ const App = (() => {
     // Automatically select first department if available
     if (depts.length > 0) {
       const preferred = depts.find(d => d.name.includes('علوم الحاسب') || d.name.includes('Computer Science')) || depts[0];
-      deptSelect.value = preferred.name;
-      onMajorDepartmentChange(preferred.name);
+      const prefValue = preferred.key || preferred.name;
+      deptSelect.value = prefValue;
+      onMajorDepartmentChange(prefValue);
     }
   }
 
@@ -2145,9 +2159,10 @@ const App = (() => {
       }
 
       if (emptyNotice && emptyText) {
+        const deptDisplay = getMajorDepartmentDisplayName(state.selectedDepartment);
         emptyText.textContent = isAr
-          ? `لا توجد محاضرات أو مجموعات مجدولة لقسم ${state.selectedDepartment} - الفترة ${periodKey}.`
-          : `No scheduled sessions found for ${state.selectedDepartment} (Period ${periodKey}).`;
+          ? `لا توجد محاضرات أو مجموعات مجدولة لقسم ${deptDisplay} - الفترة ${periodKey}.`
+          : `No scheduled sessions found for ${deptDisplay} (Period ${periodKey}).`;
         emptyNotice.style.display = 'flex';
       }
 
@@ -2330,10 +2345,11 @@ const App = (() => {
     renderCoursesList();
     renderDoctorPreferences();
 
+    const deptDisplay = getMajorDepartmentDisplayName(state.selectedDepartment);
     const totalGroups = coursesToLoad.reduce((acc, c) => acc + c.groups.length, 0);
     const msg = isAr
-      ? `تم إدراج ${coursesToLoad.length} مواد بـ ${totalGroups} مجموعة لقسم ${state.selectedDepartment} في الموقع بنجاح! 🎉`
-      : `Successfully submitted ${coursesToLoad.length} subjects with ${totalGroups} groups into the website! ⚡`;
+      ? `تم إدراج ${coursesToLoad.length} مواد بـ ${totalGroups} مجموعة لقسم ${deptDisplay} في الموقع بنجاح! 🎉`
+      : `Successfully submitted ${coursesToLoad.length} subjects with ${totalGroups} groups for ${deptDisplay} into the website! ⚡`;
 
     showToast(msg, 'success');
 

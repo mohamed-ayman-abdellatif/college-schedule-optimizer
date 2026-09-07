@@ -939,6 +939,47 @@ const ScheduleParser = (() => {
   }
 
   /**
+   * Checks if a department entry matches the target department query.
+   * Handles variations with "//", "*", "_", and whitespace.
+   */
+  function isDepartmentMatch(deptKey, deptObj, target) {
+    if (!target) return false;
+    const norm = str => String(str || '')
+      .toLowerCase()
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    const t = norm(target);
+    const tClean = norm(cleanDeptName(target));
+    const tStar = norm(target.replace(/_+$/, '*'));
+    const tUnderscore = norm(target.replace(/\*+$/, '_'));
+
+    const candidates = [
+      norm(deptKey),
+      norm(cleanDeptName(deptKey)),
+      norm(String(deptKey || '').replace(/_+$/, '*')),
+      norm(String(deptKey || '').replace(/\*+$/, '_'))
+    ];
+
+    if (deptObj && typeof deptObj === 'object') {
+      if (deptObj.departmentName) {
+        candidates.push(norm(deptObj.departmentName));
+        candidates.push(norm(cleanDeptName(deptObj.departmentName)));
+        candidates.push(norm(deptObj.departmentName.replace(/_+$/, '*')));
+        candidates.push(norm(deptObj.departmentName.replace(/\*+$/, '_')));
+      }
+      if (deptObj.rawDepartmentLabel) {
+        candidates.push(norm(deptObj.rawDepartmentLabel));
+        candidates.push(norm(cleanDeptName(deptObj.rawDepartmentLabel)));
+        candidates.push(norm(deptObj.rawDepartmentLabel.replace(/_+$/, '*')));
+        candidates.push(norm(deptObj.rawDepartmentLabel.replace(/\*+$/, '_')));
+      }
+    }
+
+    return candidates.some(c => c && (c === t || c === tClean || c === tStar || c === tUnderscore));
+  }
+
+  /**
    * Retrieves the list of departments from a major schedule JSON.
    */
   function getMajorDepartments(jsonData) {
@@ -946,31 +987,32 @@ const ScheduleParser = (() => {
 
     const map = new Map();
 
-    // 1. From departmentsSummary if present
-    if (Array.isArray(jsonData.metadata?.departmentsSummary)) {
-      jsonData.metadata.departmentsSummary.forEach(d => {
-        const cName = cleanDeptName(d.department || d.departmentName || '');
-        if (cName && !map.has(cName)) {
-          map.set(cName, {
-            name: cName,
-            rawLabel: d.department || cName,
-            value: d.departmentValue || '',
-            totalSchedules: d.totalSchedules || 0,
-            totalClasses: d.totalClasses || 0
-          });
-        }
-      });
+    // Helper to format visible label ensuring "//" and "*" are visible
+    function formatVisibleDeptLabel(label, fallbackKey = '') {
+      let str = String(label || fallbackKey || '').trim();
+      if (!str.endsWith('*') && (str.endsWith('_') || String(fallbackKey).endsWith('_'))) {
+        str = str.replace(/_+$/, '*');
+      }
+      return str;
     }
 
-    // 2. From departmentsTree
+    // 1. From departmentsTree (authoritative structure with rawDepartmentLabel)
     if (jsonData.departmentsTree && typeof jsonData.departmentsTree === 'object') {
       Object.keys(jsonData.departmentsTree).forEach(rawKey => {
         const item = jsonData.departmentsTree[rawKey];
         const cName = cleanDeptName(item.departmentName || rawKey);
-        if (cName && !map.has(cName)) {
-          map.set(cName, {
+        let rawLabel = formatVisibleDeptLabel(item.rawDepartmentLabel || item.departmentName || rawKey, rawKey);
+        if (item.rawDepartmentLabel && item.rawDepartmentLabel.includes('//') && !rawLabel.includes('//')) {
+          rawLabel = rawLabel.trim() + ' //';
+        }
+
+        const deptKey = rawKey;
+        if (!map.has(deptKey)) {
+          map.set(deptKey, {
             name: cName,
-            rawLabel: item.rawDepartmentLabel || rawKey,
+            key: deptKey,
+            rawLabel: rawLabel,
+            displayLabel: rawLabel,
             value: item.departmentValue || '',
             totalSchedules: item.totalSchedules || (item.periods ? Object.keys(item.periods).length : 0),
             totalClasses: 0
@@ -979,21 +1021,62 @@ const ScheduleParser = (() => {
       });
     }
 
+    // 2. From departmentsSummary if present (supplements any missing in tree)
+    if (Array.isArray(jsonData.metadata?.departmentsSummary)) {
+      jsonData.metadata.departmentsSummary.forEach(d => {
+        const rawDept = d.department || d.departmentName || '';
+        const cName = cleanDeptName(rawDept);
+        let existing = null;
+        for (const val of map.values()) {
+          if (val.key === rawDept || isDepartmentMatch(val.key, val, rawDept)) {
+            existing = val;
+            break;
+          }
+        }
+        if (!existing) {
+          const rawLabel = formatVisibleDeptLabel(rawDept);
+          map.set(rawDept, {
+            name: cName,
+            key: rawDept,
+            rawLabel: rawLabel,
+            displayLabel: rawLabel,
+            value: d.departmentValue || '',
+            totalSchedules: d.totalSchedules || 0,
+            totalClasses: d.totalClasses || 0
+          });
+        } else {
+          if (d.totalSchedules && !existing.totalSchedules) existing.totalSchedules = d.totalSchedules;
+          if (d.totalClasses && !existing.totalClasses) existing.totalClasses = d.totalClasses;
+          if (d.departmentValue && !existing.value) existing.value = d.departmentValue;
+        }
+      });
+    }
+
     // 3. From allSchedules
     if (Array.isArray(jsonData.allSchedules)) {
       jsonData.allSchedules.forEach(item => {
-        const rawName = item.department?.name || item.department?.rawLabel || '';
+        const rawName = item.department?.rawLabel || item.department?.name || '';
         const cName = cleanDeptName(rawName);
-        if (cName && !map.has(cName)) {
-          map.set(cName, {
+        let existing = null;
+        for (const val of map.values()) {
+          if (val.key === rawName || isDepartmentMatch(val.key, val, rawName)) {
+            existing = val;
+            break;
+          }
+        }
+        if (!existing) {
+          const rawLabel = formatVisibleDeptLabel(rawName);
+          map.set(rawName, {
             name: cName,
-            rawLabel: item.department?.rawLabel || rawName,
+            key: rawName,
+            rawLabel: rawLabel,
+            displayLabel: rawLabel,
             value: item.department?.value || '',
             totalSchedules: 1,
             totalClasses: 0
           });
-        } else if (cName && map.has(cName)) {
-          map.get(cName).totalSchedules++;
+        } else {
+          existing.totalSchedules++;
         }
       });
     }
@@ -1003,7 +1086,9 @@ const ScheduleParser = (() => {
       const deptName = 'General Engineering / Major Timetable (جدول الكلية)';
       map.set(deptName, {
         name: deptName,
+        key: deptName,
         rawLabel: deptName,
+        displayLabel: deptName,
         value: '1',
         totalSchedules: jsonData.groups.length,
         totalClasses: jsonData.groups.reduce((acc, g) => acc + (Array.isArray(g.classes) ? g.classes.length : 0), 0)
@@ -1042,8 +1127,7 @@ const ScheduleParser = (() => {
     // 1. Check departmentsTree
     if (jsonData.departmentsTree) {
       for (const [dKey, dObj] of Object.entries(jsonData.departmentsTree)) {
-        if (cleanDeptName(dKey).toLowerCase() === cleanTarget ||
-            cleanDeptName(dObj.departmentName || '').toLowerCase() === cleanTarget) {
+        if (isDepartmentMatch(dKey, dObj, deptName)) {
           if (dObj.periods && typeof dObj.periods === 'object') {
             for (const [pKey, pObj] of Object.entries(dObj.periods)) {
               let grpCount = 0;
@@ -1067,8 +1151,7 @@ const ScheduleParser = (() => {
     // 2. Check allSchedules
     if (Array.isArray(jsonData.allSchedules)) {
       jsonData.allSchedules.forEach(item => {
-        const itemDept = cleanDeptName(item.department?.name || item.department?.rawLabel || '').toLowerCase();
-        if (itemDept === cleanTarget && item.period) {
+        if (isDepartmentMatch(item.department?.name, item.department, deptName) && item.period) {
           const pLabel = item.period.label || item.period.value;
           const isRealGroup = item.group?.label && !item.group.label.includes('--اختر');
           const hasSessions = Array.isArray(item.schedule) && item.schedule.some(d => Array.isArray(d.sessions) && d.sessions.length > 0);
@@ -1335,8 +1418,7 @@ const ScheduleParser = (() => {
     // 1. Scan departmentsTree
     if (jsonData.departmentsTree) {
       for (const [dKey, dObj] of Object.entries(jsonData.departmentsTree)) {
-        if (cleanDeptName(dKey).toLowerCase() === cleanTargetDept ||
-            cleanDeptName(dObj.departmentName || '').toLowerCase() === cleanTargetDept) {
+        if (isDepartmentMatch(dKey, dObj, deptName)) {
           if (dObj.periods && typeof dObj.periods === 'object') {
             for (const [pKey, pObj] of Object.entries(dObj.periods)) {
               if (String(pObj.periodName || pKey).trim() === cleanTargetPeriod) {
@@ -1360,9 +1442,8 @@ const ScheduleParser = (() => {
     // 2. Scan allSchedules if coursesMap is empty or as supplement
     if (coursesMap.size === 0 && Array.isArray(jsonData.allSchedules)) {
       jsonData.allSchedules.forEach(item => {
-        const itemDept = cleanDeptName(item.department?.name || item.department?.rawLabel || '').toLowerCase();
         const itemPeriod = String(item.period?.label || item.period?.value || '').trim();
-        if (itemDept === cleanTargetDept && itemPeriod === cleanTargetPeriod) {
+        if (isDepartmentMatch(item.department?.name, item.department, deptName) && itemPeriod === cleanTargetPeriod) {
           processScheduleDays(
             item.group?.label || item.group?.value,
             item.schedule,
@@ -1376,9 +1457,8 @@ const ScheduleParser = (() => {
     // 3. Scan allClassSessions if still empty
     if (coursesMap.size === 0 && Array.isArray(jsonData.allClassSessions)) {
       jsonData.allClassSessions.forEach(sess => {
-        const sDept = cleanDeptName(sess.department || '').toLowerCase();
         const sPeriod = String(sess.period || '').trim();
-        if (sDept === cleanTargetDept && sPeriod === cleanTargetPeriod) {
+        if (isDepartmentMatch(sess.department, null, deptName) && sPeriod === cleanTargetPeriod) {
           const normDay = normalizeDay(sess.day);
           if (normDay && sess.courseCode) {
             const slotCoords = mapSlotToGridMatrix(sess.slotIndex, sess.timeSlot, 1, 4);
@@ -1525,7 +1605,8 @@ const ScheduleParser = (() => {
     getMajorDepartments,
     getMajorPeriodsForDepartment,
     extractCoursesFromMajor,
-    mapSlotToGridMatrix
+    mapSlotToGridMatrix,
+    isDepartmentMatch
   };
 })();
 
