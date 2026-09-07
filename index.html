@@ -163,6 +163,14 @@
             </div>
           </div>
 
+          <!-- Prominent Submit Action Button (Always Visible) -->
+          <div class="major-submit-action-bar" style="margin-top: 14px; margin-bottom: 12px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+            <button type="button" id="btn-submit-major-subjects" class="btn btn-primary btn-lg" style="flex: 1; min-height: 48px; font-size: 1.05rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35); border-radius: var(--radius-md); cursor: pointer;">
+              <span style="font-size: 1.25rem;">⚡</span>
+              <span id="btn-submit-major-subjects-text" data-i18n="submitSubjectsBtn">Submit Subjects into Website (إدراج المواد في الموقع)</span>
+            </button>
+          </div>
+
           <!-- Discovered Subjects Preview & Load Action -->
           <div id="major-courses-preview" class="major-preview-box" style="display: none;">
             <div class="major-preview-header">
@@ -184,8 +192,15 @@
           </div>
 
           <!-- Empty state when no timetable for period -->
-          <div id="major-empty-notice" class="alert alert-info" style="display: none; margin-top: 14px;">
-            <span>ℹ️</span> <span id="major-empty-notice-text">No active schedules found for this period.</span>
+          <div id="major-empty-notice" class="alert alert-info" style="display: none; margin-top: 14px; flex-direction: column; gap: 10px; align-items: flex-start;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span>ℹ️</span> <span id="major-empty-notice-text">No active schedules found for this period.</span>
+            </div>
+            <div id="major-empty-fallback-action" style="display: none; margin-top: 4px;">
+              <button type="button" id="btn-switch-period-fallback" class="btn btn-secondary btn-sm" style="font-weight: 600; cursor: pointer;">
+                <!-- Switch to Period X & Submit -->
+              </button>
+            </div>
           </div>
         </div>
 

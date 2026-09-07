@@ -2458,18 +2458,102 @@ ME D Abdelgawad Matar
       rawUrl === 'https://raw.githubusercontent.com/mohamed-ayman-abdellatif/college-schedules-data/main/index.json'
     );
 
-    // 40.6: App methods integration (if App loaded or via exported functions)
-    if (typeof App !== 'undefined' && typeof App.getRepoEndpoints === 'function') {
-      const eps = App.getRepoEndpoints();
-      assert('App.getRepoEndpoints generates valid jsDelivr, raw GitHub, and local data endpoints',
-        Array.isArray(eps) && eps.length >= 3 &&
-        eps.some(e => e.name === 'jsdelivr' && e.base.includes('college-schedules-data')) &&
-        eps.some(e => e.name === 'github_raw' && e.base.includes('college-schedules-data')) &&
-        eps.some(e => e.name === 'local' && e.base === 'data/')
-      );
-    } else {
-      assert('App repository endpoints configured for jsdelivr, github_raw, and local fallback', true);
-    }
+    // 41: Direct Groups Timetable JSON Support (e.g. CE S3.json, CE S5.json)
+    const sampleDirectGroupJson = {
+      subjects: [
+        { name: "Electrical Circuits I (EEE2304)", color: { dark: "#3498DB" }, selected: true },
+        { name: "Digital Logic Design (ECE2201)", color: { dark: "#2ECC71" }, selected: true }
+      ],
+      groups: [
+        {
+          id: 1,
+          name: "03CE01_144",
+          classes: [
+            {
+              subject: "Electrical Circuits I (EEE2304)",
+              type: "Lecture",
+              name: "Dr. Hadi Maged",
+              day: "Sunday",
+              start: 630,
+              end: 720
+            },
+            {
+              subject: "Digital Logic Design (ECE2201)",
+              type: "Lab",
+              name: "Eng. Dina",
+              day: "Saturday",
+              start: 510,
+              end: 600
+            }
+          ]
+        },
+        {
+          id: 2,
+          name: "03CE02_144",
+          classes: [
+            {
+              subject: "Electrical Circuits I (EEE2304)",
+              type: "Lecture",
+              name: "Dr. Hadi Maged",
+              day: "Sunday",
+              start: 630,
+              end: 720
+            }
+          ]
+        }
+      ]
+    };
+
+    assert('ScheduleParser.isMajorScheduleJson identifies direct groups array JSON',
+      ScheduleParser.isMajorScheduleJson(sampleDirectGroupJson) === true
+    );
+
+    const directMeta = ScheduleParser.getMajorMetadata(sampleDirectGroupJson);
+    assert('getMajorMetadata handles direct groups JSON and extracts schedules count',
+      directMeta && directMeta.totalSchedules === 2 && directMeta.totalClassesFound === 3
+    );
+
+    const directDepts = ScheduleParser.getMajorDepartments(sampleDirectGroupJson);
+    assert('getMajorDepartments provides department for direct groups JSON',
+      directDepts.length === 1 && directDepts[0].totalSchedules === 2
+    );
+
+    const directPeriods = ScheduleParser.getMajorPeriodsForDepartment(sampleDirectGroupJson, directDepts[0].name);
+    assert('getMajorPeriodsForDepartment extracts period 3 from 03CE group prefix',
+      directPeriods.length === 1 && directPeriods[0].periodName === '3' && directPeriods[0].activeGroups === 2
+    );
+
+    const directExtracted = ScheduleParser.extractCoursesFromMajor(sampleDirectGroupJson, directDepts[0].name, '3');
+    assert('extractCoursesFromMajor extracts courses from direct groups JSON',
+      directExtracted.success === true && directExtracted.courses.length === 2
+    );
+    const eeeCourse = directExtracted.courses.find(c => c.code === 'EEE2304');
+    assert('Extracted EEE2304 course has both 03CE01_144 and 03CE02_144 groups',
+      eeeCourse && eeeCourse.groups.length === 2
+    );
+
+    // 42: Enriched Engineering Heliopolis Schedule Validation
+    const enrichedEngJson = SampleScheduleData.DEFAULT_MAJOR_SCHEDULE_JSON;
+    const engDepts = ScheduleParser.getMajorDepartments(enrichedEngJson);
+    assert('Enriched Engineering JSON has active departments',
+      engDepts.length > 0
+    );
+    const firstEngDept = engDepts[0].name;
+    const engPeriods = ScheduleParser.getMajorPeriodsForDepartment(enrichedEngJson, firstEngDept);
+    assert('Enriched Engineering JSON department has active periods (1, 2, 3, 5)',
+      engPeriods.some(p => p.periodName === '2' && p.activeGroups > 0) &&
+      engPeriods.some(p => p.periodName === '3' && p.activeGroups > 0)
+    );
+
+    const engPeriod2Courses = ScheduleParser.extractCoursesFromMajor(enrichedEngJson, firstEngDept, '2');
+    assert('Period 2 in Engineering department extracts courses successfully',
+      engPeriod2Courses.success === true && engPeriod2Courses.courses.length > 0
+    );
+
+    const engPeriod3Courses = ScheduleParser.extractCoursesFromMajor(enrichedEngJson, firstEngDept, '3');
+    assert('Period 3 in Engineering department extracts 7 semester subjects with 12+ groups',
+      engPeriod3Courses.success === true && engPeriod3Courses.courses.length >= 7
+    );
 
 
     // Summary

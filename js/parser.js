@@ -877,7 +877,8 @@ const ScheduleParser = (() => {
       data.departmentsSummary ||
       data.allSchedules ||
       data.allClassSessions ||
-      (data.metadata && (data.metadata.exportTitle || data.metadata.portalHeader || data.metadata.totalDepartments))
+      (data.metadata && (data.metadata.exportTitle || data.metadata.portalHeader || data.metadata.totalDepartments)) ||
+      (Array.isArray(data.groups) && data.groups.length > 0 && Array.isArray(data.groups[0].classes))
     );
   }
 
@@ -888,6 +889,22 @@ const ScheduleParser = (() => {
     if (!jsonData || typeof jsonData !== 'object') return null;
     const meta = jsonData.metadata || {};
     const depts = getMajorDepartments(jsonData);
+
+    if (!jsonData.metadata && Array.isArray(jsonData.groups) && jsonData.groups.length > 0) {
+      let title = 'College Timetable (الجدول الدراسي)';
+      if (Array.isArray(jsonData.subjects) && jsonData.subjects.length > 0) {
+        title = 'Engineering Schedule (جدول الهندسة)';
+      }
+      return {
+        title,
+        portalHeader: title,
+        batch: 'Term Schedule',
+        scrapedAt: new Date().toISOString(),
+        totalDepartments: 1,
+        totalSchedules: jsonData.groups.length,
+        totalClassesFound: jsonData.groups.reduce((acc, g) => acc + (Array.isArray(g.classes) ? g.classes.length : 0), 0)
+      };
+    }
 
     let title = meta.exportTitle || meta.portalHeader || 'College Timetable';
     if (meta.portalHeader && meta.portalHeader.includes('--')) {
@@ -981,6 +998,18 @@ const ScheduleParser = (() => {
       });
     }
 
+    // 4. From groups array (e.g. CE S3.json, CE S5.json)
+    if (map.size === 0 && Array.isArray(jsonData.groups) && jsonData.groups.length > 0) {
+      const deptName = 'General Engineering / Major Timetable (جدول الكلية)';
+      map.set(deptName, {
+        name: deptName,
+        rawLabel: deptName,
+        value: '1',
+        totalSchedules: jsonData.groups.length,
+        totalClasses: jsonData.groups.reduce((acc, g) => acc + (Array.isArray(g.classes) ? g.classes.length : 0), 0)
+      });
+    }
+
     return Array.from(map.values());
   }
 
@@ -1045,6 +1074,25 @@ const ScheduleParser = (() => {
           const hasSessions = Array.isArray(item.schedule) && item.schedule.some(d => Array.isArray(d.sessions) && d.sessions.length > 0);
           registerPeriod(pLabel, item.period.value || pLabel, isRealGroup ? 1 : 0, hasSessions ? 1 : 0);
         }
+      });
+    }
+
+    // 3. Check groups array (e.g. CE S3.json, CE S5.json)
+    if (periodMap.size === 0 && Array.isArray(jsonData.groups) && jsonData.groups.length > 0) {
+      const pMapCounts = new Map();
+      jsonData.groups.forEach(g => {
+        const m = (g.name || '').match(/^0?(\d+)/);
+        const pNum = m ? m[1] : '1';
+        const hasClasses = Array.isArray(g.classes) && g.classes.length > 0;
+        if (!pMapCounts.has(pNum)) {
+          pMapCounts.set(pNum, { total: 0, active: 0 });
+        }
+        const c = pMapCounts.get(pNum);
+        c.total++;
+        if (hasClasses) c.active++;
+      });
+      pMapCounts.forEach((counts, pKey) => {
+        registerPeriod(pKey, pKey, counts.total, counts.active);
       });
     }
 
@@ -1349,6 +1397,79 @@ const ScheduleParser = (() => {
             });
           }
         }
+      });
+    }
+
+    // 4. Scan direct groups array (e.g. CE S3.json, CE S5.json)
+    if (coursesMap.size === 0 && Array.isArray(jsonData.groups)) {
+      const cleanTargetPeriod = String(periodKey).trim();
+      const filteredGroups = jsonData.groups.filter(g => {
+        const m = (g.name || '').match(/^0?(\d+)/);
+        return m ? (m[1] === cleanTargetPeriod) : true;
+      });
+      const groupsToProcess = filteredGroups.length > 0 ? filteredGroups : jsonData.groups;
+
+      if (Array.isArray(jsonData.subjects)) {
+        jsonData.subjects.forEach(s => {
+          if (s.name && s.color) {
+            const m = s.name.match(/\(([A-Za-z0-9_]+)\)/);
+            const code = m ? m[1] : s.name.trim();
+            colorMap[code] = s.color.dark || s.color.light || '#3B82F6';
+          }
+        });
+      }
+
+      groupsToProcess.forEach(grp => {
+        const gName = grp.name || `Group_${grp.id || 1}`;
+        (grp.classes || []).forEach(cls => {
+          const sub = cls.subject || '';
+          const codeMatch = sub.match(/\(([A-Za-z0-9_]+)\)/);
+          const cCode = codeMatch ? codeMatch[1] : sub.trim();
+          const cName = sub.replace(/\s*\([^\)]+\)/, '').trim() || cCode;
+          if (!cCode) return;
+
+          const normDay = normalizeDay(cls.day);
+          if (!normDay) return;
+
+          let slotIdx = 1;
+          if (typeof cls.start === 'number') {
+            if (cls.start <= 570) slotIdx = 1;
+            else if (cls.start <= 690) slotIdx = 2;
+            else if (cls.start <= 810) slotIdx = 3;
+            else if (cls.start <= 930) slotIdx = 4;
+            else if (cls.start <= 1050) slotIdx = 5;
+            else slotIdx = 6;
+          } else if (typeof cls.timeSlot === 'number') {
+            slotIdx = cls.timeSlot + 1;
+          }
+
+          const slotMatrix = mapSlotToGridMatrix(slotIdx, '', 1, 4);
+
+          let t = 'Lect.';
+          const rawType = (cls.type || '').toLowerCase();
+          if (rawType.includes('lab') || rawType.includes('معمل')) t = 'Lab.';
+          else if (rawType.includes('sec') || rawType.includes('سكشن')) t = 'Sec.';
+          else if (rawType.includes('lect') || rawType.includes('محاضرة')) t = 'Lect.';
+
+          let inst = cls.name && cls.name !== 'Not Specified' ? cls.name.trim() : 'Not Specified';
+          if (t === 'Lect.' && inst !== 'Not Specified' && !inst.startsWith('د.') && !inst.startsWith('Dr.') && !inst.startsWith('Prof.')) {
+            inst = 'د. ' + inst;
+          }
+
+          addSessionToCourse({
+            courseCode: cCode,
+            courseName: cName,
+            groupCode: gName,
+            type: t,
+            day: normDay,
+            startSlot: slotMatrix.startSlot,
+            endSlot: slotMatrix.endSlot,
+            duration: slotMatrix.duration,
+            instructor: inst,
+            room: cls.room || '',
+            color: colorMap[cCode] || generateCourseColor(cCode)
+          });
+        });
       });
     }
 

@@ -83,6 +83,7 @@ const App = (() => {
       selectMajorLabel: 'Major / Faculty:',
       selectDeptLabel: 'Department:',
       selectPeriodLabel: 'Period / Term:',
+      submitSubjectsBtn: 'Submit Subjects into Website (إدراج المواد في الموقع)',
       loadSubjectsBtn: 'Load All Subjects into Optimizer',
       pasteHtmlTab: 'Paste HTML Code',
       uploadPdfTab: '📄 Upload PDF Timetable',
@@ -269,6 +270,7 @@ const App = (() => {
       selectMajorLabel: 'الكلية / الدفعة:',
       selectDeptLabel: 'القسم:',
       selectPeriodLabel: 'الفترة / الترم الدراسي:',
+      submitSubjectsBtn: 'إدراج المواد في الموقع (Submit Subjects into Website)',
       loadSubjectsBtn: 'تحميل المقررات إلى المنسق ⚡',
       pasteHtmlTab: 'نسخ ولصق كود HTML',
       uploadPdfTab: '📄 رفع جدول PDF',
@@ -1883,8 +1885,11 @@ const App = (() => {
     if (savedMajor) {
       try {
         const parsed = JSON.parse(savedMajor);
-        if (ScheduleParser.isMajorScheduleJson(parsed)) {
+        const meta = ScheduleParser.getMajorMetadata(parsed);
+        if (ScheduleParser.isMajorScheduleJson(parsed) && meta && (meta.totalClassesFound > 0 || (parsed.metadata && parsed.metadata.totalClassesFound > 0))) {
           loadMajorJsonData(parsed, 'Saved Local Major');
+        } else {
+          localStorage.removeItem('sched_major_json');
         }
       } catch (e) {}
     }
@@ -1946,8 +1951,9 @@ const App = (() => {
     // Select all / Deselect all
     document.getElementById('btn-major-toggle-all')?.addEventListener('click', toggleAllMajorCoursesSelection);
 
-    // Load subjects button
-    document.getElementById('btn-load-major-subjects')?.addEventListener('click', loadSelectedMajorCourses);
+    // Prominent Submit Button & Preview Load Button
+    document.getElementById('btn-submit-major-subjects')?.addEventListener('click', submitMajorSubjectsToWebsite);
+    document.getElementById('btn-load-major-subjects')?.addEventListener('click', submitMajorSubjectsToWebsite);
   }
 
   function loadMajorJsonData(jsonData, sourceName = '') {
@@ -2052,23 +2058,44 @@ const App = (() => {
     });
     periodSelect.innerHTML = html;
 
-    // Automatically select the first period that has active groups, or first
-    const activeP = periods.find(p => p.activeGroups > 0) || periods[0];
-    if (activeP) {
-      periodSelect.value = activeP.periodName;
-      onMajorPeriodChange(activeP.periodName);
+    // Automatically select the period that has the MOST active groups or yields courses
+    let bestPeriod = null;
+    const sortedPeriods = [...periods].sort((a, b) => (b.activeGroups || 0) - (a.activeGroups || 0));
+    if (sortedPeriods.length > 0 && (sortedPeriods[0].activeGroups || 0) > 0) {
+      bestPeriod = sortedPeriods[0];
+    } else {
+      for (const p of periods) {
+        const testExtract = ScheduleParser.extractCoursesFromMajor(state.majorData, deptName, p.periodName);
+        if (testExtract.success && testExtract.courses.length > 0) {
+          bestPeriod = p;
+          break;
+        }
+      }
+    }
+    if (!bestPeriod && periods.length > 0) {
+      bestPeriod = periods[0];
+    }
+    if (bestPeriod) {
+      periodSelect.value = bestPeriod.periodName;
+      onMajorPeriodChange(bestPeriod.periodName);
     }
   }
 
   function onMajorPeriodChange(periodKey) {
     state.selectedPeriod = periodKey;
     const isAr = state.currentLang === 'ar';
+    const submitBtnText = document.getElementById('btn-submit-major-subjects-text');
 
     if (!periodKey || !state.selectedDepartment || !state.majorData) {
       const previewBox = document.getElementById('major-courses-preview');
       if (previewBox) previewBox.style.display = 'none';
       const emptyNotice = document.getElementById('major-empty-notice');
       if (emptyNotice) emptyNotice.style.display = 'none';
+      if (submitBtnText) {
+        submitBtnText.textContent = isAr
+          ? 'إدراج المواد في الموقع (Submit Subjects into Website)'
+          : 'Submit Subjects into Website (إدراج المواد في الموقع)';
+      }
       return;
     }
 
@@ -2087,6 +2114,12 @@ const App = (() => {
       if (previewBox) previewBox.style.display = 'block';
       const emptyNotice = document.getElementById('major-empty-notice');
       if (emptyNotice) emptyNotice.style.display = 'none';
+
+      if (submitBtnText) {
+        submitBtnText.textContent = isAr
+          ? `⚡ إدراج ${extractResult.courses.length} مواد في الموقع (Submit ${extractResult.courses.length} Subjects)`
+          : `⚡ Submit ${extractResult.courses.length} Subjects into Website (إدراج ${extractResult.courses.length} مواد)`;
+      }
     } else {
       state.discoveredMajorCourses = [];
       state.selectedMajorCourseCodes.clear();
@@ -2095,11 +2128,53 @@ const App = (() => {
       if (previewBox) previewBox.style.display = 'none';
       const emptyNotice = document.getElementById('major-empty-notice');
       const emptyText = document.getElementById('major-empty-notice-text');
+      const fallbackDiv = document.getElementById('major-empty-fallback-action');
+      const fallbackBtn = document.getElementById('btn-switch-period-fallback');
+
+      // Check if another period in this department has active sessions
+      const periods = ScheduleParser.getMajorPeriodsForDepartment(state.majorData, state.selectedDepartment);
+      let altPeriod = null;
+      for (const p of periods) {
+        if (p.periodName !== periodKey) {
+          const testEx = ScheduleParser.extractCoursesFromMajor(state.majorData, state.selectedDepartment, p.periodName);
+          if (testEx.success && testEx.courses.length > 0) {
+            altPeriod = { ...p, coursesCount: testEx.courses.length };
+            break;
+          }
+        }
+      }
+
       if (emptyNotice && emptyText) {
         emptyText.textContent = isAr
           ? `لا توجد محاضرات أو مجموعات مجدولة لقسم ${state.selectedDepartment} - الفترة ${periodKey}.`
           : `No scheduled sessions found for ${state.selectedDepartment} (Period ${periodKey}).`;
         emptyNotice.style.display = 'flex';
+      }
+
+      if (fallbackDiv && fallbackBtn && altPeriod) {
+        fallbackDiv.style.display = 'block';
+        fallbackBtn.textContent = isAr
+          ? `⚡ التبديل إلى الفترة ${altPeriod.periodName} (${altPeriod.coursesCount} مواد) وإدراجها بالموقع`
+          : `⚡ Switch to Period ${altPeriod.periodName} (${altPeriod.coursesCount} subjects) & Submit`;
+        fallbackBtn.onclick = () => {
+          const pSel = document.getElementById('select-major-period');
+          if (pSel) pSel.value = altPeriod.periodName;
+          onMajorPeriodChange(altPeriod.periodName);
+          submitMajorSubjectsToWebsite();
+        };
+
+        if (submitBtnText) {
+          submitBtnText.textContent = isAr
+            ? `⚡ إدراج مواد الفترة ${altPeriod.periodName} في الموقع (${altPeriod.coursesCount} مواد)`
+            : `⚡ Submit Period ${altPeriod.periodName} Subjects into Website (${altPeriod.coursesCount} subjects)`;
+        }
+      } else {
+        if (fallbackDiv) fallbackDiv.style.display = 'none';
+        if (submitBtnText) {
+          submitBtnText.textContent = isAr
+            ? 'إدراج المواد في الموقع (Submit Subjects into Website)'
+            : 'Submit Subjects into Website (إدراج المواد في الموقع)';
+        }
       }
     }
   }
@@ -2182,17 +2257,62 @@ const App = (() => {
     });
   }
 
-  function loadSelectedMajorCourses() {
+  function submitMajorSubjectsToWebsite() {
     const isAr = state.currentLang === 'ar';
-    if (!state.discoveredMajorCourses || state.discoveredMajorCourses.length === 0) {
-      showToast(isAr ? 'لا توجد مقررات للتحميل' : 'No courses to load', 'error');
+
+    // 1. If courses already discovered for the currently selected period
+    if (state.discoveredMajorCourses && state.discoveredMajorCourses.length > 0) {
+      if (state.selectedMajorCourseCodes.size === 0) {
+        state.discoveredMajorCourses.forEach(c => state.selectedMajorCourseCodes.add(c.code));
+      }
+      loadSelectedMajorCourses();
       return;
     }
 
-    const coursesToLoad = state.discoveredMajorCourses.filter(c => state.selectedMajorCourseCodes.has(c.code));
-    if (coursesToLoad.length === 0) {
-      showToast(isAr ? 'يرجى اختيار مقرر واحد على الأقل' : 'Please select at least one course', 'warning');
+    // 2. If no courses discovered for current period, try finding an active period in this department
+    if (state.majorData && state.selectedDepartment) {
+      const periods = ScheduleParser.getMajorPeriodsForDepartment(state.majorData, state.selectedDepartment);
+      let bestAlt = null;
+      let maxC = 0;
+      for (const p of periods) {
+        const testEx = ScheduleParser.extractCoursesFromMajor(state.majorData, state.selectedDepartment, p.periodName);
+        if (testEx.success && testEx.courses.length > maxC) {
+          maxC = testEx.courses.length;
+          bestAlt = p.periodName;
+        }
+      }
+
+      if (bestAlt) {
+        const pSel = document.getElementById('select-major-period');
+        if (pSel) pSel.value = bestAlt;
+        onMajorPeriodChange(bestAlt);
+        if (state.discoveredMajorCourses && state.discoveredMajorCourses.length > 0) {
+          state.discoveredMajorCourses.forEach(c => state.selectedMajorCourseCodes.add(c.code));
+          loadSelectedMajorCourses();
+          return;
+        }
+      }
+    }
+
+    // 3. Fallback warning
+    if (!state.selectedDepartment) {
+      showToast(isAr ? 'يرجى اختيار القسم أولاً' : 'Please select a department first', 'warning');
+    } else {
+      showToast(isAr ? 'لا توجد محاضرات مجدولة لهذا القسم حالياً' : 'No scheduled sessions found for this department', 'warning');
+    }
+  }
+
+  function loadSelectedMajorCourses() {
+    const isAr = state.currentLang === 'ar';
+    if (!state.discoveredMajorCourses || state.discoveredMajorCourses.length === 0) {
+      submitMajorSubjectsToWebsite();
       return;
+    }
+
+    let coursesToLoad = state.discoveredMajorCourses.filter(c => state.selectedMajorCourseCodes.has(c.code));
+    if (coursesToLoad.length === 0) {
+      state.discoveredMajorCourses.forEach(c => state.selectedMajorCourseCodes.add(c.code));
+      coursesToLoad = state.discoveredMajorCourses;
     }
 
     // Replace or merge into state.courses
@@ -2212,15 +2332,15 @@ const App = (() => {
 
     const totalGroups = coursesToLoad.reduce((acc, c) => acc + c.groups.length, 0);
     const msg = isAr
-      ? `تم تحميل ${coursesToLoad.length} مقررات بـ ${totalGroups} مجموعة لقسم ${state.selectedDepartment}! 🎉`
-      : `Loaded ${coursesToLoad.length} courses with ${totalGroups} groups for ${state.selectedDepartment}! ⚡`;
+      ? `تم إدراج ${coursesToLoad.length} مواد بـ ${totalGroups} مجموعة لقسم ${state.selectedDepartment} في الموقع بنجاح! 🎉`
+      : `Successfully submitted ${coursesToLoad.length} subjects with ${totalGroups} groups into the website! ⚡`;
 
     showToast(msg, 'success');
 
     // Smooth scroll down to Registered Courses
     const coursesList = document.getElementById('courses-list-container');
     if (coursesList) {
-      coursesList.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      coursesList.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
@@ -6474,6 +6594,7 @@ const App = (() => {
     toggleMajorCourseSelection,
     toggleAllMajorCoursesSelection,
     loadSelectedMajorCourses,
+    submitMajorSubjectsToWebsite,
     getRepoEndpoints,
     updateRepoStatusPill,
     fetchPublicCatalog,
