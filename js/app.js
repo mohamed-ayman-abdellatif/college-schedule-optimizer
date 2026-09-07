@@ -2134,9 +2134,21 @@ const App = (() => {
           ? `⚡ إدراج ${extractResult.courses.length} مواد في الموقع (Submit ${extractResult.courses.length} Subjects)`
           : `⚡ Submit ${extractResult.courses.length} Subjects into Website (إدراج ${extractResult.courses.length} مواد)`;
       }
+
+      // Automatically update website courses to the newly selected department/period subjects!
+      loadSelectedMajorCourses(true);
     } else {
       state.discoveredMajorCourses = [];
       state.selectedMajorCourseCodes.clear();
+
+      // Clear stale courses so courses from a previous department aren't kept on an empty selection
+      state.courses = [];
+      state.solutions = [];
+      state.filteredSolutions = [];
+      state.activeSolutionIndex = 0;
+      saveStateToStorage();
+      renderCoursesList();
+      renderDoctorPreferences();
 
       const previewBox = document.getElementById('major-courses-preview');
       if (previewBox) previewBox.style.display = 'none';
@@ -2317,10 +2329,10 @@ const App = (() => {
     }
   }
 
-  function loadSelectedMajorCourses() {
+  function loadSelectedMajorCourses(silent = false) {
     const isAr = state.currentLang === 'ar';
     if (!state.discoveredMajorCourses || state.discoveredMajorCourses.length === 0) {
-      submitMajorSubjectsToWebsite();
+      if (!silent) submitMajorSubjectsToWebsite();
       return;
     }
 
@@ -2353,10 +2365,12 @@ const App = (() => {
 
     showToast(msg, 'success');
 
-    // Smooth scroll down to Registered Courses
-    const coursesList = document.getElementById('courses-list-container');
-    if (coursesList) {
-      coursesList.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Smooth scroll down to Registered Courses on explicit user action
+    if (!silent) {
+      const coursesList = document.getElementById('courses-list-container');
+      if (coursesList) {
+        coursesList.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
   }
 

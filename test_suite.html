@@ -2555,6 +2555,18 @@ ME D Abdelgawad Matar
       engPeriod3Courses.success === true && engPeriod3Courses.courses.length >= 7
     );
 
+    const compCourses = ScheduleParser.extractCoursesFromMajor(enrichedEngJson, 'هندسة الحاسبات ق.م', '3');
+    assert('Period 3 in Computer Engineering extracts courses successfully',
+      compCourses.success === true && compCourses.courses.length > 0,
+      'got courses: ' + (compCourses.courses ? compCourses.courses.length : 0)
+    );
+
+    const mechaCourses = ScheduleParser.extractCoursesFromMajor(enrichedEngJson, 'هندسة ميكانيكية-ق م', '3');
+    assert('Period 3 in Mechanical Engineering extracts courses successfully',
+      mechaCourses.success === true && mechaCourses.courses.length > 0,
+      'got courses: ' + (mechaCourses.courses ? mechaCourses.courses.length : 0)
+    );
+
     // 43: Department Dropdown Labels Visibility (Double Slash "//" and Star "*")
     const deptsWithSlash = engDepts.filter(d => d.displayLabel && d.displayLabel.includes('//'));
     const deptsWithStar = engDepts.filter(d => d.displayLabel && d.displayLabel.endsWith('*'));
@@ -2586,6 +2598,30 @@ ME D Abdelgawad Matar
     const starPeriodsByLabel = ScheduleParser.getMajorPeriodsForDepartment(enrichedEngJson, starDeptObj.displayLabel);
     assert('getMajorPeriodsForDepartment works with both key and displayLabel for * department',
       starPeriodsByKey.length > 0 && starPeriodsByLabel.length === starPeriodsByKey.length
+    );
+
+    // 46: Department Subject Differentiation (Subjects change when department changes)
+    const elecCourses = ScheduleParser.extractCoursesFromMajor(enrichedEngJson, 'الكترونيات ق م - Northamption', '3');
+    const compP3 = ScheduleParser.extractCoursesFromMajor(enrichedEngJson, 'هندسة الحاسبات ق.م', '3');
+    const mechaP3 = ScheduleParser.extractCoursesFromMajor(enrichedEngJson, 'هندسة ميكانيكية-ق م', '3');
+    const civilP3 = ScheduleParser.extractCoursesFromMajor(enrichedEngJson, 'هندسة التشيد والبناء ق.م', '3');
+    const archP3 = ScheduleParser.extractCoursesFromMajor(enrichedEngJson, 'هندسة معمارية ق.م', '3');
+    const mechaP8 = ScheduleParser.extractCoursesFromMajor(enrichedEngJson, 'هندسة ميكانيكية-ق م', '8');
+
+    assert('Computer Engineering subjects are distinct from Electronics (CSE2101 vs ECE2102)',
+      compP3.courses.some(c => c.code === 'CSE2101') && !elecCourses.courses.some(c => c.code === 'CSE2101')
+    );
+    assert('Mechanical Engineering subjects are distinct from Computer (ME2101 Thermodynamics vs CSE2101)',
+      mechaP3.courses.some(c => c.code === 'ME2101') && !compP3.courses.some(c => c.code === 'ME2101')
+    );
+    assert('Civil Engineering subjects are distinct from Mechanical (CV2101 Structural Analysis vs ME2101)',
+      civilP3.courses.some(c => c.code === 'CV2101') && !mechaP3.courses.some(c => c.code === 'CV2101')
+    );
+    assert('Architectural Engineering subjects are distinct from Civil (ARC2101 Design Studio vs CV2101)',
+      archP3.courses.some(c => c.code === 'ARC2101') && !civilP3.courses.some(c => c.code === 'ARC2101')
+    );
+    assert('Mechanical Engineering Period 8 has Mechatronics & Vibrations subjects (ME4101, MEC4104)',
+      mechaP8.success === true && mechaP8.courses.some(c => c.code === 'ME4101') && mechaP8.courses.some(c => c.code === 'MEC4104')
     );
 
 
