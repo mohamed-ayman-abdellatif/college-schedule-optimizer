@@ -44,7 +44,21 @@ const App = (() => {
     filterMismatch: false,
     manualCustomizeDocTA: false,
     mixMatchSelections: {},
-    mixMatchExpandedCourses: {}
+    mixMatchExpandedCourses: {},
+    majorData: null,
+    selectedMajor: '',
+    selectedDepartment: '',
+    selectedPeriod: '',
+    discoveredMajorCourses: [],
+    selectedMajorCourseCodes: new Set(),
+    publicRepoConfig: {
+      owner: 'mohamed-ayman-abdellatif',
+      repo: 'college-schedules-data',
+      branch: 'main',
+      customBaseUrl: null
+    },
+    majorCatalog: null,
+    isSyncingRepo: false
   };
 
   // Translations
@@ -58,6 +72,18 @@ const App = (() => {
       tabManual: '4. Manual Mode',
       loadSampleBtn: 'Load Example Courses',
       findSchedulesBtn: 'Find Best Schedules',
+      majorJsonTab: '🏛️ Major / Department Timetable',
+      uploadMajorJsonBtn: 'Upload Major JSON (.json)',
+      syncCloudBtn: 'Sync from Cloud',
+      syncingCloudBtn: 'Syncing...',
+      connectedCloudBadge: 'Public Cloud Database',
+      offlineCloudBadge: 'Offline / Local Database',
+      cloudSyncedSuccess: 'Schedules catalog updated from public repository! 🌐',
+      cloudSyncFailed: 'Could not reach public repository. Using local database.',
+      selectMajorLabel: 'Major / Faculty:',
+      selectDeptLabel: 'Department:',
+      selectPeriodLabel: 'Period / Term:',
+      loadSubjectsBtn: 'Load All Subjects into Optimizer',
       pasteHtmlTab: 'Paste HTML Code',
       uploadPdfTab: '📄 Upload PDF Timetable',
       uploadPhotoTab: 'Upload Schedule Photo',
@@ -232,6 +258,18 @@ const App = (() => {
       tabManual: '٤. الوضع اليدوي',
       loadSampleBtn: 'تحميل المقررات التجريبية',
       findSchedulesBtn: 'توليد أفضل الجداول',
+      majorJsonTab: '🏛️ جدول الكلية والقسم (JSON)',
+      uploadMajorJsonBtn: 'رفع ملف جدول الكلية (.json)',
+      syncCloudBtn: 'تحديث من السحابة 🔄',
+      syncingCloudBtn: 'جاري التحديث...',
+      connectedCloudBadge: 'متصل بقاعدة البيانات العامة',
+      offlineCloudBadge: 'قاعدة بيانات محلية (بدون إنترنت)',
+      cloudSyncedSuccess: 'تم تحديث دليل الجداول بنجاح من المستودع العام! 🌐',
+      cloudSyncFailed: 'تعذر الاتصال بالمستودع العام. يتم استخدام قاعدة البيانات المحلية.',
+      selectMajorLabel: 'الكلية / الدفعة:',
+      selectDeptLabel: 'القسم:',
+      selectPeriodLabel: 'الفترة / الترم الدراسي:',
+      loadSubjectsBtn: 'تحميل المقررات إلى المنسق ⚡',
       pasteHtmlTab: 'نسخ ولصق كود HTML',
       uploadPdfTab: '📄 رفع جدول PDF',
       uploadPhotoTab: 'رفع صورة / سكرين شوت للجدول',
@@ -414,16 +452,11 @@ const App = (() => {
     updateTheme();
     updateLanguage();
 
-    // If no courses or old sample set, load the updated 7-course set without calculating
-    const hasUpdatedCourses = state.courses.some(c => c.code === 'EEC2220' || c.code === 'ECE2402');
-    if (state.courses.length === 0 || (!hasUpdatedCourses && state.courses.length <= 5)) {
-      loadSampleCourses();
-    } else {
-      renderCoursesList();
-      renderDoctorPreferences();
-    }
+    renderCoursesList();
+    renderDoctorPreferences();
     renderBlockedPainter();
     renderBlockedList();
+    initMajorExplorer();
   }
 
   /**
@@ -480,22 +513,31 @@ const App = (() => {
       if (storedIsSample !== null) {
         state.isSampleData = (storedIsSample === 'true');
       }
-      const storedCourses = localStorage.getItem('sched_courses');
-      if (storedCourses) {
-        state.courses = JSON.parse(storedCourses);
-        // Self-repair any sessions affected by old Period 8 bug (startSlot 15 -> startSlot 1)
-        state.courses.forEach(c => {
-          (c.groups || []).forEach(g => {
-            (g.sessions || []).forEach(s => {
-              if ((s.startSlot === 15 && s.endSlot === 16) && (s.periodNum === 8 || !s.periodNum)) {
-                s.startSlot = 1;
-                s.endSlot = 2;
-                s.periodNum = 1;
-              }
+      if (state.isSampleData) {
+        state.courses = [];
+        state.isSampleData = false;
+        try {
+          localStorage.removeItem('sched_courses');
+          localStorage.setItem('sched_is_sample', 'false');
+        } catch (e) {}
+      } else {
+        const storedCourses = localStorage.getItem('sched_courses');
+        if (storedCourses) {
+          state.courses = JSON.parse(storedCourses);
+          // Self-repair any sessions affected by old Period 8 bug (startSlot 15 -> startSlot 1)
+          state.courses.forEach(c => {
+            (c.groups || []).forEach(g => {
+              (g.sessions || []).forEach(s => {
+                if ((s.startSlot === 15 && s.endSlot === 16) && (s.periodNum === 8 || !s.periodNum)) {
+                  s.startSlot = 1;
+                  s.endSlot = 2;
+                  s.periodNum = 1;
+                }
+              });
             });
           });
-        });
-        normalizeCourseDoctorTitles(state.courses);
+          normalizeCourseDoctorTitles(state.courses);
+        }
       }
 
       const storedDocPrefs = localStorage.getItem('sched_doc_prefs');
@@ -1584,6 +1626,596 @@ const App = (() => {
     showToast(isAr
       ? `تم تحميل ${state.courses.length} مقررات دراسية بنجاح!`
       : `Loaded ${state.courses.length} courses!`, 'success');
+  }
+
+  /* ==========================================================================
+     Major & Department Timetable Explorer (JSON)
+     ========================================================================== */
+
+  /**
+   * Resolves remote public repository and CDN endpoints
+   */
+  function getRepoEndpoints() {
+    const { owner, repo, branch, customBaseUrl } = state.publicRepoConfig;
+    if (customBaseUrl) {
+      const base = customBaseUrl.endsWith('/') ? customBaseUrl : customBaseUrl + '/';
+      return [
+        { name: 'custom', base },
+        { name: 'local', base: 'data/' }
+      ];
+    }
+    return [
+      { name: 'jsdelivr', base: `https://cdn.jsdelivr.net/gh/${owner}/${repo}@${branch}/` },
+      { name: 'github_raw', base: `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/` },
+      { name: 'local', base: 'data/' }
+    ];
+  }
+
+  /**
+   * Updates the UI cloud repository status pill
+   */
+  function updateRepoStatusPill(isOnline, detailText = '') {
+    const pill = document.getElementById('repo-cloud-pill');
+    if (!pill) return;
+    const isAr = state.currentLang === 'ar';
+    const { owner, repo } = state.publicRepoConfig;
+
+    if (isOnline) {
+      pill.classList.remove('is-offline');
+      pill.classList.add('is-online');
+      pill.setAttribute('title', detailText || `github.com/${owner}/${repo}`);
+      pill.innerHTML = `<span>🟢</span> <span>${isAr ? 'قاعدة بيانات سحابية متصلة' : 'Public Cloud Database'}</span>`;
+    } else {
+      pill.classList.remove('is-online');
+      pill.classList.add('is-offline');
+      pill.setAttribute('title', detailText || 'Offline / Local Schedule Cache');
+      pill.innerHTML = `<span>🟠</span> <span>${isAr ? 'قاعدة بيانات محلية / غير متصل' : 'Offline / Local Database'}</span>`;
+    }
+  }
+
+  /**
+   * Fetches master catalog (index.json) from public repository or local fallback
+   */
+  async function fetchPublicCatalog(forceRefresh = false) {
+    const endpoints = getRepoEndpoints();
+    const cacheBuster = forceRefresh ? `?t=${Date.now()}` : '';
+    let fetchedData = null;
+    let successfulEndpoint = null;
+
+    for (const ep of endpoints) {
+      try {
+        const url = `${ep.base}index.json${cacheBuster}`;
+        const resp = await fetch(url);
+        if (resp.ok) {
+          const json = await resp.json();
+          if (ScheduleParser.isCatalogManifest(json)) {
+            fetchedData = json;
+            successfulEndpoint = ep.name;
+            break;
+          }
+        }
+      } catch (err) {
+        // Continue trying next endpoint
+      }
+    }
+
+    // Offline / local file fallback
+    if (!fetchedData && typeof SampleScheduleData !== 'undefined' && SampleScheduleData.DEFAULT_MAJOR_CATALOG) {
+      fetchedData = SampleScheduleData.DEFAULT_MAJOR_CATALOG;
+      successfulEndpoint = 'sample_fallback';
+    }
+
+    if (fetchedData) {
+      const parsedCatalog = ScheduleParser.parseCatalogManifest(fetchedData);
+      if (parsedCatalog) {
+        state.majorCatalog = parsedCatalog;
+        try {
+          localStorage.setItem('sched_major_catalog', JSON.stringify(parsedCatalog));
+        } catch (e) {}
+
+        const isOnline = (successfulEndpoint === 'jsdelivr' || successfulEndpoint === 'github_raw' || successfulEndpoint === 'custom');
+        updateRepoStatusPill(isOnline);
+        populateMajorCollegeSelector();
+        return parsedCatalog;
+      }
+    }
+
+    updateRepoStatusPill(false);
+    return null;
+  }
+
+  /**
+   * Populates the Major / Faculty select dropdown from state.majorCatalog
+   */
+  function populateMajorCollegeSelector() {
+    const majorSelect = document.getElementById('select-major-college');
+    if (!majorSelect) return;
+
+    const isAr = state.currentLang === 'ar';
+    if (state.majorCatalog && Array.isArray(state.majorCatalog.majors) && state.majorCatalog.majors.length > 0) {
+      let html = '';
+      state.majorCatalog.majors.forEach(m => {
+        const label = isAr ? m.title : (m.titleEn || m.title);
+        const termLabel = m.semester ? ` (${isAr ? m.semester : (m.semesterEn || m.semester)})` : '';
+        html += `<option value="${m.id}" data-file="${m.file || ''}">${label}${termLabel}</option>`;
+      });
+      majorSelect.innerHTML = html;
+
+      // Select active or default
+      if (state.selectedMajorId) {
+        majorSelect.value = state.selectedMajorId;
+      } else if (state.majorCatalog.defaultMajorId) {
+        majorSelect.value = state.majorCatalog.defaultMajorId;
+        state.selectedMajorId = state.majorCatalog.defaultMajorId;
+      }
+    } else if (state.majorData) {
+      const meta = ScheduleParser.getMajorMetadata(state.majorData);
+      majorSelect.innerHTML = `<option value="${meta.title}">${meta.title}</option>`;
+    }
+  }
+
+  /**
+   * Fetches an individual college major schedule JSON file by ID or path
+   */
+  async function fetchMajorFile(majorIdOrPath, forceRefresh = false) {
+    let filePath = '';
+    let majorTitle = '';
+
+    if (state.majorCatalog && Array.isArray(state.majorCatalog.majors)) {
+      const entry = state.majorCatalog.majors.find(m => m.id === majorIdOrPath || m.file === majorIdOrPath);
+      if (entry) {
+        filePath = entry.file;
+        majorTitle = entry.title;
+        state.selectedMajorId = entry.id;
+      }
+    }
+
+    if (!filePath) {
+      filePath = typeof majorIdOrPath === 'string' && majorIdOrPath.endsWith('.json')
+        ? majorIdOrPath
+        : 'colleges/computing_heliopolis_2026_term1.json';
+    }
+
+    const endpoints = getRepoEndpoints();
+    const cacheBuster = forceRefresh ? `?t=${Date.now()}` : '';
+    let fetchedSchedule = null;
+
+    for (const ep of endpoints) {
+      try {
+        let cleanPath = filePath;
+        if (ep.name === 'local' && cleanPath.startsWith('colleges/')) {
+          cleanPath = cleanPath.replace('colleges/', '');
+        }
+        const url = `${ep.base}${cleanPath}${cacheBuster}`;
+        const resp = await fetch(url);
+        if (resp.ok) {
+          const json = await resp.json();
+          if (ScheduleParser.isMajorScheduleJson(json)) {
+            fetchedSchedule = json;
+            break;
+          }
+        }
+      } catch (err) {
+        // Continue trying next endpoint
+      }
+    }
+
+    // Bundled fallback for offline / file:/// protocol
+    if (!fetchedSchedule && typeof SampleScheduleData !== 'undefined' && SampleScheduleData.DEFAULT_MAJOR_SCHEDULE_JSON) {
+      fetchedSchedule = SampleScheduleData.DEFAULT_MAJOR_SCHEDULE_JSON;
+    }
+
+    if (fetchedSchedule) {
+      loadMajorJsonData(fetchedSchedule, majorTitle || filePath);
+      try {
+        localStorage.setItem('sched_major_json', JSON.stringify(fetchedSchedule));
+      } catch (e) {}
+      return fetchedSchedule;
+    }
+
+    return null;
+  }
+
+  /**
+   * Syncs latest catalog and active schedule from the public cloud repository
+   */
+  async function syncFromPublicRepo() {
+    if (state.isSyncingRepo) return;
+    state.isSyncingRepo = true;
+
+    const syncBtn = document.getElementById('btn-sync-cloud-repo');
+    const syncIcon = syncBtn ? syncBtn.querySelector('.sync-icon') : null;
+    if (syncIcon) syncIcon.classList.add('is-spinning');
+    if (syncBtn) syncBtn.disabled = true;
+
+    const isAr = state.currentLang === 'ar';
+
+    try {
+      const catalog = await fetchPublicCatalog(true);
+      const activeMajorId = state.selectedMajorId || (catalog ? catalog.defaultMajorId : null);
+      if (activeMajorId) {
+        await fetchMajorFile(activeMajorId, true);
+      }
+
+      showToast(isAr ? 'تم تحديث الجداول من المستودع العام بنجاح! 🌐' : 'Schedules catalog updated from public repository! 🌐', 'success');
+    } catch (err) {
+      showToast(isAr ? 'تعذر الاتصال بالمستودع العام. تم استخدام البيانات المحلية.' : 'Could not reach public repository. Using local database.', 'warning');
+    } finally {
+      state.isSyncingRepo = false;
+      if (syncIcon) syncIcon.classList.remove('is-spinning');
+      if (syncBtn) syncBtn.disabled = false;
+    }
+  }
+
+  /**
+   * Initializes the Major & Department Timetable Explorer
+   */
+  function initMajorExplorer() {
+    setupMajorEventListeners();
+
+    // 1. Check cached catalog from localStorage
+    const savedCatalog = localStorage.getItem('sched_major_catalog');
+    if (savedCatalog) {
+      try {
+        const parsedCat = JSON.parse(savedCatalog);
+        if (ScheduleParser.isCatalogManifest(parsedCat)) {
+          state.majorCatalog = parsedCat;
+        }
+      } catch (e) {}
+    }
+
+    // 2. If no catalog yet, load bundled catalog from SampleScheduleData
+    if (!state.majorCatalog && typeof SampleScheduleData !== 'undefined' && SampleScheduleData.DEFAULT_MAJOR_CATALOG) {
+      state.majorCatalog = ScheduleParser.parseCatalogManifest(SampleScheduleData.DEFAULT_MAJOR_CATALOG);
+    }
+
+    // 3. Populate initial college selector dropdown
+    populateMajorCollegeSelector();
+
+    // 4. Check cached major schedule from localStorage
+    const savedMajor = localStorage.getItem('sched_major_json');
+    if (savedMajor) {
+      try {
+        const parsed = JSON.parse(savedMajor);
+        if (ScheduleParser.isMajorScheduleJson(parsed)) {
+          loadMajorJsonData(parsed, 'Saved Local Major');
+        }
+      } catch (e) {}
+    }
+
+    // 5. If no major schedule loaded yet, load bundled default
+    if (!state.majorData && typeof SampleScheduleData !== 'undefined' && SampleScheduleData.DEFAULT_MAJOR_SCHEDULE_JSON) {
+      loadMajorJsonData(SampleScheduleData.DEFAULT_MAJOR_SCHEDULE_JSON, 'Bundled College Schedule');
+    }
+
+    // 6. Connect to public cloud repository asynchronously in background
+    fetchPublicCatalog().catch(() => {});
+  }
+
+  function setupMajorEventListeners() {
+    // JSON file upload
+    const fileInput = document.getElementById('input-major-json-file');
+    fileInput?.addEventListener('change', e => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = evt => {
+        try {
+          const parsed = JSON.parse(evt.target.result);
+          if (ScheduleParser.isMajorScheduleJson(parsed)) {
+            loadMajorJsonData(parsed, file.name);
+            try { localStorage.setItem('sched_major_json', evt.target.result); } catch (err) {}
+            showToast(state.currentLang === 'ar' ? 'تم قراءة ملف الكلية بنجاح!' : 'Major schedule loaded successfully!', 'success');
+          } else {
+            showToast(state.currentLang === 'ar' ? 'الملف لا يطابق هيكل جدول الكلية المطلوب.' : 'JSON file does not match expected college major format.', 'error');
+          }
+        } catch (err) {
+          showToast(state.currentLang === 'ar' ? 'خطأ في قراءة ملف JSON' : 'Invalid JSON file.', 'error');
+        }
+      };
+      reader.readAsText(file);
+    });
+
+    // Major change (trigger file fetch from repo/CDN)
+    document.getElementById('select-major-college')?.addEventListener('change', e => {
+      const selectedId = e.target.value;
+      if (state.majorCatalog) {
+        fetchMajorFile(selectedId);
+      } else {
+        state.selectedMajor = e.target.value;
+        populateMajorDepartmentSelector();
+      }
+    });
+
+    // Department change
+    document.getElementById('select-major-department')?.addEventListener('change', e => {
+      onMajorDepartmentChange(e.target.value);
+    });
+
+    // Period change
+    document.getElementById('select-major-period')?.addEventListener('change', e => {
+      onMajorPeriodChange(e.target.value);
+    });
+
+    // Select all / Deselect all
+    document.getElementById('btn-major-toggle-all')?.addEventListener('click', toggleAllMajorCoursesSelection);
+
+    // Load subjects button
+    document.getElementById('btn-load-major-subjects')?.addEventListener('click', loadSelectedMajorCourses);
+  }
+
+  function loadMajorJsonData(jsonData, sourceName = '') {
+    state.majorData = jsonData;
+    const meta = ScheduleParser.getMajorMetadata(jsonData);
+    state.selectedMajor = meta.title || 'College Timetable';
+
+    // Update UI Header bar
+    const titleEl = document.getElementById('major-active-title');
+    const subEl = document.getElementById('major-active-subtitle');
+    if (titleEl) titleEl.textContent = meta.title;
+    if (subEl) {
+      const deptsCount = meta.totalDepartments;
+      const termText = meta.batch ? `${meta.batch} • ` : '';
+      const isAr = state.currentLang === 'ar';
+      subEl.textContent = isAr
+        ? `${termText}${deptsCount} أقسام متاحة`
+        : `${termText}${deptsCount} Departments Available`;
+    }
+
+    // Populate Major dropdown
+    if (state.majorCatalog && Array.isArray(state.majorCatalog.majors)) {
+      populateMajorCollegeSelector();
+    } else {
+      const majorSelect = document.getElementById('select-major-college');
+      if (majorSelect) {
+        majorSelect.innerHTML = `<option value="${meta.title}">${meta.title}</option>`;
+      }
+    }
+
+    // Populate Department dropdown
+    populateMajorDepartmentSelector();
+  }
+
+  function populateMajorDepartmentSelector() {
+    const deptSelect = document.getElementById('select-major-department');
+    if (!deptSelect || !state.majorData) return;
+
+    const depts = ScheduleParser.getMajorDepartments(state.majorData);
+    const isAr = state.currentLang === 'ar';
+    let html = `<option value="">${isAr ? '-- اختر القسم --' : '-- Choose Department --'}</option>`;
+
+    depts.forEach(d => {
+      const countLabel = d.totalSchedules > 0 ? ` (${d.totalSchedules} ${isAr ? 'جدول' : 'schedules'})` : '';
+      html += `<option value="${d.name}">${d.rawLabel || d.name}${countLabel}</option>`;
+    });
+
+    deptSelect.innerHTML = html;
+
+    // Reset Period and Preview
+    const periodSelect = document.getElementById('select-major-period');
+    if (periodSelect) {
+      periodSelect.innerHTML = `<option value="">${isAr ? '-- اختر الفترة --' : '-- Choose Period --'}</option>`;
+      periodSelect.disabled = true;
+    }
+    const previewBox = document.getElementById('major-courses-preview');
+    if (previewBox) previewBox.style.display = 'none';
+    const emptyNotice = document.getElementById('major-empty-notice');
+    if (emptyNotice) emptyNotice.style.display = 'none';
+
+    // Automatically select first department if available
+    if (depts.length > 0) {
+      const preferred = depts.find(d => d.name.includes('علوم الحاسب') || d.name.includes('Computer Science')) || depts[0];
+      deptSelect.value = preferred.name;
+      onMajorDepartmentChange(preferred.name);
+    }
+  }
+
+  function onMajorDepartmentChange(deptName) {
+    state.selectedDepartment = deptName;
+    const periodSelect = document.getElementById('select-major-period');
+    if (!periodSelect) return;
+
+    const isAr = state.currentLang === 'ar';
+
+    if (!deptName || !state.majorData) {
+      periodSelect.innerHTML = `<option value="">${isAr ? '-- اختر الفترة --' : '-- Choose Period --'}</option>`;
+      periodSelect.disabled = true;
+      const previewBox = document.getElementById('major-courses-preview');
+      if (previewBox) previewBox.style.display = 'none';
+      const emptyNotice = document.getElementById('major-empty-notice');
+      if (emptyNotice) emptyNotice.style.display = 'none';
+      return;
+    }
+
+    const periods = ScheduleParser.getMajorPeriodsForDepartment(state.majorData, deptName);
+    if (periods.length === 0) {
+      periodSelect.innerHTML = `<option value="">${isAr ? 'لا توجد فترات متاحة' : 'No periods available'}</option>`;
+      periodSelect.disabled = true;
+      const previewBox = document.getElementById('major-courses-preview');
+      if (previewBox) previewBox.style.display = 'none';
+      return;
+    }
+
+    periodSelect.disabled = false;
+    let html = `<option value="">${isAr ? '-- اختر الفترة --' : '-- Choose Period --'}</option>`;
+    periods.forEach(p => {
+      const activeText = p.activeGroups > 0
+        ? ` (${p.activeGroups} ${isAr ? 'مجموعة' : 'groups'})`
+        : (p.totalGroups > 0 ? ` (${p.totalGroups} ${isAr ? 'مجموعة' : 'groups'})` : '');
+      html += `<option value="${p.periodName}">${isAr ? 'الفترة ' : 'Period '}${p.periodName}${activeText}</option>`;
+    });
+    periodSelect.innerHTML = html;
+
+    // Automatically select the first period that has active groups, or first
+    const activeP = periods.find(p => p.activeGroups > 0) || periods[0];
+    if (activeP) {
+      periodSelect.value = activeP.periodName;
+      onMajorPeriodChange(activeP.periodName);
+    }
+  }
+
+  function onMajorPeriodChange(periodKey) {
+    state.selectedPeriod = periodKey;
+    const isAr = state.currentLang === 'ar';
+
+    if (!periodKey || !state.selectedDepartment || !state.majorData) {
+      const previewBox = document.getElementById('major-courses-preview');
+      if (previewBox) previewBox.style.display = 'none';
+      const emptyNotice = document.getElementById('major-empty-notice');
+      if (emptyNotice) emptyNotice.style.display = 'none';
+      return;
+    }
+
+    const extractResult = ScheduleParser.extractCoursesFromMajor(
+      state.majorData,
+      state.selectedDepartment,
+      periodKey
+    );
+
+    if (extractResult.success && extractResult.courses.length > 0) {
+      state.discoveredMajorCourses = extractResult.courses;
+      state.selectedMajorCourseCodes = new Set(extractResult.courses.map(c => c.code));
+
+      renderMajorDiscoveredCourses(extractResult);
+      const previewBox = document.getElementById('major-courses-preview');
+      if (previewBox) previewBox.style.display = 'block';
+      const emptyNotice = document.getElementById('major-empty-notice');
+      if (emptyNotice) emptyNotice.style.display = 'none';
+    } else {
+      state.discoveredMajorCourses = [];
+      state.selectedMajorCourseCodes.clear();
+
+      const previewBox = document.getElementById('major-courses-preview');
+      if (previewBox) previewBox.style.display = 'none';
+      const emptyNotice = document.getElementById('major-empty-notice');
+      const emptyText = document.getElementById('major-empty-notice-text');
+      if (emptyNotice && emptyText) {
+        emptyText.textContent = isAr
+          ? `لا توجد محاضرات أو مجموعات مجدولة لقسم ${state.selectedDepartment} - الفترة ${periodKey}.`
+          : `No scheduled sessions found for ${state.selectedDepartment} (Period ${periodKey}).`;
+        emptyNotice.style.display = 'flex';
+      }
+    }
+  }
+
+  function renderMajorDiscoveredCourses(extractResult) {
+    const isAr = state.currentLang === 'ar';
+    const countBadge = document.getElementById('major-preview-badge');
+    const groupsText = document.getElementById('major-preview-groups');
+    const container = document.getElementById('major-preview-chips');
+
+    if (countBadge) {
+      countBadge.textContent = isAr
+        ? `${extractResult.totalCourses} مقررات تم العثور عليها`
+        : `${extractResult.totalCourses} Subjects Found`;
+    }
+
+    if (groupsText) {
+      const totalGroups = extractResult.courses.reduce((acc, c) => acc + c.groups.length, 0);
+      groupsText.textContent = isAr
+        ? `عبر ${totalGroups} مجموعة متاحة`
+        : `Across ${totalGroups} Available Groups`;
+    }
+
+    if (!container) return;
+
+    let html = '';
+    extractResult.courses.forEach(c => {
+      const isChecked = state.selectedMajorCourseCodes.has(c.code);
+      const groupsCount = c.groups.length;
+      const groupLabels = c.groups.map(g => g.group).slice(0, 3).join(', ') + (c.groups.length > 3 ? '...' : '');
+
+      html += `
+        <label class="major-course-chip ${isChecked ? 'is-selected' : ''}" data-code="${c.code}">
+          <input type="checkbox" value="${c.code}" ${isChecked ? 'checked' : ''} onchange="App.toggleMajorCourseSelection('${c.code}', this.checked)" />
+          <div class="major-course-chip-info">
+            <span class="major-course-chip-code">${c.code}</span>
+            <span class="major-course-chip-name" title="${c.name}">${c.name}</span>
+            <span class="major-course-chip-badge">${groupsCount} ${isAr ? 'مجموعات' : 'groups'} (${groupLabels})</span>
+          </div>
+        </label>
+      `;
+    });
+
+    container.innerHTML = html;
+  }
+
+  function toggleMajorCourseSelection(code, isChecked) {
+    if (isChecked) {
+      state.selectedMajorCourseCodes.add(code);
+    } else {
+      state.selectedMajorCourseCodes.delete(code);
+    }
+    const chip = document.querySelector(`.major-course-chip[data-code="${code}"]`);
+    if (chip) {
+      if (isChecked) chip.classList.add('is-selected');
+      else chip.classList.remove('is-selected');
+    }
+  }
+
+  function toggleAllMajorCoursesSelection() {
+    const allSelected = state.selectedMajorCourseCodes.size === state.discoveredMajorCourses.length;
+    const isAr = state.currentLang === 'ar';
+    const btn = document.getElementById('btn-major-toggle-all');
+
+    if (allSelected) {
+      state.selectedMajorCourseCodes.clear();
+      if (btn) btn.textContent = isAr ? 'تحديد الكل' : 'Select All';
+    } else {
+      state.discoveredMajorCourses.forEach(c => state.selectedMajorCourseCodes.add(c.code));
+      if (btn) btn.textContent = isAr ? 'إلغاء تحديد الكل' : 'Deselect All';
+    }
+
+    document.querySelectorAll('.major-course-chip').forEach(chip => {
+      const code = chip.getAttribute('data-code');
+      const cb = chip.querySelector('input[type="checkbox"]');
+      const checked = state.selectedMajorCourseCodes.has(code);
+      if (cb) cb.checked = checked;
+      if (checked) chip.classList.add('is-selected');
+      else chip.classList.remove('is-selected');
+    });
+  }
+
+  function loadSelectedMajorCourses() {
+    const isAr = state.currentLang === 'ar';
+    if (!state.discoveredMajorCourses || state.discoveredMajorCourses.length === 0) {
+      showToast(isAr ? 'لا توجد مقررات للتحميل' : 'No courses to load', 'error');
+      return;
+    }
+
+    const coursesToLoad = state.discoveredMajorCourses.filter(c => state.selectedMajorCourseCodes.has(c.code));
+    if (coursesToLoad.length === 0) {
+      showToast(isAr ? 'يرجى اختيار مقرر واحد على الأقل' : 'Please select at least one course', 'warning');
+      return;
+    }
+
+    // Replace or merge into state.courses
+    state.courses = JSON.parse(JSON.stringify(coursesToLoad));
+    state.isSampleData = false;
+    try { localStorage.setItem('sched_is_sample', 'false'); } catch (e) {}
+
+    // Reset solutions so optimizer runs fresh on user request
+    state.solutions = [];
+    state.filteredSolutions = [];
+    state.activeSolutionIndex = 0;
+    state.doctorPreferences = {};
+
+    saveStateToStorage();
+    renderCoursesList();
+    renderDoctorPreferences();
+
+    const totalGroups = coursesToLoad.reduce((acc, c) => acc + c.groups.length, 0);
+    const msg = isAr
+      ? `تم تحميل ${coursesToLoad.length} مقررات بـ ${totalGroups} مجموعة لقسم ${state.selectedDepartment}! 🎉`
+      : `Loaded ${coursesToLoad.length} courses with ${totalGroups} groups for ${state.selectedDepartment}! ⚡`;
+
+    showToast(msg, 'success');
+
+    // Smooth scroll down to Registered Courses
+    const coursesList = document.getElementById('courses-list-container');
+    if (coursesList) {
+      coursesList.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
   }
 
   /**
@@ -5829,6 +6461,21 @@ const App = (() => {
     handleTimetableArrowNavigation,
     getDisplayedSolutions,
     getMaxDisplayedLimit,
+    initMajorExplorer,
+    loadMajorJsonData,
+    onMajorDepartmentChange,
+    onMajorPeriodChange,
+    toggleMajorCourseSelection,
+    toggleAllMajorCoursesSelection,
+    loadSelectedMajorCourses,
+    getRepoEndpoints,
+    updateRepoStatusPill,
+    fetchPublicCatalog,
+    fetchMajorFile,
+    syncFromPublicRepo,
+    getMajorCatalog: () => state.majorCatalog,
+    getMajorData: () => state.majorData,
+    getDiscoveredMajorCourses: () => state.discoveredMajorCourses,
     getCourses: () => state.courses
   };
 

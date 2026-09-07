@@ -836,13 +836,561 @@ const ScheduleParser = (() => {
     return PALETTE[idx];
   }
 
+  /**
+   * Checks if an object represents a college schedules catalog manifest (index.json).
+   */
+  function isCatalogManifest(data) {
+    return Boolean(data && typeof data === 'object' && Array.isArray(data.majors));
+  }
+
+  /**
+   * Parses and normalizes a college schedules catalog manifest.
+   */
+  function parseCatalogManifest(data) {
+    if (!isCatalogManifest(data)) return null;
+    return {
+      version: data.version || '1.0',
+      updatedAt: data.updatedAt || '',
+      defaultMajorId: data.defaultMajorId || (data.majors[0] ? data.majors[0].id : ''),
+      majors: data.majors.map(m => ({
+        id: m.id || m.file || 'major_' + Math.random().toString(36).substr(2, 6),
+        title: m.title || m.titleEn || 'College Timetable',
+        titleEn: m.titleEn || m.title || 'College Timetable',
+        semester: m.semester || m.semesterEn || '',
+        semesterEn: m.semesterEn || m.semester || '',
+        file: m.file || '',
+        totalDepartments: typeof m.totalDepartments === 'number' ? m.totalDepartments : (Array.isArray(m.departments) ? m.departments.length : 0),
+        totalSchedules: m.totalSchedules || 0,
+        departments: Array.isArray(m.departments) ? m.departments : [],
+        updatedAt: m.updatedAt || ''
+      }))
+    };
+  }
+
+  /**
+   * Checks if an object represents a college/major schedule export JSON.
+   */
+  function isMajorScheduleJson(data) {
+    if (!data || typeof data !== 'object') return false;
+    return Boolean(
+      data.departmentsTree ||
+      data.departmentsSummary ||
+      data.allSchedules ||
+      data.allClassSessions ||
+      (data.metadata && (data.metadata.exportTitle || data.metadata.portalHeader || data.metadata.totalDepartments))
+    );
+  }
+
+  /**
+   * Extracts metadata summary from a major schedule JSON.
+   */
+  function getMajorMetadata(jsonData) {
+    if (!jsonData || typeof jsonData !== 'object') return null;
+    const meta = jsonData.metadata || {};
+    const depts = getMajorDepartments(jsonData);
+    return {
+      title: meta.exportTitle || meta.portalHeader || 'College Timetable',
+      portalHeader: meta.portalHeader || '',
+      batch: meta.batch ? (typeof meta.batch === 'object' ? meta.batch.text : String(meta.batch)) : '',
+      scrapedAt: meta.scrapedAt || '',
+      totalDepartments: depts.length,
+      totalSchedules: meta.totalSchedules || 0,
+      totalClassesFound: meta.totalClassesFound || 0
+    };
+  }
+
+  /**
+   * Cleans department name (removes trailing slashes or symbols e.g. "علوم الحاسب ق.م //" -> "علوم الحاسب ق.م").
+   */
+  function cleanDeptName(name) {
+    if (!name || typeof name !== 'string') return '';
+    return name.replace(/[\/\\–-]+$/, '').trim();
+  }
+
+  /**
+   * Retrieves the list of departments from a major schedule JSON.
+   */
+  function getMajorDepartments(jsonData) {
+    if (!jsonData || typeof jsonData !== 'object') return [];
+
+    const map = new Map();
+
+    // 1. From departmentsSummary if present
+    if (Array.isArray(jsonData.metadata?.departmentsSummary)) {
+      jsonData.metadata.departmentsSummary.forEach(d => {
+        const cName = cleanDeptName(d.department || d.departmentName || '');
+        if (cName && !map.has(cName)) {
+          map.set(cName, {
+            name: cName,
+            rawLabel: d.department || cName,
+            value: d.departmentValue || '',
+            totalSchedules: d.totalSchedules || 0,
+            totalClasses: d.totalClasses || 0
+          });
+        }
+      });
+    }
+
+    // 2. From departmentsTree
+    if (jsonData.departmentsTree && typeof jsonData.departmentsTree === 'object') {
+      Object.keys(jsonData.departmentsTree).forEach(rawKey => {
+        const item = jsonData.departmentsTree[rawKey];
+        const cName = cleanDeptName(item.departmentName || rawKey);
+        if (cName && !map.has(cName)) {
+          map.set(cName, {
+            name: cName,
+            rawLabel: item.rawDepartmentLabel || rawKey,
+            value: item.departmentValue || '',
+            totalSchedules: item.totalSchedules || (item.periods ? Object.keys(item.periods).length : 0),
+            totalClasses: 0
+          });
+        }
+      });
+    }
+
+    // 3. From allSchedules
+    if (Array.isArray(jsonData.allSchedules)) {
+      jsonData.allSchedules.forEach(item => {
+        const rawName = item.department?.name || item.department?.rawLabel || '';
+        const cName = cleanDeptName(rawName);
+        if (cName && !map.has(cName)) {
+          map.set(cName, {
+            name: cName,
+            rawLabel: item.department?.rawLabel || rawName,
+            value: item.department?.value || '',
+            totalSchedules: 1,
+            totalClasses: 0
+          });
+        } else if (cName && map.has(cName)) {
+          map.get(cName).totalSchedules++;
+        }
+      });
+    }
+
+    return Array.from(map.values());
+  }
+
+  /**
+   * Retrieves periods available for a given department.
+   */
+  function getMajorPeriodsForDepartment(jsonData, deptName) {
+    if (!jsonData || typeof jsonData !== 'object' || !deptName) return [];
+    const cleanTarget = cleanDeptName(deptName).toLowerCase();
+    const periodMap = new Map();
+
+    // Helper to register period
+    function registerPeriod(pKey, pVal, groupCount = 0, activeCount = 0) {
+      if (!pKey) return;
+      const keyStr = String(pKey).trim();
+      if (!periodMap.has(keyStr)) {
+        periodMap.set(keyStr, {
+          periodName: keyStr,
+          periodValue: pVal || keyStr,
+          totalGroups: groupCount,
+          activeGroups: activeCount
+        });
+      } else {
+        const p = periodMap.get(keyStr);
+        p.totalGroups += groupCount;
+        p.activeGroups += activeCount;
+      }
+    }
+
+    // 1. Check departmentsTree
+    if (jsonData.departmentsTree) {
+      for (const [dKey, dObj] of Object.entries(jsonData.departmentsTree)) {
+        if (cleanDeptName(dKey).toLowerCase() === cleanTarget ||
+            cleanDeptName(dObj.departmentName || '').toLowerCase() === cleanTarget) {
+          if (dObj.periods && typeof dObj.periods === 'object') {
+            for (const [pKey, pObj] of Object.entries(dObj.periods)) {
+              let grpCount = 0;
+              let actCount = 0;
+              if (pObj.groups && typeof pObj.groups === 'object') {
+                for (const gObj of Object.values(pObj.groups)) {
+                  if (gObj.groupName && !gObj.groupName.includes('--اختر')) {
+                    grpCount++;
+                    const hasSessions = Array.isArray(gObj.schedule) && gObj.schedule.some(d => Array.isArray(d.sessions) && d.sessions.length > 0);
+                    if (hasSessions) actCount++;
+                  }
+                }
+              }
+              registerPeriod(pObj.periodName || pKey, pObj.periodValue || pKey, grpCount, actCount);
+            }
+          }
+        }
+      }
+    }
+
+    // 2. Check allSchedules
+    if (Array.isArray(jsonData.allSchedules)) {
+      jsonData.allSchedules.forEach(item => {
+        const itemDept = cleanDeptName(item.department?.name || item.department?.rawLabel || '').toLowerCase();
+        if (itemDept === cleanTarget && item.period) {
+          const pLabel = item.period.label || item.period.value;
+          const isRealGroup = item.group?.label && !item.group.label.includes('--اختر');
+          const hasSessions = Array.isArray(item.schedule) && item.schedule.some(d => Array.isArray(d.sessions) && d.sessions.length > 0);
+          registerPeriod(pLabel, item.period.value || pLabel, isRealGroup ? 1 : 0, hasSessions ? 1 : 0);
+        }
+      });
+    }
+
+    // Sort periods numerically: 1, 2, 3...
+    const result = Array.from(periodMap.values());
+    result.sort((a, b) => {
+      const numA = parseInt(a.periodName, 10);
+      const numB = parseInt(b.periodName, 10);
+      if (!isNaN(numA) && !isNaN(numB)) return numA - numB;
+      return a.periodName.localeCompare(b.periodName);
+    });
+
+    return result;
+  }
+
+  /**
+   * Helper to map slot indices or names to the 16-slot grid matrix.
+   */
+  function mapSlotToGridMatrix(slotIndex, slotName, colspan = 1, totalPeriodsCount = 4) {
+    const sName = String(slotName || '').toLowerCase();
+
+    // Check time strings
+    let startSlot = 1;
+    if (sName.includes('08:30') || sName.includes('8:30')) startSlot = 1;
+    else if (sName.includes('09:30') || sName.includes('9:30')) startSlot = 2;
+    else if (sName.includes('10:30')) startSlot = 3;
+    else if (sName.includes('11:30')) startSlot = 4;
+    else if (sName.includes('12:30')) startSlot = 5;
+    else if (sName.includes('13:30') || sName.includes('01:30') || sName.includes('1:30')) startSlot = 6;
+    else if (sName.includes('14:30') || sName.includes('02:30') || sName.includes('2:30')) startSlot = 7;
+    else if (sName.includes('15:30') || sName.includes('03:30') || sName.includes('3:30')) startSlot = 8;
+    else if (sName.includes('16:30') || sName.includes('04:30') || sName.includes('4:30')) startSlot = 9;
+    else if (sName.includes('17:30') || sName.includes('05:30') || sName.includes('5:30')) startSlot = 10;
+    else if (sName.includes('18:30') || sName.includes('06:30') || sName.includes('6:30')) startSlot = 11;
+    else if (sName.includes('19:30') || sName.includes('07:30') || sName.includes('7:30')) startSlot = 12;
+    else if (sName.includes('20:30') || sName.includes('08:30 pm') || sName.includes('8:30 pm')) startSlot = 13;
+    else if (sName.includes('21:30') || sName.includes('09:30 pm') || sName.includes('9:30 pm')) startSlot = 14;
+    else if (sName.includes('22:30') || sName.includes('10:30 pm') || sName.includes('10:30 pm')) startSlot = 15;
+    else if (typeof slotIndex === 'number' && slotIndex > 0) {
+      if (totalPeriodsCount <= 8 && slotIndex <= 8) {
+        startSlot = (slotIndex - 1) * 2 + 1;
+      } else {
+        startSlot = Math.min(16, slotIndex);
+      }
+    }
+
+    const span = (totalPeriodsCount <= 8 && (!colspan || colspan === 1)) ? 2 : Math.max(1, (colspan || 1) * (totalPeriodsCount <= 8 ? 2 : 1));
+    const endSlot = Math.min(16, startSlot + span - 1);
+    const duration = endSlot - startSlot + 1;
+
+    return { startSlot, endSlot, duration };
+  }
+
+  /**
+   * Extracts clean course subjects with all their discovered groups from a major schedule JSON.
+   */
+  function extractCoursesFromMajor(jsonData, deptName, periodKey) {
+    if (!jsonData || !deptName || !periodKey) {
+      return { success: false, courses: [], message: 'Invalid arguments.' };
+    }
+
+    const cleanTargetDept = cleanDeptName(deptName).toLowerCase();
+    const cleanTargetPeriod = String(periodKey).trim();
+
+    // Map of courseCode -> { id, code, name, color, groupsMap, instructorsSet, slots }
+    const coursesMap = new Map();
+    const colorMap = {};
+    let totalGroupsFound = 0;
+
+    // Helper to register a session
+    function addSessionToCourse(sessData) {
+      const {
+        courseCode,
+        courseName,
+        groupCode,
+        type,
+        day,
+        startSlot,
+        endSlot,
+        duration,
+        instructor,
+        room,
+        color
+      } = sessData;
+
+      if (!courseCode || !groupCode || !day) return;
+
+      if (!coursesMap.has(courseCode)) {
+        coursesMap.set(courseCode, {
+          id: courseCode,
+          code: courseCode,
+          name: courseName || courseCode,
+          color: color || colorMap[courseCode] || generateCourseColor(courseCode),
+          groupsMap: new Map(),
+          instructorsSet: new Set(),
+          slots: []
+        });
+      }
+
+      const c = coursesMap.get(courseCode);
+      if (color) c.color = color;
+      if (courseName && (!c.name || c.name === c.code)) c.name = courseName;
+
+      if (!c.groupsMap.has(groupCode)) {
+        c.groupsMap.set(groupCode, {
+          group: groupCode,
+          sessions: [],
+          hasLecture: false,
+          hasLab: false,
+          instructors: new Set()
+        });
+      }
+
+      const g = c.groupsMap.get(groupCode);
+      const sessionObj = {
+        id: `${courseCode}_${groupCode}_${type}_${day}_${startSlot}`,
+        courseName: c.name,
+        courseCode: courseCode,
+        group: groupCode,
+        type: type,
+        day: day,
+        startSlot: startSlot,
+        endSlot: endSlot,
+        duration: duration,
+        instructor: instructor || 'Not Specified',
+        color: c.color,
+        room: room || ''
+      };
+
+      g.sessions.push(sessionObj);
+      c.slots.push(sessionObj);
+
+      if (type === 'Lect.') g.hasLecture = true;
+      if (type === 'Lab.' || type === 'Sec.') g.hasLab = true;
+
+      if (instructor && instructor !== 'Not Specified') {
+        g.instructors.add(instructor);
+        c.instructorsSet.add(instructor);
+      }
+    }
+
+    // Process a schedule object (groups with days and sessions)
+    function processScheduleDays(groupLabel, scheduleDays, groupTimeSlots = [], groupColors = []) {
+      if (!Array.isArray(scheduleDays) || scheduleDays.length === 0) return;
+      if (!groupLabel || groupLabel.includes('--اختر')) return;
+
+      totalGroupsFound++;
+
+      // Register course colors
+      if (Array.isArray(groupColors)) {
+        groupColors.forEach(cc => {
+          if (cc.courseCode && cc.color) colorMap[cc.courseCode] = cc.color;
+        });
+      }
+
+      scheduleDays.forEach(dayItem => {
+        const normDay = normalizeDay(dayItem.day);
+        if (!normDay) return;
+
+        (dayItem.sessions || []).forEach(sess => {
+          // Extract course code
+          let cCode = sess.courseCode ? sess.courseCode.trim() : '';
+          let cName = sess.courseName ? sess.courseName.trim() : '';
+
+          if (!cCode && sess.rawContent) {
+            // Try (CODE) pattern
+            const cm = sess.rawContent.match(/\(\s*([A-Za-z0-9_]{3,10})\s*\)/);
+            if (cm) cCode = cm[1];
+            else {
+              const codeMatch = sess.rawContent.match(/\b([A-Za-z]{2,5}\s*\d{2,4}[A-Za-z]?)\b/);
+              if (codeMatch) cCode = codeMatch[1].replace(/\s+/g, '');
+            }
+          }
+
+          if (!cCode) return; // Cannot add without code
+
+          if (!cName && sess.rawContent) {
+            const lines = sess.rawContent.split('\n').map(l => l.trim()).filter(Boolean);
+            if (lines.length > 0) {
+              cName = lines[0].replace(cCode, '').replace(/[()]/g, '').trim();
+            }
+          }
+          if (!cName) cName = cCode;
+
+          // Determine type
+          let type = 'Lect.';
+          const typeStr = (sess.type || sess.rawContent || '').toLowerCase();
+          if (/lab\.?|معمل/i.test(typeStr)) type = 'Lab.';
+          else if (/sec\.?|سكشن|تمارين/i.test(typeStr)) type = 'Sec.';
+          else if (/lect\.?|محاضرة/i.test(typeStr)) type = 'Lect.';
+
+          // Determine instructor
+          let instructor = sess.instructor || '';
+          if (!instructor && sess.rawContent) {
+            const rawLines = sess.rawContent.split('\n').map(l => l.trim()).filter(Boolean);
+            const cand = rawLines.filter(line => {
+              const l = line.toLowerCase();
+              if (l.startsWith('group:')) return false;
+              if (/^(lab|lect|sec)\.?$/i.test(l)) return false;
+              if (/^(محاضرة|معمل|سكشن)$/i.test(l)) return false;
+              if (/^\d+$/.test(l)) return false;
+              if (line === cCode) return false;
+              if (/^(hall|room|lab|theater|auditorium|قاعة|مدرج|فصل|معمل)\s*\d*/i.test(l)) return false;
+              return true;
+            });
+            if (cand.length > 0) instructor = cand.join(' ').trim();
+          }
+
+          if (type === 'Lect.' && instructor && instructor !== 'Not Specified') {
+            if (!/^(د\.|د\/|د\s+|Dr\.|Dr\s+|Doctor\s+|Prof\.|أ\.د\.?)/i.test(instructor)) {
+              const isAr = /[\u0600-\u06FF]/.test(instructor);
+              instructor = (isAr ? 'د. ' : 'Dr. ') + instructor;
+            }
+          }
+
+          const slotCoords = mapSlotToGridMatrix(
+            sess.slotIndex,
+            sess.slotName || sess.timeSlot,
+            sess.colspan || 1,
+            groupTimeSlots.length || 4
+          );
+
+          addSessionToCourse({
+            courseCode: cCode,
+            courseName: cName,
+            groupCode: sess.group || groupLabel,
+            type: type,
+            day: normDay,
+            startSlot: slotCoords.startSlot,
+            endSlot: slotCoords.endSlot,
+            duration: slotCoords.duration,
+            instructor: instructor || 'Not Specified',
+            room: sess.room || '',
+            color: sess.bgColor || colorMap[cCode] || generateCourseColor(cCode)
+          });
+        });
+      });
+    }
+
+    // 1. Scan departmentsTree
+    if (jsonData.departmentsTree) {
+      for (const [dKey, dObj] of Object.entries(jsonData.departmentsTree)) {
+        if (cleanDeptName(dKey).toLowerCase() === cleanTargetDept ||
+            cleanDeptName(dObj.departmentName || '').toLowerCase() === cleanTargetDept) {
+          if (dObj.periods && typeof dObj.periods === 'object') {
+            for (const [pKey, pObj] of Object.entries(dObj.periods)) {
+              if (String(pObj.periodName || pKey).trim() === cleanTargetPeriod) {
+                if (pObj.groups && typeof pObj.groups === 'object') {
+                  for (const [gKey, gObj] of Object.entries(pObj.groups)) {
+                    processScheduleDays(
+                      gObj.groupName || gKey,
+                      gObj.schedule,
+                      gObj.timeSlots || [],
+                      gObj.courseColors || []
+                    );
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // 2. Scan allSchedules if coursesMap is empty or as supplement
+    if (coursesMap.size === 0 && Array.isArray(jsonData.allSchedules)) {
+      jsonData.allSchedules.forEach(item => {
+        const itemDept = cleanDeptName(item.department?.name || item.department?.rawLabel || '').toLowerCase();
+        const itemPeriod = String(item.period?.label || item.period?.value || '').trim();
+        if (itemDept === cleanTargetDept && itemPeriod === cleanTargetPeriod) {
+          processScheduleDays(
+            item.group?.label || item.group?.value,
+            item.schedule,
+            item.timeSlots || [],
+            item.courseColors || []
+          );
+        }
+      });
+    }
+
+    // 3. Scan allClassSessions if still empty
+    if (coursesMap.size === 0 && Array.isArray(jsonData.allClassSessions)) {
+      jsonData.allClassSessions.forEach(sess => {
+        const sDept = cleanDeptName(sess.department || '').toLowerCase();
+        const sPeriod = String(sess.period || '').trim();
+        if (sDept === cleanTargetDept && sPeriod === cleanTargetPeriod) {
+          const normDay = normalizeDay(sess.day);
+          if (normDay && sess.courseCode) {
+            const slotCoords = mapSlotToGridMatrix(sess.slotIndex, sess.timeSlot, 1, 4);
+            addSessionToCourse({
+              courseCode: sess.courseCode,
+              courseName: sess.courseName || sess.courseCode,
+              groupCode: sess.group || 'Group_1',
+              type: sess.type || 'Lect.',
+              day: normDay,
+              startSlot: slotCoords.startSlot,
+              endSlot: slotCoords.endSlot,
+              duration: slotCoords.duration,
+              instructor: sess.instructor || 'Not Specified',
+              room: sess.room || '',
+              color: sess.bgColor || generateCourseColor(sess.courseCode)
+            });
+          }
+        }
+      });
+    }
+
+    // Convert coursesMap to array
+    const courses = [];
+    coursesMap.forEach(c => {
+      const groupsList = Array.from(c.groupsMap.values()).map(g => ({
+        group: g.group,
+        sessions: g.sessions,
+        hasLecture: g.hasLecture,
+        hasLab: g.hasLab,
+        instructors: Array.from(g.instructors)
+      }));
+
+      courses.push({
+        id: c.code,
+        name: c.name,
+        code: c.code,
+        instructors: Array.from(c.instructorsSet),
+        groups: groupsList,
+        slots: c.slots,
+        color: c.color,
+        scheduleType: 'group'
+      });
+    });
+
+    const success = courses.length > 0;
+    return {
+      success,
+      departmentName: deptName,
+      period: periodKey,
+      courses,
+      totalCourses: courses.length,
+      totalGroups: totalGroupsFound,
+      totalSlots: courses.reduce((acc, c) => acc + c.slots.length, 0),
+      message: success
+        ? `Successfully loaded ${courses.length} subjects with ${courses.reduce((acc, c) => acc + c.groups.length, 0)} groups.`
+        : `No active timetable sessions found for ${deptName} (Period ${periodKey}).`
+    };
+  }
+
   return {
     parseHtml,
     detectScheduleType,
     extractGroupCode,
     normalizeDay,
     STANDARD_DAYS,
-    generateCourseColor
+    generateCourseColor,
+    isCatalogManifest,
+    parseCatalogManifest,
+    isMajorScheduleJson,
+    getMajorMetadata,
+    getMajorDepartments,
+    getMajorPeriodsForDepartment,
+    extractCoursesFromMajor,
+    mapSlotToGridMatrix
   };
 })();
 

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * sampleData.js
  * Pre-loaded college courses parsed directly from real university portal schedule HTML:
  * 1. Applied Programming - ECE2102
@@ -6242,8 +6242,511 @@ const SampleScheduleData = (() => {
     }
 ];
 
+  const DEFAULT_MAJOR_CATALOG = {
+    version: "1.0",
+    defaultMajorId: "computing_heliopolis_2026_term1",
+    majors: [
+      {
+        id: "computing_heliopolis_2026_term1",
+        title: "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+        titleEn: "Faculty of Computing & Information Technology - Heliopolis",
+        semester: "الأول 2027/2026",
+        semesterEn: "Term 1 (2026/2027)",
+        file: "colleges/computing_heliopolis_2026_term1.json",
+        totalDepartments: 7,
+        totalSchedules: 136,
+        departments: [
+          "الأمن السيبرانى - ق.م",
+          "الذكاء الإصطناعي - ق.م",
+          "علوم الحاسب ق.م",
+          "علوم حاسب ق.م-Northampton",
+          "نظم معلومات -ق م",
+          "هندسة البرمجيات - ق.م",
+          "هندسة برمجيات ق.م -Northampton"
+        ]
+      }
+    ]
+  };
+
+  const DEFAULT_MAJOR_SCHEDULE_JSON = {
+  "metadata": {
+    "exportTitle": "الفصل الدراسي - الأول 2026-2027 -- كلية الحاسبات وتكنولوجيا المعلومات- مصر الجديدة",
+    "portalHeader": "الفصل الدراسي: الأول 2026/2027 -- كلية الحاسبات وتكنولوجيا المعلومات- مصر الجديدة",
+    "portalTitle": "",
+    "batch": {
+      "text": "الأول 2027/2026",
+      "value": "1019"
+    },
+    "scrapedAt": "2026-09-07T22:14:13.795Z",
+    "totalDepartments": 7,
+    "totalSchedules": 136,
+    "totalClassesFound": 8,
+    "departmentsSummary": [
+      {
+        "department": "الأمن السيبرانى - ق.م",
+        "departmentValue": "699,10",
+        "totalSchedules": 19,
+        "totalClasses": 4
+      },
+      {
+        "department": "الذكاء الإصطناعي - ق.م",
+        "departmentValue": "700,10",
+        "totalSchedules": 13,
+        "totalClasses": 0
+      },
+      {
+        "department": "علوم الحاسب ق.م",
+        "departmentValue": "29,10",
+        "totalSchedules": 40,
+        "totalClasses": 8
+      },
+      {
+        "department": "علوم حاسب ق.م-Northampton",
+        "departmentValue": "435,10",
+        "totalSchedules": 8,
+        "totalClasses": 0
+      },
+      {
+        "department": "نظم معلومات -ق م",
+        "departmentValue": "73,1",
+        "totalSchedules": 19,
+        "totalClasses": 0
+      },
+      {
+        "department": "هندسة البرمجيات - ق.م",
+        "departmentValue": "149,1",
+        "totalSchedules": 29,
+        "totalClasses": 0
+      },
+      {
+        "department": "هندسة برمجيات ق.م -Northampton",
+        "departmentValue": "435,30",
+        "totalSchedules": 8,
+        "totalClasses": 0
+      }
+    ]
+  },
+  "departmentsTree": {
+    "الأمن السيبرانى - ق.م": {
+      "departmentName": "الأمن السيبرانى - ق.م",
+      "rawDepartmentLabel": "الأمن السيبرانى - ق.م",
+      "departmentValue": "699,10",
+      "totalSchedules": 19,
+      "periods": {
+        "1": {
+          "periodName": "1",
+          "periodValue": "1",
+          "groups": {
+            "Main": {
+              "groupName": "--اختر المجموعة--",
+              "groupValue": "-1",
+              "hasTimetable": false,
+              "timeSlots": [],
+              "schedule": []
+            }
+          }
+        },
+        "2": {
+          "periodName": "2",
+          "periodValue": "2",
+          "groups": {
+            "2CS1": {
+              "groupName": "2CS1",
+              "groupValue": "2CS1",
+              "hasTimetable": true,
+              "pageMetadata": {
+                "header": "الفصل الدراسي: الأول 2026/2027 -- كلية الحاسبات وتكنولوجيا المعلومات- مصر الجديدة",
+                "title": "جدول الأمن السيبرانى - ق.م - الفترة 2 - المجموعة 2CS1",
+                "scheduleType": "جدول مجموعة"
+              },
+              "timeSlots": [
+                "الفترة 1 (08:30 - 10:30)",
+                "الفترة 2 (10:30 - 12:30)",
+                "الفترة 3 (12:30 - 02:30)",
+                "الفترة 4 (02:30 - 04:30)"
+              ],
+              "courseColors": [
+                { "courseCode": "SEC201", "courseName": "Network Security", "color": "#EC4899" },
+                { "courseCode": "SEC205", "courseName": "Cryptography Fundamentals", "color": "#F59E0B" }
+              ],
+              "roomLegend": { "Hall 4": "Lecture Hall 4", "Lab 5": "Security Lab 5" },
+              "schedule": [
+                {
+                  "day": "Sunday",
+                  "sessions": [
+                    {
+                      "slotName": "الفترة 1 (08:30 - 10:30)",
+                      "slotIndex": 1,
+                      "courseCode": "SEC201",
+                      "courseName": "Network Security",
+                      "group": "2CS1",
+                      "type": "Lect.",
+                      "room": "Hall 4",
+                      "instructor": "د. طارق محمود",
+                      "bgColor": "#EC4899",
+                      "colspan": 1,
+                      "rawContent": "Network Security (SEC201)\nGroup: 2CS1\nLect.\nد. طارق محمود\nHall 4"
+                    },
+                    {
+                      "slotName": "الفترة 2 (10:30 - 12:30)",
+                      "slotIndex": 2,
+                      "courseCode": "SEC201",
+                      "courseName": "Network Security",
+                      "group": "2CS1",
+                      "type": "Lab.",
+                      "room": "Lab 5",
+                      "instructor": "م. زياد طارق",
+                      "bgColor": "#EC4899",
+                      "colspan": 1,
+                      "rawContent": "Network Security (SEC201)\nGroup: 2CS1\nLab.\nم. زياد طارق\nLab 5"
+                    }
+                  ]
+                },
+                {
+                  "day": "Tuesday",
+                  "sessions": [
+                    {
+                      "slotName": "الفترة 3 (12:30 - 02:30)",
+                      "slotIndex": 3,
+                      "courseCode": "SEC205",
+                      "courseName": "Cryptography Fundamentals",
+                      "group": "2CS1",
+                      "type": "Lect.",
+                      "room": "Hall 5",
+                      "instructor": "د. نادية فؤاد",
+                      "bgColor": "#F59E0B",
+                      "colspan": 1,
+                      "rawContent": "Cryptography Fundamentals (SEC205)\nGroup: 2CS1\nLect.\nد. نادية فؤاد\nHall 5"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "periodName": "3",
+          "periodValue": "3",
+          "groups": {
+            "3CS5": { "groupName": "3CS5", "groupValue": "3CS5", "hasTimetable": true, "schedule": [] }
+          }
+        },
+        "4": {
+          "periodName": "4",
+          "periodValue": "4",
+          "groups": {
+            "4CS1": { "groupName": "4CS1", "groupValue": "4CS1", "hasTimetable": true, "schedule": [] },
+            "4CS2": { "groupName": "4CS2", "groupValue": "4CS2", "hasTimetable": true, "schedule": [] },
+            "4SE1": { "groupName": "4SE1", "groupValue": "4SE1", "hasTimetable": true, "schedule": [] }
+          }
+        },
+        "5": {
+          "periodName": "5",
+          "periodValue": "5",
+          "groups": {
+            "5CY1": { "groupName": "5CY1", "groupValue": "5CY1", "hasTimetable": true, "schedule": [] },
+            "5CY2": { "groupName": "5CY2", "groupValue": "5CY2", "hasTimetable": true, "schedule": [] },
+            "5CY3": { "groupName": "5CY3", "groupValue": "5CY3", "hasTimetable": true, "schedule": [] }
+          }
+        },
+        "6": { "periodName": "6", "periodValue": "6", "groups": {} },
+        "7": { "periodName": "7", "periodValue": "7", "groups": {} },
+        "8": { "periodName": "8", "periodValue": "8", "groups": {} }
+      }
+    },
+    "الذكاء الإصطناعي - ق.م": {
+      "departmentName": "الذكاء الإصطناعي - ق.م",
+      "rawDepartmentLabel": "الذكاء الإصطناعي - ق.م",
+      "departmentValue": "700,10",
+      "totalSchedules": 13,
+      "periods": {
+        "1": { "periodName": "1", "periodValue": "1", "groups": {} },
+        "2": { "periodName": "2", "periodValue": "2", "groups": {} },
+        "5": { "periodName": "5", "periodValue": "5", "groups": {} },
+        "7": { "periodName": "7", "periodValue": "7", "groups": {} }
+      }
+    },
+    "علوم الحاسب ق.م": {
+      "departmentName": "علوم الحاسب ق.م",
+      "rawDepartmentLabel": "علوم الحاسب ق.م //",
+      "departmentValue": "29,10",
+      "totalSchedules": 40,
+      "periods": {
+        "1": {
+          "periodName": "1",
+          "periodValue": "1",
+          "groups": {
+            "1": { "groupName": "1", "groupValue": "1", "hasTimetable": true, "schedule": [] },
+            "2": { "groupName": "2", "groupValue": "2", "hasTimetable": true, "schedule": [] }
+          }
+        },
+        "2": {
+          "periodName": "2",
+          "periodValue": "2",
+          "groups": {
+            "2CS1": {
+              "groupName": "2CS1",
+              "groupValue": "2CS1",
+              "hasTimetable": true,
+              "timeSlots": [
+                "الفترة 1 (08:30 - 10:30)",
+                "الفترة 2 (10:30 - 12:30)",
+                "الفترة 3 (12:30 - 02:30)",
+                "الفترة 4 (02:30 - 04:30)"
+              ],
+              "courseColors": [
+                { "courseCode": "CS211", "courseName": "Data Structures", "color": "#3B82F6" },
+                { "courseCode": "CS241", "courseName": "Operating Systems", "color": "#10B981" },
+                { "courseCode": "MATH201", "courseName": "Linear Algebra", "color": "#8B5CF6" }
+              ],
+              "roomLegend": { "Hall 1": "Lecture Hall 1", "Lab 2": "Computer Lab 2" },
+              "schedule": [
+                {
+                  "day": "Saturday",
+                  "sessions": [
+                    {
+                      "slotName": "الفترة 1 (08:30 - 10:30)",
+                      "slotIndex": 1,
+                      "courseCode": "CS211",
+                      "courseName": "Data Structures",
+                      "group": "2CS1",
+                      "type": "Lect.",
+                      "room": "Hall 1",
+                      "instructor": "د. مصطفى الشافعي",
+                      "bgColor": "#3B82F6",
+                      "colspan": 1,
+                      "rawContent": "Data Structures (CS211)\nGroup: 2CS1\nLect.\nد. مصطفى الشافعي\nHall 1"
+                    },
+                    {
+                      "slotName": "الفترة 2 (10:30 - 12:30)",
+                      "slotIndex": 2,
+                      "courseCode": "CS211",
+                      "courseName": "Data Structures",
+                      "group": "2CS1",
+                      "type": "Lab.",
+                      "room": "Lab 2",
+                      "instructor": "م. أحمد حسام",
+                      "bgColor": "#3B82F6",
+                      "colspan": 1,
+                      "rawContent": "Data Structures (CS211)\nGroup: 2CS1\nLab.\nم. أحمد حسام\nLab 2"
+                    }
+                  ]
+                },
+                {
+                  "day": "Monday",
+                  "sessions": [
+                    {
+                      "slotName": "الفترة 2 (10:30 - 12:30)",
+                      "slotIndex": 2,
+                      "courseCode": "CS241",
+                      "courseName": "Operating Systems",
+                      "group": "2CS1",
+                      "type": "Lect.",
+                      "room": "Hall 2",
+                      "instructor": "د. هالة عبد الرحمن",
+                      "bgColor": "#10B981",
+                      "colspan": 1,
+                      "rawContent": "Operating Systems (CS241)\nGroup: 2CS1\nLect.\nد. هالة عبد الرحمن\nHall 2"
+                    },
+                    {
+                      "slotName": "الفترة 3 (12:30 - 02:30)",
+                      "slotIndex": 3,
+                      "courseCode": "CS241",
+                      "courseName": "Operating Systems",
+                      "group": "2CS1",
+                      "type": "Sec.",
+                      "room": "Room 101",
+                      "instructor": "م. سارة علي",
+                      "bgColor": "#10B981",
+                      "colspan": 1,
+                      "rawContent": "Operating Systems (CS241)\nGroup: 2CS1\nSec.\nم. سارة علي\nRoom 101"
+                    }
+                  ]
+                },
+                {
+                  "day": "Wednesday",
+                  "sessions": [
+                    {
+                      "slotName": "الفترة 1 (08:30 - 10:30)",
+                      "slotIndex": 1,
+                      "courseCode": "MATH201",
+                      "courseName": "Linear Algebra",
+                      "group": "2CS1",
+                      "type": "Lect.",
+                      "room": "Hall 3",
+                      "instructor": "د. كمال النجار",
+                      "bgColor": "#8B5CF6",
+                      "colspan": 1,
+                      "rawContent": "Linear Algebra (MATH201)\nGroup: 2CS1\nLect.\nد. كمال النجار\nHall 3"
+                    }
+                  ]
+                }
+              ]
+            },
+            "2CS2-Science": {
+              "groupName": "2CS2-Science",
+              "groupValue": "2CS2-Science",
+              "hasTimetable": true,
+              "timeSlots": [
+                "الفترة 1 (08:30 - 10:30)",
+                "الفترة 2 (10:30 - 12:30)",
+                "الفترة 3 (12:30 - 02:30)",
+                "الفترة 4 (02:30 - 04:30)"
+              ],
+              "schedule": [
+                {
+                  "day": "Sunday",
+                  "sessions": [
+                    {
+                      "slotName": "الفترة 2 (10:30 - 12:30)",
+                      "slotIndex": 2,
+                      "courseCode": "CS211",
+                      "courseName": "Data Structures",
+                      "group": "2CS2-Science",
+                      "type": "Lect.",
+                      "room": "Hall 1",
+                      "instructor": "د. يوسف إبراهيم",
+                      "bgColor": "#3B82F6",
+                      "colspan": 1,
+                      "rawContent": "Data Structures (CS211)\nGroup: 2CS2-Science\nLect.\nد. يوسف إبراهيم\nHall 1"
+                    },
+                    {
+                      "slotName": "الفترة 3 (12:30 - 02:30)",
+                      "slotIndex": 3,
+                      "courseCode": "CS211",
+                      "courseName": "Data Structures",
+                      "group": "2CS2-Science",
+                      "type": "Lab.",
+                      "room": "Lab 3",
+                      "instructor": "م. أحمد حسام",
+                      "bgColor": "#3B82F6",
+                      "colspan": 1,
+                      "rawContent": "Data Structures (CS211)\nGroup: 2CS2-Science\nLab.\nم. أحمد حسام\nLab 3"
+                    }
+                  ]
+                },
+                {
+                  "day": "Tuesday",
+                  "sessions": [
+                    {
+                      "slotName": "الفترة 1 (08:30 - 10:30)",
+                      "slotIndex": 1,
+                      "courseCode": "CS241",
+                      "courseName": "Operating Systems",
+                      "group": "2CS2-Science",
+                      "type": "Lect.",
+                      "room": "Hall 2",
+                      "instructor": "د. هالة عبد الرحمن",
+                      "bgColor": "#10B981",
+                      "colspan": 1,
+                      "rawContent": "Operating Systems (CS241)\nGroup: 2CS2-Science\nLect.\nد. هالة عبد الرحمن\nHall 2"
+                    },
+                    {
+                      "slotName": "الفترة 2 (10:30 - 12:30)",
+                      "slotIndex": 2,
+                      "courseCode": "CS241",
+                      "courseName": "Operating Systems",
+                      "group": "2CS2-Science",
+                      "type": "Sec.",
+                      "room": "Room 102",
+                      "instructor": "م. سارة علي",
+                      "bgColor": "#10B981",
+                      "colspan": 1,
+                      "rawContent": "Operating Systems (CS241)\nGroup: 2CS2-Science\nSec.\nم. سارة علي\nRoom 102"
+                    }
+                  ]
+                },
+                {
+                  "day": "Thursday",
+                  "sessions": [
+                    {
+                      "slotName": "الفترة 2 (10:30 - 12:30)",
+                      "slotIndex": 2,
+                      "courseCode": "MATH201",
+                      "courseName": "Linear Algebra",
+                      "group": "2CS2-Science",
+                      "type": "Lect.",
+                      "room": "Hall 3",
+                      "instructor": "د. كمال النجار",
+                      "bgColor": "#8B5CF6",
+                      "colspan": 1,
+                      "rawContent": "Linear Algebra (MATH201)\nGroup: 2CS2-Science\nLect.\nد. كمال النجار\nHall 3"
+                    }
+                  ]
+                }
+              ]
+            },
+            "2CS3": { "groupName": "2CS3", "groupValue": "2CS3", "hasTimetable": true, "schedule": [] },
+            "2CS-DM": { "groupName": "2CS-DM", "groupValue": "2CS-DM", "hasTimetable": true, "schedule": [] }
+          }
+        },
+        "3": {
+          "periodName": "3",
+          "periodValue": "3",
+          "groups": {
+            "3CS1": { "groupName": "3CS1", "groupValue": "3CS1", "hasTimetable": true, "schedule": [] },
+            "3CS2": { "groupName": "3CS2", "groupValue": "3CS2", "hasTimetable": true, "schedule": [] },
+            "3CS3": { "groupName": "3CS3", "groupValue": "3CS3", "hasTimetable": true, "schedule": [] },
+            "3CS4": { "groupName": "3CS4", "groupValue": "3CS4", "hasTimetable": true, "schedule": [] },
+            "3CS5": { "groupName": "3CS5", "groupValue": "3CS5", "hasTimetable": true, "schedule": [] },
+            "3CS6": { "groupName": "3CS6", "groupValue": "3CS6", "hasTimetable": true, "schedule": [] },
+            "3CS7": { "groupName": "3CS7", "groupValue": "3CS7", "hasTimetable": true, "schedule": [] },
+            "3CS8": { "groupName": "3CS8", "groupValue": "3CS8", "hasTimetable": true, "schedule": [] },
+            "3CS9": { "groupName": "3CS9", "groupValue": "3CS9", "hasTimetable": true, "schedule": [] },
+            "3CS10": { "groupName": "3CS10", "groupValue": "3CS10", "hasTimetable": true, "schedule": [] },
+            "3CS11": { "groupName": "3CS11", "groupValue": "3CS11", "hasTimetable": true, "schedule": [] },
+            "3CS12": { "groupName": "3CS12", "groupValue": "3CS12", "hasTimetable": true, "schedule": [] },
+            "3CS13": { "groupName": "3CS13", "groupValue": "3CS13", "hasTimetable": true, "schedule": [] },
+            "3CS14": { "groupName": "3CS14", "groupValue": "3CS14", "hasTimetable": true, "schedule": [] },
+            "3CS15": { "groupName": "3CS15", "groupValue": "3CS15", "hasTimetable": true, "schedule": [] },
+            "3CS16": { "groupName": "3CS16", "groupValue": "3CS16", "hasTimetable": true, "schedule": [] },
+            "3CS17": { "groupName": "3CS17", "groupValue": "3CS17", "hasTimetable": true, "schedule": [] }
+          }
+        },
+        "4": { "periodName": "4", "periodValue": "4", "groups": {} },
+        "5": { "periodName": "5", "periodValue": "5", "groups": {} },
+        "6": { "periodName": "6", "periodValue": "6", "groups": {} },
+        "7": { "periodName": "7", "periodValue": "7", "groups": {} },
+        "8": { "periodName": "8", "periodValue": "8", "groups": {} }
+      }
+    },
+    "علوم حاسب ق.م-Northampton": {
+      "departmentName": "علوم حاسب ق.م-Northampton",
+      "rawDepartmentLabel": "علوم حاسب ق.م-Northampton //",
+      "departmentValue": "435,10",
+      "totalSchedules": 8,
+      "periods": {}
+    },
+    "نظم معلومات -ق م": {
+      "departmentName": "نظم معلومات -ق م",
+      "rawDepartmentLabel": "نظم معلومات -ق م",
+      "departmentValue": "73,1",
+      "totalSchedules": 19,
+      "periods": {}
+    },
+    "هندسة البرمجيات - ق.م": {
+      "departmentName": "هندسة البرمجيات - ق.م",
+      "rawDepartmentLabel": "هندسة البرمجيات - ق.م",
+      "departmentValue": "149,1",
+      "totalSchedules": 29,
+      "periods": {}
+    },
+    "هندسة برمجيات ق.م -Northampton": {
+      "departmentName": "هندسة برمجيات ق.م -Northampton",
+      "rawDepartmentLabel": "هندسة برمجيات ق.م -Northampton //",
+      "departmentValue": "435,30",
+      "totalSchedules": 8,
+      "periods": {}
+    }
+  },
+  "allSchedules": []
+}
+;
+
   return {
-    DEFAULT_COURSE_SET
+    DEFAULT_COURSE_SET,
+    DEFAULT_MAJOR_SCHEDULE_JSON,
+    DEFAULT_MAJOR_CATALOG
   };
 })();
 
