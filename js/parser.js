@@ -888,8 +888,22 @@ const ScheduleParser = (() => {
     if (!jsonData || typeof jsonData !== 'object') return null;
     const meta = jsonData.metadata || {};
     const depts = getMajorDepartments(jsonData);
+
+    let title = meta.exportTitle || meta.portalHeader || 'College Timetable';
+    if (meta.portalHeader && meta.portalHeader.includes('--')) {
+      const parts = meta.portalHeader.split('--');
+      if (parts[1] && parts[1].trim()) {
+        title = parts[1].trim();
+      }
+    } else if (meta.exportTitle && meta.exportTitle.includes('--')) {
+      const parts = meta.exportTitle.split('--');
+      if (parts.length >= 2 && parts[parts.length - 1].trim().startsWith('كلية')) {
+        title = parts[parts.length - 1].trim();
+      }
+    }
+
     return {
-      title: meta.exportTitle || meta.portalHeader || 'College Timetable',
+      title,
       portalHeader: meta.portalHeader || '',
       batch: meta.batch ? (typeof meta.batch === 'object' ? meta.batch.text : String(meta.batch)) : '',
       scrapedAt: meta.scrapedAt || '',

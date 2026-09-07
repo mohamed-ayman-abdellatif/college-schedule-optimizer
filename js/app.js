@@ -1801,8 +1801,14 @@ const App = (() => {
     }
 
     // Bundled fallback for offline / file:/// protocol
-    if (!fetchedSchedule && typeof SampleScheduleData !== 'undefined' && SampleScheduleData.DEFAULT_MAJOR_SCHEDULE_JSON) {
-      fetchedSchedule = SampleScheduleData.DEFAULT_MAJOR_SCHEDULE_JSON;
+    if (!fetchedSchedule && typeof SampleScheduleData !== 'undefined') {
+      if (SampleScheduleData.BUNDLED_MAJOR_SCHEDULES) {
+        fetchedSchedule = SampleScheduleData.BUNDLED_MAJOR_SCHEDULES[majorIdOrPath] ||
+          SampleScheduleData.BUNDLED_MAJOR_SCHEDULES[filePath] ||
+          SampleScheduleData.DEFAULT_MAJOR_SCHEDULE_JSON;
+      } else if (SampleScheduleData.DEFAULT_MAJOR_SCHEDULE_JSON) {
+        fetchedSchedule = SampleScheduleData.DEFAULT_MAJOR_SCHEDULE_JSON;
+      }
     }
 
     if (fetchedSchedule) {

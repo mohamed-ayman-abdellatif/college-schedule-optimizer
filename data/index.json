@@ -1,8 +1,29 @@
 {
   "version": "1.0",
   "updatedAt": "2026-09-08T00:00:00.000Z",
-  "defaultMajorId": "computing_heliopolis_2026_term1",
+  "defaultMajorId": "engineering_heliopolis_2026_term1",
   "majors": [
+    {
+      "id": "engineering_heliopolis_2026_term1",
+      "title": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+      "titleEn": "Faculty of Engineering & Technology - Heliopolis",
+      "semester": "الأول 2027/2026",
+      "semesterEn": "Term 1 (2026/2027)",
+      "file": "colleges/engineering_heliopolis_2026_term1.json",
+      "totalDepartments": 22,
+      "totalSchedules": 496,
+      "departments": [
+        "الكترونيات ق م - Northamption",
+        "حاسبات ق م - Northampton",
+        "ميكانيكا ق م -Northampton",
+        "هـ.الكترونات واتصالات ق.م",
+        "هـ.ميكانيكية ق.م",
+        "هندسة التشيد والبناء ق.م",
+        "هندسة الحاسبات ق.م",
+        "هندسة كهربية ق م -Northampton"
+      ],
+      "updatedAt": "2026-09-08T00:00:00.000Z"
+    },
     {
       "id": "computing_heliopolis_2026_term1",
       "title": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",

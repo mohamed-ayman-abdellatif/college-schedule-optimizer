@@ -2421,10 +2421,10 @@ ME D Abdelgawad Matar
       ScheduleParser.isCatalogManifest(SampleScheduleData.DEFAULT_MAJOR_CATALOG) === true
     );
     const parsedDefaultCat = ScheduleParser.parseCatalogManifest(SampleScheduleData.DEFAULT_MAJOR_CATALOG);
-    assert('DEFAULT_MAJOR_CATALOG contains Faculty of Computing and defaultMajorId',
+    assert('DEFAULT_MAJOR_CATALOG contains Faculty of Engineering as defaultMajorId and at least 2 majors',
       parsedDefaultCat &&
-      parsedDefaultCat.defaultMajorId === 'computing_heliopolis_2026_term1' &&
-      parsedDefaultCat.majors.length >= 1
+      parsedDefaultCat.defaultMajorId === 'engineering_heliopolis_2026_term1' &&
+      parsedDefaultCat.majors.length >= 2
     );
 
     // 40.4: Bundled major schedule offline integrity in SampleScheduleData
@@ -2433,8 +2433,13 @@ ME D Abdelgawad Matar
       ScheduleParser.isMajorScheduleJson(SampleScheduleData.DEFAULT_MAJOR_SCHEDULE_JSON) === true
     );
     const bundledDepts = ScheduleParser.getMajorDepartments(SampleScheduleData.DEFAULT_MAJOR_SCHEDULE_JSON);
-    assert('DEFAULT_MAJOR_SCHEDULE_JSON has 7 departments available offline',
-      Array.isArray(bundledDepts) && bundledDepts.length === 7
+    assert('DEFAULT_MAJOR_SCHEDULE_JSON (Engineering) has 22 departments available offline',
+      Array.isArray(bundledDepts) && bundledDepts.length === 22
+    );
+    assert('SampleScheduleData.COMPUTING_MAJOR_SCHEDULE_JSON has 7 departments available',
+      typeof SampleScheduleData !== 'undefined' &&
+      Array.isArray(ScheduleParser.getMajorDepartments(SampleScheduleData.COMPUTING_MAJOR_SCHEDULE_JSON)) &&
+      ScheduleParser.getMajorDepartments(SampleScheduleData.COMPUTING_MAJOR_SCHEDULE_JSON).length === 7
     );
 
     // 40.5: Repository & CDN Endpoint URL generation rules
