@@ -2091,9 +2091,15 @@ const App = (() => {
     periodSelect.disabled = false;
     let html = `<option value="">${isAr ? '-- اختر الفترة --' : '-- Choose Period --'}</option>`;
     periods.forEach(p => {
-      const activeText = p.activeGroups > 0
-        ? ` (${p.activeGroups} ${isAr ? 'مجموعة' : 'groups'})`
-        : (p.totalGroups > 0 ? ` (${p.totalGroups} ${isAr ? 'مجموعة' : 'groups'})` : '');
+      let activeText = '';
+      if (p.activeCourses > 0 || p.totalCourses > 0) {
+        const count = p.activeCourses > 0 ? p.activeCourses : p.totalCourses;
+        activeText = ` (${count} ${isAr ? 'مادة' : 'subjects'})`;
+      } else if (p.activeGroups > 0) {
+        activeText = ` (${p.activeGroups} ${isAr ? 'مجموعة' : 'groups'})`;
+      } else if (p.totalGroups > 0) {
+        activeText = ` (${p.totalGroups} ${isAr ? 'مجموعة' : 'groups'})`;
+      }
       html += `<option value="${p.periodName}">${isAr ? 'الفترة ' : 'Period '}${p.periodName}${activeText}</option>`;
     });
     periodSelect.innerHTML = html;

@@ -877,6 +877,7 @@ const ScheduleParser = (() => {
       data.departmentsSummary ||
       data.allSchedules ||
       data.allClassSessions ||
+      data.courses ||
       (data.metadata && (data.metadata.exportTitle || data.metadata.portalHeader || data.metadata.totalDepartments)) ||
       (Array.isArray(data.groups) && data.groups.length > 0 && Array.isArray(data.groups[0].classes))
     );
@@ -1107,7 +1108,7 @@ const ScheduleParser = (() => {
     const periodMap = new Map();
 
     // Helper to register period
-    function registerPeriod(pKey, pVal, groupCount = 0, activeCount = 0) {
+    function registerPeriod(pKey, pVal, groupCount = 0, activeCount = 0, courseCount = 0, actCourseCount = 0) {
       if (!pKey) return;
       const keyStr = String(pKey).trim();
       if (!periodMap.has(keyStr)) {
@@ -1115,12 +1116,16 @@ const ScheduleParser = (() => {
           periodName: keyStr,
           periodValue: pVal || keyStr,
           totalGroups: groupCount,
-          activeGroups: activeCount
+          activeGroups: activeCount,
+          totalCourses: courseCount,
+          activeCourses: actCourseCount
         });
       } else {
         const p = periodMap.get(keyStr);
         p.totalGroups += groupCount;
         p.activeGroups += activeCount;
+        p.totalCourses = (p.totalCourses || 0) + courseCount;
+        p.activeCourses = (p.activeCourses || 0) + actCourseCount;
       }
     }
 
@@ -1132,6 +1137,23 @@ const ScheduleParser = (() => {
             for (const [pKey, pObj] of Object.entries(dObj.periods)) {
               let grpCount = 0;
               let actCount = 0;
+              let courseCount = 0;
+              let actCourseCount = 0;
+
+              if (pObj.courses && typeof pObj.courses === 'object') {
+                for (const cObj of Object.values(pObj.courses)) {
+                  courseCount++;
+                  const hasGroups = Array.isArray(cObj.groups) && cObj.groups.length > 0;
+                  const hasSessions = hasGroups && cObj.groups.some(g => Array.isArray(g.sessions) && g.sessions.length > 0);
+                  const hasTable = Array.isArray(cObj.schedule) && cObj.schedule.some(d => Array.isArray(d.sessions) && d.sessions.length > 0);
+                  if (hasSessions || hasTable || hasGroups) actCourseCount++;
+                  if (hasGroups) {
+                    grpCount += cObj.groups.length;
+                    actCount += cObj.groups.filter(g => Array.isArray(g.sessions) && g.sessions.length > 0).length;
+                  }
+                }
+              }
+
               if (pObj.groups && typeof pObj.groups === 'object') {
                 for (const gObj of Object.values(pObj.groups)) {
                   if (gObj.groupName && !gObj.groupName.includes('--اختر')) {
@@ -1141,7 +1163,7 @@ const ScheduleParser = (() => {
                   }
                 }
               }
-              registerPeriod(pObj.periodName || pKey, pObj.periodValue || pKey, grpCount, actCount);
+              registerPeriod(pObj.periodName || pKey, pObj.periodValue || pKey, grpCount, actCount, courseCount, actCourseCount);
             }
           }
         }
@@ -1154,8 +1176,17 @@ const ScheduleParser = (() => {
         if (isDepartmentMatch(item.department?.name, item.department, deptName) && item.period) {
           const pLabel = item.period.label || item.period.value;
           const isRealGroup = item.group?.label && !item.group.label.includes('--اختر');
-          const hasSessions = Array.isArray(item.schedule) && item.schedule.some(d => Array.isArray(d.sessions) && d.sessions.length > 0);
-          registerPeriod(pLabel, item.period.value || pLabel, isRealGroup ? 1 : 0, hasSessions ? 1 : 0);
+          const isCourse = Boolean(item.course || item.courseCode || item.code);
+          const hasSessions = (Array.isArray(item.schedule) && item.schedule.some(d => Array.isArray(d.sessions) && d.sessions.length > 0)) ||
+                              (Array.isArray(item.groups) && item.groups.some(g => Array.isArray(g.sessions) && g.sessions.length > 0));
+          registerPeriod(
+            pLabel,
+            item.period.value || pLabel,
+            isRealGroup ? 1 : (item.groups ? item.groups.length : 0),
+            hasSessions ? 1 : 0,
+            isCourse ? 1 : 0,
+            (isCourse && hasSessions) ? 1 : 0
+          );
         }
       });
     }
@@ -1422,6 +1453,84 @@ const ScheduleParser = (() => {
           if (dObj.periods && typeof dObj.periods === 'object') {
             for (const [pKey, pObj] of Object.entries(dObj.periods)) {
               if (String(pObj.periodName || pKey).trim() === cleanTargetPeriod) {
+                // Course mode: pObj.courses (جدول مقرر)
+                if (pObj.courses && typeof pObj.courses === 'object') {
+                  for (const [cKey, cVal] of Object.entries(pObj.courses)) {
+                    const cCode = (cVal.code || cVal.courseCode || cKey).trim();
+                    const cName = (cVal.name || cVal.courseName || cCode).trim();
+                    if (!cCode) continue;
+
+                    if (Array.isArray(cVal.groups) && cVal.groups.length > 0) {
+                      cVal.groups.forEach(grp => {
+                        const gName = grp.group || grp.groupCode || grp.name || 'Group_1';
+                        totalGroupsFound++;
+                        (grp.sessions || []).forEach(sess => {
+                          const normDay = normalizeDay(sess.day);
+                          if (!normDay) return;
+
+                          let startSlot = sess.startSlot;
+                          let endSlot = sess.endSlot;
+                          let duration = sess.duration;
+                          if (!startSlot || !endSlot) {
+                            const slotCoords = mapSlotToGridMatrix(
+                              sess.slotIndex,
+                              sess.slotName || sess.timeSlot,
+                              sess.colspan || 1,
+                              4
+                            );
+                            startSlot = slotCoords.startSlot;
+                            endSlot = slotCoords.endSlot;
+                            duration = slotCoords.duration;
+                          }
+                          if (!duration) duration = (endSlot - startSlot + 1);
+
+                          let t = sess.type || 'Lect.';
+                          if (/lab\.?|معمل/i.test(t)) t = 'Lab.';
+                          else if (/sec\.?|سكشن|تمارين/i.test(t)) t = 'Sec.';
+                          else if (/lect\.?|محاضرة/i.test(t)) t = 'Lect.';
+
+                          let inst = sess.instructor || '';
+                          if (t === 'Lect.' && inst && inst !== 'Not Specified') {
+                            if (!/^(د\.|د\/|د\s+|Dr\.|Dr\s+|Doctor\s+|Prof\.|أ\.د\.?)/i.test(inst)) {
+                              const isAr = /[\u0600-\u06FF]/.test(inst);
+                              inst = (isAr ? 'د. ' : 'Dr. ') + inst;
+                            }
+                          }
+
+                          addSessionToCourse({
+                            courseCode: cCode,
+                            courseName: cName,
+                            groupCode: gName,
+                            type: t,
+                            day: normDay,
+                            startSlot: startSlot,
+                            endSlot: endSlot,
+                            duration: duration,
+                            instructor: inst || 'Not Specified',
+                            room: sess.room || '',
+                            color: sess.bgColor || colorMap[cCode] || generateCourseColor(cCode)
+                          });
+                        });
+                      });
+
+                      if (coursesMap.has(cCode) && Array.isArray(cVal.instructors)) {
+                        const c = coursesMap.get(cCode);
+                        cVal.instructors.forEach(inst => {
+                          if (inst && inst !== 'Not Specified') c.instructorsSet.add(inst);
+                        });
+                      }
+                    } else if (Array.isArray(cVal.schedule) && cVal.schedule.length > 0) {
+                      processScheduleDays(
+                        cVal.group || cVal.name || cKey,
+                        cVal.schedule,
+                        cVal.timeSlots || [],
+                        cVal.courseColors || []
+                      );
+                    }
+                  }
+                }
+
+                // Group mode: pObj.groups (جدول مجموعة)
                 if (pObj.groups && typeof pObj.groups === 'object') {
                   for (const [gKey, gObj] of Object.entries(pObj.groups)) {
                     processScheduleDays(
@@ -1444,12 +1553,69 @@ const ScheduleParser = (() => {
       jsonData.allSchedules.forEach(item => {
         const itemPeriod = String(item.period?.label || item.period?.value || '').trim();
         if (isDepartmentMatch(item.department?.name, item.department, deptName) && itemPeriod === cleanTargetPeriod) {
-          processScheduleDays(
-            item.group?.label || item.group?.value,
-            item.schedule,
-            item.timeSlots || [],
-            item.courseColors || []
-          );
+          if (Array.isArray(item.groups) && item.groups.length > 0) {
+            const cCode = (item.course?.code || item.courseCode || item.code || '').trim();
+            const cName = (item.course?.name || item.courseName || item.name || cCode).trim();
+            if (cCode) {
+              item.groups.forEach(grp => {
+                const gName = grp.group || grp.groupCode || grp.name || 'Group_1';
+                totalGroupsFound++;
+                (grp.sessions || []).forEach(sess => {
+                  const normDay = normalizeDay(sess.day);
+                  if (!normDay) return;
+                  let startSlot = sess.startSlot;
+                  let endSlot = sess.endSlot;
+                  let duration = sess.duration;
+                  if (!startSlot || !endSlot) {
+                    const slotCoords = mapSlotToGridMatrix(
+                      sess.slotIndex,
+                      sess.slotName || sess.timeSlot,
+                      sess.colspan || 1,
+                      4
+                    );
+                    startSlot = slotCoords.startSlot;
+                    endSlot = slotCoords.endSlot;
+                    duration = slotCoords.duration;
+                  }
+                  if (!duration) duration = (endSlot - startSlot + 1);
+
+                  let t = sess.type || 'Lect.';
+                  if (/lab\.?|معمل/i.test(t)) t = 'Lab.';
+                  else if (/sec\.?|سكشن|تمارين/i.test(t)) t = 'Sec.';
+                  else if (/lect\.?|محاضرة/i.test(t)) t = 'Lect.';
+
+                  let inst = sess.instructor || '';
+                  if (t === 'Lect.' && inst && inst !== 'Not Specified') {
+                    if (!/^(د\.|د\/|د\s+|Dr\.|Dr\s+|Doctor\s+|Prof\.|أ\.د\.?)/i.test(inst)) {
+                      const isAr = /[\u0600-\u06FF]/.test(inst);
+                      inst = (isAr ? 'د. ' : 'Dr. ') + inst;
+                    }
+                  }
+
+                  addSessionToCourse({
+                    courseCode: cCode,
+                    courseName: cName,
+                    groupCode: gName,
+                    type: t,
+                    day: normDay,
+                    startSlot: startSlot,
+                    endSlot: endSlot,
+                    duration: duration,
+                    instructor: inst || 'Not Specified',
+                    room: sess.room || '',
+                    color: sess.bgColor || colorMap[cCode] || generateCourseColor(cCode)
+                  });
+                });
+              });
+            }
+          } else {
+            processScheduleDays(
+              item.group?.label || item.group?.value,
+              item.schedule,
+              item.timeSlots || [],
+              item.courseColors || []
+            );
+          }
         }
       });
     }
@@ -1550,6 +1716,49 @@ const ScheduleParser = (() => {
             color: colorMap[cCode] || generateCourseColor(cCode)
           });
         });
+      });
+    }
+
+    // 5. Scan direct courses object/array if coursesMap is still empty
+    if (coursesMap.size === 0 && jsonData.courses) {
+      const courseEntries = Array.isArray(jsonData.courses)
+        ? jsonData.courses
+        : Object.values(jsonData.courses);
+
+      courseEntries.forEach(cVal => {
+        const cCode = (cVal.code || cVal.courseCode || cVal.id || '').trim();
+        const cName = (cVal.name || cVal.courseName || cCode).trim();
+        if (!cCode) return;
+
+        if (Array.isArray(cVal.groups)) {
+          cVal.groups.forEach(grp => {
+            const gName = grp.group || grp.groupCode || grp.name || 'Group_1';
+            totalGroupsFound++;
+            (grp.sessions || []).forEach(sess => {
+              const normDay = normalizeDay(sess.day);
+              if (!normDay) return;
+              let startSlot = sess.startSlot || 1;
+              let endSlot = sess.endSlot || startSlot;
+              let duration = sess.duration || (endSlot - startSlot + 1);
+              let t = sess.type || 'Lect.';
+              let inst = sess.instructor || 'Not Specified';
+
+              addSessionToCourse({
+                courseCode: cCode,
+                courseName: cName,
+                groupCode: gName,
+                type: t,
+                day: normDay,
+                startSlot: startSlot,
+                endSlot: endSlot,
+                duration: duration,
+                instructor: inst,
+                room: sess.room || '',
+                color: sess.bgColor || colorMap[cCode] || generateCourseColor(cCode)
+              });
+            });
+          });
+        }
       });
     }
 

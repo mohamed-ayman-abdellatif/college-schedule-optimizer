@@ -2756,6 +2756,274 @@ ME D Abdelgawad Matar
       assert('Suite 47 executed without throwing error', false, err.stack || err.message);
     }
 
+    // ============================================================
+    // SUITE 48: Course Schedule ('جدول مقرر') Parsing, Extraction & Dual Compatibility
+    // ============================================================
+    try {
+      const sampleCourseModeJson = {
+        metadata: {
+          exportTitle: "الفصل الدراسي - الأول 2026-2027 -- كلية الهندسة والتكنولوجيا مصر الجديدة",
+          portalHeader: "الفصل الدراسي - الأول 2026-2027 -- كلية الهندسة والتكنولوجيا مصر الجديدة",
+          batch: "Full Faculty (جدول مقرر)",
+          scrapedAt: "2026-09-08T03:00:00.000Z",
+          totalDepartments: 2
+        },
+        departmentsTree: {
+          "هندسة الحاسبات ق.م": {
+            departmentName: "هندسة الحاسبات ق.م",
+            rawDepartmentLabel: "هندسة الحاسبات ق.م",
+            departmentValue: "1",
+            totalSchedules: 4,
+            periods: {
+              "3": {
+                periodName: "3",
+                periodValue: "3",
+                courses: {
+                  "ECE2102": {
+                    code: "ECE2102",
+                    name: "Applied Programming - ECE2102",
+                    instructors: ["د. هشام صلاح الدين محمد رشاد", "د. دينا محمد علي ابو الدهب", "مجد نبيل نصرى نعمه"],
+                    groups: [
+                      {
+                        group: "B",
+                        sessions: [
+                          { day: "Tuesday", slotName: "Period 1 (08:30 - 10:30)", slotIndex: 1, startSlot: 1, endSlot: 2, type: "Lect.", room: "Hall 100", instructor: "د. هشام صلاح الدين محمد رشاد", bgColor: "#BFF2F9" },
+                          { day: "Sunday", slotName: "Period 4 (02:30 - 04:30)", slotIndex: 4, startSlot: 7, endSlot: 8, type: "Lab.", room: "Lab 204", instructor: "مجد نبيل نصرى نعمه", bgColor: "#BFF2F9" }
+                        ],
+                        hasLecture: true,
+                        hasLab: true,
+                        instructors: ["د. هشام صلاح الدين محمد رشاد", "مجد نبيل نصرى نعمه"]
+                      },
+                      {
+                        group: "C",
+                        sessions: [
+                          { day: "Tuesday", slotName: "Period 1 (08:30 - 10:30)", slotIndex: 1, startSlot: 1, endSlot: 2, type: "Lect.", room: "Hall 100", instructor: "د. هشام صلاح الدين محمد رشاد", bgColor: "#BFF2F9" },
+                          { day: "Monday", slotName: "Period 2 (10:30 - 12:30)", slotIndex: 2, startSlot: 3, endSlot: 4, type: "Lab.", room: "Lab 204", instructor: "احمد زكريا نور", bgColor: "#BFF2F9" }
+                        ],
+                        hasLecture: true,
+                        hasLab: true,
+                        instructors: ["د. هشام صلاح الدين محمد رشاد", "احمد زكريا نور"]
+                      },
+                      {
+                        group: "D",
+                        sessions: [
+                          { day: "Thursday", slotName: "Period 3 (12:30 - 02:30)", slotIndex: 3, startSlot: 5, endSlot: 6, type: "Lect.", room: "Hall 200", instructor: "د. دينا محمد علي ابو الدهب", bgColor: "#BFF2F9" },
+                          { day: "Wednesday", slotName: "Period 1 (08:30 - 10:30)", slotIndex: 1, startSlot: 1, endSlot: 2, type: "Lab.", room: "Lab 204", instructor: "محمد حسام", bgColor: "#BFF2F9" }
+                        ],
+                        hasLecture: true,
+                        hasLab: true,
+                        instructors: ["د. دينا محمد علي ابو الدهب", "محمد حسام"]
+                      }
+                    ]
+                  },
+                  "CSE2101": {
+                    code: "CSE2101",
+                    name: "Data Structures & Algorithms - CSE2101",
+                    instructors: ["د. محمد بدوي", "مهندس عمر"],
+                    groups: [
+                      {
+                        group: "B",
+                        sessions: [
+                          { day: "Wednesday", slotName: "Period 2 (10:30 - 12:30)", slotIndex: 2, startSlot: 3, endSlot: 4, type: "Lect.", room: "Hall 101", instructor: "د. محمد بدوي" },
+                          { day: "Thursday", slotName: "Period 1 (08:30 - 10:30)", slotIndex: 1, startSlot: 1, endSlot: 2, type: "Sec.", room: "Room 105", instructor: "مهندس عمر" }
+                        ],
+                        hasLecture: true,
+                        hasLab: true,
+                        instructors: ["د. محمد بدوي", "مهندس عمر"]
+                      },
+                      {
+                        group: "C",
+                        sessions: [
+                          { day: "Wednesday", slotName: "Period 2 (10:30 - 12:30)", slotIndex: 2, startSlot: 3, endSlot: 4, type: "Lect.", room: "Hall 101", instructor: "د. محمد بدوي" },
+                          { day: "Sunday", slotName: "Period 2 (10:30 - 12:30)", slotIndex: 2, startSlot: 3, endSlot: 4, type: "Sec.", room: "Room 106", instructor: "مهندس عمر" }
+                        ],
+                        hasLecture: true,
+                        hasLab: true,
+                        instructors: ["د. محمد بدوي", "مهندس عمر"]
+                      }
+                    ]
+                  }
+                }
+              },
+              "5": {
+                periodName: "5",
+                periodValue: "5",
+                courses: {
+                  "CSE3101": {
+                    code: "CSE3101",
+                    name: "Operating Systems - CSE3101",
+                    instructors: ["د. يحيى زكريا"],
+                    groups: [
+                      {
+                        group: "B",
+                        sessions: [
+                          { day: "Monday", slotName: "Period 3 (12:30 - 02:30)", slotIndex: 3, startSlot: 5, endSlot: 6, type: "Lect.", room: "Hall 103", instructor: "د. يحيى زكريا" }
+                        ],
+                        hasLecture: true,
+                        hasLab: false,
+                        instructors: ["د. يحيى زكريا"]
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "هندسة ميكانيكية-ق م": {
+            departmentName: "هندسة ميكانيكية-ق م",
+            rawDepartmentLabel: "هندسة ميكانيكية-ق م //",
+            departmentValue: "2",
+            totalSchedules: 1,
+            periods: {
+              "3": {
+                periodName: "3",
+                periodValue: "3",
+                groups: {
+                  "03ME01_144": {
+                    groupName: "03ME01_144",
+                    groupValue: "03ME01_144",
+                    timeSlots: ["Period 1", "Period 2", "Period 3", "Period 4", "Period 5"],
+                    schedule: [
+                      {
+                        day: "Monday",
+                        sessions: [
+                          { slotIndex: 1, rawContent: "Thermodynamics\n(ME2101)\nLect.\nد. شريف كمال", courseCode: "ME2101", courseName: "Thermodynamics", type: "Lect.", instructor: "د. شريف كمال" }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      };
+
+      // 1. isMajorScheduleJson identification
+      assert('Suite 48: isMajorScheduleJson identifies course-mode JSON correctly',
+        ScheduleParser.isMajorScheduleJson(sampleCourseModeJson) === true
+      );
+
+      // 2. getMajorDepartments extraction
+      const courseDepts = ScheduleParser.getMajorDepartments(sampleCourseModeJson);
+      assert('Suite 48: getMajorDepartments extracts 2 departments from course-mode JSON',
+        courseDepts.length === 2 && courseDepts.some(d => d.name.includes('الحاسبات')) && courseDepts.some(d => d.name.includes('ميكانيكية'))
+      );
+
+      // 3. getMajorPeriodsForDepartment with activeCourses and totalCourses
+      const compPeriods = ScheduleParser.getMajorPeriodsForDepartment(sampleCourseModeJson, 'هندسة الحاسبات ق.م');
+      assert('Suite 48: getMajorPeriodsForDepartment returns periods 3 and 5 for Computer Engineering',
+        compPeriods.length === 2 && compPeriods[0].periodName === '3' && compPeriods[1].periodName === '5'
+      );
+      assert('Suite 48: Period 3 reports 2 courses and 5 groups in course-mode',
+        compPeriods[0].totalCourses === 2 && compPeriods[0].activeCourses === 2 && compPeriods[0].totalGroups === 5
+      );
+      assert('Suite 48: Period 5 reports 1 course and 1 group in course-mode',
+        compPeriods[1].totalCourses === 1 && compPeriods[1].activeCourses === 1 && compPeriods[1].totalGroups === 1
+      );
+
+      // 4. extractCoursesFromMajor directly from courses tree
+      const compExtracted = ScheduleParser.extractCoursesFromMajor(sampleCourseModeJson, 'هندسة الحاسبات ق.م', '3');
+      assert('Suite 48: extractCoursesFromMajor succeeds for course-mode period 3',
+        compExtracted.success === true && compExtracted.courses.length === 2
+      );
+
+      const ece2102 = compExtracted.courses.find(c => c.code === 'ECE2102');
+      assert('Suite 48: Extracted course ECE2102 has 3 groups (B, C, D)',
+        ece2102 && ece2102.groups.length === 3 && ece2102.groups.map(g => g.group).sort().join(',') === 'B,C,D'
+      );
+      assert('Suite 48: ECE2102 Group B has 2 sessions with valid slots and doctor names',
+        ece2102 && ece2102.groups[0].sessions.length === 2 &&
+        ece2102.groups[0].sessions.some(s => s.type === 'Lect.' && s.startSlot === 1 && s.endSlot === 2) &&
+        ece2102.groups[0].sessions.some(s => s.type === 'Lab.' && s.startSlot === 7 && s.endSlot === 8)
+      );
+      assert('Suite 48: ECE2102 retains all 3 doctors and instructors in course object',
+        ece2102 && ece2102.instructors.length >= 3 && ece2102.instructors.some(i => i.includes('هشام'))
+      );
+
+      // 5. Dual compatibility: Legacy groups department in same JSON
+      const mechaExtracted = ScheduleParser.extractCoursesFromMajor(sampleCourseModeJson, 'هندسة ميكانيكية-ق م //', '3');
+      assert('Suite 48: Dual compatibility - extracts legacy group-mode ME2101 alongside course-mode',
+        mechaExtracted.success === true && mechaExtracted.courses.length === 1 && mechaExtracted.courses[0].code === 'ME2101'
+      );
+
+      // 6. Optimizer solves timetable with course-mode extracted data
+      const solverResult = ScheduleOptimizer.findOptimalSchedules(compExtracted.courses, {
+        blockedSlots: [],
+        preferredDaysOff: [],
+        doctorPreferences: {},
+        preferSameGroupLetter: true,
+        maxCombinations: 1000
+      });
+      assert('Suite 48: ScheduleOptimizer finds valid clash-free combinations from course-mode data',
+        solverResult.success === true && solverResult.solutions.length > 0
+      );
+      const topSchedule = solverResult.solutions[0];
+      assert('Suite 48: Top schedule contains valid sessions for all 2 courses',
+        topSchedule && topSchedule.selectedGroups.length === 2 && topSchedule.sessions.length >= 4
+      );
+
+      // 7. App integration: UI dropdown formatting and course submission
+      App.loadMajorJsonData(sampleCourseModeJson);
+      const testDeptSelect = document.getElementById('select-major-department');
+      const testPeriodSelect = document.getElementById('select-major-period');
+
+      assert('Suite 48: Department dropdown populated with course-mode departments',
+        testDeptSelect && testDeptSelect.options.length >= 3
+      );
+
+      // Switch to Computer Engineering
+      testDeptSelect.value = 'هندسة الحاسبات ق.م';
+      App.onMajorDepartmentChange('هندسة الحاسبات ق.م');
+
+      assert('Suite 48: Period dropdown displays subject counts (مادة / subjects)',
+        testPeriodSelect && testPeriodSelect.options.length >= 3 &&
+        Array.from(testPeriodSelect.options).some(opt => opt.text.includes('مادة') || opt.text.includes('subjects'))
+      );
+
+      // Select Period 3
+      testPeriodSelect.value = '3';
+      App.onMajorPeriodChange('3');
+      const discovered = App.getDiscoveredMajorCourses();
+      assert('Suite 48: Discovered 2 courses in Period 3 (ECE2102, CSE2101)',
+        discovered.length === 2 && discovered.some(c => c.code === 'ECE2102') && discovered.some(c => c.code === 'CSE2101')
+      );
+
+      // Submit into website
+      App.submitMajorSubjectsToWebsite();
+      const websiteCourses = App.getCourses();
+      assert('Suite 48: Website courses updated to 2 courses upon clicking Submit',
+        websiteCourses.length === 2 && websiteCourses.some(c => c.code === 'ECE2102')
+      );
+
+      // 8. Direct courses array format
+      const directCoursesJson = {
+        courses: [
+          {
+            code: "CS101",
+            name: "Intro to CS - CS101",
+            groups: [
+              {
+                group: "1",
+                sessions: [
+                  { day: "Sunday", startSlot: 1, endSlot: 2, duration: 2, type: "Lect.", instructor: "د. خالد" }
+                ]
+              }
+            ]
+          }
+        ]
+      };
+      assert('Suite 48: isMajorScheduleJson recognizes direct courses array JSON',
+        ScheduleParser.isMajorScheduleJson(directCoursesJson) === true
+      );
+      const directEx = ScheduleParser.extractCoursesFromMajor(directCoursesJson, 'Any', '1');
+      assert('Suite 48: extractCoursesFromMajor extracts from direct courses array JSON',
+        directEx.success === true && directEx.courses.length === 1 && directEx.courses[0].code === 'CS101'
+      );
+    } catch (err) {
+      assert('Suite 48 executed without throwing error', false, err.stack || err.message);
+    }
+
     // Summary
     const passedCount = results.filter(r => r.passed).length;
     const failedCount = results.filter(r => !r.passed).length;
