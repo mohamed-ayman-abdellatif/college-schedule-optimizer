@@ -539,6 +539,8 @@ const App = (() => {
             });
           });
           normalizeCourseDoctorTitles(state.courses);
+        } else {
+          state.courses = [];
         }
       }
 
@@ -1882,20 +1884,22 @@ const App = (() => {
 
     // 4. Check cached major schedule from localStorage
     const savedMajor = localStorage.getItem('sched_major_json');
+    let majorLoaded = false;
     if (savedMajor) {
       try {
         const parsed = JSON.parse(savedMajor);
         const meta = ScheduleParser.getMajorMetadata(parsed);
         if (ScheduleParser.isMajorScheduleJson(parsed) && meta && (meta.totalClassesFound > 0 || (parsed.metadata && parsed.metadata.totalClassesFound > 0))) {
           loadMajorJsonData(parsed, 'Saved Local Major');
+          majorLoaded = true;
         } else {
           localStorage.removeItem('sched_major_json');
         }
       } catch (e) {}
     }
 
-    // 5. If no major schedule loaded yet, load bundled default
-    if (!state.majorData && typeof SampleScheduleData !== 'undefined' && SampleScheduleData.DEFAULT_MAJOR_SCHEDULE_JSON) {
+    // 5. If no major schedule loaded from storage, load bundled default
+    if (!majorLoaded && typeof SampleScheduleData !== 'undefined' && SampleScheduleData.DEFAULT_MAJOR_SCHEDULE_JSON) {
       loadMajorJsonData(SampleScheduleData.DEFAULT_MAJOR_SCHEDULE_JSON, 'Bundled College Schedule');
     }
 
@@ -2016,27 +2020,35 @@ const App = (() => {
 
     deptSelect.innerHTML = html;
 
-    // Reset Period and Preview
-    const periodSelect = document.getElementById('select-major-period');
-    if (periodSelect) {
-      periodSelect.innerHTML = `<option value="">${isAr ? '-- اختر الفترة --' : '-- Choose Period --'}</option>`;
-      periodSelect.disabled = true;
-    }
-    const previewBox = document.getElementById('major-courses-preview');
-    if (previewBox) previewBox.style.display = 'none';
-    const emptyNotice = document.getElementById('major-empty-notice');
-    if (emptyNotice) emptyNotice.style.display = 'none';
-
-    // Automatically select first department if available
-    if (depts.length > 0) {
-      const preferred = depts.find(d => d.name.includes('علوم الحاسب') || d.name.includes('Computer Science')) || depts[0];
-      const prefValue = preferred.key || preferred.name;
-      deptSelect.value = prefValue;
-      onMajorDepartmentChange(prefValue);
+    // If user already had a selected department, preserve it; otherwise start with empty selection
+    if (state.selectedDepartment && Array.from(deptSelect.options).some(o => o.value === state.selectedDepartment)) {
+      deptSelect.value = state.selectedDepartment;
+      onMajorDepartmentChange(state.selectedDepartment, false);
+    } else {
+      deptSelect.value = '';
+      state.selectedDepartment = '';
+      const periodSelect = document.getElementById('select-major-period');
+      if (periodSelect) {
+        periodSelect.innerHTML = `<option value="">${isAr ? '-- اختر الفترة --' : '-- Choose Period --'}</option>`;
+        periodSelect.disabled = true;
+      }
+      const previewBox = document.getElementById('major-courses-preview');
+      if (previewBox) previewBox.style.display = 'none';
+      const emptyNotice = document.getElementById('major-empty-notice');
+      if (emptyNotice) emptyNotice.style.display = 'none';
+      state.selectedPeriod = '';
+      state.discoveredMajorCourses = [];
+      state.selectedMajorCourseCodes.clear();
+      const submitBtnText = document.getElementById('btn-submit-major-subjects-text');
+      if (submitBtnText) {
+        submitBtnText.textContent = isAr
+          ? 'إدراج المواد في الموقع (Submit Subjects into Website)'
+          : 'Submit Subjects into Website (إدراج المواد في الموقع)';
+      }
     }
   }
 
-  function onMajorDepartmentChange(deptName) {
+  function onMajorDepartmentChange(deptName, userInitiated = true) {
     state.selectedDepartment = deptName;
     const periodSelect = document.getElementById('select-major-period');
     if (!periodSelect) return;
@@ -2046,10 +2058,19 @@ const App = (() => {
     if (!deptName || !state.majorData) {
       periodSelect.innerHTML = `<option value="">${isAr ? '-- اختر الفترة --' : '-- Choose Period --'}</option>`;
       periodSelect.disabled = true;
+      state.selectedPeriod = '';
+      state.discoveredMajorCourses = [];
+      state.selectedMajorCourseCodes.clear();
       const previewBox = document.getElementById('major-courses-preview');
       if (previewBox) previewBox.style.display = 'none';
       const emptyNotice = document.getElementById('major-empty-notice');
       if (emptyNotice) emptyNotice.style.display = 'none';
+      const submitBtnText = document.getElementById('btn-submit-major-subjects-text');
+      if (submitBtnText) {
+        submitBtnText.textContent = isAr
+          ? 'إدراج المواد في الموقع (Submit Subjects into Website)'
+          : 'Submit Subjects into Website (إدراج المواد في الموقع)';
+      }
       return;
     }
 
@@ -2057,8 +2078,13 @@ const App = (() => {
     if (periods.length === 0) {
       periodSelect.innerHTML = `<option value="">${isAr ? 'لا توجد فترات متاحة' : 'No periods available'}</option>`;
       periodSelect.disabled = true;
+      state.selectedPeriod = '';
+      state.discoveredMajorCourses = [];
+      state.selectedMajorCourseCodes.clear();
       const previewBox = document.getElementById('major-courses-preview');
       if (previewBox) previewBox.style.display = 'none';
+      const emptyNotice = document.getElementById('major-empty-notice');
+      if (emptyNotice) emptyNotice.style.display = 'none';
       return;
     }
 
@@ -2072,26 +2098,22 @@ const App = (() => {
     });
     periodSelect.innerHTML = html;
 
-    // Automatically select the period that has the MOST active groups or yields courses
-    let bestPeriod = null;
-    const sortedPeriods = [...periods].sort((a, b) => (b.activeGroups || 0) - (a.activeGroups || 0));
-    if (sortedPeriods.length > 0 && (sortedPeriods[0].activeGroups || 0) > 0) {
-      bestPeriod = sortedPeriods[0];
-    } else {
-      for (const p of periods) {
-        const testExtract = ScheduleParser.extractCoursesFromMajor(state.majorData, deptName, p.periodName);
-        if (testExtract.success && testExtract.courses.length > 0) {
-          bestPeriod = p;
-          break;
-        }
-      }
-    }
-    if (!bestPeriod && periods.length > 0) {
-      bestPeriod = periods[0];
-    }
-    if (bestPeriod) {
-      periodSelect.value = bestPeriod.periodName;
-      onMajorPeriodChange(bestPeriod.periodName);
+    // Reset period selection to '-- Choose Period --' so user selects their term deliberately
+    periodSelect.value = '';
+    state.selectedPeriod = '';
+    state.discoveredMajorCourses = [];
+    state.selectedMajorCourseCodes.clear();
+
+    const previewBox = document.getElementById('major-courses-preview');
+    if (previewBox) previewBox.style.display = 'none';
+    const emptyNotice = document.getElementById('major-empty-notice');
+    if (emptyNotice) emptyNotice.style.display = 'none';
+
+    const submitBtnText = document.getElementById('btn-submit-major-subjects-text');
+    if (submitBtnText) {
+      submitBtnText.textContent = isAr
+        ? 'إدراج المواد في الموقع (Submit Subjects into Website)'
+        : 'Submit Subjects into Website (إدراج المواد في الموقع)';
     }
   }
 
@@ -2101,6 +2123,8 @@ const App = (() => {
     const submitBtnText = document.getElementById('btn-submit-major-subjects-text');
 
     if (!periodKey || !state.selectedDepartment || !state.majorData) {
+      state.discoveredMajorCourses = [];
+      state.selectedMajorCourseCodes.clear();
       const previewBox = document.getElementById('major-courses-preview');
       if (previewBox) previewBox.style.display = 'none';
       const emptyNotice = document.getElementById('major-empty-notice');
@@ -2135,20 +2159,10 @@ const App = (() => {
           : `⚡ Submit ${extractResult.courses.length} Subjects into Website (إدراج ${extractResult.courses.length} مواد)`;
       }
 
-      // Automatically update website courses to the newly selected department/period subjects!
-      loadSelectedMajorCourses(true);
+      // DO NOT auto-load into state.courses: user clicks Submit button to enter them into website
     } else {
       state.discoveredMajorCourses = [];
       state.selectedMajorCourseCodes.clear();
-
-      // Clear stale courses so courses from a previous department aren't kept on an empty selection
-      state.courses = [];
-      state.solutions = [];
-      state.filteredSolutions = [];
-      state.activeSolutionIndex = 0;
-      saveStateToStorage();
-      renderCoursesList();
-      renderDoctorPreferences();
 
       const previewBox = document.getElementById('major-courses-preview');
       if (previewBox) previewBox.style.display = 'none';
@@ -2181,27 +2195,21 @@ const App = (() => {
       if (fallbackDiv && fallbackBtn && altPeriod) {
         fallbackDiv.style.display = 'block';
         fallbackBtn.textContent = isAr
-          ? `⚡ التبديل إلى الفترة ${altPeriod.periodName} (${altPeriod.coursesCount} مواد) وإدراجها بالموقع`
-          : `⚡ Switch to Period ${altPeriod.periodName} (${altPeriod.coursesCount} subjects) & Submit`;
+          ? `⚡ اختيار الفترة ${altPeriod.periodName} (${altPeriod.coursesCount} مواد)`
+          : `⚡ Choose Period ${altPeriod.periodName} (${altPeriod.coursesCount} subjects)`;
         fallbackBtn.onclick = () => {
           const pSel = document.getElementById('select-major-period');
           if (pSel) pSel.value = altPeriod.periodName;
           onMajorPeriodChange(altPeriod.periodName);
-          submitMajorSubjectsToWebsite();
         };
-
-        if (submitBtnText) {
-          submitBtnText.textContent = isAr
-            ? `⚡ إدراج مواد الفترة ${altPeriod.periodName} في الموقع (${altPeriod.coursesCount} مواد)`
-            : `⚡ Submit Period ${altPeriod.periodName} Subjects into Website (${altPeriod.coursesCount} subjects)`;
-        }
       } else {
         if (fallbackDiv) fallbackDiv.style.display = 'none';
-        if (submitBtnText) {
-          submitBtnText.textContent = isAr
-            ? 'إدراج المواد في الموقع (Submit Subjects into Website)'
-            : 'Submit Subjects into Website (إدراج المواد في الموقع)';
-        }
+      }
+
+      if (submitBtnText) {
+        submitBtnText.textContent = isAr
+          ? 'إدراج المواد في الموقع (Submit Subjects into Website)'
+          : 'Submit Subjects into Website (إدراج المواد في الموقع)';
       }
     }
   }
@@ -2287,46 +2295,41 @@ const App = (() => {
   function submitMajorSubjectsToWebsite() {
     const isAr = state.currentLang === 'ar';
 
+    if (!state.selectedDepartment) {
+      showToast(isAr ? 'يرجى اختيار القسم أولاً' : 'Please select a department first', 'warning');
+      return;
+    }
+
+    if (!state.selectedPeriod) {
+      showToast(isAr ? 'يرجى اختيار الفترة أولاً' : 'Please choose a period / term first', 'warning');
+      return;
+    }
+
     // 1. If courses already discovered for the currently selected period
     if (state.discoveredMajorCourses && state.discoveredMajorCourses.length > 0) {
       if (state.selectedMajorCourseCodes.size === 0) {
         state.discoveredMajorCourses.forEach(c => state.selectedMajorCourseCodes.add(c.code));
       }
-      loadSelectedMajorCourses();
+      loadSelectedMajorCourses(false);
       return;
     }
 
-    // 2. If no courses discovered for current period, try finding an active period in this department
-    if (state.majorData && state.selectedDepartment) {
-      const periods = ScheduleParser.getMajorPeriodsForDepartment(state.majorData, state.selectedDepartment);
-      let bestAlt = null;
-      let maxC = 0;
-      for (const p of periods) {
-        const testEx = ScheduleParser.extractCoursesFromMajor(state.majorData, state.selectedDepartment, p.periodName);
-        if (testEx.success && testEx.courses.length > maxC) {
-          maxC = testEx.courses.length;
-          bestAlt = p.periodName;
-        }
-      }
+    // 2. Try re-extracting for current period
+    const extractResult = ScheduleParser.extractCoursesFromMajor(
+      state.majorData,
+      state.selectedDepartment,
+      state.selectedPeriod
+    );
 
-      if (bestAlt) {
-        const pSel = document.getElementById('select-major-period');
-        if (pSel) pSel.value = bestAlt;
-        onMajorPeriodChange(bestAlt);
-        if (state.discoveredMajorCourses && state.discoveredMajorCourses.length > 0) {
-          state.discoveredMajorCourses.forEach(c => state.selectedMajorCourseCodes.add(c.code));
-          loadSelectedMajorCourses();
-          return;
-        }
-      }
+    if (extractResult.success && extractResult.courses.length > 0) {
+      state.discoveredMajorCourses = extractResult.courses;
+      state.selectedMajorCourseCodes = new Set(extractResult.courses.map(c => c.code));
+      renderMajorDiscoveredCourses(extractResult);
+      loadSelectedMajorCourses(false);
+      return;
     }
 
-    // 3. Fallback warning
-    if (!state.selectedDepartment) {
-      showToast(isAr ? 'يرجى اختيار القسم أولاً' : 'Please select a department first', 'warning');
-    } else {
-      showToast(isAr ? 'لا توجد محاضرات مجدولة لهذا القسم حالياً' : 'No scheduled sessions found for this department', 'warning');
-    }
+    showToast(isAr ? 'لا توجد مقررات مجدولة للفترة والقسم المحددين' : 'No scheduled subjects found for this department and period.', 'warning');
   }
 
   function loadSelectedMajorCourses(silent = false) {
@@ -6632,6 +6635,8 @@ const App = (() => {
     syncFromPublicRepo,
     getMajorCatalog: () => state.majorCatalog,
     getMajorData: () => state.majorData,
+    getSelectedDepartment: () => state.selectedDepartment,
+    getSelectedPeriod: () => state.selectedPeriod,
     getDiscoveredMajorCourses: () => state.discoveredMajorCourses,
     getCourses: () => state.courses
   };
@@ -6639,6 +6644,10 @@ const App = (() => {
   return window.App;
 })();
 
-document.addEventListener('DOMContentLoaded', () => {
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    App.init();
+  });
+} else {
   App.init();
-});
+}

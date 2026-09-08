@@ -8,6 +8,45 @@
   <h1>Test Runner</h1>
   <div id="test-results"></div>
 
+  <!-- App DOM Fixtures for Integration Testing -->
+  <div id="test-app-fixtures" style="display: none;">
+    <div id="guide-modal"></div>
+    <button id="btn-theme-toggle"></button>
+    <button id="btn-lang-toggle"></button>
+    <select id="select-major-college"></select>
+    <select id="select-major-department"></select>
+    <select id="select-major-period" disabled></select>
+    <button id="btn-submit-major-subjects"><span id="btn-submit-major-subjects-text"></span></button>
+    <button id="btn-load-major-subjects"></button>
+    <div id="major-courses-preview"></div>
+    <div id="major-preview-badge"></div>
+    <div id="major-preview-groups"></div>
+    <div id="major-preview-chips"></div>
+    <div id="major-empty-notice"></div>
+    <div id="major-empty-notice-text"></div>
+    <div id="major-empty-fallback-action"></div>
+    <button id="btn-switch-period-fallback"></button>
+    <div id="courses-list-container"></div>
+    <div id="courses-count-badge"></div>
+    <div id="schedule-empty-state"></div>
+    <div id="active-courses-preview-bar"></div>
+    <div id="active-courses-summary"></div>
+    <div id="generator-actions-card"></div>
+    <div id="doctor-prefs-container"></div>
+    <div id="blocked-painter-grid"></div>
+    <div id="blocked-list-container"></div>
+    <div id="stat-courses-count"></div>
+  </div>
+
+  <script>
+    window.onerror = function(msg, url, line, col, error) {
+      const el = document.getElementById('test-results');
+      if (el) {
+        el.innerHTML = '<h2 style="color:red">GLOBAL ERROR: ' + msg + ' at ' + url + ':' + line + ':' + col + '</h2><pre>' + (error ? error.stack : '') + '</pre>';
+      }
+    };
+  </script>
+
   <!-- Load Modules -->
   <script src="js/parser.js"></script>
   <script src="js/pdfParser.js"></script>
@@ -15,6 +54,7 @@
   <script src="js/optimizer.js"></script>
   <script src="js/renderer.js"></script>
   <script src="js/exporter.js"></script>
+  <script src="js/app.js"></script>
 
   <script>
     const results = [];
@@ -2624,6 +2664,97 @@ ME D Abdelgawad Matar
       mechaP8.success === true && mechaP8.courses.some(c => c.code === 'ME4101') && mechaP8.courses.some(c => c.code === 'MEC4104')
     );
 
+    // 47: Cascading Dropdowns & Controlled Course Submission
+    try {
+      try {
+        localStorage.removeItem('sched_courses');
+        localStorage.removeItem('sched_major_json');
+      } catch(e) {}
+      App.init();
+
+      const deptEl = document.getElementById('select-major-department');
+      const periodEl = document.getElementById('select-major-period');
+
+      assert('Suite 47: Initial website courses count is 0 for new visitors',
+        App.getCourses().length === 0
+      );
+      assert('Suite 47: Department select starts on empty choose-department placeholder',
+        deptEl && deptEl.value === ''
+      );
+      assert('Suite 47: Period select is initially disabled on startup',
+        periodEl && periodEl.disabled === true
+      );
+
+      // Change department to Mechanical Engineering
+      const mechaTargetKey = 'هندسة ميكانيكية-ق م';
+      if (deptEl) deptEl.value = mechaTargetKey;
+      App.onMajorDepartmentChange(mechaTargetKey);
+
+      assert('Suite 47: Changing department preserves selected department value',
+        deptEl && deptEl.value === mechaTargetKey && App.getSelectedDepartment() === mechaTargetKey
+      );
+      assert('Suite 47: Changing department enables period select',
+        periodEl && periodEl.disabled === false
+      );
+      assert('Suite 47: Period select is reset to empty (-- Choose Period --) without auto-snapping',
+        periodEl && periodEl.value === '' && App.getSelectedPeriod() === ''
+      );
+      assert('Suite 47: Website courses remain 0 after department change',
+        App.getCourses().length === 0
+      );
+
+      // Period options for Mechanical include 8 and 3
+      const pOpts = periodEl ? Array.from(periodEl.options).map(o => o.value).filter(Boolean) : [];
+      assert('Suite 47: Mechanical Engineering periods contain Period 8 and 3',
+        pOpts.includes('8') && pOpts.includes('3')
+      );
+
+      // Select Period 8
+      if (periodEl) periodEl.value = '8';
+      App.onMajorPeriodChange('8');
+
+      const discCoursesP8 = App.getDiscoveredMajorCourses();
+      assert('Suite 47: Selecting Period 8 discovers Mechanical Senior subjects (ME4101)',
+        discCoursesP8.length > 0 && discCoursesP8.some(c => c.code === 'ME4101')
+      );
+      assert('Suite 47: Discovered Period 8 subjects contain NO Computer Engineering courses',
+        !discCoursesP8.some(c => c.code === 'CSE2101' || c.code === 'ECE2102' || c.code === 'EEE2304')
+      );
+      assert('Suite 47: Website courses STILL 0 before clicking submit button',
+        App.getCourses().length === 0
+      );
+
+      // Submit Mechanical subjects
+      App.submitMajorSubjectsToWebsite();
+      assert('Suite 47: Website courses populated after clicking Submit button',
+        App.getCourses().length === discCoursesP8.length && App.getCourses().some(c => c.code === 'ME4101')
+      );
+
+      // Switch department to Architecture
+      const archTargetKey = 'هندسة معمارية ق.م';
+      if (deptEl) deptEl.value = archTargetKey;
+      App.onMajorDepartmentChange(archTargetKey);
+
+      assert('Suite 47: Switching to Architecture resets period select to empty',
+        periodEl && periodEl.value === '' && App.getSelectedPeriod() === ''
+      );
+
+      // Select Architecture Period 3
+      if (periodEl) periodEl.value = '3';
+      App.onMajorPeriodChange('3');
+      const discArchCourses = App.getDiscoveredMajorCourses();
+      assert('Suite 47: Architecture Period 3 discovers ARC2101 and NO CE courses (ECE2102/EEE2304)',
+        discArchCourses.some(c => c.code === 'ARC2101') && !discArchCourses.some(c => c.code === 'ECE2102' || c.code === 'EEE2304')
+      );
+
+      // Submit Architecture subjects
+      App.submitMajorSubjectsToWebsite();
+      assert('Suite 47: Submitting Architecture replaces website courses with ARC2101',
+        App.getCourses().some(c => c.code === 'ARC2101') && !App.getCourses().some(c => c.code === 'ME4101')
+      );
+    } catch (err) {
+      assert('Suite 47 executed without throwing error', false, err.stack || err.message);
+    }
 
     // Summary
     const passedCount = results.filter(r => r.passed).length;
