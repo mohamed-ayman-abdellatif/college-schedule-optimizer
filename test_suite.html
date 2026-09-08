@@ -16,6 +16,9 @@
     <select id="select-major-college"></select>
     <select id="select-major-department"></select>
     <select id="select-major-period" disabled></select>
+    <input type="text" id="input-major-course-search" />
+    <button id="btn-clear-major-search"></button>
+    <div id="major-course-search-dropdown"></div>
     <button id="btn-submit-major-subjects"><span id="btn-submit-major-subjects-text"></span></button>
     <button id="btn-load-major-subjects"></button>
     <div id="major-courses-preview"></div>
@@ -3022,6 +3025,207 @@ ME D Abdelgawad Matar
       );
     } catch (err) {
       assert('Suite 48 executed without throwing error', false, err.stack || err.message);
+    }
+
+    // ============================================================
+    // SUITE 49: Doctor & TA Extraction, Default College Datasets & Live Subject Search
+    // ============================================================
+    try {
+      // 1. Doctor & TA Extraction from schedule + groups structure
+      const sampleDoctorTaJson = {
+        metadata: {
+          exportTitle: "كلية الهندسة والتكنولوجيا",
+          portalHeader: "كلية الهندسة والتكنولوجيا",
+          batch: "2026/2027",
+          totalDepartments: 1
+        },
+        departmentsTree: {
+          "هندسة الحاسبات": {
+            departmentName: "هندسة الحاسبات",
+            rawDepartmentLabel: "هندسة الحاسبات ق.م",
+            periods: {
+              "1": {
+                periodName: "1",
+                courses: {
+                  "UNR1403": {
+                    code: "UNR1403",
+                    name: "Academic English - UNR1403",
+                    instructors: [
+                      "د. هبة محمد عبدالعزيز عبدالرحيم",
+                      "ابتهال انس محمد محمد البطشة",
+                      "د. سها محمود عبد المجيد شريف",
+                      "ندى اسامة حامد محمد"
+                    ],
+                    groups: [
+                      {
+                        group: "A6",
+                        hasLecture: false,
+                        hasLab: true,
+                        instructors: ["ابتهال انس محمد محمد البطشة"],
+                        sessions: [] // sessions missing day or empty
+                      },
+                      {
+                        group: "4",
+                        hasLecture: true,
+                        hasLab: false,
+                        instructors: ["د. هبة محمد عبدالعزيز عبدالرحيم"],
+                        sessions: []
+                      }
+                    ],
+                    schedule: [
+                      {
+                        day: "Saturday",
+                        sessions: [
+                          {
+                            slotName: "1",
+                            slotIndex: 1,
+                            startSlot: 1,
+                            endSlot: 2,
+                            duration: 2,
+                            courseCode: "UNR1403",
+                            courseName: "Academic English - UNR1403",
+                            group: "A6",
+                            type: "Sec.",
+                            instructor: "ابتهال انس محمد محمد البطشة",
+                            room: "Room 101"
+                          }
+                        ]
+                      },
+                      {
+                        day: "Sunday",
+                        sessions: [
+                          {
+                            slotName: "3",
+                            slotIndex: 3,
+                            startSlot: 5,
+                            endSlot: 6,
+                            duration: 2,
+                            courseCode: "UNR1403",
+                            courseName: "Academic English - UNR1403",
+                            group: "4",
+                            type: "Lect.",
+                            instructor: "د. هبة محمد عبدالعزيز عبدالرحيم",
+                            room: "Hall 2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "CS111": {
+                    code: "CS111",
+                    name: "Introduction to Computing - CS111",
+                    instructors: ["د. شريف كمال", "م. أحمد عادل"],
+                    groups: [
+                      {
+                        group: "1",
+                        sessions: [
+                          { day: "Monday", startSlot: 1, endSlot: 2, duration: 2, type: "Lect.", instructor: "د. شريف كمال", group: "1" },
+                          { day: "Tuesday", startSlot: 3, endSlot: 4, duration: 2, type: "Lab.", instructor: "م. أحمد عادل", group: "1" }
+                        ]
+                      }
+                    ],
+                    schedule: []
+                  }
+                }
+              }
+            }
+          }
+        }
+      };
+
+      // Test extraction from cVal.schedule when groups sessions lack day
+      const ext = ScheduleParser.extractCoursesFromMajor(sampleDoctorTaJson, "هندسة الحاسبات", "1");
+      assert('Suite 49: extractCoursesFromMajor successfully extracts courses',
+        ext.success === true && ext.courses.length === 2
+      );
+
+      const unrCourse = ext.courses.find(c => c.code === 'UNR1403');
+      assert('Suite 49: UNR1403 has extracted sessions from schedule array',
+        unrCourse && unrCourse.slots.length === 2 && unrCourse.groups.length >= 2
+      );
+
+      assert('Suite 49: UNR1403 extracted all doctors and TAs in instructors list',
+        unrCourse && unrCourse.instructors.length >= 4 &&
+        unrCourse.instructors.includes("د. هبة محمد عبدالعزيز عبدالرحيم") &&
+        unrCourse.instructors.includes("ابتهال انس محمد محمد البطشة")
+      );
+
+      // Verify sessions have valid days
+      const s0 = unrCourse.slots[0];
+      const s1 = unrCourse.slots[1];
+      assert('Suite 49: Extracted sessions have valid days ("Saturday", "Sunday")',
+        s0.day === 'Saturday' && s1.day === 'Sunday'
+      );
+
+      // Test extractSingleCourseFromMajor helper
+      const singleUNR = ScheduleParser.extractSingleCourseFromMajor(sampleDoctorTaJson, "هندسة الحاسبات", "1", "UNR1403");
+      assert('Suite 49: extractSingleCourseFromMajor returns single course UNR1403 with all groups',
+        singleUNR && singleUNR.code === 'UNR1403' && singleUNR.groups.length >= 2
+      );
+
+      // Test extractSingleCourseFromMajor without dept or period (global search in JSON)
+      const singleCS = ScheduleParser.extractSingleCourseFromMajor(sampleDoctorTaJson, null, null, "CS111");
+      assert('Suite 49: extractSingleCourseFromMajor globally locates CS111 in tree',
+        singleCS && singleCS.code === 'CS111' && singleCS.instructors.includes("د. شريف كمال")
+      );
+
+      // 2. Test searchMajorCourses
+      App.loadMajorJsonData(sampleDoctorTaJson, "Doctor Test College");
+
+      // Search by exact code
+      const searchCodeRes = App.searchMajorCourses("UNR1403");
+      assert('Suite 49: searchMajorCourses("UNR1403") finds UNR1403 as top result',
+        searchCodeRes.length >= 1 && searchCodeRes[0].courseCode === 'UNR1403' && searchCodeRes[0].score === 100
+      );
+
+      // Search by partial name
+      const searchNameRes = App.searchMajorCourses("English");
+      assert('Suite 49: searchMajorCourses("English") matches "Academic English"',
+        searchNameRes.length >= 1 && searchNameRes.some(r => r.courseCode === 'UNR1403')
+      );
+
+      // Search by Arabic instructor name
+      const searchDocRes = App.searchMajorCourses("هبة");
+      assert('Suite 49: searchMajorCourses("هبة") finds course taught by Dr. Heba',
+        searchDocRes.length >= 1 && searchDocRes.some(r => r.courseCode === 'UNR1403')
+      );
+
+      // Search by TA name
+      const searchTaRes = App.searchMajorCourses("ابتهال");
+      assert('Suite 49: searchMajorCourses("ابتهال") finds course with TA Ebtehal',
+        searchTaRes.length >= 1 && searchTaRes.some(r => r.courseCode === 'UNR1403')
+      );
+
+      // 3. Test addMajorCourseToWebsite directly from search result
+      App.addMajorCourseToWebsite("هندسة الحاسبات", "1", "UNR1403");
+      const currentCourses = App.getCourses();
+      assert('Suite 49: addMajorCourseToWebsite adds UNR1403 directly to state.courses',
+        currentCourses.some(c => c.code === 'UNR1403')
+      );
+
+      // Verify course card in DOM has doctor and TA badges rendered
+      const courseCardHtml = document.getElementById('courses-list-container')?.innerHTML || '';
+      assert('Suite 49: Course card displays Doctor badge ("دكاترة" or "Doctors")',
+        courseCardHtml.includes('faculty-badge-type doctor') || courseCardHtml.includes('دكاترة') || courseCardHtml.includes('Doctors')
+      );
+      assert('Suite 49: Course card displays TA badge ("معيدين" or "TAs")',
+        courseCardHtml.includes('faculty-badge-type ta') || courseCardHtml.includes('معيدين') || courseCardHtml.includes('TAs')
+      );
+
+      // 4. Test dropdown rendering
+      App.renderMajorSearchResults(searchCodeRes, "UNR1403");
+      const dropdown = document.getElementById('major-course-search-dropdown');
+      assert('Suite 49: renderMajorSearchResults displays dropdown with matching item',
+        dropdown && dropdown.style.display !== 'none' && dropdown.innerHTML.includes('UNR1403')
+      );
+
+      // 5. Test empty search query hides dropdown
+      App.renderMajorSearchResults([], "");
+      assert('Suite 49: Empty query hides search dropdown',
+        dropdown && dropdown.style.display === 'none'
+      );
+    } catch (err) {
+      assert('Suite 49 executed without throwing error', false, err.stack || err.message);
     }
 
     // Summary

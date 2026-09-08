@@ -133,6 +133,31 @@
             </div>
           </div>
 
+          <!-- Live Subject Search & Quick-Add Bar (Search by name, code, or doctor) -->
+          <div class="major-search-bar-container">
+            <label for="input-major-course-search" class="form-label" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <span>
+                <span style="margin-inline-end: 6px;">🔎</span>
+                <strong data-i18n="searchAddSubjectTitle">Quick Search &amp; Add Subject (بحث وإضافة مادة مباشرة)</strong>
+              </span>
+              <span style="font-size: 0.8rem; color: var(--text-muted);" data-i18n="searchAddSubjectTip">Type course code or name across all departments</span>
+            </label>
+            <div class="major-search-input-wrapper">
+              <span class="major-search-icon">🔍</span>
+              <input type="text"
+                     id="input-major-course-search"
+                     class="major-search-input"
+                     placeholder="Search subject by name or code (e.g. ECE2102, Applied, برمجة, د. هشام)..."
+                     data-i18n-placeholder="searchMajorPlaceholder"
+                     autocomplete="off" />
+              <button type="button" id="btn-clear-major-search" class="major-search-clear" style="display: none;" title="Clear search">✕</button>
+            </div>
+            <!-- Floating Live Results Dropdown Container -->
+            <div id="major-course-search-dropdown" class="major-search-dropdown" style="display: none;">
+              <!-- Populated dynamically by JavaScript -->
+            </div>
+          </div>
+
           <!-- Cascading Selectors: Major, Department, Period -->
           <div class="major-selectors-grid">
             <div class="form-group">

@@ -83,6 +83,12 @@ const App = (() => {
       selectMajorLabel: 'Major / Faculty:',
       selectDeptLabel: 'Department:',
       selectPeriodLabel: 'Period / Term:',
+      searchAddSubjectTitle: 'Quick Search & Add Subject (بحث وإضافة مادة مباشرة)',
+      searchAddSubjectTip: 'Search across all departments by code, name, or doctor',
+      searchMajorPlaceholder: 'Search subject by name or code (e.g. ECE2102, Applied, برمجة, د. هشام)...',
+      searchNoResults: 'No subjects found matching',
+      btnAddSubject: '+ Add Subject',
+      subjectAddedToast: 'Subject added successfully!',
       submitSubjectsBtn: 'Submit Subjects into Website (إدراج المواد في الموقع)',
       loadSubjectsBtn: 'Load All Subjects into Optimizer',
       pasteHtmlTab: 'Paste HTML Code',
@@ -270,6 +276,12 @@ const App = (() => {
       selectMajorLabel: 'الكلية / الدفعة:',
       selectDeptLabel: 'القسم:',
       selectPeriodLabel: 'الفترة / الترم الدراسي:',
+      searchAddSubjectTitle: 'بحث وإضافة مادة مباشرة (Quick Search & Add Subject)',
+      searchAddSubjectTip: 'ابحث في كل الأقسام بكود المادة أو اسمها أو اسم الدكتور',
+      searchMajorPlaceholder: 'ابحث عن مادة بكودها أو اسمها (مثال: ECE2102، Applied، برمجة، د. هشام)...',
+      searchNoResults: 'لم يتم العثور على أي مادة تطابق',
+      btnAddSubject: '+ إضافة المادة',
+      subjectAddedToast: 'تمت إضافة المادة بنجاح!',
       submitSubjectsBtn: 'إدراج المواد في الموقع (Submit Subjects into Website)',
       loadSubjectsBtn: 'تحميل المقررات إلى المنسق ⚡',
       pasteHtmlTab: 'نسخ ولصق كود HTML',
@@ -1958,6 +1970,55 @@ const App = (() => {
     // Prominent Submit Button & Preview Load Button
     document.getElementById('btn-submit-major-subjects')?.addEventListener('click', submitMajorSubjectsToWebsite);
     document.getElementById('btn-load-major-subjects')?.addEventListener('click', submitMajorSubjectsToWebsite);
+
+    // Subject Live Search & Quick Add
+    const searchInput = document.getElementById('input-major-course-search');
+    const searchClear = document.getElementById('btn-clear-major-search');
+    const searchDropdown = document.getElementById('major-course-search-dropdown');
+
+    let searchDebounceTimer = null;
+    searchInput?.addEventListener('input', e => {
+      const val = e.target.value.trim();
+      if (searchClear) searchClear.style.display = val ? 'block' : 'none';
+
+      clearTimeout(searchDebounceTimer);
+      if (!val) {
+        if (searchDropdown) {
+          searchDropdown.style.display = 'none';
+          searchDropdown.innerHTML = '';
+        }
+        return;
+      }
+
+      searchDebounceTimer = setTimeout(() => {
+        const results = searchMajorCourses(val);
+        renderMajorSearchResults(results, val);
+      }, 150);
+    });
+
+    searchClear?.addEventListener('click', () => {
+      if (searchInput) {
+        searchInput.value = '';
+        searchInput.focus();
+      }
+      searchClear.style.display = 'none';
+      if (searchDropdown) {
+        searchDropdown.style.display = 'none';
+        searchDropdown.innerHTML = '';
+      }
+    });
+
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.major-search-bar-container')) {
+        if (searchDropdown) searchDropdown.style.display = 'none';
+      }
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && searchDropdown) {
+        searchDropdown.style.display = 'none';
+      }
+    });
   }
 
   function loadMajorJsonData(jsonData, sourceName = '') {
@@ -2045,6 +2106,238 @@ const App = (() => {
           ? 'إدراج المواد في الموقع (Submit Subjects into Website)'
           : 'Submit Subjects into Website (إدراج المواد في الموقع)';
       }
+    }
+  }
+
+  /**
+   * Search for subjects across all departments & periods in the active major schedule JSON.
+   */
+  function searchMajorCourses(query, maxResults = 25) {
+    if (!state.majorData || !query) return [];
+    const q = String(query).trim().toLowerCase();
+    if (!q) return [];
+
+    const seenMap = new Map(); // key: `${cCode}_${pName}`
+
+    const tree = state.majorData.departmentsTree || {};
+    for (const [dKey, dObj] of Object.entries(tree)) {
+      const deptDisplay = dObj.rawDepartmentLabel || dObj.departmentName || dKey;
+      if (dObj.periods && typeof dObj.periods === 'object') {
+        for (const [pKey, pObj] of Object.entries(dObj.periods)) {
+          const pName = String(pObj.periodName || pKey).trim();
+
+          // Course mode: pObj.courses
+          if (pObj.courses && typeof pObj.courses === 'object') {
+            for (const [cKey, cVal] of Object.entries(pObj.courses)) {
+              const cCode = (cVal.code || cVal.courseCode || cKey).trim();
+              const cName = (cVal.name || cVal.courseName || cCode).trim();
+              if (!cCode) continue;
+
+              const codeLower = cCode.toLowerCase();
+              const nameLower = cName.toLowerCase();
+              const instructors = Array.isArray(cVal.instructors) ? cVal.instructors : [];
+
+              let matched = false;
+              let score = 0;
+
+              if (codeLower === q) {
+                matched = true;
+                score = 100;
+              } else if (codeLower.startsWith(q)) {
+                matched = true;
+                score = 80;
+              } else if (codeLower.includes(q)) {
+                matched = true;
+                score = 65;
+              } else if (nameLower.startsWith(q)) {
+                matched = true;
+                score = 60;
+              } else if (nameLower.includes(q)) {
+                matched = true;
+                score = 50;
+              } else {
+                const matchInst = instructors.some(inst => inst && inst.toLowerCase().includes(q));
+                if (matchInst) {
+                  matched = true;
+                  score = 40;
+                }
+              }
+
+              if (matched) {
+                const itemKey = `${cCode.toUpperCase()}_${pName}`;
+                if (!seenMap.has(itemKey) || seenMap.get(itemKey).score < score) {
+                  const groupsCount = Array.isArray(cVal.groups) ? cVal.groups.length : 0;
+                  const item = {
+                    courseCode: cCode,
+                    courseName: cName,
+                    deptKey: dKey,
+                    deptDisplay: deptDisplay,
+                    periodKey: pName,
+                    groupsCount: groupsCount,
+                    instructors: instructors.filter(i => i && i !== 'Not Specified'),
+                    score: score
+                  };
+                  seenMap.set(itemKey, item);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    const sorted = Array.from(seenMap.values()).sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score;
+      return a.courseCode.localeCompare(b.courseCode);
+    });
+
+    return sorted.slice(0, maxResults);
+  }
+
+  /**
+   * Renders matching subjects in the live search dropdown.
+   */
+  function renderMajorSearchResults(results, query) {
+    const dropdown = document.getElementById('major-course-search-dropdown');
+    if (!dropdown) return;
+
+    const isAr = state.currentLang === 'ar';
+    if (!query || query.trim().length === 0) {
+      dropdown.style.display = 'none';
+      dropdown.innerHTML = '';
+      return;
+    }
+
+    if (results.length === 0) {
+      dropdown.innerHTML = `
+        <div class="major-search-empty">
+          <span>🔍</span> ${isAr ? `لم يتم العثور على مادة تطابق "${query}"` : `No subjects found matching "${query}"`}
+        </div>
+      `;
+      dropdown.style.display = 'block';
+      return;
+    }
+
+    let html = '';
+    results.forEach(r => {
+      const doctors = r.instructors.filter(i => /^(د\.|د\/|د\s+|Dr\.|Dr\s+|Doctor\s+|Prof\.|أ\.د\.?)/i.test(i));
+      const tas = r.instructors.filter(i => !/^(د\.|د\/|د\s+|Dr\.|Dr\s+|Doctor\s+|Prof\.|أ\.د\.?)/i.test(i));
+
+      let instHtml = '';
+      if (doctors.length > 0) {
+        instHtml += `<span>👨‍🏫 ${doctors.slice(0, 2).join(', ')}${doctors.length > 2 ? '...' : ''}</span>`;
+      }
+      if (tas.length > 0) {
+        instHtml += `<span>👨‍💼 ${tas.slice(0, 2).join(', ')}${tas.length > 2 ? '...' : ''}</span>`;
+      }
+
+      const isAlreadyAdded = state.courses.some(c => c.code.toUpperCase() === r.courseCode.toUpperCase());
+      const btnText = isAlreadyAdded
+        ? (isAr ? '✓ مضافة (تحديث)' : '✓ Added (Update)')
+        : (isAr ? '+ إضافة المادة' : '+ Add Subject');
+      const btnClass = isAlreadyAdded ? 'btn-outline' : 'btn-primary';
+
+      html += `
+        <div class="major-search-item" data-code="${r.courseCode}">
+          <div class="major-search-item-info">
+            <div class="major-search-item-header">
+              <span class="major-search-item-code">${r.courseCode}</span>
+              <span class="major-search-item-name">${r.courseName}</span>
+            </div>
+            <div class="major-search-item-meta">
+              <span>🏢 ${r.deptDisplay}</span> •
+              <span>📅 ${isAr ? 'الفترة ' : 'Period '}${r.periodKey}</span> •
+              <span><strong>${r.groupsCount}</strong> ${isAr ? 'مجموعات' : 'groups'}</span>
+            </div>
+            ${instHtml ? `<div class="major-search-item-doctors">${instHtml}</div>` : ''}
+          </div>
+          <button type="button" class="btn btn-sm ${btnClass} btn-add-major-course"
+                  onclick="App.addMajorCourseToWebsite('${encodeURIComponent(r.deptKey)}', '${encodeURIComponent(r.periodKey)}', '${encodeURIComponent(r.courseCode)}')">
+            <span>${btnText}</span>
+          </button>
+        </div>
+      `;
+    });
+
+    dropdown.innerHTML = html;
+    dropdown.style.display = 'block';
+  }
+
+  /**
+   * Directly extracts and adds a course from the loaded major schedule to the website.
+   */
+  function addMajorCourseToWebsite(deptKey, periodKey, courseCode) {
+    const isAr = state.currentLang === 'ar';
+    const decodedDept = decodeURIComponent(deptKey);
+    const decodedPeriod = decodeURIComponent(periodKey);
+    const decodedCode = decodeURIComponent(courseCode);
+
+    if (!state.majorData) {
+      showToast(isAr ? 'يرجى تحميل بيانات الكلية أولاً' : 'Please load college data first', 'warning');
+      return;
+    }
+
+    let extractedCourse = null;
+    if (typeof ScheduleParser !== 'undefined' && ScheduleParser.extractSingleCourseFromMajor) {
+      extractedCourse = ScheduleParser.extractSingleCourseFromMajor(
+        state.majorData,
+        decodedDept,
+        decodedPeriod,
+        decodedCode
+      );
+    }
+
+    if (!extractedCourse) {
+      const exRes = ScheduleParser.extractCoursesFromMajor(state.majorData, decodedDept, decodedPeriod);
+      if (exRes.success && exRes.courses) {
+        extractedCourse = exRes.courses.find(c => c.code.toUpperCase() === decodedCode.toUpperCase());
+      }
+    }
+
+    if (!extractedCourse) {
+      showToast(isAr ? `تعذر استخراج بيانات المادة ${decodedCode}` : `Could not extract course ${decodedCode}`, 'error');
+      return;
+    }
+
+    // Check if already in state.courses
+    const existingIdx = state.courses.findIndex(c => c.code.toUpperCase() === decodedCode.toUpperCase());
+    if (existingIdx >= 0) {
+      state.courses[existingIdx] = JSON.parse(JSON.stringify(extractedCourse));
+    } else {
+      state.courses.push(JSON.parse(JSON.stringify(extractedCourse)));
+    }
+
+    state.isSampleData = false;
+    try { localStorage.setItem('sched_is_sample', 'false'); } catch (e) {}
+
+    // Reset solutions so user can re-run optimizer or pick manually
+    state.solutions = [];
+    state.filteredSolutions = [];
+    state.activeSolutionIndex = 0;
+
+    normalizeCourseDoctorTitles(state.courses);
+    saveStateToStorage();
+    renderCoursesList();
+    renderDoctorPreferences();
+    if (state.currentTab === 'manual') renderManualMode();
+
+    const dropdown = document.getElementById('major-course-search-dropdown');
+    if (dropdown) dropdown.style.display = 'none';
+
+    const searchInput = document.getElementById('input-major-course-search');
+    if (searchInput) searchInput.value = '';
+    const clearBtn = document.getElementById('btn-clear-major-search');
+    if (clearBtn) clearBtn.style.display = 'none';
+
+    const groupsCount = (extractedCourse.groups || []).length;
+    const toastMsg = isAr
+      ? `تمت إضافة مادة ${extractedCourse.name} (${extractedCourse.code}) بـ ${groupsCount} مجموعة إلى الموقع بنجاح! ⚡`
+      : `Successfully added ${extractedCourse.name} (${extractedCourse.code}) with ${groupsCount} groups to the website! ⚡`;
+    showToast(toastMsg, 'success');
+
+    const coursesContainer = document.getElementById('courses-list-container');
+    if (coursesContainer) {
+      coursesContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
@@ -2410,6 +2703,59 @@ const App = (() => {
       const instructorsCount = (c.instructors || []).length;
       const groupsTags = (c.groups || []).slice(0, 8).map(g => `<span class="mini-group-tag">Grp ${g.group}</span>`).join('');
 
+      // Collect all instructors from course, groups, and sessions
+      const allInstSet = new Set(c.instructors || []);
+      if (c.groups) {
+        c.groups.forEach(g => {
+          (g.instructors || []).forEach(i => {
+            if (i && !isUnspecifiedDoctor(i)) allInstSet.add(i);
+          });
+          (g.sessions || []).forEach(s => {
+            if (s.instructor && !isUnspecifiedDoctor(s.instructor)) allInstSet.add(s.instructor);
+          });
+        });
+      }
+      if (c.slots) {
+        c.slots.forEach(s => {
+          if (s.instructor && !isUnspecifiedDoctor(s.instructor)) allInstSet.add(s.instructor);
+        });
+      }
+
+      const docsList = [];
+      const tasList = [];
+      allInstSet.forEach(inst => {
+        if (isUnspecifiedDoctor(inst)) return;
+        if (isPersonDoctor(inst, c)) {
+          docsList.push(formatDoctorName(inst, true));
+        } else {
+          tasList.push(inst);
+        }
+      });
+
+      docsList.sort((a, b) => getCleanSortName(a).localeCompare(getCleanSortName(b), 'ar'));
+      tasList.sort((a, b) => getCleanSortName(a).localeCompare(getCleanSortName(b), 'ar'));
+
+      const isAr = state.currentLang === 'ar';
+      const docBadgeLabel = isAr ? 'دكاترة' : 'Doctors';
+      const taBadgeLabel = isAr ? 'معيدين' : 'TAs';
+
+      const facultyHtml = (docsList.length > 0 || tasList.length > 0) ? `
+        <div class="course-faculty-badges">
+          ${docsList.length > 0 ? `
+            <div class="faculty-badge-row">
+              <span class="faculty-badge-type doctor">👨‍🏫 ${docBadgeLabel}:</span>
+              <span class="faculty-names-list">${docsList.map(d => `<span class="faculty-tag doc-tag">${d}</span>`).join('')}</span>
+            </div>
+          ` : ''}
+          ${tasList.length > 0 ? `
+            <div class="faculty-badge-row">
+              <span class="faculty-badge-type ta">👨‍💼 ${taBadgeLabel}:</span>
+              <span class="faculty-names-list">${tasList.map(t => `<span class="faculty-tag ta-tag">${t}</span>`).join('')}</span>
+            </div>
+          ` : ''}
+        </div>
+      ` : '';
+
       html += `
         <div class="course-item-card" style="border-top: 4px solid ${c.color || '#3B82F6'};">
           <div class="course-item-header">
@@ -2422,10 +2768,11 @@ const App = (() => {
             </button>
           </div>
           <div class="course-stats-line">
-            <span><strong>${groupsCount}</strong> ${state.currentLang === 'ar' ? 'مجموعات' : 'Groups'}</span> •
-            <span><strong>${instructorsCount}</strong> ${state.currentLang === 'ar' ? 'أعضاء هيئة تدريس' : 'Faculty/Staff'}</span>
+            <span><strong>${groupsCount}</strong> ${isAr ? 'مجموعات' : 'Groups'}</span> •
+            <span><strong>${allInstSet.size}</strong> ${isAr ? 'أعضاء هيئة تدريس' : 'Faculty/Staff'}</span>
           </div>
           <div class="groups-pill-preview">${groupsTags}${groupsCount > 8 ? `<span class="mini-group-tag">+${groupsCount - 8}</span>` : ''}</div>
+          ${facultyHtml}
         </div>
       `;
     });
@@ -6639,6 +6986,9 @@ const App = (() => {
     fetchPublicCatalog,
     fetchMajorFile,
     syncFromPublicRepo,
+    searchMajorCourses,
+    renderMajorSearchResults,
+    addMajorCourseToWebsite,
     getMajorCatalog: () => state.majorCatalog,
     getMajorData: () => state.majorData,
     getSelectedDepartment: () => state.selectedDepartment,

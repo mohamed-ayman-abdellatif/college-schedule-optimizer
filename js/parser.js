@@ -1460,13 +1460,34 @@ const ScheduleParser = (() => {
                     const cName = (cVal.name || cVal.courseName || cCode).trim();
                     if (!cCode) continue;
 
-                    if (Array.isArray(cVal.groups) && cVal.groups.length > 0) {
-                      cVal.groups.forEach(grp => {
-                        const gName = grp.group || grp.groupCode || grp.name || 'Group_1';
-                        totalGroupsFound++;
-                        (grp.sessions || []).forEach(sess => {
-                          const normDay = normalizeDay(sess.day);
-                          if (!normDay) return;
+                    // Ensure course entry is initialized
+                    if (!coursesMap.has(cCode)) {
+                      coursesMap.set(cCode, {
+                        id: cCode,
+                        code: cCode,
+                        name: cName || cCode,
+                        color: colorMap[cCode] || generateCourseColor(cCode),
+                        groupsMap: new Map(),
+                        instructorsSet: new Set(),
+                        slots: []
+                      });
+                    }
+                    const c = coursesMap.get(cCode);
+                    if (Array.isArray(cVal.instructors)) {
+                      cVal.instructors.forEach(inst => {
+                        if (inst && inst !== 'Not Specified') c.instructorsSet.add(inst);
+                      });
+                    }
+
+                    // A) Extract sessions from cVal.schedule if present
+                    if (Array.isArray(cVal.schedule) && cVal.schedule.length > 0) {
+                      cVal.schedule.forEach(dayItem => {
+                        const normDay = normalizeDay(dayItem.day);
+                        if (!normDay) return;
+
+                        (dayItem.sessions || []).forEach(sess => {
+                          const gName = sess.group || 'Group_1';
+                          totalGroupsFound++;
 
                           let startSlot = sess.startSlot;
                           let endSlot = sess.endSlot;
@@ -1512,14 +1533,85 @@ const ScheduleParser = (() => {
                           });
                         });
                       });
+                    }
 
-                      if (coursesMap.has(cCode) && Array.isArray(cVal.instructors)) {
-                        const c = coursesMap.get(cCode);
-                        cVal.instructors.forEach(inst => {
-                          if (inst && inst !== 'Not Specified') c.instructorsSet.add(inst);
-                        });
-                      }
-                    } else if (Array.isArray(cVal.schedule) && cVal.schedule.length > 0) {
+                    // B) Process cVal.groups to register group meta, instructors, and any sessions
+                    if (Array.isArray(cVal.groups) && cVal.groups.length > 0) {
+                      cVal.groups.forEach(grp => {
+                        const gName = grp.group || grp.groupCode || grp.name || 'Group_1';
+                        if (!c.groupsMap.has(gName)) {
+                          c.groupsMap.set(gName, {
+                            group: gName,
+                            sessions: [],
+                            hasLecture: !!grp.hasLecture,
+                            hasLab: !!grp.hasLab,
+                            instructors: new Set()
+                          });
+                        }
+                        const g = c.groupsMap.get(gName);
+                        if (grp.hasLecture) g.hasLecture = true;
+                        if (grp.hasLab) g.hasLab = true;
+                        if (Array.isArray(grp.instructors)) {
+                          grp.instructors.forEach(inst => {
+                            if (inst && inst !== 'Not Specified') {
+                              g.instructors.add(inst);
+                              c.instructorsSet.add(inst);
+                            }
+                          });
+                        }
+
+                        // If no sessions were added yet for this group, add from grp.sessions
+                        if (g.sessions.length === 0 && Array.isArray(grp.sessions)) {
+                          grp.sessions.forEach(sess => {
+                            const normDay = normalizeDay(sess.day);
+                            if (!normDay) return;
+
+                            let startSlot = sess.startSlot;
+                            let endSlot = sess.endSlot;
+                            let duration = sess.duration;
+                            if (!startSlot || !endSlot) {
+                              const slotCoords = mapSlotToGridMatrix(
+                                sess.slotIndex,
+                                sess.slotName || sess.timeSlot,
+                                sess.colspan || 1,
+                                4
+                              );
+                              startSlot = slotCoords.startSlot;
+                              endSlot = slotCoords.endSlot;
+                              duration = slotCoords.duration;
+                            }
+                            if (!duration) duration = (endSlot - startSlot + 1);
+
+                            let t = sess.type || 'Lect.';
+                            if (/lab\.?|معمل/i.test(t)) t = 'Lab.';
+                            else if (/sec\.?|سكشن|تمارين/i.test(t)) t = 'Sec.';
+                            else if (/lect\.?|محاضرة/i.test(t)) t = 'Lect.';
+
+                            let inst = sess.instructor || '';
+                            if (t === 'Lect.' && inst && inst !== 'Not Specified') {
+                              if (!/^(د\.|د\/|د\s+|Dr\.|Dr\s+|Doctor\s+|Prof\.|أ\.د\.?)/i.test(inst)) {
+                                const isAr = /[\u0600-\u06FF]/.test(inst);
+                                inst = (isAr ? 'د. ' : 'Dr. ') + inst;
+                              }
+                            }
+
+                            addSessionToCourse({
+                              courseCode: cCode,
+                              courseName: cName,
+                              groupCode: gName,
+                              type: t,
+                              day: normDay,
+                              startSlot: startSlot,
+                              endSlot: endSlot,
+                              duration: duration,
+                              instructor: inst || 'Not Specified',
+                              room: sess.room || '',
+                              color: sess.bgColor || colorMap[cCode] || generateCourseColor(cCode)
+                            });
+                          });
+                        }
+                      });
+                    } else if (c.slots.length === 0 && Array.isArray(cVal.schedule) && cVal.schedule.length > 0) {
                       processScheduleDays(
                         cVal.group || cVal.name || cKey,
                         cVal.schedule,
@@ -1800,6 +1892,46 @@ const ScheduleParser = (() => {
     };
   }
 
+  /**
+   * Extracts a single course with all its groups and sessions from a major schedule JSON.
+   */
+  function extractSingleCourseFromMajor(jsonData, deptName, periodKey, courseCode) {
+    if (!jsonData || !courseCode) return null;
+    const cleanCode = String(courseCode).trim().toUpperCase();
+
+    // 1. If deptName and periodKey provided, extract from that department/period
+    if (deptName && periodKey) {
+      const result = extractCoursesFromMajor(jsonData, deptName, periodKey);
+      if (result.success && result.courses) {
+        const found = result.courses.find(c => c.code.toUpperCase() === cleanCode || c.id.toUpperCase() === cleanCode);
+        if (found) return found;
+      }
+    }
+
+    // 2. Otherwise search across all departments and periods
+    const tree = jsonData.departmentsTree || {};
+    for (const [dKey, dObj] of Object.entries(tree)) {
+      if (dObj.periods && typeof dObj.periods === 'object') {
+        for (const [pKey, pObj] of Object.entries(dObj.periods)) {
+          if (pObj.courses && typeof pObj.courses === 'object') {
+            for (const [cKey, cVal] of Object.entries(pObj.courses)) {
+              const cCode = (cVal.code || cVal.courseCode || cKey).trim().toUpperCase();
+              if (cCode === cleanCode) {
+                const res = extractCoursesFromMajor(jsonData, dKey, pObj.periodName || pKey);
+                if (res.success && res.courses) {
+                  const match = res.courses.find(c => c.code.toUpperCase() === cleanCode || c.id.toUpperCase() === cleanCode);
+                  if (match) return match;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    return null;
+  }
+
   return {
     parseHtml,
     detectScheduleType,
@@ -1814,6 +1946,7 @@ const ScheduleParser = (() => {
     getMajorDepartments,
     getMajorPeriodsForDepartment,
     extractCoursesFromMajor,
+    extractSingleCourseFromMajor,
     mapSlotToGridMatrix,
     isDepartmentMatch
   };
