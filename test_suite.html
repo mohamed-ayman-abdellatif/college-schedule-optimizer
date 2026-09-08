@@ -13,10 +13,12 @@
     <div id="guide-modal"></div>
     <button id="btn-theme-toggle"></button>
     <button id="btn-lang-toggle"></button>
+    <span id="major-active-title"></span>
+    <span id="major-active-subtitle"></span>
     <select id="select-major-college"></select>
     <select id="select-major-department"></select>
     <select id="select-major-period" disabled></select>
-    <input type="text" id="input-major-course-search" />
+    <input type="text" id="input-major-course-search" disabled />
     <button id="btn-clear-major-search"></button>
     <div id="major-course-search-dropdown"></div>
     <button id="btn-submit-major-subjects"><span id="btn-submit-major-subjects-text"></span></button>
@@ -2464,9 +2466,8 @@ ME D Abdelgawad Matar
       ScheduleParser.isCatalogManifest(SampleScheduleData.DEFAULT_MAJOR_CATALOG) === true
     );
     const parsedDefaultCat = ScheduleParser.parseCatalogManifest(SampleScheduleData.DEFAULT_MAJOR_CATALOG);
-    assert('DEFAULT_MAJOR_CATALOG contains Faculty of Engineering as defaultMajorId and at least 2 majors',
+    assert('DEFAULT_MAJOR_CATALOG is loaded and contains at least 2 majors',
       parsedDefaultCat &&
-      parsedDefaultCat.defaultMajorId === 'engineering_heliopolis_2026_term1' &&
       parsedDefaultCat.majors.length >= 2
     );
 
@@ -2649,42 +2650,65 @@ ME D Abdelgawad Matar
     const mechaP3 = ScheduleParser.extractCoursesFromMajor(enrichedEngJson, 'هندسة ميكانيكية-ق م', '3');
     const civilP3 = ScheduleParser.extractCoursesFromMajor(enrichedEngJson, 'هندسة التشيد والبناء ق.م', '3');
     const archP3 = ScheduleParser.extractCoursesFromMajor(enrichedEngJson, 'هندسة معمارية ق.م', '3');
-    const mechaP8 = ScheduleParser.extractCoursesFromMajor(enrichedEngJson, 'هندسة ميكانيكية-ق م', '8');
+    const mechaP5 = ScheduleParser.extractCoursesFromMajor(enrichedEngJson, 'هندسة ميكانيكية-ق م', '5');
 
-    assert('Computer Engineering subjects are distinct from Electronics (CSE2101 vs ECE2102)',
-      compP3.courses.some(c => c.code === 'CSE2101') && !elecCourses.courses.some(c => c.code === 'CSE2101')
+    assert('Computer Engineering subjects are distinct from Electronics (ECE2102 vs ECE2212)',
+      compP3.courses.some(c => c.code === 'ECE2102') && !elecCourses.courses.some(c => c.code === 'ECE2102')
     );
-    assert('Mechanical Engineering subjects are distinct from Computer (ME2101 Thermodynamics vs CSE2101)',
-      mechaP3.courses.some(c => c.code === 'ME2101') && !compP3.courses.some(c => c.code === 'ME2101')
+    assert('Mechanical Engineering subjects are distinct from Computer (EME2302 Thermodynamics vs ECE2102)',
+      mechaP3.courses.some(c => c.code === 'EME2302') && !compP3.courses.some(c => c.code === 'EME2302')
     );
-    assert('Civil Engineering subjects are distinct from Mechanical (CV2101 Structural Analysis vs ME2101)',
-      civilP3.courses.some(c => c.code === 'CV2101') && !mechaP3.courses.some(c => c.code === 'CV2101')
+    assert('Civil Engineering subjects are distinct from Mechanical (ECB2701 Surveying vs EME2302)',
+      civilP3.courses.some(c => c.code === 'ECB2701') && !mechaP3.courses.some(c => c.code === 'ECB2701')
     );
-    assert('Architectural Engineering subjects are distinct from Civil (ARC2101 Design Studio vs CV2101)',
-      archP3.courses.some(c => c.code === 'ARC2101') && !civilP3.courses.some(c => c.code === 'ARC2101')
+    assert('Architectural Engineering subjects are distinct from Civil (EAR2211 Building Tech vs ECB2701)',
+      archP3.courses.some(c => c.code === 'EAR2211') && !civilP3.courses.some(c => c.code === 'EAR2211')
     );
-    assert('Mechanical Engineering Period 8 has Mechatronics & Vibrations subjects (ME4101, MEC4104)',
-      mechaP8.success === true && mechaP8.courses.some(c => c.code === 'ME4101') && mechaP8.courses.some(c => c.code === 'MEC4104')
+    assert('Mechanical Engineering Period 5 has Fluid Mechanics & Heat Transfer subjects (EME3601, EME3304)',
+      mechaP5.success === true && mechaP5.courses.some(c => c.code === 'EME3601') && mechaP5.courses.some(c => c.code === 'EME3304')
     );
 
     // 47: Cascading Dropdowns & Controlled Course Submission
     try {
       try {
         localStorage.removeItem('sched_courses');
+        localStorage.removeItem('sched_major_id');
         localStorage.removeItem('sched_major_json');
       } catch(e) {}
       App.init();
 
+      const collegeEl = document.getElementById('select-major-college');
       const deptEl = document.getElementById('select-major-department');
       const periodEl = document.getElementById('select-major-period');
+      const searchInputEl = document.getElementById('input-major-course-search');
 
       assert('Suite 47: Initial website courses count is 0 for new visitors',
         App.getCourses().length === 0
       );
+      assert('Suite 47: Major college select starts on empty choose-faculty placeholder',
+        collegeEl && collegeEl.value === '' && App.getSelectedMajorId() === ''
+      );
+      assert('Suite 47: Department select is initially disabled on startup',
+        deptEl && deptEl.disabled === true
+      );
+      assert('Suite 47: Period select is initially disabled on startup',
+        periodEl && periodEl.disabled === true
+      );
+      assert('Suite 47: Quick search input is initially disabled on startup',
+        searchInputEl && searchInputEl.disabled === true
+      );
+
+      // Now load Engineering faculty
+      App.loadMajorJsonData(SampleScheduleData.DEFAULT_MAJOR_SCHEDULE_JSON, 'Engineering');
+      if (collegeEl) collegeEl.value = 'Engineering';
+
+      assert('Suite 47: Loading faculty sets selectedMajorId and enables department select',
+        App.getSelectedMajorId() === 'Engineering' && deptEl && deptEl.disabled === false
+      );
       assert('Suite 47: Department select starts on empty choose-department placeholder',
         deptEl && deptEl.value === ''
       );
-      assert('Suite 47: Period select is initially disabled on startup',
+      assert('Suite 47: Period select is still disabled until department is chosen',
         periodEl && periodEl.disabled === true
       );
 
@@ -2706,22 +2730,22 @@ ME D Abdelgawad Matar
         App.getCourses().length === 0
       );
 
-      // Period options for Mechanical include 8 and 3
+      // Period options for Mechanical include 5 and 3
       const pOpts = periodEl ? Array.from(periodEl.options).map(o => o.value).filter(Boolean) : [];
-      assert('Suite 47: Mechanical Engineering periods contain Period 8 and 3',
-        pOpts.includes('8') && pOpts.includes('3')
+      assert('Suite 47: Mechanical Engineering periods contain Period 5 and 3',
+        pOpts.includes('5') && pOpts.includes('3')
       );
 
-      // Select Period 8
-      if (periodEl) periodEl.value = '8';
-      App.onMajorPeriodChange('8');
+      // Select Period 5
+      if (periodEl) periodEl.value = '5';
+      App.onMajorPeriodChange('5');
 
-      const discCoursesP8 = App.getDiscoveredMajorCourses();
-      assert('Suite 47: Selecting Period 8 discovers Mechanical Senior subjects (ME4101)',
-        discCoursesP8.length > 0 && discCoursesP8.some(c => c.code === 'ME4101')
+      const discCoursesP5 = App.getDiscoveredMajorCourses();
+      assert('Suite 47: Selecting Period 5 discovers Mechanical subjects (EME3601)',
+        discCoursesP5.length > 0 && discCoursesP5.some(c => c.code === 'EME3601')
       );
-      assert('Suite 47: Discovered Period 8 subjects contain NO Computer Engineering courses',
-        !discCoursesP8.some(c => c.code === 'CSE2101' || c.code === 'ECE2102' || c.code === 'EEE2304')
+      assert('Suite 47: Discovered Period 5 subjects contain NO Computer Engineering courses',
+        !discCoursesP5.some(c => c.code === 'ECE2102' || c.code === 'ECE2201' || c.code === 'ECE3203')
       );
       assert('Suite 47: Website courses STILL 0 before clicking submit button',
         App.getCourses().length === 0
@@ -2730,7 +2754,7 @@ ME D Abdelgawad Matar
       // Submit Mechanical subjects
       App.submitMajorSubjectsToWebsite();
       assert('Suite 47: Website courses populated after clicking Submit button',
-        App.getCourses().length === discCoursesP8.length && App.getCourses().some(c => c.code === 'ME4101')
+        App.getCourses().length === discCoursesP5.length && App.getCourses().some(c => c.code === 'EME3601')
       );
 
       // Switch department to Architecture
@@ -2746,14 +2770,14 @@ ME D Abdelgawad Matar
       if (periodEl) periodEl.value = '3';
       App.onMajorPeriodChange('3');
       const discArchCourses = App.getDiscoveredMajorCourses();
-      assert('Suite 47: Architecture Period 3 discovers ARC2101 and NO CE courses (ECE2102/EEE2304)',
-        discArchCourses.some(c => c.code === 'ARC2101') && !discArchCourses.some(c => c.code === 'ECE2102' || c.code === 'EEE2304')
+      assert('Suite 47: Architecture Period 3 discovers EAR2211 and NO CE courses (ECE2102/EEE2304)',
+        discArchCourses.some(c => c.code === 'EAR2211') && !discArchCourses.some(c => c.code === 'ECE2102' || c.code === 'EEE2304')
       );
 
       // Submit Architecture subjects
       App.submitMajorSubjectsToWebsite();
-      assert('Suite 47: Submitting Architecture replaces website courses with ARC2101',
-        App.getCourses().some(c => c.code === 'ARC2101') && !App.getCourses().some(c => c.code === 'ME4101')
+      assert('Suite 47: Submitting Architecture replaces website courses with EAR2211',
+        App.getCourses().some(c => c.code === 'EAR2211') && !App.getCourses().some(c => c.code === 'EME3601')
       );
     } catch (err) {
       assert('Suite 47 executed without throwing error', false, err.stack || err.message);
@@ -3226,6 +3250,132 @@ ME D Abdelgawad Matar
       );
     } catch (err) {
       assert('Suite 49 executed without throwing error', false, err.stack || err.message);
+    }
+
+    // ============================================================
+    // SUITE 50: Choose Faculty Default State, Disabled Cascades, Reset & Language Toggling
+    // ============================================================
+    try {
+      // 1. Clean startup (no saved faculty in localStorage)
+      try {
+        localStorage.removeItem('sched_courses');
+        localStorage.removeItem('sched_major_id');
+        localStorage.removeItem('sched_major_json');
+      } catch (e) {}
+      App.init();
+
+      const collegeEl = document.getElementById('select-major-college');
+      const deptEl = document.getElementById('select-major-department');
+      const periodEl = document.getElementById('select-major-period');
+      const searchInputEl = document.getElementById('input-major-course-search');
+      const titleEl = document.getElementById('major-active-title');
+      const subEl = document.getElementById('major-active-subtitle');
+
+      assert('Suite 50: Initial selected major ID is empty string on clean startup',
+        App.getSelectedMajorId() === ''
+      );
+      assert('Suite 50: Initial major data is null on clean startup (no JSON loaded)',
+        App.getMajorData() === null
+      );
+      assert('Suite 50: College dropdown has value "" on clean startup',
+        collegeEl && collegeEl.value === ''
+      );
+      assert('Suite 50: First option in college dropdown has empty value and choose faculty text',
+        collegeEl && collegeEl.options.length > 0 && collegeEl.options[0].value === '' &&
+        (collegeEl.options[0].textContent.includes('Choose Faculty') || collegeEl.options[0].textContent.includes('اختر الكلية'))
+      );
+      assert('Suite 50: Department dropdown is disabled on startup',
+        deptEl && deptEl.disabled === true
+      );
+      assert('Suite 50: Period dropdown is disabled on startup',
+        periodEl && periodEl.disabled === true
+      );
+      assert('Suite 50: Quick search input is disabled on startup',
+        searchInputEl && searchInputEl.disabled === true
+      );
+      assert('Suite 50: Quick search input has select faculty first placeholder',
+        searchInputEl && searchInputEl.placeholder.length > 0 &&
+        (searchInputEl.placeholder.includes('faculty') || searchInputEl.placeholder.includes('كلية'))
+      );
+      assert('Suite 50: Active banner shows No Faculty Selected',
+        titleEl && (titleEl.textContent.includes('No Faculty Selected') || titleEl.textContent.includes('لم يتم اختيار كلية'))
+      );
+
+      // 2. Select faculty
+      App.loadMajorJsonData(SampleScheduleData.DEFAULT_MAJOR_SCHEDULE_JSON, 'Engineering');
+      if (collegeEl) collegeEl.value = 'Engineering';
+
+      assert('Suite 50: After selecting faculty, getSelectedMajorId returns Engineering',
+        App.getSelectedMajorId() === 'Engineering'
+      );
+      assert('Suite 50: After selecting faculty, getMajorData is loaded',
+        App.getMajorData() !== null
+      );
+      assert('Suite 50: After selecting faculty, department select is enabled',
+        deptEl && deptEl.disabled === false
+      );
+      assert('Suite 50: After selecting faculty, quick search input is enabled',
+        searchInputEl && searchInputEl.disabled === false
+      );
+      assert('Suite 50: After selecting faculty, active banner updates with faculty title',
+        titleEl && titleEl.textContent.includes('كلية الهندسة')
+      );
+
+      // 3. Reset faculty back to "" (simulating user selecting "-- Choose Faculty --")
+      App.resetMajorSelectionState();
+
+      assert('Suite 50: resetMajorSelectionState sets selectedMajorId to empty string',
+        App.getSelectedMajorId() === ''
+      );
+      assert('Suite 50: resetMajorSelectionState sets majorData to null',
+        App.getMajorData() === null
+      );
+      assert('Suite 50: resetMajorSelectionState resets college select value to ""',
+        collegeEl && collegeEl.value === ''
+      );
+      assert('Suite 50: resetMajorSelectionState disables department select',
+        deptEl && deptEl.disabled === true
+      );
+      assert('Suite 50: resetMajorSelectionState disables period select',
+        periodEl && periodEl.disabled === true
+      );
+      assert('Suite 50: resetMajorSelectionState disables quick search input',
+        searchInputEl && searchInputEl.disabled === true
+      );
+      assert('Suite 50: resetMajorSelectionState removes sched_major_id from localStorage',
+        localStorage.getItem('sched_major_id') === null
+      );
+      assert('Suite 50: resetMajorSelectionState removes sched_major_json from localStorage',
+        localStorage.getItem('sched_major_json') === null
+      );
+      assert('Suite 50: resetMajorSelectionState restores banner to No Faculty Selected',
+        titleEl && (titleEl.textContent.includes('No Faculty Selected') || titleEl.textContent.includes('لم يتم اختيار كلية'))
+      );
+
+      // 4. Test Language translation on "-- Choose Faculty --"
+      App.setLanguage('ar');
+      assert('Suite 50: In Arabic mode, choose faculty option displays اختر الكلية',
+        collegeEl && collegeEl.options.length > 0 && collegeEl.options[0].textContent.includes('اختر الكلية')
+      );
+      assert('Suite 50: In Arabic mode, banner shows لم يتم اختيار كلية',
+        titleEl && titleEl.textContent.includes('لم يتم اختيار كلية')
+      );
+      assert('Suite 50: In Arabic mode, search placeholder shows اختر الكلية أولاً',
+        searchInputEl && searchInputEl.placeholder.includes('اختر الكلية أولاً')
+      );
+
+      App.setLanguage('en');
+      assert('Suite 50: In English mode, choose faculty option displays -- Choose Faculty --',
+        collegeEl && collegeEl.options.length > 0 && collegeEl.options[0].textContent.includes('-- Choose Faculty --')
+      );
+      assert('Suite 50: In English mode, banner shows No Faculty Selected',
+        titleEl && titleEl.textContent.includes('No Faculty Selected')
+      );
+      assert('Suite 50: In English mode, search placeholder shows Select a faculty first',
+        searchInputEl && searchInputEl.placeholder.includes('Select a faculty first')
+      );
+    } catch (err) {
+      assert('Suite 50 executed without throwing error', false, err.stack || err.message);
     }
 
     // Summary

@@ -111,12 +111,12 @@
               <span class="major-icon">🏛️</span>
               <div>
                 <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-                  <span id="major-active-title" class="major-title-text">College of Computing &amp; Information Technology</span>
+                  <span id="major-active-title" class="major-title-text" data-i18n="noFacultySelectedTitle">No Faculty Selected</span>
                   <span id="repo-cloud-pill" class="repo-status-pill is-online" title="github.com/mohamed-ayman-abdellatif/college-schedules-data">
                     <span>🟢</span> <span data-i18n="connectedCloudBadge">Public Cloud Database</span>
                   </span>
                 </div>
-                <div id="major-active-subtitle" class="major-subtitle-text">Semester 1 2026/2027 • 7 Departments Available</div>
+                <div id="major-active-subtitle" class="major-subtitle-text" data-i18n="noFacultySelectedSubtitle">Please choose a faculty from the dropdown below</div>
               </div>
             </div>
             <div class="major-upload-actions">
@@ -147,9 +147,10 @@
               <input type="text"
                      id="input-major-course-search"
                      class="major-search-input"
-                     placeholder="Search subject by name or code (e.g. ECE2102, Applied, برمجة, د. هشام)..."
-                     data-i18n-placeholder="searchMajorPlaceholder"
-                     autocomplete="off" />
+                     placeholder="Select a faculty first to search subjects..."
+                     data-i18n-placeholder="searchFacultyPlaceholderDisabled"
+                     autocomplete="off"
+                     disabled />
               <button type="button" id="btn-clear-major-search" class="major-search-clear" style="display: none;" title="Clear search">✕</button>
             </div>
             <!-- Floating Live Results Dropdown Container -->
@@ -165,7 +166,7 @@
                 <span>🎓</span> <span data-i18n="selectMajorLabel">Major / Faculty:</span>
               </label>
               <select id="select-major-college" class="select-input">
-                <!-- Options populated dynamically -->
+                <option value="" data-i18n="chooseFacultyOption">-- Choose Faculty --</option>
               </select>
             </div>
 
@@ -173,7 +174,7 @@
               <label for="select-major-department" class="form-label">
                 <span>🏢</span> <span data-i18n="selectDeptLabel">Department:</span>
               </label>
-              <select id="select-major-department" class="select-input">
+              <select id="select-major-department" class="select-input" disabled>
                 <option value="">-- Choose Department (اختر القسم) --</option>
               </select>
             </div>

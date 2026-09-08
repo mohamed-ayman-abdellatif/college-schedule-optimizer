@@ -81,6 +81,11 @@ const App = (() => {
       cloudSyncedSuccess: 'Schedules catalog updated from public repository! 🌐',
       cloudSyncFailed: 'Could not reach public repository. Using local database.',
       selectMajorLabel: 'Major / Faculty:',
+      chooseFacultyOption: '-- Choose Faculty --',
+      noFacultySelectedTitle: 'No Faculty Selected',
+      noFacultySelectedSubtitle: 'Please choose a faculty from the dropdown below',
+      searchFacultyPlaceholderDisabled: 'Select a faculty first to search subjects...',
+      selectFacultyFirstToast: 'Please choose a faculty first',
       selectDeptLabel: 'Department:',
       selectPeriodLabel: 'Period / Term:',
       searchAddSubjectTitle: 'Quick Search & Add Subject (بحث وإضافة مادة مباشرة)',
@@ -274,6 +279,11 @@ const App = (() => {
       cloudSyncedSuccess: 'تم تحديث دليل الجداول بنجاح من المستودع العام! 🌐',
       cloudSyncFailed: 'تعذر الاتصال بالمستودع العام. يتم استخدام قاعدة البيانات المحلية.',
       selectMajorLabel: 'الكلية / الدفعة:',
+      chooseFacultyOption: 'اختر الكلية',
+      noFacultySelectedTitle: 'لم يتم اختيار كلية',
+      noFacultySelectedSubtitle: 'يرجى اختيار الكلية من القائمة أدناه',
+      searchFacultyPlaceholderDisabled: 'اختر الكلية أولاً للبحث في المقررات...',
+      selectFacultyFirstToast: 'يرجى اختيار الكلية أولاً',
       selectDeptLabel: 'القسم:',
       selectPeriodLabel: 'الفترة / الترم الدراسي:',
       searchAddSubjectTitle: 'بحث وإضافة مادة مباشرة (Quick Search & Add Subject)',
@@ -717,6 +727,12 @@ const App = (() => {
     // Refresh live stats formatting with new locale
     if (window.SiteAnalytics && typeof window.SiteAnalytics.updateUI === 'function') {
       window.SiteAnalytics.updateUI();
+    }
+
+    populateMajorCollegeSelector();
+    updateMajorSelectionUIState(Boolean(state.selectedMajorId && state.majorData));
+    if (state.majorData) {
+      populateMajorDepartmentSelector();
     }
 
     updateStrictDoctorToggleLabel();
@@ -1748,8 +1764,10 @@ const App = (() => {
     if (!majorSelect) return;
 
     const isAr = state.currentLang === 'ar';
+    const chooseText = isAr ? TRANSLATIONS.ar.chooseFacultyOption : TRANSLATIONS.en.chooseFacultyOption;
+
     if (state.majorCatalog && Array.isArray(state.majorCatalog.majors) && state.majorCatalog.majors.length > 0) {
-      let html = '';
+      let html = `<option value="" data-i18n="chooseFacultyOption">${chooseText}</option>`;
       state.majorCatalog.majors.forEach(m => {
         const label = isAr ? m.title : (m.titleEn || m.title);
         const termLabel = m.semester ? ` (${isAr ? m.semester : (m.semesterEn || m.semester)})` : '';
@@ -1757,23 +1775,141 @@ const App = (() => {
       });
       majorSelect.innerHTML = html;
 
-      // Select active or default
-      if (state.selectedMajorId) {
+      // Select active if explicitly set, otherwise default to empty ("-- Choose Faculty --")
+      if (state.selectedMajorId && state.majorCatalog.majors.some(m => m.id === state.selectedMajorId)) {
         majorSelect.value = state.selectedMajorId;
-      } else if (state.majorCatalog.defaultMajorId) {
-        majorSelect.value = state.majorCatalog.defaultMajorId;
-        state.selectedMajorId = state.majorCatalog.defaultMajorId;
+      } else if (state.majorData && state.selectedMajorId) {
+        const customTitle = state.selectedMajor || (state.majorData.metadata && state.majorData.metadata.exportTitle) || state.selectedMajorId;
+        const opt = document.createElement('option');
+        opt.value = state.selectedMajorId;
+        opt.textContent = customTitle;
+        opt.selected = true;
+        majorSelect.appendChild(opt);
+        majorSelect.value = state.selectedMajorId;
+      } else {
+        majorSelect.value = '';
+        state.selectedMajorId = '';
       }
     } else if (state.majorData) {
       const meta = ScheduleParser.getMajorMetadata(state.majorData);
-      majorSelect.innerHTML = `<option value="${meta.title}">${meta.title}</option>`;
+      majorSelect.innerHTML = `<option value="" data-i18n="chooseFacultyOption">${chooseText}</option><option value="${state.selectedMajorId || meta.title}" selected>${state.selectedMajor || meta.title}</option>`;
+    } else {
+      majorSelect.innerHTML = `<option value="" data-i18n="chooseFacultyOption">${chooseText}</option>`;
+      majorSelect.value = '';
+      state.selectedMajorId = '';
     }
+  }
+
+  /**
+   * Synchronizes UI banner, quick search, department & period dropdown states based on whether a faculty is selected
+   */
+  function updateMajorSelectionUIState(hasMajor) {
+    const isAr = state.currentLang === 'ar';
+    const titleEl = document.getElementById('major-active-title');
+    const subEl = document.getElementById('major-active-subtitle');
+    const searchInput = document.getElementById('input-major-course-search');
+    const deptSelect = document.getElementById('select-major-department');
+    const periodSelect = document.getElementById('select-major-period');
+    const previewBox = document.getElementById('major-courses-preview');
+    const emptyNotice = document.getElementById('major-empty-notice');
+
+    if (hasMajor && state.majorData) {
+      const meta = ScheduleParser.getMajorMetadata(state.majorData);
+      if (titleEl) titleEl.textContent = meta.title;
+      if (subEl) {
+        const deptsCount = meta.totalDepartments;
+        const termText = meta.batch ? `${meta.batch} • ` : '';
+        subEl.textContent = isAr
+          ? `${termText}${deptsCount} أقسام متاحة`
+          : `${termText}${deptsCount} Departments Available`;
+      }
+      if (searchInput) {
+        searchInput.disabled = false;
+        searchInput.placeholder = isAr
+          ? TRANSLATIONS.ar.searchMajorPlaceholder
+          : TRANSLATIONS.en.searchMajorPlaceholder;
+      }
+      if (deptSelect) deptSelect.disabled = false;
+    } else {
+      if (titleEl) {
+        titleEl.textContent = isAr
+          ? TRANSLATIONS.ar.noFacultySelectedTitle
+          : TRANSLATIONS.en.noFacultySelectedTitle;
+      }
+      if (subEl) {
+        subEl.textContent = isAr
+          ? TRANSLATIONS.ar.noFacultySelectedSubtitle
+          : TRANSLATIONS.en.noFacultySelectedSubtitle;
+      }
+      if (searchInput) {
+        searchInput.disabled = true;
+        searchInput.value = '';
+        searchInput.placeholder = isAr
+          ? TRANSLATIONS.ar.searchFacultyPlaceholderDisabled
+          : TRANSLATIONS.en.searchFacultyPlaceholderDisabled;
+      }
+      const searchClear = document.getElementById('btn-clear-major-search');
+      if (searchClear) searchClear.style.display = 'none';
+      const searchDropdown = document.getElementById('major-course-search-dropdown');
+      if (searchDropdown) {
+        searchDropdown.style.display = 'none';
+        searchDropdown.innerHTML = '';
+      }
+
+      if (deptSelect) {
+        deptSelect.innerHTML = `<option value="">${isAr ? '-- اختر القسم --' : '-- Choose Department --'}</option>`;
+        deptSelect.disabled = true;
+        deptSelect.value = '';
+      }
+      if (periodSelect) {
+        periodSelect.innerHTML = `<option value="">${isAr ? '-- اختر الفترة --' : '-- Choose Period --'}</option>`;
+        periodSelect.disabled = true;
+        periodSelect.value = '';
+      }
+      if (previewBox) previewBox.style.display = 'none';
+      if (emptyNotice) emptyNotice.style.display = 'none';
+
+      const submitBtnText = document.getElementById('btn-submit-major-subjects-text');
+      if (submitBtnText) {
+        submitBtnText.textContent = isAr
+          ? 'إدراج المواد في الموقع (Submit Subjects into Website)'
+          : 'Submit Subjects into Website (إدراج المواد في الموقع)';
+      }
+    }
+  }
+
+  /**
+   * Resets active major selection back to unselected default state
+   */
+  function resetMajorSelectionState() {
+    state.selectedMajorId = '';
+    state.selectedMajor = '';
+    state.majorData = null;
+    state.selectedDepartment = '';
+    state.selectedPeriod = '';
+    state.discoveredMajorCourses = [];
+    state.selectedMajorCourseCodes.clear();
+
+    try {
+      localStorage.removeItem('sched_major_id');
+      localStorage.removeItem('sched_major_json');
+    } catch (e) {}
+
+    const majorSelect = document.getElementById('select-major-college');
+    if (majorSelect) majorSelect.value = '';
+
+    updateMajorSelectionUIState(false);
   }
 
   /**
    * Fetches an individual college major schedule JSON file by ID or path
    */
   async function fetchMajorFile(majorIdOrPath, forceRefresh = false) {
+    if (!majorIdOrPath) {
+      resetMajorSelectionState();
+      return null;
+    }
+
     let filePath = '';
     let majorTitle = '';
 
@@ -1787,9 +1923,11 @@ const App = (() => {
     }
 
     if (!filePath) {
-      filePath = typeof majorIdOrPath === 'string' && majorIdOrPath.endsWith('.json')
-        ? majorIdOrPath
-        : 'colleges/computing_heliopolis_2026_term1.json';
+      if (typeof majorIdOrPath === 'string' && majorIdOrPath.endsWith('.json')) {
+        filePath = majorIdOrPath;
+      } else {
+        return null;
+      }
     }
 
     const endpoints = getRepoEndpoints();
@@ -1828,8 +1966,10 @@ const App = (() => {
     }
 
     if (fetchedSchedule) {
+      state.selectedMajorId = state.selectedMajorId || majorIdOrPath;
       loadMajorJsonData(fetchedSchedule, majorTitle || filePath);
       try {
+        localStorage.setItem('sched_major_id', state.selectedMajorId);
         localStorage.setItem('sched_major_json', JSON.stringify(fetchedSchedule));
       } catch (e) {}
       return fetchedSchedule;
@@ -1854,7 +1994,7 @@ const App = (() => {
 
     try {
       const catalog = await fetchPublicCatalog(true);
-      const activeMajorId = state.selectedMajorId || (catalog ? catalog.defaultMajorId : null);
+      const activeMajorId = state.selectedMajorId;
       if (activeMajorId) {
         await fetchMajorFile(activeMajorId, true);
       }
@@ -1891,28 +2031,34 @@ const App = (() => {
       state.majorCatalog = ScheduleParser.parseCatalogManifest(SampleScheduleData.DEFAULT_MAJOR_CATALOG);
     }
 
-    // 3. Populate initial college selector dropdown
-    populateMajorCollegeSelector();
-
-    // 4. Check cached major schedule from localStorage
+    // 3. Check cached major schedule from localStorage only if explicitly saved by user
+    const savedMajorId = localStorage.getItem('sched_major_id');
     const savedMajor = localStorage.getItem('sched_major_json');
     let majorLoaded = false;
-    if (savedMajor) {
+    if (savedMajorId && savedMajor) {
       try {
         const parsed = JSON.parse(savedMajor);
         const meta = ScheduleParser.getMajorMetadata(parsed);
         if (ScheduleParser.isMajorScheduleJson(parsed) && meta && (meta.totalClassesFound > 0 || (parsed.metadata && parsed.metadata.totalClassesFound > 0))) {
+          state.selectedMajorId = savedMajorId;
           loadMajorJsonData(parsed, 'Saved Local Major');
           majorLoaded = true;
         } else {
+          localStorage.removeItem('sched_major_id');
           localStorage.removeItem('sched_major_json');
         }
-      } catch (e) {}
+      } catch (e) {
+        localStorage.removeItem('sched_major_id');
+        localStorage.removeItem('sched_major_json');
+      }
     }
 
-    // 5. If no major schedule loaded from storage, load bundled default
-    if (!majorLoaded && typeof SampleScheduleData !== 'undefined' && SampleScheduleData.DEFAULT_MAJOR_SCHEDULE_JSON) {
-      loadMajorJsonData(SampleScheduleData.DEFAULT_MAJOR_SCHEDULE_JSON, 'Bundled College Schedule');
+    // 4. Populate initial college selector dropdown
+    populateMajorCollegeSelector();
+
+    // 5. If no major schedule was saved, default to no faculty selected (do NOT load any json file at start)
+    if (!majorLoaded) {
+      resetMajorSelectionState();
     }
 
     // 6. Connect to public cloud repository asynchronously in background
@@ -1930,8 +2076,12 @@ const App = (() => {
         try {
           const parsed = JSON.parse(evt.target.result);
           if (ScheduleParser.isMajorScheduleJson(parsed)) {
+            state.selectedMajorId = 'custom_uploaded_file';
             loadMajorJsonData(parsed, file.name);
-            try { localStorage.setItem('sched_major_json', evt.target.result); } catch (err) {}
+            try {
+              localStorage.setItem('sched_major_id', 'custom_uploaded_file');
+              localStorage.setItem('sched_major_json', evt.target.result);
+            } catch (err) {}
             showToast(state.currentLang === 'ar' ? 'تم قراءة ملف الكلية بنجاح!' : 'Major schedule loaded successfully!', 'success');
           } else {
             showToast(state.currentLang === 'ar' ? 'الملف لا يطابق هيكل جدول الكلية المطلوب.' : 'JSON file does not match expected college major format.', 'error');
@@ -1943,13 +2093,18 @@ const App = (() => {
       reader.readAsText(file);
     });
 
-    // Major change (trigger file fetch from repo/CDN)
+    // Major change (trigger file fetch from repo/CDN or reset on empty selection)
     document.getElementById('select-major-college')?.addEventListener('change', e => {
       const selectedId = e.target.value;
+      if (!selectedId) {
+        resetMajorSelectionState();
+        return;
+      }
       if (state.majorCatalog) {
         fetchMajorFile(selectedId);
       } else {
         state.selectedMajor = e.target.value;
+        state.selectedMajorId = e.target.value;
         populateMajorDepartmentSelector();
       }
     });
@@ -2023,21 +2178,21 @@ const App = (() => {
 
   function loadMajorJsonData(jsonData, sourceName = '') {
     state.majorData = jsonData;
-    const meta = ScheduleParser.getMajorMetadata(jsonData);
-    state.selectedMajor = meta.title || 'College Timetable';
-
-    // Update UI Header bar
-    const titleEl = document.getElementById('major-active-title');
-    const subEl = document.getElementById('major-active-subtitle');
-    if (titleEl) titleEl.textContent = meta.title;
-    if (subEl) {
-      const deptsCount = meta.totalDepartments;
-      const termText = meta.batch ? `${meta.batch} • ` : '';
-      const isAr = state.currentLang === 'ar';
-      subEl.textContent = isAr
-        ? `${termText}${deptsCount} أقسام متاحة`
-        : `${termText}${deptsCount} Departments Available`;
+    const meta = ScheduleParser.getMajorMetadata(jsonData) || {};
+    state.selectedMajor = meta.title || sourceName || 'College Timetable';
+    if (sourceName) {
+      state.selectedMajorId = sourceName;
+    } else if (!state.selectedMajorId) {
+      if (state.majorCatalog && Array.isArray(state.majorCatalog.majors)) {
+        const found = state.majorCatalog.majors.find(m => m.title === meta.title || m.titleEn === meta.title || m.id === meta.id);
+        if (found) state.selectedMajorId = found.id;
+      }
+      if (!state.selectedMajorId) {
+        state.selectedMajorId = meta.id || meta.title || 'active_major';
+      }
     }
+
+    updateMajorSelectionUIState(true);
 
     // Populate Major dropdown
     if (state.majorCatalog && Array.isArray(state.majorCatalog.majors)) {
@@ -2045,7 +2200,9 @@ const App = (() => {
     } else {
       const majorSelect = document.getElementById('select-major-college');
       if (majorSelect) {
-        majorSelect.innerHTML = `<option value="${meta.title}">${meta.title}</option>`;
+        const isAr = state.currentLang === 'ar';
+        const chooseText = isAr ? TRANSLATIONS.ar.chooseFacultyOption : TRANSLATIONS.en.chooseFacultyOption;
+        majorSelect.innerHTML = `<option value="" data-i18n="chooseFacultyOption">${chooseText}</option><option value="${state.selectedMajorId}" selected>${state.selectedMajor}</option>`;
       }
     }
 
@@ -2593,6 +2750,11 @@ const App = (() => {
 
   function submitMajorSubjectsToWebsite() {
     const isAr = state.currentLang === 'ar';
+
+    if (!state.selectedMajorId || !state.majorData) {
+      showToast(isAr ? TRANSLATIONS.ar.selectFacultyFirstToast : TRANSLATIONS.en.selectFacultyFirstToast, 'warning');
+      return;
+    }
 
     if (!state.selectedDepartment) {
       showToast(isAr ? 'يرجى اختيار القسم أولاً' : 'Please select a department first', 'warning');
@@ -6989,8 +7151,14 @@ const App = (() => {
     searchMajorCourses,
     renderMajorSearchResults,
     addMajorCourseToWebsite,
+    resetMajorSelectionState,
+    updateMajorSelectionUIState,
+    toggleLanguage,
+    setLanguage: (lang) => { if (state.currentLang !== lang) toggleLanguage(); },
+    getCurrentLanguage: () => state.currentLang,
     getMajorCatalog: () => state.majorCatalog,
     getMajorData: () => state.majorData,
+    getSelectedMajorId: () => state.selectedMajorId,
     getSelectedDepartment: () => state.selectedDepartment,
     getSelectedPeriod: () => state.selectedPeriod,
     getDiscoveredMajorCourses: () => state.discoveredMajorCourses,
