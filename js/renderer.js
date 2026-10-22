@@ -113,15 +113,6 @@ const ScheduleRenderer = (() => {
   }
 
   /**
-   * Checks if a doctor name refers to an unspecified / unassigned doctor
-   */
-  function isUnspecifiedDoctor(name) {
-    if (!name || typeof name !== 'string') return true;
-    const s = name.trim().toLowerCase();
-    return s === '' || s === 'not specified' || s === 'غير محدد' || s === 'unspecified' || s === 'دكتور غير محدد' || s === 'not specified (doctor)';
-  }
-
-  /**
    * Normalizes doctor name by removing honorific titles and extra spaces
    */
   function normalizeDoctorName(doc) {
@@ -376,8 +367,8 @@ const ScheduleRenderer = (() => {
           <div class="agenda-day-card is-off-day">
             <div class="agenda-day-header">
               <span class="agenda-day-name">${dayLabel}</span>
-              <span class="agenda-day-badge">
-                ${isAr ? 'يوم إجازة' : 'Day Off'}
+              <span class="agenda-day-badge" style="background: rgba(16, 185, 129, 0.15); color: #34D399; padding: 3px 10px; border-radius: 999px; font-weight: 700; font-size: 0.78rem;">
+                🏖️ ${isAr ? 'يوم إجازة كامل (Day Off)' : 'Full Day Off'}
               </span>
             </div>
           </div>
@@ -395,10 +386,10 @@ const ScheduleRenderer = (() => {
         <div class="agenda-day-card">
           <div class="agenda-day-header">
             <div class="agenda-day-name">
-              <span>${dayLabel}</span>
+              <span>📅</span> <span>${dayLabel}</span>
             </div>
             <div class="agenda-day-meta">
-              ${sortedSessions.length > 0 ? `<span>${sortedSessions.length} ${isAr ? 'حصص' : 'Classes'} · ${timeSpanText}</span>` : ''}
+              ${sortedSessions.length > 0 ? `<span>${sortedSessions.length} ${isAr ? 'حصص' : 'Classes'} • ${timeSpanText}</span>` : ''}
             </div>
           </div>
           <div class="agenda-day-body">
@@ -409,6 +400,7 @@ const ScheduleRenderer = (() => {
         const bTime = formatSlotTimeRange(b.startSlot, b.endSlot);
         agendaHtml += `
           <div class="agenda-blocked-badge">
+            <span>🚫</span>
             <span>${b.label} (${bTime})</span>
           </div>
         `;
@@ -423,7 +415,8 @@ const ScheduleRenderer = (() => {
           const gapToTime = (PERIOD_TIMES[s.startSlot] || '').split(' - ')[0] || '';
           agendaHtml += `
             <div class="agenda-gap-badge">
-              <span>${isAr ? `فترة فراغ: ${gapCount} فترات (${gapFromTime} - ${gapToTime})` : `Break: ${gapCount} slot(s) (${gapFromTime} - ${gapToTime})`}</span>
+              <span>☕</span>
+              <span>${isAr ? `بريك / فترة فراغ: ${gapCount} فترات (${gapFromTime} إلى ${gapToTime})` : `Break: ${gapCount} gap period(s) (${gapFromTime} - ${gapToTime})`}</span>
             </div>
           `;
         }
@@ -440,20 +433,20 @@ const ScheduleRenderer = (() => {
         );
 
         agendaHtml += `
-          <div class="agenda-session-card ${isClashing ? 'is-clashing-session' : (s.isMergedLecture ? 'is-merged-lecture' : '')}" style="border-inline-start: 3px solid ${s.isMergedLecture ? '#F59E0B' : (s.color || '#3B82F6')};">
+          <div class="agenda-session-card ${isClashing ? 'is-clashing-session' : (s.isMergedLecture ? 'is-merged-lecture' : '')}" style="border-inline-start: 4px solid ${s.isMergedLecture ? '#F59E0B' : (s.color || '#3B82F6')};">
             <div class="agenda-session-top">
-              <div class="agenda-session-code">
-                <span style="color: ${s.color || 'var(--text-primary)'}; font-weight: 700;">${s.courseName}</span>
-                ${s.courseCode && s.courseCode !== s.courseName ? `<span class="text-muted" style="font-size: 0.8rem;">(${s.courseCode})</span>` : ''}
+              <div class="agenda-session-code" style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+                <span style="color: ${s.color || 'var(--text-primary)'}; font-weight: 800;">${s.courseName}</span>
+                ${s.courseCode && s.courseCode !== s.courseName ? `<span style="font-size: 0.8rem; color: var(--text-muted);">(${s.courseCode})</span>` : ''}
                 ${isMulti ? getRedErrorTriangleSvg(isAr ? 'تم اختيار أكثر من مجموعة لهذه المادة' : 'Multiple groups selected for this subject') : ''}
-                ${isClashing ? `<span class="agenda-clash-tag">${isAr ? 'تعارض' : 'Clash'}</span>` : ''}
-                ${s.isMergedLecture && !isClashing ? `<span class="agenda-clash-tag is-warning">${isAr ? 'محاضرة مشتركة' : 'Combined Lecture'}</span>` : ''}
+                ${isClashing ? `<span class="agenda-clash-tag">⚠️ ${isAr ? 'تعارض' : 'CLASH'}</span>` : ''}
+                ${s.isMergedLecture && !isClashing ? `<span class="agenda-clash-tag is-warning">⚠️ ${isAr ? 'محاضرة مشتركة' : 'Combined Lecture'}</span>` : ''}
               </div>
-              <div class="agenda-session-actions">
+              <div style="display: flex; align-items: center; gap: 6px;">
                 <span class="session-badge ${typeClass}">${typeLabel}</span>
                 ${canDeselect ? (
                   s.isMergedLecture && s.groups && s.groups.length > 1 ? `
-                    <div class="agenda-deselect-group">
+                    <div style="display: flex; align-items: center; gap: 4px;">
                       ${s.groups.map(grpName => `
                         <button class="agenda-deselect-btn" 
                                 title="${isAr ? `إلغاء اختيار مجموعة ${grpName}` : `Deselect Group ${grpName}`}"
@@ -466,7 +459,7 @@ const ScheduleRenderer = (() => {
                     <button class="agenda-deselect-btn" 
                             title="${isAr ? `إلغاء اختيار مجموعة ${s.group}` : `Deselect Group ${s.group}`}"
                             onclick="App.deselectManualGroupFromTimetable('${s.courseId}', '${s.group}', event)">
-                      ✕ ${isAr ? 'إلغاء' : 'Remove'}
+                      ✕ ${isAr ? 'إلغاء' : 'Deselect'}
                     </button>
                   `
                 ) : ''}
@@ -477,14 +470,14 @@ const ScheduleRenderer = (() => {
                 <strong>Group ${s.group}</strong>
               </span>
               <span class="agenda-info-pill">
-                ${timeRange} (P${s.startSlot}${s.endSlot !== s.startSlot ? `-P${s.endSlot}` : ''})
+                ⏰ ${timeRange} (P${s.startSlot}${s.endSlot !== s.startSlot ? `-P${s.endSlot}` : ''})
               </span>
               ${s.instructor && sessionHasInstructor(s) ? `
                 <span class="agenda-info-pill">
-                  <strong>${s.instructor}</strong>
-                  ${s.doctorPref === 'avoid' ? `<span class="session-pref-badge badge-avoid">${isAr ? 'مستبعد' : 'Avoided'}</span>` : ''}
-                  ${s.doctorPref === 'mandate' ? `<span class="session-pref-badge badge-mandate">${isAr ? 'إجباري' : 'Mandated'}</span>` : ''}
-                  ${s.doctorPref === 'love' ? `<span class="session-pref-badge badge-prefer">${isAr ? 'مفضل' : 'Preferred'}</span>` : ''}
+                  🎓 <strong>${s.instructor}</strong>
+                  ${s.doctorPref === 'avoid' ? `<span class="session-pref-badge badge-avoid">🚫 ${isAr ? 'مستبعد' : 'Avoided'}</span>` : ''}
+                  ${s.doctorPref === 'mandate' ? `<span class="session-pref-badge badge-mandate">🌟🔒 ${isAr ? 'إجباري' : 'Mandated'}</span>` : ''}
+                  ${s.doctorPref === 'love' ? `<span class="session-pref-badge badge-prefer">⭐ ${isAr ? 'مفضل' : 'Preferred'}</span>` : ''}
                 </span>
               ` : ''}
             </div>
@@ -504,8 +497,8 @@ const ScheduleRenderer = (() => {
     // ==========================================
     let gridHtml = `
       <div class="timetable-wrapper">
-        <div class="mobile-scroll-hint">
-          <span>${isAr ? 'اسحب أفقياً لتصفح جميع الفترات الـ 16' : 'Scroll horizontally to view all 16 periods'}</span>
+        <div class="mobile-scroll-hint" style="margin: 8px 10px;">
+          <span>👈</span> <span>${isAr ? 'اسحب أفقياً لتصفح جميع الفترات الـ 16' : 'Swipe horizontally to view all 16 periods'}</span> <span>👉</span>
         </div>
         <div class="timetable-grid" style="grid-template-columns: minmax(85px, 105px) repeat(${maxSlotUsed}, minmax(68px, 1fr));">
           <!-- Header Corner -->
@@ -612,7 +605,7 @@ const ScheduleRenderer = (() => {
                    style="grid-column: span ${span};"
                    title="${matchingCluster.length} clashing sessions">
                 <div class="clash-cell-header">
-                  <span class="clash-badge-pulse">${isAr ? 'تعارض' : 'Clash'} (${matchingCluster.length})</span>
+                  <span class="clash-badge-pulse">⚠️ ${isAr ? 'تعارض' : 'CLASH'} (${matchingCluster.length})</span>
                   <span class="clash-cell-time">${timeRange}</span>
                 </div>
                 <div class="clash-sessions-stack">
@@ -625,7 +618,7 @@ const ScheduleRenderer = (() => {
                     const sShowSubject = sSubjectName && sSubjectName.toLowerCase() !== (s.courseCode || '').toLowerCase();
 
                     return `
-                      <div class="clash-mini-card" style="border-inline-start: 3px solid ${s.isMergedLecture ? '#F59E0B' : (s.color || '#EF4444')};">
+                      <div class="clash-mini-card" style="border-inline-start: 4px solid ${s.isMergedLecture ? '#F59E0B' : (s.color || '#EF4444')};">
                         <div class="clash-mini-top">
                           <div style="display: flex; align-items: center; gap: 4px; overflow: hidden;">
                             <span class="clash-mini-code" style="color: ${s.color || 'var(--text-primary)'};" title="${sSubjectName || s.courseName}">
@@ -659,8 +652,8 @@ const ScheduleRenderer = (() => {
                         ${sShowSubject ? `<div class="clash-mini-name" title="${sSubjectName}">${sSubjectName}</div>` : ''}
                         <div class="clash-mini-meta">
                           <span class="session-badge ${typeClass}">${typeLabel}</span>
-                          ${s.instructor && sessionHasInstructor(s) ? `<span class="clash-mini-doc" title="${s.instructor}">${s.instructor}</span>` : ''}
-                          <span class="clash-mini-time">${sTime}</span>
+                          ${s.instructor && sessionHasInstructor(s) ? `<span class="clash-mini-doc" title="${s.instructor}">👨‍🏫 ${s.instructor}</span>` : ''}
+                          <span class="clash-mini-time">⏰ ${sTime}</span>
                         </div>
                       </div>
                     `;
@@ -707,7 +700,7 @@ const ScheduleRenderer = (() => {
                     ${isMulti ? getRedErrorTriangleSvg(isAr ? 'تم اختيار أكثر من مجموعة لهذه المادة' : 'Multiple groups selected for this subject') : ''}
                   </div>
                   <div style="display: flex; align-items: center; gap: 4px;">
-                    ${session.isMergedLecture ? `<span class="session-pref-badge badge-mandate">${isAr ? 'مشتركة' : 'Combined'}</span>` : ''}
+                    ${session.isMergedLecture ? `<span class="session-pref-badge badge-mandate" style="background: rgba(245, 158, 11, 0.2); color: #D97706; border-color: rgba(245, 158, 11, 0.45); font-size: 0.65rem;">⚠️ ${isAr ? 'محاضرة مشتركة' : 'Combined'}</span>` : ''}
                     <span class="session-badge ${typeClass}">${typeLabel}</span>
                   </div>
                 </div>
@@ -715,10 +708,11 @@ const ScheduleRenderer = (() => {
                 <div class="session-group">Group ${session.group}</div>
                 ${session.instructor && sessionHasInstructor(session) ? `
                   <div class="session-doc" title="${session.instructor}">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                     <span>${session.instructor}</span>
-                    ${session.doctorPref === 'avoid' ? `<span class="session-pref-badge badge-avoid">${isAr ? 'مستبعد' : 'Avoided'}</span>` : ''}
-                    ${session.doctorPref === 'mandate' ? `<span class="session-pref-badge badge-mandate">${isAr ? 'إجباري' : 'Mandated'}</span>` : ''}
-                    ${session.doctorPref === 'love' ? `<span class="session-pref-badge badge-prefer">${isAr ? 'مفضل' : 'Preferred'}</span>` : ''}
+                    ${session.doctorPref === 'avoid' ? `<span class="session-pref-badge badge-avoid">🚫 ${isAr ? 'مستبعد' : 'Avoided'}</span>` : ''}
+                    ${session.doctorPref === 'mandate' ? `<span class="session-pref-badge badge-mandate">🌟🔒 ${isAr ? 'إجباري' : 'Mandated'}</span>` : ''}
+                    ${session.doctorPref === 'love' ? `<span class="session-pref-badge badge-prefer">⭐ ${isAr ? 'مفضل' : 'Preferred'}</span>` : ''}
                   </div>
                 ` : ''}
                 <div class="session-time">${timeRange}</div>
@@ -734,7 +728,7 @@ const ScheduleRenderer = (() => {
             <div class="grid-blocked-cell"
                  style="grid-column: span ${span};"
                  title="${matchingBlocked.label} (${timeRange})">
-              <div class="blocked-badge">${matchingBlocked.label}</div>
+              <div class="blocked-badge">🚫 ${matchingBlocked.label}</div>
               <div class="blocked-time">${timeRange}</div>
             </div>
           `;
@@ -744,7 +738,7 @@ const ScheduleRenderer = (() => {
           gridHtml += `
             <div class="grid-empty-cell ${isGap ? 'gap-highlight' : ''}"
                  title="${isGap ? 'Break / Gap between lectures' : ''}">
-              ${isGap ? `<span class="gap-icon">·</span>` : ''}
+              ${isGap ? `<span class="gap-icon">☕</span>` : ''}
             </div>
           `;
           currSlot++;
@@ -763,10 +757,10 @@ const ScheduleRenderer = (() => {
         <!-- View Mode Switcher -->
         <div class="timetable-view-switcher">
           <button id="btn-view-agenda" class="view-switch-btn ${effectiveView === 'agenda' ? 'active' : ''}" onclick="ScheduleRenderer.setViewMode('agenda')">
-            <span>${isAr ? 'العرض اليومي (موبايل)' : 'Daily Agenda'}</span>
+            <span>📱</span> <span>${isAr ? 'جدول يومي (مخصص للموبايل)' : 'Daily Agenda (Mobile View)'}</span>
           </button>
           <button id="btn-view-grid" class="view-switch-btn ${effectiveView === 'grid' ? 'active' : ''}" onclick="ScheduleRenderer.setViewMode('grid')">
-            <span>${isAr ? 'الجدول الأسبوعي (16 فترة)' : 'Weekly Grid (16 Slots)'}</span>
+            <span>🗓️</span> <span>${isAr ? 'الجدول الأسبوعي الكامل (16 فترة)' : 'Full 16-Period Grid'}</span>
           </button>
         </div>
 
@@ -804,8 +798,8 @@ const ScheduleRenderer = (() => {
     `).join('');
 
     const groupsHtml = solution.selectedGroups.map(g => `
-      <div class="group-pill" style="border-inline-start: 3px solid ${g.color};">
-        <span class="group-course" style="color: ${g.color}; font-weight: 600;">${g.courseCode || g.courseName}:</span>
+      <div class="group-pill" style="border-left: 3px solid ${g.color};">
+        <span class="group-course" style="color: ${g.color}; font-weight: 700;">${g.courseCode || g.courseName}:</span>
         <strong class="group-letter">Group ${g.group}</strong>
       </div>
     `).join('');
@@ -816,16 +810,16 @@ const ScheduleRenderer = (() => {
       <div class="solution-header-card">
         <div class="header-left">
           <div class="rank-title">
-            <h3>${isAr ? `الخيار رقم ${solution.rank}` : `Option #${solution.rank}`}</h3>
+            <h3>${isAr ? `الخيار رقم ${solution.rank}` : `Schedule Option #${solution.rank}`}</h3>
             <div class="badges-row">
               ${badgesHtml}
-              ${blockedCount > 0 ? `<span class="solution-badge badge-danger">${blockedCount} ${isAr ? 'أوقات محظورة محترمة' : 'Blocked Times Respected'}</span>` : ''}
+              ${blockedCount > 0 ? `<span class="solution-badge" style="background: rgba(239, 68, 68, 0.2); color: var(--danger); border: 1px solid var(--danger);">🚫 ${blockedCount} ${isAr ? 'أوقات محظورة محترمة' : 'Blocked Times Respected'}</span>` : ''}
             </div>
           </div>
           <div class="stats-grid">
             <div class="stat-box">
               <span class="stat-val ${solution.totalGapSlots === 0 ? 'text-success' : 'text-warning'}">${solution.totalGapSlots}</span>
-              <span class="stat-lbl">${isAr ? 'فترات فراغ' : 'Gap Slots'}</span>
+              <span class="stat-lbl">${isAr ? 'فترات فراغ (Gaps)' : 'Gap Slots'}</span>
             </div>
             <div class="stat-box">
               <span class="stat-val text-primary">${solution.activeDaysCount}</span>
@@ -838,7 +832,7 @@ const ScheduleRenderer = (() => {
           </div>
         </div>
         <div class="header-groups">
-          <div class="groups-title">${isAr ? 'المجموعات المختارة:' : 'Selected Groups:'}</div>
+          <div class="groups-title">${isAr ? 'المجموعات المختارة لهذا الجدول:' : 'Selected Groups for this Schedule:'}</div>
           <div class="groups-list">${groupsHtml}</div>
         </div>
       </div>
@@ -854,7 +848,6 @@ const ScheduleRenderer = (() => {
     hexToRgba,
     setViewMode,
     getEffectiveViewMode,
-    isUnspecifiedDoctor,
     isLectureSession,
     isLabSession,
     isSectionSession,

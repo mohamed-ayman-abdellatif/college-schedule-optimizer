@@ -9,8 +9,7 @@ Welcome! This document provides a complete technical overview of the **AASTMT Sc
 - **Purpose**: A client-side web application for AASTMT (Arab Academy for Science, Technology & Maritime Transport) students to load their faculty/department schedules (via pre-bundled JSON catalogs, raw portal HTML, PDF files, or timetable screenshots), configure constraints (blocked times, doctor/TA preferences, max campus days, gap tolerance), and generate ranked clash-free weekly timetables.
 - **Tech Stack**: 100% vanilla HTML5, CSS3, and ES6+ JavaScript (IIFE module pattern). Zero build step, zero bundler, zero UI framework. External libraries (`pdf.js`, `tesseract.js`, `xlsx`) are loaded via CDN in `index.html` and degrade gracefully when offline.
 - **Design System**:
-  - **Clean, intentional UI**: Crisp `1px` borders, subtle surface hierarchy, clear typography (`Inter`, `Plus Jakarta Sans`, `JetBrains Mono`), and minimal inline SVG icons.
-  - **No "vibecoded" clutter**: Avoid neon box-shadows, multi-stop rainbow gradients, emoji spam in labels/buttons, or inline style hacks with undefined CSS variables.
+  - **Dynamic Theme & Visuals**: Rich dark/light theme styling with custom glow effects, card accents, and vibrant session indicators.
   - **Theme & RTL Ready**: First-class Dark (`:root`) and Light (`[data-theme="light"]`) themes, plus full English (`ltr`) and Arabic (`rtl`) localization.
 
 ---
@@ -111,18 +110,16 @@ Because the project uses global IIFE namespaces rather than ES modules (so it wo
 
 ---
 
-## 4. Key Architectural Details & Recent Improvements
+## 4. Key Architectural Details
 
-1. **Frontend Design Cleanup (`index.html`, `css/style.css`, `css/timetable.css`)**:
-   - Defined all CSS custom properties in `:root` (dark default) and `[data-theme="light"]` (`--bg-main`, `--bg-card`, `--bg-surface`, `--bg-elevated`, `--bg-input`, `--text-primary`, `--text-secondary`, `--text-muted`, `--border`, `--border-light`, `--primary`, `--accent`, etc.).
-   - Removed decorative emoji clutter from HTML labels, tabs, buttons, and `TRANSLATIONS` in `js/app.js`, replacing them with clean text and minimal SVG icons.
-   - Replaced inline neon/gradient style strings in `js/renderer.js` and `js/app.js` with structured semantic classes and CSS variables.
-2. **Optimizer & Preset Sorting (`js/optimizer.js`, `js/app.js`)**:
+1. **Optimizer & Preset Sorting (`js/optimizer.js`, `js/app.js`)**:
    - `ScheduleOptimizer.optimize` populates `compositeScore` and `totalScore` at both the top level of each solution object and inside `solution.metrics`.
-   - `applyTimetableFilters()` in `js/app.js` sorts the `'score'` preset using `(b.compositeScore ?? b.totalScore ?? 0) - (a.compositeScore ?? a.totalScore ?? 0)`.
-   - Removed the artificial 540ms nested `setTimeout` chain in `runOptimizer()`, replacing it with a single 20ms UI yield before running the synchronous solver.
-3. **Shared Helpers (`js/renderer.js`, `js/app.js`)**:
-   - `ScheduleRenderer.isUnspecifiedDoctor(name)` is exported on `ScheduleRenderer` and reused by `js/app.js` to avoid duplicate regex logic.
+   - `applyTimetableFilters()` in `js/app.js` sorts the `'score'` preset using `totalScore` / `compositeScore`.
+2. **State & Local Storage**:
+   - `sched_courses`: Loaded active courses array.
+   - `sched_major_id`: Active faculty/major identifier.
+   - `sched_major_json`: Cached faculty timetable JSON.
+   - `sched_lang` & `sched_theme`: Persisted localization and theme preferences.
 
 ---
 

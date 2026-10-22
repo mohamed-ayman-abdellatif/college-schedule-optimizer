@@ -6,16 +6,16 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <title>College Schedule Optimizer | منسق الجداول الجامعية</title>
-
+  <title>College Schedule Optimizer | محول ومحسن الجداول الجامعية</title>
+  
   <!-- Google Fonts: Inter & Cairo -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Core & Timetable CSS -->
-  <link rel="stylesheet" href="css/style.css?v=7.0" />
-  <link rel="stylesheet" href="css/timetable.css?v=7.0" />
+  <link rel="stylesheet" href="css/style.css?v=6.0" />
+  <link rel="stylesheet" href="css/timetable.css?v=6.0" />
   <script>try { localStorage.setItem('sched_guide_dismissed', 'true'); } catch(e) {}</script>
 </head>
 <body>
@@ -24,47 +24,40 @@
   <header class="app-header">
     <div class="header-container">
       <div class="brand-area">
-        <div class="brand-logo" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-            <line x1="16" y1="2" x2="16" y2="6"></line>
-            <line x1="8" y1="2" x2="8" y2="6"></line>
-            <line x1="3" y1="10" x2="21" y2="10"></line>
-          </svg>
-        </div>
+        <div class="brand-logo">🗓️</div>
         <div class="brand-text">
-          <div class="brand-title-row">
-            <h1 data-i18n="appTitle">College Schedule Optimizer</h1>
-            <div class="header-live-badge" onclick="if(window.SiteAnalytics)SiteAnalytics.openStatsModal()" title="Live Users & Traffic" role="button" tabindex="0">
+          <h1 data-i18n="appTitle">College Schedule Optimizer</h1>
+          <div class="brand-subtitle" data-i18n="appSubtitle">Convert college HTML & photos into optimal clash-free schedules</div>
+          <div class="brand-meta-row">
+            <div class="dev-prayer-badge" title="Developer portal: Click 5 times or press Ctrl+Shift+D to open Admin Portal & Reset Sheet">🤲 متنساش تدعيلي دعوة حلوة ❤️</div>
+            <div class="header-live-badge" onclick="if(window.SiteAnalytics)SiteAnalytics.openStatsModal()" title="Live Users & Traffic (Click for details)" role="button" tabindex="0">
               <span class="live-dot-pulse"></span>
               <span id="header-active-count">1</span> <span data-i18n="onlineNow">Online</span>
-              <span class="counter-sep">·</span>
+              <span class="counter-sep">•</span>
               <span id="header-total-count">--</span> <span data-i18n="visitsShort">Visits</span>
             </div>
-            <div class="dev-prayer-badge" title="Click 5 times or press Ctrl+Shift+D for Admin Portal">متنساش تدعيلي دعوة حلوة</div>
           </div>
-          <div class="brand-subtitle" data-i18n="appSubtitle">Convert college HTML & photos into optimal clash-free schedules</div>
         </div>
       </div>
 
       <div class="header-actions">
         <button id="btn-show-guide" class="btn btn-outline btn-sm" title="How to use the website" onclick="if(window.App&&window.App.openGuideModal){App.openGuideModal();}else{var m=document.getElementById('guide-modal');if(m)m.style.setProperty('display','flex','important');}">
-          <span data-i18n="guideBtn">Guide</span>
+          <span>❓</span> <span data-i18n="guideBtn">Guide</span>
         </button>
         <button id="btn-load-sample" class="btn btn-secondary btn-sm" data-i18n="loadSampleBtn">
-          Load Example Courses
+          <span>📚</span> <span>Load Example Courses</span>
         </button>
-        <button id="btn-clear-cache" class="btn btn-outline btn-sm" onclick="App.clearCacheAndReset()" title="Clear cache, reset preferences and start fresh">
-          <span data-i18n="clearCacheBtn">Clear Cache</span>
+        <button id="btn-clear-cache" class="btn btn-outline btn-sm" onclick="App.clearCacheAndReset()" title="Clear cache, reset preferences and start fresh (like incognito mode)">
+          <span>🧹</span> <span data-i18n="clearCacheBtn">Clear Cache</span>
         </button>
         <button id="btn-find-schedules-header" class="btn btn-primary btn-sm" data-i18n="findSchedulesBtn">
-          Find Best Schedules
+          <span>⚡</span> <span>Find Best Schedules</span>
         </button>
         <button id="btn-lang-toggle" class="btn btn-outline btn-sm">
-          العربية
+          العربية 🌐
         </button>
         <button id="btn-theme-toggle" class="btn btn-outline btn-icon btn-sm" title="Toggle Dark/Light theme">
-          ☀
+          ☀️
         </button>
       </div>
     </div>
@@ -72,21 +65,21 @@
 
   <!-- Main Content -->
   <main class="main-container">
-
-    <!-- Step Navigation Tabs -->
+    
+    <!-- Top Step Tabs -->
     <nav class="tabs-nav">
       <button class="tab-btn active" data-tab="courses">
-        <span data-i18n="tabCourses">1. Add Courses</span>
-        <span id="courses-count-badge" class="tab-count-badge">0</span>
+        <span>📋</span> <span data-i18n="tabCourses">1. Add Courses</span>
+        <span id="courses-count-badge" class="mini-group-tag" style="background: var(--accent-primary); color: white;">0</span>
       </button>
       <button class="tab-btn" data-tab="preferences">
-        <span data-i18n="tabPreferences">2. Doctor & Goals</span>
+        <span>👨‍🏫</span> <span data-i18n="tabPreferences">2. Doctor & Goals</span>
       </button>
       <button class="tab-btn" data-tab="timetable">
-        <span data-i18n="tabTimetable">3. Timetable Results</span>
+        <span>🗓️</span> <span data-i18n="tabTimetable">3. Timetable Results</span>
       </button>
       <button class="tab-btn" data-tab="manual">
-        <span data-i18n="tabManual">4. Manual Mode</span>
+        <span>🛠️</span> <span data-i18n="tabManual">4. Manual Mode</span>
       </button>
     </nav>
 
@@ -95,15 +88,17 @@
       <div class="card">
         <div class="card-header">
           <div>
-            <div class="card-title">Import Course Schedule</div>
+            <div class="card-title">
+              <span>📥</span> <span>Import Course Schedule</span>
+            </div>
             <div class="card-subtitle" data-i18n="importCardSubtitle">
-              Select your faculty timetable, paste portal HTML, upload a PDF, or scan a schedule photo
+              Paste HTML from your college portal, upload a PDF timetable, or upload a schedule photo
             </div>
           </div>
           <div class="subtabs-container">
-            <button class="subtab-btn active" data-subtab="major-json" data-i18n="majorJsonTab">Major / Department Timetable</button>
+            <button class="subtab-btn active" data-subtab="major-json" data-i18n="majorJsonTab">🏛️ Major / Department Timetable</button>
             <button class="subtab-btn" data-subtab="html" data-i18n="pasteHtmlTab">Paste HTML Code</button>
-            <button class="subtab-btn" data-subtab="pdf" data-i18n="uploadPdfTab">Upload PDF Timetable</button>
+            <button class="subtab-btn" data-subtab="pdf" data-i18n="uploadPdfTab">📄 Upload PDF Timetable</button>
             <button class="subtab-btn" data-subtab="image" data-i18n="uploadPhotoTab">Upload Schedule Photo</button>
           </div>
         </div>
@@ -113,12 +108,12 @@
           <!-- Header Bar: Active Major Badge & Cloud Sync Actions -->
           <div class="major-source-bar">
             <div class="major-badge-info">
+              <span class="major-icon">🏛️</span>
               <div>
-                <div class="major-badge-title-row">
+                <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                   <span id="major-active-title" class="major-title-text" data-i18n="noFacultySelectedTitle">No Faculty Selected</span>
                   <span id="repo-cloud-pill" class="repo-status-pill is-online" title="github.com/mohamed-ayman-abdellatif/college-schedules-data">
-                    <span class="status-dot"></span>
-                    <span data-i18n="connectedCloudBadge">Public Cloud Database</span>
+                    <span>🟢</span> <span data-i18n="connectedCloudBadge">Public Cloud Database</span>
                   </span>
                 </div>
                 <div id="major-active-subtitle" class="major-subtitle-text" data-i18n="noFacultySelectedSubtitle">Please choose a faculty from the dropdown below</div>
@@ -126,28 +121,29 @@
             </div>
             <div class="major-upload-actions">
               <button type="button" id="btn-sync-cloud-repo" class="btn btn-outline btn-sm repo-sync-btn" onclick="App.syncFromPublicRepo()" title="Pull latest schedule updates from public GitHub repository">
-                <span class="sync-icon">↻</span> <span data-i18n="syncCloudBtn">Sync from Cloud</span>
+                <span class="sync-icon">🔄</span> <span data-i18n="syncCloudBtn">Sync from Cloud</span>
               </button>
               <input type="file" id="input-major-json-file" accept=".json,application/json" style="display: none;" />
               <button type="button" class="btn btn-secondary btn-sm" onclick="document.getElementById('input-major-json-file').click();" title="Upload custom whole-major schedule JSON file">
-                <span data-i18n="uploadMajorJsonBtn">Upload Major JSON (.json)</span>
+                <span>📁</span> <span data-i18n="uploadMajorJsonBtn">Upload Major JSON (.json)</span>
               </button>
-              <a id="link-repo-github" href="https://github.com/mohamed-ayman-abdellatif/college-schedules-data" target="_blank" rel="noopener" class="btn btn-outline btn-sm" title="View public schedules repository on GitHub">
-                GitHub
+              <a id="link-repo-github" href="https://github.com/mohamed-ayman-abdellatif/college-schedules-data" target="_blank" rel="noopener" class="btn btn-outline btn-sm" style="padding: 4px 8px;" title="View public schedules repository on GitHub">
+                <span>🐙</span>
               </a>
             </div>
           </div>
 
-          <!-- Live Subject Search & Quick-Add Bar -->
+          <!-- Live Subject Search & Quick-Add Bar (Search by name, code, or doctor) -->
           <div class="major-search-bar-container">
-            <label for="input-major-course-search" class="form-label major-search-label">
-              <strong data-i18n="searchAddSubjectTitle">Quick Search &amp; Add Subject</strong>
-              <span class="form-label-hint" data-i18n="searchAddSubjectTip">Search across all departments by code, name, or doctor</span>
+            <label for="input-major-course-search" class="form-label" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <span>
+                <span style="margin-inline-end: 6px;">🔎</span>
+                <strong data-i18n="searchAddSubjectTitle">Quick Search &amp; Add Subject (بحث وإضافة مادة مباشرة)</strong>
+              </span>
+              <span style="font-size: 0.8rem; color: var(--text-muted);" data-i18n="searchAddSubjectTip">Type course code or name across all departments</span>
             </label>
             <div class="major-search-input-wrapper">
-              <span class="major-search-icon" aria-hidden="true">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-              </span>
+              <span class="major-search-icon">🔍</span>
               <input type="text"
                      id="input-major-course-search"
                      class="major-search-input"
@@ -157,6 +153,7 @@
                      disabled />
               <button type="button" id="btn-clear-major-search" class="major-search-clear" style="display: none;" title="Clear search">✕</button>
             </div>
+            <!-- Floating Live Results Dropdown Container -->
             <div id="major-course-search-dropdown" class="major-search-dropdown" style="display: none;">
               <!-- Populated dynamically by JavaScript -->
             </div>
@@ -165,31 +162,38 @@
           <!-- Cascading Selectors: Major, Department, Period -->
           <div class="major-selectors-grid">
             <div class="form-group">
-              <label for="select-major-college" class="form-label" data-i18n="selectMajorLabel">Major / Faculty:</label>
+              <label for="select-major-college" class="form-label">
+                <span>🎓</span> <span data-i18n="selectMajorLabel">Major / Faculty:</span>
+              </label>
               <select id="select-major-college" class="select-input">
                 <option value="" data-i18n="chooseFacultyOption">-- Choose Faculty --</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label for="select-major-department" class="form-label" data-i18n="selectDeptLabel">Department:</label>
+              <label for="select-major-department" class="form-label">
+                <span>🏢</span> <span data-i18n="selectDeptLabel">Department:</span>
+              </label>
               <select id="select-major-department" class="select-input" disabled>
                 <option value="">-- Choose Department (اختر القسم) --</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label for="select-major-period" class="form-label" data-i18n="selectPeriodLabel">Period / Term:</label>
+              <label for="select-major-period" class="form-label">
+                <span>📅</span> <span data-i18n="selectPeriodLabel">Period / Term:</span>
+              </label>
               <select id="select-major-period" class="select-input" disabled>
                 <option value="">-- Choose Period (اختر الفترة) --</option>
               </select>
             </div>
           </div>
 
-          <!-- Submit Action Button -->
-          <div class="major-submit-action-bar">
-            <button type="button" id="btn-submit-major-subjects" class="btn btn-primary btn-block">
-              <span id="btn-submit-major-subjects-text" data-i18n="submitSubjectsBtn">Submit Subjects into Website</span>
+          <!-- Prominent Submit Action Button (Always Visible) -->
+          <div class="major-submit-action-bar" style="margin-top: 14px; margin-bottom: 12px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+            <button type="button" id="btn-submit-major-subjects" class="btn btn-primary btn-lg" style="flex: 1; min-height: 48px; font-size: 1.05rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35); border-radius: var(--radius-md); cursor: pointer;">
+              <span style="font-size: 1.25rem;">⚡</span>
+              <span id="btn-submit-major-subjects-text" data-i18n="submitSubjectsBtn">Submit Subjects into Website (إدراج المواد في الموقع)</span>
             </button>
           </div>
 
@@ -203,23 +207,25 @@
               <div class="major-preview-actions">
                 <button type="button" id="btn-major-toggle-all" class="btn btn-outline btn-xs" data-i18n="selectAll">Select All</button>
                 <button type="button" id="btn-load-major-subjects" class="btn btn-primary btn-sm">
-                  <span data-i18n="loadSubjectsBtn">Load All Subjects into Optimizer</span>
+                  <span>⚡</span> <span data-i18n="loadSubjectsBtn">Load All Subjects into Optimizer</span>
                 </button>
               </div>
             </div>
 
             <div id="major-preview-chips" class="major-preview-chips-container">
-              <!-- Course preview chips -->
+              <!-- Course preview cards/chips with checkmarks -->
             </div>
           </div>
 
           <!-- Empty state when no timetable for period -->
-          <div id="major-empty-notice" class="alert alert-info" style="display: none;">
-            <div>
-              <span id="major-empty-notice-text">No active schedules found for this period.</span>
+          <div id="major-empty-notice" class="alert alert-info" style="display: none; margin-top: 14px; flex-direction: column; gap: 10px; align-items: flex-start;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span>ℹ️</span> <span id="major-empty-notice-text">No active schedules found for this period.</span>
             </div>
-            <div id="major-empty-fallback-action" style="display: none; margin-top: 6px;">
-              <button type="button" id="btn-switch-period-fallback" class="btn btn-secondary btn-sm"></button>
+            <div id="major-empty-fallback-action" style="display: none; margin-top: 4px;">
+              <button type="button" id="btn-switch-period-fallback" class="btn btn-secondary btn-sm" style="font-weight: 600; cursor: pointer;">
+                <!-- Switch to Period X & Submit -->
+              </button>
             </div>
           </div>
         </div>
@@ -229,16 +235,16 @@
           <textarea id="html-input-text" class="textarea-input"
                     placeholder="Paste HTML schedule content from your college portal here..."
                     data-i18n-placeholder="htmlPlaceholder"></textarea>
-          <div class="panel-actions-bar">
-            <div class="panel-actions-left">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px; flex-wrap: wrap; gap: 10px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
               <input type="file" id="input-html-file" accept=".html,.htm,.txt" style="display: none;" />
               <button class="btn btn-secondary btn-sm" onclick="document.getElementById('input-html-file').click();">
-                Upload .HTML File
+                <span>📁</span> <span>Upload .HTML File</span>
               </button>
-              <span class="text-muted text-xs">You can paste the full page HTML or just the &lt;table&gt; element</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">(Tip: You can paste the whole page or just the &lt;table&gt;)</span>
             </div>
             <button id="btn-parse-html" class="btn btn-primary" data-i18n="parseBtn">
-              Parse &amp; Add Course
+              <span>🔍</span> <span>Parse & Add Course</span>
             </button>
           </div>
         </div>
@@ -246,25 +252,26 @@
         <!-- Panel 1B: Upload PDF Timetable -->
         <div id="panel-pdf" class="subtab-panel" style="display: none;">
           <input type="file" id="input-schedule-pdf" accept=".pdf,application/pdf" style="display: none;" />
-          <div id="pdf-dropzone" class="dropzone">
-            <div class="dropzone-title" data-i18n="pdfDropzoneTitle">Drag &amp; drop your PDF timetable here, or click to browse</div>
-            <div class="dropzone-subtitle" data-i18n="pdfDropzoneSub">Supports aSc Timetables &amp; AAST university schedule PDFs (all pages &amp; groups)</div>
+          <div id="pdf-dropzone" class="dropzone" style="cursor: pointer;">
+            <div class="dropzone-icon">📄</div>
+            <div class="dropzone-title" data-i18n="pdfDropzoneTitle">Drag & drop your PDF timetable here, or click to browse</div>
+            <div class="dropzone-subtitle" data-i18n="pdfDropzoneSub">Supports aSc Timetables & AAST university schedule PDFs (all pages & groups)</div>
           </div>
 
-          <div id="pdf-progress-container" class="progress-wrapper" style="display: none;">
-            <div class="progress-labels">
+          <div id="pdf-progress-container" style="display: none; margin-top: 14px;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 6px;">
               <span id="pdf-progress-text" data-i18n="pdfParsingPages">Extracting pages from PDF...</span>
               <span id="pdf-progress-pct">0%</span>
             </div>
-            <div class="progress-track">
-              <div id="pdf-progress-bar" class="progress-fill"></div>
+            <div style="width: 100%; height: 8px; background: var(--bg-tertiary); border-radius: 4px; overflow: hidden;">
+              <div id="pdf-progress-bar" style="width: 0%; height: 100%; background: var(--accent-primary); transition: width 0.2s;"></div>
             </div>
           </div>
 
           <!-- Fallback: Collapsible Text / OCR Paste -->
-          <div style="margin-top: 12px;">
-            <button type="button" id="btn-toggle-pdf-text" class="btn btn-secondary btn-sm">
-              <span data-i18n="togglePdfText">Or paste copied text / OCR from PDF</span>
+          <div style="margin-top: 14px;">
+            <button type="button" id="btn-toggle-pdf-text" class="btn btn-secondary btn-sm" style="font-size: 0.82rem;">
+              <span>📝</span> <span data-i18n="togglePdfText">Or paste copied text / OCR from PDF</span>
             </button>
             <div id="pdf-text-container" style="display: none; margin-top: 10px;">
               <textarea id="pdf-input-text" class="textarea-input" rows="5"
@@ -272,7 +279,7 @@
                         data-i18n-placeholder="pdfTextPlaceholder"></textarea>
               <div style="display: flex; justify-content: flex-end; margin-top: 8px;">
                 <button id="btn-parse-pdf-text" class="btn btn-primary btn-sm" data-i18n="parsePdfTextBtn">
-                  Parse PDF Text
+                  <span>🔍</span> <span>Parse PDF Text</span>
                 </button>
               </div>
             </div>
@@ -283,7 +290,8 @@
         <div id="panel-image" class="subtab-panel" style="display: none;">
           <input type="file" id="input-schedule-image" accept="image/*" style="display: none;" />
           <div id="image-dropzone" class="dropzone">
-            <div class="dropzone-title" data-i18n="dropzoneTitle">Drag &amp; drop schedule photo here, or click to browse</div>
+            <div class="dropzone-icon">📷</div>
+            <div class="dropzone-title" data-i18n="dropzoneTitle">Drag & drop schedule photo here, or click to browse</div>
             <div class="dropzone-subtitle" data-i18n="dropzoneSub">Supports PNG, JPG screenshots of schedule tables</div>
           </div>
         </div>
@@ -293,18 +301,22 @@
       <div class="card">
         <div class="card-header">
           <div>
-            <div class="card-title">Registered Courses</div>
-            <div class="card-subtitle">Review your course list, available groups, and session timings</div>
+            <div class="card-title">
+              <span>📚</span> <span>Registered Courses</span>
+            </div>
+            <div class="card-subtitle">
+              Review your course list, available groups, and session timings
+            </div>
           </div>
-          <div class="card-actions-group">
-            <button id="btn-fresh-start" class="btn btn-outline btn-sm" onclick="App.clearCacheAndReset()" title="Reset everything to fresh default state">
-              <span data-i18n="freshStartBtn">Reset All</span>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button id="btn-fresh-start" class="btn btn-outline btn-sm" onclick="App.clearCacheAndReset()" title="Reset everything to fresh default incognito state">
+              <span>🧹</span> <span data-i18n="freshStartBtn">Fresh Start (Reset All)</span>
             </button>
-            <button id="btn-clear-courses" class="btn btn-outline btn-sm btn-danger-text" data-i18n="clearAllCourses">
-              Clear All
+            <button id="btn-clear-courses" class="btn btn-outline btn-sm" style="color: var(--danger);" data-i18n="clearAllCourses">
+              Clear All Courses
             </button>
-            <button id="btn-find-schedules" class="btn btn-primary btn-sm" data-i18n="findSchedulesBtn">
-              Find Best Schedules
+            <button id="btn-find-schedules" class="btn btn-success" data-i18n="findSchedulesBtn">
+              <span>⚡</span> <span>Find Best Schedules</span>
             </button>
           </div>
         </div>
@@ -321,12 +333,12 @@
       <div class="card">
         <div class="card-header">
           <div>
-            <div class="card-title" data-i18n="freeDaysTitle">Target Free Days (Days Off)</div>
-            <div class="card-subtitle" data-i18n="freeDaysDesc">Select the days of the week you prefer to take completely off</div>
+            <div class="card-title" data-i18n="freeDaysTitle">🏖️ Target Free Days (Days Completely Off)</div>
+            <div class="card-subtitle" data-i18n="freeDaysDesc">Choose specific days you want completely free from university classes</div>
           </div>
         </div>
 
-        <div class="free-days-selector">
+        <div class="free-days-selector" style="margin-top: 6px;">
           <div class="day-chip" data-day="Saturday">Saturday (السبت)</div>
           <div class="day-chip" data-day="Sunday">Sunday (الأحد)</div>
           <div class="day-chip" data-day="Monday">Monday (الاثنين)</div>
@@ -341,26 +353,29 @@
       <div class="card">
         <div class="card-header">
           <div>
-            <div class="card-title" data-i18n="blockedTimesTitle">Blocked Times (Training &amp; Busy Hours)</div>
+            <div class="card-title">
+              <span>🚫</span> <span data-i18n="blockedTimesTitle">Prohibited / Blocked Times (Training & Busy Hours)</span>
+            </div>
             <div class="card-subtitle" data-i18n="blockedTimesDesc">
-              Block specific times (e.g. Saturday 8:30 AM). The optimizer will prevent classes from being scheduled during these slots.
+              Prohibit specific times (e.g. Saturday 8 AM training). The optimizer will guarantee zero classes are scheduled during these times!
             </div>
           </div>
           <div class="blocked-presets-row">
             <button class="btn btn-secondary btn-sm" onclick="App.applyBlockedPreset('evenings')">
-              <span data-i18n="presetEvenings">Block Slots After 4:00 PM</span>
+              <span data-i18n="presetEvenings">🌙 Block All Slots After 4 PM</span>
             </button>
-            <button class="btn btn-outline btn-sm btn-danger-text" onclick="App.applyBlockedPreset('clear')">
-              <span data-i18n="presetClearBlocked">Clear Blocked Slots</span>
+            <button class="btn btn-outline btn-sm" style="color: var(--danger);" onclick="App.applyBlockedPreset('clear')">
+              <span data-i18n="presetClearBlocked">Clear All Blocked Slots</span>
             </button>
             <button class="btn btn-outline btn-sm" onclick="App.clearPreferencesAndBlocked()" title="Reset doctor preferences, free days and blocked slots">
-              <span data-i18n="resetAllPrefsBtn">Reset Preferences &amp; Blocked Slots</span>
+              <span>🔄</span> <span data-i18n="resetAllPrefsBtn">Reset Preferences & Blocked Slots</span>
             </button>
           </div>
         </div>
 
+        <!-- Mobile Swipe Helper Hint -->
         <div class="mobile-scroll-hint">
-          <span data-i18n="mobileSwipeHint">Scroll horizontally to view all 16 periods</span>
+          <span>👈</span> <span data-i18n="mobileSwipeHint">Swipe horizontally to view all 16 periods 👈👉</span> <span>👉</span>
         </div>
 
         <!-- Interactive 7-Day x 16-Slot Painter Grid -->
@@ -371,8 +386,10 @@
         </div>
 
         <!-- Active Blocked Chips List -->
-        <div class="blocked-active-section">
-          <div class="blocked-active-title">Active Blocked Slots:</div>
+        <div style="margin-top: 14px;">
+          <div style="font-size: 0.85rem; font-weight: 700; margin-bottom: 6px;">
+            <span>Active Prohibited Slots:</span>
+          </div>
           <div id="blocked-chips-container" class="blocked-presets-row">
             <!-- Rendered by JavaScript -->
           </div>
@@ -383,27 +400,32 @@
       <div class="card">
         <div class="card-header">
           <div>
-            <div class="card-title" data-i18n="doctorPrefTitle">Doctor &amp; Instructor Preferences</div>
+            <div class="card-title" data-i18n="doctorPrefTitle">Doctor & Instructor Preferences</div>
             <div class="card-subtitle" data-i18n="doctorPrefDesc">
-              Prioritize preferred professors, triple-click "Favorite" to mandate a doctor, or click "Avoid" to exclude them from schedules.
+              Prioritize your favorite professors, triple-click "Favorite" to mandate (guarantee) a doctor (🌟🔒), or click "Avoid" to strictly exclude them from all schedules (🚫)
+            </div>
+            <div class="pref-tip-banner" style="margin-top: 8px; font-size: 0.8rem; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.35); border-radius: var(--radius-sm); padding: 5px 12px; color: #F59E0B; display: inline-flex; align-items: center; gap: 6px;">
+              <span>💡</span>
+              <span><strong>Feature Tip:</strong> Click <strong>"Favorite ⭐"</strong> to prioritize • <strong>Triple-click</strong> to <strong>Mandate 🌟🔒</strong> • Click <strong>"Avoid 🚫"</strong> to strictly exclude</span>
             </div>
           </div>
         </div>
 
-        <!-- Strict Doctor Mode Toggle -->
-        <div class="strict-mode-card">
-          <div class="strict-mode-inner">
-            <div class="strict-mode-info">
-              <label for="check-strict-doctor-combinations" class="strict-mode-title" data-i18n="strictDoctorModeTitle">
-                Exhaustive Strict Doctor Search
+        <!-- Strict Doctor Mode (Exhaustive Search) Toggle Box -->
+        <div class="strict-mode-card" style="margin: 0 0 18px 0; background: rgba(59, 130, 246, 0.06); border: 1.5px solid var(--accent-primary); border-radius: var(--radius-md); padding: 14px 18px;">
+          <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 240px;">
+              <label for="check-strict-doctor-combinations" style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 0.98rem; color: var(--text-primary); margin-bottom: 4px;">
+                <span>🎯</span>
+                <span data-i18n="strictDoctorModeTitle">Exhaustive Strict Doctor Search</span>
               </label>
-              <div class="strict-mode-desc" data-i18n="strictDoctorModeDesc">
-                Exhaustively checks 100% of schedule combinations. Guarantees zero avoided doctors and seeks your preferred professors.
+              <div style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;" data-i18n="strictDoctorModeDesc">
+                Exhaustively checks 100% of schedule combinations. Guarantees <strong>ZERO avoided doctors (🚫)</strong> and strictly seeks your desired professors (⭐/🌟). If no combination exists, it verifies all combinations to be mathematically certain.
               </div>
             </div>
-            <div class="strict-mode-control">
-              <input type="checkbox" id="check-strict-doctor-combinations" class="custom-toggle-checkbox" checked />
-              <label for="check-strict-doctor-combinations" id="label-strict-doctor-toggle" class="strict-toggle-label" data-i18n="strictDoctorToggleLabel">Active (Strict)</label>
+            <div style="display: flex; align-items: center; gap: 10px; padding-top: 2px;">
+              <input type="checkbox" id="check-strict-doctor-combinations" class="custom-toggle-checkbox" style="width: 20px; height: 20px; cursor: pointer; accent-color: var(--accent-primary);" checked />
+              <label for="check-strict-doctor-combinations" id="label-strict-doctor-toggle" style="cursor: pointer; font-size: 0.85rem; font-weight: 700; color: var(--accent-primary);" data-i18n="strictDoctorToggleLabel">Active</label>
             </div>
           </div>
         </div>
@@ -413,10 +435,10 @@
         </div>
       </div>
 
-      <!-- Bottom CTA to Solve -->
-      <div class="bottom-cta-wrapper">
-        <button class="btn btn-primary btn-block btn-lg" onclick="App.findSchedules()" data-i18n="findSchedulesBtn">
-          Find Best Schedules
+      <!-- Mobile & Quick Bottom CTA to Solve -->
+      <div style="margin-top: 14px; margin-bottom: 24px;">
+        <button class="btn btn-primary" style="width: 100%; justify-content: center; padding: 14px; font-size: 1.05rem; font-weight: 700; box-shadow: 0 4px 14px var(--accent-glow);" onclick="App.findSchedules()" data-i18n="findSchedulesBtn">
+          <span>⚡</span> <span>Find Best Schedules</span>
         </button>
       </div>
     </section>
@@ -424,97 +446,117 @@
     <!-- TAB 3: TIMETABLE RESULTS -->
     <section id="tab-timetable" class="tab-content" style="display: none;">
       <!-- Schedules Filter & Priorities Card -->
-      <div class="card timetable-filters-card">
-        <div class="card-header">
+      <div class="card timetable-filters-card" style="margin-bottom: 20px;">
+        <div class="card-header" style="margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
           <div>
-            <div class="card-title" data-i18n="schedulesFilterTitle">Schedule Filters &amp; Ranking Priority</div>
+            <div class="card-title">
+              <span>🔍</span> <span data-i18n="schedulesFilterTitle">Schedules Filter & Optimization Priorities</span>
+            </div>
             <div class="card-subtitle" data-i18n="schedulesFilterDesc">
-              Filter by maximum campus days, gaps, and daily classes, or sort by priority.
+              Strict non-negotiable filters for campus days, gaps, and daily workload, plus instant ranking goals.
             </div>
           </div>
           <button class="btn btn-outline btn-xs" onclick="App.resetTimetableFilters()" data-i18n="resetFiltersBtn">
-            Reset Filters
+            🔄 Reset Filters
           </button>
         </div>
 
         <!-- Hard Filters Grid -->
         <div class="filters-grid">
           <div class="filter-group">
-            <label for="filter-max-days" class="filter-label" data-i18n="filterMaxDays">Max Days / Week:</label>
+            <label for="filter-max-days" class="filter-label">
+              <span data-i18n="filterMaxDays">Max Days / Week:</span>
+              <span style="color: var(--success);">🏖️</span>
+            </label>
             <select id="filter-max-days" class="select-input filter-select" onchange="App.handleTimetableFilterChange()">
-              <option value="any" data-i18n="optAny">Any (No restriction)</option>
-              <option value="1">Max 1 Day</option>
-              <option value="2">Max 2 Days</option>
-              <option value="3">Max 3 Days</option>
-              <option value="4">Max 4 Days</option>
-              <option value="5">Max 5 Days</option>
-              <option value="6">Max 6 Days</option>
+              <option value="any" data-i18n="optAny">Any Days (أي عدد أيام)</option>
+              <option value="1">Max 1 Day (يوم واحد)</option>
+              <option value="2">Max 2 Days (يومان)</option>
+              <option value="3">Max 3 Days (3 أيام)</option>
+              <option value="4">Max 4 Days (4 أيام)</option>
+              <option value="5">Max 5 Days (5 أيام)</option>
+              <option value="6">Max 6 Days (6 أيام)</option>
             </select>
           </div>
 
           <div class="filter-group">
-            <label for="filter-max-gaps" class="filter-label" data-i18n="filterMaxGaps">Max Gap Slots:</label>
+            <label for="filter-max-gaps" class="filter-label">
+              <span data-i18n="filterMaxGaps">Max Gap Slots:</span>
+              <span style="color: var(--accent-primary);">⚡</span>
+            </label>
             <select id="filter-max-gaps" class="select-input filter-select" onchange="App.handleTimetableFilterChange()">
-              <option value="any" data-i18n="optAny">Any (No restriction)</option>
-              <option value="0">0 Gaps</option>
-              <option value="1">Max 1 Slot</option>
-              <option value="2">Max 2 Slots</option>
-              <option value="3">Max 3 Slots</option>
-              <option value="4">Max 4 Slots</option>
+              <option value="any" data-i18n="optAny">Any Gaps (أي عدد فترات)</option>
+              <option value="0">0 Gaps (بدون أي فراغ نهائياً)</option>
+              <option value="1">Max 1 Slot (فترة واحدة)</option>
+              <option value="2">Max 2 Slots (فترتان)</option>
+              <option value="3">Max 3 Slots (3 فترات)</option>
+              <option value="4">Max 4 Slots (4 فترات)</option>
             </select>
           </div>
 
           <div class="filter-group">
-            <label for="filter-max-classes-day" class="filter-label" data-i18n="filterMaxClasses">Max Classes / Day:</label>
+            <label for="filter-max-classes-day" class="filter-label">
+              <span data-i18n="filterMaxClasses">Max Classes / Day:</span>
+              <span style="color: var(--purple);">📚</span>
+            </label>
             <select id="filter-max-classes-day" class="select-input filter-select" onchange="App.handleTimetableFilterChange()">
-              <option value="any" data-i18n="optAny">Any (No restriction)</option>
-              <option value="1">Max 1 Class / Day</option>
-              <option value="2">Max 2 Classes / Day</option>
-              <option value="3">Max 3 Classes / Day</option>
-              <option value="4">Max 4 Classes / Day</option>
-              <option value="5">Max 5 Classes / Day</option>
+              <option value="any" data-i18n="optAny">Any (أي عدد محاضرات)</option>
+              <option value="1">Max 1 Class / Day (محاضرة واحدة)</option>
+              <option value="2">Max 2 Classes / Day (محاضرتان)</option>
+              <option value="3">Max 3 Classes / Day (3 محاضرات)</option>
+              <option value="4">Max 4 Classes / Day (4 محاضرات)</option>
+              <option value="5">Max 5 Classes / Day (5 محاضرات)</option>
             </select>
           </div>
 
           <div class="filter-group">
-            <label for="filter-max-options" class="filter-label" data-i18n="filterMaxOptions">Max Schedules to Show:</label>
+            <label for="filter-max-options" class="filter-label">
+              <span data-i18n="filterMaxOptions">Max Schedules to Show:</span>
+              <span style="color: var(--accent-primary);">🔢</span>
+            </label>
             <select id="filter-max-options" class="select-input filter-select" onchange="App.handleTimetableFilterChange()">
-              <option value="all" data-i18n="optAllSchedules">All Schedules</option>
-              <option value="5" data-i18n="optTop5">Top 5 Schedules</option>
-              <option value="15" data-i18n="optTop15">Top 15 Schedules</option>
-              <option value="25" data-i18n="optTop25">Top 25 Schedules</option>
-              <option value="50" data-i18n="optTop50">Top 50 Schedules</option>
-              <option value="100" data-i18n="optTop100">Top 100 Schedules</option>
-              <option value="250" data-i18n="optTop250">Top 250 Schedules</option>
+              <option value="all" data-i18n="optAllSchedules">All Schedules (جميع الجداول)</option>
+              <option value="5" data-i18n="optTop5">Top 5 (أفضل 5 جداول)</option>
+              <option value="15" data-i18n="optTop15">Top 15 (أفضل 15 جدول)</option>
+              <option value="25" data-i18n="optTop25">Top 25 (أفضل 25 جدول)</option>
+              <option value="50" data-i18n="optTop50">Top 50 (أفضل 50 جدول)</option>
+              <option value="100" data-i18n="optTop100">Top 100 (أفضل 100 جدول)</option>
+              <option value="250" data-i18n="optTop250">Top 250 (أفضل 250 جدول)</option>
             </select>
           </div>
         </div>
 
         <!-- 4 Preset Choices Row -->
-        <div class="presets-section">
-          <div class="presets-label" data-i18n="rankingPresetLabel">Ranking Priority:</div>
+        <div style="margin-top: 14px;">
+          <div style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;" data-i18n="rankingPresetLabel">
+            🎯 Ranking Priority (Choose 1 of 4):
+          </div>
           <div class="preset-checkboxes-row">
             <label class="preset-choice-card" id="preset-card-minimum_days">
               <input type="radio" name="ranking-preset" value="minimum_days" onchange="App.handlePresetChange('minimum_days')" />
               <span class="preset-choice-content">
+                <span class="preset-icon">🏖️</span>
                 <span class="preset-text" data-i18n="presetMinDays">Minimum Days</span>
               </span>
             </label>
             <label class="preset-choice-card" id="preset-card-minimal_gaps">
               <input type="radio" name="ranking-preset" value="minimal_gaps" onchange="App.handlePresetChange('minimal_gaps')" />
               <span class="preset-choice-content">
+                <span class="preset-icon">⚡</span>
                 <span class="preset-text" data-i18n="presetMinGaps">Minimal Gaps</span>
               </span>
             </label>
             <label class="preset-choice-card" id="preset-card-early_schedule">
               <input type="radio" name="ranking-preset" value="early_schedule" onchange="App.handlePresetChange('early_schedule')" />
               <span class="preset-choice-content">
+                <span class="preset-icon">🌅</span>
                 <span class="preset-text" data-i18n="presetEarly">Early Schedule</span>
               </span>
             </label>
             <label class="preset-choice-card is-active" id="preset-card-balanced">
               <input type="radio" name="ranking-preset" value="balanced" checked onchange="App.handlePresetChange('balanced')" />
               <span class="preset-choice-content">
+                <span class="preset-icon">⚖️</span>
                 <span class="preset-text" data-i18n="presetBalanced">Balanced</span>
               </span>
             </label>
@@ -522,14 +564,14 @@
         </div>
 
         <!-- Filter Diagnostic Warning Banner (shown when 0 match) -->
-        <div id="filter-mismatch-banner" class="filter-mismatch-banner" style="display: none;">
-          <div class="filter-mismatch-header">
-            <div class="filter-mismatch-title" data-i18n="filterMismatchBannerTitle">
-              Filter Mismatch: Showing 1 Unfiltered Schedule for Inspection
+        <div id="filter-mismatch-banner" class="filter-mismatch-banner" style="display: none; margin-top: 14px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 8px; font-weight: 700; color: #EF4444; font-size: 0.95rem;">
+              <span>⚠️</span> <span data-i18n="filterMismatchBannerTitle">Non-negotiable Filter Mismatch: Showing 1 Unfiltered Schedule for Inspection</span>
             </div>
             <button class="btn btn-outline btn-xs" onclick="App.resetTimetableFilters()" data-i18n="resetFiltersBtn">Reset Filters</button>
           </div>
-          <div id="filter-mismatch-diagnostics" class="filter-violations-list">
+          <div id="filter-mismatch-diagnostics" class="filter-violations-list" style="margin-top: 8px;">
             <!-- Populated dynamically -->
           </div>
         </div>
@@ -538,22 +580,22 @@
       <!-- Solution Navigation Carousel -->
       <div class="solutions-nav-container">
         <div class="solutions-nav-header">
-          <div class="solutions-nav-title">
-            <span data-i18n="rankedOptionsTitle">Ranked Clash-Free Options</span>
+          <div style="font-weight: 700; font-size: 1rem; color: var(--text-primary); display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+            <span data-i18n="rankedOptionsTitle">🎯 Ranked Clash-Free Options:</span>
             <span class="keyboard-nav-hint" title="Use keyboard arrow keys (← / →) to switch schedules">
               <kbd>←</kbd> <kbd>→</kbd> <span data-i18n="arrowKeysHint">Use keyboard arrows</span>
             </span>
           </div>
           <div class="solutions-nav-controls">
             <button type="button" id="btn-prev-schedule" class="btn btn-outline btn-xs" onclick="App.prevSchedule()" title="Previous Schedule (←)" disabled>
-              <span>←</span> <span class="arrow-btn-text" data-i18n="prevSchedule">Previous</span>
+              <span>◀</span> <span class="arrow-btn-text" data-i18n="prevSchedule">Previous</span>
             </button>
             <span id="schedule-counter-badge" class="schedule-counter-badge">1 / 1</span>
             <button type="button" id="btn-next-schedule" class="btn btn-outline btn-xs" onclick="App.nextSchedule()" title="Next Schedule (→)" disabled>
-              <span class="arrow-btn-text" data-i18n="nextSchedule">Next</span> <span>→</span>
+              <span class="arrow-btn-text" data-i18n="nextSchedule">Next</span> <span>▶</span>
             </button>
             <div class="schedule-jump-wrapper" title="Enter schedule number to jump directly">
-              <span class="jump-icon" aria-hidden="true">#</span>
+              <span class="jump-icon" aria-hidden="true">🎯</span>
               <input type="number" id="schedule-jump-input" class="schedule-jump-input" min="1" max="1" value="1"
                      placeholder="#"
                      title="Enter schedule # to jump (press Enter)"
@@ -577,21 +619,32 @@
       <div class="card" id="timetable-card">
         <div class="card-header">
           <div>
-            <div class="card-title">Weekly Timetable (Periods 1 - 16)</div>
+            <div class="card-title">
+              <span>📅</span> <span>Weekly Timetable (Periods 1 - 16)</span>
+            </div>
             <div class="card-subtitle">
               Visual timetable showing your classes, selected groups, doctor names, and gap intervals
             </div>
           </div>
-          <div class="card-actions-group">
-            <button id="btn-export-txt" class="btn btn-secondary btn-sm" data-i18n="exportTxt">Export TXT</button>
-            <button id="btn-export-png" class="btn btn-secondary btn-sm" data-i18n="exportPng">Export PNG</button>
-            <button id="btn-export-ics" class="btn btn-secondary btn-sm" data-i18n="exportIcs">Export .ics</button>
-            <button id="btn-print" class="btn btn-primary btn-sm" data-i18n="printSchedule">Print</button>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button id="btn-export-txt" class="btn btn-secondary btn-sm" data-i18n="exportTxt">
+              <span>📄</span> <span>Export TXT</span>
+            </button>
+            <button id="btn-export-png" class="btn btn-secondary btn-sm" data-i18n="exportPng">
+              <span>🖼️</span> <span>Export PNG</span>
+            </button>
+            <button id="btn-export-ics" class="btn btn-secondary btn-sm" data-i18n="exportIcs">
+              <span>📲</span> <span>Google Calendar (.ics)</span>
+            </button>
+            <button id="btn-print" class="btn btn-primary btn-sm" data-i18n="printSchedule">
+              <span>🖨️</span> <span>Print Timetable</span>
+            </button>
           </div>
         </div>
 
+        <!-- Mobile Swipe Helper Hint -->
         <div class="mobile-scroll-hint">
-          <span data-i18n="mobileSwipeHint">Scroll horizontally to view all 16 periods</span>
+          <span>👈</span> <span data-i18n="mobileSwipeHint">Swipe horizontally to view all 16 periods 👈👉</span> <span>👉</span>
         </div>
 
         <!-- Render Target for Timetable Grid -->
@@ -601,10 +654,14 @@
       </div>
 
       <!-- Backup / Export JSON -->
-      <div class="json-backup-bar">
+      <div style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px;">
         <input type="file" id="input-json-file" accept=".json" style="display: none;" />
-        <button id="btn-import-json" class="btn btn-outline btn-sm" data-i18n="importJson">Import JSON</button>
-        <button id="btn-export-json" class="btn btn-outline btn-sm" data-i18n="exportJson">Save JSON</button>
+        <button id="btn-import-json" class="btn btn-outline btn-sm" data-i18n="importJson">
+          <span>📥</span> <span>Import Courses (JSON)</span>
+        </button>
+        <button id="btn-export-json" class="btn btn-outline btn-sm" data-i18n="exportJson">
+          <span>💾</span> <span>Save Courses (JSON)</span>
+        </button>
       </div>
     </section>
 
@@ -614,17 +671,19 @@
       <div class="card">
         <div class="card-header">
           <div>
-            <div class="card-title" data-i18n="manualTitle">Manual Schedule Builder</div>
+            <div class="card-title">
+              <span>🛠️</span> <span data-i18n="manualTitle">Manual Schedule Builder</span>
+            </div>
             <div class="card-subtitle" data-i18n="manualSubtitle">
-              Explore groups by doctor or pick course groups manually with real-time clash detection.
+              Select your favorite doctors to see all their groups, pick groups manually, and build your custom schedule with instant clash detection.
             </div>
           </div>
-          <div class="card-actions-group">
-            <button id="btn-clear-manual" class="btn btn-outline btn-sm btn-danger-text" data-i18n="clearManualSchedule">
-              Reset Schedule
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button id="btn-clear-manual" class="btn btn-outline btn-sm" style="color: var(--danger);" data-i18n="clearManualSchedule">
+              <span>🔄</span> <span>Reset Schedule</span>
             </button>
             <button id="btn-apply-manual-to-opt" class="btn btn-primary btn-sm" data-i18n="viewInTimetable">
-              View in Timetable Results
+              <span>🗓️</span> <span>View in Timetable Results</span>
             </button>
           </div>
         </div>
@@ -639,35 +698,37 @@
       <div class="card">
         <div class="card-header">
           <div>
-            <div class="card-title" data-i18n="manualDocSearchTitle">Explore by Doctor / Professor</div>
+            <div class="card-title">
+              <span>👨‍🏫</span> <span data-i18n="manualDocSearchTitle">Explore by Doctor / Professor</span>
+            </div>
             <div class="card-subtitle" data-i18n="manualDocSearchDesc">
-              Select a doctor to inspect their lecture groups, days, and times.
+              Choose any doctor to reveal all their lecture groups, days, times, and quickly add them to your schedule
             </div>
           </div>
         </div>
 
         <div class="manual-doctor-controls">
-          <div class="manual-doctor-inputs-grid">
-            <div class="form-group">
-              <label for="manual-doctor-select" class="form-label" data-i18n="selectDoctorLabel">
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-end;">
+            <div style="flex: 1; min-width: 260px;">
+              <label for="manual-doctor-select" style="font-size: 0.85rem; font-weight: 700; margin-bottom: 6px; display: block;" data-i18n="selectDoctorLabel">
                 Select Doctor / Professor:
               </label>
-              <select id="manual-doctor-select" class="select-input">
+              <select id="manual-doctor-select" class="select-input" style="width: 100%; padding: 10px 14px; border-radius: var(--radius-md); background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-color); font-size: 0.95rem;">
                 <option value="">-- Choose a doctor to view their groups --</option>
               </select>
             </div>
 
-            <div class="form-group">
-              <label for="manual-doctor-search-input" class="form-label" data-i18n="searchDoctorLabel">
+            <div style="flex: 1; min-width: 220px;">
+              <label for="manual-doctor-search-input" style="font-size: 0.85rem; font-weight: 700; margin-bottom: 6px; display: block;" data-i18n="searchDoctorLabel">
                 Or Search Doctor / Course:
               </label>
-              <input type="text" id="manual-doctor-search-input" class="text-input" placeholder="Search doctor or course..." />
+              <input type="text" id="manual-doctor-search-input" class="text-input" placeholder="Search doctor or course..." style="width: 100%; padding: 10px 14px; border-radius: var(--radius-md); background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-color); font-size: 0.95rem;" />
             </div>
           </div>
 
           <!-- Doctor's Groups Showcase Container -->
           <div id="manual-doctor-groups-container" style="margin-top: 16px;">
-            <!-- Rendered by JavaScript -->
+            <!-- Rendered by JavaScript: Cards of groups taught by the chosen doctor -->
           </div>
         </div>
       </div>
@@ -676,42 +737,44 @@
       <div class="card">
         <div class="card-header">
           <div>
-            <div class="card-title" data-i18n="manualCourseGroupsTitle">Course Groups &amp; Clash Checker</div>
+            <div class="card-title">
+              <span>📚</span> <span data-i18n="manualCourseGroupsTitle">Course Groups & Instant Conflict Checker</span>
+            </div>
             <div class="card-subtitle" data-i18n="manualCourseGroupsDesc">
-              Pick one group per course. Conflicting groups are highlighted in red.
+              Pick one group for each course. Groups with time clashes with your current picks will be highlighted in red.
             </div>
           </div>
         </div>
 
         <!-- Doctor Visibility Filter & Independent Doctor/TA Customization Bar -->
-        <div class="manual-filter-bar">
+        <div class="manual-filter-bar" style="margin-bottom: 16px; display: flex; flex-direction: column; gap: 12px; background: var(--bg-secondary); padding: 14px 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
           <!-- Toggle 1: Hide Avoided Doctors -->
-          <div class="manual-filter-row">
-            <label for="check-manual-hide-avoided" class="manual-filter-label">
-              <input type="checkbox" id="check-manual-hide-avoided" checked onchange="App.toggleManualHideAvoided(this.checked)" />
-              <span data-i18n="manualHideAvoidedLabel">Hide Avoided Doctors &amp; Keep Only Mandated Doctors (When Set)</span>
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+            <label for="check-manual-hide-avoided" style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 0.92rem; color: var(--text-primary); margin: 0;">
+              <input type="checkbox" id="check-manual-hide-avoided" style="width: 18px; height: 18px; cursor: pointer; accent-color: var(--accent-primary);" checked onchange="App.toggleManualHideAvoided(this.checked)" />
+              <span data-i18n="manualHideAvoidedLabel">🚫 Hide Avoided Doctors & Focus Mandated</span>
             </label>
-            <span class="manual-filter-hint" data-i18n="manualHideAvoidedDesc">
-              Hides groups taught by avoided professors and isolates mandated professors when set.
+            <span style="font-size: 0.8rem; color: var(--text-muted);" data-i18n="manualHideAvoidedDesc">
+              Groups with avoided doctors (🚫) are hidden; subjects with mandatory doctors (🌟🔒) show only mandatory groups.
             </span>
           </div>
 
-          <div class="manual-filter-divider"></div>
+          <div style="height: 1px; background: var(--border-color); opacity: 0.5;"></div>
 
           <!-- Toggle 2: Customize Doctor, Section & Lab Checkbox (Default: UNCHECKED) -->
-          <div class="manual-filter-row">
-            <label for="check-manual-customize-doc-ta" class="manual-filter-label is-accent">
-              <input type="checkbox" id="check-manual-customize-doc-ta" onchange="App.toggleManualCustomizeDocTA(this.checked)" />
-              <span data-i18n="manualCustomizeDocTALabel">Customize Doctor, Section &amp; Lab Independently</span>
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+            <label for="check-manual-customize-doc-ta" style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 0.92rem; color: var(--accent-primary); margin: 0;">
+              <input type="checkbox" id="check-manual-customize-doc-ta" style="width: 18px; height: 18px; cursor: pointer; accent-color: var(--accent-primary);" onchange="App.toggleManualCustomizeDocTA(this.checked)" />
+              <span data-i18n="manualCustomizeDocTALabel">🔀 Customize Doctor, Section &amp; Lab Independently</span>
             </label>
-            <span class="manual-filter-hint" data-i18n="manualCustomizeDocTADesc">
-              Choose Doctor (Lectures), Section, and Lab separately for each group, or select entire groups together.
+            <span style="font-size: 0.8rem; color: var(--text-muted);" data-i18n="manualCustomizeDocTADesc">
+              Click a Doctor, Section, or Lab to add each to the timetable independently, or select the entire group together.
             </span>
           </div>
         </div>
 
         <div id="manual-courses-picker-container" class="manual-courses-list">
-          <!-- Rendered by JavaScript -->
+          <!-- Rendered by JavaScript: List of courses with their groups -->
         </div>
       </div>
 
@@ -719,23 +782,35 @@
       <div class="card" id="manual-timetable-card">
         <div class="card-header">
           <div>
-            <div class="card-title" data-i18n="manualTimetableTitle">Custom Timetable Preview</div>
+            <div class="card-title">
+              <span>📅</span> <span data-i18n="manualTimetableTitle">Your Custom Timetable Preview</span>
+            </div>
             <div class="card-subtitle" data-i18n="manualTimetableDesc">
               Interactive 16-period schedule showing your custom selections and any time overlaps
             </div>
           </div>
-          <div class="card-actions-group">
-            <button id="btn-manual-export-txt" class="btn btn-secondary btn-sm" data-i18n="exportTxt">Export TXT</button>
-            <button id="btn-manual-export-png" class="btn btn-secondary btn-sm" data-i18n="exportPng">Export PNG</button>
-            <button id="btn-manual-export-ics" class="btn btn-secondary btn-sm" data-i18n="exportIcs">Export .ics</button>
-            <button id="btn-manual-print" class="btn btn-primary btn-sm" data-i18n="printSchedule">Print</button>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button id="btn-manual-export-txt" class="btn btn-secondary btn-sm" data-i18n="exportTxt">
+              <span>📄</span> <span>Export TXT</span>
+            </button>
+            <button id="btn-manual-export-png" class="btn btn-secondary btn-sm" data-i18n="exportPng">
+              <span>🖼️</span> <span>Export PNG</span>
+            </button>
+            <button id="btn-manual-export-ics" class="btn btn-secondary btn-sm" data-i18n="exportIcs">
+              <span>📲</span> <span>Google Calendar (.ics)</span>
+            </button>
+            <button id="btn-manual-print" class="btn btn-primary btn-sm" data-i18n="printSchedule">
+              <span>🖨️</span> <span>Print Timetable</span>
+            </button>
           </div>
         </div>
 
+        <!-- Mobile Scroll Hint -->
         <div class="mobile-scroll-hint">
-          <span data-i18n="mobileSwipeHint">Scroll horizontally to view all 16 periods</span>
+          <span>👈</span> <span data-i18n="mobileSwipeHint">Swipe horizontally to view all 16 periods 👈👉</span> <span>👉</span>
         </div>
 
+        <!-- Render Target for Custom Timetable Grid -->
         <div id="manual-timetable-render-container">
           <!-- Populated by JavaScript -->
         </div>
@@ -744,70 +819,121 @@
 
   </main>
 
-  <!-- Footer -->
+  <!-- Developer Prayer Note & Footer -->
+  <!-- متنساش تدعيلي دعوة حلوة -->
   <footer class="app-footer">
-    <div class="footer-stats-box" onclick="if(window.SiteAnalytics)SiteAnalytics.openStatsModal()" title="Live Users & Traffic" role="button" tabindex="0">
+    <div class="footer-stats-box" onclick="if(window.SiteAnalytics)SiteAnalytics.openStatsModal()" title="Live Users & Traffic (Click for details)" role="button" tabindex="0">
       <div class="stat-bubble live-bubble">
         <span class="live-dot-pulse"></span>
         <span class="stat-num" id="footer-active-count">1</span>
         <span class="stat-label" data-i18n="activeUsersNow">Active Users Online</span>
       </div>
       <div class="stat-bubble total-bubble">
+        <span class="stat-icon">👥</span>
         <span class="stat-num" id="footer-total-count">--</span>
-        <span class="stat-label" data-i18n="totalVisitors">Total Unique Visits</span>
+        <span class="stat-label" data-i18n="totalVisitors">Total Visits</span>
       </div>
     </div>
 
     <div class="dev-prayer-box">
+      <span class="prayer-icon">🤲</span>
       <span class="prayer-text">متنساش تدعيلي دعوة حلوة</span>
-      <span class="dev-secret-link" onclick="if(window.SiteTelemetry)SiteTelemetry.openAdminModal();" title="Developer Admin Portal (Ctrl+Shift+D)">· Admin</span>
+      <span class="prayer-heart">❤️</span>
+      <span class="dev-secret-link" onclick="if(window.SiteTelemetry)SiteTelemetry.openAdminModal();" title="Developer Admin Portal & Reset Sheet (Ctrl+Shift+D)" style="opacity: 0.55; font-size: 0.78rem; cursor: pointer; margin-inline-start: 8px; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.55'">🔐</span>
     </div>
-    <div class="dev-subtext">صُنع لمساعدة طلاب الجامعات في تنظيم أفضل جدول دراسي بدون تعارض وبأقل فترات فراغ</div>
+    <div class="dev-subtext">صُنع بحب لمساعدة طلاب الجامعات في تنظيم أفضل جدول دراسي بدون تعارض وبأقل فترات فراغ</div>
   </footer>
 
   <!-- Guide / Tutorial Modal -->
   <div id="guide-modal" class="modal-backdrop" style="display: none !important;" onclick="if(event.target===this){if(window.App&&window.App.closeGuideModal){App.closeGuideModal();}this.style.setProperty('display','none','important');}">
     <div class="modal-dialog guide-modal-dialog">
       <div class="modal-header">
-        <h3 class="modal-title" data-i18n="guideModalTitle">Quick Guide: How to Use the Optimizer</h3>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 1.3rem;">📖</span>
+          <h3 class="modal-title" data-i18n="guideModalTitle" style="font-size: 1.15rem; font-weight: 800;">
+            Quick Guide: How to Use the Optimizer
+          </h3>
+        </div>
         <button class="btn btn-outline btn-sm" onclick="if(window.App&&window.App.closeGuideModal){App.closeGuideModal();}var m=document.getElementById('guide-modal');if(m)m.style.setProperty('display','none','important');">✕</button>
       </div>
       <div class="modal-body" id="guide-modal-body">
         <div class="guide-steps-container">
+          <!-- Step 1 -->
           <div class="guide-step-card">
             <div class="guide-step-badge">1</div>
             <div class="guide-step-content">
-              <div class="guide-step-title">Select Your Faculty or Import Schedule HTML / PDF</div>
+              <div class="guide-step-title">
+                <span>🏛️</span>
+                <span>Copy Schedule HTML from College Portal</span>
+              </div>
               <div class="guide-step-desc">
                 <ul>
-                  <li>Choose your faculty, department, and period from the <strong>Major / Department Timetable</strong> tab and click <strong>Submit Subjects into Website</strong>.</li>
-                  <li>Or copy the schedule table HTML from your student portal and paste it under <strong>Paste HTML Code</strong>, or upload a schedule PDF/screenshot.</li>
+                  <li>Log in to your university portal (e.g. <strong>AASTMT Student Portal ➔ Schedule</strong>).</li>
+                  <li>Select your term and choose <strong>"Course Schedule (جدول مقرر)"</strong> to view all class groups.</li>
+                  <li>Select your Department and Subject (e.g. <em>Applied Programming - ECE2102</em>).</li>
+                  <li><strong>Right-click</strong> on the schedule table and select <strong>Inspect</strong> (or press <code>F12</code> / <code>Ctrl+Shift+I</code>).</li>
+                  <li>In the Elements DOM tree, right-click the <code>&lt;table&gt;</code> or the root <code>&lt;html&gt;</code> tag ➔ choose <strong>Copy ➔ Copy element</strong>.</li>
                 </ul>
+                <div class="guide-pro-tip">
+                  💡 <strong>Pro Tip:</strong> You can copy the entire page HTML code (<code>Ctrl+A</code> then <code>Ctrl+C</code> in DevTools) and our smart parser will detect the schedule automatically!
+                </div>
               </div>
             </div>
           </div>
 
+          <!-- Step 2 -->
           <div class="guide-step-card">
             <div class="guide-step-badge">2</div>
             <div class="guide-step-content">
-              <div class="guide-step-title">Set Free Days, Blocked Times &amp; Doctor Preferences</div>
+              <div class="guide-step-title">
+                <span>📥</span>
+                <span>Paste & Add Courses into the Optimizer</span>
+              </div>
               <div class="guide-step-desc">
                 <ul>
-                  <li>Open <strong>2. Doctor &amp; Goals</strong> to pick target days off and click or drag across the 16-period grid to block busy hours.</li>
-                  <li>Mark professors as <strong>Favorite</strong>, triple-click to <strong>Mandate</strong>, or click <strong>Avoid</strong> to exclude them.</li>
+                  <li>Return to Tab <strong>"1. Add Courses"</strong> here in the optimizer.</li>
+                  <li>Paste the copied HTML into the text box using <code>Ctrl + V</code>.</li>
+                  <li>Click the purple <strong>"Parse & Add Course"</strong> button.</li>
+                  <li>The app extracts all groups (B to L), lecture doctors with <code>Dr.</code> title, labs, and time periods!</li>
+                  <li>Repeat for the other courses you want to register this semester.</li>
                 </ul>
               </div>
             </div>
           </div>
 
+          <!-- Step 3 -->
           <div class="guide-step-card">
             <div class="guide-step-badge">3</div>
             <div class="guide-step-content">
-              <div class="guide-step-title">Generate, Filter &amp; Export Your Schedule</div>
+              <div class="guide-step-title">
+                <span>👨‍🏫</span>
+                <span>Set Busy Hours & Doctor Preferences</span>
+              </div>
               <div class="guide-step-desc">
                 <ul>
-                  <li>Click <strong>Find Best Schedules</strong> to compute and rank all clash-free combinations.</li>
-                  <li>Filter by maximum days, gaps, or classes per day, and export to <strong>PNG</strong>, <strong>TXT</strong>, <strong>.ics</strong>, or <strong>Print</strong>.</li>
+                  <li>Switch to Tab <strong>"2. Doctor & Goals"</strong>.</li>
+                  <li><strong>Block Busy Times:</strong> Click or drag across the 16-period weekly grid to prohibit slots (e.g. sports training on Saturday 8:30 AM or commutes). Zero classes will ever be placed there!</li>
+                  <li><strong>Rank Doctors:</strong> Lecture professors are highlighted in alphabetical order at the top with a <code>🎓 Doctor</code> badge. Click <strong>⭐ Favorite</strong> for preferred professors or <strong>🚫 Avoid</strong> to skip unwanted instructors.</li>
+                  <li><strong>Days Off:</strong> Select a target free day (e.g. Tuesday off) and set your gap minimization priority slider.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="guide-step-card">
+            <div class="guide-step-badge">4</div>
+            <div class="guide-step-content">
+              <div class="guide-step-title">
+                <span>⚡</span>
+                <span>Generate & Export Your Ideal Timetable</span>
+              </div>
+              <div class="guide-step-desc">
+                <ul>
+                  <li>Click the primary button <strong>"⚡ Find Best Schedules"</strong>.</li>
+                  <li>Browse clash-free options in the top carousel (e.g. <strong>Option #5: ⚡ 0 Gaps • 4 Days</strong>).</li>
+                  <li>Inspect your weekly calendar with doctor names, period times, and coffee-break gap indicators (<code>☕</code>).</li>
+                  <li>Export as <strong>PNG image</strong> for your phone, <strong>Google Calendar (.ics)</strong>, or <strong>Print</strong> for registration!</li>
                 </ul>
               </div>
             </div>
@@ -816,17 +942,17 @@
 
         <div class="guide-quick-action-box">
           <div>
-            <div class="font-semibold">Want to test it immediately?</div>
-            <div class="text-sm text-secondary">Load pre-configured university courses with one click to see how the optimizer works.</div>
+            <div style="font-weight: 700; color: var(--text-primary);">💡 Want to test it immediately?</div>
+            <div style="font-size: 0.85rem; color: var(--text-secondary);">Load pre-configured university courses with one click to see how the optimizer works right now.</div>
           </div>
           <button class="btn btn-secondary btn-sm" onclick="if(window.App&&window.App.loadSampleCourses){App.loadSampleCourses();}if(window.App&&window.App.closeGuideModal){App.closeGuideModal();}var m=document.getElementById('guide-modal');if(m)m.style.setProperty('display','none','important');">
-            Load Example Courses
+            📚 Load Example Courses Now
           </button>
         </div>
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer" style="justify-content: flex-end;">
         <button class="btn btn-primary" onclick="if(window.App&&window.App.closeGuideModal){App.closeGuideModal();}var m=document.getElementById('guide-modal');if(m)m.style.setProperty('display','none','important');" data-i18n="guideGotItBtn">
-          Got it
+          Got it, Close 🚀
         </button>
       </div>
     </div>
@@ -836,7 +962,7 @@
   <div id="image-calibration-modal" class="modal-backdrop" style="display: none;">
     <div class="modal-dialog">
       <div class="modal-header">
-        <h3 class="modal-title">Verify &amp; Calibrate Photo Slots</h3>
+        <h3 style="font-size: 1.1rem; font-weight: 700;">Verify & Calibrate Photo Slots</h3>
         <button class="btn btn-outline btn-sm" onclick="document.getElementById('image-calibration-modal').style.display='none';">✕</button>
       </div>
       <div class="modal-body" id="calibration-blocks-list">
@@ -853,10 +979,16 @@
   <div id="analytics-modal" class="modal-backdrop" style="display: none !important;" onclick="if(event.target===this){SiteAnalytics.closeStatsModal();}">
     <div class="modal-dialog analytics-modal-dialog">
       <div class="modal-header">
-        <h3 class="modal-title" data-i18n="statsModalTitle">Live Users &amp; Traffic Overview</h3>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 1.3rem;">📊</span>
+          <h3 class="modal-title" data-i18n="statsModalTitle" style="font-size: 1.15rem; font-weight: 800;">
+            Live Users & Traffic Overview
+          </h3>
+        </div>
         <button class="btn btn-outline btn-sm" onclick="SiteAnalytics.closeStatsModal()">✕</button>
       </div>
       <div class="modal-body" id="analytics-modal-body">
+        <!-- Real-time metrics grid -->
         <div class="analytics-metrics-grid">
           <div class="analytics-stat-card active-card">
             <div class="analytics-card-header">
@@ -864,11 +996,12 @@
               <span data-i18n="activeUsersNow">Active Users Online</span>
             </div>
             <div class="analytics-card-val" id="modal-active-count">1</div>
-            <div class="analytics-card-desc" data-i18n="activeUsersDesc">Students currently browsing &amp; optimizing schedules</div>
+            <div class="analytics-card-desc" data-i18n="activeUsersDesc">Students currently browsing & optimizing schedules</div>
           </div>
 
           <div class="analytics-stat-card total-card">
             <div class="analytics-card-header">
+              <span>👥</span>
               <span data-i18n="totalVisitors">Total Unique Visits</span>
             </div>
             <div class="analytics-card-val" id="modal-total-count">--</div>
@@ -876,41 +1009,53 @@
           </div>
         </div>
 
+        <!-- Current User Session Status -->
         <div class="analytics-session-info">
           <div class="session-info-item">
             <span class="session-info-label" data-i18n="sessionDurationLabel">Your current session time:</span>
             <span class="session-info-val" id="modal-session-time">0m 0s</span>
           </div>
           <div class="session-info-item">
-            <span class="session-info-label" data-i18n="privacyLabel">Privacy &amp; Safety:</span>
-            <span class="session-info-val privacy-badge" data-i18n="privacyDesc">100% Anonymous &amp; Zero Cookies</span>
+            <span class="session-info-label" data-i18n="privacyLabel">Privacy & Safety:</span>
+            <span class="session-info-val privacy-badge" data-i18n="privacyDesc">🔒 100% Anonymous & Zero Cookies</span>
           </div>
         </div>
 
+        <!-- How it works info box -->
         <div class="analytics-info-box">
-          <div class="font-semibold" style="margin-bottom: 4px;" data-i18n="howItWorksTitle">How is this tracked?</div>
-          <div class="text-sm text-secondary" data-i18n="howItWorksDesc">
-            This counter runs serverlessly using an anonymous presence heartbeat every 45s.
+          <div style="font-weight: 700; color: var(--text-primary); margin-bottom: 6px;" data-i18n="howItWorksTitle">
+            ⚡ How is this tracked?
+          </div>
+          <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;" data-i18n="howItWorksDesc">
+            This counter runs completely serverlessly on GitHub Pages using an atomic presence heartbeat. When anyone opens the website, their browser sends a privacy-safe presence ping every 45s. When they close the tab, the active count updates in real-time.
           </div>
         </div>
       </div>
-      <div class="modal-footer">
-        <button class="btn btn-primary" onclick="SiteAnalytics.closeStatsModal()" data-i18n="closeBtn">Close</button>
+      <div class="modal-footer" style="justify-content: flex-end;">
+        <button class="btn btn-primary" onclick="SiteAnalytics.closeStatsModal()" data-i18n="closeBtn">
+          Close
+        </button>
       </div>
     </div>
   </div>
 
-  <!-- Optimizer Loading Modal -->
+  <!-- Optimizer Loading Modal (Progress Bar & Live Steps) -->
   <div id="optimizer-loading-modal" class="modal-backdrop" style="display: none !important;">
     <div class="modal-dialog optimizer-loading-dialog">
       <div class="optimizer-loading-content">
+        <div class="loading-animation-wrapper">
+          <div class="loading-pulse-ring"></div>
+          <div class="loading-center-icon">🗓️</div>
+        </div>
         <h3 class="loading-title" data-i18n="loadingTitle">Generating Optimal Schedules...</h3>
         <p class="loading-step-text" id="optimizer-loading-step" data-i18n="loadingStep1">Analyzing course combinations and lecture groups...</p>
+        
         <div class="loading-progress-track">
           <div class="loading-progress-bar" id="optimizer-progress-bar" style="width: 15%;"></div>
         </div>
+
         <div class="loading-footer-tip" data-i18n="loadingFooterTip">
-          Computing the best clash-free schedules...
+          ⚡ Please wait a moment while the optimizer computes the best clash-free schedules for you!
         </div>
       </div>
     </div>
@@ -921,32 +1066,39 @@
     <div class="modal-dialog" style="max-width: 680px; width: 95%;">
       <div class="modal-header">
         <div>
-          <h3 class="modal-title" data-i18n="pdfModalTitle">Select Courses to Import</h3>
-          <p id="pdf-modal-subtitle" class="text-sm text-secondary" data-i18n="pdfModalSubtitle">
+          <h3 class="modal-title" style="display: flex; align-items: center; gap: 8px;">
+            <span>📄</span>
+            <span data-i18n="pdfModalTitle">Select Courses to Import</span>
+          </h3>
+          <p id="pdf-modal-subtitle" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px;" data-i18n="pdfModalSubtitle">
             Choose which courses from your timetable PDF you want to add to your schedule:
           </p>
         </div>
         <button class="modal-close-btn" id="btn-close-pdf-modal">&times;</button>
       </div>
-      <div class="modal-body" style="max-height: 60vh; overflow-y: auto;">
-        <div class="pdf-modal-toolbar">
-          <div id="pdf-detected-groups-badge" class="preview-badge">Found 0 Groups</div>
+      <div class="modal-body" style="max-height: 60vh; overflow-y: auto; padding: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+          <div id="pdf-detected-groups-badge" style="font-size: 0.82rem; font-weight: 600; color: var(--accent-primary); background: rgba(59, 130, 246, 0.1); padding: 4px 10px; border-radius: 20px;">
+            Found 0 Groups
+          </div>
           <div style="display: flex; gap: 8px;">
-            <button type="button" id="btn-pdf-select-all" class="btn btn-secondary btn-xs" data-i18n="selectAll">Select All</button>
-            <button type="button" id="btn-pdf-deselect-all" class="btn btn-outline btn-xs" data-i18n="deselectAll">Deselect All</button>
+            <button type="button" id="btn-pdf-select-all" class="btn btn-secondary btn-sm" style="font-size: 0.8rem;" data-i18n="selectAll">Select All</button>
+            <button type="button" id="btn-pdf-deselect-all" class="btn btn-outline btn-sm" style="font-size: 0.8rem;" data-i18n="deselectAll">Deselect All</button>
           </div>
         </div>
 
-        <div id="pdf-courses-selection-list" style="display: flex; flex-direction: column; gap: 8px;">
-          <!-- Populated by JavaScript -->
+        <div id="pdf-courses-selection-list" style="display: flex; flex-direction: column; gap: 10px;">
+          <!-- Populated by JavaScript with course cards + checkboxes -->
         </div>
       </div>
-      <div class="modal-footer" style="justify-content: space-between;">
-        <span id="pdf-selected-count-label" class="text-sm font-semibold text-secondary">Selected: 0 courses</span>
+      <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+        <span id="pdf-selected-count-label" style="font-size: 0.88rem; font-weight: 600; color: var(--text-secondary);">
+          Selected: 0 courses
+        </span>
         <div style="display: flex; gap: 8px;">
-          <button type="button" id="btn-cancel-pdf-import" class="btn btn-secondary btn-sm" data-i18n="cancelBtn">Cancel</button>
-          <button type="button" id="btn-confirm-pdf-import" class="btn btn-primary btn-sm" data-i18n="importSelectedCourses">
-            Import Selected Courses
+          <button type="button" id="btn-cancel-pdf-import" class="btn btn-secondary" data-i18n="cancelBtn">Cancel</button>
+          <button type="button" id="btn-confirm-pdf-import" class="btn btn-primary" data-i18n="importSelectedCourses">
+            <span>✅</span> <span>Import Selected Courses</span>
           </button>
         </div>
       </div>
@@ -956,25 +1108,30 @@
   <!-- Non-negotiable Filter Conflict Error Modal -->
   <div id="modal-filter-conflict" class="modal-backdrop" style="display: none;">
     <div class="modal-dialog" style="max-width: 520px;">
-      <div class="modal-header">
-        <h3 class="modal-title" style="color: var(--danger);" data-i18n="filterConflictModalTitle">No Schedules Match Your Filters</h3>
-        <button type="button" class="btn btn-outline btn-sm" onclick="App.closeFilterConflictModal()">✕</button>
-      </div>
-      <div class="modal-body">
-        <p class="text-sm text-secondary" style="margin-bottom: 12px;" data-i18n="filterConflictModalDesc">
-          None of the generated schedules satisfy your strict filters. Showing 1 unfiltered schedule so you can inspect where the restriction is exceeded.
-        </p>
-        <div id="modal-filter-conflict-details" class="conflict-details-box">
-          <!-- Dynamic stats comparing user limit vs best schedule -->
+      <div class="modal-content" style="border-top: 4px solid #EF4444; border-radius: var(--radius-lg); background: var(--bg-primary);">
+        <div class="modal-header" style="display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; border-bottom: 1px solid var(--border-color);">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="font-size: 24px;">⚠️</span>
+            <h3 style="margin: 0; font-size: 1.15rem; color: #EF4444; font-weight: 700;" data-i18n="filterConflictModalTitle">No Schedules Match Your Filters!</h3>
+          </div>
+          <button type="button" class="btn btn-outline btn-sm" onclick="App.closeFilterConflictModal()">✕</button>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline btn-sm" onclick="App.resetTimetableFilters()" data-i18n="resetFiltersBtn">
-          Reset Filters
-        </button>
-        <button type="button" class="btn btn-primary btn-sm" onclick="App.closeFilterConflictModal()" data-i18n="viewUnfilteredBtn">
-          View Unfiltered Schedule
-        </button>
+        <div class="modal-body" style="padding: 20px;">
+          <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 14px;" data-i18n="filterConflictModalDesc">
+            None of the generated schedules satisfy your strict non-negotiable filters. We have provided <strong>1 unfiltered schedule</strong> on the timetable so you can inspect where the restriction is exceeded.
+          </p>
+          <div id="modal-filter-conflict-details" style="background: var(--bg-secondary); border-radius: var(--radius-md); padding: 14px; border: 1px solid var(--border-color); font-size: 0.88rem; line-height: 1.5;">
+            <!-- Dynamic stats comparing user limit vs best schedule -->
+          </div>
+        </div>
+        <div class="modal-footer" style="display: flex; justify-content: flex-end; gap: 10px; padding: 14px 20px; border-top: 1px solid var(--border-color); flex-wrap: wrap;">
+          <button type="button" class="btn btn-outline btn-sm" onclick="App.resetTimetableFilters()" data-i18n="resetFiltersBtn">
+            🔄 Reset Filters
+          </button>
+          <button type="button" class="btn btn-primary btn-sm" onclick="App.closeFilterConflictModal()" data-i18n="viewUnfilteredBtn">
+            👁️ View Schedule & Diagnostics
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -982,31 +1139,36 @@
   <!-- Modal: Schedule Text Export & Copy -->
   <div id="modal-schedule-txt" class="modal-backdrop" style="display: none;" onclick="if(event.target===this)App.closeScheduleTxtModal();">
     <div class="modal-dialog" style="max-width: 520px; width: 95%;">
-      <div class="modal-header">
-        <h3 class="modal-title" id="schedule-txt-modal-title" data-i18n="scheduleTxtModalTitle">Schedule Groups Text</h3>
-        <button type="button" class="btn btn-outline btn-sm" onclick="App.closeScheduleTxtModal()">✕</button>
-      </div>
-      <div class="modal-body">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
-          <span class="text-sm text-secondary" data-i18n="scheduleTxtHelp">Format: Course Code: Group Number/Letter</span>
-          <div class="subtabs-container" id="schedule-txt-scope-tabs">
-            <button type="button" class="subtab-btn active" id="btn-tab-txt-current" onclick="App.toggleScheduleTxtScope('current')" data-i18n="txtCurrentSchedule">This Schedule</button>
-            <button type="button" class="subtab-btn" id="btn-tab-txt-all" onclick="App.toggleScheduleTxtScope('all')" data-i18n="txtAllSchedules">All Schedules</button>
-          </div>
+      <div class="modal-content" style="border-radius: var(--radius-lg); background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);">
+        <div class="modal-header" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid var(--border-color);">
+          <h3 class="modal-title" style="display: flex; align-items: center; gap: 8px; font-size: 1.1rem; font-weight: 800;">
+            <span>📄</span> <span id="schedule-txt-modal-title" data-i18n="scheduleTxtModalTitle">Schedule Groups Text</span>
+          </h3>
+          <button type="button" class="btn btn-outline btn-sm" onclick="App.closeScheduleTxtModal()">✕</button>
         </div>
-        <textarea id="schedule-txt-content" class="textarea-input code-textarea" rows="8" readonly></textarea>
-      </div>
-      <div class="modal-footer" style="justify-content: space-between;">
-        <button type="button" class="btn btn-secondary btn-sm" onclick="App.copyScheduleTxtContent()">
-          <span data-i18n="copyTxtBtn">Copy to Clipboard</span>
-        </button>
-        <div style="display: flex; gap: 8px;">
-          <button type="button" class="btn btn-primary btn-sm" onclick="App.downloadScheduleTxtFromModal()">
-            <span data-i18n="downloadTxtBtn">Download .txt File</span>
+        <div class="modal-body" style="padding: 18px 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
+            <span style="font-size: 0.84rem; color: var(--text-secondary);" data-i18n="scheduleTxtHelp">Format: Course Code: Group Number/Letter</span>
+            <div class="subtabs-container" style="display: inline-flex; width: auto;" id="schedule-txt-scope-tabs">
+              <button type="button" class="subtab-btn active" id="btn-tab-txt-current" onclick="App.toggleScheduleTxtScope('current')" data-i18n="txtCurrentSchedule">This Schedule</button>
+              <button type="button" class="subtab-btn" id="btn-tab-txt-all" onclick="App.toggleScheduleTxtScope('all')" data-i18n="txtAllSchedules">All Schedules</button>
+            </div>
+          </div>
+          <textarea id="schedule-txt-content" class="textarea-input" rows="8" readonly
+                    style="font-family: 'Consolas', 'Courier New', monospace; font-size: 0.95rem; line-height: 1.6; font-weight: 600; padding: 12px; background: var(--bg-primary); border: 1.5px solid var(--border-color); border-radius: var(--radius-md); width: 100%; resize: vertical;"></textarea>
+        </div>
+        <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 14px 20px; border-top: 1px solid var(--border-color); flex-wrap: wrap;">
+          <button type="button" class="btn btn-secondary btn-sm" onclick="App.copyScheduleTxtContent()">
+            <span>📋</span> <span data-i18n="copyTxtBtn">Copy to Clipboard</span>
           </button>
-          <button type="button" class="btn btn-outline btn-sm" onclick="App.closeScheduleTxtModal()" data-i18n="closeBtn">
-            Close
-          </button>
+          <div style="display: flex; gap: 8px;">
+            <button type="button" class="btn btn-primary btn-sm" onclick="App.downloadScheduleTxtFromModal()">
+              <span>💾</span> <span data-i18n="downloadTxtBtn">Download .txt File</span>
+            </button>
+            <button type="button" class="btn btn-outline btn-sm" onclick="App.closeScheduleTxtModal()" data-i18n="closeBtn">
+              Close
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -1015,17 +1177,17 @@
   <!-- Toast Notification Container -->
   <div id="toast-container" class="toast-container"></div>
 
-  <!-- Scripts -->
+  <!-- Scripts with Cache Busting -->
   <script src="js/pdf.min.js"></script>
-  <script src="js/pdfParser.js?v=7.0"></script>
-  <script src="js/parser.js?v=7.0"></script>
-  <script src="js/sampleData.js?v=7.0"></script>
-  <script src="js/optimizer.js?v=7.0"></script>
-  <script src="js/imageExtractor.js?v=7.0"></script>
-  <script src="js/renderer.js?v=7.0"></script>
-  <script src="js/exporter.js?v=7.0"></script>
-  <script src="js/analytics.js?v=7.0"></script>
-  <script src="js/telemetry.js?v=7.0"></script>
-  <script src="js/app.js?v=7.0"></script>
+  <script src="js/pdfParser.js?v=6.0"></script>
+  <script src="js/parser.js?v=6.0"></script>
+  <script src="js/sampleData.js?v=6.0"></script>
+  <script src="js/optimizer.js?v=6.0"></script>
+  <script src="js/imageExtractor.js?v=6.0"></script>
+  <script src="js/renderer.js?v=6.0"></script>
+  <script src="js/exporter.js?v=6.0"></script>
+  <script src="js/analytics.js?v=6.0"></script>
+  <script src="js/telemetry.js?v=6.0"></script>
+  <script src="js/app.js?v=6.0"></script>
 </body>
 </html>

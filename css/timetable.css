@@ -1,372 +1,50 @@
-/* ==========================================================================
-   Timetable Grid, Solution Carousel & Agenda Stylesheet (Clean & Simple)
-   ========================================================================== */
+/**
+ * timetable.css
+ * Styling for the 16-slot interactive timetable calendar, solution selector,
+ * session cards, gap indicators, mobile daily agenda, and clean print styles.
+ */
 
-/* Solution Navigation Carousel */
-.solutions-nav-container {
-  margin-bottom: 16px;
-}
-
-.solutions-nav-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.solutions-nav-title {
-  font-weight: 600;
-  font-size: 0.92rem;
-  color: var(--text-primary);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.solutions-nav-controls {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.schedule-counter-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4px 10px;
-  border-radius: var(--radius-sm);
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  color: var(--text-primary);
-  font-size: 0.78rem;
-  font-weight: 600;
-  min-width: 64px;
-  text-align: center;
-}
-
-.keyboard-nav-hint {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 2px 8px;
-  border-radius: var(--radius-sm);
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  color: var(--text-muted);
-  font-size: 0.72rem;
-  font-weight: 500;
-}
-
-.keyboard-nav-hint kbd {
-  display: inline-block;
-  padding: 1px 4px;
-  font-size: 0.68rem;
-  font-family: inherit;
-  font-weight: 600;
-  color: var(--text-primary);
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: 3px;
-}
-
-.solutions-chips-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  gap: 6px;
-  padding: 4px 0;
-}
-
-.sol-chip {
-  flex: 1 1 115px;
-  max-width: 175px;
-  min-width: 105px;
-  padding: 8px 10px;
-  border-radius: var(--radius-md);
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  cursor: pointer;
-  transition: var(--transition);
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  text-align: start;
-}
-
-.sol-chip:hover {
-  border-color: var(--border-color-hover);
-  background: var(--bg-card-hover);
-}
-
-.sol-chip.active {
-  background: rgba(59, 130, 246, 0.08);
-  border-color: var(--accent-primary);
-}
-
-.sol-chip-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-weight: 600;
-  font-size: 0.82rem;
-  color: var(--text-primary);
-}
-
-.sol-chip.active .sol-chip-top {
-  color: var(--accent-primary);
-}
-
-.sol-chip-meta {
-  font-size: 0.72rem;
-  color: var(--text-secondary);
-  display: flex;
-  gap: 6px;
-}
-
-.sol-chip-ellipsis {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 34px;
-  padding: 0 8px;
-  border-radius: var(--radius-md);
-  background: var(--bg-secondary);
-  border: 1px dashed var(--border-color);
-  color: var(--text-muted);
-  font-weight: 600;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.sol-chip-ellipsis:hover {
-  border-color: var(--accent-primary);
-  color: var(--accent-primary);
-}
-
-/* Direct Schedule # Jump Input */
-.schedule-jump-wrapper {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  background: var(--bg-input);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-sm);
-  padding: 2px 7px;
-  margin-inline-start: 4px;
-}
-
-.schedule-jump-wrapper:focus-within {
-  border-color: var(--accent-primary);
-}
-
-.jump-icon {
-  font-size: 0.76rem;
-  color: var(--text-muted);
-  font-weight: 600;
-}
-
-.schedule-jump-input {
-  width: 48px;
-  border: none;
-  background: transparent;
-  color: var(--text-primary);
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-align: center;
-  outline: none;
-  padding: 2px 0;
-  -moz-appearance: textfield;
-}
-
-.schedule-jump-input::-webkit-outer-spin-button,
-.schedule-jump-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* ==========================================================================
-   Solution Summary Header Card
-   ========================================================================== */
-.solution-header-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 16px 20px;
-  margin-bottom: 16px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.header-left {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 20px;
-}
-
-.rank-title h3 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 6px;
-}
-
-.badges-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.solution-badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 2px 8px;
-  border-radius: var(--radius-sm);
-  font-size: 0.72rem;
-  font-weight: 600;
-}
-
-.badge-zero-gaps {
-  background: rgba(16, 185, 129, 0.12);
-  color: var(--success);
-}
-
-.badge-low-gaps {
-  background: rgba(14, 165, 233, 0.12);
-  color: var(--info);
-}
-
-.badge-min-days {
-  background: rgba(99, 102, 241, 0.12);
-  color: var(--purple);
-}
-
-.badge-fav-docs,
-.badge-uniform-group {
-  background: rgba(245, 158, 11, 0.12);
-  color: var(--warning);
-}
-
-.badge-danger,
-.badge-free-days-relaxed,
-.badge-blocked-relaxed {
-  background: rgba(239, 68, 68, 0.12);
-  color: var(--danger);
-}
-
-.stats-grid {
-  display: flex;
-  gap: 10px;
-}
-
-.stat-box {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 8px 14px;
-  text-align: center;
-  min-width: 82px;
-}
-
-.stat-val {
-  display: block;
-  font-size: 1.2rem;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.stat-lbl {
-  font-size: 0.7rem;
-  color: var(--text-secondary);
-  font-weight: 500;
-}
-
-.header-groups {
-  flex: 1;
-  min-width: 260px;
-}
-
-.groups-title {
-  font-size: 0.76rem;
-  color: var(--text-secondary);
-  margin-bottom: 6px;
-  font-weight: 600;
-}
-
-.groups-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.group-pill {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  padding: 4px 10px;
-  border-radius: var(--radius-sm);
-  font-size: 0.78rem;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.group-letter {
-  color: var(--text-primary);
-  font-weight: 600;
-}
-
-/* ==========================================================================
-   View Switcher & Mobile Agenda View
-   ========================================================================== */
+/* Timetable View Switcher */
 .timetable-view-switcher {
   display: flex;
-  gap: 4px;
-  margin-bottom: 14px;
+  gap: 8px;
+  margin-bottom: 16px;
   background: var(--bg-secondary);
-  padding: 4px;
+  padding: 6px;
   border-radius: var(--radius-md);
   border: 1px solid var(--border-color);
 }
 
 .view-switch-btn {
   flex: 1;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
-  padding: 7px 12px;
+  padding: 8px 12px;
+  font-size: 0.84rem;
+  font-weight: 700;
   border: none;
   border-radius: var(--radius-sm);
   background: transparent;
   color: var(--text-secondary);
-  font-weight: 600;
-  font-size: 0.82rem;
   cursor: pointer;
-  transition: var(--transition);
-}
-
-.view-switch-btn:hover {
-  color: var(--text-primary);
+  transition: all 0.2s ease;
+  user-select: none;
+  touch-action: manipulation;
 }
 
 .view-switch-btn.active {
-  background: var(--bg-card);
-  color: var(--text-primary);
-  box-shadow: var(--shadow-sm);
+  background: var(--accent-primary);
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px var(--accent-glow);
 }
 
-/* Mobile Daily Agenda Cards */
+/* Daily Agenda View (Mobile-Optimized) */
 .agenda-cards-container {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .agenda-day-card {
@@ -374,6 +52,7 @@
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   overflow: hidden;
+  box-shadow: var(--shadow-sm);
 }
 
 .agenda-day-card.is-off-day {
@@ -382,43 +61,35 @@
 
 .agenda-day-header {
   padding: 10px 14px;
-  background: var(--bg-card);
+  background: rgba(59, 130, 246, 0.08);
   border-bottom: 1px solid var(--border-color);
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 8px;
-}
-
-.agenda-day-card.is-off-day .agenda-day-header {
-  border-bottom: none;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 .agenda-day-name {
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 800;
   color: var(--text-primary);
-}
-
-.agenda-day-badge {
-  background: rgba(16, 185, 129, 0.12);
-  color: var(--success);
-  padding: 2px 8px;
-  border-radius: var(--radius-sm);
-  font-weight: 600;
-  font-size: 0.74rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .agenda-day-meta {
-  font-size: 0.78rem;
-  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
 }
 
 .agenda-day-body {
-  padding: 10px;
+  padding: 10px 12px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .agenda-session-card {
@@ -429,49 +100,21 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
-}
-
-.agenda-session-card.is-clashing-session {
-  border-color: rgba(239, 68, 68, 0.5);
-  background: rgba(239, 68, 68, 0.04);
-}
-
-.agenda-session-card.is-merged-lecture {
-  border-color: rgba(245, 158, 11, 0.5);
+  transition: transform 0.15s ease;
 }
 
 .agenda-session-top {
   display: flex;
-  align-items: flex-start;
   justify-content: space-between;
+  align-items: flex-start;
   gap: 8px;
 }
 
 .agenda-session-code {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-wrap: wrap;
-  font-size: 0.88rem;
-}
-
-.agenda-session-actions {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.agenda-clash-tag {
-  background: var(--danger);
-  color: #ffffff;
-  font-size: 0.68rem;
-  font-weight: 600;
-  padding: 1px 6px;
-  border-radius: var(--radius-sm);
-}
-
-.agenda-clash-tag.is-warning {
-  background: var(--warning);
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.3;
 }
 
 .agenda-session-info {
@@ -483,376 +126,987 @@
 }
 
 .agenda-info-pill {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  padding: 2px 8px;
+  border-radius: 4px;
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  background: var(--bg-secondary);
-  padding: 2px 8px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border-color);
 }
 
 .agenda-gap-badge {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 6px;
-  padding: 6px 10px;
-  border-radius: var(--radius-sm);
-  background: rgba(245, 158, 11, 0.08);
-  border: 1px dashed rgba(245, 158, 11, 0.35);
-  color: var(--warning);
-  font-size: 0.76rem;
-  font-weight: 500;
+  padding: 6px 12px;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px dashed rgba(245, 158, 11, 0.4);
+  border-radius: 6px;
+  font-size: 0.78rem;
+  color: #FBBF24;
+  font-weight: 600;
 }
 
 .agenda-blocked-badge {
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 10px;
-  border-radius: var(--radius-sm);
-  background: rgba(239, 68, 68, 0.08);
-  border: 1px dashed rgba(239, 68, 68, 0.35);
-  color: var(--danger);
-  font-size: 0.76rem;
-  font-weight: 500;
+  padding: 8px 12px;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px dashed rgba(239, 68, 68, 0.5);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: #F87171;
+  font-weight: 700;
 }
 
-.agenda-deselect-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  padding: 2px 7px;
-  border-radius: var(--radius-sm);
-  border: 1px solid rgba(239, 68, 68, 0.35);
-  background: rgba(239, 68, 68, 0.1);
-  color: var(--danger);
-  font-size: 0.7rem;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.agenda-deselect-btn:hover {
-  background: var(--danger);
-  color: #ffffff;
-}
-
-/* ==========================================================================
-   16-Period Weekly Timetable Grid
-   ========================================================================== */
 .timetable-wrapper {
   width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  overscroll-behavior-x: contain;
   border-radius: var(--radius-md);
   border: 1px solid var(--border-color);
   background: var(--bg-secondary);
-}
-
-.mobile-scroll-hint {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 6px 10px;
-  margin-bottom: 8px;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-sm);
-  color: var(--text-secondary);
-  font-size: 0.76rem;
+  box-shadow: var(--shadow-md);
 }
 
 .timetable-grid {
   display: grid;
-  min-width: 960px;
-  width: 100%;
-  border-collapse: collapse;
+  min-width: 1100px;
+  background-color: var(--border-color);
+  gap: 1px;
 }
 
+/* Grid Corners and Headers */
 .grid-header-corner {
-  background: var(--bg-tertiary);
-  padding: 10px 8px;
-  font-weight: 600;
-  font-size: 0.76rem;
-  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  padding: 12px;
+  font-weight: 700;
+  font-size: 0.85rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid var(--border-color);
-  border-inline-end: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  border-bottom: 2px solid var(--border-color);
   position: sticky;
   left: 0;
-  z-index: 15;
+  z-index: 20;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.2);
 }
 
 [dir="rtl"] .grid-header-corner {
   left: auto;
   right: 0;
+  box-shadow: -2px 0 6px rgba(0, 0, 0, 0.2);
 }
 
 .grid-slot-header {
-  background: var(--bg-tertiary);
-  padding: 6px 4px;
+  background: var(--bg-secondary);
+  padding: 8px 4px;
   text-align: center;
-  border-bottom: 1px solid var(--border-color);
-  border-inline-end: 1px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  gap: 1px;
+  align-items: center;
 }
 
 .grid-slot-header.period-start {
-  border-inline-start: 1px solid var(--border-highlight);
+  border-left: 2px solid rgba(59, 130, 246, 0.4);
+}
+
+[dir="rtl"] .grid-slot-header.period-start {
+  border-left: none;
+  border-right: 2px solid rgba(59, 130, 246, 0.4);
 }
 
 .slot-num {
-  font-weight: 700;
-  font-size: 0.82rem;
+  font-weight: 800;
+  font-size: 0.95rem;
   color: var(--text-primary);
 }
 
 .period-badge {
   font-size: 0.65rem;
-  font-weight: 600;
+  font-weight: 700;
+  background: rgba(59, 130, 246, 0.2);
   color: var(--accent-primary);
+  padding: 1px 5px;
+  border-radius: 4px;
+  margin: 2px 0;
 }
 
 .slot-time {
-  font-size: 0.64rem;
+  font-size: 0.65rem;
   color: var(--text-muted);
 }
 
 /* Day Row Headers */
 .grid-day-header {
-  background: var(--bg-card);
-  padding: 10px 8px;
-  border-bottom: 1px solid var(--border-color);
-  border-inline-end: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  padding: 14px 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-right: 2px solid var(--border-color);
   position: sticky;
   left: 0;
   z-index: 10;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.2);
 }
 
 [dir="rtl"] .grid-day-header {
+  border-right: none;
+  border-left: 2px solid var(--border-color);
   left: auto;
   right: 0;
+  box-shadow: -2px 0 6px rgba(0, 0, 0, 0.2);
 }
 
 .grid-day-header.active-day {
-  border-inline-start: 3px solid var(--accent-primary);
+  background: rgba(59, 130, 246, 0.05);
 }
 
 .grid-day-header.day-off {
+  background: rgba(100, 116, 139, 0.05);
   opacity: 0.6;
 }
 
 .day-title {
-  font-weight: 600;
-  font-size: 0.84rem;
-  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 0.95rem;
 }
 
 .day-status {
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
   margin-top: 2px;
 }
 
-/* Empty & Gap Cells */
-.grid-empty-cell {
-  min-height: 76px;
-  border-bottom: 1px solid var(--border-color);
-  border-inline-end: 1px solid var(--border-color);
-  background: var(--bg-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.grid-empty-cell.gap-highlight {
-  background: rgba(245, 158, 11, 0.04);
-}
-
-.gap-icon {
-  font-size: 0.9rem;
-  color: var(--warning);
-  opacity: 0.5;
-}
-
-/* Blocked Cells */
-.grid-blocked-cell {
-  min-height: 76px;
-  margin: 3px;
-  padding: 6px;
-  border-radius: var(--radius-sm);
-  border: 1px dashed rgba(239, 68, 68, 0.45);
-  background: rgba(239, 68, 68, 0.06);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 2px;
-}
-
-.blocked-badge {
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--danger);
-}
-
-.blocked-time {
-  font-size: 0.66rem;
-  color: var(--text-muted);
-}
-
-/* Session Cards inside Grid */
+/* Session Cards */
 .grid-session-card {
-  position: relative;
-  min-height: 76px;
-  margin: 3px;
-  padding: 7px 9px;
-  border-radius: var(--radius-sm);
   background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-inline-start-width: 3px;
+  padding: 8px 10px;
+  border-left: 4px solid var(--accent-primary);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: var(--transition);
+  min-height: 85px;
+  transition: filter 0.15s, transform 0.15s;
+  cursor: pointer;
+  position: relative;
   overflow: hidden;
 }
 
-.grid-session-card:hover {
-  border-color: var(--border-color-hover);
-  box-shadow: var(--shadow-sm);
+[dir="rtl"] .grid-session-card {
+  border-left: none;
+  border-right: 4px solid var(--accent-primary);
 }
 
-.grid-session-card.is-merged-lecture {
-  background: rgba(245, 158, 11, 0.05);
+.grid-session-card:hover {
+  filter: brightness(1.15);
+  z-index: 5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.grid-session-card.type-lect {
+  background: rgba(59, 130, 246, 0.15);
+}
+
+.grid-session-card.type-lab {
+  background: rgba(16, 185, 129, 0.15);
+}
+
+.grid-session-card.type-sec {
+  background: rgba(245, 158, 11, 0.15);
 }
 
 .session-top {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   gap: 4px;
-  margin-bottom: 2px;
 }
 
 .session-code {
-  font-weight: 700;
-  font-size: 0.78rem;
-  color: var(--text-primary);
+  font-weight: 800;
+  font-size: 0.85rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.session-name {
-  font-size: 0.72rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  line-height: 1.25;
-  margin-bottom: 2px;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 .session-badge {
-  font-size: 0.64rem;
-  font-weight: 600;
+  font-size: 0.65rem;
+  font-weight: 700;
   padding: 1px 5px;
-  border-radius: 3px;
-  white-space: nowrap;
+  border-radius: 4px;
+  text-transform: uppercase;
 }
 
 .session-badge.type-lect {
-  background: rgba(59, 130, 246, 0.14);
-  color: var(--accent-primary);
+  background: rgba(59, 130, 246, 0.3);
+  color: #60A5FA;
 }
 
 .session-badge.type-lab {
-  background: rgba(16, 185, 129, 0.14);
-  color: var(--success);
+  background: rgba(16, 185, 129, 0.3);
+  color: #34D399;
 }
 
 .session-badge.type-sec {
-  background: rgba(245, 158, 11, 0.14);
-  color: var(--warning);
+  background: rgba(245, 158, 11, 0.3);
+  color: #FBBF24;
 }
 
-.session-group {
+/* Prohibited / Blocked Times (Training) Styling */
+.grid-blocked-cell {
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(239, 68, 68, 0.15),
+    rgba(239, 68, 68, 0.15) 10px,
+    rgba(239, 68, 68, 0.28) 10px,
+    rgba(239, 68, 68, 0.28) 20px
+  );
+  border: 1.5px dashed rgba(239, 68, 68, 0.7);
+  border-radius: var(--radius-sm);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 90px;
+  user-select: none;
+}
+
+.blocked-badge {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  background: var(--danger);
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  box-shadow: 0 2px 6px rgba(239, 68, 68, 0.35);
+}
+
+.blocked-time {
+  font-size: 0.7rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+
+.session-name {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+  margin-top: 3px;
+  margin-bottom: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+}
+
+[dir="rtl"] .session-name {
+  text-align: right;
+}
+
+.clash-mini-name {
   font-size: 0.72rem;
   font-weight: 600;
-  color: var(--text-secondary);
-}
-
-.session-doc {
-  font-size: 0.7rem;
-  color: var(--text-secondary);
-  display: flex;
-  align-items: center;
-  gap: 4px;
+  color: var(--text-primary);
+  line-height: 1.2;
   margin-top: 2px;
-  flex-wrap: wrap;
-}
-
-.session-doc span:first-child {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.session-pref-badge {
-  display: inline-flex;
+[dir="rtl"] .clash-mini-name {
+  text-align: right;
+}
+
+.session-group {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 2px;
+}
+
+.session-doc {
+  display: flex;
   align-items: center;
-  font-size: 0.62rem;
-  font-weight: 600;
-  padding: 0 4px;
-  border-radius: 3px;
-}
-
-.session-pref-badge.badge-avoid {
-  background: rgba(239, 68, 68, 0.15);
-  color: var(--danger);
-}
-
-.session-pref-badge.badge-mandate {
-  background: rgba(245, 158, 11, 0.15);
-  color: var(--warning);
-}
-
-.session-pref-badge.badge-prefer {
-  background: rgba(16, 185, 129, 0.15);
-  color: var(--success);
+  gap: 4px;
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 2px;
 }
 
 .session-time {
-  font-size: 0.64rem;
+  font-size: 0.65rem;
   color: var(--text-muted);
-  margin-top: 3px;
+  margin-top: 4px;
 }
 
-/* Clash Container & Mini Cards */
-.grid-clash-container {
-  min-height: 76px;
-  margin: 3px;
-  padding: 6px;
+/* Empty Cell and Gaps */
+.grid-empty-cell {
+  background: var(--bg-secondary);
+  min-height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.grid-empty-cell.gap-highlight {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px dashed rgba(245, 158, 11, 0.4);
+}
+
+.gap-icon {
+  font-size: 14px;
+  opacity: 0.8;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+/* Solution Header Card */
+.solution-header-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rank-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.rank-title h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.badges-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.solution-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.badge-best {
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+}
+
+.badge-zero-gap {
+  background: #10B981;
+  color: #FFFFFF;
+}
+
+.badge-min-gap {
+  background: #06B6D4;
+  color: #FFFFFF;
+}
+
+.badge-min-days {
+  background: #8B5CF6;
+  color: #FFFFFF;
+}
+
+.badge-doctor {
+  background: #EC4899;
+  color: #FFFFFF;
+}
+
+.badge-uniform {
+  background: #3B82F6;
+  color: #FFFFFF;
+}
+
+.badge-avoid-included {
+  background: rgba(245, 158, 11, 0.18);
+  color: #D97706;
+  border: 1px solid #F59E0B;
+  font-weight: 700;
+}
+
+.stats-grid {
+  display: flex;
+  gap: 20px;
+}
+
+.stat-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-val {
+  font-size: 1.4rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.stat-lbl {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.text-success { color: var(--success); }
+.text-warning { color: var(--warning); }
+.text-primary { color: var(--accent-primary); }
+.text-info { color: var(--info); }
+
+.header-groups {
+  background: var(--bg-secondary);
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.groups-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.groups-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.group-pill {
+  background: var(--bg-primary);
+  padding: 4px 10px;
   border-radius: var(--radius-sm);
-  background: rgba(239, 68, 68, 0.06);
-  border: 1px solid rgba(239, 68, 68, 0.45);
+  font-size: 0.85rem;
+  display: flex;
+  gap: 6px;
+}
+
+/* Solution Selector Carousel */
+.solutions-nav-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-bottom: 16px;
+  gap: 10px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.solutions-nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+
+.solutions-nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.solutions-nav-controls .btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.schedule-counter-badge {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  min-width: 52px;
+  text-align: center;
+  user-select: none;
+}
+
+.schedule-jump-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 2px 6px;
+  transition: all 0.2s ease;
+}
+
+.schedule-jump-wrapper:focus-within {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px var(--accent-glow);
+}
+
+.schedule-jump-wrapper .jump-icon {
+  font-size: 0.78rem;
+  opacity: 0.8;
+  user-select: none;
+}
+
+.schedule-jump-input {
+  width: 44px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  padding: 0;
+  -moz-appearance: textfield;
+}
+
+.schedule-jump-input::-webkit-outer-spin-button,
+.schedule-jump-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.schedule-jump-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.keyboard-nav-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  user-select: none;
+}
+
+.keyboard-nav-hint kbd {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.solutions-chips-wrapper {
+  display: flex;
+  flex-wrap: wrap !important; /* Wraps options nicely onto multiple lines */
+  gap: 8px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.sol-chip {
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  white-space: normal !important;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  box-sizing: border-box;
+  flex: 0 1 auto;
+}
+
+.sol-chip:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+  border-color: rgba(148, 163, 184, 0.3);
+}
+
+.sol-chip.active {
+  background: var(--accent-primary);
+  color: #FFFFFF !important;
+  border-color: var(--accent-primary);
+  box-shadow: 0 2px 10px var(--accent-glow);
+}
+
+.sol-chip .sol-chip-title {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.sol-chip .sol-chip-meta {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.sol-chip.active .sol-chip-title,
+.sol-chip.active .sol-chip-meta {
+  color: #FFFFFF !important;
+}
+
+.sol-chip-ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 40px;
+  padding: 0 10px;
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  border: 1px dashed var(--border-color);
+  color: var(--text-muted);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.sol-chip-ellipsis:hover {
+  background: var(--bg-card-hover);
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+/* ==========================================================================
+   Mobile & Tablet Timetable Responsive Styles
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Timetable View Switcher */
+  .timetable-view-switcher {
+    flex-direction: column !important;
+    gap: 6px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Solutions Navigation Carousel */
+  .solutions-nav-container {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+    margin-bottom: 12px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .solutions-chips-wrapper {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important; /* Clean 2-column wrapped grid */
+    gap: 6px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+  }
+
+  .sol-chip {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    padding: 8px 4px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 2px !important;
+    text-align: center !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    box-sizing: border-box !important;
+  }
+
+  .sol-chip .sol-chip-title {
+    font-size: 0.82rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .sol-chip .sol-chip-meta {
+    font-size: 0.68rem !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+  }
+
+  /* Strict width constraints on all Timetable tab elements to prevent page blowouts */
+  #tab-timetable,
+  #timetable-card,
+  #timetable-render-container,
+  .timetable-display-wrapper,
+  .timetable-view-panel {
+    max-width: 100% !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Solution Summary Card */
+  .solution-header-card {
+    padding: 12px;
+    gap: 12px;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 14px;
+  }
+
+  .header-left {
+    gap: 8px;
+  }
+
+  .rank-title h3 {
+    font-size: 1.1rem;
+  }
+
+  .badges-row {
+    gap: 4px;
+  }
+
+  .solution-badge {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    width: 100%;
+  }
+
+  .stat-box {
+    background: var(--bg-primary);
+    padding: 6px 8px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+    text-align: center;
+  }
+
+  .stat-val {
+    font-size: 1.1rem;
+  }
+
+  .stat-lbl {
+    font-size: 0.65rem;
+  }
+
+  .header-groups {
+    padding: 10px;
+    width: 100%;
+  }
+
+  .group-pill {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+  }
+
+  /* Timetable Header Action Buttons */
+  #timetable-card .card-header > div:last-child {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 6px;
+  }
+
+  #timetable-card .card-header > div:last-child .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+
+  /* Grid items must NOT have sticky pinning on mobile to avoid row detachment and overlap */
+  .grid-header-corner,
+  .grid-day-header {
+    position: static !important;
+    box-shadow: none !important;
+    left: auto !important;
+    right: auto !important;
+  }
+
+  /* Allow cells to respect column minmax width without breaking tracks */
+  .grid-session-card,
+  .grid-slot-header,
+  .grid-day-header,
+  .grid-empty-cell,
+  .grid-blocked-cell {
+    min-width: 0 !important;
+  }
+
+  /* Timetable Grid */
+  .timetable-grid {
+    min-width: 800px;
+  }
+
+  .grid-slot-header {
+    padding: 6px 2px;
+  }
+
+  .slot-num {
+    font-size: 0.82rem;
+  }
+
+  .period-badge {
+    font-size: 0.6rem;
+  }
+
+  .slot-time {
+    font-size: 0.58rem;
+  }
+
+  .grid-day-header {
+    padding: 8px 6px;
+  }
+
+  .day-title {
+    font-size: 0.82rem;
+  }
+
+  .day-status {
+    font-size: 0.65rem;
+  }
+
+  /* Session Cards */
+  .grid-session-card {
+    padding: 6px 6px;
+    min-height: 75px;
+  }
+
+  .session-code {
+    font-size: 0.78rem;
+  }
+
+  .session-badge {
+    font-size: 0.6rem;
+    padding: 1px 4px;
+  }
+
+  .session-name {
+    font-size: 0.72rem;
+    line-height: 1.2;
+  }
+
+  .session-group {
+    font-size: 0.68rem;
+  }
+
+  .session-doc {
+    font-size: 0.65rem;
+  }
+
+  .session-time {
+    font-size: 0.6rem;
+  }
+
+  .grid-blocked-cell {
+    padding: 6px 4px;
+    min-height: 75px;
+  }
+
+  .blocked-badge {
+    font-size: 0.68rem;
+    padding: 2px 5px;
+  }
+
+  .blocked-time {
+    font-size: 0.62rem;
+  }
+}
+
+/* Extra small screens (e.g. 320px - 360px) */
+@media (max-width: 360px) {
+  .solutions-chips-wrapper {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ==========================================================================
+   Interactive Clashing Sessions & Timetable Deselection Controls
+   ========================================================================== */
+
+/* Clashing Sessions Container in 16-Period Grid */
+.grid-clash-container {
+  background: rgba(239, 68, 68, 0.08);
+  border: 2px dashed rgba(239, 68, 68, 0.7);
+  border-radius: var(--radius-sm);
+  padding: 6px;
   display: flex;
   flex-direction: column;
   gap: 5px;
+  min-height: 90px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 8px rgba(239, 68, 68, 0.12);
+  transition: all 0.2s ease;
+}
+
+.grid-clash-container:hover {
+  border-color: #EF4444;
+  background: rgba(239, 68, 68, 0.12);
+  z-index: 6;
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.25);
 }
 
 .clash-cell-header {
@@ -860,28 +1114,40 @@
   align-items: center;
   justify-content: space-between;
   gap: 4px;
-  padding-bottom: 3px;
-  border-bottom: 1px solid rgba(239, 68, 68, 0.25);
+  padding-bottom: 4px;
+  border-bottom: 1px dashed rgba(239, 68, 68, 0.4);
 }
 
 .clash-badge-pulse {
-  background: var(--danger);
-  color: #ffffff;
-  font-size: 0.64rem;
-  font-weight: 600;
-  padding: 1px 6px;
-  border-radius: 3px;
+  background: #EF4444;
+  color: #FFFFFF;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  letter-spacing: 0.3px;
+  animation: clash-pulse 1.8s infinite ease-in-out;
+}
+
+@keyframes clash-pulse {
+  0%, 100% { opacity: 0.92; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.04); }
 }
 
 .clash-cell-time {
-  font-size: 0.64rem;
-  color: var(--text-secondary);
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  font-weight: 600;
 }
 
 .clash-sessions-stack {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
+  width: 100%;
 }
 
 .clash-mini-card {
@@ -889,9 +1155,13 @@
   border: 1px solid var(--border-color);
   border-radius: 4px;
   padding: 5px 7px;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
+  position: relative;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.clash-mini-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .clash-mini-top {
@@ -902,141 +1172,256 @@
 }
 
 .clash-mini-code {
-  font-weight: 700;
-  font-size: 0.74rem;
+  font-weight: 800;
+  font-size: 0.78rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.clash-mini-name {
-  font-size: 0.68rem;
-  color: var(--text-secondary);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.mini-group-pill {
-  background: var(--bg-secondary);
-  color: var(--text-primary);
-  font-size: 0.64rem;
-  font-weight: 600;
-  padding: 1px 5px;
-  border-radius: 3px;
 }
 
 .clash-mini-meta {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 4px;
-  font-size: 0.66rem;
+  gap: 6px;
+  font-size: 0.65rem;
   color: var(--text-secondary);
+  margin-top: 3px;
+  flex-wrap: wrap;
 }
 
-/* Deselect Group Buttons on Manual Timetable */
+.clash-mini-doc {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 130px;
+}
+
+.clash-mini-time {
+  color: var(--text-muted);
+  font-size: 0.62rem;
+}
+
+.mini-group-pill {
+  font-size: 0.65rem;
+  font-weight: 700;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 1px 5px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* Deselect 'X' button on Timetable Cards */
 .timetable-deselect-btn {
   position: absolute;
   top: 4px;
-  inset-inline-end: 4px;
-  width: 18px;
-  height: 18px;
-  border-radius: 3px;
-  border: 1px solid rgba(239, 68, 68, 0.35);
-  background: var(--bg-secondary);
-  color: var(--danger);
-  font-size: 0.66rem;
-  font-weight: 700;
+  right: 4px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(239, 68, 68, 0.18);
+  color: #EF4444;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  font-size: 10px;
+  font-weight: 900;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  opacity: 0;
-  transition: opacity 0.12s ease;
-  z-index: 5;
+  z-index: 12;
+  transition: all 0.15s ease;
+  line-height: 1;
+  padding: 0;
 }
 
-.grid-session-card:hover .timetable-deselect-btn {
-  opacity: 1;
+[dir="rtl"] .timetable-deselect-btn {
+  right: auto;
+  left: 4px;
 }
 
 .timetable-deselect-btn:hover {
-  background: var(--danger);
-  color: #ffffff;
+  background: #EF4444;
+  color: #FFFFFF;
+  transform: scale(1.18);
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4);
+}
+
+.clash-mini-deselect-btn {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(239, 68, 68, 0.15);
+  color: #EF4444;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  font-size: 10px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  line-height: 1;
+  padding: 0;
+}
+
+.clash-mini-deselect-btn:hover {
+  background: #EF4444;
+  color: #FFFFFF;
+  transform: scale(1.15);
+}
+
+.agenda-deselect-btn {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #EF4444;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  border-radius: 4px;
+  padding: 2px 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  transition: all 0.15s ease;
+}
+
+.agenda-deselect-btn:hover {
+  background: #EF4444;
+  color: #FFFFFF;
+}
+
+/* Agenda Clashing Styles */
+.agenda-session-card.is-clashing-session {
+  border: 1.5px dashed #EF4444 !important;
+  background: rgba(239, 68, 68, 0.08) !important;
+}
+
+.agenda-clash-tag {
+  background: #EF4444;
+  color: #FFFFFF;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.red-error-triangle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  cursor: help;
+}
+
+/* Merged Lecture styling in Timetable Grid */
+.grid-session-card.is-merged-lecture {
+  border-inline-start-color: #F59E0B !important;
+  box-shadow: 0 0 0 1.5px rgba(245, 158, 11, 0.4), 0 2px 8px rgba(245, 158, 11, 0.15);
+  background: linear-gradient(to bottom, rgba(245, 158, 11, 0.06), var(--bg-card));
+}
+
+.grid-session-card.is-merged-lecture .session-group {
+  color: #D97706;
+  font-weight: 800;
+}
+
+/* Agenda Merged Lecture styling */
+.agenda-session-card.is-merged-lecture {
+  border: 1.5px dashed #F59E0B !important;
+  background: rgba(245, 158, 11, 0.08) !important;
+}
+
+.agenda-clash-tag.is-warning {
+  background: #F59E0B !important;
+  color: #FFFFFF !important;
 }
 
 .timetable-deselect-group-btns {
   position: absolute;
-  top: 3px;
-  inset-inline-end: 3px;
+  top: 4px;
+  right: 4px;
   display: flex;
-  gap: 2px;
-  z-index: 5;
-  opacity: 0;
-  transition: opacity 0.12s ease;
+  align-items: center;
+  gap: 3px;
+  z-index: 12;
 }
 
-.grid-session-card:hover .timetable-deselect-group-btns {
-  opacity: 1;
+[dir="rtl"] .timetable-deselect-group-btns {
+  right: auto;
+  left: 4px;
 }
 
 .timetable-deselect-btn.is-merged {
   position: static;
   width: auto;
+  min-width: 22px;
+  height: 20px;
   padding: 0 5px;
-  opacity: 1;
+  border-radius: 999px;
+  font-size: 10px;
+  display: inline-flex;
+  gap: 2px;
 }
 
-.clash-mini-deselect-btn {
-  padding: 1px 5px;
-  border-radius: 3px;
-  border: 1px solid rgba(239, 68, 68, 0.35);
-  background: rgba(239, 68, 68, 0.1);
-  color: var(--danger);
-  font-size: 0.62rem;
-  font-weight: 600;
-  cursor: pointer;
-}
+/* Print Stylesheet */
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
 
-.clash-mini-deselect-btn:hover {
-  background: var(--danger);
-  color: #ffffff;
-}
-
-/* Empty State */
-.empty-state {
-  text-align: center;
-  padding: 36px 20px;
-  color: var(--text-secondary);
-}
-
-.empty-state h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 4px;
-}
-
-@media (max-width: 768px) {
+  .app-header,
+  .tabs-nav,
+  .card:not(#timetable-card),
+  .solutions-nav-container,
+  .btn,
+  .toast-container,
   .mobile-scroll-hint {
-    display: flex;
+    display: none !important;
   }
 
-  .solution-header-card {
-    padding: 14px;
+  .main-container {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
-  .stats-grid {
-    width: 100%;
+  .card {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    background: transparent !important;
   }
 
-  .stat-box {
-    flex: 1;
+  .timetable-wrapper {
+    overflow: visible !important;
+    border: 1px solid #000000 !important;
   }
 
-  .timetable-deselect-btn,
-  .timetable-deselect-group-btns {
-    opacity: 1;
+  .timetable-grid {
+    min-width: 100% !important;
+    background: #CCCCCC !important;
+  }
+
+  .grid-slot-header,
+  .grid-day-header,
+  .grid-header-corner,
+  .grid-empty-cell {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+
+  .grid-session-card {
+    border: 1px solid #000000 !important;
+    color: #000000 !important;
+    background: #EEEEEE !important;
+    page-break-inside: avoid;
+  }
+
+  .session-code, .session-name, .clash-mini-name, .session-group, .session-doc, .session-time {
+    color: #000000 !important;
   }
 }

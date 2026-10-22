@@ -72,13 +72,13 @@ const App = (() => {
       tabManual: '4. Manual Mode',
       loadSampleBtn: 'Load Example Courses',
       findSchedulesBtn: 'Find Best Schedules',
-      majorJsonTab: 'Major / Department Timetable',
+      majorJsonTab: '🏛️ Major / Department Timetable',
       uploadMajorJsonBtn: 'Upload Major JSON (.json)',
       syncCloudBtn: 'Sync from Cloud',
       syncingCloudBtn: 'Syncing...',
       connectedCloudBadge: 'Public Cloud Database',
       offlineCloudBadge: 'Offline / Local Database',
-      cloudSyncedSuccess: 'Schedules catalog updated from public repository.',
+      cloudSyncedSuccess: 'Schedules catalog updated from public repository! 🌐',
       cloudSyncFailed: 'Could not reach public repository. Using local database.',
       selectMajorLabel: 'Major / Faculty:',
       chooseFacultyOption: '-- Choose Faculty --',
@@ -88,18 +88,18 @@ const App = (() => {
       selectFacultyFirstToast: 'Please choose a faculty first',
       selectDeptLabel: 'Department:',
       selectPeriodLabel: 'Period / Term:',
-      searchAddSubjectTitle: 'Quick Search & Add Subject',
+      searchAddSubjectTitle: 'Quick Search & Add Subject (بحث وإضافة مادة مباشرة)',
       searchAddSubjectTip: 'Search across all departments by code, name, or doctor',
-      searchMajorPlaceholder: 'Search subject by name, code, or doctor (e.g. ECE2102, Applied)...',
+      searchMajorPlaceholder: 'Search subject by name or code (e.g. ECE2102, Applied, برمجة, د. هشام)...',
       searchNoResults: 'No subjects found matching',
       btnAddSubject: '+ Add Subject',
-      subjectAddedToast: 'Subject added successfully',
-      submitSubjectsBtn: 'Submit Subjects into Website',
+      subjectAddedToast: 'Subject added successfully!',
+      submitSubjectsBtn: 'Submit Subjects into Website (إدراج المواد في الموقع)',
       loadSubjectsBtn: 'Load All Subjects into Optimizer',
       pasteHtmlTab: 'Paste HTML Code',
-      uploadPdfTab: 'Upload PDF Timetable',
+      uploadPdfTab: '📄 Upload PDF Timetable',
       uploadPhotoTab: 'Upload Schedule Photo',
-      importCardSubtitle: 'Select your faculty timetable, paste portal HTML, upload a PDF, or scan a schedule photo',
+      importCardSubtitle: 'Paste HTML from your college portal, upload a PDF timetable, or upload a schedule photo',
       pdfDropzoneTitle: 'Drag & drop your PDF timetable here, or click to browse',
       pdfDropzoneSub: 'Supports aSc Timetables & AAST university schedule PDFs (all pages & groups)',
       pdfParsingPages: 'Extracting pages from PDF...',
@@ -118,11 +118,11 @@ const App = (() => {
       dropzoneTitle: 'Drag & drop schedule photo here, or click to browse',
       dropzoneSub: 'Supports PNG, JPG screenshots of schedule tables',
       noCoursesTitle: 'No Courses Added Yet',
-      noCoursesDesc: 'Select a faculty above, paste portal HTML, or load example courses to begin.',
+      noCoursesDesc: 'Paste college HTML above or click "Load Example Courses" to test.',
       doctorPrefTitle: 'Doctor & Instructor Preferences',
-      doctorPrefDesc: 'Prioritize preferred professors, triple-click "Favorite" to mandate a doctor, or click "Avoid" to exclude them from schedules.',
+      doctorPrefDesc: 'Prioritize preferred professors, triple-click "Favorite" to mandate (guarantee) a doctor (🌟🔒), or click "Avoid" to strictly exclude them from all schedules (🚫).',
       strictDoctorModeTitle: 'Exhaustive Strict Doctor Search',
-      strictDoctorModeDesc: 'Exhaustively checks 100% of schedule combinations. Guarantees zero avoided doctors and seeks your preferred professors.',
+      strictDoctorModeDesc: 'Exhaustively checks 100% of schedule combinations. Guarantees ZERO avoided doctors (🚫) and strictly seeks your desired professors (⭐/🌟). If no combination exists, it verifies all combinations to be mathematically certain.',
       strictDoctorToggleLabel: 'Active (Strict)',
       goalsTitle: 'Optimization Weights & Goals',
       gapWeightLabel: 'Minimize Gaps between lectures',
@@ -130,15 +130,15 @@ const App = (() => {
       doctorWeightLabel: 'Prioritize Preferred Doctors',
       freeDaysTitle: 'Target Free Days (Days Off)',
       freeDaysDesc: 'Select the days of the week you prefer to take completely off',
-      freeDaysLabel: 'Target Free Days:',
-      blockedTimesTitle: 'Blocked Times (Training & Busy Hours)',
-      blockedTimesDesc: 'Block specific times (e.g. Saturday 8:30 AM). The optimizer will prevent classes from being scheduled during these slots.',
+      freeDaysLabel: 'Target Free Days (Days Completely Off):',
+      blockedTimesTitle: 'Prohibited / Blocked Times (Training & Busy Hours)',
+      blockedTimesDesc: 'Prohibit specific times (e.g. Saturday 8 AM training). The optimizer will guarantee zero classes are scheduled during these times!',
       blockedPresetsLabel: 'Quick Presets:',
-      presetSatTraining: 'Block Saturday 08:30 - 10:20',
-      presetEvenings: 'Block Slots After 4:00 PM',
-      presetClearBlocked: 'Clear Blocked Slots',
+      presetSatTraining: '⚽ Block Saturday 08:30 - 10:20 (Training)',
+      presetEvenings: '🌙 Block All Slots After 4 PM',
+      presetClearBlocked: 'Clear All Blocked Slots',
       clearCacheBtn: 'Clear Cache & Reset',
-      freshStartBtn: 'Reset All',
+      freshStartBtn: 'Fresh Start (Reset All)',
       resetAllPrefsBtn: 'Reset Preferences & Blocked Slots',
       exportTxt: 'Export TXT',
       copyTxt: 'Copy Codes',
@@ -146,34 +146,34 @@ const App = (() => {
       scheduleTxtHelp: 'Format: Course Code: Group Number/Letter',
       txtCurrentSchedule: 'This Schedule',
       txtAllSchedules: 'All Schedules',
-      copyTxtBtn: 'Copy to Clipboard',
-      downloadTxtBtn: 'Download .txt File',
-      txtCopiedToast: 'Schedule text copied to clipboard',
-      txtDownloadedToast: 'Schedule exported to text file',
-      exportPng: 'Export PNG',
-      printSchedule: 'Print',
-      exportIcs: 'Export .ics',
-      exportJson: 'Save JSON',
-      importJson: 'Import JSON',
-      zeroGapsBadge: 'Zero Gaps',
-      clearAllCourses: 'Clear All',
-      doctorBadge: 'Doctor',
-      instructorBadge: 'TA / Instructor',
-      doctorsSubheading: 'Doctors & Professors (Lectures)',
-      instructorsSubheading: 'Teaching Assistants (Labs & Sections)',
-      guideBtn: 'Guide',
+      copyTxtBtn: '📋 Copy to Clipboard',
+      downloadTxtBtn: '💾 Download .txt File',
+      txtCopiedToast: 'Schedule text copied to clipboard! 📋',
+      txtDownloadedToast: 'Schedule exported to text file! 📄',
+      exportPng: 'Export PNG Image',
+      printSchedule: 'Print Schedule',
+      exportIcs: 'Export to Google Calendar (.ics)',
+      exportJson: 'Save Courses (JSON)',
+      importJson: 'Import Courses (JSON)',
+      zeroGapsBadge: '⚡ Zero Gaps (No Waiting)',
+      clearAllCourses: 'Clear All Courses',
+      doctorBadge: '🎓 Doctor',
+      instructorBadge: '🔬 TA / Instructor',
+      doctorsSubheading: '🎓 Doctors & Professors (Lectures)',
+      instructorsSubheading: '🔬 Teaching Assistants (Labs & Sections)',
+      guideBtn: 'Guide ❓',
       guideModalTitle: 'Quick Guide: How to Use the Optimizer',
       dontShowAgain: "Don't show automatically on startup",
-      guideGotItBtn: 'Got it',
-      mobileSwipeHint: 'Scroll horizontally to view all 16 periods',
-      rankedOptionsTitle: 'Ranked Clash-Free Options',
+      guideGotItBtn: "Got it, Let's Start! 🚀",
+      mobileSwipeHint: 'Swipe horizontally to view all 16 periods 👈👉',
+      rankedOptionsTitle: '🎯 Ranked Clash-Free Options:',
       arrowKeysHint: 'Use keyboard arrows',
-      prevScheduleBtn: 'Previous',
-      nextScheduleBtn: 'Next',
+      prevScheduleBtn: '◀ Previous',
+      nextScheduleBtn: 'Next ▶',
       prevSchedule: 'Previous',
       nextSchedule: 'Next',
-      schedulesFilterTitle: 'Schedule Filters & Ranking Priority',
-      schedulesFilterDesc: 'Filter by maximum campus days, gaps, and daily classes, or sort by priority.',
+      schedulesFilterTitle: 'Schedules Filter & Optimization Priorities',
+      schedulesFilterDesc: 'Strict non-negotiable filters for campus days, gaps, and daily workload, plus instant ranking goals.',
       filterMaxDays: 'Max Days / Week:',
       filterMaxGaps: 'Max Gap Slots:',
       filterMaxClasses: 'Max Classes / Day:',
@@ -186,15 +186,15 @@ const App = (() => {
       optTop100: 'Top 100 Schedules',
       optTop250: 'Top 250 Schedules',
       optAny: 'Any (No restriction)',
-      rankingPresetLabel: 'Ranking Priority:',
+      rankingPresetLabel: 'Ranking Priority (Choose 1 of 4):',
       presetMinDays: 'Minimum Days',
       presetMinGaps: 'Minimal Gaps',
       presetEarly: 'Early Schedule',
       presetBalanced: 'Balanced',
-      filterMismatchBannerTitle: 'Filter Mismatch: Showing 1 Unfiltered Schedule for Inspection',
-      filterConflictModalTitle: 'No Schedules Match Your Filters',
-      filterConflictModalDesc: 'None of the generated schedules satisfy your strict filters. Showing 1 unfiltered schedule so you can inspect where the restriction is exceeded.',
-      resetFiltersBtn: 'Reset Filters',
+      filterMismatchBannerTitle: 'Non-negotiable Filter Mismatch: Showing 1 Unfiltered Schedule for Inspection',
+      filterConflictModalTitle: 'No Schedules Match Your Filters!',
+      filterConflictModalDesc: 'None of the generated schedules satisfy your strict non-negotiable filters. We have provided 1 unfiltered schedule on the timetable so you can inspect where the restriction is exceeded.',
+      resetFiltersBtn: '↺ Reset Filters',
       viewUnfilteredBtn: 'View Unfiltered Schedule',
       onlineNow: 'Online',
       visitsShort: 'Visits',
@@ -205,51 +205,51 @@ const App = (() => {
       statsModalTitle: 'Live Users & Traffic Overview',
       sessionDurationLabel: 'Your current session time:',
       privacyLabel: 'Privacy & Safety:',
-      privacyDesc: '100% Anonymous & Zero Cookies',
-      howItWorksTitle: 'How is this tracked?',
-      howItWorksDesc: 'This counter runs serverlessly using an anonymous presence heartbeat every 45s.',
+      privacyDesc: '🔒 100% Anonymous & Zero Cookies',
+      howItWorksTitle: '⚡ How is this tracked?',
+      howItWorksDesc: 'This counter runs completely serverlessly on GitHub Pages using an atomic presence heartbeat. When anyone opens the website, their browser sends a privacy-safe presence ping every 45s. When they close the tab, the active count updates in real-time.',
       closeBtn: 'Close',
       manualTitle: 'Manual Schedule Builder',
-      manualSubtitle: 'Explore groups by doctor or pick course groups manually with real-time clash detection.',
+      manualSubtitle: 'Select your favorite doctors to see all their groups, pick groups manually, and build your custom schedule with instant clash detection.',
       manualHideAvoidedLabel: 'Hide Avoided Doctors & Keep Only Mandated Doctors (When Set)',
-      manualHideAvoidedDesc: 'Hides groups taught by avoided professors and isolates mandated professors when set.',
+      manualHideAvoidedDesc: 'Automatically hides groups taught by avoided professors (🚫) and, if a course has mandated professors (🌟🔒), only shows their groups.',
       clearManualSchedule: 'Reset Schedule',
       viewInTimetable: 'View in Timetable Results',
       manualDocSearchTitle: 'Explore by Doctor / Professor',
-      manualDocSearchDesc: 'Select a doctor to inspect their lecture groups, days, and times.',
+      manualDocSearchDesc: 'Choose any doctor to reveal all their lecture groups, days, times, and quickly add them to your schedule',
       selectDoctorLabel: 'Select Doctor / Professor:',
       searchDoctorLabel: 'Or Search Doctor / Course:',
-      manualCourseGroupsTitle: 'Course Groups & Clash Checker',
-      manualCourseGroupsDesc: 'Pick one group per course. Conflicting groups are highlighted in red.',
+      manualCourseGroupsTitle: 'Course Groups & Instant Conflict Checker',
+      manualCourseGroupsDesc: 'Pick one group for each course. Groups with time clashes with your current picks will be highlighted in red.',
       manualCustomizeDocTALabel: 'Customize Doctor, Section & Lab Independently',
       manualCustomizeDocTADesc: 'Choose Doctor (Lectures), Section, and Lab separately for each group, or select entire groups together.',
       manualDoctorComponentTitle: 'Doctor (Lectures)',
       manualSectionComponentTitle: 'Section',
       manualLabComponentTitle: 'Lab',
       manualTaComponentTitle: 'TA (Sections & Labs)',
-      manualAddDoctor: '+ Add Doctor',
-      manualAddSection: '+ Add Section',
-      manualAddLab: '+ Add Lab',
-      manualAddTA: '+ Add TA',
+      manualAddDoctor: '➕ Add Doctor',
+      manualAddSection: '➕ Add Section',
+      manualAddLab: '➕ Add Lab',
+      manualAddTA: '➕ Add TA',
       manualDoctorInSchedule: '✓ Doctor In Timetable',
       manualSectionInSchedule: '✓ Section In Timetable',
       manualLabInSchedule: '✓ Lab In Timetable',
       manualTaInSchedule: '✓ TA In Timetable',
-      manualSelectEntireGroup: '+ Select Entire Group',
-      manualDeselectEntireGroup: '✕ Deselect Entire Group',
-      manualTimetableTitle: 'Custom Timetable Preview',
+      manualSelectEntireGroup: '➕ Select Entire Group',
+      manualDeselectEntireGroup: '❌ Deselect Entire Group',
+      manualTimetableTitle: 'Your Custom Timetable Preview',
       manualTimetableDesc: 'Interactive 16-period schedule showing your custom selections and any time overlaps',
       mixMatchTitle: 'Mix & Match: Custom Doctors & TAs',
-      mixMatchDesc: 'Choose lecture professors from one group and TAs for sections/labs from another group with instant clash checking.',
-      mixMatchResetBtn: 'Reset Selections',
+      mixMatchDesc: 'Freely choose lecture professors from one group and TAs for sections/labs from another group with instant clash checking.',
+      mixMatchResetBtn: '↺ Reset Selections',
       mixMatchApplyManualBtn: 'Apply to Manual Timetable',
-      mixMatchSaveGroupBtn: 'Save as Course Custom Group',
+      mixMatchSaveGroupBtn: '💾 Save as Course Custom Group',
       mixMatchTimetableTitle: 'Live Mixed Schedule Preview',
       mixMatchTimetableDesc: 'Live timetable showing your mixed lecture, section, and lab picks across all courses',
-      mixMatchExpandAll: 'Expand All',
-      mixMatchCollapseAll: 'Collapse All',
-      mixMatchJumpToTimetable: 'Timetable Grid',
-      mixMatchJumpToCourses: 'Back to Course Pickers',
+      mixMatchExpandAll: '📂 Expand All',
+      mixMatchCollapseAll: '📁 Collapse All',
+      mixMatchJumpToTimetable: '📅 Timetable Grid ⬇️',
+      mixMatchJumpToCourses: '⬆️ Back to Course Pickers',
       mixMatchAllCourses: 'All Courses',
       mixMatchSelectedCount: 'Selected',
       mixMatchNoPicks: 'No picks yet',
@@ -259,24 +259,24 @@ const App = (() => {
       loadingStep2: 'Filtering blocked times and free days...',
       loadingStep3: 'Applying doctor preferences and calculating gaps...',
       loadingStep4: 'Ranking clash-free schedules...',
-      loadingFooterTip: 'Computing the best clash-free schedules...'
+      loadingFooterTip: '⚡ Please wait a moment while the optimizer computes the best clash-free schedules for you!'
     },
     ar: {
-      appTitle: 'منسق الجداول الجامعية',
-      appSubtitle: 'توليد وتنسيق الجداول الدراسية بدون تعارض وبأقل فترات فراغ',
+      appTitle: 'محول ومحسن الجداول الجامعية',
+      appSubtitle: 'تحويل كود HTML وصور الجدول إلى أفضل جدول دراسي بدون تعارض وبأقل فترات فراغ',
       tabCourses: '١. المقررات والسكاشن',
-      tabPreferences: '٢. الدكاترة والأهداف',
+      tabPreferences: '٢. اختيار الدكاترة والأهداف',
       tabTimetable: '٣. الجدول النهائي',
       tabManual: '٤. الوضع اليدوي',
       loadSampleBtn: 'تحميل المقررات التجريبية',
       findSchedulesBtn: 'توليد أفضل الجداول',
-      majorJsonTab: 'جدول الكلية والقسم',
+      majorJsonTab: '🏛️ جدول الكلية والقسم (JSON)',
       uploadMajorJsonBtn: 'رفع ملف جدول الكلية (.json)',
-      syncCloudBtn: 'تحديث من السحابة',
+      syncCloudBtn: 'تحديث من السحابة 🔄',
       syncingCloudBtn: 'جاري التحديث...',
       connectedCloudBadge: 'متصل بقاعدة البيانات العامة',
-      offlineCloudBadge: 'قاعدة بيانات محلية',
-      cloudSyncedSuccess: 'تم تحديث دليل الجداول بنجاح من المستودع العام.',
+      offlineCloudBadge: 'قاعدة بيانات محلية (بدون إنترنت)',
+      cloudSyncedSuccess: 'تم تحديث دليل الجداول بنجاح من المستودع العام! 🌐',
       cloudSyncFailed: 'تعذر الاتصال بالمستودع العام. يتم استخدام قاعدة البيانات المحلية.',
       selectMajorLabel: 'الكلية / الدفعة:',
       chooseFacultyOption: 'اختر الكلية',
@@ -286,18 +286,18 @@ const App = (() => {
       selectFacultyFirstToast: 'يرجى اختيار الكلية أولاً',
       selectDeptLabel: 'القسم:',
       selectPeriodLabel: 'الفترة / الترم الدراسي:',
-      searchAddSubjectTitle: 'بحث وإضافة مادة مباشرة',
+      searchAddSubjectTitle: 'بحث وإضافة مادة مباشرة (Quick Search & Add Subject)',
       searchAddSubjectTip: 'ابحث في كل الأقسام بكود المادة أو اسمها أو اسم الدكتور',
-      searchMajorPlaceholder: 'ابحث عن مادة بكودها أو اسمها (مثال: ECE2102، Applied، برمجة)...',
+      searchMajorPlaceholder: 'ابحث عن مادة بكودها أو اسمها (مثال: ECE2102، Applied، برمجة، د. هشام)...',
       searchNoResults: 'لم يتم العثور على أي مادة تطابق',
       btnAddSubject: '+ إضافة المادة',
-      subjectAddedToast: 'تمت إضافة المادة بنجاح',
-      submitSubjectsBtn: 'إدراج المواد في الموقع',
-      loadSubjectsBtn: 'تحميل المقررات إلى المنسق',
-      pasteHtmlTab: 'لصق كود HTML',
-      uploadPdfTab: 'رفع جدول PDF',
-      uploadPhotoTab: 'رفع صورة الجدول',
-      importCardSubtitle: 'اختر جدول كليتك أو الصق كود HTML أو ارفع ملف PDF أو صورة للجدول',
+      subjectAddedToast: 'تمت إضافة المادة بنجاح!',
+      submitSubjectsBtn: 'إدراج المواد في الموقع (Submit Subjects into Website)',
+      loadSubjectsBtn: 'تحميل المقررات إلى المنسق ⚡',
+      pasteHtmlTab: 'نسخ ولصق كود HTML',
+      uploadPdfTab: '📄 رفع جدول PDF',
+      uploadPhotoTab: 'رفع صورة / سكرين شوت للجدول',
+      importCardSubtitle: 'الصق كود HTML من موقع الكلية، أو ارفع ملف PDF للجدول، أو ارفع صورة الجدول',
       pdfDropzoneTitle: 'اسحب وأفلت ملف PDF الخاص بالجدول هنا، أو اضغط للاختيار',
       pdfDropzoneSub: 'يدعم جداول aSc Timetables وجداول الأكاديمية البحرية AAST (كل الصفحات والمجموعات)',
       pdfParsingPages: 'جاري استخراج الصفحات من ملف PDF...',
@@ -311,72 +311,72 @@ const App = (() => {
       importSelectedCourses: 'إضافة المواد المحددة',
       cancelBtn: 'إلغاء',
       manualTab: 'إدخال يدوي سريع',
-      htmlPlaceholder: 'الصق كود HTML لجدول المقرر من موقع الكلية هنا...',
+      htmlPlaceholder: 'الصق كود HTML لجدول المقرر من موقع الأكاديمية أو كليتك هنا...',
       parseBtn: 'استخراج وإضافة المقرر',
       dropzoneTitle: 'اسحب صورة الجدول هنا أو اضغط للاختيار',
-      dropzoneSub: 'يدعم صور الجداول الدراسية (PNG, JPG)',
+      dropzoneSub: 'يدعم صور وسكرين شوت الجداول الدراسية (PNG, JPG)',
       noCoursesTitle: 'لم يتم إضافة مقررات حتى الآن',
-      noCoursesDesc: 'اختر الكلية أعلاه أو الصق كود HTML أو اضغط "تحميل المقررات التجريبية".',
+      noCoursesDesc: 'الصق كود HTML من موقع الكلية أو اضغط "تحميل المقررات التجريبية" للتجربة الفورية.',
       doctorPrefTitle: 'تفضيلات الدكاترة والمعيدين',
-      doctorPrefDesc: 'اختر دكاترتك المفضلين، اضغط 3 مرات على "مفضل" لتثبيت دكتور كإجباري، أو اضغط "تجنب" لاستبعاده من الجداول.',
+      doctorPrefDesc: 'اختر دكاترتك المفضلين، اضغط 3 مرات سريعاً على "مفضل" لتثبيت دكتور كإجباري (🌟🔒)، أو اضغط "تجنب" لاستبعاده نهائياً من كافة الجداول (🚫).',
       strictDoctorModeTitle: 'فحص شامل وصارم لكافة التباديل',
-      strictDoctorModeDesc: 'فحص شامل لكافة التباديل بنسبة 100%. يضمن عدم إدراج أي دكتور مستبعد واستيفاء الدكاترة المطلوبين.',
+      strictDoctorModeDesc: 'فحص شامل لكافة التباديل بنسبة 100%. يضمن عدم إدراج أي دكتور مستبعد نهائياً (🚫) واستيفاء الدكاترة المطلوبين (⭐/🌟). وفي حال الاستحالة يتم فحص كامل الاحتمالات للتأكد رياضياً.',
       strictDoctorToggleLabel: 'مفعل (صارم)',
       goalsTitle: 'أولويات وأهداف الجدول',
       gapWeightLabel: 'تقليل فترات الفراغ بين المحاضرات (Gaps)',
       daysWeightLabel: 'تقليل أيام النزول للكلية (أيام إجازة أكثر)',
       doctorWeightLabel: 'الأولوية للدكاترة المفضلين',
-      freeDaysTitle: 'أيام الإجازة المطلوبة',
+      freeDaysTitle: 'أيام الإجازة المطلوبة (أيام بدون نزول بالكامل)',
       freeDaysDesc: 'حدد أيام الأسبوع التي تفضل أن تكون إجازة تامة بدون أي حصص',
-      freeDaysLabel: 'أيام إجازة مطلوبة:',
-      blockedTimesTitle: 'الأوقات المحظورة (مواعيد التدريب والانشغالات)',
-      blockedTimesDesc: 'احظر أوقات محددة ليضمن المنسق عدم وضع أي حصة في هذه الفترات.',
-      blockedPresetsLabel: 'إعدادات سريعة:',
-      presetSatTraining: 'حظر السبت 08:30 - 10:20',
-      presetEvenings: 'حظر الفترات بعد 4:00 عصراً',
-      presetClearBlocked: 'مسح الأوقات المحظورة',
+      freeDaysLabel: 'أيام إجازة مطلوبة بالكامل (بدون نزول):',
+      blockedTimesTitle: 'الأوقات المحظورة (مواعيد التمرين والانشغالات)',
+      blockedTimesDesc: 'احظر أوقات محددة (مثل تدريب السبت الساعة 8 صباحاً). يضمن المحسن عدم وضع أي حصة في هذه الفترات نهائياً!',
+      blockedPresetsLabel: 'إعدادات سريعة جاهزة:',
+      presetSatTraining: '⚽ حظر تدريب السبت 08:30 - 10:20',
+      presetEvenings: '🌙 حظر الفترات المسائية بعد 4 عصراً',
+      presetClearBlocked: 'مسح جميع الأوقات المحظورة',
       clearCacheBtn: 'تفريغ الذاكرة وإعادة الضبط',
-      freshStartBtn: 'إعادة ضبط شاملة',
+      freshStartBtn: 'بداية جديدة (إعادة ضبط شاملة)',
       resetAllPrefsBtn: 'إعادة ضبط التفضيلات والأوقات المحظورة',
-      exportTxt: 'تصدير TXT',
+      exportTxt: 'تصدير ملف نصي (TXT)',
       copyTxt: 'نسخ الأكواد',
       scheduleTxtModalTitle: 'نص مجموعات المقررات',
       scheduleTxtHelp: 'التنسيق: كود المادة: رقم أو حرف المجموعة',
       txtCurrentSchedule: 'هذا الجدول',
       txtAllSchedules: 'جميع الجداول',
-      copyTxtBtn: 'نسخ للحافظة',
-      downloadTxtBtn: 'تحميل ملف (.txt)',
-      txtCopiedToast: 'تم نسخ نص الجدول للحافظة',
-      txtDownloadedToast: 'تم تصدير الجدول كملف نصي',
-      exportPng: 'تصدير صورة (PNG)',
-      printSchedule: 'طباعة',
-      exportIcs: 'تصدير تقويم (.ics)',
-      exportJson: 'حفظ (JSON)',
-      importJson: 'استيراد (JSON)',
-      zeroGapsBadge: 'بدون فترات فراغ',
-      clearAllCourses: 'مسح الكل',
-      doctorBadge: 'دكتور / أستاذ',
-      instructorBadge: 'معيد / مساعد تدريس',
-      doctorsSubheading: 'الدكاترة والأساتذة (المحاضرات)',
-      instructorsSubheading: 'المعيدون ومساعدو التدريس (المعامل والتمارين)',
-      guideBtn: 'دليل الاستخدام',
-      guideModalTitle: 'دليل الاستخدام السريع',
+      copyTxtBtn: '📋 نسخ للحافظة',
+      downloadTxtBtn: '💾 تحميل كملف نصي (.txt)',
+      txtCopiedToast: 'تم نسخ نص الجدول للحافظة بنجاح! 📋',
+      txtDownloadedToast: 'تم تصدير الجدول كملف نصي بنجاح! 📄',
+      exportPng: 'تصدير صورة عالية الجودة (PNG)',
+      printSchedule: 'طباعة الجدول',
+      exportIcs: 'تصدير لتقويم جوجل (Google Calendar)',
+      exportJson: 'حفظ المقررات (JSON)',
+      importJson: 'استيراد المقررات (JSON)',
+      zeroGapsBadge: '⚡ بدون أي فترات فراغ (Zero Gaps)',
+      clearAllCourses: 'مسح جميع المقررات',
+      doctorBadge: '🎓 دكتور / أستاذ',
+      instructorBadge: '🔬 معيد / مساعد تدريس',
+      doctorsSubheading: '🎓 الدكاترة والأساتذة (المحاضرات)',
+      instructorsSubheading: '🔬 المعيدون ومساعدو التدريس (المعامل والتمارين)',
+      guideBtn: 'دليل الاستخدام ❓',
+      guideModalTitle: 'دليل الاستخدام السريع: كيف تستخدم الموقع؟',
       dontShowAgain: 'عدم الإظهار تلقائياً عند فتح الموقع',
-      guideGotItBtn: 'فهمت',
-      mobileSwipeHint: 'اسحب أفقياً لتصفح جميع الفترات الـ 16',
-      rankedOptionsTitle: 'الخيارات المرتبة (بدون تعارض)',
+      guideGotItBtn: 'فهمت، لنبدأ الآن! 🚀',
+      mobileSwipeHint: 'اسحب أفقياً لتصفح جميع الفترات الـ 16 👉👈',
+      rankedOptionsTitle: '🎯 الخيارات الأفضل مرتبة (بدون تعارض):',
       arrowKeysHint: 'استخدم أسهم الكيبورد',
-      prevScheduleBtn: 'السابق',
-      nextScheduleBtn: 'التالي',
+      prevScheduleBtn: '◀ السابق',
+      nextScheduleBtn: 'التالي ▶',
       prevSchedule: 'السابق',
       nextSchedule: 'التالي',
       schedulesFilterTitle: 'تصفية الجداول وأولويات الترتيب',
-      schedulesFilterDesc: 'تصفية حسب عدد أيام النزول وفترات الفراغ والحد الأقصى للحصص اليومية.',
-      filterMaxDays: 'أقصى أيام نزول / أسبوع:',
-      filterMaxGaps: 'أقصى فترات فراغ:',
-      filterMaxClasses: 'أقصى حصص باليوم:',
+      schedulesFilterDesc: 'فلاتر إلزامية غير قابلة للتفاوض لعدد أيام النزول وفترات الفراغ والعبء اليومي مع ترتيب فوري.',
+      filterMaxDays: 'أقصى عدد أيام نزول / أسبوع:',
+      filterMaxGaps: 'أقصى فترات فراغ (Gaps):',
+      filterMaxClasses: 'أقصى فترات/حصص باليوم:',
       filterMaxOptions: 'أقصى عدد جداول معروضة:',
-      optAllSchedules: 'جميع الجداول',
+      optAllSchedules: 'جميع الجداول (بدون تقييد)',
       optTop5: 'أفضل 5 جداول',
       optTop15: 'أفضل 15 جدول',
       optTop25: 'أفضل 25 جدول',
@@ -384,80 +384,80 @@ const App = (() => {
       optTop100: 'أفضل 100 جدول',
       optTop250: 'أفضل 250 جدول',
       optAny: 'أي عدد (بدون تقييد)',
-      rankingPresetLabel: 'أولوية الترتيب:',
-      presetMinDays: 'أقل أيام نزول',
+      rankingPresetLabel: 'الأولوية في ترتيب الجداول (اختر ١ من ٤):',
+      presetMinDays: 'أقل عدد أيام نزول',
       presetMinGaps: 'أقل فترات فراغ',
-      presetEarly: 'انتهاء مبكر',
-      presetBalanced: 'متوازن',
-      filterMismatchBannerTitle: 'تعارض مع الفلاتر: يتم عرض جدول واحد بدون تصفية للمعاينة',
-      filterConflictModalTitle: 'لا يوجد جدول يطابق الفلاتر المحددة',
-      filterConflictModalDesc: 'لا يوجد أي جدول يحقق الفلاتر المحددة. تم عرض جدول واحد بدون تصفية لمعاينة السبب.',
-      resetFiltersBtn: 'إعادة ضبط الفلاتر',
+      presetEarly: 'انتهاء مبكر لليوم',
+      presetBalanced: 'متوازن وشامل',
+      filterMismatchBannerTitle: 'تعارض مع الفلاتر الإلزامية: يتم عرض جدول واحد بدون تصفية لمعرفة سبب الاستبعاد',
+      filterConflictModalTitle: 'لا يوجد جدول يطابق الفلاتر المحددة!',
+      filterConflictModalDesc: 'لا يوجد أي جدول يحقق فلاترك الإلزامية الصارمة. قمنا بعرض جدول واحد بدون تصفية في النتائج لتتمكن من معرفة الشرط المتجاوز وتعديل الفلتر.',
+      resetFiltersBtn: '↺ إعادة ضبط الفلاتر',
       viewUnfilteredBtn: 'معاينة الجدول غير المصفى',
       onlineNow: 'متصل الآن',
       visitsShort: 'زيارة',
       activeUsersNow: 'المستخدمون المتواجدون حالياً',
       totalVisitors: 'إجمالي الزيارات',
       activeUsersDesc: 'طلاب يتصفحون وينظمون جداولهم في الوقت الحالي',
-      totalVisitorsDesc: 'إجمالي جلسات الزوار الفريدة',
+      totalVisitorsDesc: 'إجمالي جلسات الزوار الفريدة منذ انطلاق الموقع',
       statsModalTitle: 'المتواجدون حالياً وإحصائيات الزيارات',
       sessionDurationLabel: 'مدة جلستك الحالية:',
       privacyLabel: 'الخصوصية والأمان:',
-      privacyDesc: 'مجهول 100% وبدون ملفات تعريف ارتباط',
-      howItWorksTitle: 'كيف يتم حساب هذا العداد؟',
-      howItWorksDesc: 'يعمل هذا العداد بدون خادم عبر نبضات تواجد لحظية كل 45 ثانية بأمان وخصوصية.',
+      privacyDesc: '🔒 مجهول 100% وبدون أي ملفات تعريف ارتباط (Cookies)',
+      howItWorksTitle: '⚡ كيف يتم حساب هذا العداد؟',
+      howItWorksDesc: 'يعمل هذا العداد بدون خادم تماماً (Serverless) على GitHub Pages عبر نبضات تواجد لحظية. بمجرد فتح الموقع، يرسل المتصفح إشارة نشاط كل 45 ثانية بأمان وخصوصية تامة، وتتحدث الأرقام لحظياً لجميع الطلاب.',
       closeBtn: 'إغلاق',
       manualTitle: 'صانع الجدول اليدوي',
-      manualSubtitle: 'استكشف المجموعات حسب الدكتور أو اختر المجموعات يدوياً مع فحص فوري للتعارض.',
+      manualSubtitle: 'اختر دكتورك المفضل لرؤية كافة مجموعاته ومواعيد محاضراته، واختر المجموعات بنفسك لتكوين جدولك مع فحص فوري لأي تعارض.',
       manualHideAvoidedLabel: 'إخفاء الدكاترة المستبعدين وعرض الدكاترة الإجباريين فقط للمادة',
-      manualHideAvoidedDesc: 'يقوم بإخفاء مجموعات الدكاترة المستبعدين وحصر العرض على الدكاترة الإجباريين عند تحديدهم.',
+      manualHideAvoidedDesc: 'يقوم تلقائياً بإخفاء مجموعات الدكاترة المستبعدين (🚫)، وفي حال وجود دكتور إجباري (🌟🔒) يتم حصر العرض على مجموعاته فقط.',
       clearManualSchedule: 'إعادة ضبط الجدول',
       viewInTimetable: 'عرض في شاشة الجداول',
       manualDocSearchTitle: 'استكشاف المجموعات حسب الدكتور',
-      manualDocSearchDesc: 'اختر أي دكتور لمعرفة كافة المجموعات التي يقوم بتدريسها ومواعيدها',
+      manualDocSearchDesc: 'اختر أي دكتور لمعرفة كافة المجموعات التي يقوم بتدريسها ومواعيدها وإضافتها لجدولك بضغطة واحدة',
       selectDoctorLabel: 'اختر الدكتور / الأستاذ:',
       searchDoctorLabel: 'أو ابحث بالاسم / المادة:',
       manualCourseGroupsTitle: 'مجموعات المقررات والفحص الفوري للتعارض',
-      manualCourseGroupsDesc: 'اختر مجموعة واحدة لكل مادة. المجموعات المتعارضة تظهر باللون الأحمر.',
+      manualCourseGroupsDesc: 'اختر مجموعة واحدة لكل مادة. المجموعات التي تتعارض مع اختياراتك الحالية ستظهر باللون الأحمر فوراً.',
       manualCustomizeDocTALabel: 'تخصيص الدكتور والسكشن والمعمل بشكل مستقل',
       manualCustomizeDocTADesc: 'اختر الدكتور (المحاضرات) والسكشن والمعمل بشكل منفصل لكل مجموعة، أو اختر المجموعة بالكامل.',
       manualDoctorComponentTitle: 'الدكتور (المحاضرات)',
       manualSectionComponentTitle: 'السكشن (التمارين)',
       manualLabComponentTitle: 'المعمل',
       manualTaComponentTitle: 'المعيد (السكاشن والمعامل)',
-      manualAddDoctor: '+ إضافة الدكتور',
-      manualAddSection: '+ إضافة السكشن',
-      manualAddLab: '+ إضافة المعمل',
-      manualAddTA: '+ إضافة المعيد',
+      manualAddDoctor: '➕ إضافة الدكتور',
+      manualAddSection: '➕ إضافة السكشن',
+      manualAddLab: '➕ إضافة المعمل',
+      manualAddTA: '➕ إضافة المعيد',
       manualDoctorInSchedule: '✓ مضاف للجدول',
       manualSectionInSchedule: '✓ مضاف للجدول',
       manualLabInSchedule: '✓ مضاف للجدول',
       manualTaInSchedule: '✓ مضاف للجدول',
-      manualSelectEntireGroup: '+ اختيار المجموعة بالكامل',
-      manualDeselectEntireGroup: '✕ إلغاء المجموعة بالكامل',
-      manualTimetableTitle: 'معاينة جدولك اليدوي',
-      manualTimetableDesc: 'جدول تفاعلي 16 فترة يعرض اختياراتك اليدوية وأي تعارضات',
+      manualSelectEntireGroup: '➕ اختيار المجموعة بالكامل',
+      manualDeselectEntireGroup: '❌ إلغاء المجموعة بالكامل',
+      manualTimetableTitle: 'معاينة جدولك اليدوي المخصص',
+      manualTimetableDesc: 'جدول تفاعلي 16 فترة يعرض اختياراتك اليدوية وأي تعارضات بالألوان الفورية',
       mixMatchTitle: 'دمج المجموعات: اختيار دكتور ومعيد من مجموعات مختلفة',
-      mixMatchDesc: 'اختر دكتور المحاضرة من مجموعة والمعيد للسكشن أو المعمل من مجموعة أخرى مع فحص فوري للتعارض.',
-      mixMatchResetBtn: 'إعادة ضبط الاختيارات',
+      mixMatchDesc: 'حرية كاملة لاختيار دكتور المحاضرة من مجموعة، والمعيد للسكشن أو المعمل من مجموعة أخرى مع فحص فوري للتعارض.',
+      mixMatchResetBtn: '↺ إعادة ضبط الاختيارات',
       mixMatchApplyManualBtn: 'تطبيق في الجدول اليدوي',
-      mixMatchSaveGroupBtn: 'حفظ كمجموعة مخصصة للمقرر',
+      mixMatchSaveGroupBtn: '💾 حفظ كمجموعة مخصصة للمقرر',
       mixMatchTimetableTitle: 'معاينة حية للجدول المدمج',
       mixMatchTimetableDesc: 'عرض مباشر يوضح اختياراتك المدمجة من محاضرات وسكاشن ومعامل لجميع المواد',
-      mixMatchExpandAll: 'توسيع الكل',
-      mixMatchCollapseAll: 'طي الكل',
-      mixMatchJumpToTimetable: 'معاينة الجدول',
-      mixMatchJumpToCourses: 'العودة لاختيار المواد',
+      mixMatchExpandAll: '📂 توسيع الكل',
+      mixMatchCollapseAll: '📁 طي الكل',
+      mixMatchJumpToTimetable: '📅 معاينة الجدول ⬇️',
+      mixMatchJumpToCourses: '⬆️ العودة لاختيار المواد',
       mixMatchAllCourses: 'جميع المواد',
       mixMatchSelectedCount: 'محدد',
       mixMatchNoPicks: 'لم يتم الاختيار',
       mixMatchReady: 'مكتمل ✓',
       loadingTitle: 'جاري حساب أفضل الجداول الدراسية...',
       loadingStep1: 'فحص وتجميع مجموعات المواد والمحاضرات...',
-      loadingStep2: 'استبعاد الأوقات المحظورة وأيام الفراغ...',
+      loadingStep2: 'استبعاد أوقات التدريب المحظورة وأيام الفراغ...',
       loadingStep3: 'تطبيق تفضيلات الدكاترة وحساب فترات الفراغ...',
       loadingStep4: 'ترتيب أفضل الجداول الخالية من التعارض...',
-      loadingFooterTip: 'جاري حساب أفضل توافقات الجداول بدون تعارض...'
+      loadingFooterTip: '⚡ انتظر لحظات بينما يقوم المحسن باكتشاف أفضل توافقات الجداول بدون تعارض!'
     }
   };
 
@@ -2568,8 +2568,8 @@ const App = (() => {
     const submitBtnText = document.getElementById('btn-submit-major-subjects-text');
     if (submitBtnText) {
       submitBtnText.textContent = isAr
-        ? 'إدراج المواد في الموقع'
-        : 'Submit Subjects into Website';
+        ? 'إدراج المواد في الموقع (Submit Subjects into Website)'
+        : 'Submit Subjects into Website (إدراج المواد في الموقع)';
     }
   }
 
@@ -2587,8 +2587,8 @@ const App = (() => {
       if (emptyNotice) emptyNotice.style.display = 'none';
       if (submitBtnText) {
         submitBtnText.textContent = isAr
-          ? 'إدراج المواد في الموقع'
-          : 'Submit Subjects into Website';
+          ? 'إدراج المواد في الموقع (Submit Subjects into Website)'
+          : 'Submit Subjects into Website (إدراج المواد في الموقع)';
       }
       return;
     }
@@ -2611,8 +2611,8 @@ const App = (() => {
 
       if (submitBtnText) {
         submitBtnText.textContent = isAr
-          ? `إدراج ${extractResult.courses.length} مواد في الموقع`
-          : `Submit ${extractResult.courses.length} Subjects into Website`;
+          ? `⚡ إدراج ${extractResult.courses.length} مواد في الموقع (Submit ${extractResult.courses.length} Subjects)`
+          : `⚡ Submit ${extractResult.courses.length} Subjects into Website (إدراج ${extractResult.courses.length} مواد)`;
       }
 
       // DO NOT auto-load into state.courses: user clicks Submit button to enter them into website
@@ -2651,8 +2651,8 @@ const App = (() => {
       if (fallbackDiv && fallbackBtn && altPeriod) {
         fallbackDiv.style.display = 'block';
         fallbackBtn.textContent = isAr
-          ? `اختيار الفترة ${altPeriod.periodName} (${altPeriod.coursesCount} مواد)`
-          : `Choose Period ${altPeriod.periodName} (${altPeriod.coursesCount} subjects)`;
+          ? `⚡ اختيار الفترة ${altPeriod.periodName} (${altPeriod.coursesCount} مواد)`
+          : `⚡ Choose Period ${altPeriod.periodName} (${altPeriod.coursesCount} subjects)`;
         fallbackBtn.onclick = () => {
           const pSel = document.getElementById('select-major-period');
           if (pSel) pSel.value = altPeriod.periodName;
@@ -2664,8 +2664,8 @@ const App = (() => {
 
       if (submitBtnText) {
         submitBtnText.textContent = isAr
-          ? 'إدراج المواد في الموقع'
-          : 'Submit Subjects into Website';
+          ? 'إدراج المواد في الموقع (Submit Subjects into Website)'
+          : 'Submit Subjects into Website (إدراج المواد في الموقع)';
       }
     }
   }
@@ -2824,8 +2824,8 @@ const App = (() => {
     const deptDisplay = getMajorDepartmentDisplayName(state.selectedDepartment);
     const totalGroups = coursesToLoad.reduce((acc, c) => acc + c.groups.length, 0);
     const msg = isAr
-      ? `تم إدراج ${coursesToLoad.length} مواد بـ ${totalGroups} مجموعة لقسم ${deptDisplay} في الموقع.`
-      : `Added ${coursesToLoad.length} subjects with ${totalGroups} groups for ${deptDisplay}.`;
+      ? `تم إدراج ${coursesToLoad.length} مواد بـ ${totalGroups} مجموعة لقسم ${deptDisplay} في الموقع بنجاح! 🎉`
+      : `Successfully submitted ${coursesToLoad.length} subjects with ${totalGroups} groups for ${deptDisplay} into the website! ⚡`;
 
     showToast(msg, 'success');
 
@@ -2851,6 +2851,7 @@ const App = (() => {
     if (state.courses.length === 0) {
       container.innerHTML = `
         <div class="dropzone" style="grid-column: 1 / -1; cursor: default;">
+          <div class="dropzone-icon">📚</div>
           <div class="dropzone-title" data-i18n="noCoursesTitle">${TRANSLATIONS[state.currentLang].noCoursesTitle}</div>
           <div class="dropzone-subtitle" data-i18n="noCoursesDesc">${TRANSLATIONS[state.currentLang].noCoursesDesc}</div>
         </div>
@@ -2861,6 +2862,7 @@ const App = (() => {
     let html = '';
     state.courses.forEach((c, idx) => {
       const groupsCount = (c.groups || []).length;
+      const instructorsCount = (c.instructors || []).length;
       const groupsTags = (c.groups || []).slice(0, 8).map(g => `<span class="mini-group-tag">Grp ${g.group}</span>`).join('');
 
       // Collect all instructors from course, groups, and sessions
@@ -2903,13 +2905,13 @@ const App = (() => {
         <div class="course-faculty-badges">
           ${docsList.length > 0 ? `
             <div class="faculty-badge-row">
-              <span class="faculty-badge-type doctor">${docBadgeLabel}:</span>
+              <span class="faculty-badge-type doctor">👨‍🏫 ${docBadgeLabel}:</span>
               <span class="faculty-names-list">${docsList.map(d => `<span class="faculty-tag doc-tag">${d}</span>`).join('')}</span>
             </div>
           ` : ''}
           ${tasList.length > 0 ? `
             <div class="faculty-badge-row">
-              <span class="faculty-badge-type ta">${taBadgeLabel}:</span>
+              <span class="faculty-badge-type ta">👨‍💼 ${taBadgeLabel}:</span>
               <span class="faculty-names-list">${tasList.map(t => `<span class="faculty-tag ta-tag">${t}</span>`).join('')}</span>
             </div>
           ` : ''}
@@ -2917,19 +2919,19 @@ const App = (() => {
       ` : '';
 
       html += `
-        <div class="course-item-card" style="border-top: 3px solid ${c.color || '#3B82F6'};">
+        <div class="course-item-card" style="border-top: 4px solid ${c.color || '#3B82F6'};">
           <div class="course-item-header">
             <div>
               <span class="course-code-badge">${c.code || 'COURSE'}</span>
               <div class="course-item-title">${c.name}</div>
             </div>
             <button class="btn-remove-course" title="Remove course" onclick="App.removeCourse(${idx})">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
             </button>
           </div>
           <div class="course-stats-line">
-            <span><strong>${groupsCount}</strong> ${isAr ? 'مجموعات' : 'Groups'}</span> ·
-            <span><strong>${allInstSet.size}</strong> ${isAr ? 'أعضاء هيئة تدريس' : 'Faculty'}</span>
+            <span><strong>${groupsCount}</strong> ${isAr ? 'مجموعات' : 'Groups'}</span> •
+            <span><strong>${allInstSet.size}</strong> ${isAr ? 'أعضاء هيئة تدريس' : 'Faculty/Staff'}</span>
           </div>
           <div class="groups-pill-preview">${groupsTags}${groupsCount > 8 ? `<span class="mini-group-tag">+${groupsCount - 8}</span>` : ''}</div>
           ${facultyHtml}
@@ -2981,9 +2983,6 @@ const App = (() => {
    * Helper to check if a doctor name refers to an unspecified / unassigned doctor
    */
   function isUnspecifiedDoctor(name) {
-    if (typeof ScheduleRenderer !== 'undefined' && typeof ScheduleRenderer.isUnspecifiedDoctor === 'function') {
-      return ScheduleRenderer.isUnspecifiedDoctor(name);
-    }
     if (!name) return true;
     const s = String(name).trim().toLowerCase();
     return s === '' || s === 'not specified' || s === 'غير محدد' || s === 'unspecified' || s === 'دكتور غير محدد' || s === 'not specified (doctor)';
@@ -3226,13 +3225,13 @@ const App = (() => {
   function getGroupDoctorPrefBadgesHtml(prefSummary, isAr) {
     let html = '';
     if (prefSummary.hasMandate) {
-      html += `<span class="manual-pref-badge badge-mandate" title="${isAr ? 'تحتوي هذه المجموعة على دكتور محدد كإجباري' : 'This group includes a mandated doctor'}">${isAr ? 'دكتور إجباري' : 'Mandated Doctor'}</span>`;
+      html += `<span class="manual-pref-badge badge-mandate" title="${isAr ? 'تحتوي هذه المجموعة على دكتور محدد كإجباري' : 'This group includes a mandated doctor'}">🌟🔒 ${isAr ? 'دكتور إجباري' : 'Mandated Doctor'}</span>`;
     }
     if (prefSummary.hasAvoid) {
-      html += `<span class="manual-pref-badge badge-avoid" title="${isAr ? 'تحتوي هذه المجموعة على دكتور قمت باستبعاده (يمكنك اختياره يدوياً دون أي قيود)' : 'This group includes an avoided doctor (you can still select it manually)'}">${isAr ? 'دكتور مستبعد' : 'Avoided Doctor'}</span>`;
+      html += `<span class="manual-pref-badge badge-avoid" title="${isAr ? 'تحتوي هذه المجموعة على دكتور قمت باستبعاده (يمكنك اختياره يدوياً دون أي قيود)' : 'This group includes an avoided doctor (you can still select it manually)'}">🚫 ${isAr ? 'دكتور مستبعد' : 'Avoided Doctor'}</span>`;
     }
     if (prefSummary.hasLove && !prefSummary.hasMandate) {
-      html += `<span class="manual-pref-badge badge-prefer" title="${isAr ? 'تحتوي هذه المجموعة على دكتور مفضل لديك' : 'This group includes a preferred doctor'}">${isAr ? 'دكتور مفضل' : 'Preferred Doctor'}</span>`;
+      html += `<span class="manual-pref-badge badge-prefer" title="${isAr ? 'تحتوي هذه المجموعة على دكتور مفضل لديك' : 'This group includes a preferred doctor'}">⭐ ${isAr ? 'دكتور مفضل' : 'Preferred Doctor'}</span>`;
     }
     return html;
   }
@@ -3242,13 +3241,13 @@ const App = (() => {
     const targetDoc = isUnspec ? 'Not Specified' : instructor;
     const rating = getDoctorPrefForCourse(course, targetDoc);
     if (rating === 'avoid') {
-      return `<span class="manual-pref-badge badge-avoid" title="${isAr ? 'دكتور مستبعد في تفضيلاتك (مسموح باختياره يدوياً)' : 'Avoided Doctor (Allowed in manual mode)'}">${isAr ? 'مستبعد' : 'Avoided'}</span>`;
+      return `<span class="manual-pref-badge badge-avoid" title="${isAr ? 'دكتور مستبعد في تفضيلاتك (مسموح باختياره يدوياً)' : 'Avoided Doctor (Allowed in manual mode)'}">🚫 ${isAr ? 'مستبعد' : 'Avoided'}</span>`;
     }
     if (rating === 'mandate') {
-      return `<span class="manual-pref-badge badge-mandate" title="${isAr ? 'دكتور إجباري في تفضيلاتك' : 'Mandated Doctor'}">${isAr ? 'إجباري' : 'Mandated'}</span>`;
+      return `<span class="manual-pref-badge badge-mandate" title="${isAr ? 'دكتور إجباري في تفضيلاتك' : 'Mandated Doctor'}">🌟🔒 ${isAr ? 'إجباري' : 'Mandated'}</span>`;
     }
     if (rating === 'love') {
-      return `<span class="manual-pref-badge badge-prefer" title="${isAr ? 'دكتور مفضل في تفضيلاتك' : 'Preferred Doctor'}">${isAr ? 'مفضل' : 'Preferred'}</span>`;
+      return `<span class="manual-pref-badge badge-prefer" title="${isAr ? 'دكتور مفضل في تفضيلاتك' : 'Preferred Doctor'}">⭐ ${isAr ? 'مفضل' : 'Preferred'}</span>`;
     }
     return '';
   }
@@ -3353,11 +3352,11 @@ const App = (() => {
       });
 
       html += `
-        <div class="pref-box">
-          <div class="pref-course-header">
-            <span style="color: ${course.color};">${course.name} (${courseCode})</span>
-            <span class="pref-course-count">
-              ${sortedDocs.length} ${state.currentLang === 'ar' ? 'دكاترة' : 'Doctors'} · ${uniqueInsts.length} ${state.currentLang === 'ar' ? 'معيدين' : 'TAs'}
+        <div class="pref-box" style="margin-bottom: 20px;">
+          <div style="font-weight: 700; font-size: 1.05rem; margin-bottom: 10px; color: ${course.color}; display: flex; align-items: center; justify-content: space-between;">
+            <span>${course.name} (${courseCode})</span>
+            <span style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted);">
+              ${sortedDocs.length} ${state.currentLang === 'ar' ? 'دكاترة' : 'Doctors'} • ${uniqueInsts.length} ${state.currentLang === 'ar' ? 'معيدين' : 'TAs'}
             </span>
           </div>
           <div>
@@ -3375,28 +3374,29 @@ const App = (() => {
           html += `
             <div class="doctor-pref-item is-doctor ${isMandated ? 'is-mandated' : ''} ${isAvoided ? 'is-avoided' : ''}">
               <div class="doctor-name-col">
-                <span style="font-weight: 600; color: var(--text-primary); ${isAvoided ? 'text-decoration: line-through; opacity: 0.6;' : ''}">${item.formatted}</span>
+                <span style="font-size: 16px;">${isMandated ? '🌟' : (item.isUnspecified ? '❓' : '🎓')}</span>
+                <span style="font-weight: 700; color: var(--text-primary); ${isAvoided ? 'text-decoration: line-through; opacity: 0.6;' : ''}">${item.formatted}</span>
                 <span class="role-badge doctor-badge">${t.doctorBadge}</span>
-                ${isMandated ? `<span class="role-badge badge-mandated">${state.currentLang === 'ar' ? 'إجباري' : 'Mandated'}</span>` : ''}
-                ${isAvoided ? `<span class="role-badge badge-excluded">${state.currentLang === 'ar' ? 'مستبعد' : 'Excluded'}</span>` : ''}
+                ${isMandated ? `<span class="role-badge badge-mandated" style="background: linear-gradient(135deg, #F59E0B, #D97706); color: white; font-weight: 800; box-shadow: 0 1px 6px rgba(245, 158, 11, 0.4);">🌟🔒 ${state.currentLang === 'ar' ? 'إجباري في الجدول' : 'Mandated'}</span>` : ''}
+                ${isAvoided ? `<span class="role-badge" style="background: rgba(239, 68, 68, 0.15); color: #EF4444; font-weight: 700;">🚫 ${state.currentLang === 'ar' ? 'مستبعد نهائياً' : 'Excluded'}</span>` : ''}
               </div>
               <div class="doctor-rating-group">
                 <button class="rating-btn ${isMandated ? 'active-mandate' : (isLove ? 'active-love' : '')}"
                         title="${isMandated 
-                          ? (state.currentLang === 'ar' ? 'دكتور إجباري في جميع الجداول (انقر للإلغاء)' : 'Mandated doctor: Guaranteed in all schedules (click to unmandate)')
-                          : (state.currentLang === 'ar' ? 'دكتور مفضل - انقر 3 مرات لتثبيته كإجباري' : 'Favorite doctor - Triple-click to mandate')}"
+                          ? (state.currentLang === 'ar' ? 'دكتور إجباري ومفروض في جميع الجداول (انقر للإلغاء)' : 'Mandated doctor: Guaranteed in all schedules (click to unmandate)')
+                          : (state.currentLang === 'ar' ? 'دكتور مفضل - انقر 3 مرات سريعاً لتثبيته كإجباري 🌟🔒' : 'Favorite doctor - Triple-click to mandate 🌟🔒')}"
                         onclick="App.handleDoctorPrefClick(event, '${courseCode}', '${escapeQuotes(item.formatted)}', 'love')">
-                  ${isMandated ? (state.currentLang === 'ar' ? 'إجباري' : 'Mandated') : (state.currentLang === 'ar' ? 'مفضل' : 'Favorite')}
+                  ${isMandated ? `🌟🔒 ${state.currentLang === 'ar' ? 'إجباري' : 'Mandated'}` : `⭐ ${state.currentLang === 'ar' ? 'مفضل' : 'Favorite'}`}
                 </button>
                 <button class="rating-btn ${currentPref === 'neutral' ? 'active-neutral' : ''}"
                         title="${state.currentLang === 'ar' ? 'عادي' : 'Neutral'}"
                         onclick="App.handleDoctorPrefClick(event, '${courseCode}', '${escapeQuotes(item.formatted)}', 'neutral')">
-                  ${state.currentLang === 'ar' ? 'عادي' : 'Neutral'}
+                  ⚪ ${state.currentLang === 'ar' ? 'عادي' : 'Neutral'}
                 </button>
                 <button class="rating-btn ${isAvoided ? 'active-avoid' : ''}"
-                        title="${state.currentLang === 'ar' ? 'استبعاد هذا الدكتور نهائياً من كافة الجداول' : 'Exclude this doctor from all schedules'}"
+                        title="${state.currentLang === 'ar' ? 'استبعاد وحظر هذا الدكتور نهائياً من كافة الجداول 🚫' : 'Strictly exclude this doctor from all schedules 🚫'}"
                         onclick="App.handleDoctorPrefClick(event, '${courseCode}', '${escapeQuotes(item.formatted)}', 'avoid')">
-                  ${state.currentLang === 'ar' ? 'تجنب' : 'Avoid'}
+                  🚫 ${state.currentLang === 'ar' ? 'تجنب (مستبعد)' : 'Avoid'}
                 </button>
               </div>
             </div>
@@ -3416,28 +3416,29 @@ const App = (() => {
           html += `
             <div class="doctor-pref-item ${isMandated ? 'is-mandated' : ''} ${isAvoided ? 'is-avoided' : ''}">
               <div class="doctor-name-col">
-                <span style="font-weight: 500; color: var(--text-secondary); ${isAvoided ? 'text-decoration: line-through; opacity: 0.6;' : ''}">${item.formatted}</span>
+                <span style="font-size: 16px;">${isMandated ? '🌟' : '🔬'}</span>
+                <span style="font-weight: 600; color: var(--text-secondary); ${isAvoided ? 'text-decoration: line-through; opacity: 0.6;' : ''}">${item.formatted}</span>
                 <span class="role-badge instructor-badge">${t.instructorBadge}</span>
-                ${isMandated ? `<span class="role-badge badge-mandated">${state.currentLang === 'ar' ? 'إجباري' : 'Mandated'}</span>` : ''}
-                ${isAvoided ? `<span class="role-badge badge-excluded">${state.currentLang === 'ar' ? 'مستبعد' : 'Excluded'}</span>` : ''}
+                ${isMandated ? `<span class="role-badge badge-mandated" style="background: linear-gradient(135deg, #F59E0B, #D97706); color: white; font-weight: 800;">🌟🔒 ${state.currentLang === 'ar' ? 'إجباري' : 'Mandated'}</span>` : ''}
+                ${isAvoided ? `<span class="role-badge" style="background: rgba(239, 68, 68, 0.15); color: #EF4444; font-weight: 700;">🚫 ${state.currentLang === 'ar' ? 'مستبعد' : 'Excluded'}</span>` : ''}
               </div>
               <div class="doctor-rating-group">
                 <button class="rating-btn ${isMandated ? 'active-mandate' : (isLove ? 'active-love' : '')}"
                         title="${isMandated 
                           ? (state.currentLang === 'ar' ? 'معيد إجباري في جميع الجداول (انقر للإلغاء)' : 'Mandated instructor (click to unmandate)')
-                          : (state.currentLang === 'ar' ? 'معيد مفضل - انقر 3 مرات لتثبيته كإجباري' : 'Favorite instructor - Triple-click to mandate')}"
+                          : (state.currentLang === 'ar' ? 'معيد مفضل - انقر 3 مرات سريعاً لتثبيته كإجباري 🌟🔒' : 'Favorite instructor - Triple-click to mandate 🌟🔒')}"
                         onclick="App.handleDoctorPrefClick(event, '${courseCode}', '${escapeQuotes(item.formatted)}', 'love')">
-                  ${isMandated ? (state.currentLang === 'ar' ? 'إجباري' : 'Mandated') : (state.currentLang === 'ar' ? 'مفضل' : 'Favorite')}
+                  ${isMandated ? `🌟🔒 ${state.currentLang === 'ar' ? 'إجباري' : 'Mandated'}` : `⭐ ${state.currentLang === 'ar' ? 'مفضل' : 'Favorite'}`}
                 </button>
                 <button class="rating-btn ${currentPref === 'neutral' ? 'active-neutral' : ''}"
                         title="${state.currentLang === 'ar' ? 'عادي' : 'Neutral'}"
                         onclick="App.handleDoctorPrefClick(event, '${courseCode}', '${escapeQuotes(item.formatted)}', 'neutral')">
-                  ${state.currentLang === 'ar' ? 'عادي' : 'Neutral'}
+                  ⚪ ${state.currentLang === 'ar' ? 'عادي' : 'Neutral'}
                 </button>
                 <button class="rating-btn ${isAvoided ? 'active-avoid' : ''}"
-                        title="${state.currentLang === 'ar' ? 'استبعاد هذا المعيد نهائياً من كافة الجداول' : 'Exclude this instructor from all schedules'}"
+                        title="${state.currentLang === 'ar' ? 'استبعاد هذا المعيد نهائياً من كافة الجداول 🚫' : 'Strictly exclude this instructor from all schedules 🚫'}"
                         onclick="App.handleDoctorPrefClick(event, '${courseCode}', '${escapeQuotes(item.formatted)}', 'avoid')">
-                  ${state.currentLang === 'ar' ? 'تجنب' : 'Avoid'}
+                  🚫 ${state.currentLang === 'ar' ? 'تجنب (مستبعد)' : 'Avoid'}
                 </button>
               </div>
             </div>
@@ -3711,68 +3712,97 @@ const App = (() => {
     if (modal) {
       modal.style.setProperty('display', 'flex', 'important');
     }
-    if (progressBar) progressBar.style.width = '30%';
+    if (progressBar) progressBar.style.width = '15%';
     if (stepEl) {
       stepEl.textContent = isAr
-        ? 'جاري فحص وترتيب الجداول الخالية من التعارض...'
-        : 'Analyzing course combinations and ranking clash-free schedules...';
+        ? 'فحص وتجميع مجموعات المواد والمحاضرات...'
+        : 'Analyzing course combinations and lecture groups...';
     }
 
+    // Step 2: 120ms
     setTimeout(() => {
-      let result;
-      try {
-        result = ScheduleOptimizer.findOptimalSchedules(state.courses, {
-          doctorPreferences: state.doctorPreferences,
-          gapWeight: state.preferences.gapWeight,
-          daysWeight: state.preferences.daysWeight,
-          doctorWeight: state.preferences.doctorWeight,
-          earlyWeight: state.preferences.earlyWeight,
-          freeDays: state.preferences.freeDays,
-          blockedTimes: state.blockedTimes,
-          strictDoctorMode: state.preferences.strictDoctorCombinations !== false
-        });
-      } catch (err) {
-        console.error('Optimizer error:', err);
-        result = { success: false, message: 'An unexpected error occurred during optimization.' };
+      if (progressBar) progressBar.style.width = '45%';
+      if (stepEl) {
+        stepEl.textContent = isAr
+          ? 'استبعاد أوقات التدريب المحظورة وأيام الفراغ...'
+          : 'Filtering blocked times and free days...';
       }
 
-      if (progressBar) progressBar.style.width = '100%';
-      if (modal) modal.style.setProperty('display', 'none', 'important');
+      // Step 3: 240ms
+      setTimeout(() => {
+        if (progressBar) progressBar.style.width = '80%';
+        if (stepEl) {
+          stepEl.textContent = isAr
+            ? 'تطبيق تفضيلات الدكاترة وحساب فترات الفراغ...'
+            : 'Applying doctor preferences and calculating gaps...';
+        }
 
-      if (!result.success || !result.solutions || result.solutions.length === 0) {
-        const baseMsg = isAr ? (result.messageAr || result.message) : (result.message || 'No clash-free schedules found.');
-        const tip = isAr
-          ? ' يمكنك الضغط على زر "تفريغ الذاكرة" بأعلى الصفحة للبدء بحالة نظيفة.'
-          : ' You can click "Clear Cache" at the top to reset everything to fresh defaults.';
-        showToast(baseMsg + tip, 'error');
-        return;
-      }
+        // Run Optimizer solver asynchronously
+        setTimeout(() => {
+          let result;
+          try {
+            result = ScheduleOptimizer.findOptimalSchedules(state.courses, {
+              doctorPreferences: state.doctorPreferences,
+              gapWeight: state.preferences.gapWeight,
+              daysWeight: state.preferences.daysWeight,
+              doctorWeight: state.preferences.doctorWeight,
+              earlyWeight: state.preferences.earlyWeight,
+              freeDays: state.preferences.freeDays,
+              blockedTimes: state.blockedTimes,
+              strictDoctorMode: state.preferences.strictDoctorCombinations !== false
+            });
+          } catch (err) {
+            console.error('Optimizer error:', err);
+            result = { success: false, message: 'An unexpected error occurred during optimization.' };
+          }
 
-      state.solutions = result.solutions;
-      state.activeSolutionIndex = 0;
+          if (progressBar) progressBar.style.width = '100%';
+          if (stepEl) {
+            stepEl.textContent = isAr
+              ? 'ترتيب أفضل الجداول الخالية من التعارض...'
+              : 'Ranking clash-free schedules...';
+          }
 
-      // Switch to Timetable tab and apply strict filters & ranking presets
-      switchTab('timetable');
-      applyTimetableFilters();
+          setTimeout(() => {
+            if (modal) modal.style.setProperty('display', 'none', 'important');
 
-      if (result.fallbackNotice) {
-        showToast(
-          isAr
-            ? (result.fallbackNoticeAr || 'تم توليد الجداول! بعض الدكاترة أوقاتهم متعارضة، تم إدراج أفضل التوفيقات المتاحة.')
-            : result.fallbackNotice,
-          'warning'
-        );
-      } else {
-        const combosChecked = result.totalCombinationsPossible ? ` (${result.totalCombinationsPossible.toLocaleString()} combinations checked)` : '';
-        const combosCheckedAr = result.totalCombinationsPossible ? ` (تم فحص ${result.totalCombinationsPossible.toLocaleString()} احتمال)` : '';
-        showToast(
-          isAr
-            ? `تم العثور على ${result.validCount} جدول بدون تعارض${combosCheckedAr}.`
-            : `Found ${result.validCount} clash-free schedules${combosChecked}.`,
-          'success'
-        );
-      }
-    }, 20);
+            if (!result.success || !result.solutions || result.solutions.length === 0) {
+              const baseMsg = isAr ? (result.messageAr || result.message) : (result.message || 'No clash-free schedules found.');
+              const tip = isAr
+                ? ' 💡 يمكنك الضغط على زر "تفريغ الذاكرة 🧹" بأعلى الصفحة للبدء بحالة نظيفة تماماً مثل التصفح المتخفي.'
+                : ' 💡 You can click "Clear Cache 🧹" at the top to reset everything to fresh defaults (like incognito mode).';
+              showToast(baseMsg + tip, 'error');
+              return;
+            }
+
+            state.solutions = result.solutions;
+            state.activeSolutionIndex = 0;
+
+            // Switch to Timetable tab and apply strict filters & ranking presets
+            switchTab('timetable');
+            applyTimetableFilters();
+
+            if (result.fallbackNotice) {
+              showToast(
+                isAr
+                  ? (result.fallbackNoticeAr || `⚠️ تم توليد الجداول! بعض الدكاترة أوقاتهم متعارضة، تم إدراج أفضل التوفيقات المتاحة.`)
+                  : result.fallbackNotice,
+                'warning'
+              );
+            } else {
+              const combosChecked = result.totalCombinationsPossible ? ` (${result.totalCombinationsPossible.toLocaleString()} combinations checked)` : '';
+              const combosCheckedAr = result.totalCombinationsPossible ? ` (تم فحص ${result.totalCombinationsPossible.toLocaleString()} احتمال)` : '';
+              showToast(
+                isAr
+                  ? `تم بنجاح! تم العثور على ${result.validCount} جدول بدون أي تعارض${combosCheckedAr}.`
+                  : `Success! Found ${result.validCount} clash-free schedules${combosChecked}. Top options ranked below.`,
+                'success'
+              );
+            }
+          }, 220);
+        }, 80);
+      }, 120);
+    }, 120);
   }
 
   /* ==========================================================================
@@ -5945,17 +5975,16 @@ const App = (() => {
     const modalDetails = document.getElementById('modal-filter-conflict-details');
 
     if (matched.length > 0) {
-      const getScore = (sol) => (sol.compositeScore ?? sol.totalScore ?? 0);
       // Sort matched solutions according to user's selected preset
       if (preset === 'minimum_days') {
-        matched.sort((a, b) => (a.activeDaysCount - b.activeDaysCount) || (a.totalGapSlots - b.totalGapSlots) || (getScore(b) - getScore(a)));
+        matched.sort((a, b) => (a.activeDaysCount - b.activeDaysCount) || (a.totalGapSlots - b.totalGapSlots) || (b.totalScore - a.totalScore));
       } else if (preset === 'minimal_gaps') {
-        matched.sort((a, b) => (a.totalGapSlots - b.totalGapSlots) || (a.activeDaysCount - b.activeDaysCount) || (getScore(b) - getScore(a)));
+        matched.sort((a, b) => (a.totalGapSlots - b.totalGapSlots) || (a.activeDaysCount - b.activeDaysCount) || (b.totalScore - a.totalScore));
       } else if (preset === 'early_schedule') {
-        matched.sort((a, b) => (getEarlyScore(b) - getEarlyScore(a)) || (getScore(b) - getScore(a)));
+        matched.sort((a, b) => (getEarlyScore(b) - getEarlyScore(a)) || (b.totalScore - a.totalScore));
       } else {
         // balanced
-        matched.sort((a, b) => getScore(b) - getScore(a));
+        matched.sort((a, b) => b.totalScore - a.totalScore);
       }
 
       state.filteredSolutions = matched;
@@ -5983,16 +6012,16 @@ const App = (() => {
         violations.push({
           type: 'days',
           label: isAr
-            ? `أيام النزول: ${fallbackSol.activeDaysCount} أيام (الفلتر المطلوب: أقصى حد ${maxDays} · أقل متاح: ${minAvailDays} أيام)`
-            : `Campus Days: ${fallbackSol.activeDaysCount} days (Your filter: Max ${maxDays} · Best available: ${minAvailDays} days)`
+            ? `❌ أيام النزول: ${fallbackSol.activeDaysCount} أيام (الفلتر المطلوب: أقصى حد ${maxDays} • أقل متاح: ${minAvailDays} أيام)`
+            : `❌ Campus Days: ${fallbackSol.activeDaysCount} days (Your filter: Max ${maxDays} • Best available: ${minAvailDays} days)`
         });
       }
       if (maxGaps !== 'any' && fallbackSol.totalGapSlots > maxGapsNum) {
         violations.push({
           type: 'gaps',
           label: isAr
-            ? `فترات الفراغ: ${fallbackSol.totalGapSlots} فترات (الفلتر المطلوب: أقصى حد ${maxGaps} · أقل متاح: ${minAvailGaps} فترات)`
-            : `Gap Slots: ${fallbackSol.totalGapSlots} slots (Your filter: Max ${maxGaps} · Best available: ${minAvailGaps} slots)`
+            ? `❌ فترات الفراغ: ${fallbackSol.totalGapSlots} فترات (الفلتر المطلوب: أقصى حد ${maxGaps} • أقل متاح: ${minAvailGaps} فترات)`
+            : `❌ Gap Slots: ${fallbackSol.totalGapSlots} slots (Your filter: Max ${maxGaps} • Best available: ${minAvailGaps} slots)`
         });
       }
       const fallbackClasses = getMaxClassesPerDay(fallbackSol);
@@ -6000,8 +6029,8 @@ const App = (() => {
         violations.push({
           type: 'classes',
           label: isAr
-            ? `أقصى حصص باليوم: ${fallbackClasses} حصص (الفلتر المطلوب: أقصى حد ${maxClassesPerDay} · أقل متاح: ${minAvailClasses} حصص)`
-            : `Max Classes / Day: ${fallbackClasses} classes (Your filter: Max ${maxClassesPerDay} · Best available: ${minAvailClasses} classes)`
+            ? `❌ أقصى حصص باليوم: ${fallbackClasses} حصص (الفلتر المطلوب: أقصى حد ${maxClassesPerDay} • أقل متاح: ${minAvailClasses} حصص)`
+            : `❌ Max Classes / Day: ${fallbackClasses} classes (Your filter: Max ${maxClassesPerDay} • Best available: ${minAvailClasses} classes)`
         });
       }
 
@@ -6012,8 +6041,8 @@ const App = (() => {
 
       if (modalDetails) {
         modalDetails.innerHTML = `
-          <div style="margin-bottom: 8px; font-weight: 600; color: var(--danger);">
-            ${isAr ? 'أسباب عدم وجود جداول تطابق اختياراتك:' : 'Why no schedules matched your filters:'}
+          <div style="margin-bottom: 8px; font-weight: 700; color: #EF4444;">
+            ${isAr ? '⚠️ أسباب عدم وجود جداول تطابق اختياراتك:' : '⚠️ Why no schedules matched your filters:'}
           </div>
           <ul style="margin: 0; padding-inline-start: 20px;">
             ${violations.map(v => `<li style="margin-bottom: 6px;">${v.label}</li>`).join('')}
