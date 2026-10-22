@@ -396,6 +396,7 @@ const ScheduleOptimizer = (() => {
         solutions.push({
           id: `sol_${solutions.length + 1}`,
           compositeScore,
+          totalScore: compositeScore,
           totalGapSlots,
           gapDetails,
           activeDaysCount: activeDays.size,
