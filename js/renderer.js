@@ -11,29 +11,33 @@ const ScheduleRenderer = (() => {
     { key: 'Monday', en: 'Monday', ar: 'الاثنين' },
     { key: 'Tuesday', en: 'Tuesday', ar: 'الثلاثاء' },
     { key: 'Wednesday', en: 'Wednesday', ar: 'الأربعاء' },
-    { key: 'Thursday', en: 'Thursday', ar: 'الخميس' },
-    { key: 'Friday', en: 'Friday', ar: 'الجمعة' }
+    { key: 'Thursday', en: 'Thursday', ar: 'الخميس' }
   ];
 
-  // Default Egyptian/AASTMT university period times
+  // Egyptian/AASTMT university period times: 8:30 AM to 8:30 PM (6 2-hour blocks)
   const PERIOD_TIMES = {
-    1: '08:30 - 09:20',
-    2: '09:30 - 10:20',
-    3: '10:30 - 11:20',
-    4: '11:30 - 12:20',
-    5: '12:30 - 13:20',
-    6: '13:30 - 14:20',
-    7: '14:30 - 15:20',
-    8: '15:30 - 16:20',
-    9: '16:30 - 17:20',
-    10: '17:30 - 18:20',
-    11: '18:30 - 19:20',
-    12: '19:30 - 20:20',
-    13: '20:30 - 21:20',
-    14: '21:30 - 22:20',
-    15: '22:30 - 23:20',
-    16: '23:30 - 00:20'
+    1: '08:30 - 09:30',
+    2: '09:30 - 10:30',
+    3: '10:30 - 11:30',
+    4: '11:30 - 12:30',
+    5: '12:30 - 13:30',
+    6: '13:30 - 14:30',
+    7: '14:30 - 15:30',
+    8: '15:30 - 16:30',
+    9: '16:30 - 17:30',
+    10: '17:30 - 18:30',
+    11: '18:30 - 19:30',
+    12: '19:30 - 20:30'
   };
+
+  const PERIOD_BLOCKS = [
+    { num: 1, nameEn: 'Period 1', nameAr: 'الفترة 1', time: '08:30 - 10:30', startSlot: 1, endSlot: 2 },
+    { num: 2, nameEn: 'Period 2', nameAr: 'الفترة 2', time: '10:30 - 12:30', startSlot: 3, endSlot: 4 },
+    { num: 3, nameEn: 'Period 3', nameAr: 'الفترة 3', time: '12:30 - 02:30', startSlot: 5, endSlot: 6 },
+    { num: 4, nameEn: 'Period 4', nameAr: 'الفترة 4', time: '02:30 - 04:30', startSlot: 7, endSlot: 8 },
+    { num: 5, nameEn: 'Period 5', nameAr: 'الفترة 5', time: '04:30 - 06:30', startSlot: 9, endSlot: 10 },
+    { num: 6, nameEn: 'Period 6', nameAr: 'الفترة 6', time: '06:30 - 08:30', startSlot: 11, endSlot: 12 }
+  ];
 
   /**
    * Helper to convert HEX to RGBA for prominent subject color highlighting
@@ -52,8 +56,10 @@ const ScheduleRenderer = (() => {
    * Helper to format time range for slot interval
    */
   function formatSlotTimeRange(startSlot, endSlot) {
-    const t1 = (PERIOD_TIMES[startSlot] || '').split(' - ')[0] || `Slot ${startSlot}`;
-    const t2 = (PERIOD_TIMES[endSlot] || '').split(' - ')[1] || `Slot ${endSlot}`;
+    const s1 = parseInt(startSlot, 10);
+    const s2 = parseInt(endSlot, 10);
+    const t1 = (PERIOD_TIMES[s1] || '').split(' - ')[0] || `Slot ${s1}`;
+    const t2 = (PERIOD_TIMES[s2] || '').split(' - ')[1] || (PERIOD_TIMES[s1] || '').split(' - ')[1] || `Slot ${s2}`;
     return `${t1} - ${t2}`;
   }
 
@@ -493,36 +499,51 @@ const ScheduleRenderer = (() => {
     agendaHtml += `</div>`;
 
     // ==========================================
-    // 2. BUILD FULL 16-PERIOD TIMETABLE GRID
+    // 2. BUILD 6-PERIOD TIMETABLE GRID (8:30 AM - 8:30 PM)
     // ==========================================
+    const TOTAL_PERIODS = 6;
     let gridHtml = `
       <div class="timetable-wrapper">
         <div class="mobile-scroll-hint" style="margin: 8px 10px;">
-          <span>👈</span> <span>${isAr ? 'اسحب أفقياً لتصفح جميع الفترات الـ 16' : 'Swipe horizontally to view all 16 periods'}</span> <span>👉</span>
+          <span>👈</span> <span>${isAr ? 'اسحب أفقياً لتصفح جميع الفترات (8:30 ص - 8:30 م)' : 'Swipe horizontally to view all periods (8:30 AM - 8:30 PM)'}</span> <span>👉</span>
         </div>
-        <div class="timetable-grid" style="grid-template-columns: minmax(85px, 105px) repeat(${maxSlotUsed}, minmax(68px, 1fr));">
+        <div class="timetable-grid" style="grid-template-columns: minmax(85px, 110px) repeat(${TOTAL_PERIODS}, minmax(130px, 1fr));">
           <!-- Header Corner -->
           <div class="grid-header-corner">
-            <span>${isAr ? 'اليوم / الفترة' : 'Day / Slot'}</span>
+            <span>${isAr ? 'اليوم / الفترة' : 'Day / Period'}</span>
           </div>
     `;
 
-    // Period Slot Headers (1 to maxSlotUsed)
-    for (let slot = 1; slot <= maxSlotUsed; slot++) {
-      const timeStr = PERIOD_TIMES[slot] || '';
-      const periodNum = Math.ceil(slot / 2);
-      const isPeriodStart = slot % 2 === 1;
-
+    // 6 Period Block Headers (8:30 AM to 8:30 PM, each 2 hours long)
+    PERIOD_BLOCKS.forEach(pb => {
       gridHtml += `
-        <div class="grid-slot-header ${isPeriodStart ? 'period-start' : ''}">
-          <div class="slot-num">${slot}</div>
-          <div class="period-badge">P${periodNum}</div>
-          <div class="slot-time">${timeStr.split(' - ')[0]}</div>
+        <div class="grid-slot-header period-start period-block-header">
+          <div class="slot-num">${pb.num}</div>
+          <div class="period-badge">${isAr ? pb.nameAr : pb.nameEn}</div>
+          <div class="slot-time">${pb.time}</div>
         </div>
       `;
-    }
+    });
 
-    // Day Rows (Saturday to Friday)
+    // Helper to get period range for a session
+    const getSessionPeriods = (s) => {
+      const s1 = parseInt(s.startSlot, 10);
+      const s2 = parseInt(s.endSlot, 10);
+      const p1 = Math.max(1, Math.min(TOTAL_PERIODS, Math.ceil(s1 / 2)));
+      const p2 = Math.max(p1, Math.min(TOTAL_PERIODS, Math.ceil(s2 / 2)));
+      return { startPeriod: p1, endPeriod: p2 };
+    };
+
+    // Helper to get period range for a blocked time
+    const getBlockedPeriods = (b) => {
+      const s1 = parseInt(b.startSlot || b.slot, 10);
+      const s2 = parseInt(b.endSlot || b.slot, 10);
+      const p1 = Math.max(1, Math.min(TOTAL_PERIODS, Math.ceil(s1 / 2)));
+      const p2 = Math.max(p1, Math.min(TOTAL_PERIODS, Math.ceil(s2 / 2)));
+      return { startPeriod: p1, endPeriod: p2 };
+    };
+
+    // Day Rows (Saturday to Thursday - NO Friday)
     DAYS.forEach(dayObj => {
       const dayKey = dayObj.key;
       const dayLabel = isAr ? dayObj.ar : dayObj.en;
@@ -541,16 +562,15 @@ const ScheduleRenderer = (() => {
         </div>
       `;
 
-      // Connected components of overlapping sessions for this day
+      // Connected components of overlapping sessions for this day (clustered by period)
       const clusters = [];
       daySessions.forEach(s => {
-        const sStart = parseInt(s.startSlot, 10);
-        const sEnd = parseInt(s.endSlot, 10);
+        const { startPeriod: sStart, endPeriod: sEnd } = getSessionPeriods(s);
         const overlappingIndices = [];
 
         clusters.forEach((cl, idx) => {
-          const clStart = Math.min(...cl.map(item => parseInt(item.startSlot, 10)));
-          const clEnd = Math.max(...cl.map(item => parseInt(item.endSlot, 10)));
+          const clStart = Math.min(...cl.map(item => getSessionPeriods(item).startPeriod));
+          const clEnd = Math.max(...cl.map(item => getSessionPeriods(item).endPeriod));
           if (sStart <= clEnd && sEnd >= clStart) {
             overlappingIndices.push(idx);
           }
@@ -570,35 +590,40 @@ const ScheduleRenderer = (() => {
       });
 
       clusters.forEach(cl => {
-        cl.sort((a, b) => a.startSlot - b.startSlot);
+        cl.sort((a, b) => parseInt(a.startSlot, 10) - parseInt(b.startSlot, 10));
       });
       clusters.sort((a, b) => {
-        const aStart = Math.min(...a.map(s => s.startSlot));
-        const bStart = Math.min(...b.map(s => s.startSlot));
+        const aStart = Math.min(...a.map(s => getSessionPeriods(s).startPeriod));
+        const bStart = Math.min(...b.map(s => getSessionPeriods(s).startPeriod));
         return aStart - bStart;
       });
 
-      // Render cells along this row
-      let currSlot = 1;
-      while (currSlot <= maxSlotUsed) {
-        // Find cluster that covers currSlot
+      // Render cells along this row (1 to 6 period blocks)
+      let currPeriod = 1;
+      while (currPeriod <= TOTAL_PERIODS) {
+        // Find cluster covering currPeriod
         const matchingCluster = clusters.find(cl => {
-          const clStart = Math.min(...cl.map(s => s.startSlot));
-          const clEnd = Math.max(...cl.map(s => s.endSlot));
-          return currSlot >= clStart && currSlot <= clEnd;
+          const clStart = Math.min(...cl.map(s => getSessionPeriods(s).startPeriod));
+          const clEnd = Math.max(...cl.map(s => getSessionPeriods(s).endPeriod));
+          return currPeriod >= clStart && currPeriod <= clEnd;
         });
 
-        // Find blocked time that covers currSlot
-        const matchingBlocked = dayBlocked.find(b => currSlot >= b.startSlot && currSlot <= b.endSlot);
+        // Find blocked time covering currPeriod
+        const matchingBlocked = dayBlocked.find(b => {
+          const { startPeriod: bStart, endPeriod: bEnd } = getBlockedPeriods(b);
+          return currPeriod >= bStart && currPeriod <= bEnd;
+        });
 
         if (matchingCluster) {
-          const clStart = Math.min(...matchingCluster.map(s => s.startSlot));
-          const clEnd = Math.max(...matchingCluster.map(s => s.endSlot));
-          const span = Math.min(clEnd, maxSlotUsed) - currSlot + 1;
+          const clStartPeriod = Math.min(...matchingCluster.map(s => getSessionPeriods(s).startPeriod));
+          const clEndPeriod = Math.max(...matchingCluster.map(s => getSessionPeriods(s).endPeriod));
+          const span = Math.min(clEndPeriod, TOTAL_PERIODS) - currPeriod + 1;
 
           if (matchingCluster.length > 1) {
-            // CLASH: Multiple overlapping sessions in this slot!
-            const timeRange = formatSlotTimeRange(clStart, clEnd);
+            // CLASH: Multiple overlapping sessions in this period!
+            const clStartSlot = Math.min(...matchingCluster.map(s => parseInt(s.startSlot, 10)));
+            const clEndSlot = Math.max(...matchingCluster.map(s => parseInt(s.endSlot, 10)));
+            const timeRange = formatSlotTimeRange(clStartSlot, clEndSlot);
 
             gridHtml += `
               <div class="grid-clash-container"
@@ -719,9 +744,10 @@ const ScheduleRenderer = (() => {
               </div>
             `;
           }
-          currSlot += span;
+          currPeriod += span;
         } else if (matchingBlocked) {
-          const span = Math.min(matchingBlocked.endSlot, maxSlotUsed) - currSlot + 1;
+          const { endPeriod: bEnd } = getBlockedPeriods(matchingBlocked);
+          const span = Math.min(bEnd, TOTAL_PERIODS) - currPeriod + 1;
           const timeRange = formatSlotTimeRange(matchingBlocked.startSlot, matchingBlocked.endSlot);
 
           gridHtml += `
@@ -732,16 +758,18 @@ const ScheduleRenderer = (() => {
               <div class="blocked-time">${timeRange}</div>
             </div>
           `;
-          currSlot += span;
+          currPeriod += span;
         } else {
-          const isGap = isSlotInGap(dayKey, currSlot, solution.gapDetails);
+          const slot1 = (currPeriod - 1) * 2 + 1;
+          const slot2 = slot1 + 1;
+          const isGap = isSlotInGap(dayKey, slot1, solution.gapDetails) || isSlotInGap(dayKey, slot2, solution.gapDetails);
           gridHtml += `
             <div class="grid-empty-cell ${isGap ? 'gap-highlight' : ''}"
                  title="${isGap ? 'Break / Gap between lectures' : ''}">
               ${isGap ? `<span class="gap-icon">☕</span>` : ''}
             </div>
           `;
-          currSlot++;
+          currPeriod++;
         }
       }
     });
@@ -760,7 +788,7 @@ const ScheduleRenderer = (() => {
             <span>📱</span> <span>${isAr ? 'جدول يومي (مخصص للموبايل)' : 'Daily Agenda (Mobile View)'}</span>
           </button>
           <button id="btn-view-grid" class="view-switch-btn ${effectiveView === 'grid' ? 'active' : ''}" onclick="ScheduleRenderer.setViewMode('grid')">
-            <span>🗓️</span> <span>${isAr ? 'الجدول الأسبوعي الكامل (16 فترة)' : 'Full 16-Period Grid'}</span>
+            <span>🗓️</span> <span>${isAr ? 'الجدول الأسبوعي (8:30 ص - 8:30 م)' : 'Weekly Grid (8:30 AM - 8:30 PM)'}</span>
           </button>
         </div>
 
@@ -769,7 +797,7 @@ const ScheduleRenderer = (() => {
           ${agendaHtml}
         </div>
 
-        <!-- View 2: Full 16-Period Timetable Grid -->
+        <!-- View 2: Full Timetable Grid (8:30 AM - 8:30 PM) -->
         <div id="timetable-view-grid" class="timetable-view-panel" style="display: ${effectiveView === 'grid' ? 'block' : 'none'};">
           ${gridHtml}
         </div>
@@ -842,6 +870,7 @@ const ScheduleRenderer = (() => {
   return {
     DAYS,
     PERIOD_TIMES,
+    PERIOD_BLOCKS,
     renderTimetable,
     renderSolutionSummary,
     formatSlotTimeRange,

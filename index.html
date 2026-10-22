@@ -29,7 +29,6 @@
           <h1 data-i18n="appTitle">College Schedule Optimizer</h1>
           <div class="brand-subtitle" data-i18n="appSubtitle">Convert college HTML & photos into optimal clash-free schedules</div>
           <div class="brand-meta-row">
-            <div class="dev-prayer-badge" title="Developer portal: Click 5 times or press Ctrl+Shift+D to open Admin Portal & Reset Sheet">🤲 متنساش تدعيلي دعوة حلوة ❤️</div>
             <div class="header-live-badge" onclick="if(window.SiteAnalytics)SiteAnalytics.openStatsModal()" title="Live Users & Traffic (Click for details)" role="button" tabindex="0">
               <span class="live-dot-pulse"></span>
               <span id="header-active-count">1</span> <span data-i18n="onlineNow">Online</span>
@@ -345,7 +344,6 @@
           <div class="day-chip" data-day="Tuesday">Tuesday (الثلاثاء)</div>
           <div class="day-chip" data-day="Wednesday">Wednesday (الأربعاء)</div>
           <div class="day-chip" data-day="Thursday">Thursday (الخميس)</div>
-          <div class="day-chip" data-day="Friday">Friday (الجمعة)</div>
         </div>
       </div>
 
@@ -375,10 +373,10 @@
 
         <!-- Mobile Swipe Helper Hint -->
         <div class="mobile-scroll-hint">
-          <span>👈</span> <span data-i18n="mobileSwipeHint">Swipe horizontally to view all 16 periods 👈👉</span> <span>👉</span>
+          <span>👈</span> <span data-i18n="mobileSwipeHint">Swipe horizontally to view all periods (8:30 AM - 8:30 PM) 👈👉</span> <span>👉</span>
         </div>
 
-        <!-- Interactive 7-Day x 16-Slot Painter Grid -->
+        <!-- Interactive Painter Grid (8:30 AM - 8:30 PM) -->
         <div class="blocked-painter-scroll">
           <div id="blocked-painter-grid" class="blocked-painter-grid">
             <!-- Rendered by JavaScript -->
@@ -620,7 +618,7 @@
         <div class="card-header">
           <div>
             <div class="card-title">
-              <span>📅</span> <span>Weekly Timetable (Periods 1 - 16)</span>
+              <span>📅</span> <span>Weekly Timetable (8:30 AM - 8:30 PM)</span>
             </div>
             <div class="card-subtitle">
               Visual timetable showing your classes, selected groups, doctor names, and gap intervals
@@ -644,7 +642,7 @@
 
         <!-- Mobile Swipe Helper Hint -->
         <div class="mobile-scroll-hint">
-          <span>👈</span> <span data-i18n="mobileSwipeHint">Swipe horizontally to view all 16 periods 👈👉</span> <span>👉</span>
+          <span>👈</span> <span data-i18n="mobileSwipeHint">Swipe horizontally to view all periods (8:30 AM - 8:30 PM) 👈👉</span> <span>👉</span>
         </div>
 
         <!-- Render Target for Timetable Grid -->
@@ -786,7 +784,7 @@
               <span>📅</span> <span data-i18n="manualTimetableTitle">Your Custom Timetable Preview</span>
             </div>
             <div class="card-subtitle" data-i18n="manualTimetableDesc">
-              Interactive 16-period schedule showing your custom selections and any time overlaps
+              Interactive schedule (8:30 AM - 8:30 PM) showing your custom selections and any time overlaps
             </div>
           </div>
           <div style="display: flex; gap: 8px; flex-wrap: wrap;">
@@ -807,7 +805,7 @@
 
         <!-- Mobile Scroll Hint -->
         <div class="mobile-scroll-hint">
-          <span>👈</span> <span data-i18n="mobileSwipeHint">Swipe horizontally to view all 16 periods 👈👉</span> <span>👉</span>
+          <span>👈</span> <span data-i18n="mobileSwipeHint">Swipe horizontally to view all periods (8:30 AM - 8:30 PM) 👈👉</span> <span>👉</span>
         </div>
 
         <!-- Render Target for Custom Timetable Grid -->
@@ -819,8 +817,7 @@
 
   </main>
 
-  <!-- Developer Prayer Note & Footer -->
-  <!-- متنساش تدعيلي دعوة حلوة -->
+  <!-- Footer -->
   <footer class="app-footer">
     <div class="footer-stats-box" onclick="if(window.SiteAnalytics)SiteAnalytics.openStatsModal()" title="Live Users & Traffic (Click for details)" role="button" tabindex="0">
       <div class="stat-bubble live-bubble">
@@ -835,10 +832,7 @@
       </div>
     </div>
 
-    <div class="dev-prayer-box">
-      <span class="prayer-icon">🤲</span>
-      <span class="prayer-text">متنساش تدعيلي دعوة حلوة</span>
-      <span class="prayer-heart">❤️</span>
+    <div class="dev-prayer-box" style="display: none;">
       <span class="dev-secret-link" onclick="if(window.SiteTelemetry)SiteTelemetry.openAdminModal();" title="Developer Admin Portal & Reset Sheet (Ctrl+Shift+D)" style="opacity: 0.55; font-size: 0.78rem; cursor: pointer; margin-inline-start: 8px; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.55'">🔐</span>
     </div>
     <div class="dev-subtext">صُنع بحب لمساعدة طلاب الجامعات في تنظيم أفضل جدول دراسي بدون تعارض وبأقل فترات فراغ</div>
@@ -912,7 +906,7 @@
               <div class="guide-step-desc">
                 <ul>
                   <li>Switch to Tab <strong>"2. Doctor & Goals"</strong>.</li>
-                  <li><strong>Block Busy Times:</strong> Click or drag across the 16-period weekly grid to prohibit slots (e.g. sports training on Saturday 8:30 AM or commutes). Zero classes will ever be placed there!</li>
+                  <li><strong>Block Busy Times:</strong> Click or drag across the weekly grid to prohibit slots (e.g. sports training on Saturday 8:30 AM or commutes). Zero classes will ever be placed there!</li>
                   <li><strong>Rank Doctors:</strong> Lecture professors are highlighted in alphabetical order at the top with a <code>🎓 Doctor</code> badge. Click <strong>⭐ Favorite</strong> for preferred professors or <strong>🚫 Avoid</strong> to skip unwanted instructors.</li>
                   <li><strong>Days Off:</strong> Select a target free day (e.g. Tuesday off) and set your gap minimization priority slider.</li>
                 </ul>

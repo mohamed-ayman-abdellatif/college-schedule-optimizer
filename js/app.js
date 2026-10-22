@@ -165,7 +165,7 @@ const App = (() => {
       guideModalTitle: 'Quick Guide: How to Use the Optimizer',
       dontShowAgain: "Don't show automatically on startup",
       guideGotItBtn: "Got it, Let's Start! 🚀",
-      mobileSwipeHint: 'Swipe horizontally to view all 16 periods 👈👉',
+      mobileSwipeHint: 'Swipe horizontally to view all periods (8:30 AM - 8:30 PM) 👈👉',
       rankedOptionsTitle: '🎯 Ranked Clash-Free Options:',
       arrowKeysHint: 'Use keyboard arrows',
       prevScheduleBtn: '◀ Previous',
@@ -238,7 +238,7 @@ const App = (() => {
       manualSelectEntireGroup: '➕ Select Entire Group',
       manualDeselectEntireGroup: '❌ Deselect Entire Group',
       manualTimetableTitle: 'Your Custom Timetable Preview',
-      manualTimetableDesc: 'Interactive 16-period schedule showing your custom selections and any time overlaps',
+      manualTimetableDesc: 'Interactive schedule (8:30 AM - 8:30 PM) showing your custom selections and any time overlaps',
       mixMatchTitle: 'Mix & Match: Custom Doctors & TAs',
       mixMatchDesc: 'Freely choose lecture professors from one group and TAs for sections/labs from another group with instant clash checking.',
       mixMatchResetBtn: '↺ Reset Selections',
@@ -363,7 +363,7 @@ const App = (() => {
       guideModalTitle: 'دليل الاستخدام السريع: كيف تستخدم الموقع؟',
       dontShowAgain: 'عدم الإظهار تلقائياً عند فتح الموقع',
       guideGotItBtn: 'فهمت، لنبدأ الآن! 🚀',
-      mobileSwipeHint: 'اسحب أفقياً لتصفح جميع الفترات الـ 16 👉👈',
+      mobileSwipeHint: 'اسحب أفقياً لتصفح جميع الفترات (8:30 ص - 8:30 م) 👉👈',
       rankedOptionsTitle: '🎯 الخيارات الأفضل مرتبة (بدون تعارض):',
       arrowKeysHint: 'استخدم أسهم الكيبورد',
       prevScheduleBtn: '◀ السابق',
@@ -436,7 +436,7 @@ const App = (() => {
       manualSelectEntireGroup: '➕ اختيار المجموعة بالكامل',
       manualDeselectEntireGroup: '❌ إلغاء المجموعة بالكامل',
       manualTimetableTitle: 'معاينة جدولك اليدوي المخصص',
-      manualTimetableDesc: 'جدول تفاعلي 16 فترة يعرض اختياراتك اليدوية وأي تعارضات بالألوان الفورية',
+      manualTimetableDesc: 'جدول تفاعلي (8:30 ص - 8:30 م) يعرض اختياراتك اليدوية وأي تعارضات بالألوان الفورية',
       mixMatchTitle: 'دمج المجموعات: اختيار دكتور ومعيد من مجموعات مختلفة',
       mixMatchDesc: 'حرية كاملة لاختيار دكتور المحاضرة من مجموعة، والمعيد للسكشن أو المعمل من مجموعة أخرى مع فحص فوري للتعارض.',
       mixMatchResetBtn: '↺ إعادة ضبط الاختيارات',
@@ -6660,10 +6660,49 @@ const App = (() => {
     if (state.solutions.length > 0) renderCurrentSolution();
   }
 
+  function toggleBlockedPeriod(day, period) {
+    const p = parseInt(period, 10);
+    const slot1 = (p - 1) * 2 + 1;
+    const slot2 = slot1 + 1;
+    const isAr = state.currentLang === 'ar';
+    const pb = (ScheduleRenderer.PERIOD_BLOCKS || []).find(b => b.num === p);
+    const pTime = pb ? pb.time : '';
+    const defaultLabel = (day === 'Saturday' && p === 1)
+      ? (isAr ? 'تدريب السبت ⚽' : 'Saturday Training ⚽')
+      : (isAr ? `فترة ${p} محظورة` : `Period ${p} Blocked`);
+
+    const hasBlocked = state.blockedTimes.some(b => b.day === day && (
+      b.slot === slot1 || b.slot === slot2 ||
+      (b.startSlot <= slot2 && b.endSlot >= slot1)
+    ));
+
+    if (hasBlocked) {
+      state.blockedTimes = state.blockedTimes.filter(b => !(b.day === day && (
+        b.slot === slot1 || b.slot === slot2 ||
+        (b.startSlot <= slot2 && b.endSlot >= slot1)
+      )));
+    } else {
+      [slot1, slot2].forEach(sl => {
+        state.blockedTimes.push({
+          id: `${day}_${sl}`,
+          day,
+          slot: sl,
+          startSlot: sl,
+          endSlot: sl,
+          label: `${defaultLabel} (${pTime})`
+        });
+      });
+    }
+    saveStateToStorage();
+    renderBlockedPainter();
+    renderBlockedList();
+    if (state.solutions.length > 0) renderCurrentSolution();
+  }
+
   function applyBlockedPreset(type) {
     const isAr = state.currentLang === 'ar';
     if (type === 'sat_training') {
-      // User's exact request: Training Saturday 8 o'clock (Slots 1 & 2: 08:30 - 10:20)
+      // Training Saturday (Period 1: Slots 1 & 2: 08:30 - 10:30)
       [1, 2].forEach(sl => {
         if (!state.blockedTimes.some(b => b.day === 'Saturday' && b.slot === sl)) {
           state.blockedTimes.push({
@@ -6676,10 +6715,11 @@ const App = (() => {
           });
         }
       });
-      showToast(isAr ? 'تم حظر وقت تدريب السبت (الساعة 8)' : 'Blocked Saturday 08:30 - 10:20 (Training)!', 'success');
+      showToast(isAr ? 'تم حظر وقت تدريب السبت (08:30 - 10:30)' : 'Blocked Saturday 08:30 - 10:30 (Training)!', 'success');
     } else if (type === 'evenings') {
-      ScheduleParser.STANDARD_DAYS.forEach(day => {
-        for (let sl = 9; sl <= 16; sl++) {
+      const days = (ScheduleRenderer.DAYS || []).map(d => d.key);
+      days.forEach(day => {
+        for (let sl = 9; sl <= 12; sl++) {
           if (!state.blockedTimes.some(b => b.day === day && b.slot === sl)) {
             state.blockedTimes.push({
               id: `${day}_${sl}`,
@@ -6692,7 +6732,7 @@ const App = (() => {
           }
         }
       });
-      showToast(isAr ? 'تم حظر الفترات المسائية بعد 4 عصراً' : 'Blocked all evening slots after 4 PM!', 'info');
+      showToast(isAr ? 'تم حظر الفترات المسائية بعد 4:30 عصراً' : 'Blocked all evening slots after 4:30 PM!', 'info');
     } else if (type === 'clear') {
       state.blockedTimes = [];
       showToast(isAr ? 'تم مسح جميع الأوقات المحظورة' : 'Cleared all blocked times.', 'info');
@@ -6773,21 +6813,31 @@ const App = (() => {
     if (!container) return;
 
     const isAr = state.currentLang === 'ar';
-    const days = ScheduleParser.STANDARD_DAYS;
-    const maxSlots = 16;
+    const days = (ScheduleRenderer.DAYS || []).map(d => d.key); // Saturday to Thursday (NO Friday!)
+    const totalPeriods = 6;
+    const periodBlocks = ScheduleRenderer.PERIOD_BLOCKS || [
+      { num: 1, nameEn: 'Period 1', nameAr: 'الفترة 1', time: '08:30 - 10:30' },
+      { num: 2, nameEn: 'Period 2', nameAr: 'الفترة 2', time: '10:30 - 12:30' },
+      { num: 3, nameEn: 'Period 3', nameAr: 'الفترة 3', time: '12:30 - 02:30' },
+      { num: 4, nameEn: 'Period 4', nameAr: 'الفترة 4', time: '02:30 - 04:30' },
+      { num: 5, nameEn: 'Period 5', nameAr: 'الفترة 5', time: '04:30 - 06:30' },
+      { num: 6, nameEn: 'Period 6', nameAr: 'الفترة 6', time: '06:30 - 08:30' }
+    ];
 
-    container.style.gridTemplateColumns = `100px repeat(${maxSlots}, minmax(48px, 1fr))`;
+    container.style.gridTemplateColumns = `100px repeat(${totalPeriods}, minmax(80px, 1fr))`;
 
     let html = `
       <div class="painter-header-cell">${isAr ? 'اليوم' : 'Day'}</div>
     `;
 
-    for (let sl = 1; sl <= maxSlots; sl++) {
-      const timeStr = (ScheduleRenderer.PERIOD_TIMES[sl] || '').split(' - ')[0] || '';
+    for (let p = 1; p <= totalPeriods; p++) {
+      const pb = periodBlocks.find(b => b.num === p) || periodBlocks[p - 1];
+      const timeStr = pb ? pb.time : '';
+      const pBadge = isAr ? pb.nameAr : pb.nameEn;
       html += `
-        <div class="painter-header-cell" title="${ScheduleRenderer.PERIOD_TIMES[sl] || ''}">
-          <div>P${sl}</div>
-          <div style="font-size: 0.58rem; color: var(--text-muted);">${timeStr}</div>
+        <div class="painter-header-cell" title="${timeStr}">
+          <div style="font-weight: 700;">${pBadge}</div>
+          <div style="font-size: 0.62rem; color: var(--text-muted);">${timeStr}</div>
         </div>
       `;
     }
@@ -6796,13 +6846,19 @@ const App = (() => {
       const dayLabel = isAr ? (ScheduleRenderer.DAYS.find(d => d.key === day)?.ar || day) : day;
       html += `<div class="painter-day-cell">${dayLabel}</div>`;
 
-      for (let sl = 1; sl <= maxSlots; sl++) {
-        const isBlocked = state.blockedTimes.some(b => b.day === day && b.slot === sl);
-        const timeStr = ScheduleRenderer.PERIOD_TIMES[sl] || '';
+      for (let p = 1; p <= totalPeriods; p++) {
+        const slot1 = (p - 1) * 2 + 1;
+        const slot2 = slot1 + 1;
+        const isBlocked = state.blockedTimes.some(b => b.day === day && (
+          b.slot === slot1 || b.slot === slot2 ||
+          (b.startSlot <= slot2 && b.endSlot >= slot1)
+        ));
+        const pb = periodBlocks.find(b => b.num === p) || periodBlocks[p - 1];
+        const timeStr = pb ? pb.time : '';
         html += `
           <div class="painter-slot-cell ${isBlocked ? 'is-blocked' : ''}"
-               title="${day} Slot ${sl} (${timeStr}) - Click to toggle prohibited"
-               onclick="App.toggleBlockedSlot('${day}', ${sl})">
+               title="${day} ${isAr ? pb.nameAr : pb.nameEn} (${timeStr}) - Click to toggle prohibited"
+               onclick="App.toggleBlockedPeriod('${day}', ${p})">
             ${isBlocked ? '🚫' : ''}
           </div>
         `;
@@ -7086,6 +7142,7 @@ const App = (() => {
     deleteDraftBlock,
     saveImageDraftCourse,
     toggleBlockedSlot,
+    toggleBlockedPeriod,
     applyBlockedPreset,
     removeBlockedTime,
     openGuideModal,

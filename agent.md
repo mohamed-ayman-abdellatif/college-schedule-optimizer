@@ -34,7 +34,7 @@ quick-volta/
     ├── sampleData.js       # SampleScheduleData: Built-in sample courses, HTML, and fallback JSON
     ├── optimizer.js        # ScheduleOptimizer: Backtracking solver, 3-tier fallback, scoring
     ├── imageExtractor.js   # ImageScheduleExtractor: OCR (Tesseract) + canvas color-grid parser
-    ├── renderer.js         # ScheduleRenderer: 16-slot matrix grid, mobile agenda, summary bar
+    ├── renderer.js         # ScheduleRenderer: 6-period matrix grid (8:30 AM - 8:30 PM), mobile agenda, summary bar
     ├── exporter.js         # ScheduleExporter: PNG, PDF, Excel (.xlsx), ICS, JSON, Print
     ├── analytics.js        # LiveAnalytics: Lightweight Firebase Realtime DB presence/views counter
     ├── telemetry.js        # AdminTelemetry: Local-first event tracking + hidden Ctrl+Shift+A dashboard
@@ -81,8 +81,8 @@ Because the project uses global IIFE namespaces rather than ES modules (so it wo
 ```
 
 ### Session Object
-- **Days**: Normalized English day names (`Saturday`, `Sunday`, `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday`).
-- **Slots**: Integer `1` through `16` (each period is 2 slots; e.g., Period 1 = Slots 1–2 `08:30–10:20`, Period 2 = Slots 3–4 `10:30–12:20`, etc.).
+- **Days**: Normalized English day names (`Saturday`, `Sunday`, `Monday`, `Tuesday`, `Wednesday`, `Thursday`). Friday is excluded from university timetable schedules.
+- **Periods & Slots**: 6 periods (Slots 1 through 12) spanning 08:30 to 20:30 (8:30 AM to 8:30 PM), with each block being exactly 2 hours long.
 - **Session Types**: `'Lect.'`, `'Lab.'`, or `'Sec.'`.
 - **Instructor Prefixes**: Lecture instructors automatically receive `د. ` (Arabic) or `Dr. ` (English) prefixes unless unspecified (`Not Specified` / `غير محدد`). TAs (`Lab.` / `Sec.`) keep their raw names without doctor titles.
 
@@ -138,7 +138,6 @@ When editing `js/app.js`, `js/renderer.js`, or `index.html`, preserve these cont
 - **DOM IDs**: Keep all existing element IDs intact (e.g., `select-major-college`, `select-major-department`, `select-major-period`, `input-major-course-search`, `major-active-title`, `major-active-subtitle`, `btn-submit-major-subjects`, `courses-list-container`, `doctor-prefs-container`, `blocked-painter-grid`, `timetable-grid-wrapper`, `solution-summary-container`, `btn-view-agenda`, `btn-view-grid`).
 - **Renderer Classes**: Keep `.session-name`, `.session-code`, `.clash-mini-name`, `.mobile-agenda-container`, `.agenda-day-card`, `.agenda-session-item` in `js/renderer.js`.
 - **Translation Strings**: Several test assertions check specific substrings in `TRANSLATIONS` (e.g., `-- Choose Faculty --` / `اختر الكلية`, `No Faculty Selected` / `لم يتم اختيار كلية`, `Select a faculty first` / `اختر الكلية أولاً`, `Doctors` / `دكاترة`, `TAs` / `معيدين`, `subjects` / `مادة`). Do not alter those key phrases without checking `test_suite.html`.
-- **Developer Prayer Note**: Preserve the footer message `متنساش تدعيلي دعوة حلوة` in `index.html`.
 
 ### How to Run the Tests
 1. **In a Browser**: Open `test_suite.html` in any browser (or serve the folder with `npx serve .` / `python -m http.server`) and verify `Tests Passed: 318 / 318 (Failed: 0)`.

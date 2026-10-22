@@ -116,22 +116,31 @@ const ScheduleExporter = (() => {
     const gridWidth = width - gridLeft - 50;
     const gridHeight = height - gridTop - 50;
 
-    const maxSlots = 16;
-    const slotW = gridWidth / maxSlots;
-    const dayH = gridHeight / 7;
+    const totalPeriods = 6;
+    const slotW = gridWidth / totalPeriods;
+    const DAYS = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'];
+    const dayH = gridHeight / DAYS.length;
 
-    const DAYS = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+    const PERIOD_LABELS = [
+      { name: 'P1', time: '08:30-10:30' },
+      { name: 'P2', time: '10:30-12:30' },
+      { name: 'P3', time: '12:30-02:30' },
+      { name: 'P4', time: '02:30-04:30' },
+      { name: 'P5', time: '04:30-06:30' },
+      { name: 'P6', time: '06:30-08:30' }
+    ];
 
     // Draw Slot Headers
-    for (let s = 1; s <= maxSlots; s++) {
-      const x = gridLeft + (s - 1) * slotW;
-      ctx.fillStyle = s % 2 === 1 ? '#334155' : '#1E293B';
+    for (let p = 1; p <= totalPeriods; p++) {
+      const x = gridLeft + (p - 1) * slotW;
+      ctx.fillStyle = p % 2 === 1 ? '#334155' : '#1E293B';
       ctx.fillRect(x, gridTop - 35, slotW, 30);
 
       ctx.fillStyle = '#E2E8F0';
-      ctx.font = 'bold 13px sans-serif';
+      ctx.font = 'bold 12px sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillText(`Slot ${s}`, x + slotW / 2, gridTop - 15);
+      const pl = PERIOD_LABELS[p - 1];
+      ctx.fillText(`${pl.name} (${pl.time})`, x + slotW / 2, gridTop - 15);
     }
 
     // Draw Day Rows
@@ -147,8 +156,8 @@ const ScheduleExporter = (() => {
       ctx.fillText(day, 50, y + dayH / 2 + 5);
 
       // Grid background slots
-      for (let s = 1; s <= maxSlots; s++) {
-        const x = gridLeft + (s - 1) * slotW;
+      for (let p = 1; p <= totalPeriods; p++) {
+        const x = gridLeft + (p - 1) * slotW;
         ctx.strokeStyle = '#334155';
         ctx.lineWidth = 1;
         ctx.strokeRect(x, y, slotW, dayH - 4);
@@ -160,9 +169,12 @@ const ScheduleExporter = (() => {
       const dayIdx = DAYS.indexOf(session.day);
       if (dayIdx === -1) return;
 
+      const p1 = Math.max(1, Math.min(totalPeriods, Math.ceil(parseInt(session.startSlot, 10) / 2)));
+      const p2 = Math.max(p1, Math.min(totalPeriods, Math.ceil(parseInt(session.endSlot, 10) / 2)));
+
       const y = gridTop + dayIdx * dayH + 2;
-      const x = gridLeft + (session.startSlot - 1) * slotW + 2;
-      const spanW = (session.endSlot - session.startSlot + 1) * slotW - 4;
+      const x = gridLeft + (p1 - 1) * slotW + 2;
+      const spanW = (p2 - p1 + 1) * slotW - 4;
       const spanH = dayH - 8;
 
       // Session Box
