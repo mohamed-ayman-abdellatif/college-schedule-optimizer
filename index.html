@@ -43,9 +43,6 @@
         <button id="btn-show-guide" class="btn btn-outline btn-sm" title="How to use the website" onclick="if(window.App&&window.App.openGuideModal){App.openGuideModal();}else{var m=document.getElementById('guide-modal');if(m)m.style.setProperty('display','flex','important');}">
           <span>❓</span> <span data-i18n="guideBtn">Guide</span>
         </button>
-        <button id="btn-load-sample" class="btn btn-secondary btn-sm" data-i18n="loadSampleBtn">
-          <span>📚</span> <span>Load Example Courses</span>
-        </button>
         <button id="btn-clear-cache" class="btn btn-outline btn-sm" onclick="App.clearCacheAndReset()" title="Clear cache, reset preferences and start fresh (like incognito mode)">
           <span>🧹</span> <span data-i18n="clearCacheBtn">Clear Cache</span>
         </button>
@@ -111,7 +108,7 @@
               <div>
                 <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                   <span id="major-active-title" class="major-title-text" data-i18n="noFacultySelectedTitle">No Faculty Selected</span>
-                  <span id="repo-cloud-pill" class="repo-status-pill is-online" title="github.com/mohamed-ayman-abdellatif/college-schedules-data">
+                  <span id="repo-cloud-pill" class="repo-status-pill is-online" title="github.com/mohamed-ayman-abdellatif/college-schedule-optimizer/tree/schedules-data">
                     <span>🟢</span> <span data-i18n="connectedCloudBadge">Public Cloud Database</span>
                   </span>
                 </div>
@@ -119,14 +116,14 @@
               </div>
             </div>
             <div class="major-upload-actions">
-              <button type="button" id="btn-sync-cloud-repo" class="btn btn-outline btn-sm repo-sync-btn" onclick="App.syncFromPublicRepo()" title="Pull latest schedule updates from public GitHub repository">
+              <button type="button" id="btn-sync-cloud-repo" class="btn btn-outline btn-sm repo-sync-btn" onclick="App.syncFromPublicRepo()" title="Pull latest schedule updates from schedules-data branch">
                 <span class="sync-icon">🔄</span> <span data-i18n="syncCloudBtn">Sync from Cloud</span>
               </button>
               <input type="file" id="input-major-json-file" accept=".json,application/json" style="display: none;" />
               <button type="button" class="btn btn-secondary btn-sm" onclick="document.getElementById('input-major-json-file').click();" title="Upload custom whole-major schedule JSON file">
                 <span>📁</span> <span data-i18n="uploadMajorJsonBtn">Upload Major JSON (.json)</span>
               </button>
-              <a id="link-repo-github" href="https://github.com/mohamed-ayman-abdellatif/college-schedules-data" target="_blank" rel="noopener" class="btn btn-outline btn-sm" style="padding: 4px 8px;" title="View public schedules repository on GitHub">
+              <a id="link-repo-github" href="https://github.com/mohamed-ayman-abdellatif/college-schedule-optimizer/tree/schedules-data" target="_blank" rel="noopener" class="btn btn-outline btn-sm" style="padding: 4px 8px;" title="View subjects & schedules branch on GitHub">
                 <span>🐙</span>
               </a>
             </div>
@@ -139,17 +136,16 @@
                 <span style="margin-inline-end: 6px;">🔎</span>
                 <strong data-i18n="searchAddSubjectTitle">Quick Search &amp; Add Subject (بحث وإضافة مادة مباشرة)</strong>
               </span>
-              <span style="font-size: 0.8rem; color: var(--text-muted);" data-i18n="searchAddSubjectTip">Type course code or name across all departments</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted);" data-i18n="searchAddSubjectTip">Search across all faculties &amp; departments by code, name, or doctor</span>
             </label>
             <div class="major-search-input-wrapper">
               <span class="major-search-icon">🔍</span>
               <input type="text"
                      id="input-major-course-search"
                      class="major-search-input"
-                     placeholder="Select a faculty first to search subjects..."
-                     data-i18n-placeholder="searchFacultyPlaceholderDisabled"
-                     autocomplete="off"
-                     disabled />
+                     placeholder="Search subject by name or code (e.g. ECE2102, Applied, برمجة, د. هشام)..."
+                     data-i18n-placeholder="searchMajorPlaceholder"
+                     autocomplete="off" />
               <button type="button" id="btn-clear-major-search" class="major-search-clear" style="display: none;" title="Clear search">✕</button>
             </div>
             <!-- Floating Live Results Dropdown Container -->
@@ -932,16 +928,6 @@
               </div>
             </div>
           </div>
-        </div>
-
-        <div class="guide-quick-action-box">
-          <div>
-            <div style="font-weight: 700; color: var(--text-primary);">💡 Want to test it immediately?</div>
-            <div style="font-size: 0.85rem; color: var(--text-secondary);">Load pre-configured university courses with one click to see how the optimizer works right now.</div>
-          </div>
-          <button class="btn btn-secondary btn-sm" onclick="if(window.App&&window.App.loadSampleCourses){App.loadSampleCourses();}if(window.App&&window.App.closeGuideModal){App.closeGuideModal();}var m=document.getElementById('guide-modal');if(m)m.style.setProperty('display','none','important');">
-            📚 Load Example Courses Now
-          </button>
         </div>
       </div>
       <div class="modal-footer" style="justify-content: flex-end;">

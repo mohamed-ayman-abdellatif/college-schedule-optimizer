@@ -19,27 +19,26 @@ Welcome! This document provides a complete technical overview of the **AASTMT Sc
 ```text
 quick-volta/
 ├── index.html              # Main application shell (4 tabs + modals)
-├── test_suite.html         # Automated browser/VM test suite (50 suites, 318 assertions)
+├── test_suite.html         # Automated browser/VM test suite (51 suites, 321+ assertions)
 ├── agent.md                # This handoff guide
 ├── README.md               # User-facing project documentation
 ├── css/
 │   ├── style.css           # Design tokens, layout, forms, cards, modals, responsive rules
 │   └── timetable.css       # Timetable matrix grid, session cards, agenda view, print styles
-├── data/
-│   ├── index.json          # Faculty catalog manifest (id, titleAr, titleEn, file)
-│   └── *.json              # Pre-parsed faculty schedule datasets (e.g., Engineering.json)
 └── js/
     ├── parser.js           # ScheduleParser: HTML table parser + Major JSON catalog extractor
     ├── pdfParser.js        # PdfScheduleParser: PDF text & spatial coordinate grid parser
-    ├── sampleData.js       # SampleScheduleData: Built-in sample courses, HTML, and fallback JSON
+    ├── sampleData.js       # SampleScheduleData: Lightweight empty stub (no bundled courses on main)
     ├── optimizer.js        # ScheduleOptimizer: Backtracking solver, 3-tier fallback, scoring
     ├── imageExtractor.js   # ImageScheduleExtractor: OCR (Tesseract) + canvas color-grid parser
     ├── renderer.js         # ScheduleRenderer: 6-period matrix grid (8:30 AM - 8:30 PM), mobile agenda, summary bar
     ├── exporter.js         # ScheduleExporter: PNG, PDF, Excel (.xlsx), ICS, JSON, Print
     ├── analytics.js        # LiveAnalytics: Lightweight Firebase Realtime DB presence/views counter
     ├── telemetry.js        # AdminTelemetry: Local-first event tracking + hidden Ctrl+Shift+A dashboard
-    └── app.js              # App: State management, i18n dictionary, event bindings, UI rendering
+    └── app.js              # App: State management, i18n dictionary, event bindings, UI rendering, schedules-data searcher
 ```
+
+> **Schedules Data Branch (`schedules-data`)**: All faculty schedules and unified subject files live on the dedicated orphan branch `schedules-data` in this repository (`index.json`, `subjects_index.json`, `subjects/<facultyId>/<code.json>`, and `colleges/<facultyId>.json`), keeping `main` lightweight and completely free of bundled example/default courses.
 
 ### Script Loading Order (`index.html`)
 Because the project uses global IIFE namespaces rather than ES modules (so it works directly over `file://` as well as static hosting), scripts **must** load in this order:

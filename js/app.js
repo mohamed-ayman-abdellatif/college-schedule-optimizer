@@ -53,11 +53,12 @@ const App = (() => {
     selectedMajorCourseCodes: new Set(),
     publicRepoConfig: {
       owner: 'mohamed-ayman-abdellatif',
-      repo: 'college-schedules-data',
-      branch: 'main',
+      repo: 'college-schedule-optimizer',
+      branch: 'schedules-data',
       customBaseUrl: null
     },
     majorCatalog: null,
+    subjectsIndex: [],
     isSyncingRepo: false
   };
 
@@ -89,7 +90,7 @@ const App = (() => {
       selectDeptLabel: 'Department:',
       selectPeriodLabel: 'Period / Term:',
       searchAddSubjectTitle: 'Quick Search & Add Subject (بحث وإضافة مادة مباشرة)',
-      searchAddSubjectTip: 'Search across all departments by code, name, or doctor',
+      searchAddSubjectTip: 'Search across all faculties & departments by code, name, or doctor',
       searchMajorPlaceholder: 'Search subject by name or code (e.g. ECE2102, Applied, برمجة, د. هشام)...',
       searchNoResults: 'No subjects found matching',
       btnAddSubject: '+ Add Subject',
@@ -118,7 +119,7 @@ const App = (() => {
       dropzoneTitle: 'Drag & drop schedule photo here, or click to browse',
       dropzoneSub: 'Supports PNG, JPG screenshots of schedule tables',
       noCoursesTitle: 'No Courses Added Yet',
-      noCoursesDesc: 'Paste college HTML above or click "Load Example Courses" to test.',
+      noCoursesDesc: 'Search for your subjects above, select your faculty/department, paste portal HTML, or upload a PDF timetable.',
       doctorPrefTitle: 'Doctor & Instructor Preferences',
       doctorPrefDesc: 'Prioritize preferred professors, triple-click "Favorite" to mandate (guarantee) a doctor (🌟🔒), or click "Avoid" to strictly exclude them from all schedules (🚫).',
       strictDoctorModeTitle: 'Exhaustive Strict Doctor Search',
@@ -287,7 +288,7 @@ const App = (() => {
       selectDeptLabel: 'القسم:',
       selectPeriodLabel: 'الفترة / الترم الدراسي:',
       searchAddSubjectTitle: 'بحث وإضافة مادة مباشرة (Quick Search & Add Subject)',
-      searchAddSubjectTip: 'ابحث في كل الأقسام بكود المادة أو اسمها أو اسم الدكتور',
+      searchAddSubjectTip: 'ابحث في جميع الكليات والأقسام بكود المادة أو اسمها أو اسم الدكتور',
       searchMajorPlaceholder: 'ابحث عن مادة بكودها أو اسمها (مثال: ECE2102، Applied، برمجة، د. هشام)...',
       searchNoResults: 'لم يتم العثور على أي مادة تطابق',
       btnAddSubject: '+ إضافة المادة',
@@ -316,7 +317,7 @@ const App = (() => {
       dropzoneTitle: 'اسحب صورة الجدول هنا أو اضغط للاختيار',
       dropzoneSub: 'يدعم صور وسكرين شوت الجداول الدراسية (PNG, JPG)',
       noCoursesTitle: 'لم يتم إضافة مقررات حتى الآن',
-      noCoursesDesc: 'الصق كود HTML من موقع الكلية أو اضغط "تحميل المقررات التجريبية" للتجربة الفورية.',
+      noCoursesDesc: 'ابحث عن موادك بالاسم أو الكود أعلاه، أو اختر الكلية والقسم، أو الصق كود HTML أو ارفع ملف PDF للجدول.',
       doctorPrefTitle: 'تفضيلات الدكاترة والمعيدين',
       doctorPrefDesc: 'اختر دكاترتك المفضلين، اضغط 3 مرات سريعاً على "مفضل" لتثبيت دكتور كإجباري (🌟🔒)، أو اضغط "تجنب" لاستبعاده نهائياً من كافة الجداول (🚫).',
       strictDoctorModeTitle: 'فحص شامل وصارم لكافة التباديل',
@@ -1640,46 +1641,37 @@ const App = (() => {
   }
 
   /**
-   * Load Default Sample Courses (including user's Applied Programming)
+   * Sample courses removed: website starts clean and retrieves subjects from `schedules-data` branch
    */
   function loadSampleCourses() {
-    state.courses = JSON.parse(JSON.stringify(SampleScheduleData.DEFAULT_COURSE_SET));
-    normalizeCourseDoctorTitles(state.courses);
-    state.courses.forEach(c => { c.isSample = true; });
-    state.isSampleData = true;
-    try { localStorage.setItem('sched_is_sample', 'true'); } catch (e) {}
+    state.courses = [];
+    state.isSampleData = false;
+    try { localStorage.setItem('sched_is_sample', 'false'); } catch (e) {}
     state.solutions = [];
     state.activeSolutionIndex = 0;
     saveStateToStorage();
     renderCoursesList();
     renderDoctorPreferences();
-    if (state.currentTab === 'manual') renderManualMode();
-    const isAr = state.currentLang === 'ar';
-    showToast(isAr
-      ? `تم تحميل ${state.courses.length} مقررات دراسية بنجاح!`
-      : `Loaded ${state.courses.length} courses!`, 'success');
   }
 
   /* ==========================================================================
-     Major & Department Timetable Explorer (JSON)
+     Major & Department Timetable Explorer (JSON) + Global Subject Searcher
      ========================================================================== */
 
   /**
-   * Resolves remote public repository and CDN endpoints
+   * Resolves remote repository branch (`schedules-data`) and CDN endpoints
    */
   function getRepoEndpoints() {
     const { owner, repo, branch, customBaseUrl } = state.publicRepoConfig;
     if (customBaseUrl) {
       const base = customBaseUrl.endsWith('/') ? customBaseUrl : customBaseUrl + '/';
       return [
-        { name: 'custom', base },
-        { name: 'local', base: 'data/' }
+        { name: 'custom', base }
       ];
     }
     return [
-      { name: 'jsdelivr', base: `https://cdn.jsdelivr.net/gh/${owner}/${repo}@${branch}/` },
       { name: 'github_raw', base: `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/` },
-      { name: 'local', base: 'data/' }
+      { name: 'jsdelivr', base: `https://cdn.jsdelivr.net/gh/${owner}/${repo}@${branch}/` }
     ];
   }
 
@@ -1690,12 +1682,12 @@ const App = (() => {
     const pill = document.getElementById('repo-cloud-pill');
     if (!pill) return;
     const isAr = state.currentLang === 'ar';
-    const { owner, repo } = state.publicRepoConfig;
+    const { owner, repo, branch } = state.publicRepoConfig;
 
     if (isOnline) {
       pill.classList.remove('is-offline');
       pill.classList.add('is-online');
-      pill.setAttribute('title', detailText || `github.com/${owner}/${repo}`);
+      pill.setAttribute('title', detailText || `github.com/${owner}/${repo}/tree/${branch}`);
       pill.innerHTML = `<span>🟢</span> <span>${isAr ? 'قاعدة بيانات سحابية متصلة' : 'Public Cloud Database'}</span>`;
     } else {
       pill.classList.remove('is-online');
@@ -1706,7 +1698,44 @@ const App = (() => {
   }
 
   /**
-   * Fetches master catalog (index.json) from public repository or local fallback
+   * Fetches the global subjects search index (`subjects_index.json`) from the `schedules-data` branch
+   */
+  async function fetchSubjectsIndex(forceRefresh = false) {
+    const endpoints = getRepoEndpoints();
+    const cacheBuster = forceRefresh ? `?t=${Date.now()}` : '';
+
+    for (const ep of endpoints) {
+      try {
+        const url = `${ep.base}subjects_index.json${cacheBuster}`;
+        const resp = await fetch(url);
+        if (resp.ok) {
+          const json = await resp.json();
+          const list = Array.isArray(json) ? json : (json && Array.isArray(json.subjects) ? json.subjects : null);
+          if (list && list.length > 0) {
+            state.subjectsIndex = list;
+            try {
+              localStorage.setItem('sched_subjects_index', JSON.stringify(list));
+            } catch (e) {}
+
+            // Refresh active search query if user is currently typing in the searcher
+            const searchInput = document.getElementById('input-major-course-search');
+            if (searchInput && searchInput.value.trim()) {
+              const q = searchInput.value.trim();
+              const results = searchMajorCourses(q);
+              renderMajorSearchResults(results, q);
+            }
+            return list;
+          }
+        }
+      } catch (err) {
+        // Continue trying next endpoint
+      }
+    }
+    return state.subjectsIndex || [];
+  }
+
+  /**
+   * Fetches master catalog (index.json) from `schedules-data` branch
    */
   async function fetchPublicCatalog(forceRefresh = false) {
     const endpoints = getRepoEndpoints();
@@ -1729,12 +1758,6 @@ const App = (() => {
       } catch (err) {
         // Continue trying next endpoint
       }
-    }
-
-    // Offline / local file fallback
-    if (!fetchedData && typeof SampleScheduleData !== 'undefined' && SampleScheduleData.DEFAULT_MAJOR_CATALOG) {
-      fetchedData = SampleScheduleData.DEFAULT_MAJOR_CATALOG;
-      successfulEndpoint = 'sample_fallback';
     }
 
     if (fetchedData) {
@@ -1842,16 +1865,15 @@ const App = (() => {
           : TRANSLATIONS.en.noFacultySelectedSubtitle;
       }
       if (searchInput) {
-        searchInput.disabled = true;
-        searchInput.value = '';
+        searchInput.disabled = false;
         searchInput.placeholder = isAr
-          ? TRANSLATIONS.ar.searchFacultyPlaceholderDisabled
-          : TRANSLATIONS.en.searchFacultyPlaceholderDisabled;
+          ? TRANSLATIONS.ar.searchMajorPlaceholder
+          : TRANSLATIONS.en.searchMajorPlaceholder;
       }
       const searchClear = document.getElementById('btn-clear-major-search');
-      if (searchClear) searchClear.style.display = 'none';
+      if (searchClear && (!searchInput || !searchInput.value)) searchClear.style.display = 'none';
       const searchDropdown = document.getElementById('major-course-search-dropdown');
-      if (searchDropdown) {
+      if (searchDropdown && (!searchInput || !searchInput.value)) {
         searchDropdown.style.display = 'none';
         searchDropdown.innerHTML = '';
       }
@@ -1993,15 +2015,18 @@ const App = (() => {
     const isAr = state.currentLang === 'ar';
 
     try {
-      const catalog = await fetchPublicCatalog(true);
+      const [catalog] = await Promise.all([
+        fetchPublicCatalog(true),
+        fetchSubjectsIndex(true)
+      ]);
       const activeMajorId = state.selectedMajorId;
       if (activeMajorId) {
         await fetchMajorFile(activeMajorId, true);
       }
 
-      showToast(isAr ? 'تم تحديث الجداول من المستودع العام بنجاح! 🌐' : 'Schedules catalog updated from public repository! 🌐', 'success');
+      showToast(isAr ? 'تم تحديث الجداول والمقررات من فرع المستودع بنجاح! 🌐' : 'Schedules & subjects updated from repository branch! 🌐', 'success');
     } catch (err) {
-      showToast(isAr ? 'تعذر الاتصال بالمستودع العام. تم استخدام البيانات المحلية.' : 'Could not reach public repository. Using local database.', 'warning');
+      showToast(isAr ? 'تعذر الاتصال بالمستودع العام. تم استخدام البيانات المخزنة.' : 'Could not reach public repository. Using cached data.', 'warning');
     } finally {
       state.isSyncingRepo = false;
       if (syncIcon) syncIcon.classList.remove('is-spinning');
@@ -2010,12 +2035,12 @@ const App = (() => {
   }
 
   /**
-   * Initializes the Major & Department Timetable Explorer
+   * Initializes the Major & Department Timetable Explorer + Global Subject Searcher
    */
   function initMajorExplorer() {
     setupMajorEventListeners();
 
-    // 1. Check cached catalog from localStorage
+    // 1. Check cached catalog & subjects index from localStorage
     const savedCatalog = localStorage.getItem('sched_major_catalog');
     if (savedCatalog) {
       try {
@@ -2026,12 +2051,17 @@ const App = (() => {
       } catch (e) {}
     }
 
-    // 2. If no catalog yet, load bundled catalog from SampleScheduleData
-    if (!state.majorCatalog && typeof SampleScheduleData !== 'undefined' && SampleScheduleData.DEFAULT_MAJOR_CATALOG) {
-      state.majorCatalog = ScheduleParser.parseCatalogManifest(SampleScheduleData.DEFAULT_MAJOR_CATALOG);
+    const savedSubjectsIdx = localStorage.getItem('sched_subjects_index');
+    if (savedSubjectsIdx) {
+      try {
+        const parsedIdx = JSON.parse(savedSubjectsIdx);
+        if (Array.isArray(parsedIdx) && parsedIdx.length > 0) {
+          state.subjectsIndex = parsedIdx;
+        }
+      } catch (e) {}
     }
 
-    // 3. Check cached major schedule from localStorage only if explicitly saved by user
+    // 2. Check cached major schedule from localStorage only if explicitly saved by user
     const savedMajorId = localStorage.getItem('sched_major_id');
     const savedMajor = localStorage.getItem('sched_major_json');
     let majorLoaded = false;
@@ -2053,16 +2083,17 @@ const App = (() => {
       }
     }
 
-    // 4. Populate initial college selector dropdown
+    // 3. Populate initial college selector dropdown
     populateMajorCollegeSelector();
 
-    // 5. If no major schedule was saved, default to no faculty selected (do NOT load any json file at start)
+    // 4. If no major schedule was saved, default to no faculty selected (do NOT load any default courses)
     if (!majorLoaded) {
       resetMajorSelectionState();
     }
 
-    // 6. Connect to public cloud repository asynchronously in background
+    // 5. Connect to `schedules-data` branch asynchronously in background for catalog & subjects index
     fetchPublicCatalog().catch(() => {});
+    fetchSubjectsIndex().catch(() => {});
   }
 
   function setupMajorEventListeners() {
@@ -2267,74 +2298,155 @@ const App = (() => {
   }
 
   /**
-   * Search for subjects across all departments & periods in the active major schedule JSON.
+   * Search for subjects across the `schedules-data` subjects index and/or loaded major schedule JSON.
+   * Consolidates all groups of the same subject code within a faculty into a single unified entry.
    */
-  function searchMajorCourses(query, maxResults = 25) {
-    if (!state.majorData || !query) return [];
+  function searchMajorCourses(query, maxResults = 30) {
+    if (!query) return [];
     const q = String(query).trim().toLowerCase();
     if (!q) return [];
 
-    const seenMap = new Map(); // key: `${cCode}_${pName}`
+    // Unified map keyed by `${facultyId}:::${courseCode.toUpperCase()}`
+    const unifiedMap = new Map();
 
-    const tree = state.majorData.departmentsTree || {};
-    for (const [dKey, dObj] of Object.entries(tree)) {
-      const deptDisplay = dObj.rawDepartmentLabel || dObj.departmentName || dKey;
-      if (dObj.periods && typeof dObj.periods === 'object') {
-        for (const [pKey, pObj] of Object.entries(dObj.periods)) {
-          const pName = String(pObj.periodName || pKey).trim();
+    function computeMatchScore(codeLower, nameLower, instructors, departments) {
+      if (codeLower === q) return 100;
+      if (codeLower.startsWith(q)) return 80;
+      if (codeLower.includes(q)) return 65;
+      if (nameLower.startsWith(q)) return 60;
+      if (nameLower.includes(q)) return 50;
+      if (Array.isArray(instructors) && instructors.some(inst => inst && inst.toLowerCase().includes(q))) {
+        return 40;
+      }
+      if (Array.isArray(departments) && departments.some(d => d && d.toLowerCase().includes(q))) {
+        return 30;
+      }
+      return 0;
+    }
 
-          // Course mode: pObj.courses
-          if (pObj.courses && typeof pObj.courses === 'object') {
-            for (const [cKey, cVal] of Object.entries(pObj.courses)) {
-              const cCode = (cVal.code || cVal.courseCode || cKey).trim();
-              const cName = (cVal.name || cVal.courseName || cCode).trim();
-              if (!cCode) continue;
+    // 1. Search across global `state.subjectsIndex` (retrieved from `schedules-data` branch)
+    if (Array.isArray(state.subjectsIndex) && state.subjectsIndex.length > 0) {
+      const filterFaculty = (state.selectedMajorId && state.selectedMajorId !== 'custom_uploaded_file' &&
+        state.subjectsIndex.some(s => s.facultyId === state.selectedMajorId))
+        ? state.selectedMajorId
+        : '';
 
-              const codeLower = cCode.toLowerCase();
-              const nameLower = cName.toLowerCase();
-              const instructors = Array.isArray(cVal.instructors) ? cVal.instructors : [];
+      state.subjectsIndex.forEach(s => {
+        if (filterFaculty && s.facultyId !== filterFaculty) return;
+        const cCode = String(s.code || '').trim();
+        const cName = String(s.name || cCode).trim();
+        if (!cCode) return;
 
-              let matched = false;
-              let score = 0;
+        const score = computeMatchScore(
+          cCode.toLowerCase(),
+          cName.toLowerCase(),
+          s.instructors || [],
+          s.departments || []
+        );
 
-              if (codeLower === q) {
-                matched = true;
-                score = 100;
-              } else if (codeLower.startsWith(q)) {
-                matched = true;
-                score = 80;
-              } else if (codeLower.includes(q)) {
-                matched = true;
-                score = 65;
-              } else if (nameLower.startsWith(q)) {
-                matched = true;
-                score = 60;
-              } else if (nameLower.includes(q)) {
-                matched = true;
-                score = 50;
-              } else {
-                const matchInst = instructors.some(inst => inst && inst.toLowerCase().includes(q));
-                if (matchInst) {
-                  matched = true;
-                  score = 40;
-                }
-              }
+        if (score > 0) {
+          const uKey = `${s.facultyId || 'default'}:::${cCode.toUpperCase()}`;
+          const deptsList = Array.isArray(s.departments) && s.departments.length > 0 ? s.departments : [];
+          const periodsList = Array.isArray(s.periods) && s.periods.length > 0 ? s.periods : [];
+          unifiedMap.set(uKey, {
+            courseCode: cCode,
+            courseName: cName,
+            facultyId: s.facultyId || '',
+            facultyTitle: s.facultyTitle || '',
+            facultyTitleEn: s.facultyTitleEn || s.facultyTitle || '',
+            deptKey: (Array.isArray(s.deptKeys) && s.deptKeys[0]) || deptsList[0] || '',
+            deptDisplay: deptsList.length > 1
+              ? `${deptsList[0]} (+${deptsList.length - 1})`
+              : (deptsList[0] || ''),
+            departments: deptsList,
+            periodKey: periodsList.join(', '),
+            periods: periodsList,
+            groupsCount: s.groupsCount || (Array.isArray(s.groupNames) ? s.groupNames.length : 0),
+            groupSet: new Set(Array.isArray(s.groupNames) ? s.groupNames : []),
+            instructors: (s.instructors || []).filter(i => i && i !== 'Not Specified'),
+            file: s.file || '',
+            score
+          });
+        }
+      });
+    }
 
-              if (matched) {
-                const itemKey = `${cCode.toUpperCase()}_${pName}`;
-                if (!seenMap.has(itemKey) || seenMap.get(itemKey).score < score) {
-                  const groupsCount = Array.isArray(cVal.groups) ? cVal.groups.length : 0;
-                  const item = {
-                    courseCode: cCode,
-                    courseName: cName,
-                    deptKey: dKey,
-                    deptDisplay: deptDisplay,
-                    periodKey: pName,
-                    groupsCount: groupsCount,
-                    instructors: instructors.filter(i => i && i !== 'Not Specified'),
-                    score: score
-                  };
-                  seenMap.set(itemKey, item);
+    // 2. Also search `state.majorData` if a faculty or custom schedule JSON is loaded in memory,
+    // merging all groups of the same subject code within the faculty into a single unified entry
+    if (state.majorData) {
+      const activeFacId = state.selectedMajorId || 'active_major';
+      const tree = state.majorData.departmentsTree || {};
+      for (const [dKey, dObj] of Object.entries(tree)) {
+        const deptDisplay = dObj.rawDepartmentLabel || dObj.departmentName || dKey;
+        if (dObj.periods && typeof dObj.periods === 'object') {
+          for (const [pKey, pObj] of Object.entries(dObj.periods)) {
+            const pName = String(pObj.periodName || pKey).trim();
+
+            if (pObj.courses && typeof pObj.courses === 'object') {
+              for (const [cKey, cVal] of Object.entries(pObj.courses)) {
+                const cCode = (cVal.code || cVal.courseCode || cKey).trim();
+                const cName = (cVal.name || cVal.courseName || cCode).trim();
+                if (!cCode) continue;
+
+                const instructors = Array.isArray(cVal.instructors) ? cVal.instructors : [];
+                const score = computeMatchScore(
+                  cCode.toLowerCase(),
+                  cName.toLowerCase(),
+                  instructors,
+                  [deptDisplay]
+                );
+
+                if (score > 0) {
+                  const uKey = `${activeFacId}:::${cCode.toUpperCase()}`;
+                  const grpNames = Array.isArray(cVal.groups)
+                    ? cVal.groups.map(g => g.group || g.groupCode || g.name).filter(Boolean)
+                    : [];
+
+                  if (!unifiedMap.has(uKey)) {
+                    const gSet = new Set(grpNames);
+                    unifiedMap.set(uKey, {
+                      courseCode: cCode,
+                      courseName: cName,
+                      facultyId: activeFacId,
+                      facultyTitle: state.selectedMajor || '',
+                      facultyTitleEn: state.selectedMajor || '',
+                      deptKey: dKey,
+                      deptDisplay: deptDisplay,
+                      departments: [deptDisplay],
+                      periodKey: pName,
+                      periods: [pName],
+                      groupsCount: gSet.size || (Array.isArray(cVal.groups) ? cVal.groups.length : 0),
+                      groupSet: gSet,
+                      instructors: instructors.filter(i => i && i !== 'Not Specified'),
+                      file: '',
+                      score
+                    });
+                  } else {
+                    const existing = unifiedMap.get(uKey);
+                    if (score > existing.score) existing.score = score;
+                    if (!existing.deptKey) existing.deptKey = dKey;
+                    if (deptDisplay && !existing.departments.includes(deptDisplay)) {
+                      existing.departments.push(deptDisplay);
+                      existing.deptDisplay = existing.departments.length > 1
+                        ? `${existing.departments[0]} (+${existing.departments.length - 1})`
+                        : existing.departments[0];
+                    }
+                    if (pName && !existing.periods.includes(pName)) {
+                      existing.periods.push(pName);
+                      existing.periodKey = existing.periods.join(', ');
+                    }
+                    if (existing.groupSet) {
+                      grpNames.forEach(gn => existing.groupSet.add(gn));
+                      if (existing.groupSet.size > existing.groupsCount) {
+                        existing.groupsCount = existing.groupSet.size;
+                      }
+                    }
+                    const instSet = new Set(existing.instructors || []);
+                    instructors.forEach(inst => {
+                      if (inst && inst !== 'Not Specified') instSet.add(inst);
+                    });
+                    existing.instructors = Array.from(instSet);
+                  }
                 }
               }
             }
@@ -2343,7 +2455,7 @@ const App = (() => {
       }
     }
 
-    const sorted = Array.from(seenMap.values()).sort((a, b) => {
+    const sorted = Array.from(unifiedMap.values()).sort((a, b) => {
       if (b.score !== a.score) return b.score - a.score;
       return a.courseCode.localeCompare(b.courseCode);
     });
@@ -2377,8 +2489,8 @@ const App = (() => {
 
     let html = '';
     results.forEach(r => {
-      const doctors = r.instructors.filter(i => /^(د\.|د\/|د\s+|Dr\.|Dr\s+|Doctor\s+|Prof\.|أ\.د\.?)/i.test(i));
-      const tas = r.instructors.filter(i => !/^(د\.|د\/|د\s+|Dr\.|Dr\s+|Doctor\s+|Prof\.|أ\.د\.?)/i.test(i));
+      const doctors = (r.instructors || []).filter(i => /^(د\.|د\/|د\s+|Dr\.|Dr\s+|Doctor\s+|Prof\.|أ\.د\.?)/i.test(i));
+      const tas = (r.instructors || []).filter(i => !/^(د\.|د\/|د\s+|Dr\.|Dr\s+|Doctor\s+|Prof\.|أ\.د\.?)/i.test(i));
 
       let instHtml = '';
       if (doctors.length > 0) {
@@ -2388,6 +2500,7 @@ const App = (() => {
         instHtml += `<span>👨‍💼 ${tas.slice(0, 2).join(', ')}${tas.length > 2 ? '...' : ''}</span>`;
       }
 
+      const facLabel = isAr ? (r.facultyTitle || r.facultyTitleEn || '') : (r.facultyTitleEn || r.facultyTitle || '');
       const isAlreadyAdded = state.courses.some(c => c.code.toUpperCase() === r.courseCode.toUpperCase());
       const btnText = isAlreadyAdded
         ? (isAr ? '✓ مضافة (تحديث)' : '✓ Added (Update)')
@@ -2402,14 +2515,15 @@ const App = (() => {
               <span class="major-search-item-name">${r.courseName}</span>
             </div>
             <div class="major-search-item-meta">
-              <span>🏢 ${r.deptDisplay}</span> •
-              <span>📅 ${isAr ? 'الفترة ' : 'Period '}${r.periodKey}</span> •
+              ${facLabel ? `<span>🎓 ${facLabel}</span> • ` : ''}
+              ${r.deptDisplay ? `<span>🏢 ${r.deptDisplay}</span> • ` : ''}
+              ${r.periodKey ? `<span>📅 ${isAr ? 'الفترة ' : 'Period '}${r.periodKey}</span> • ` : ''}
               <span><strong>${r.groupsCount}</strong> ${isAr ? 'مجموعات' : 'groups'}</span>
             </div>
             ${instHtml ? `<div class="major-search-item-doctors">${instHtml}</div>` : ''}
           </div>
           <button type="button" class="btn btn-sm ${btnClass} btn-add-major-course"
-                  onclick="App.addMajorCourseToWebsite('${encodeURIComponent(r.deptKey)}', '${encodeURIComponent(r.periodKey)}', '${encodeURIComponent(r.courseCode)}')">
+                  onclick="App.addMajorCourseToWebsite('${encodeURIComponent(r.deptKey || '')}', '${encodeURIComponent(r.periodKey || '')}', '${encodeURIComponent(r.courseCode)}', '${encodeURIComponent(r.facultyId || '')}', '${encodeURIComponent(r.file || '')}')">
             <span>${btnText}</span>
           </button>
         </div>
@@ -2421,42 +2535,10 @@ const App = (() => {
   }
 
   /**
-   * Directly extracts and adds a course from the loaded major schedule to the website.
+   * Finalizes adding an extracted or fetched course object into `state.courses` and updating the UI.
    */
-  function addMajorCourseToWebsite(deptKey, periodKey, courseCode) {
+  function finalizeCourseAddition(extractedCourse, decodedCode) {
     const isAr = state.currentLang === 'ar';
-    const decodedDept = decodeURIComponent(deptKey);
-    const decodedPeriod = decodeURIComponent(periodKey);
-    const decodedCode = decodeURIComponent(courseCode);
-
-    if (!state.majorData) {
-      showToast(isAr ? 'يرجى تحميل بيانات الكلية أولاً' : 'Please load college data first', 'warning');
-      return;
-    }
-
-    let extractedCourse = null;
-    if (typeof ScheduleParser !== 'undefined' && ScheduleParser.extractSingleCourseFromMajor) {
-      extractedCourse = ScheduleParser.extractSingleCourseFromMajor(
-        state.majorData,
-        decodedDept,
-        decodedPeriod,
-        decodedCode
-      );
-    }
-
-    if (!extractedCourse) {
-      const exRes = ScheduleParser.extractCoursesFromMajor(state.majorData, decodedDept, decodedPeriod);
-      if (exRes.success && exRes.courses) {
-        extractedCourse = exRes.courses.find(c => c.code.toUpperCase() === decodedCode.toUpperCase());
-      }
-    }
-
-    if (!extractedCourse) {
-      showToast(isAr ? `تعذر استخراج بيانات المادة ${decodedCode}` : `Could not extract course ${decodedCode}`, 'error');
-      return;
-    }
-
-    // Check if already in state.courses
     const existingIdx = state.courses.findIndex(c => c.code.toUpperCase() === decodedCode.toUpperCase());
     if (existingIdx >= 0) {
       state.courses[existingIdx] = JSON.parse(JSON.stringify(extractedCourse));
@@ -2467,7 +2549,6 @@ const App = (() => {
     state.isSampleData = false;
     try { localStorage.setItem('sched_is_sample', 'false'); } catch (e) {}
 
-    // Reset solutions so user can re-run optimizer or pick manually
     state.solutions = [];
     state.filteredSolutions = [];
     state.activeSolutionIndex = 0;
@@ -2493,9 +2574,97 @@ const App = (() => {
     showToast(toastMsg, 'success');
 
     const coursesContainer = document.getElementById('courses-list-container');
-    if (coursesContainer) {
+    if (coursesContainer && typeof coursesContainer.scrollIntoView === 'function') {
       coursesContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+  }
+
+  /**
+   * Directly extracts or fetches a unified subject (with all its groups) from the `schedules-data` branch
+   * or the active major schedule JSON and adds it to the website.
+   */
+  async function addMajorCourseToWebsite(deptKey, periodKey, courseCode, facultyId = '', subjectFile = '') {
+    const isAr = state.currentLang === 'ar';
+    const decodedDept = decodeURIComponent(deptKey || '');
+    const decodedPeriod = decodeURIComponent(periodKey || '');
+    const decodedCode = decodeURIComponent(courseCode || '');
+    const decodedFaculty = decodeURIComponent(facultyId || '');
+    const decodedFile = decodeURIComponent(subjectFile || '');
+
+    let extractedCourse = null;
+
+    // 1. If `state.majorData` is loaded in memory and matches the target faculty (or no facultyId was specified),
+    // extract all merged groups for this course code across the loaded faculty JSON synchronously!
+    if (state.majorData && (!decodedFaculty || decodedFaculty === state.selectedMajorId || state.selectedMajorId === 'custom_uploaded_file')) {
+      if (typeof ScheduleParser !== 'undefined' && ScheduleParser.extractSingleCourseFromMajor) {
+        extractedCourse = ScheduleParser.extractSingleCourseFromMajor(
+          state.majorData,
+          null,
+          null,
+          decodedCode
+        );
+        if (!extractedCourse && decodedDept && decodedPeriod) {
+          extractedCourse = ScheduleParser.extractSingleCourseFromMajor(
+            state.majorData,
+            decodedDept,
+            decodedPeriod,
+            decodedCode
+          );
+        }
+      }
+      if (!extractedCourse && decodedDept && decodedPeriod) {
+        const exRes = ScheduleParser.extractCoursesFromMajor(state.majorData, decodedDept, decodedPeriod);
+        if (exRes.success && exRes.courses) {
+          extractedCourse = exRes.courses.find(c => c.code.toUpperCase() === decodedCode.toUpperCase());
+        }
+      }
+    }
+
+    if (extractedCourse) {
+      finalizeCourseAddition(extractedCourse, decodedCode);
+      return extractedCourse;
+    }
+
+    // 2. Otherwise retrieve the unified subject JSON directly from the `schedules-data` branch!
+    const safeCode = decodedCode.trim().replace(/[^a-zA-Z0-9_-]/g, '_');
+    const candidatePaths = [];
+    if (decodedFile) candidatePaths.push(decodedFile);
+    if (decodedFaculty) candidatePaths.push(`subjects/${decodedFaculty}/${safeCode}.json`);
+    if (Array.isArray(state.subjectsIndex)) {
+      const matchIdx = state.subjectsIndex.find(
+        s => s.code && s.code.toUpperCase() === decodedCode.toUpperCase() && (!decodedFaculty || s.facultyId === decodedFaculty)
+      );
+      if (matchIdx && matchIdx.file && !candidatePaths.includes(matchIdx.file)) {
+        candidatePaths.push(matchIdx.file);
+      }
+    }
+
+    const endpoints = getRepoEndpoints();
+    for (const relPath of candidatePaths) {
+      for (const ep of endpoints) {
+        try {
+          const resp = await fetch(`${ep.base}${relPath}`);
+          if (resp.ok) {
+            const json = await resp.json();
+            if (json && json.code && Array.isArray(json.groups)) {
+              extractedCourse = json;
+              break;
+            }
+          }
+        } catch (err) {
+          // Try next endpoint
+        }
+      }
+      if (extractedCourse) break;
+    }
+
+    if (!extractedCourse) {
+      showToast(isAr ? `تعذر استخراج بيانات المادة ${decodedCode}` : `Could not retrieve subject ${decodedCode}`, 'error');
+      return null;
+    }
+
+    finalizeCourseAddition(extractedCourse, decodedCode);
+    return extractedCourse;
   }
 
   function onMajorDepartmentChange(deptName, userInitiated = true) {
@@ -6797,7 +6966,11 @@ const App = (() => {
         'sched_manual_schedule',
         'sched_manual_hide_avoided',
         'sched_timetable_filters',
-        'sched_mixmatch_selections'
+        'sched_mixmatch_selections',
+        'sched_major_id',
+        'sched_major_json',
+        'sched_major_catalog',
+        'sched_subjects_index'
       ];
       keys.forEach(k => localStorage.removeItem(k));
     } catch (e) {
@@ -7022,16 +7195,6 @@ const App = (() => {
             </div>
           </div>
         </div>
-
-        <div class="guide-quick-action-box">
-          <div>
-            <div style="font-weight: 700; color: var(--text-primary);">💡 تريد تجربة سريعة الآن؟</div>
-            <div style="font-size: 0.85rem; color: var(--text-secondary);">يمكنك تحميل مقررات هندسية تجريبية بضغطة زر لرؤية كيف يعمل المحسن فوراً.</div>
-          </div>
-          <button class="btn btn-secondary btn-sm" onclick="App.loadSampleCourses(); App.closeGuideModal();">
-            📚 تحميل مواد تجريبية فوراً
-          </button>
-        </div>
       `;
     } else {
       container.innerHTML = `
@@ -7117,16 +7280,6 @@ const App = (() => {
             </div>
           </div>
         </div>
-
-        <div class="guide-quick-action-box">
-          <div>
-            <div style="font-weight: 700; color: var(--text-primary);">💡 Want to test it immediately?</div>
-            <div style="font-size: 0.85rem; color: var(--text-secondary);">Load pre-configured university courses with one click to see how the optimizer works right now.</div>
-          </div>
-          <button class="btn btn-secondary btn-sm" onclick="App.loadSampleCourses(); App.closeGuideModal();">
-            📚 Load Example Courses Now
-          </button>
-        </div>
       `;
     }
   }
@@ -7203,6 +7356,7 @@ const App = (() => {
     getRepoEndpoints,
     updateRepoStatusPill,
     fetchPublicCatalog,
+    fetchSubjectsIndex,
     fetchMajorFile,
     syncFromPublicRepo,
     searchMajorCourses,
@@ -7214,6 +7368,9 @@ const App = (() => {
     setLanguage: (lang) => { if (state.currentLang !== lang) toggleLanguage(); },
     getCurrentLanguage: () => state.currentLang,
     getMajorCatalog: () => state.majorCatalog,
+    getSubjectsIndex: () => state.subjectsIndex,
+    setSubjectsIndex: (idx) => { state.subjectsIndex = Array.isArray(idx) ? idx : []; },
+    getPublicRepoConfig: () => state.publicRepoConfig,
     getMajorData: () => state.majorData,
     getSelectedMajorId: () => state.selectedMajorId,
     getSelectedDepartment: () => state.selectedDepartment,

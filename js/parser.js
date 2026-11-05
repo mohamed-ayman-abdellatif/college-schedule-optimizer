@@ -1307,7 +1307,7 @@ const ScheduleParser = (() => {
       }
 
       const c = coursesMap.get(courseCode);
-      if (color) c.color = color;
+      if (color && String(color).startsWith('#')) c.color = color;
       if (courseName && (!c.name || c.name === c.code)) c.name = courseName;
 
       if (!c.groupsMap.has(groupCode)) {
@@ -1321,23 +1321,35 @@ const ScheduleParser = (() => {
       }
 
       const g = c.groupsMap.get(groupCode);
-      const sessionObj = {
-        id: `${courseCode}_${groupCode}_${type}_${day}_${startSlot}`,
-        courseName: c.name,
-        courseCode: courseCode,
-        group: groupCode,
-        type: type,
-        day: day,
-        startSlot: startSlot,
-        endSlot: endSlot,
-        duration: duration,
-        instructor: instructor || 'Not Specified',
-        color: c.color,
-        room: room || ''
-      };
+      const existingSession = g.sessions.find(
+        s => s.day === day && s.startSlot === startSlot && s.endSlot === endSlot && s.type === type
+      );
+      if (existingSession) {
+        if ((!existingSession.instructor || existingSession.instructor === 'Not Specified') && instructor && instructor !== 'Not Specified') {
+          existingSession.instructor = instructor;
+        }
+        if (!existingSession.room && room) {
+          existingSession.room = room;
+        }
+      } else {
+        const sessionObj = {
+          id: `${courseCode}_${groupCode}_${type}_${day}_${startSlot}`,
+          courseName: c.name,
+          courseCode: courseCode,
+          group: groupCode,
+          type: type,
+          day: day,
+          startSlot: startSlot,
+          endSlot: endSlot,
+          duration: duration,
+          instructor: instructor || 'Not Specified',
+          color: c.color,
+          room: room || ''
+        };
 
-      g.sessions.push(sessionObj);
-      c.slots.push(sessionObj);
+        g.sessions.push(sessionObj);
+        c.slots.push(sessionObj);
+      }
 
       if (type === 'Lect.') g.hasLecture = true;
       if (type === 'Lab.' || type === 'Sec.') g.hasLab = true;
@@ -1908,19 +1920,51 @@ const ScheduleParser = (() => {
       }
     }
 
-    // 2. Otherwise search across all departments and periods
+    // 2. Otherwise search across all departments and periods and merge all groups for this course code
+    let mergedCourse = null;
     const tree = jsonData.departmentsTree || {};
     for (const [dKey, dObj] of Object.entries(tree)) {
       if (dObj.periods && typeof dObj.periods === 'object') {
         for (const [pKey, pObj] of Object.entries(dObj.periods)) {
+          let hasCode = false;
           if (pObj.courses && typeof pObj.courses === 'object') {
             for (const [cKey, cVal] of Object.entries(pObj.courses)) {
               const cCode = (cVal.code || cVal.courseCode || cKey).trim().toUpperCase();
               if (cCode === cleanCode) {
-                const res = extractCoursesFromMajor(jsonData, dKey, pObj.periodName || pKey);
-                if (res.success && res.courses) {
-                  const match = res.courses.find(c => c.code.toUpperCase() === cleanCode || c.id.toUpperCase() === cleanCode);
-                  if (match) return match;
+                hasCode = true;
+                break;
+              }
+            }
+          }
+          if (hasCode) {
+            const res = extractCoursesFromMajor(jsonData, dKey, pObj.periodName || pKey);
+            if (res.success && res.courses) {
+              const match = res.courses.find(c => c.code.toUpperCase() === cleanCode || c.id.toUpperCase() === cleanCode);
+              if (match) {
+                if (!mergedCourse) {
+                  mergedCourse = JSON.parse(JSON.stringify(match));
+                } else {
+                  const instSet = new Set(mergedCourse.instructors || []);
+                  (match.instructors || []).forEach(i => { if (i && i !== 'Not Specified') instSet.add(i); });
+                  const existingGroups = new Map((mergedCourse.groups || []).map(g => [g.group, g]));
+                  (match.groups || []).forEach(newG => {
+                    if (!existingGroups.has(newG.group)) {
+                      existingGroups.set(newG.group, JSON.parse(JSON.stringify(newG)));
+                    } else {
+                      const exG = existingGroups.get(newG.group);
+                      const sigSet = new Set((exG.sessions || []).map(s => `${s.day}_${s.startSlot}_${s.endSlot}_${s.type}`));
+                      (newG.sessions || []).forEach(s => {
+                        const sig = `${s.day}_${s.startSlot}_${s.endSlot}_${s.type}`;
+                        if (!sigSet.has(sig)) {
+                          exG.sessions.push(JSON.parse(JSON.stringify(s)));
+                          sigSet.add(sig);
+                        }
+                      });
+                    }
+                  });
+                  mergedCourse.groups = Array.from(existingGroups.values());
+                  mergedCourse.slots = mergedCourse.groups.reduce((acc, g) => acc.concat(g.sessions || []), []);
+                  mergedCourse.instructors = Array.from(instSet);
                 }
               }
             }
@@ -1929,7 +1973,7 @@ const ScheduleParser = (() => {
       }
     }
 
-    return null;
+    return mergedCourse;
   }
 
   return {
