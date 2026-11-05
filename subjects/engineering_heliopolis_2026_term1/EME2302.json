@@ -1,0 +1,693 @@
+{
+  "id": "EME2302",
+  "name": "Thermodynamics I - EME2302",
+  "code": "EME2302",
+  "instructors": [
+    "د. محمد عبد الحميد توفيق عبد الحميد",
+    "بسنت عبد الوهاب ابراهيم سعده"
+  ],
+  "groups": [
+    {
+      "group": "H",
+      "sessions": [
+        {
+          "id": "EME2302_H_Lect._Sunday_3",
+          "courseName": "Thermodynamics I - EME2302",
+          "courseCode": "EME2302",
+          "group": "H",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. محمد عبد الحميد توفيق عبد الحميد",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EME2302_H_Sec._Thursday_7",
+          "courseName": "Thermodynamics I - EME2302",
+          "courseCode": "EME2302",
+          "group": "H",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "بسنت عبد الوهاب ابراهيم سعده",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد عبد الحميد توفيق عبد الحميد",
+        "بسنت عبد الوهاب ابراهيم سعده"
+      ]
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "EME2302_F_Lect._Sunday_5",
+          "courseName": "Thermodynamics I - EME2302",
+          "courseCode": "EME2302",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. محمد عبد الحميد توفيق عبد الحميد",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EME2302_F_Sec._Wednesday_7",
+          "courseName": "Thermodynamics I - EME2302",
+          "courseCode": "EME2302",
+          "group": "F",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "بسنت عبد الوهاب ابراهيم سعده",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد عبد الحميد توفيق عبد الحميد",
+        "بسنت عبد الوهاب ابراهيم سعده"
+      ]
+    },
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "EME2302_G_Lect._Sunday_3",
+          "courseName": "Thermodynamics I - EME2302",
+          "courseCode": "EME2302",
+          "group": "G",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. محمد عبد الحميد توفيق عبد الحميد",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EME2302_G_Sec._Tuesday_7",
+          "courseName": "Thermodynamics I - EME2302",
+          "courseCode": "EME2302",
+          "group": "G",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "بسنت عبد الوهاب ابراهيم سعده",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد عبد الحميد توفيق عبد الحميد",
+        "بسنت عبد الوهاب ابراهيم سعده"
+      ]
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "EME2302_E_Lect._Sunday_5",
+          "courseName": "Thermodynamics I - EME2302",
+          "courseCode": "EME2302",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. محمد عبد الحميد توفيق عبد الحميد",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EME2302_E_Sec._Monday_5",
+          "courseName": "Thermodynamics I - EME2302",
+          "courseCode": "EME2302",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "بسنت عبد الوهاب ابراهيم سعده",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد عبد الحميد توفيق عبد الحميد",
+        "بسنت عبد الوهاب ابراهيم سعده"
+      ]
+    },
+    {
+      "group": "K",
+      "sessions": [
+        {
+          "id": "EME2302_K_Sec._Monday_7",
+          "courseName": "Thermodynamics I - EME2302",
+          "courseCode": "EME2302",
+          "group": "K",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "بسنت عبد الوهاب ابراهيم سعده",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EME2302_K_Lect._Tuesday_7",
+          "courseName": "Thermodynamics I - EME2302",
+          "courseCode": "EME2302",
+          "group": "K",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. محمد عبد الحميد توفيق عبد الحميد",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "بسنت عبد الوهاب ابراهيم سعده",
+        "د. محمد عبد الحميد توفيق عبد الحميد"
+      ]
+    },
+    {
+      "group": "J",
+      "sessions": [
+        {
+          "id": "EME2302_J_Lect._Tuesday_3",
+          "courseName": "Thermodynamics I - EME2302",
+          "courseCode": "EME2302",
+          "group": "J",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. محمد عبد الحميد توفيق عبد الحميد",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EME2302_J_Sec._Thursday_9",
+          "courseName": "Thermodynamics I - EME2302",
+          "courseCode": "EME2302",
+          "group": "J",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "بسنت عبد الوهاب ابراهيم سعده",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد عبد الحميد توفيق عبد الحميد",
+        "بسنت عبد الوهاب ابراهيم سعده"
+      ]
+    },
+    {
+      "group": "N",
+      "sessions": [
+        {
+          "id": "EME2302_N_Lect._Tuesday_5",
+          "courseName": "Thermodynamics I - EME2302",
+          "courseCode": "EME2302",
+          "group": "N",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. محمد عبد الحميد توفيق عبد الحميد",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EME2302_N_Sec._Thursday_1",
+          "courseName": "Thermodynamics I - EME2302",
+          "courseCode": "EME2302",
+          "group": "N",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد عبد الحميد توفيق عبد الحميد"
+      ]
+    },
+    {
+      "group": "L",
+      "sessions": [
+        {
+          "id": "EME2302_L_Lect._Tuesday_7",
+          "courseName": "Thermodynamics I - EME2302",
+          "courseCode": "EME2302",
+          "group": "L",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. محمد عبد الحميد توفيق عبد الحميد",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EME2302_L_Sec._Thursday_3",
+          "courseName": "Thermodynamics I - EME2302",
+          "courseCode": "EME2302",
+          "group": "L",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد عبد الحميد توفيق عبد الحميد"
+      ]
+    },
+    {
+      "group": "I",
+      "sessions": [
+        {
+          "id": "EME2302_I_Lect._Tuesday_3",
+          "courseName": "Thermodynamics I - EME2302",
+          "courseCode": "EME2302",
+          "group": "I",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. محمد عبد الحميد توفيق عبد الحميد",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EME2302_I_Sec._Wednesday_5",
+          "courseName": "Thermodynamics I - EME2302",
+          "courseCode": "EME2302",
+          "group": "I",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "بسنت عبد الوهاب ابراهيم سعده",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد عبد الحميد توفيق عبد الحميد",
+        "بسنت عبد الوهاب ابراهيم سعده"
+      ]
+    },
+    {
+      "group": "M",
+      "sessions": [
+        {
+          "id": "EME2302_M_Lect._Tuesday_5",
+          "courseName": "Thermodynamics I - EME2302",
+          "courseCode": "EME2302",
+          "group": "M",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. محمد عبد الحميد توفيق عبد الحميد",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EME2302_M_Sec._Thursday_5",
+          "courseName": "Thermodynamics I - EME2302",
+          "courseCode": "EME2302",
+          "group": "M",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد عبد الحميد توفيق عبد الحميد"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EME2302_H_Lect._Sunday_3",
+      "courseName": "Thermodynamics I - EME2302",
+      "courseCode": "EME2302",
+      "group": "H",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. محمد عبد الحميد توفيق عبد الحميد",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EME2302_H_Sec._Thursday_7",
+      "courseName": "Thermodynamics I - EME2302",
+      "courseCode": "EME2302",
+      "group": "H",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "بسنت عبد الوهاب ابراهيم سعده",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EME2302_F_Lect._Sunday_5",
+      "courseName": "Thermodynamics I - EME2302",
+      "courseCode": "EME2302",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. محمد عبد الحميد توفيق عبد الحميد",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EME2302_F_Sec._Wednesday_7",
+      "courseName": "Thermodynamics I - EME2302",
+      "courseCode": "EME2302",
+      "group": "F",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "بسنت عبد الوهاب ابراهيم سعده",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EME2302_G_Lect._Sunday_3",
+      "courseName": "Thermodynamics I - EME2302",
+      "courseCode": "EME2302",
+      "group": "G",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. محمد عبد الحميد توفيق عبد الحميد",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EME2302_G_Sec._Tuesday_7",
+      "courseName": "Thermodynamics I - EME2302",
+      "courseCode": "EME2302",
+      "group": "G",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "بسنت عبد الوهاب ابراهيم سعده",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EME2302_E_Lect._Sunday_5",
+      "courseName": "Thermodynamics I - EME2302",
+      "courseCode": "EME2302",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. محمد عبد الحميد توفيق عبد الحميد",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EME2302_E_Sec._Monday_5",
+      "courseName": "Thermodynamics I - EME2302",
+      "courseCode": "EME2302",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "بسنت عبد الوهاب ابراهيم سعده",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EME2302_K_Sec._Monday_7",
+      "courseName": "Thermodynamics I - EME2302",
+      "courseCode": "EME2302",
+      "group": "K",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "بسنت عبد الوهاب ابراهيم سعده",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EME2302_K_Lect._Tuesday_7",
+      "courseName": "Thermodynamics I - EME2302",
+      "courseCode": "EME2302",
+      "group": "K",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. محمد عبد الحميد توفيق عبد الحميد",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EME2302_J_Lect._Tuesday_3",
+      "courseName": "Thermodynamics I - EME2302",
+      "courseCode": "EME2302",
+      "group": "J",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. محمد عبد الحميد توفيق عبد الحميد",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EME2302_J_Sec._Thursday_9",
+      "courseName": "Thermodynamics I - EME2302",
+      "courseCode": "EME2302",
+      "group": "J",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "بسنت عبد الوهاب ابراهيم سعده",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EME2302_N_Lect._Tuesday_5",
+      "courseName": "Thermodynamics I - EME2302",
+      "courseCode": "EME2302",
+      "group": "N",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. محمد عبد الحميد توفيق عبد الحميد",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EME2302_N_Sec._Thursday_1",
+      "courseName": "Thermodynamics I - EME2302",
+      "courseCode": "EME2302",
+      "group": "N",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EME2302_L_Lect._Tuesday_7",
+      "courseName": "Thermodynamics I - EME2302",
+      "courseCode": "EME2302",
+      "group": "L",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. محمد عبد الحميد توفيق عبد الحميد",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EME2302_L_Sec._Thursday_3",
+      "courseName": "Thermodynamics I - EME2302",
+      "courseCode": "EME2302",
+      "group": "L",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EME2302_I_Lect._Tuesday_3",
+      "courseName": "Thermodynamics I - EME2302",
+      "courseCode": "EME2302",
+      "group": "I",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. محمد عبد الحميد توفيق عبد الحميد",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EME2302_I_Sec._Wednesday_5",
+      "courseName": "Thermodynamics I - EME2302",
+      "courseCode": "EME2302",
+      "group": "I",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "بسنت عبد الوهاب ابراهيم سعده",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EME2302_M_Lect._Tuesday_5",
+      "courseName": "Thermodynamics I - EME2302",
+      "courseCode": "EME2302",
+      "group": "M",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. محمد عبد الحميد توفيق عبد الحميد",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EME2302_M_Sec._Thursday_5",
+      "courseName": "Thermodynamics I - EME2302",
+      "courseCode": "EME2302",
+      "group": "M",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "ميكانيكا ق م -Northampton",
+    "هـ.ميكانيكية ق.م*",
+    "هندسة ميكانيكية-ق م //"
+  ],
+  "periods": [
+    "3"
+  ]
+}

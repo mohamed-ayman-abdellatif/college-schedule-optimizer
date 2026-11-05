@@ -1,0 +1,91 @@
+{
+  "id": "CB576",
+  "name": "SPECIAL TOPICS IN RAILWAY - CB576",
+  "code": "CB576",
+  "instructors": [
+    "شيماء علي عبدالحميد محمد",
+    "د. هيثم نور الدين ذهنى طه يوسف"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CB576_A_Sec._Wednesday_5",
+          "courseName": "SPECIAL TOPICS IN RAILWAY - CB576",
+          "courseCode": "CB576",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "شيماء علي عبدالحميد محمد",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "CB576_A_Lect._Wednesday_11",
+          "courseName": "SPECIAL TOPICS IN RAILWAY - CB576",
+          "courseCode": "CB576",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "د. هيثم نور الدين ذهنى طه يوسف",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "شيماء علي عبدالحميد محمد",
+        "د. هيثم نور الدين ذهنى طه يوسف"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "CB576_A_Sec._Wednesday_5",
+      "courseName": "SPECIAL TOPICS IN RAILWAY - CB576",
+      "courseCode": "CB576",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "شيماء علي عبدالحميد محمد",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "CB576_A_Lect._Wednesday_11",
+      "courseName": "SPECIAL TOPICS IN RAILWAY - CB576",
+      "courseCode": "CB576",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "د. هيثم نور الدين ذهنى طه يوسف",
+      "color": "#06B6D4",
+      "room": ""
+    }
+  ],
+  "color": "#06B6D4",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م"
+  ],
+  "periods": [
+    "10"
+  ]
+}

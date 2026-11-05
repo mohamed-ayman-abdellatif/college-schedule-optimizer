@@ -1,0 +1,400 @@
+{
+  "id": "UNR4301",
+  "name": "Introduction to Entrepreneurship - UNR4301",
+  "code": "UNR4301",
+  "instructors": [
+    "د. تامر احمد علي علي اسماعيل"
+  ],
+  "groups": [
+    {
+      "group": "N",
+      "sessions": [
+        {
+          "id": "UNR4301_N_Lect._Tuesday_3",
+          "courseName": "Introduction to Entrepreneurship - UNR4301",
+          "courseCode": "UNR4301",
+          "group": "N",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. تامر احمد علي علي اسماعيل",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. تامر احمد علي علي اسماعيل"
+      ]
+    },
+    {
+      "group": "O",
+      "sessions": [
+        {
+          "id": "UNR4301_O_Lect._Tuesday_3",
+          "courseName": "Introduction to Entrepreneurship - UNR4301",
+          "courseCode": "UNR4301",
+          "group": "O",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. تامر احمد علي علي اسماعيل",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. تامر احمد علي علي اسماعيل"
+      ]
+    },
+    {
+      "group": "R",
+      "sessions": [
+        {
+          "id": "UNR4301_R_Lect._Wednesday_7",
+          "courseName": "Introduction to Entrepreneurship - UNR4301",
+          "courseCode": "UNR4301",
+          "group": "R",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. تامر احمد علي علي اسماعيل",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. تامر احمد علي علي اسماعيل"
+      ]
+    },
+    {
+      "group": "P",
+      "sessions": [
+        {
+          "id": "UNR4301_P_Lect._Wednesday_9",
+          "courseName": "Introduction to Entrepreneurship - UNR4301",
+          "courseCode": "UNR4301",
+          "group": "P",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. تامر احمد علي علي اسماعيل",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. تامر احمد علي علي اسماعيل"
+      ]
+    },
+    {
+      "group": "S",
+      "sessions": [
+        {
+          "id": "UNR4301_S_Lect._Wednesday_7",
+          "courseName": "Introduction to Entrepreneurship - UNR4301",
+          "courseCode": "UNR4301",
+          "group": "S",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. تامر احمد علي علي اسماعيل",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. تامر احمد علي علي اسماعيل"
+      ]
+    },
+    {
+      "group": "Q",
+      "sessions": [
+        {
+          "id": "UNR4301_Q_Lect._Wednesday_9",
+          "courseName": "Introduction to Entrepreneurship - UNR4301",
+          "courseCode": "UNR4301",
+          "group": "Q",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. تامر احمد علي علي اسماعيل",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. تامر احمد علي علي اسماعيل"
+      ]
+    },
+    {
+      "group": "A3",
+      "sessions": [
+        {
+          "id": "UNR4301_A3_Lect._Wednesday_9",
+          "courseName": "Introduction to Entrepreneurship - UNR4301",
+          "courseCode": "UNR4301",
+          "group": "A3",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. تامر احمد علي علي اسماعيل",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. تامر احمد علي علي اسماعيل"
+      ]
+    },
+    {
+      "group": "K",
+      "sessions": [
+        {
+          "id": "UNR4301_K_Lect._Thursday_7",
+          "courseName": "Introduction to Entrepreneurship - UNR4301",
+          "courseCode": "UNR4301",
+          "group": "K",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    },
+    {
+      "group": "M",
+      "sessions": [
+        {
+          "id": "UNR4301_M_Lect._Thursday_7",
+          "courseName": "Introduction to Entrepreneurship - UNR4301",
+          "courseCode": "UNR4301",
+          "group": "M",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    },
+    {
+      "group": "F2",
+      "sessions": [
+        {
+          "id": "UNR4301_F2_Lect._Thursday_7",
+          "courseName": "Introduction to Entrepreneurship - UNR4301",
+          "courseCode": "UNR4301",
+          "group": "F2",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "UNR4301_N_Lect._Tuesday_3",
+      "courseName": "Introduction to Entrepreneurship - UNR4301",
+      "courseCode": "UNR4301",
+      "group": "N",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. تامر احمد علي علي اسماعيل",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR4301_O_Lect._Tuesday_3",
+      "courseName": "Introduction to Entrepreneurship - UNR4301",
+      "courseCode": "UNR4301",
+      "group": "O",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. تامر احمد علي علي اسماعيل",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR4301_R_Lect._Wednesday_7",
+      "courseName": "Introduction to Entrepreneurship - UNR4301",
+      "courseCode": "UNR4301",
+      "group": "R",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. تامر احمد علي علي اسماعيل",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR4301_P_Lect._Wednesday_9",
+      "courseName": "Introduction to Entrepreneurship - UNR4301",
+      "courseCode": "UNR4301",
+      "group": "P",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. تامر احمد علي علي اسماعيل",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR4301_S_Lect._Wednesday_7",
+      "courseName": "Introduction to Entrepreneurship - UNR4301",
+      "courseCode": "UNR4301",
+      "group": "S",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. تامر احمد علي علي اسماعيل",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR4301_Q_Lect._Wednesday_9",
+      "courseName": "Introduction to Entrepreneurship - UNR4301",
+      "courseCode": "UNR4301",
+      "group": "Q",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. تامر احمد علي علي اسماعيل",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR4301_A3_Lect._Wednesday_9",
+      "courseName": "Introduction to Entrepreneurship - UNR4301",
+      "courseCode": "UNR4301",
+      "group": "A3",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. تامر احمد علي علي اسماعيل",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR4301_K_Lect._Thursday_7",
+      "courseName": "Introduction to Entrepreneurship - UNR4301",
+      "courseCode": "UNR4301",
+      "group": "K",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR4301_M_Lect._Thursday_7",
+      "courseName": "Introduction to Entrepreneurship - UNR4301",
+      "courseCode": "UNR4301",
+      "group": "M",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR4301_F2_Lect._Thursday_7",
+      "courseName": "Introduction to Entrepreneurship - UNR4301",
+      "courseCode": "UNR4301",
+      "group": "F2",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    }
+  ],
+  "color": "#14B8A6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "الكترونيات ق م - Northamption*",
+    "حاسبات ق م - Northampton*",
+    "هـ.الكترونات واتصالات ق.م*",
+    "هندسة الحاسبات ق.م*"
+  ],
+  "periods": [
+    "9"
+  ]
+}

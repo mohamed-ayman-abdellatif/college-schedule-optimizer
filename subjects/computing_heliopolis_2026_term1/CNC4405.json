@@ -1,0 +1,85 @@
+{
+  "id": "CNC4405",
+  "name": "Business Process Management - CNC4405",
+  "code": "CNC4405",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "CNC4405_C_Sec._Monday_5",
+          "courseName": "Business Process Management - CNC4405",
+          "courseCode": "CNC4405",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "CNC4405_C_Lect._Thursday_3",
+          "courseName": "Business Process Management - CNC4405",
+          "courseCode": "CNC4405",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CNC4405_C_Sec._Monday_5",
+      "courseName": "Business Process Management - CNC4405",
+      "courseCode": "CNC4405",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "CNC4405_C_Lect._Thursday_3",
+      "courseName": "Business Process Management - CNC4405",
+      "courseCode": "CNC4405",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    }
+  ],
+  "color": "#F59E0B",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "نظم معلومات -ق م"
+  ],
+  "periods": [
+    "7"
+  ]
+}

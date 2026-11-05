@@ -1,0 +1,159 @@
+{
+  "id": "EIM2302",
+  "name": "Introduction to Project Mangement - EIM2302",
+  "code": "EIM2302",
+  "instructors": [
+    "يوسف حسام محمد عبدالفتاح",
+    "د. تامر احمد علي علي اسماعيل"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EIM2302_A_Sec._Monday_7",
+          "courseName": "Introduction to Project Mangement - EIM2302",
+          "courseCode": "EIM2302",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "يوسف حسام محمد عبدالفتاح",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EIM2302_A_Lect._Monday_9",
+          "courseName": "Introduction to Project Mangement - EIM2302",
+          "courseCode": "EIM2302",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. تامر احمد علي علي اسماعيل",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "يوسف حسام محمد عبدالفتاح",
+        "د. تامر احمد علي علي اسماعيل"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EIM2302_B_Lect._Monday_9",
+          "courseName": "Introduction to Project Mangement - EIM2302",
+          "courseCode": "EIM2302",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. تامر احمد علي علي اسماعيل",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EIM2302_B_Sec._Tuesday_3",
+          "courseName": "Introduction to Project Mangement - EIM2302",
+          "courseCode": "EIM2302",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "يوسف حسام محمد عبدالفتاح",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. تامر احمد علي علي اسماعيل",
+        "يوسف حسام محمد عبدالفتاح"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EIM2302_A_Sec._Monday_7",
+      "courseName": "Introduction to Project Mangement - EIM2302",
+      "courseCode": "EIM2302",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "يوسف حسام محمد عبدالفتاح",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EIM2302_A_Lect._Monday_9",
+      "courseName": "Introduction to Project Mangement - EIM2302",
+      "courseCode": "EIM2302",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. تامر احمد علي علي اسماعيل",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EIM2302_B_Lect._Monday_9",
+      "courseName": "Introduction to Project Mangement - EIM2302",
+      "courseCode": "EIM2302",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. تامر احمد علي علي اسماعيل",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EIM2302_B_Sec._Tuesday_3",
+      "courseName": "Introduction to Project Mangement - EIM2302",
+      "courseCode": "EIM2302",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "يوسف حسام محمد عبدالفتاح",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية ق م -Northampton //",
+    "هندسة كهربية وتحكم ق.م"
+  ],
+  "periods": [
+    "3"
+  ]
+}

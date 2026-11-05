@@ -1,0 +1,58 @@
+{
+  "id": "EEE4000",
+  "name": "Practical Training I - EEE4000*",
+  "code": "EEE4000",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEE4000_A_Lect._Thursday_11",
+          "courseName": "Practical Training I - EEE4000*",
+          "courseCode": "EEE4000",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE4000_A_Lect._Thursday_11",
+      "courseName": "Practical Training I - EEE4000*",
+      "courseCode": "EEE4000",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    }
+  ],
+  "color": "#14B8A6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية ق م -Northampton*",
+    "هندسة كهربية وتحكم ق.م*"
+  ],
+  "periods": [
+    "7"
+  ]
+}

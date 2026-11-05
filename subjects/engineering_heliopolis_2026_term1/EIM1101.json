@@ -1,0 +1,175 @@
+{
+  "id": "EIM1101",
+  "name": "Manufacturing Technology - EIM1101",
+  "code": "EIM1101",
+  "instructors": [
+    "د. نصر الدين احمد ابراهيم عارف"
+  ],
+  "groups": [
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "EIM1101_E_Lect._Sunday_7",
+          "courseName": "Manufacturing Technology - EIM1101",
+          "courseCode": "EIM1101",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. نصر الدين احمد ابراهيم عارف",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EIM1101_E_Lab._Tuesday_7",
+          "courseName": "Manufacturing Technology - EIM1101",
+          "courseCode": "EIM1101",
+          "group": "E",
+          "type": "Lab.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. نصر الدين احمد ابراهيم عارف"
+      ]
+    },
+    {
+      "group": "H",
+      "sessions": [
+        {
+          "id": "EIM1101_H_Lab._Monday_9",
+          "courseName": "Manufacturing Technology - EIM1101",
+          "courseCode": "EIM1101",
+          "group": "H",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EIM1101_H_Lect._Wednesday_7",
+          "courseName": "Manufacturing Technology - EIM1101",
+          "courseCode": "EIM1101",
+          "group": "H",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. نصر الدين احمد ابراهيم عارف",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. نصر الدين احمد ابراهيم عارف"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EIM1101_E_Lect._Sunday_7",
+      "courseName": "Manufacturing Technology - EIM1101",
+      "courseCode": "EIM1101",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. نصر الدين احمد ابراهيم عارف",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EIM1101_E_Lab._Tuesday_7",
+      "courseName": "Manufacturing Technology - EIM1101",
+      "courseCode": "EIM1101",
+      "group": "E",
+      "type": "Lab.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EIM1101_H_Lab._Monday_9",
+      "courseName": "Manufacturing Technology - EIM1101",
+      "courseCode": "EIM1101",
+      "group": "H",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EIM1101_H_Lect._Wednesday_7",
+      "courseName": "Manufacturing Technology - EIM1101",
+      "courseCode": "EIM1101",
+      "group": "H",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. نصر الدين احمد ابراهيم عارف",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "الكترونيات ق م - Northamption //",
+    "الكترونيات ق م - Northamption*",
+    "حاسبات ق م - Northampton",
+    "حاسبات ق م - Northampton*",
+    "ميكانيكا ق م -Northampton",
+    "ميكانيكا ق م -Northampton*",
+    "هـ.الكترونات واتصالات ق.م",
+    "هـ.الكترونات واتصالات ق.م*",
+    "هـ.ميكانيكية ق.م*",
+    "هندسة التشيد والبناء ق.م",
+    "هندسة التشيد والبناء ق.م*",
+    "هندسة الحاسبات ق.م",
+    "هندسة الحاسبات ق.م*",
+    "هندسة كهربية ق م -Northampton //",
+    "هندسة كهربية ق م -Northampton*",
+    "هندسة كهربية وتحكم ق.م",
+    "هندسة كهربية وتحكم ق.م*",
+    "هندسة معمارية ق.م",
+    "هندسة معمارية ق.م*",
+    "هندسة معمارية-Cardiff-ق م //",
+    "هندسة ميكانيكية-ق م //"
+  ],
+  "periods": [
+    "1"
+  ]
+}

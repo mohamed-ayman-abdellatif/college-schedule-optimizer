@@ -1,0 +1,119 @@
+{
+  "id": "EEC4205",
+  "name": "Advanced Communication Systems - EEC4205",
+  "code": "EEC4205",
+  "instructors": [
+    "احمد محمد عبدالوهاب دعبس",
+    "د. محمد خالد على شحاته"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEC4205_A_Sec._Sunday_5",
+          "courseName": "Advanced Communication Systems - EEC4205",
+          "courseCode": "EEC4205",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "احمد محمد عبدالوهاب دعبس",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEC4205_A_Lect._Sunday_7",
+          "courseName": "Advanced Communication Systems - EEC4205",
+          "courseCode": "EEC4205",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. محمد خالد على شحاته",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEC4205_A_Lab._Thursday_11",
+          "courseName": "Advanced Communication Systems - EEC4205",
+          "courseCode": "EEC4205",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Thursday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "احمد محمد عبدالوهاب دعبس",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "احمد محمد عبدالوهاب دعبس",
+        "د. محمد خالد على شحاته"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEC4205_A_Sec._Sunday_5",
+      "courseName": "Advanced Communication Systems - EEC4205",
+      "courseCode": "EEC4205",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "احمد محمد عبدالوهاب دعبس",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEC4205_A_Lect._Sunday_7",
+      "courseName": "Advanced Communication Systems - EEC4205",
+      "courseCode": "EEC4205",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. محمد خالد على شحاته",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEC4205_A_Lab._Thursday_11",
+      "courseName": "Advanced Communication Systems - EEC4205",
+      "courseCode": "EEC4205",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Thursday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "احمد محمد عبدالوهاب دعبس",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هـ.الكترونات واتصالات ق.م*"
+  ],
+  "periods": [
+    "8"
+  ]
+}

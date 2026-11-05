@@ -1,0 +1,217 @@
+{
+  "id": "ECB2801",
+  "name": "Hydraulics Fundamentals - ECB2801",
+  "code": "ECB2801",
+  "instructors": [
+    "د. وائل محمد حمدى خضر",
+    "احمد صالح عبدالله معلى",
+    "محمد عرفات ابراهيم حسين"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECB2801_B_Lect._Monday_5",
+          "courseName": "Hydraulics Fundamentals - ECB2801",
+          "courseCode": "ECB2801",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. وائل محمد حمدى خضر",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "ECB2801_B_Lab._Monday_9",
+          "courseName": "Hydraulics Fundamentals - ECB2801",
+          "courseCode": "ECB2801",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "احمد صالح عبدالله معلى",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "ECB2801_B_Sec._Monday_11",
+          "courseName": "Hydraulics Fundamentals - ECB2801",
+          "courseCode": "ECB2801",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "احمد صالح عبدالله معلى",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. وائل محمد حمدى خضر",
+        "احمد صالح عبدالله معلى"
+      ]
+    },
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECB2801_A_Lect._Monday_5",
+          "courseName": "Hydraulics Fundamentals - ECB2801",
+          "courseCode": "ECB2801",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. وائل محمد حمدى خضر",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "ECB2801_A_Sec._Tuesday_9",
+          "courseName": "Hydraulics Fundamentals - ECB2801",
+          "courseCode": "ECB2801",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "محمد عرفات ابراهيم حسين",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "ECB2801_A_Lab._Thursday_7",
+          "courseName": "Hydraulics Fundamentals - ECB2801",
+          "courseCode": "ECB2801",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "محمد عرفات ابراهيم حسين",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. وائل محمد حمدى خضر",
+        "محمد عرفات ابراهيم حسين"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECB2801_B_Lect._Monday_5",
+      "courseName": "Hydraulics Fundamentals - ECB2801",
+      "courseCode": "ECB2801",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. وائل محمد حمدى خضر",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "ECB2801_B_Lab._Monday_9",
+      "courseName": "Hydraulics Fundamentals - ECB2801",
+      "courseCode": "ECB2801",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "احمد صالح عبدالله معلى",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "ECB2801_B_Sec._Monday_11",
+      "courseName": "Hydraulics Fundamentals - ECB2801",
+      "courseCode": "ECB2801",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "احمد صالح عبدالله معلى",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "ECB2801_A_Lect._Monday_5",
+      "courseName": "Hydraulics Fundamentals - ECB2801",
+      "courseCode": "ECB2801",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. وائل محمد حمدى خضر",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "ECB2801_A_Sec._Tuesday_9",
+      "courseName": "Hydraulics Fundamentals - ECB2801",
+      "courseCode": "ECB2801",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "محمد عرفات ابراهيم حسين",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "ECB2801_A_Lab._Thursday_7",
+      "courseName": "Hydraulics Fundamentals - ECB2801",
+      "courseCode": "ECB2801",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "محمد عرفات ابراهيم حسين",
+      "color": "#06B6D4",
+      "room": ""
+    }
+  ],
+  "color": "#06B6D4",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م",
+    "هندسة التشيد والبناء ق.م*"
+  ],
+  "periods": [
+    "4",
+    "3"
+  ]
+}

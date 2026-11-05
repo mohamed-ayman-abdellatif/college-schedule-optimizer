@@ -1,0 +1,57 @@
+{
+  "id": "CIS4901",
+  "name": "Project I - CIS4901",
+  "code": "CIS4901",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "CIS4901_B_Lect._Saturday_11",
+          "courseName": "Project I - CIS4901",
+          "courseCode": "CIS4901",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CIS4901_B_Lect._Saturday_11",
+      "courseName": "Project I - CIS4901",
+      "courseCode": "CIS4901",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    }
+  ],
+  "color": "#06B6D4",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "نظم معلومات -ق م"
+  ],
+  "periods": [
+    "7"
+  ]
+}

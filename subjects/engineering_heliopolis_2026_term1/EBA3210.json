@@ -1,0 +1,227 @@
+{
+  "id": "EBA3210",
+  "name": "Probability and Discrete Analysis - EBA3210",
+  "code": "EBA3210",
+  "instructors": [
+    "د. حمدى محمد احمد محمود",
+    "عادل السيد راتب محمد"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EBA3210_A_Lect._Saturday_1",
+          "courseName": "Probability and Discrete Analysis - EBA3210",
+          "courseCode": "EBA3210",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. حمدى محمد احمد محمود",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA3210_A_Sec._Tuesday_5",
+          "courseName": "Probability and Discrete Analysis - EBA3210",
+          "courseCode": "EBA3210",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "عادل السيد راتب محمد",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. حمدى محمد احمد محمود",
+        "عادل السيد راتب محمد"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EBA3210_B_Sec._Saturday_9",
+          "courseName": "Probability and Discrete Analysis - EBA3210",
+          "courseCode": "EBA3210",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "عادل السيد راتب محمد",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA3210_B_Lect._Saturday_1",
+          "courseName": "Probability and Discrete Analysis - EBA3210",
+          "courseCode": "EBA3210",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. حمدى محمد احمد محمود",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "عادل السيد راتب محمد",
+        "د. حمدى محمد احمد محمود"
+      ]
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "EBA3210_C_Lect._Saturday_1",
+          "courseName": "Probability and Discrete Analysis - EBA3210",
+          "courseCode": "EBA3210",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. حمدى محمد احمد محمود",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA3210_C_Sec._Saturday_9",
+          "courseName": "Probability and Discrete Analysis - EBA3210",
+          "courseCode": "EBA3210",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "عادل السيد راتب محمد",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. حمدى محمد احمد محمود",
+        "عادل السيد راتب محمد"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EBA3210_A_Lect._Saturday_1",
+      "courseName": "Probability and Discrete Analysis - EBA3210",
+      "courseCode": "EBA3210",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. حمدى محمد احمد محمود",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA3210_A_Sec._Tuesday_5",
+      "courseName": "Probability and Discrete Analysis - EBA3210",
+      "courseCode": "EBA3210",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "عادل السيد راتب محمد",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA3210_B_Sec._Saturday_9",
+      "courseName": "Probability and Discrete Analysis - EBA3210",
+      "courseCode": "EBA3210",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "عادل السيد راتب محمد",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA3210_B_Lect._Saturday_1",
+      "courseName": "Probability and Discrete Analysis - EBA3210",
+      "courseCode": "EBA3210",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. حمدى محمد احمد محمود",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA3210_C_Lect._Saturday_1",
+      "courseName": "Probability and Discrete Analysis - EBA3210",
+      "courseCode": "EBA3210",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. حمدى محمد احمد محمود",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA3210_C_Sec._Saturday_9",
+      "courseName": "Probability and Discrete Analysis - EBA3210",
+      "courseCode": "EBA3210",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "عادل السيد راتب محمد",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية ق م -Northampton //",
+    "هندسة كهربية وتحكم ق.م",
+    "هندسة كهربية وتحكم ق.م*"
+  ],
+  "periods": [
+    "5"
+  ]
+}

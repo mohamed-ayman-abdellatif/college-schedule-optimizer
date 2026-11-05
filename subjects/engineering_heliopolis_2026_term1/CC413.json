@@ -1,0 +1,96 @@
+{
+  "id": "CC413",
+  "name": "Numerical Analysis - CC413",
+  "code": "CC413",
+  "instructors": [
+    "ريم سامح سمير حسين",
+    "د. ريهام طاهر عبدالمجيد سالم المغربى"
+  ],
+  "groups": [
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "CC413_C_Sec._Saturday_11",
+          "courseName": "Numerical Analysis - CC413",
+          "courseCode": "CC413",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "ريم سامح سمير حسين",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "CC413_C_Lect._Tuesday_3",
+          "courseName": "Numerical Analysis - CC413",
+          "courseCode": "CC413",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. ريهام طاهر عبدالمجيد سالم المغربى",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ريم سامح سمير حسين",
+        "د. ريهام طاهر عبدالمجيد سالم المغربى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "CC413_C_Sec._Saturday_11",
+      "courseName": "Numerical Analysis - CC413",
+      "courseCode": "CC413",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "ريم سامح سمير حسين",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CC413_C_Lect._Tuesday_3",
+      "courseName": "Numerical Analysis - CC413",
+      "courseCode": "CC413",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. ريهام طاهر عبدالمجيد سالم المغربى",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هـ.الكترونات واتصالات ق.م",
+    "هـ.ميكانيكية ق.م",
+    "هندسة التشيد والبناء ق.م"
+  ],
+  "periods": [
+    "6",
+    "5",
+    "8",
+    "7"
+  ]
+}

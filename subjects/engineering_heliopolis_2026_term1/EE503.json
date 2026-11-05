@@ -1,0 +1,57 @@
+{
+  "id": "EE503",
+  "name": "SENIOR PROJECT II - EE503",
+  "code": "EE503",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EE503_A_Lect._Saturday_11",
+          "courseName": "SENIOR PROJECT II - EE503",
+          "courseCode": "EE503",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "EE503_A_Lect._Saturday_11",
+      "courseName": "SENIOR PROJECT II - EE503",
+      "courseCode": "EE503",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    }
+  ],
+  "color": "#3B82F6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية وتحكم ق.م"
+  ],
+  "periods": [
+    "9"
+  ]
+}

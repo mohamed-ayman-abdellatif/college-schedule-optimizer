@@ -1,0 +1,311 @@
+{
+  "id": "ECB2401",
+  "name": "Structural Analysis 1 - ECB2401",
+  "code": "ECB2401",
+  "instructors": [
+    "ايه محمود عبدالحفيظ عبدالله",
+    "د. الحسين ابراهيم هلال ابراهيم",
+    "ندى خالد محمد شوقى على",
+    "شيماء علي عبدالحميد محمد"
+  ],
+  "groups": [
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "ECB2401_C_Sec._Saturday_7",
+          "courseName": "Structural Analysis 1 - ECB2401",
+          "courseCode": "ECB2401",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "ايه محمود عبدالحفيظ عبدالله",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "ECB2401_C_Lect._Tuesday_7",
+          "courseName": "Structural Analysis 1 - ECB2401",
+          "courseCode": "ECB2401",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. الحسين ابراهيم هلال ابراهيم",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "ECB2401_C_Lect._Tuesday_9",
+          "courseName": "Structural Analysis 1 - ECB2401",
+          "courseCode": "ECB2401",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. الحسين ابراهيم هلال ابراهيم",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ايه محمود عبدالحفيظ عبدالله",
+        "د. الحسين ابراهيم هلال ابراهيم"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECB2401_B_Lect._Tuesday_7",
+          "courseName": "Structural Analysis 1 - ECB2401",
+          "courseCode": "ECB2401",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. الحسين ابراهيم هلال ابراهيم",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "ECB2401_B_Lect._Tuesday_9",
+          "courseName": "Structural Analysis 1 - ECB2401",
+          "courseCode": "ECB2401",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. الحسين ابراهيم هلال ابراهيم",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "ECB2401_B_Sec._Thursday_1",
+          "courseName": "Structural Analysis 1 - ECB2401",
+          "courseCode": "ECB2401",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "ندى خالد محمد شوقى على",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. الحسين ابراهيم هلال ابراهيم",
+        "ندى خالد محمد شوقى على"
+      ]
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "ECB2401_D_Lect._Tuesday_7",
+          "courseName": "Structural Analysis 1 - ECB2401",
+          "courseCode": "ECB2401",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. الحسين ابراهيم هلال ابراهيم",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "ECB2401_D_Lect._Tuesday_9",
+          "courseName": "Structural Analysis 1 - ECB2401",
+          "courseCode": "ECB2401",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. الحسين ابراهيم هلال ابراهيم",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "ECB2401_D_Sec._Thursday_7",
+          "courseName": "Structural Analysis 1 - ECB2401",
+          "courseCode": "ECB2401",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "شيماء علي عبدالحميد محمد",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. الحسين ابراهيم هلال ابراهيم",
+        "شيماء علي عبدالحميد محمد"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECB2401_C_Sec._Saturday_7",
+      "courseName": "Structural Analysis 1 - ECB2401",
+      "courseCode": "ECB2401",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "ايه محمود عبدالحفيظ عبدالله",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "ECB2401_B_Lect._Tuesday_7",
+      "courseName": "Structural Analysis 1 - ECB2401",
+      "courseCode": "ECB2401",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. الحسين ابراهيم هلال ابراهيم",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "ECB2401_B_Lect._Tuesday_9",
+      "courseName": "Structural Analysis 1 - ECB2401",
+      "courseCode": "ECB2401",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. الحسين ابراهيم هلال ابراهيم",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "ECB2401_C_Lect._Tuesday_7",
+      "courseName": "Structural Analysis 1 - ECB2401",
+      "courseCode": "ECB2401",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. الحسين ابراهيم هلال ابراهيم",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "ECB2401_D_Lect._Tuesday_7",
+      "courseName": "Structural Analysis 1 - ECB2401",
+      "courseCode": "ECB2401",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. الحسين ابراهيم هلال ابراهيم",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "ECB2401_C_Lect._Tuesday_9",
+      "courseName": "Structural Analysis 1 - ECB2401",
+      "courseCode": "ECB2401",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. الحسين ابراهيم هلال ابراهيم",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "ECB2401_D_Lect._Tuesday_9",
+      "courseName": "Structural Analysis 1 - ECB2401",
+      "courseCode": "ECB2401",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. الحسين ابراهيم هلال ابراهيم",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "ECB2401_B_Sec._Thursday_1",
+      "courseName": "Structural Analysis 1 - ECB2401",
+      "courseCode": "ECB2401",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "ندى خالد محمد شوقى على",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "ECB2401_D_Sec._Thursday_7",
+      "courseName": "Structural Analysis 1 - ECB2401",
+      "courseCode": "ECB2401",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "شيماء علي عبدالحميد محمد",
+      "color": "#84CC16",
+      "room": ""
+    }
+  ],
+  "color": "#84CC16",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م"
+  ],
+  "periods": [
+    "3"
+  ]
+}

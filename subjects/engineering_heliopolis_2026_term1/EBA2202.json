@@ -1,0 +1,906 @@
+{
+  "id": "EBA2202",
+  "name": "Vector and Complex Analysis - EBA2202",
+  "code": "EBA2202",
+  "instructors": [
+    "د. تامر مصطفى عبدالفتاح محمد",
+    "جمانة محمد اغيد الدقاق",
+    "تامر مصطفى عبدالفتاح محمد"
+  ],
+  "groups": [
+    {
+      "group": "L",
+      "sessions": [
+        {
+          "id": "EBA2202_L_Lect._Sunday_1",
+          "courseName": "Vector and Complex Analysis - EBA2202",
+          "courseCode": "EBA2202",
+          "group": "L",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. تامر مصطفى عبدالفتاح محمد",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA2202_L_Sec._Wednesday_5",
+          "courseName": "Vector and Complex Analysis - EBA2202",
+          "courseCode": "EBA2202",
+          "group": "L",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "جمانة محمد اغيد الدقاق",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. تامر مصطفى عبدالفتاح محمد",
+        "جمانة محمد اغيد الدقاق"
+      ]
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "EBA2202_D_Lect._Sunday_3",
+          "courseName": "Vector and Complex Analysis - EBA2202",
+          "courseCode": "EBA2202",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. تامر مصطفى عبدالفتاح محمد",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA2202_D_Sec._Wednesday_3",
+          "courseName": "Vector and Complex Analysis - EBA2202",
+          "courseCode": "EBA2202",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "جمانة محمد اغيد الدقاق",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. تامر مصطفى عبدالفتاح محمد",
+        "جمانة محمد اغيد الدقاق"
+      ]
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "EBA2202_C_Sec._Sunday_5",
+          "courseName": "Vector and Complex Analysis - EBA2202",
+          "courseCode": "EBA2202",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "تامر مصطفى عبدالفتاح محمد",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA2202_C_Lect._Tuesday_5",
+          "courseName": "Vector and Complex Analysis - EBA2202",
+          "courseCode": "EBA2202",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. تامر مصطفى عبدالفتاح محمد",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "تامر مصطفى عبدالفتاح محمد",
+        "د. تامر مصطفى عبدالفتاح محمد"
+      ]
+    },
+    {
+      "group": "P",
+      "sessions": [
+        {
+          "id": "EBA2202_P_Sec._Sunday_7",
+          "courseName": "Vector and Complex Analysis - EBA2202",
+          "courseCode": "EBA2202",
+          "group": "P",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "جمانة محمد اغيد الدقاق",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA2202_P_Lect._Sunday_1",
+          "courseName": "Vector and Complex Analysis - EBA2202",
+          "courseCode": "EBA2202",
+          "group": "P",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. تامر مصطفى عبدالفتاح محمد",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "جمانة محمد اغيد الدقاق",
+        "د. تامر مصطفى عبدالفتاح محمد"
+      ]
+    },
+    {
+      "group": "O",
+      "sessions": [
+        {
+          "id": "EBA2202_O_Lect._Sunday_1",
+          "courseName": "Vector and Complex Analysis - EBA2202",
+          "courseCode": "EBA2202",
+          "group": "O",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. تامر مصطفى عبدالفتاح محمد",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA2202_O_Sec._Wednesday_5",
+          "courseName": "Vector and Complex Analysis - EBA2202",
+          "courseCode": "EBA2202",
+          "group": "O",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "جمانة محمد اغيد الدقاق",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. تامر مصطفى عبدالفتاح محمد",
+        "جمانة محمد اغيد الدقاق"
+      ]
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "EBA2202_E_Lect._Sunday_3",
+          "courseName": "Vector and Complex Analysis - EBA2202",
+          "courseCode": "EBA2202",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. تامر مصطفى عبدالفتاح محمد",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA2202_E_Sec._Thursday_7",
+          "courseName": "Vector and Complex Analysis - EBA2202",
+          "courseCode": "EBA2202",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. تامر مصطفى عبدالفتاح محمد"
+      ]
+    },
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "EBA2202_G_Sec._Sunday_5",
+          "courseName": "Vector and Complex Analysis - EBA2202",
+          "courseCode": "EBA2202",
+          "group": "G",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "تامر مصطفى عبدالفتاح محمد",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA2202_G_Lect._Tuesday_5",
+          "courseName": "Vector and Complex Analysis - EBA2202",
+          "courseCode": "EBA2202",
+          "group": "G",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. تامر مصطفى عبدالفتاح محمد",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "تامر مصطفى عبدالفتاح محمد",
+        "د. تامر مصطفى عبدالفتاح محمد"
+      ]
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "EBA2202_F_Lect._Tuesday_1",
+          "courseName": "Vector and Complex Analysis - EBA2202",
+          "courseCode": "EBA2202",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. تامر مصطفى عبدالفتاح محمد",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA2202_F_Sec._Thursday_5",
+          "courseName": "Vector and Complex Analysis - EBA2202",
+          "courseCode": "EBA2202",
+          "group": "F",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. تامر مصطفى عبدالفتاح محمد"
+      ]
+    },
+    {
+      "group": "J",
+      "sessions": [
+        {
+          "id": "EBA2202_J_Lect._Tuesday_3",
+          "courseName": "Vector and Complex Analysis - EBA2202",
+          "courseCode": "EBA2202",
+          "group": "J",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. تامر مصطفى عبدالفتاح محمد",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA2202_J_Sec._Thursday_1",
+          "courseName": "Vector and Complex Analysis - EBA2202",
+          "courseCode": "EBA2202",
+          "group": "J",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "جمانة محمد اغيد الدقاق",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. تامر مصطفى عبدالفتاح محمد",
+        "جمانة محمد اغيد الدقاق"
+      ]
+    },
+    {
+      "group": "K",
+      "sessions": [
+        {
+          "id": "EBA2202_K_Lect._Tuesday_3",
+          "courseName": "Vector and Complex Analysis - EBA2202",
+          "courseCode": "EBA2202",
+          "group": "K",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. تامر مصطفى عبدالفتاح محمد",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA2202_K_Sec._Thursday_1",
+          "courseName": "Vector and Complex Analysis - EBA2202",
+          "courseCode": "EBA2202",
+          "group": "K",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "جمانة محمد اغيد الدقاق",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. تامر مصطفى عبدالفتاح محمد",
+        "جمانة محمد اغيد الدقاق"
+      ]
+    },
+    {
+      "group": "Q",
+      "sessions": [
+        {
+          "id": "EBA2202_Q_Lect._Tuesday_3",
+          "courseName": "Vector and Complex Analysis - EBA2202",
+          "courseCode": "EBA2202",
+          "group": "Q",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. تامر مصطفى عبدالفتاح محمد",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA2202_Q_Sec._Thursday_3",
+          "courseName": "Vector and Complex Analysis - EBA2202",
+          "courseCode": "EBA2202",
+          "group": "Q",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "جمانة محمد اغيد الدقاق",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. تامر مصطفى عبدالفتاح محمد",
+        "جمانة محمد اغيد الدقاق"
+      ]
+    },
+    {
+      "group": "M",
+      "sessions": [
+        {
+          "id": "EBA2202_M_Lect._Tuesday_3",
+          "courseName": "Vector and Complex Analysis - EBA2202",
+          "courseCode": "EBA2202",
+          "group": "M",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA2202_M_Sec._Thursday_3",
+          "courseName": "Vector and Complex Analysis - EBA2202",
+          "courseCode": "EBA2202",
+          "group": "M",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "جمانة محمد اغيد الدقاق",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "جمانة محمد اغيد الدقاق"
+      ]
+    },
+    {
+      "group": "2",
+      "sessions": [
+        {
+          "id": "EBA2202_2_Lect._Tuesday_3",
+          "courseName": "Vector and Complex Analysis - EBA2202",
+          "courseCode": "EBA2202",
+          "group": "2",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. تامر مصطفى عبدالفتاح محمد",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA2202_2_Sec._Thursday_3",
+          "courseName": "Vector and Complex Analysis - EBA2202",
+          "courseCode": "EBA2202",
+          "group": "2",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "جمانة محمد اغيد الدقاق",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. تامر مصطفى عبدالفتاح محمد",
+        "جمانة محمد اغيد الدقاق"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EBA2202_L_Lect._Sunday_1",
+      "courseName": "Vector and Complex Analysis - EBA2202",
+      "courseCode": "EBA2202",
+      "group": "L",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. تامر مصطفى عبدالفتاح محمد",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA2202_L_Sec._Wednesday_5",
+      "courseName": "Vector and Complex Analysis - EBA2202",
+      "courseCode": "EBA2202",
+      "group": "L",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "جمانة محمد اغيد الدقاق",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA2202_D_Lect._Sunday_3",
+      "courseName": "Vector and Complex Analysis - EBA2202",
+      "courseCode": "EBA2202",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. تامر مصطفى عبدالفتاح محمد",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA2202_D_Sec._Wednesday_3",
+      "courseName": "Vector and Complex Analysis - EBA2202",
+      "courseCode": "EBA2202",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "جمانة محمد اغيد الدقاق",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA2202_C_Sec._Sunday_5",
+      "courseName": "Vector and Complex Analysis - EBA2202",
+      "courseCode": "EBA2202",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "تامر مصطفى عبدالفتاح محمد",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA2202_C_Lect._Tuesday_5",
+      "courseName": "Vector and Complex Analysis - EBA2202",
+      "courseCode": "EBA2202",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. تامر مصطفى عبدالفتاح محمد",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA2202_P_Sec._Sunday_7",
+      "courseName": "Vector and Complex Analysis - EBA2202",
+      "courseCode": "EBA2202",
+      "group": "P",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "جمانة محمد اغيد الدقاق",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA2202_P_Lect._Sunday_1",
+      "courseName": "Vector and Complex Analysis - EBA2202",
+      "courseCode": "EBA2202",
+      "group": "P",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. تامر مصطفى عبدالفتاح محمد",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA2202_O_Lect._Sunday_1",
+      "courseName": "Vector and Complex Analysis - EBA2202",
+      "courseCode": "EBA2202",
+      "group": "O",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. تامر مصطفى عبدالفتاح محمد",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA2202_O_Sec._Wednesday_5",
+      "courseName": "Vector and Complex Analysis - EBA2202",
+      "courseCode": "EBA2202",
+      "group": "O",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "جمانة محمد اغيد الدقاق",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA2202_E_Lect._Sunday_3",
+      "courseName": "Vector and Complex Analysis - EBA2202",
+      "courseCode": "EBA2202",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. تامر مصطفى عبدالفتاح محمد",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA2202_E_Sec._Thursday_7",
+      "courseName": "Vector and Complex Analysis - EBA2202",
+      "courseCode": "EBA2202",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA2202_G_Sec._Sunday_5",
+      "courseName": "Vector and Complex Analysis - EBA2202",
+      "courseCode": "EBA2202",
+      "group": "G",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "تامر مصطفى عبدالفتاح محمد",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA2202_G_Lect._Tuesday_5",
+      "courseName": "Vector and Complex Analysis - EBA2202",
+      "courseCode": "EBA2202",
+      "group": "G",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. تامر مصطفى عبدالفتاح محمد",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA2202_F_Lect._Tuesday_1",
+      "courseName": "Vector and Complex Analysis - EBA2202",
+      "courseCode": "EBA2202",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. تامر مصطفى عبدالفتاح محمد",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA2202_F_Sec._Thursday_5",
+      "courseName": "Vector and Complex Analysis - EBA2202",
+      "courseCode": "EBA2202",
+      "group": "F",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA2202_J_Lect._Tuesday_3",
+      "courseName": "Vector and Complex Analysis - EBA2202",
+      "courseCode": "EBA2202",
+      "group": "J",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. تامر مصطفى عبدالفتاح محمد",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA2202_J_Sec._Thursday_1",
+      "courseName": "Vector and Complex Analysis - EBA2202",
+      "courseCode": "EBA2202",
+      "group": "J",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "جمانة محمد اغيد الدقاق",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA2202_K_Lect._Tuesday_3",
+      "courseName": "Vector and Complex Analysis - EBA2202",
+      "courseCode": "EBA2202",
+      "group": "K",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. تامر مصطفى عبدالفتاح محمد",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA2202_K_Sec._Thursday_1",
+      "courseName": "Vector and Complex Analysis - EBA2202",
+      "courseCode": "EBA2202",
+      "group": "K",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "جمانة محمد اغيد الدقاق",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA2202_Q_Lect._Tuesday_3",
+      "courseName": "Vector and Complex Analysis - EBA2202",
+      "courseCode": "EBA2202",
+      "group": "Q",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. تامر مصطفى عبدالفتاح محمد",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA2202_Q_Sec._Thursday_3",
+      "courseName": "Vector and Complex Analysis - EBA2202",
+      "courseCode": "EBA2202",
+      "group": "Q",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "جمانة محمد اغيد الدقاق",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA2202_M_Lect._Tuesday_3",
+      "courseName": "Vector and Complex Analysis - EBA2202",
+      "courseCode": "EBA2202",
+      "group": "M",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA2202_M_Sec._Thursday_3",
+      "courseName": "Vector and Complex Analysis - EBA2202",
+      "courseCode": "EBA2202",
+      "group": "M",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "جمانة محمد اغيد الدقاق",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA2202_2_Lect._Tuesday_3",
+      "courseName": "Vector and Complex Analysis - EBA2202",
+      "courseCode": "EBA2202",
+      "group": "2",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. تامر مصطفى عبدالفتاح محمد",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA2202_2_Sec._Thursday_3",
+      "courseName": "Vector and Complex Analysis - EBA2202",
+      "courseCode": "EBA2202",
+      "group": "2",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "جمانة محمد اغيد الدقاق",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "الكترونيات ق م - Northamption*",
+    "حاسبات ق م - Northampton*",
+    "ميكانيكا ق م -Northampton",
+    "هـ.الكترونات واتصالات ق.م",
+    "هـ.الكترونات واتصالات ق.م*",
+    "هـ.ميكانيكية ق.م*",
+    "هندسة التشيد والبناء ق.م",
+    "هندسة التشيد والبناء ق.م*",
+    "هندسة الحاسبات ق.م",
+    "هندسة الحاسبات ق.م*",
+    "هندسة كهربية ق م -Northampton //",
+    "هندسة كهربية وتحكم ق.م",
+    "هندسة كهربية وتحكم ق.م*",
+    "هندسة ميكانيكية-ق م //"
+  ],
+  "periods": [
+    "4"
+  ]
+}

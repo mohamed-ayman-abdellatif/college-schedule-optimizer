@@ -1,0 +1,160 @@
+{
+  "id": "EME4505",
+  "name": "Computer Aided Design - EME4505",
+  "code": "EME4505",
+  "instructors": [
+    "د. وائل جلال محمد قطب ابوعطا",
+    "اسلام ربيع عبدالعزيز محمد",
+    "وائل جلال محمد قطب ابوعطا"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EME4505_A_Lect._Wednesday_7",
+          "courseName": "Computer Aided Design - EME4505",
+          "courseCode": "EME4505",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. وائل جلال محمد قطب ابوعطا",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EME4505_A_Sec._Wednesday_9",
+          "courseName": "Computer Aided Design - EME4505",
+          "courseCode": "EME4505",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 12,
+          "duration": 4,
+          "instructor": "اسلام ربيع عبدالعزيز محمد",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. وائل جلال محمد قطب ابوعطا",
+        "اسلام ربيع عبدالعزيز محمد"
+      ]
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "EME4505_C_Lect._Thursday_7",
+          "courseName": "Computer Aided Design - EME4505",
+          "courseCode": "EME4505",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. وائل جلال محمد قطب ابوعطا",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EME4505_C_Sec._Thursday_9",
+          "courseName": "Computer Aided Design - EME4505",
+          "courseCode": "EME4505",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 12,
+          "duration": 4,
+          "instructor": "وائل جلال محمد قطب ابوعطا",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. وائل جلال محمد قطب ابوعطا",
+        "وائل جلال محمد قطب ابوعطا"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EME4505_A_Lect._Wednesday_7",
+      "courseName": "Computer Aided Design - EME4505",
+      "courseCode": "EME4505",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. وائل جلال محمد قطب ابوعطا",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EME4505_A_Sec._Wednesday_9",
+      "courseName": "Computer Aided Design - EME4505",
+      "courseCode": "EME4505",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 12,
+      "duration": 4,
+      "instructor": "اسلام ربيع عبدالعزيز محمد",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EME4505_C_Lect._Thursday_7",
+      "courseName": "Computer Aided Design - EME4505",
+      "courseCode": "EME4505",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. وائل جلال محمد قطب ابوعطا",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EME4505_C_Sec._Thursday_9",
+      "courseName": "Computer Aided Design - EME4505",
+      "courseCode": "EME4505",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 12,
+      "duration": 4,
+      "instructor": "وائل جلال محمد قطب ابوعطا",
+      "color": "#84CC16",
+      "room": ""
+    }
+  ],
+  "color": "#84CC16",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "ميكانيكا ق م -Northampton*",
+    "هـ.ميكانيكية ق.م*"
+  ],
+  "periods": [
+    "8"
+  ]
+}

@@ -1,0 +1,629 @@
+{
+  "id": "EME3506",
+  "name": "Machine Design I - EME3506",
+  "code": "EME3506",
+  "instructors": [
+    "د. عبد الجواد حامد عبد الجواد مطر",
+    "دارين أيمن مأمون عرفات"
+  ],
+  "groups": [
+    {
+      "group": "J",
+      "sessions": [
+        {
+          "id": "EME3506_J_Lect._Sunday_1",
+          "courseName": "Machine Design I - EME3506",
+          "courseCode": "EME3506",
+          "group": "J",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. عبد الجواد حامد عبد الجواد مطر",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EME3506_J_Sec._Sunday_9",
+          "courseName": "Machine Design I - EME3506",
+          "courseCode": "EME3506",
+          "group": "J",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "دارين أيمن مأمون عرفات",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. عبد الجواد حامد عبد الجواد مطر",
+        "دارين أيمن مأمون عرفات"
+      ]
+    },
+    {
+      "group": "L",
+      "sessions": [
+        {
+          "id": "EME3506_L_Lect._Sunday_3",
+          "courseName": "Machine Design I - EME3506",
+          "courseCode": "EME3506",
+          "group": "L",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. عبد الجواد حامد عبد الجواد مطر",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EME3506_L_Sec._Thursday_1",
+          "courseName": "Machine Design I - EME3506",
+          "courseCode": "EME3506",
+          "group": "L",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "دارين أيمن مأمون عرفات",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. عبد الجواد حامد عبد الجواد مطر",
+        "دارين أيمن مأمون عرفات"
+      ]
+    },
+    {
+      "group": "K",
+      "sessions": [
+        {
+          "id": "EME3506_K_Lect._Sunday_1",
+          "courseName": "Machine Design I - EME3506",
+          "courseCode": "EME3506",
+          "group": "K",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. عبد الجواد حامد عبد الجواد مطر",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EME3506_K_Sec._Wednesday_7",
+          "courseName": "Machine Design I - EME3506",
+          "courseCode": "EME3506",
+          "group": "K",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "دارين أيمن مأمون عرفات",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. عبد الجواد حامد عبد الجواد مطر",
+        "دارين أيمن مأمون عرفات"
+      ]
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "EME3506_D_Sec._Monday_5",
+          "courseName": "Machine Design I - EME3506",
+          "courseCode": "EME3506",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "دارين أيمن مأمون عرفات",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EME3506_D_Lect._Thursday_9",
+          "courseName": "Machine Design I - EME3506",
+          "courseCode": "EME3506",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. عبد الجواد حامد عبد الجواد مطر",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "دارين أيمن مأمون عرفات",
+        "د. عبد الجواد حامد عبد الجواد مطر"
+      ]
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "EME3506_E_Sec._Monday_7",
+          "courseName": "Machine Design I - EME3506",
+          "courseCode": "EME3506",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "دارين أيمن مأمون عرفات",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EME3506_E_Lect._Thursday_9",
+          "courseName": "Machine Design I - EME3506",
+          "courseCode": "EME3506",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. عبد الجواد حامد عبد الجواد مطر",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "دارين أيمن مأمون عرفات",
+        "د. عبد الجواد حامد عبد الجواد مطر"
+      ]
+    },
+    {
+      "group": "I",
+      "sessions": [
+        {
+          "id": "EME3506_I_Sec._Monday_9",
+          "courseName": "Machine Design I - EME3506",
+          "courseCode": "EME3506",
+          "group": "I",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "دارين أيمن مأمون عرفات",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EME3506_I_Lect._Thursday_7",
+          "courseName": "Machine Design I - EME3506",
+          "courseCode": "EME3506",
+          "group": "I",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. عبد الجواد حامد عبد الجواد مطر",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "دارين أيمن مأمون عرفات",
+        "د. عبد الجواد حامد عبد الجواد مطر"
+      ]
+    },
+    {
+      "group": "H",
+      "sessions": [
+        {
+          "id": "EME3506_H_Sec._Tuesday_1",
+          "courseName": "Machine Design I - EME3506",
+          "courseCode": "EME3506",
+          "group": "H",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "دارين أيمن مأمون عرفات",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EME3506_H_Lect._Thursday_7",
+          "courseName": "Machine Design I - EME3506",
+          "courseCode": "EME3506",
+          "group": "H",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. عبد الجواد حامد عبد الجواد مطر",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "دارين أيمن مأمون عرفات",
+        "د. عبد الجواد حامد عبد الجواد مطر"
+      ]
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "EME3506_F_Lect._Wednesday_7",
+          "courseName": "Machine Design I - EME3506",
+          "courseCode": "EME3506",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. عبد الجواد حامد عبد الجواد مطر",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EME3506_F_Sec._Thursday_5",
+          "courseName": "Machine Design I - EME3506",
+          "courseCode": "EME3506",
+          "group": "F",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "دارين أيمن مأمون عرفات",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. عبد الجواد حامد عبد الجواد مطر",
+        "دارين أيمن مأمون عرفات"
+      ]
+    },
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "EME3506_G_Sec._Wednesday_9",
+          "courseName": "Machine Design I - EME3506",
+          "courseCode": "EME3506",
+          "group": "G",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "دارين أيمن مأمون عرفات",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EME3506_G_Lect._Wednesday_7",
+          "courseName": "Machine Design I - EME3506",
+          "courseCode": "EME3506",
+          "group": "G",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. عبد الجواد حامد عبد الجواد مطر",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "دارين أيمن مأمون عرفات",
+        "د. عبد الجواد حامد عبد الجواد مطر"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EME3506_J_Lect._Sunday_1",
+      "courseName": "Machine Design I - EME3506",
+      "courseCode": "EME3506",
+      "group": "J",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. عبد الجواد حامد عبد الجواد مطر",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EME3506_J_Sec._Sunday_9",
+      "courseName": "Machine Design I - EME3506",
+      "courseCode": "EME3506",
+      "group": "J",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "دارين أيمن مأمون عرفات",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EME3506_L_Lect._Sunday_3",
+      "courseName": "Machine Design I - EME3506",
+      "courseCode": "EME3506",
+      "group": "L",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. عبد الجواد حامد عبد الجواد مطر",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EME3506_L_Sec._Thursday_1",
+      "courseName": "Machine Design I - EME3506",
+      "courseCode": "EME3506",
+      "group": "L",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "دارين أيمن مأمون عرفات",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EME3506_K_Lect._Sunday_1",
+      "courseName": "Machine Design I - EME3506",
+      "courseCode": "EME3506",
+      "group": "K",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. عبد الجواد حامد عبد الجواد مطر",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EME3506_K_Sec._Wednesday_7",
+      "courseName": "Machine Design I - EME3506",
+      "courseCode": "EME3506",
+      "group": "K",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "دارين أيمن مأمون عرفات",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EME3506_D_Sec._Monday_5",
+      "courseName": "Machine Design I - EME3506",
+      "courseCode": "EME3506",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "دارين أيمن مأمون عرفات",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EME3506_D_Lect._Thursday_9",
+      "courseName": "Machine Design I - EME3506",
+      "courseCode": "EME3506",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. عبد الجواد حامد عبد الجواد مطر",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EME3506_E_Sec._Monday_7",
+      "courseName": "Machine Design I - EME3506",
+      "courseCode": "EME3506",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "دارين أيمن مأمون عرفات",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EME3506_E_Lect._Thursday_9",
+      "courseName": "Machine Design I - EME3506",
+      "courseCode": "EME3506",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. عبد الجواد حامد عبد الجواد مطر",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EME3506_I_Sec._Monday_9",
+      "courseName": "Machine Design I - EME3506",
+      "courseCode": "EME3506",
+      "group": "I",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "دارين أيمن مأمون عرفات",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EME3506_I_Lect._Thursday_7",
+      "courseName": "Machine Design I - EME3506",
+      "courseCode": "EME3506",
+      "group": "I",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. عبد الجواد حامد عبد الجواد مطر",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EME3506_H_Sec._Tuesday_1",
+      "courseName": "Machine Design I - EME3506",
+      "courseCode": "EME3506",
+      "group": "H",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "دارين أيمن مأمون عرفات",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EME3506_H_Lect._Thursday_7",
+      "courseName": "Machine Design I - EME3506",
+      "courseCode": "EME3506",
+      "group": "H",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. عبد الجواد حامد عبد الجواد مطر",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EME3506_F_Lect._Wednesday_7",
+      "courseName": "Machine Design I - EME3506",
+      "courseCode": "EME3506",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. عبد الجواد حامد عبد الجواد مطر",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EME3506_F_Sec._Thursday_5",
+      "courseName": "Machine Design I - EME3506",
+      "courseCode": "EME3506",
+      "group": "F",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "دارين أيمن مأمون عرفات",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EME3506_G_Sec._Wednesday_9",
+      "courseName": "Machine Design I - EME3506",
+      "courseCode": "EME3506",
+      "group": "G",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "دارين أيمن مأمون عرفات",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EME3506_G_Lect._Wednesday_7",
+      "courseName": "Machine Design I - EME3506",
+      "courseCode": "EME3506",
+      "group": "G",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. عبد الجواد حامد عبد الجواد مطر",
+      "color": "#84CC16",
+      "room": ""
+    }
+  ],
+  "color": "#84CC16",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "ميكانيكا ق م -Northampton",
+    "هـ.ميكانيكية ق.م*",
+    "هندسة ميكانيكية-ق م //"
+  ],
+  "periods": [
+    "5"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "id": "EAR3609",
+  "name": "Computer Applications In Urban Planning - EAR3609",
+  "code": "EAR3609",
+  "instructors": [
+    "د. رنا مصطفى أحمد همام"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EAR3609_A_Lect._Sunday_5",
+          "courseName": "Computer Applications In Urban Planning - EAR3609",
+          "courseCode": "EAR3609",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. رنا مصطفى أحمد همام",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. رنا مصطفى أحمد همام"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EAR3609_A_Lect._Sunday_5",
+      "courseName": "Computer Applications In Urban Planning - EAR3609",
+      "courseCode": "EAR3609",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. رنا مصطفى أحمد همام",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م*"
+  ],
+  "periods": [
+    "7"
+  ]
+}

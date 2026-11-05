@@ -1,0 +1,91 @@
+{
+  "id": "EE341",
+  "name": "INTR.TO POWER ENGINEERING - EE341",
+  "code": "EE341",
+  "instructors": [
+    "د. محمود مجدى بهجت عتيبة",
+    "عبدالرحمن محمد عبدالوهاب ابوشنب"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EE341_A_Lect._Saturday_3",
+          "courseName": "INTR.TO POWER ENGINEERING - EE341",
+          "courseCode": "EE341",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. محمود مجدى بهجت عتيبة",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "EE341_A_Sec._Saturday_5",
+          "courseName": "INTR.TO POWER ENGINEERING - EE341",
+          "courseCode": "EE341",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "عبدالرحمن محمد عبدالوهاب ابوشنب",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمود مجدى بهجت عتيبة",
+        "عبدالرحمن محمد عبدالوهاب ابوشنب"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EE341_A_Lect._Saturday_3",
+      "courseName": "INTR.TO POWER ENGINEERING - EE341",
+      "courseCode": "EE341",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. محمود مجدى بهجت عتيبة",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "EE341_A_Sec._Saturday_5",
+      "courseName": "INTR.TO POWER ENGINEERING - EE341",
+      "courseCode": "EE341",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "عبدالرحمن محمد عبدالوهاب ابوشنب",
+      "color": "#3B82F6",
+      "room": ""
+    }
+  ],
+  "color": "#3B82F6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية وتحكم ق.م"
+  ],
+  "periods": [
+    "5"
+  ]
+}

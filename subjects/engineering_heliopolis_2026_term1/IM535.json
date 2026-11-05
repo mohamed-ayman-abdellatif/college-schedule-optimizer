@@ -1,0 +1,64 @@
+{
+  "id": "IM535",
+  "name": "INTERNATIONAL OPERATIONS MANAGEMENT - IM535",
+  "code": "IM535",
+  "instructors": [
+    "د. باسم حسام عمر رشدى"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "IM535_A_Lect._Sunday_7",
+          "courseName": "INTERNATIONAL OPERATIONS MANAGEMENT - IM535",
+          "courseCode": "IM535",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. باسم حسام عمر رشدى",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. باسم حسام عمر رشدى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "IM535_A_Lect._Sunday_7",
+      "courseName": "INTERNATIONAL OPERATIONS MANAGEMENT - IM535",
+      "courseCode": "IM535",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. باسم حسام عمر رشدى",
+      "color": "#14B8A6",
+      "room": ""
+    }
+  ],
+  "color": "#14B8A6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "ميكانيكا ق م -Northampton",
+    "هـ.ميكانيكية ق.م",
+    "هندسة الحاسبات ق.م",
+    "هندسة كهربية وتحكم ق.م"
+  ],
+  "periods": [
+    "10"
+  ]
+}

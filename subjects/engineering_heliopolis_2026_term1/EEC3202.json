@@ -1,0 +1,501 @@
+{
+  "id": "EEC3202",
+  "name": "Analog Communications - EEC3202",
+  "code": "EEC3202",
+  "instructors": [
+    "د. كريم احمد عبد الرحمن حموده حماد",
+    "كريم احمد عبد الرحمن حموده حماد",
+    "ريم محمد احمد المرسي"
+  ],
+  "groups": [
+    {
+      "group": "H",
+      "sessions": [
+        {
+          "id": "EEC3202_H_Lab._Saturday_3",
+          "courseName": "Analog Communications - EEC3202",
+          "courseCode": "EEC3202",
+          "group": "H",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EEC3202_H_Sec._Saturday_7",
+          "courseName": "Analog Communications - EEC3202",
+          "courseCode": "EEC3202",
+          "group": "H",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EEC3202_H_Lect._Tuesday_7",
+          "courseName": "Analog Communications - EEC3202",
+          "courseCode": "EEC3202",
+          "group": "H",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. كريم احمد عبد الرحمن حموده حماد",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. كريم احمد عبد الرحمن حموده حماد"
+      ]
+    },
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "EEC3202_G_Sec._Saturday_5",
+          "courseName": "Analog Communications - EEC3202",
+          "courseCode": "EEC3202",
+          "group": "G",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EEC3202_G_Lab._Monday_7",
+          "courseName": "Analog Communications - EEC3202",
+          "courseCode": "EEC3202",
+          "group": "G",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EEC3202_G_Lect._Tuesday_7",
+          "courseName": "Analog Communications - EEC3202",
+          "courseCode": "EEC3202",
+          "group": "G",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. كريم احمد عبد الرحمن حموده حماد",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. كريم احمد عبد الرحمن حموده حماد"
+      ]
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "EEC3202_F_Sec._Sunday_3",
+          "courseName": "Analog Communications - EEC3202",
+          "courseCode": "EEC3202",
+          "group": "F",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "كريم احمد عبد الرحمن حموده حماد",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EEC3202_F_Lect._Sunday_5",
+          "courseName": "Analog Communications - EEC3202",
+          "courseCode": "EEC3202",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. كريم احمد عبد الرحمن حموده حماد",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EEC3202_F_Lab._Wednesday_5",
+          "courseName": "Analog Communications - EEC3202",
+          "courseCode": "EEC3202",
+          "group": "F",
+          "type": "Lab.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "كريم احمد عبد الرحمن حموده حماد",
+        "د. كريم احمد عبد الرحمن حموده حماد"
+      ]
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "EEC3202_E_Lect._Sunday_5",
+          "courseName": "Analog Communications - EEC3202",
+          "courseCode": "EEC3202",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. كريم احمد عبد الرحمن حموده حماد",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EEC3202_E_Sec._Sunday_7",
+          "courseName": "Analog Communications - EEC3202",
+          "courseCode": "EEC3202",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EEC3202_E_Lab._Wednesday_7",
+          "courseName": "Analog Communications - EEC3202",
+          "courseCode": "EEC3202",
+          "group": "E",
+          "type": "Lab.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. كريم احمد عبد الرحمن حموده حماد"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EEC3202_B_Lab._Sunday_5",
+          "courseName": "Communications Systems - EEC3202*",
+          "courseCode": "EEC3202",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "ريم محمد احمد المرسي",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EEC3202_B_Sec._Sunday_9",
+          "courseName": "Communications Systems - EEC3202*",
+          "courseCode": "EEC3202",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "كريم احمد عبد الرحمن حموده حماد",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EEC3202_B_Lect._Monday_7",
+          "courseName": "Communications Systems - EEC3202*",
+          "courseCode": "EEC3202",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. كريم احمد عبد الرحمن حموده حماد",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ريم محمد احمد المرسي",
+        "كريم احمد عبد الرحمن حموده حماد",
+        "د. كريم احمد عبد الرحمن حموده حماد"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEC3202_H_Lab._Saturday_3",
+      "courseName": "Analog Communications - EEC3202",
+      "courseCode": "EEC3202",
+      "group": "H",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EEC3202_H_Sec._Saturday_7",
+      "courseName": "Analog Communications - EEC3202",
+      "courseCode": "EEC3202",
+      "group": "H",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EEC3202_H_Lect._Tuesday_7",
+      "courseName": "Analog Communications - EEC3202",
+      "courseCode": "EEC3202",
+      "group": "H",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. كريم احمد عبد الرحمن حموده حماد",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EEC3202_G_Sec._Saturday_5",
+      "courseName": "Analog Communications - EEC3202",
+      "courseCode": "EEC3202",
+      "group": "G",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EEC3202_G_Lab._Monday_7",
+      "courseName": "Analog Communications - EEC3202",
+      "courseCode": "EEC3202",
+      "group": "G",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EEC3202_G_Lect._Tuesday_7",
+      "courseName": "Analog Communications - EEC3202",
+      "courseCode": "EEC3202",
+      "group": "G",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. كريم احمد عبد الرحمن حموده حماد",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EEC3202_F_Sec._Sunday_3",
+      "courseName": "Analog Communications - EEC3202",
+      "courseCode": "EEC3202",
+      "group": "F",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "كريم احمد عبد الرحمن حموده حماد",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EEC3202_F_Lect._Sunday_5",
+      "courseName": "Analog Communications - EEC3202",
+      "courseCode": "EEC3202",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. كريم احمد عبد الرحمن حموده حماد",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EEC3202_F_Lab._Wednesday_5",
+      "courseName": "Analog Communications - EEC3202",
+      "courseCode": "EEC3202",
+      "group": "F",
+      "type": "Lab.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EEC3202_E_Lect._Sunday_5",
+      "courseName": "Analog Communications - EEC3202",
+      "courseCode": "EEC3202",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. كريم احمد عبد الرحمن حموده حماد",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EEC3202_E_Sec._Sunday_7",
+      "courseName": "Analog Communications - EEC3202",
+      "courseCode": "EEC3202",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EEC3202_E_Lab._Wednesday_7",
+      "courseName": "Analog Communications - EEC3202",
+      "courseCode": "EEC3202",
+      "group": "E",
+      "type": "Lab.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EEC3202_B_Lab._Sunday_5",
+      "courseName": "Communications Systems - EEC3202*",
+      "courseCode": "EEC3202",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "ريم محمد احمد المرسي",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EEC3202_B_Sec._Sunday_9",
+      "courseName": "Communications Systems - EEC3202*",
+      "courseCode": "EEC3202",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "كريم احمد عبد الرحمن حموده حماد",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EEC3202_B_Lect._Monday_7",
+      "courseName": "Communications Systems - EEC3202*",
+      "courseCode": "EEC3202",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. كريم احمد عبد الرحمن حموده حماد",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "الكترونيات ق م - Northamption //",
+    "هـ.الكترونات واتصالات ق.م",
+    "هـ.الكترونات واتصالات ق.م*"
+  ],
+  "periods": [
+    "5",
+    "6"
+  ]
+}

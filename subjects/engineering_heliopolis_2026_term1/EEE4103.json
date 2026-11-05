@@ -1,0 +1,90 @@
+{
+  "id": "EEE4103",
+  "name": "Control Application & Practice - EEE4103*",
+  "code": "EEE4103",
+  "instructors": [
+    "د. احمد حسن ياقوت عبده"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEE4103_A_Lect._Sunday_5",
+          "courseName": "Control Application & Practice - EEE4103*",
+          "courseCode": "EEE4103",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. احمد حسن ياقوت عبده",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EEE4103_A_Lab._Thursday_7",
+          "courseName": "Control Application & Practice - EEE4103*",
+          "courseCode": "EEE4103",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. احمد حسن ياقوت عبده"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE4103_A_Lect._Sunday_5",
+      "courseName": "Control Application & Practice - EEE4103*",
+      "courseCode": "EEE4103",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. احمد حسن ياقوت عبده",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EEE4103_A_Lab._Thursday_7",
+      "courseName": "Control Application & Practice - EEE4103*",
+      "courseCode": "EEE4103",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    }
+  ],
+  "color": "#F59E0B",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية ق م -Northampton*",
+    "هندسة كهربية وتحكم ق.م*"
+  ],
+  "periods": [
+    "7"
+  ]
+}

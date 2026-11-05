@@ -1,0 +1,609 @@
+{
+  "id": "EME3304",
+  "name": "Heat Transfer - EME3304",
+  "code": "EME3304",
+  "instructors": [
+    "د. عصام محروس الجنيدى الجندى"
+  ],
+  "groups": [
+    {
+      "group": "J",
+      "sessions": [
+        {
+          "id": "EME3304_J_Lect._Sunday_7",
+          "courseName": "Heat Transfer - EME3304",
+          "courseCode": "EME3304",
+          "group": "J",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EME3304_J_Sec._Tuesday_11",
+          "courseName": "Heat Transfer - EME3304",
+          "courseCode": "EME3304",
+          "group": "J",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "L",
+      "sessions": [
+        {
+          "id": "EME3304_L_Sec._Sunday_9",
+          "courseName": "Heat Transfer - EME3304",
+          "courseCode": "EME3304",
+          "group": "L",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EME3304_L_Lect._Tuesday_9",
+          "courseName": "Heat Transfer - EME3304",
+          "courseCode": "EME3304",
+          "group": "L",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "EME3304_E_Sec._Sunday_11",
+          "courseName": "Heat Transfer - EME3304",
+          "courseCode": "EME3304",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EME3304_E_Lect._Wednesday_9",
+          "courseName": "Heat Transfer - EME3304",
+          "courseCode": "EME3304",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. عصام محروس الجنيدى الجندى",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. عصام محروس الجنيدى الجندى"
+      ]
+    },
+    {
+      "group": "K",
+      "sessions": [
+        {
+          "id": "EME3304_K_Lect._Sunday_7",
+          "courseName": "Heat Transfer - EME3304",
+          "courseCode": "EME3304",
+          "group": "K",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EME3304_K_Sec._Tuesday_1",
+          "courseName": "Heat Transfer - EME3304",
+          "courseCode": "EME3304",
+          "group": "K",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "EME3304_D_Sec._Monday_1",
+          "courseName": "Heat Transfer - EME3304",
+          "courseCode": "EME3304",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EME3304_D_Lect._Wednesday_9",
+          "courseName": "Heat Transfer - EME3304",
+          "courseCode": "EME3304",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. عصام محروس الجنيدى الجندى",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. عصام محروس الجنيدى الجندى"
+      ]
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "EME3304_F_Lect._Monday_7",
+          "courseName": "Heat Transfer - EME3304",
+          "courseCode": "EME3304",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. عصام محروس الجنيدى الجندى",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EME3304_F_Sec._Thursday_11",
+          "courseName": "Heat Transfer - EME3304",
+          "courseCode": "EME3304",
+          "group": "F",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. عصام محروس الجنيدى الجندى"
+      ]
+    },
+    {
+      "group": "I",
+      "sessions": [
+        {
+          "id": "EME3304_I_Sec._Monday_11",
+          "courseName": "Heat Transfer - EME3304",
+          "courseCode": "EME3304",
+          "group": "I",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EME3304_I_Lect._Tuesday_7",
+          "courseName": "Heat Transfer - EME3304",
+          "courseCode": "EME3304",
+          "group": "I",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "EME3304_G_Lect._Monday_7",
+          "courseName": "Heat Transfer - EME3304",
+          "courseCode": "EME3304",
+          "group": "G",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. عصام محروس الجنيدى الجندى",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EME3304_G_Sec._Thursday_1",
+          "courseName": "Heat Transfer - EME3304",
+          "courseCode": "EME3304",
+          "group": "G",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. عصام محروس الجنيدى الجندى"
+      ]
+    },
+    {
+      "group": "H",
+      "sessions": [
+        {
+          "id": "EME3304_H_Lect._Tuesday_7",
+          "courseName": "Heat Transfer - EME3304",
+          "courseCode": "EME3304",
+          "group": "H",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EME3304_H_Sec._Tuesday_9",
+          "courseName": "Heat Transfer - EME3304",
+          "courseCode": "EME3304",
+          "group": "H",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "EME3304_J_Lect._Sunday_7",
+      "courseName": "Heat Transfer - EME3304",
+      "courseCode": "EME3304",
+      "group": "J",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME3304_J_Sec._Tuesday_11",
+      "courseName": "Heat Transfer - EME3304",
+      "courseCode": "EME3304",
+      "group": "J",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME3304_L_Sec._Sunday_9",
+      "courseName": "Heat Transfer - EME3304",
+      "courseCode": "EME3304",
+      "group": "L",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME3304_L_Lect._Tuesday_9",
+      "courseName": "Heat Transfer - EME3304",
+      "courseCode": "EME3304",
+      "group": "L",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME3304_E_Sec._Sunday_11",
+      "courseName": "Heat Transfer - EME3304",
+      "courseCode": "EME3304",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME3304_E_Lect._Wednesday_9",
+      "courseName": "Heat Transfer - EME3304",
+      "courseCode": "EME3304",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. عصام محروس الجنيدى الجندى",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME3304_K_Lect._Sunday_7",
+      "courseName": "Heat Transfer - EME3304",
+      "courseCode": "EME3304",
+      "group": "K",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME3304_K_Sec._Tuesday_1",
+      "courseName": "Heat Transfer - EME3304",
+      "courseCode": "EME3304",
+      "group": "K",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME3304_D_Sec._Monday_1",
+      "courseName": "Heat Transfer - EME3304",
+      "courseCode": "EME3304",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME3304_D_Lect._Wednesday_9",
+      "courseName": "Heat Transfer - EME3304",
+      "courseCode": "EME3304",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. عصام محروس الجنيدى الجندى",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME3304_F_Lect._Monday_7",
+      "courseName": "Heat Transfer - EME3304",
+      "courseCode": "EME3304",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. عصام محروس الجنيدى الجندى",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME3304_F_Sec._Thursday_11",
+      "courseName": "Heat Transfer - EME3304",
+      "courseCode": "EME3304",
+      "group": "F",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME3304_I_Sec._Monday_11",
+      "courseName": "Heat Transfer - EME3304",
+      "courseCode": "EME3304",
+      "group": "I",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME3304_I_Lect._Tuesday_7",
+      "courseName": "Heat Transfer - EME3304",
+      "courseCode": "EME3304",
+      "group": "I",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME3304_G_Lect._Monday_7",
+      "courseName": "Heat Transfer - EME3304",
+      "courseCode": "EME3304",
+      "group": "G",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. عصام محروس الجنيدى الجندى",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME3304_G_Sec._Thursday_1",
+      "courseName": "Heat Transfer - EME3304",
+      "courseCode": "EME3304",
+      "group": "G",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME3304_H_Lect._Tuesday_7",
+      "courseName": "Heat Transfer - EME3304",
+      "courseCode": "EME3304",
+      "group": "H",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME3304_H_Sec._Tuesday_9",
+      "courseName": "Heat Transfer - EME3304",
+      "courseCode": "EME3304",
+      "group": "H",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    }
+  ],
+  "color": "#F59E0B",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "ميكانيكا ق م -Northampton",
+    "هـ.ميكانيكية ق.م*",
+    "هندسة ميكانيكية-ق م //"
+  ],
+  "periods": [
+    "5"
+  ]
+}

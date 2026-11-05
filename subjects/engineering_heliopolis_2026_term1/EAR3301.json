@@ -1,0 +1,61 @@
+{
+  "id": "EAR3301",
+  "name": "Environmental Control Systems - EAR3301",
+  "code": "EAR3301",
+  "instructors": [
+    "د. صفي الدين احمد حسن فولي"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EAR3301_A_Lect._Saturday_6",
+          "courseName": "Environmental Control Systems - EAR3301",
+          "courseCode": "EAR3301",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 6,
+          "endSlot": 8,
+          "duration": 3,
+          "instructor": "د. صفي الدين احمد حسن فولي",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. صفي الدين احمد حسن فولي"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EAR3301_A_Lect._Saturday_6",
+      "courseName": "Environmental Control Systems - EAR3301",
+      "courseCode": "EAR3301",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 6,
+      "endSlot": 8,
+      "duration": 3,
+      "instructor": "د. صفي الدين احمد حسن فولي",
+      "color": "#06B6D4",
+      "room": ""
+    }
+  ],
+  "color": "#06B6D4",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م*"
+  ],
+  "periods": [
+    "5"
+  ]
+}

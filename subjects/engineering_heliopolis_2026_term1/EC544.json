@@ -1,0 +1,217 @@
+{
+  "id": "EC544",
+  "name": "ANTENNAS ENGINEERING - EC544",
+  "code": "EC544",
+  "instructors": [
+    "ريم محمد احمد المرسي",
+    "مروة محمود شريف احمد الوزان",
+    "د. محمد على عمادالدين ابوالدهب"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EC544_B_Lab._Saturday_1",
+          "courseName": "ANTENNAS ENGINEERING - EC544",
+          "courseCode": "EC544",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "ريم محمد احمد المرسي",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EC544_B_Sec._Monday_3",
+          "courseName": "ANTENNAS ENGINEERING - EC544",
+          "courseCode": "EC544",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "مروة محمود شريف احمد الوزان",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EC544_B_Lect._Tuesday_3",
+          "courseName": "ANTENNAS ENGINEERING - EC544",
+          "courseCode": "EC544",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. محمد على عمادالدين ابوالدهب",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ريم محمد احمد المرسي",
+        "مروة محمود شريف احمد الوزان",
+        "د. محمد على عمادالدين ابوالدهب"
+      ]
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "EC544_C_Lab._Saturday_3",
+          "courseName": "ANTENNAS ENGINEERING - EC544",
+          "courseCode": "EC544",
+          "group": "C",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "ريم محمد احمد المرسي",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EC544_C_Lect._Monday_3",
+          "courseName": "ANTENNAS ENGINEERING - EC544",
+          "courseCode": "EC544",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. محمد على عمادالدين ابوالدهب",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EC544_C_Sec._Wednesday_3",
+          "courseName": "ANTENNAS ENGINEERING - EC544",
+          "courseCode": "EC544",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "مروة محمود شريف احمد الوزان",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ريم محمد احمد المرسي",
+        "د. محمد على عمادالدين ابوالدهب",
+        "مروة محمود شريف احمد الوزان"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EC544_B_Lab._Saturday_1",
+      "courseName": "ANTENNAS ENGINEERING - EC544",
+      "courseCode": "EC544",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "ريم محمد احمد المرسي",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EC544_C_Lab._Saturday_3",
+      "courseName": "ANTENNAS ENGINEERING - EC544",
+      "courseCode": "EC544",
+      "group": "C",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "ريم محمد احمد المرسي",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EC544_B_Sec._Monday_3",
+      "courseName": "ANTENNAS ENGINEERING - EC544",
+      "courseCode": "EC544",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "مروة محمود شريف احمد الوزان",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EC544_C_Lect._Monday_3",
+      "courseName": "ANTENNAS ENGINEERING - EC544",
+      "courseCode": "EC544",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. محمد على عمادالدين ابوالدهب",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EC544_B_Lect._Tuesday_3",
+      "courseName": "ANTENNAS ENGINEERING - EC544",
+      "courseCode": "EC544",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. محمد على عمادالدين ابوالدهب",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EC544_C_Sec._Wednesday_3",
+      "courseName": "ANTENNAS ENGINEERING - EC544",
+      "courseCode": "EC544",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "مروة محمود شريف احمد الوزان",
+      "color": "#F59E0B",
+      "room": ""
+    }
+  ],
+  "color": "#F59E0B",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هـ.الكترونات واتصالات ق.م"
+  ],
+  "periods": [
+    "9"
+  ]
+}

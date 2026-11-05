@@ -1,0 +1,90 @@
+{
+  "id": "EME4309",
+  "name": "Thermofluids - EME4309*",
+  "code": "EME4309",
+  "instructors": [
+    "د. عصام محروس الجنيدى الجندى"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EME4309_A_Sec._Saturday_5",
+          "courseName": "Thermofluids - EME4309*",
+          "courseCode": "EME4309",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "EME4309_A_Lect._Thursday_7",
+          "courseName": "Thermofluids - EME4309*",
+          "courseCode": "EME4309",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. عصام محروس الجنيدى الجندى",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. عصام محروس الجنيدى الجندى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EME4309_A_Sec._Saturday_5",
+      "courseName": "Thermofluids - EME4309*",
+      "courseCode": "EME4309",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "EME4309_A_Lect._Thursday_7",
+      "courseName": "Thermofluids - EME4309*",
+      "courseCode": "EME4309",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. عصام محروس الجنيدى الجندى",
+      "color": "#14B8A6",
+      "room": ""
+    }
+  ],
+  "color": "#14B8A6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية ق م -Northampton*",
+    "هندسة كهربية وتحكم ق.م*"
+  ],
+  "periods": [
+    "6"
+  ]
+}

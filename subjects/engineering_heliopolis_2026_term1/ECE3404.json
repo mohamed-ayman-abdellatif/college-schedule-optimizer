@@ -1,0 +1,497 @@
+{
+  "id": "ECE3404",
+  "name": "Numerical Analysis - ECE3404",
+  "code": "ECE3404",
+  "instructors": [
+    "ريم سامح سمير حسين",
+    "د. فاطمه محمود مراد محمود",
+    "ريهام طاهر عبدالمجيد سالم المغربى",
+    "د. ريهام طاهر عبدالمجيد سالم المغربى"
+  ],
+  "groups": [
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "ECE3404_D_Sec._Saturday_5",
+          "courseName": "Numerical Analysis - ECE3404",
+          "courseCode": "ECE3404",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "ريم سامح سمير حسين",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "ECE3404_D_Lect._Thursday_5",
+          "courseName": "Numerical Analysis - ECE3404",
+          "courseCode": "ECE3404",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. فاطمه محمود مراد محمود",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ريم سامح سمير حسين",
+        "د. فاطمه محمود مراد محمود"
+      ]
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "ECE3404_F_Sec._Saturday_7",
+          "courseName": "Numerical Analysis - ECE3404",
+          "courseCode": "ECE3404",
+          "group": "F",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "ECE3404_F_Lect._Thursday_7",
+          "courseName": "Numerical Analysis - ECE3404",
+          "courseCode": "ECE3404",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. فاطمه محمود مراد محمود",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. فاطمه محمود مراد محمود"
+      ]
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "ECE3404_E_Sec._Saturday_9",
+          "courseName": "Numerical Analysis - ECE3404",
+          "courseCode": "ECE3404",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "ECE3404_E_Lect._Thursday_5",
+          "courseName": "Numerical Analysis - ECE3404",
+          "courseCode": "ECE3404",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. فاطمه محمود مراد محمود",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. فاطمه محمود مراد محمود"
+      ]
+    },
+    {
+      "group": "I",
+      "sessions": [
+        {
+          "id": "ECE3404_I_Sec._Sunday_11",
+          "courseName": "Numerical Analysis - ECE3404",
+          "courseCode": "ECE3404",
+          "group": "I",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "ريهام طاهر عبدالمجيد سالم المغربى",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "ECE3404_I_Lect._Wednesday_5",
+          "courseName": "Numerical Analysis - ECE3404",
+          "courseCode": "ECE3404",
+          "group": "I",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. ريهام طاهر عبدالمجيد سالم المغربى",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ريهام طاهر عبدالمجيد سالم المغربى",
+        "د. ريهام طاهر عبدالمجيد سالم المغربى"
+      ]
+    },
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "ECE3404_G_Sec._Monday_11",
+          "courseName": "Numerical Analysis - ECE3404",
+          "courseCode": "ECE3404",
+          "group": "G",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "ECE3404_G_Lect._Thursday_7",
+          "courseName": "Numerical Analysis - ECE3404",
+          "courseCode": "ECE3404",
+          "group": "G",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. فاطمه محمود مراد محمود",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. فاطمه محمود مراد محمود"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECE3404_B_Sec._Saturday_9",
+          "courseName": "Numerical Analysis - ECE3404",
+          "courseCode": "ECE3404",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "ريم سامح سمير حسين",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "ECE3404_B_Lect._Wednesday_5",
+          "courseName": "Numerical Analysis - ECE3404",
+          "courseCode": "ECE3404",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. ريهام طاهر عبدالمجيد سالم المغربى",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ريم سامح سمير حسين",
+        "د. ريهام طاهر عبدالمجيد سالم المغربى"
+      ]
+    },
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECE3404_A_Sec._Sunday_11",
+          "courseName": "Numerical Analysis - ECE3404",
+          "courseCode": "ECE3404",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "ريهام طاهر عبدالمجيد سالم المغربى",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "ECE3404_A_Lect._Wednesday_5",
+          "courseName": "Numerical Analysis - ECE3404",
+          "courseCode": "ECE3404",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. ريهام طاهر عبدالمجيد سالم المغربى",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ريهام طاهر عبدالمجيد سالم المغربى",
+        "د. ريهام طاهر عبدالمجيد سالم المغربى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECE3404_D_Sec._Saturday_5",
+      "courseName": "Numerical Analysis - ECE3404",
+      "courseCode": "ECE3404",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "ريم سامح سمير حسين",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "ECE3404_D_Lect._Thursday_5",
+      "courseName": "Numerical Analysis - ECE3404",
+      "courseCode": "ECE3404",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. فاطمه محمود مراد محمود",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "ECE3404_F_Sec._Saturday_7",
+      "courseName": "Numerical Analysis - ECE3404",
+      "courseCode": "ECE3404",
+      "group": "F",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "ECE3404_F_Lect._Thursday_7",
+      "courseName": "Numerical Analysis - ECE3404",
+      "courseCode": "ECE3404",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. فاطمه محمود مراد محمود",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "ECE3404_E_Sec._Saturday_9",
+      "courseName": "Numerical Analysis - ECE3404",
+      "courseCode": "ECE3404",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "ECE3404_E_Lect._Thursday_5",
+      "courseName": "Numerical Analysis - ECE3404",
+      "courseCode": "ECE3404",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. فاطمه محمود مراد محمود",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "ECE3404_I_Sec._Sunday_11",
+      "courseName": "Numerical Analysis - ECE3404",
+      "courseCode": "ECE3404",
+      "group": "I",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "ريهام طاهر عبدالمجيد سالم المغربى",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "ECE3404_I_Lect._Wednesday_5",
+      "courseName": "Numerical Analysis - ECE3404",
+      "courseCode": "ECE3404",
+      "group": "I",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. ريهام طاهر عبدالمجيد سالم المغربى",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "ECE3404_G_Sec._Monday_11",
+      "courseName": "Numerical Analysis - ECE3404",
+      "courseCode": "ECE3404",
+      "group": "G",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "ECE3404_G_Lect._Thursday_7",
+      "courseName": "Numerical Analysis - ECE3404",
+      "courseCode": "ECE3404",
+      "group": "G",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. فاطمه محمود مراد محمود",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "ECE3404_B_Sec._Saturday_9",
+      "courseName": "Numerical Analysis - ECE3404",
+      "courseCode": "ECE3404",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "ريم سامح سمير حسين",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "ECE3404_B_Lect._Wednesday_5",
+      "courseName": "Numerical Analysis - ECE3404",
+      "courseCode": "ECE3404",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. ريهام طاهر عبدالمجيد سالم المغربى",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "ECE3404_A_Sec._Sunday_11",
+      "courseName": "Numerical Analysis - ECE3404",
+      "courseCode": "ECE3404",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "ريهام طاهر عبدالمجيد سالم المغربى",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "ECE3404_A_Lect._Wednesday_5",
+      "courseName": "Numerical Analysis - ECE3404",
+      "courseCode": "ECE3404",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. ريهام طاهر عبدالمجيد سالم المغربى",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "الكترونيات ق م - Northamption //",
+    "ميكانيكا ق م -Northampton*",
+    "هـ.الكترونات واتصالات ق.م",
+    "هـ.الكترونات واتصالات ق.م*",
+    "هـ.ميكانيكية ق.م*"
+  ],
+  "periods": [
+    "5",
+    "4"
+  ]
+}

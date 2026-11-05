@@ -1,0 +1,360 @@
+{
+  "id": "EME3507",
+  "name": "Machine Design II - EME3507*",
+  "code": "EME3507",
+  "instructors": [
+    "محمد جمال محمود على علام",
+    "د. مصطفى رستم احمد عطية"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EME3507_A_Sec._Monday_5",
+          "courseName": "Machine Design II - EME3507*",
+          "courseCode": "EME3507",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "محمد جمال محمود على علام",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "EME3507_A_Lect._Wednesday_1",
+          "courseName": "Machine Design II - EME3507*",
+          "courseCode": "EME3507",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. مصطفى رستم احمد عطية",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "محمد جمال محمود على علام",
+        "د. مصطفى رستم احمد عطية"
+      ]
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "EME3507_C_Lect._Tuesday_3",
+          "courseName": "Machine Design II - EME3507*",
+          "courseCode": "EME3507",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. مصطفى رستم احمد عطية",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "EME3507_C_Sec._Wednesday_3",
+          "courseName": "Machine Design II - EME3507*",
+          "courseCode": "EME3507",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "محمد جمال محمود على علام",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. مصطفى رستم احمد عطية",
+        "محمد جمال محمود على علام"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EME3507_B_Sec._Tuesday_7",
+          "courseName": "Machine Design II - EME3507*",
+          "courseCode": "EME3507",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "محمد جمال محمود على علام",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "EME3507_B_Lect._Wednesday_1",
+          "courseName": "Machine Design II - EME3507*",
+          "courseCode": "EME3507",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. مصطفى رستم احمد عطية",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "محمد جمال محمود على علام",
+        "د. مصطفى رستم احمد عطية"
+      ]
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "EME3507_D_Lect._Tuesday_3",
+          "courseName": "Machine Design II - EME3507*",
+          "courseCode": "EME3507",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. مصطفى رستم احمد عطية",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "EME3507_D_Sec._Wednesday_5",
+          "courseName": "Machine Design II - EME3507*",
+          "courseCode": "EME3507",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "محمد جمال محمود على علام",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. مصطفى رستم احمد عطية",
+        "محمد جمال محمود على علام"
+      ]
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "EME3507_E_Sec._Wednesday_7",
+          "courseName": "Machine Design II - EME3507*",
+          "courseCode": "EME3507",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "محمد جمال محمود على علام",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "EME3507_E_Lect._Wednesday_5",
+          "courseName": "Machine Design II - EME3507*",
+          "courseCode": "EME3507",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. مصطفى رستم احمد عطية",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "محمد جمال محمود على علام",
+        "د. مصطفى رستم احمد عطية"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EME3507_A_Sec._Monday_5",
+      "courseName": "Machine Design II - EME3507*",
+      "courseCode": "EME3507",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "محمد جمال محمود على علام",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EME3507_A_Lect._Wednesday_1",
+      "courseName": "Machine Design II - EME3507*",
+      "courseCode": "EME3507",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. مصطفى رستم احمد عطية",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EME3507_C_Lect._Tuesday_3",
+      "courseName": "Machine Design II - EME3507*",
+      "courseCode": "EME3507",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. مصطفى رستم احمد عطية",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EME3507_C_Sec._Wednesday_3",
+      "courseName": "Machine Design II - EME3507*",
+      "courseCode": "EME3507",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "محمد جمال محمود على علام",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EME3507_B_Sec._Tuesday_7",
+      "courseName": "Machine Design II - EME3507*",
+      "courseCode": "EME3507",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "محمد جمال محمود على علام",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EME3507_B_Lect._Wednesday_1",
+      "courseName": "Machine Design II - EME3507*",
+      "courseCode": "EME3507",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. مصطفى رستم احمد عطية",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EME3507_D_Lect._Tuesday_3",
+      "courseName": "Machine Design II - EME3507*",
+      "courseCode": "EME3507",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. مصطفى رستم احمد عطية",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EME3507_D_Sec._Wednesday_5",
+      "courseName": "Machine Design II - EME3507*",
+      "courseCode": "EME3507",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "محمد جمال محمود على علام",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EME3507_E_Sec._Wednesday_7",
+      "courseName": "Machine Design II - EME3507*",
+      "courseCode": "EME3507",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "محمد جمال محمود على علام",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EME3507_E_Lect._Wednesday_5",
+      "courseName": "Machine Design II - EME3507*",
+      "courseCode": "EME3507",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. مصطفى رستم احمد عطية",
+      "color": "#6366F1",
+      "room": ""
+    }
+  ],
+  "color": "#6366F1",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "ميكانيكا ق م -Northampton*",
+    "هـ.ميكانيكية ق.م*"
+  ],
+  "periods": [
+    "7"
+  ]
+}

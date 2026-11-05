@@ -1,0 +1,57 @@
+{
+  "id": "EEE5001",
+  "name": "Senior Project (1) - EEE5001",
+  "code": "EEE5001",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEE5001_A_Lect._Wednesday_11",
+          "courseName": "Senior Project (1) - EEE5001",
+          "courseCode": "EEE5001",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE5001_A_Lect._Wednesday_11",
+      "courseName": "Senior Project (1) - EEE5001",
+      "courseCode": "EEE5001",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    }
+  ],
+  "color": "#06B6D4",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية وتحكم ق.م*"
+  ],
+  "periods": [
+    "8"
+  ]
+}

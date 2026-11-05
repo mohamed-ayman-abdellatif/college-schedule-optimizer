@@ -1,0 +1,696 @@
+{
+  "id": "EME2505",
+  "name": "Theory Of Machines - EME2505",
+  "code": "EME2505",
+  "instructors": [
+    "د. احمد محمود محمد فريد حسين الصواف",
+    "مؤمن شمس الدين على محمد خليل",
+    "عبد الرحمن خالد فاروق محمد"
+  ],
+  "groups": [
+    {
+      "group": "H",
+      "sessions": [
+        {
+          "id": "EME2505_H_Lect._Saturday_3",
+          "courseName": "Theory Of Machines - EME2505",
+          "courseCode": "EME2505",
+          "group": "H",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. احمد محمود محمد فريد حسين الصواف",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME2505_H_Sec._Wednesday_1",
+          "courseName": "Theory Of Machines - EME2505",
+          "courseCode": "EME2505",
+          "group": "H",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "مؤمن شمس الدين على محمد خليل",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. احمد محمود محمد فريد حسين الصواف",
+        "مؤمن شمس الدين على محمد خليل"
+      ]
+    },
+    {
+      "group": "I",
+      "sessions": [
+        {
+          "id": "EME2505_I_Lect._Saturday_5",
+          "courseName": "Theory Of Machines - EME2505",
+          "courseCode": "EME2505",
+          "group": "I",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. احمد محمود محمد فريد حسين الصواف",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME2505_I_Sec._Saturday_9",
+          "courseName": "Theory Of Machines - EME2505",
+          "courseCode": "EME2505",
+          "group": "I",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "عبد الرحمن خالد فاروق محمد",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. احمد محمود محمد فريد حسين الصواف",
+        "عبد الرحمن خالد فاروق محمد"
+      ]
+    },
+    {
+      "group": "J",
+      "sessions": [
+        {
+          "id": "EME2505_J_Lect._Saturday_3",
+          "courseName": "Theory Of Machines - EME2505",
+          "courseCode": "EME2505",
+          "group": "J",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. احمد محمود محمد فريد حسين الصواف",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME2505_J_Sec._Thursday_3",
+          "courseName": "Theory Of Machines - EME2505",
+          "courseCode": "EME2505",
+          "group": "J",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "عبد الرحمن خالد فاروق محمد",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. احمد محمود محمد فريد حسين الصواف",
+        "عبد الرحمن خالد فاروق محمد"
+      ]
+    },
+    {
+      "group": "K",
+      "sessions": [
+        {
+          "id": "EME2505_K_Lect._Saturday_5",
+          "courseName": "Theory Of Machines - EME2505",
+          "courseCode": "EME2505",
+          "group": "K",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. احمد محمود محمد فريد حسين الصواف",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME2505_K_Sec._Thursday_5",
+          "courseName": "Theory Of Machines - EME2505",
+          "courseCode": "EME2505",
+          "group": "K",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "عبد الرحمن خالد فاروق محمد",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. احمد محمود محمد فريد حسين الصواف",
+        "عبد الرحمن خالد فاروق محمد"
+      ]
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "EME2505_D_Lect._Sunday_1",
+          "courseName": "Theory Of Machines - EME2505",
+          "courseCode": "EME2505",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. احمد محمود محمد فريد حسين الصواف",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME2505_D_Sec._Monday_1",
+          "courseName": "Theory Of Machines - EME2505",
+          "courseCode": "EME2505",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "مؤمن شمس الدين على محمد خليل",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. احمد محمود محمد فريد حسين الصواف",
+        "مؤمن شمس الدين على محمد خليل"
+      ]
+    },
+    {
+      "group": "M",
+      "sessions": [
+        {
+          "id": "EME2505_M_Sec._Sunday_7",
+          "courseName": "Theory Of Machines - EME2505",
+          "courseCode": "EME2505",
+          "group": "M",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "عبد الرحمن خالد فاروق محمد",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME2505_M_Lect._Wednesday_1",
+          "courseName": "Theory Of Machines - EME2505",
+          "courseCode": "EME2505",
+          "group": "M",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. احمد محمود محمد فريد حسين الصواف",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "عبد الرحمن خالد فاروق محمد",
+        "د. احمد محمود محمد فريد حسين الصواف"
+      ]
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "EME2505_E_Lect._Sunday_1",
+          "courseName": "Theory Of Machines - EME2505",
+          "courseCode": "EME2505",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. احمد محمود محمد فريد حسين الصواف",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME2505_E_Sec._Wednesday_3",
+          "courseName": "Theory Of Machines - EME2505",
+          "courseCode": "EME2505",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "مؤمن شمس الدين على محمد خليل",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. احمد محمود محمد فريد حسين الصواف",
+        "مؤمن شمس الدين على محمد خليل"
+      ]
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "EME2505_F_Sec._Sunday_1",
+          "courseName": "Theory Of Machines - EME2505",
+          "courseCode": "EME2505",
+          "group": "F",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "عبد الرحمن خالد فاروق محمد",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME2505_F_Lect._Monday_1",
+          "courseName": "Theory Of Machines - EME2505",
+          "courseCode": "EME2505",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. احمد محمود محمد فريد حسين الصواف",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "عبد الرحمن خالد فاروق محمد",
+        "د. احمد محمود محمد فريد حسين الصواف"
+      ]
+    },
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "EME2505_G_Sec._Monday_5",
+          "courseName": "Theory Of Machines - EME2505",
+          "courseCode": "EME2505",
+          "group": "G",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "عبد الرحمن خالد فاروق محمد",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME2505_G_Lect._Monday_1",
+          "courseName": "Theory Of Machines - EME2505",
+          "courseCode": "EME2505",
+          "group": "G",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. احمد محمود محمد فريد حسين الصواف",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "عبد الرحمن خالد فاروق محمد",
+        "د. احمد محمود محمد فريد حسين الصواف"
+      ]
+    },
+    {
+      "group": "L",
+      "sessions": [
+        {
+          "id": "EME2505_L_Lect._Wednesday_1",
+          "courseName": "Theory Of Machines - EME2505",
+          "courseCode": "EME2505",
+          "group": "L",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. احمد محمود محمد فريد حسين الصواف",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME2505_L_Sec._Thursday_1",
+          "courseName": "Theory Of Machines - EME2505",
+          "courseCode": "EME2505",
+          "group": "L",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "مؤمن شمس الدين على محمد خليل",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. احمد محمود محمد فريد حسين الصواف",
+        "مؤمن شمس الدين على محمد خليل"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EME2505_H_Lect._Saturday_3",
+      "courseName": "Theory Of Machines - EME2505",
+      "courseCode": "EME2505",
+      "group": "H",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. احمد محمود محمد فريد حسين الصواف",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME2505_H_Sec._Wednesday_1",
+      "courseName": "Theory Of Machines - EME2505",
+      "courseCode": "EME2505",
+      "group": "H",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "مؤمن شمس الدين على محمد خليل",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME2505_I_Lect._Saturday_5",
+      "courseName": "Theory Of Machines - EME2505",
+      "courseCode": "EME2505",
+      "group": "I",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. احمد محمود محمد فريد حسين الصواف",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME2505_I_Sec._Saturday_9",
+      "courseName": "Theory Of Machines - EME2505",
+      "courseCode": "EME2505",
+      "group": "I",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "عبد الرحمن خالد فاروق محمد",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME2505_J_Lect._Saturday_3",
+      "courseName": "Theory Of Machines - EME2505",
+      "courseCode": "EME2505",
+      "group": "J",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. احمد محمود محمد فريد حسين الصواف",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME2505_J_Sec._Thursday_3",
+      "courseName": "Theory Of Machines - EME2505",
+      "courseCode": "EME2505",
+      "group": "J",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "عبد الرحمن خالد فاروق محمد",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME2505_K_Lect._Saturday_5",
+      "courseName": "Theory Of Machines - EME2505",
+      "courseCode": "EME2505",
+      "group": "K",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. احمد محمود محمد فريد حسين الصواف",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME2505_K_Sec._Thursday_5",
+      "courseName": "Theory Of Machines - EME2505",
+      "courseCode": "EME2505",
+      "group": "K",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "عبد الرحمن خالد فاروق محمد",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME2505_D_Lect._Sunday_1",
+      "courseName": "Theory Of Machines - EME2505",
+      "courseCode": "EME2505",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. احمد محمود محمد فريد حسين الصواف",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME2505_D_Sec._Monday_1",
+      "courseName": "Theory Of Machines - EME2505",
+      "courseCode": "EME2505",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "مؤمن شمس الدين على محمد خليل",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME2505_M_Sec._Sunday_7",
+      "courseName": "Theory Of Machines - EME2505",
+      "courseCode": "EME2505",
+      "group": "M",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "عبد الرحمن خالد فاروق محمد",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME2505_M_Lect._Wednesday_1",
+      "courseName": "Theory Of Machines - EME2505",
+      "courseCode": "EME2505",
+      "group": "M",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. احمد محمود محمد فريد حسين الصواف",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME2505_E_Lect._Sunday_1",
+      "courseName": "Theory Of Machines - EME2505",
+      "courseCode": "EME2505",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. احمد محمود محمد فريد حسين الصواف",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME2505_E_Sec._Wednesday_3",
+      "courseName": "Theory Of Machines - EME2505",
+      "courseCode": "EME2505",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "مؤمن شمس الدين على محمد خليل",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME2505_F_Sec._Sunday_1",
+      "courseName": "Theory Of Machines - EME2505",
+      "courseCode": "EME2505",
+      "group": "F",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "عبد الرحمن خالد فاروق محمد",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME2505_F_Lect._Monday_1",
+      "courseName": "Theory Of Machines - EME2505",
+      "courseCode": "EME2505",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. احمد محمود محمد فريد حسين الصواف",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME2505_G_Sec._Monday_5",
+      "courseName": "Theory Of Machines - EME2505",
+      "courseCode": "EME2505",
+      "group": "G",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "عبد الرحمن خالد فاروق محمد",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME2505_G_Lect._Monday_1",
+      "courseName": "Theory Of Machines - EME2505",
+      "courseCode": "EME2505",
+      "group": "G",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. احمد محمود محمد فريد حسين الصواف",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME2505_L_Lect._Wednesday_1",
+      "courseName": "Theory Of Machines - EME2505",
+      "courseCode": "EME2505",
+      "group": "L",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. احمد محمود محمد فريد حسين الصواف",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME2505_L_Sec._Thursday_1",
+      "courseName": "Theory Of Machines - EME2505",
+      "courseCode": "EME2505",
+      "group": "L",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "مؤمن شمس الدين على محمد خليل",
+      "color": "#10B981",
+      "room": ""
+    }
+  ],
+  "color": "#10B981",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "ميكانيكا ق م -Northampton",
+    "هندسة ميكانيكية-ق م //"
+  ],
+  "periods": [
+    "3"
+  ]
+}

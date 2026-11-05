@@ -1,0 +1,92 @@
+{
+  "id": "EEE5408",
+  "name": "ELECTRICAL INSTALLATION - EEE5408",
+  "code": "EEE5408",
+  "instructors": [
+    "ايه امجد منير جلال مصطفى",
+    "د. ياسر جلال مصطفى منير"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEE5408_A_Sec._Saturday_7",
+          "courseName": "ELECTRICAL INSTALLATION - EEE5408",
+          "courseCode": "EEE5408",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "ايه امجد منير جلال مصطفى",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EEE5408_A_Lect._Wednesday_3",
+          "courseName": "ELECTRICAL INSTALLATION - EEE5408",
+          "courseCode": "EEE5408",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. ياسر جلال مصطفى منير",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ايه امجد منير جلال مصطفى",
+        "د. ياسر جلال مصطفى منير"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE5408_A_Sec._Saturday_7",
+      "courseName": "ELECTRICAL INSTALLATION - EEE5408",
+      "courseCode": "EEE5408",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "ايه امجد منير جلال مصطفى",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EEE5408_A_Lect._Wednesday_3",
+      "courseName": "ELECTRICAL INSTALLATION - EEE5408",
+      "courseCode": "EEE5408",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. ياسر جلال مصطفى منير",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية ق م -Northampton*",
+    "هندسة كهربية وتحكم ق.م*"
+  ],
+  "periods": [
+    "9"
+  ]
+}

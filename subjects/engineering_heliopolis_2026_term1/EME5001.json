@@ -1,0 +1,58 @@
+{
+  "id": "EME5001",
+  "name": "Graduation Project I - EME5001",
+  "code": "EME5001",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EME5001_A_Lect._Saturday_13",
+          "courseName": "Graduation Project I - EME5001",
+          "courseCode": "EME5001",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 13,
+          "endSlot": 14,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "EME5001_A_Lect._Saturday_13",
+      "courseName": "Graduation Project I - EME5001",
+      "courseCode": "EME5001",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 13,
+      "endSlot": 14,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    }
+  ],
+  "color": "#14B8A6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "ميكانيكا ق م -Northampton*",
+    "هـ.ميكانيكية ق.م*"
+  ],
+  "periods": [
+    "9"
+  ]
+}

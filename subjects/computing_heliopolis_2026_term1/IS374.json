@@ -1,0 +1,85 @@
+{
+  "id": "IS374",
+  "name": "Advanced Database Systems - IS374",
+  "code": "IS374",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "IS374_A_Lect._Saturday_9",
+          "courseName": "Advanced Database Systems - IS374",
+          "courseCode": "IS374",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "IS374_A_Sec._Monday_9",
+          "courseName": "Advanced Database Systems - IS374",
+          "courseCode": "IS374",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "IS374_A_Lect._Saturday_9",
+      "courseName": "Advanced Database Systems - IS374",
+      "courseCode": "IS374",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "IS374_A_Sec._Monday_9",
+      "courseName": "Advanced Database Systems - IS374",
+      "courseCode": "IS374",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "هندسة البرمجيات - ق.م"
+  ],
+  "periods": [
+    "6"
+  ]
+}

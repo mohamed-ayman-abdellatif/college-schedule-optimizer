@@ -1,0 +1,61 @@
+{
+  "id": "EAR5601",
+  "name": "Architectural Criticism - EAR5601",
+  "code": "EAR5601",
+  "instructors": [
+    "د. منى عبدالعظيم عبدالوهاب"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EAR5601_A_Lect._Wednesday_3",
+          "courseName": "Architectural Criticism - EAR5601",
+          "courseCode": "EAR5601",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. منى عبدالعظيم عبدالوهاب",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. منى عبدالعظيم عبدالوهاب"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EAR5601_A_Lect._Wednesday_3",
+      "courseName": "Architectural Criticism - EAR5601",
+      "courseCode": "EAR5601",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. منى عبدالعظيم عبدالوهاب",
+      "color": "#3B82F6",
+      "room": ""
+    }
+  ],
+  "color": "#3B82F6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م*"
+  ],
+  "periods": [
+    "9"
+  ]
+}

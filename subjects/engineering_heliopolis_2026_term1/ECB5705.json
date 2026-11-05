@@ -1,0 +1,91 @@
+{
+  "id": "ECB5705",
+  "name": "Special Topics in Transportation Engine. - ECB5705",
+  "code": "ECB5705",
+  "instructors": [
+    "شيماء علي عبدالحميد محمد",
+    "د. هيثم نور الدين ذهنى طه يوسف"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECB5705_A_Sec._Monday_7",
+          "courseName": "Special Topics in Transportation Engine. - ECB5705",
+          "courseCode": "ECB5705",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "شيماء علي عبدالحميد محمد",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "ECB5705_A_Lect._Wednesday_9",
+          "courseName": "Special Topics in Transportation Engine. - ECB5705",
+          "courseCode": "ECB5705",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. هيثم نور الدين ذهنى طه يوسف",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "شيماء علي عبدالحميد محمد",
+        "د. هيثم نور الدين ذهنى طه يوسف"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECB5705_A_Sec._Monday_7",
+      "courseName": "Special Topics in Transportation Engine. - ECB5705",
+      "courseCode": "ECB5705",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "شيماء علي عبدالحميد محمد",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "ECB5705_A_Lect._Wednesday_9",
+      "courseName": "Special Topics in Transportation Engine. - ECB5705",
+      "courseCode": "ECB5705",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. هيثم نور الدين ذهنى طه يوسف",
+      "color": "#84CC16",
+      "room": ""
+    }
+  ],
+  "color": "#84CC16",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م*"
+  ],
+  "periods": [
+    "8"
+  ]
+}

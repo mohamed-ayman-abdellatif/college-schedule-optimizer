@@ -1,0 +1,91 @@
+{
+  "id": "ECB4103",
+  "name": "Quality Control & Manag. Construction - ECB4103*",
+  "code": "ECB4103",
+  "instructors": [
+    "د. حسن احمد حسن احمد سعد",
+    "محمد احمد عبدالرازق علي"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECB4103_B_Lect._Tuesday_7",
+          "courseName": "Quality Control & Manag. Construction - ECB4103*",
+          "courseCode": "ECB4103",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. حسن احمد حسن احمد سعد",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "ECB4103_B_Sec._Thursday_7",
+          "courseName": "Quality Control & Manag. Construction - ECB4103*",
+          "courseCode": "ECB4103",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "محمد احمد عبدالرازق علي",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. حسن احمد حسن احمد سعد",
+        "محمد احمد عبدالرازق علي"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECB4103_B_Lect._Tuesday_7",
+      "courseName": "Quality Control & Manag. Construction - ECB4103*",
+      "courseCode": "ECB4103",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. حسن احمد حسن احمد سعد",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECB4103_B_Sec._Thursday_7",
+      "courseName": "Quality Control & Manag. Construction - ECB4103*",
+      "courseCode": "ECB4103",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "محمد احمد عبدالرازق علي",
+      "color": "#6366F1",
+      "room": ""
+    }
+  ],
+  "color": "#6366F1",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م*"
+  ],
+  "periods": [
+    "7"
+  ]
+}

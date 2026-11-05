@@ -1,0 +1,91 @@
+{
+  "id": "CB322",
+  "name": "BUILDING CONSTRUCTION - CB322",
+  "code": "CB322",
+  "instructors": [
+    "اسماء احمد حسن موسى",
+    "د. عبدالحميد محمد حمدى الطحان"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CB322_A_Sec._Sunday_9",
+          "courseName": "BUILDING CONSTRUCTION - CB322",
+          "courseCode": "CB322",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 9,
+          "endSlot": 12,
+          "duration": 4,
+          "instructor": "اسماء احمد حسن موسى",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "CB322_A_Lect._Thursday_5",
+          "courseName": "BUILDING CONSTRUCTION - CB322",
+          "courseCode": "CB322",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. عبدالحميد محمد حمدى الطحان",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "اسماء احمد حسن موسى",
+        "د. عبدالحميد محمد حمدى الطحان"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "CB322_A_Sec._Sunday_9",
+      "courseName": "BUILDING CONSTRUCTION - CB322",
+      "courseCode": "CB322",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 9,
+      "endSlot": 12,
+      "duration": 4,
+      "instructor": "اسماء احمد حسن موسى",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "CB322_A_Lect._Thursday_5",
+      "courseName": "BUILDING CONSTRUCTION - CB322",
+      "courseCode": "CB322",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. عبدالحميد محمد حمدى الطحان",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م"
+  ],
+  "periods": [
+    "6"
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "ECE5303",
+  "name": "Cyber Security - ECE5303",
+  "code": "ECE5303",
+  "instructors": [
+    "د. يحيى زكريا محسب حسين",
+    "ريم محمد ابراهيم مصطفي"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECE5303_A_Lect._Sunday_1",
+          "courseName": "Cyber Security - ECE5303",
+          "courseCode": "ECE5303",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. يحيى زكريا محسب حسين",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "ECE5303_A_Sec._Monday_11",
+          "courseName": "Cyber Security - ECE5303",
+          "courseCode": "ECE5303",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "ريم محمد ابراهيم مصطفي",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. يحيى زكريا محسب حسين",
+        "ريم محمد ابراهيم مصطفي"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECE5303_A_Lect._Sunday_1",
+      "courseName": "Cyber Security - ECE5303",
+      "courseCode": "ECE5303",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. يحيى زكريا محسب حسين",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "ECE5303_A_Sec._Monday_11",
+      "courseName": "Cyber Security - ECE5303",
+      "courseCode": "ECE5303",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "ريم محمد ابراهيم مصطفي",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "حاسبات ق م - Northampton*",
+    "هندسة الحاسبات ق.م*"
+  ],
+  "periods": [
+    "8"
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "id": "AR312",
+  "name": "ARCHITECTURAL DESIGN 2 - AR312",
+  "code": "AR312",
+  "instructors": [
+    "د. سارة سمير حلمى ابوعلى",
+    "سارة سمير حلمى ابوعلى"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "AR312_A_Lect._Sunday_9",
+          "courseName": "ARCHITECTURAL DESIGN 2 - AR312",
+          "courseCode": "AR312",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. سارة سمير حلمى ابوعلى",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "AR312_A_Lect._Sunday_11",
+          "courseName": "ARCHITECTURAL DESIGN 2 - AR312",
+          "courseCode": "AR312",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "د. سارة سمير حلمى ابوعلى",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "AR312_A_Sec._Wednesday_1",
+          "courseName": "ARCHITECTURAL DESIGN 2 - AR312",
+          "courseCode": "AR312",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "سارة سمير حلمى ابوعلى",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "AR312_A_Sec._Wednesday_3",
+          "courseName": "ARCHITECTURAL DESIGN 2 - AR312",
+          "courseCode": "AR312",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "سارة سمير حلمى ابوعلى",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. سارة سمير حلمى ابوعلى",
+        "سارة سمير حلمى ابوعلى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "AR312_A_Lect._Sunday_9",
+      "courseName": "ARCHITECTURAL DESIGN 2 - AR312",
+      "courseCode": "AR312",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. سارة سمير حلمى ابوعلى",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "AR312_A_Lect._Sunday_11",
+      "courseName": "ARCHITECTURAL DESIGN 2 - AR312",
+      "courseCode": "AR312",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "د. سارة سمير حلمى ابوعلى",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "AR312_A_Sec._Wednesday_1",
+      "courseName": "ARCHITECTURAL DESIGN 2 - AR312",
+      "courseCode": "AR312",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "سارة سمير حلمى ابوعلى",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "AR312_A_Sec._Wednesday_3",
+      "courseName": "ARCHITECTURAL DESIGN 2 - AR312",
+      "courseCode": "AR312",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "سارة سمير حلمى ابوعلى",
+      "color": "#14B8A6",
+      "room": ""
+    }
+  ],
+  "color": "#14B8A6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م"
+  ],
+  "periods": [
+    "5"
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "id": "CAI4201",
+  "name": "Natural Language Processing - CAI4201",
+  "code": "CAI4201",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "CAI4201_D_Lect._Sunday_7",
+          "courseName": "Natural Language Processing - CAI4201",
+          "courseCode": "CAI4201",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "CAI4201_D_Sec._Thursday_5",
+          "courseName": "Natural Language Processing - CAI4201",
+          "courseCode": "CAI4201",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "CAI4201_E_Sec._Sunday_7",
+          "courseName": "Natural Language Processing - CAI4201",
+          "courseCode": "CAI4201",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "CAI4201_E_Lect._Thursday_5",
+          "courseName": "Natural Language Processing - CAI4201",
+          "courseCode": "CAI4201",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "CAI4201_F_Sec._Monday_5",
+          "courseName": "Natural Language Processing - CAI4201",
+          "courseCode": "CAI4201",
+          "group": "F",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "CAI4201_F_Lect._Tuesday_7",
+          "courseName": "Natural Language Processing - CAI4201",
+          "courseCode": "CAI4201",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CAI4201_D_Lect._Sunday_7",
+      "courseName": "Natural Language Processing - CAI4201",
+      "courseCode": "CAI4201",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "CAI4201_E_Sec._Sunday_7",
+      "courseName": "Natural Language Processing - CAI4201",
+      "courseCode": "CAI4201",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "CAI4201_F_Sec._Monday_5",
+      "courseName": "Natural Language Processing - CAI4201",
+      "courseCode": "CAI4201",
+      "group": "F",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "CAI4201_F_Lect._Tuesday_7",
+      "courseName": "Natural Language Processing - CAI4201",
+      "courseCode": "CAI4201",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "CAI4201_D_Sec._Thursday_5",
+      "courseName": "Natural Language Processing - CAI4201",
+      "courseCode": "CAI4201",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "CAI4201_E_Lect._Thursday_5",
+      "courseName": "Natural Language Processing - CAI4201",
+      "courseCode": "CAI4201",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    }
+  ],
+  "color": "#3B82F6",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "الذكاء الإصطناعي - ق.م"
+  ],
+  "periods": [
+    "7"
+  ]
+}

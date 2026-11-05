@@ -1,0 +1,91 @@
+{
+  "id": "ECB5108",
+  "name": "Financial Manag. & Accounting in constr. - ECB5108",
+  "code": "ECB5108",
+  "instructors": [
+    "احمد عمرو منير مصطفي",
+    "د. كريم عادل عبد المنعم ابراهيم"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECB5108_A_Sec._Saturday_9",
+          "courseName": "Financial Manag. & Accounting in constr. - ECB5108",
+          "courseCode": "ECB5108",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "احمد عمرو منير مصطفي",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "ECB5108_A_Lect._Sunday_7",
+          "courseName": "Financial Manag. & Accounting in constr. - ECB5108",
+          "courseCode": "ECB5108",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. كريم عادل عبد المنعم ابراهيم",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "احمد عمرو منير مصطفي",
+        "د. كريم عادل عبد المنعم ابراهيم"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECB5108_A_Sec._Saturday_9",
+      "courseName": "Financial Manag. & Accounting in constr. - ECB5108",
+      "courseCode": "ECB5108",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "احمد عمرو منير مصطفي",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "ECB5108_A_Lect._Sunday_7",
+      "courseName": "Financial Manag. & Accounting in constr. - ECB5108",
+      "courseCode": "ECB5108",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. كريم عادل عبد المنعم ابراهيم",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م*"
+  ],
+  "periods": [
+    "9"
+  ]
+}

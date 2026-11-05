@@ -1,0 +1,93 @@
+{
+  "id": "EEE3000",
+  "name": "Practical Training I - EEE3000",
+  "code": "EEE3000",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EEE3000_B_Lect._Monday_11",
+          "courseName": "Practical Training I - EEE3000",
+          "courseCode": "EEE3000",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    },
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEE3000_A_Lect._Thursday_11",
+          "courseName": "Practical Training I - EEE3000",
+          "courseCode": "EEE3000",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE3000_B_Lect._Monday_11",
+      "courseName": "Practical Training I - EEE3000",
+      "courseCode": "EEE3000",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE3000_A_Lect._Thursday_11",
+      "courseName": "Practical Training I - EEE3000",
+      "courseCode": "EEE3000",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    }
+  ],
+  "color": "#6366F1",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية وتحكم ق.م"
+  ],
+  "periods": [
+    "5"
+  ]
+}

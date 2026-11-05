@@ -1,0 +1,91 @@
+{
+  "id": "BA224",
+  "name": "MATHEMATICS IV - BA224",
+  "code": "BA224",
+  "instructors": [
+    "تامر مصطفى عبدالفتاح محمد",
+    "د. تامر مصطفى عبدالفتاح محمد"
+  ],
+  "groups": [
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "BA224_C_Sec._Sunday_5",
+          "courseName": "MATHEMATICS IV - BA224",
+          "courseCode": "BA224",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "تامر مصطفى عبدالفتاح محمد",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "BA224_C_Lect._Tuesday_5",
+          "courseName": "MATHEMATICS IV - BA224",
+          "courseCode": "BA224",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. تامر مصطفى عبدالفتاح محمد",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "تامر مصطفى عبدالفتاح محمد",
+        "د. تامر مصطفى عبدالفتاح محمد"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "BA224_C_Sec._Sunday_5",
+      "courseName": "MATHEMATICS IV - BA224",
+      "courseCode": "BA224",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "تامر مصطفى عبدالفتاح محمد",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "BA224_C_Lect._Tuesday_5",
+      "courseName": "MATHEMATICS IV - BA224",
+      "courseCode": "BA224",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. تامر مصطفى عبدالفتاح محمد",
+      "color": "#F59E0B",
+      "room": ""
+    }
+  ],
+  "color": "#F59E0B",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية وتحكم ق.م"
+  ],
+  "periods": [
+    "4"
+  ]
+}

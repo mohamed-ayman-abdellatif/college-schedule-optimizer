@@ -1,0 +1,57 @@
+{
+  "id": "CCS4903",
+  "name": "Computing and Society - CCS4903",
+  "code": "CCS4903",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "J",
+      "sessions": [
+        {
+          "id": "CCS4903_J_Lect._Thursday_11",
+          "courseName": "Computing and Society - CCS4903",
+          "courseCode": "CCS4903",
+          "group": "J",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CCS4903_J_Lect._Thursday_11",
+      "courseName": "Computing and Society - CCS4903",
+      "courseCode": "CCS4903",
+      "group": "J",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    }
+  ],
+  "color": "#10B981",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "علوم الحاسب ق.م //"
+  ],
+  "periods": [
+    "7"
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "EEE5403",
+  "name": "Electrical Power Distribution - EEE5403",
+  "code": "EEE5403",
+  "instructors": [
+    "د. محمود مجدى بهجت عتيبة",
+    "احمد علاء الدين ابراهيم حسين متولي دهشان"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEE5403_A_Lect._Saturday_1",
+          "courseName": "Electrical Power Distribution - EEE5403",
+          "courseCode": "EEE5403",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. محمود مجدى بهجت عتيبة",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EEE5403_A_Sec._Saturday_3",
+          "courseName": "Electrical Power Distribution - EEE5403",
+          "courseCode": "EEE5403",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "احمد علاء الدين ابراهيم حسين متولي دهشان",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمود مجدى بهجت عتيبة",
+        "احمد علاء الدين ابراهيم حسين متولي دهشان"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE5403_A_Lect._Saturday_1",
+      "courseName": "Electrical Power Distribution - EEE5403",
+      "courseCode": "EEE5403",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. محمود مجدى بهجت عتيبة",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EEE5403_A_Sec._Saturday_3",
+      "courseName": "Electrical Power Distribution - EEE5403",
+      "courseCode": "EEE5403",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "احمد علاء الدين ابراهيم حسين متولي دهشان",
+      "color": "#84CC16",
+      "room": ""
+    }
+  ],
+  "color": "#84CC16",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية ق م -Northampton*",
+    "هندسة كهربية وتحكم ق.م*"
+  ],
+  "periods": [
+    "9"
+  ]
+}

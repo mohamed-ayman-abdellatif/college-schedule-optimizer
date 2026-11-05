@@ -1,0 +1,283 @@
+{
+  "id": "ECE2104",
+  "name": "Object-Oriented Programming - ECE2104*",
+  "code": "ECE2104",
+  "instructors": [
+    "مجد نبيل نصرى نعمه",
+    "د. محمد حجازى محمد السيد"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECE2104_A_Lab._Sunday_5",
+          "courseName": "Object-Oriented Programming - ECE2104*",
+          "courseCode": "ECE2104",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "مجد نبيل نصرى نعمه",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "ECE2104_A_Lect._Monday_9",
+          "courseName": "Object-Oriented Programming - ECE2104*",
+          "courseCode": "ECE2104",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. محمد حجازى محمد السيد",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "ECE2104_A_Lect._Monday_11",
+          "courseName": "Object-Oriented Programming - ECE2104",
+          "courseCode": "ECE2104",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "د. محمد حجازى محمد السيد",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "ECE2104_A_Lab._Thursday_7",
+          "courseName": "Object-Oriented Programming - ECE2104",
+          "courseCode": "ECE2104",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "مجد نبيل نصرى نعمه",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "مجد نبيل نصرى نعمه",
+        "د. محمد حجازى محمد السيد"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECE2104_B_Lab._Sunday_3",
+          "courseName": "Object-Oriented Programming - ECE2104",
+          "courseCode": "ECE2104",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "مجد نبيل نصرى نعمه",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "ECE2104_B_Lect._Monday_11",
+          "courseName": "Object-Oriented Programming - ECE2104",
+          "courseCode": "ECE2104",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "د. محمد حجازى محمد السيد",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "مجد نبيل نصرى نعمه",
+        "د. محمد حجازى محمد السيد"
+      ]
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "ECE2104_C_Lab._Sunday_5",
+          "courseName": "Object-Oriented Programming - ECE2104",
+          "courseCode": "ECE2104",
+          "group": "C",
+          "type": "Lab.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "مجد نبيل نصرى نعمه",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "ECE2104_C_Lect._Monday_9",
+          "courseName": "Object-Oriented Programming - ECE2104",
+          "courseCode": "ECE2104",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. محمد حجازى محمد السيد",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "مجد نبيل نصرى نعمه",
+        "د. محمد حجازى محمد السيد"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECE2104_A_Lab._Sunday_5",
+      "courseName": "Object-Oriented Programming - ECE2104*",
+      "courseCode": "ECE2104",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "مجد نبيل نصرى نعمه",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE2104_A_Lect._Monday_9",
+      "courseName": "Object-Oriented Programming - ECE2104*",
+      "courseCode": "ECE2104",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. محمد حجازى محمد السيد",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE2104_A_Lect._Monday_11",
+      "courseName": "Object-Oriented Programming - ECE2104",
+      "courseCode": "ECE2104",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "د. محمد حجازى محمد السيد",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE2104_A_Lab._Thursday_7",
+      "courseName": "Object-Oriented Programming - ECE2104",
+      "courseCode": "ECE2104",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "مجد نبيل نصرى نعمه",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE2104_B_Lab._Sunday_3",
+      "courseName": "Object-Oriented Programming - ECE2104",
+      "courseCode": "ECE2104",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "مجد نبيل نصرى نعمه",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE2104_B_Lect._Monday_11",
+      "courseName": "Object-Oriented Programming - ECE2104",
+      "courseCode": "ECE2104",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "د. محمد حجازى محمد السيد",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE2104_C_Lab._Sunday_5",
+      "courseName": "Object-Oriented Programming - ECE2104",
+      "courseCode": "ECE2104",
+      "group": "C",
+      "type": "Lab.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "مجد نبيل نصرى نعمه",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE2104_C_Lect._Monday_9",
+      "courseName": "Object-Oriented Programming - ECE2104",
+      "courseCode": "ECE2104",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. محمد حجازى محمد السيد",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "حاسبات ق م - Northampton*",
+    "هندسة الحاسبات ق.م",
+    "هندسة الحاسبات ق.م*"
+  ],
+  "periods": [
+    "4"
+  ]
+}

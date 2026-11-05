@@ -1,0 +1,289 @@
+{
+  "id": "EAR3611",
+  "name": "Introduction to Interior Design - EAR3611",
+  "code": "EAR3611",
+  "instructors": [
+    "د. الاء محمد اكمل عبدالرحيم الغر",
+    "الاء محمد اكمل عبدالرحيم الغر",
+    "د. سارة سمير حلمى ابوعلى",
+    "سارة سمير حلمى ابوعلى"
+  ],
+  "groups": [
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "EAR3611_C_Lect._Sunday_1",
+          "courseName": "Introduction to Interior Design - EAR3611",
+          "courseCode": "EAR3611",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EAR3611_C_Sec._Sunday_3",
+          "courseName": "Introduction to Interior Design - EAR3611",
+          "courseCode": "EAR3611",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "EAR3611_D_Lect._Sunday_5",
+          "courseName": "Introduction to Interior Design - EAR3611",
+          "courseCode": "EAR3611",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. الاء محمد اكمل عبدالرحيم الغر",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EAR3611_D_Sec._Sunday_7",
+          "courseName": "Introduction to Interior Design - EAR3611",
+          "courseCode": "EAR3611",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "الاء محمد اكمل عبدالرحيم الغر",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. الاء محمد اكمل عبدالرحيم الغر",
+        "الاء محمد اكمل عبدالرحيم الغر"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EAR3611_B_Lect._Tuesday_5",
+          "courseName": "Introduction to Interior Design - EAR3611",
+          "courseCode": "EAR3611",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EAR3611_B_Sec._Tuesday_7",
+          "courseName": "Introduction to Interior Design - EAR3611",
+          "courseCode": "EAR3611",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "EAR3611_E_Lect._Tuesday_9",
+          "courseName": "Introduction to Interior Design - EAR3611",
+          "courseCode": "EAR3611",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. سارة سمير حلمى ابوعلى",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EAR3611_E_Sec._Tuesday_11",
+          "courseName": "Introduction to Interior Design - EAR3611",
+          "courseCode": "EAR3611",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "سارة سمير حلمى ابوعلى",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. سارة سمير حلمى ابوعلى",
+        "سارة سمير حلمى ابوعلى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EAR3611_C_Lect._Sunday_1",
+      "courseName": "Introduction to Interior Design - EAR3611",
+      "courseCode": "EAR3611",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EAR3611_C_Sec._Sunday_3",
+      "courseName": "Introduction to Interior Design - EAR3611",
+      "courseCode": "EAR3611",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EAR3611_D_Lect._Sunday_5",
+      "courseName": "Introduction to Interior Design - EAR3611",
+      "courseCode": "EAR3611",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. الاء محمد اكمل عبدالرحيم الغر",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EAR3611_D_Sec._Sunday_7",
+      "courseName": "Introduction to Interior Design - EAR3611",
+      "courseCode": "EAR3611",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "الاء محمد اكمل عبدالرحيم الغر",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EAR3611_B_Lect._Tuesday_5",
+      "courseName": "Introduction to Interior Design - EAR3611",
+      "courseCode": "EAR3611",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EAR3611_B_Sec._Tuesday_7",
+      "courseName": "Introduction to Interior Design - EAR3611",
+      "courseCode": "EAR3611",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EAR3611_E_Lect._Tuesday_9",
+      "courseName": "Introduction to Interior Design - EAR3611",
+      "courseCode": "EAR3611",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. سارة سمير حلمى ابوعلى",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EAR3611_E_Sec._Tuesday_11",
+      "courseName": "Introduction to Interior Design - EAR3611",
+      "courseCode": "EAR3611",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "سارة سمير حلمى ابوعلى",
+      "color": "#10B981",
+      "room": ""
+    }
+  ],
+  "color": "#10B981",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م",
+    "هندسة معمارية-Cardiff-ق م //"
+  ],
+  "periods": [
+    "5"
+  ]
+}

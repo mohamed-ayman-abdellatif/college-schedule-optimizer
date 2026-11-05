@@ -1,0 +1,92 @@
+{
+  "id": "EME4201",
+  "name": "Thermal Plant Engineering - EME4201*",
+  "code": "EME4201",
+  "instructors": [
+    "د. خيرى السيد السيد عبد العال",
+    "عمر احمد رضا سيد"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EME4201_A_Lect._Saturday_7",
+          "courseName": "Thermal Plant Engineering - EME4201*",
+          "courseCode": "EME4201",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. خيرى السيد السيد عبد العال",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EME4201_A_Sec._Sunday_11",
+          "courseName": "Thermal Plant Engineering - EME4201*",
+          "courseCode": "EME4201",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "عمر احمد رضا سيد",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. خيرى السيد السيد عبد العال",
+        "عمر احمد رضا سيد"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EME4201_A_Lect._Saturday_7",
+      "courseName": "Thermal Plant Engineering - EME4201*",
+      "courseCode": "EME4201",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. خيرى السيد السيد عبد العال",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EME4201_A_Sec._Sunday_11",
+      "courseName": "Thermal Plant Engineering - EME4201*",
+      "courseCode": "EME4201",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "عمر احمد رضا سيد",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "ميكانيكا ق م -Northampton*",
+    "هـ.ميكانيكية ق.م*"
+  ],
+  "periods": [
+    "7"
+  ]
+}

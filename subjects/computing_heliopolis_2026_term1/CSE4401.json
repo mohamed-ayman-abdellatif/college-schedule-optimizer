@@ -1,0 +1,85 @@
+{
+  "id": "CSE4401",
+  "name": "Software Engineering Process - CSE4401",
+  "code": "CSE4401",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CSE4401_A_Lect._Tuesday_9",
+          "courseName": "Software Engineering Process - CSE4401",
+          "courseCode": "CSE4401",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "CSE4401_A_Sec._Wednesday_7",
+          "courseName": "Software Engineering Process - CSE4401",
+          "courseCode": "CSE4401",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CSE4401_A_Lect._Tuesday_9",
+      "courseName": "Software Engineering Process - CSE4401",
+      "courseCode": "CSE4401",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CSE4401_A_Sec._Wednesday_7",
+      "courseName": "Software Engineering Process - CSE4401",
+      "courseCode": "CSE4401",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "هندسة البرمجيات - ق.م"
+  ],
+  "periods": [
+    "8"
+  ]
+}

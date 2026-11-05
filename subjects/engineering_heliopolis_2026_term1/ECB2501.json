@@ -1,0 +1,226 @@
+{
+  "id": "ECB2501",
+  "name": "Material Science & Properties - ECB2501",
+  "code": "ECB2501",
+  "instructors": [
+    "د. حسن احمد حسن احمد سعد",
+    "احمد محمد عبدالحميد عبدالهادى بلطيه"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECB2501_B_Lect._Sunday_3",
+          "courseName": "Material Science & Properties - ECB2501",
+          "courseCode": "ECB2501",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. حسن احمد حسن احمد سعد",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "ECB2501_B_Sec._Tuesday_3",
+          "courseName": "Material Science & Properties - ECB2501",
+          "courseCode": "ECB2501",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "احمد محمد عبدالحميد عبدالهادى بلطيه",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. حسن احمد حسن احمد سعد",
+        "احمد محمد عبدالحميد عبدالهادى بلطيه"
+      ]
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "ECB2501_C_Lect._Sunday_3",
+          "courseName": "Material Science & Properties - ECB2501",
+          "courseCode": "ECB2501",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. حسن احمد حسن احمد سعد",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "ECB2501_C_Sec._Tuesday_5",
+          "courseName": "Material Science & Properties - ECB2501",
+          "courseCode": "ECB2501",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "احمد محمد عبدالحميد عبدالهادى بلطيه",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. حسن احمد حسن احمد سعد",
+        "احمد محمد عبدالحميد عبدالهادى بلطيه"
+      ]
+    },
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECB2501_A_Lect._Sunday_3",
+          "courseName": "Material Science & Properties - ECB2501*",
+          "courseCode": "ECB2501",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. حسن احمد حسن احمد سعد",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "ECB2501_A_Sec._Tuesday_3",
+          "courseName": "Material Science & Properties - ECB2501*",
+          "courseCode": "ECB2501",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "احمد محمد عبدالحميد عبدالهادى بلطيه",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. حسن احمد حسن احمد سعد",
+        "احمد محمد عبدالحميد عبدالهادى بلطيه"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECB2501_B_Lect._Sunday_3",
+      "courseName": "Material Science & Properties - ECB2501",
+      "courseCode": "ECB2501",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. حسن احمد حسن احمد سعد",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECB2501_B_Sec._Tuesday_3",
+      "courseName": "Material Science & Properties - ECB2501",
+      "courseCode": "ECB2501",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "احمد محمد عبدالحميد عبدالهادى بلطيه",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECB2501_C_Lect._Sunday_3",
+      "courseName": "Material Science & Properties - ECB2501",
+      "courseCode": "ECB2501",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. حسن احمد حسن احمد سعد",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECB2501_C_Sec._Tuesday_5",
+      "courseName": "Material Science & Properties - ECB2501",
+      "courseCode": "ECB2501",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "احمد محمد عبدالحميد عبدالهادى بلطيه",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECB2501_A_Lect._Sunday_3",
+      "courseName": "Material Science & Properties - ECB2501*",
+      "courseCode": "ECB2501",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. حسن احمد حسن احمد سعد",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECB2501_A_Sec._Tuesday_3",
+      "courseName": "Material Science & Properties - ECB2501*",
+      "courseCode": "ECB2501",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "احمد محمد عبدالحميد عبدالهادى بلطيه",
+      "color": "#6366F1",
+      "room": ""
+    }
+  ],
+  "color": "#6366F1",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م",
+    "هندسة التشيد والبناء ق.م*"
+  ],
+  "periods": [
+    "3"
+  ]
+}

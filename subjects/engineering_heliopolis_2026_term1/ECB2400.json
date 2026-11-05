@@ -1,0 +1,229 @@
+{
+  "id": "ECB2400",
+  "name": "Theory Of Structures - ECB2400",
+  "code": "ECB2400",
+  "instructors": [
+    "د. محمد اشرف محمد عبد العزيز الصياد",
+    "احمد محمد عبدالحميد عبدالهادى بلطيه",
+    "مصطفى يوسف عبداللطيف يوسف",
+    "د. مصطفى يوسف عبداللطيف يوسف",
+    "ايه محمود عبدالحفيظ عبدالله",
+    "د. الحسين ابراهيم هلال ابراهيم"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECB2400_B_Lect._Sunday_1",
+          "courseName": "Theory Of Structures - ECB2400",
+          "courseCode": "ECB2400",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. محمد اشرف محمد عبد العزيز الصياد",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "ECB2400_B_Sec._Wednesday_5",
+          "courseName": "Theory Of Structures - ECB2400",
+          "courseCode": "ECB2400",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "احمد محمد عبدالحميد عبدالهادى بلطيه",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد اشرف محمد عبد العزيز الصياد",
+        "احمد محمد عبدالحميد عبدالهادى بلطيه"
+      ]
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "ECB2400_D_Sec._Sunday_5",
+          "courseName": "Theory Of Structures - ECB2400",
+          "courseCode": "ECB2400",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "مصطفى يوسف عبداللطيف يوسف",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "ECB2400_D_Lect._Tuesday_7",
+          "courseName": "Theory Of Structures - ECB2400",
+          "courseCode": "ECB2400",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. مصطفى يوسف عبداللطيف يوسف",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "مصطفى يوسف عبداللطيف يوسف",
+        "د. مصطفى يوسف عبداللطيف يوسف"
+      ]
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "ECB2400_C_Sec._Monday_5",
+          "courseName": "Theory Of Structures - ECB2400",
+          "courseCode": "ECB2400",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "ايه محمود عبدالحفيظ عبدالله",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "ECB2400_C_Lect._Monday_7",
+          "courseName": "Theory Of Structures - ECB2400",
+          "courseCode": "ECB2400",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. الحسين ابراهيم هلال ابراهيم",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ايه محمود عبدالحفيظ عبدالله",
+        "د. الحسين ابراهيم هلال ابراهيم"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECB2400_B_Lect._Sunday_1",
+      "courseName": "Theory Of Structures - ECB2400",
+      "courseCode": "ECB2400",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. محمد اشرف محمد عبد العزيز الصياد",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "ECB2400_D_Sec._Sunday_5",
+      "courseName": "Theory Of Structures - ECB2400",
+      "courseCode": "ECB2400",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "مصطفى يوسف عبداللطيف يوسف",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "ECB2400_C_Sec._Monday_5",
+      "courseName": "Theory Of Structures - ECB2400",
+      "courseCode": "ECB2400",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "ايه محمود عبدالحفيظ عبدالله",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "ECB2400_C_Lect._Monday_7",
+      "courseName": "Theory Of Structures - ECB2400",
+      "courseCode": "ECB2400",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. الحسين ابراهيم هلال ابراهيم",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "ECB2400_D_Lect._Tuesday_7",
+      "courseName": "Theory Of Structures - ECB2400",
+      "courseCode": "ECB2400",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. مصطفى يوسف عبداللطيف يوسف",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "ECB2400_B_Sec._Wednesday_5",
+      "courseName": "Theory Of Structures - ECB2400",
+      "courseCode": "ECB2400",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "احمد محمد عبدالحميد عبدالهادى بلطيه",
+      "color": "#3B82F6",
+      "room": ""
+    }
+  ],
+  "color": "#3B82F6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م*"
+  ],
+  "periods": [
+    "3"
+  ]
+}

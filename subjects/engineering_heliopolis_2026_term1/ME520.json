@@ -1,0 +1,94 @@
+{
+  "id": "ME520",
+  "name": "THERMAL PLANT ENGINEERING - ME520",
+  "code": "ME520",
+  "instructors": [
+    "د. خيرى السيد السيد عبد العال",
+    "عمر احمد رضا سيد"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ME520_A_Lect._Saturday_7",
+          "courseName": "THERMAL PLANT ENGINEERING - ME520",
+          "courseCode": "ME520",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. خيرى السيد السيد عبد العال",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "ME520_A_Sec._Sunday_11",
+          "courseName": "THERMAL PLANT ENGINEERING - ME520",
+          "courseCode": "ME520",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "عمر احمد رضا سيد",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. خيرى السيد السيد عبد العال",
+        "عمر احمد رضا سيد"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ME520_A_Lect._Saturday_7",
+      "courseName": "THERMAL PLANT ENGINEERING - ME520",
+      "courseCode": "ME520",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. خيرى السيد السيد عبد العال",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "ME520_A_Sec._Sunday_11",
+      "courseName": "THERMAL PLANT ENGINEERING - ME520",
+      "courseCode": "ME520",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "عمر احمد رضا سيد",
+      "color": "#14B8A6",
+      "room": ""
+    }
+  ],
+  "color": "#14B8A6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "ميكانيكا ق م -Northampton",
+    "هـ.ميكانيكية ق.م",
+    "هندسة كهربية وتحكم ق.م"
+  ],
+  "periods": [
+    "10",
+    "8"
+  ]
+}

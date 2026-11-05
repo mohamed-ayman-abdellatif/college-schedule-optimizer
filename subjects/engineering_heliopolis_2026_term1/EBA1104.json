@@ -1,0 +1,516 @@
+{
+  "id": "EBA1104",
+  "name": "Physics II - EBA1104",
+  "code": "EBA1104",
+  "instructors": [
+    "د. اسلام عماد دسوقى قطب",
+    "ندى حسين احمد محمد",
+    "د. اشرف سعيد حسين البردويل",
+    "نجلاء محمد صادق السيد"
+  ],
+  "groups": [
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "EBA1104_E_Lab._Sunday_3",
+          "courseName": "Physics II - EBA1104",
+          "courseCode": "EBA1104",
+          "group": "E",
+          "type": "Lab.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA1104_E_Lect._Tuesday_9",
+          "courseName": "Physics II - EBA1104",
+          "courseCode": "EBA1104",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. اسلام عماد دسوقى قطب",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA1104_E_Sec._Wednesday_3",
+          "courseName": "Physics II - EBA1104",
+          "courseCode": "EBA1104",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "ندى حسين احمد محمد",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. اسلام عماد دسوقى قطب",
+        "ندى حسين احمد محمد"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EBA1104_B_Lab._Sunday_5",
+          "courseName": "Physics II - EBA1104",
+          "courseCode": "EBA1104",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA1104_B_Sec._Wednesday_1",
+          "courseName": "Physics II - EBA1104",
+          "courseCode": "EBA1104",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "ندى حسين احمد محمد",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA1104_B_Lect._Wednesday_5",
+          "courseName": "Physics II - EBA1104",
+          "courseCode": "EBA1104",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. اسلام عماد دسوقى قطب",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ندى حسين احمد محمد",
+        "د. اسلام عماد دسوقى قطب"
+      ]
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "EBA1104_D_Lab._Sunday_5",
+          "courseName": "Physics II - EBA1104",
+          "courseCode": "EBA1104",
+          "group": "D",
+          "type": "Lab.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA1104_D_Lect._Tuesday_3",
+          "courseName": "Physics II - EBA1104",
+          "courseCode": "EBA1104",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. اشرف سعيد حسين البردويل",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA1104_D_Sec._Wednesday_3",
+          "courseName": "Physics II - EBA1104",
+          "courseCode": "EBA1104",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "نجلاء محمد صادق السيد",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. اشرف سعيد حسين البردويل",
+        "نجلاء محمد صادق السيد"
+      ]
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "EBA1104_C_Lab._Monday_9",
+          "courseName": "Physics II - EBA1104",
+          "courseCode": "EBA1104",
+          "group": "C",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA1104_C_Sec._Wednesday_1",
+          "courseName": "Physics II - EBA1104",
+          "courseCode": "EBA1104",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "نجلاء محمد صادق السيد",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA1104_C_Lect._Wednesday_9",
+          "courseName": "Physics II - EBA1104",
+          "courseCode": "EBA1104",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. اشرف سعيد حسين البردويل",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "نجلاء محمد صادق السيد",
+        "د. اشرف سعيد حسين البردويل"
+      ]
+    },
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EBA1104_A_Lab._Wednesday_1",
+          "courseName": "Physics II - EBA1104",
+          "courseCode": "EBA1104",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA1104_A_Sec._Wednesday_5",
+          "courseName": "Physics II - EBA1104",
+          "courseCode": "EBA1104",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "نجلاء محمد صادق السيد",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA1104_A_Lect._Wednesday_9",
+          "courseName": "Physics II - EBA1104",
+          "courseCode": "EBA1104",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. اشرف سعيد حسين البردويل",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "نجلاء محمد صادق السيد",
+        "د. اشرف سعيد حسين البردويل"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EBA1104_E_Lab._Sunday_3",
+      "courseName": "Physics II - EBA1104",
+      "courseCode": "EBA1104",
+      "group": "E",
+      "type": "Lab.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA1104_E_Lect._Tuesday_9",
+      "courseName": "Physics II - EBA1104",
+      "courseCode": "EBA1104",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. اسلام عماد دسوقى قطب",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA1104_E_Sec._Wednesday_3",
+      "courseName": "Physics II - EBA1104",
+      "courseCode": "EBA1104",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "ندى حسين احمد محمد",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA1104_B_Lab._Sunday_5",
+      "courseName": "Physics II - EBA1104",
+      "courseCode": "EBA1104",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA1104_B_Sec._Wednesday_1",
+      "courseName": "Physics II - EBA1104",
+      "courseCode": "EBA1104",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "ندى حسين احمد محمد",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA1104_B_Lect._Wednesday_5",
+      "courseName": "Physics II - EBA1104",
+      "courseCode": "EBA1104",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. اسلام عماد دسوقى قطب",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA1104_D_Lab._Sunday_5",
+      "courseName": "Physics II - EBA1104",
+      "courseCode": "EBA1104",
+      "group": "D",
+      "type": "Lab.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA1104_D_Lect._Tuesday_3",
+      "courseName": "Physics II - EBA1104",
+      "courseCode": "EBA1104",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. اشرف سعيد حسين البردويل",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA1104_D_Sec._Wednesday_3",
+      "courseName": "Physics II - EBA1104",
+      "courseCode": "EBA1104",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "نجلاء محمد صادق السيد",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA1104_C_Lab._Monday_9",
+      "courseName": "Physics II - EBA1104",
+      "courseCode": "EBA1104",
+      "group": "C",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA1104_C_Sec._Wednesday_1",
+      "courseName": "Physics II - EBA1104",
+      "courseCode": "EBA1104",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "نجلاء محمد صادق السيد",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA1104_C_Lect._Wednesday_9",
+      "courseName": "Physics II - EBA1104",
+      "courseCode": "EBA1104",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. اشرف سعيد حسين البردويل",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA1104_A_Lab._Wednesday_1",
+      "courseName": "Physics II - EBA1104",
+      "courseCode": "EBA1104",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA1104_A_Sec._Wednesday_5",
+      "courseName": "Physics II - EBA1104",
+      "courseCode": "EBA1104",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "نجلاء محمد صادق السيد",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA1104_A_Lect._Wednesday_9",
+      "courseName": "Physics II - EBA1104",
+      "courseCode": "EBA1104",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. اشرف سعيد حسين البردويل",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "الكترونيات ق م - Northamption //",
+    "الكترونيات ق م - Northamption*",
+    "حاسبات ق م - Northampton",
+    "ميكانيكا ق م -Northampton",
+    "ميكانيكا ق م -Northampton*",
+    "هـ.الكترونات واتصالات ق.م",
+    "هـ.الكترونات واتصالات ق.م*",
+    "هـ.ميكانيكية ق.م*",
+    "هندسة التشيد والبناء ق.م",
+    "هندسة الحاسبات ق.م",
+    "هندسة الحاسبات ق.م*",
+    "هندسة كهربية وتحكم ق.م",
+    "هندسة معمارية ق.م",
+    "هندسة معمارية ق.م*",
+    "هندسة معمارية-Cardiff-ق م //",
+    "هندسة ميكانيكية-ق م //"
+  ],
+  "periods": [
+    "2"
+  ]
+}

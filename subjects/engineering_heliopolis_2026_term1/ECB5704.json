@@ -1,0 +1,91 @@
+{
+  "id": "ECB5704",
+  "name": "Construction Surveying 2 - ECB5704",
+  "code": "ECB5704",
+  "instructors": [
+    "د. محمد رمضان قاسم محمد",
+    "مؤمن على محمد على محمد"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECB5704_A_Lect._Saturday_3",
+          "courseName": "Construction Surveying 2 - ECB5704",
+          "courseCode": "ECB5704",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. محمد رمضان قاسم محمد",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "ECB5704_A_Sec._Thursday_1",
+          "courseName": "Construction Surveying 2 - ECB5704",
+          "courseCode": "ECB5704",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "مؤمن على محمد على محمد",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد رمضان قاسم محمد",
+        "مؤمن على محمد على محمد"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECB5704_A_Lect._Saturday_3",
+      "courseName": "Construction Surveying 2 - ECB5704",
+      "courseCode": "ECB5704",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. محمد رمضان قاسم محمد",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "ECB5704_A_Sec._Thursday_1",
+      "courseName": "Construction Surveying 2 - ECB5704",
+      "courseCode": "ECB5704",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "مؤمن على محمد على محمد",
+      "color": "#3B82F6",
+      "room": ""
+    }
+  ],
+  "color": "#3B82F6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م*"
+  ],
+  "periods": [
+    "9"
+  ]
+}

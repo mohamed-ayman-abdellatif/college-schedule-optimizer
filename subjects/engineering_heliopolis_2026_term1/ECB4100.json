@@ -1,0 +1,91 @@
+{
+  "id": "ECB4100",
+  "name": "Project Management & Scheduling - ECB4100",
+  "code": "ECB4100",
+  "instructors": [
+    "ياسمين خالد ابو الفتوح شاهين",
+    "د. كريم عادل عبد المنعم ابراهيم"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECB4100_B_Sec._Monday_1",
+          "courseName": "Project Management & Scheduling - ECB4100",
+          "courseCode": "ECB4100",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "ياسمين خالد ابو الفتوح شاهين",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "ECB4100_B_Lect._Tuesday_9",
+          "courseName": "Project Management & Scheduling - ECB4100",
+          "courseCode": "ECB4100",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. كريم عادل عبد المنعم ابراهيم",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ياسمين خالد ابو الفتوح شاهين",
+        "د. كريم عادل عبد المنعم ابراهيم"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECB4100_B_Sec._Monday_1",
+      "courseName": "Project Management & Scheduling - ECB4100",
+      "courseCode": "ECB4100",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "ياسمين خالد ابو الفتوح شاهين",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "ECB4100_B_Lect._Tuesday_9",
+      "courseName": "Project Management & Scheduling - ECB4100",
+      "courseCode": "ECB4100",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. كريم عادل عبد المنعم ابراهيم",
+      "color": "#10B981",
+      "room": ""
+    }
+  ],
+  "color": "#10B981",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م*"
+  ],
+  "periods": [
+    "6"
+  ]
+}

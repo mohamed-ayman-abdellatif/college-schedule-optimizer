@@ -1,0 +1,631 @@
+{
+  "id": "EIM4204",
+  "name": "Operation Research - EIM4204",
+  "code": "EIM4204",
+  "instructors": [
+    "سمير احمد سمير الابيض",
+    "د. باسم حسام عمر رشدى",
+    "د. تامر احمد علي علي اسماعيل",
+    "تامر احمد علي علي اسماعيل"
+  ],
+  "groups": [
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "EIM4204_C_Sec._Saturday_9",
+          "courseName": "Operation Research - EIM4204",
+          "courseCode": "EIM4204",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "سمير احمد سمير الابيض",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EIM4204_C_Lect._Wednesday_3",
+          "courseName": "Operation Research - EIM4204",
+          "courseCode": "EIM4204",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. باسم حسام عمر رشدى",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "سمير احمد سمير الابيض",
+        "د. باسم حسام عمر رشدى"
+      ]
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "EIM4204_D_Sec._Saturday_11",
+          "courseName": "Operation Research - EIM4204",
+          "courseCode": "EIM4204",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "سمير احمد سمير الابيض",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EIM4204_D_Lect._Wednesday_1",
+          "courseName": "Operation Research - EIM4204",
+          "courseCode": "EIM4204",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. باسم حسام عمر رشدى",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "سمير احمد سمير الابيض",
+        "د. باسم حسام عمر رشدى"
+      ]
+    },
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EIM4204_A_Sec._Sunday_11",
+          "courseName": "Operation Research - EIM4204",
+          "courseCode": "EIM4204",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "سمير احمد سمير الابيض",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EIM4204_A_Lect._Wednesday_3",
+          "courseName": "Operation Research - EIM4204",
+          "courseCode": "EIM4204",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. باسم حسام عمر رشدى",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "سمير احمد سمير الابيض",
+        "د. باسم حسام عمر رشدى"
+      ]
+    },
+    {
+      "group": "J",
+      "sessions": [
+        {
+          "id": "EIM4204_J_Sec._Monday_9",
+          "courseName": "Operation Research - EIM4204",
+          "courseCode": "EIM4204",
+          "group": "J",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EIM4204_J_Lect._Tuesday_7",
+          "courseName": "Operation Research - EIM4204",
+          "courseCode": "EIM4204",
+          "group": "J",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. تامر احمد علي علي اسماعيل",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. تامر احمد علي علي اسماعيل"
+      ]
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "EIM4204_F_Sec._Monday_11",
+          "courseName": "Operation Research - EIM4204",
+          "courseCode": "EIM4204",
+          "group": "F",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EIM4204_F_Lect._Tuesday_5",
+          "courseName": "Operation Research - EIM4204",
+          "courseCode": "EIM4204",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. باسم حسام عمر رشدى",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. باسم حسام عمر رشدى"
+      ]
+    },
+    {
+      "group": "I",
+      "sessions": [
+        {
+          "id": "EIM4204_I_Lect._Tuesday_5",
+          "courseName": "Operation Research - EIM4204",
+          "courseCode": "EIM4204",
+          "group": "I",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. باسم حسام عمر رشدى",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EIM4204_I_Sec._Wednesday_11",
+          "courseName": "Operation Research - EIM4204",
+          "courseCode": "EIM4204",
+          "group": "I",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. باسم حسام عمر رشدى"
+      ]
+    },
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "EIM4204_G_Lect._Tuesday_7",
+          "courseName": "Operation Research - EIM4204",
+          "courseCode": "EIM4204",
+          "group": "G",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. تامر احمد علي علي اسماعيل",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EIM4204_G_Sec._Tuesday_11",
+          "courseName": "Operation Research - EIM4204",
+          "courseCode": "EIM4204",
+          "group": "G",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "تامر احمد علي علي اسماعيل",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. تامر احمد علي علي اسماعيل",
+        "تامر احمد علي علي اسماعيل"
+      ]
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "EIM4204_E_Sec._Tuesday_9",
+          "courseName": "Operation Research - EIM4204",
+          "courseCode": "EIM4204",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EIM4204_E_Lect._Wednesday_1",
+          "courseName": "Operation Research - EIM4204",
+          "courseCode": "EIM4204",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. باسم حسام عمر رشدى",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. باسم حسام عمر رشدى"
+      ]
+    },
+    {
+      "group": "R",
+      "sessions": [
+        {
+          "id": "EIM4204_R_Lect._Tuesday_5",
+          "courseName": "Operation Research - EIM4204",
+          "courseCode": "EIM4204",
+          "group": "R",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. باسم حسام عمر رشدى",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EIM4204_R_Sec._Wednesday_11",
+          "courseName": "Operation Research - EIM4204",
+          "courseCode": "EIM4204",
+          "group": "R",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. باسم حسام عمر رشدى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EIM4204_C_Sec._Saturday_9",
+      "courseName": "Operation Research - EIM4204",
+      "courseCode": "EIM4204",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "سمير احمد سمير الابيض",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EIM4204_C_Lect._Wednesday_3",
+      "courseName": "Operation Research - EIM4204",
+      "courseCode": "EIM4204",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. باسم حسام عمر رشدى",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EIM4204_D_Sec._Saturday_11",
+      "courseName": "Operation Research - EIM4204",
+      "courseCode": "EIM4204",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "سمير احمد سمير الابيض",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EIM4204_D_Lect._Wednesday_1",
+      "courseName": "Operation Research - EIM4204",
+      "courseCode": "EIM4204",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. باسم حسام عمر رشدى",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EIM4204_A_Sec._Sunday_11",
+      "courseName": "Operation Research - EIM4204",
+      "courseCode": "EIM4204",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "سمير احمد سمير الابيض",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EIM4204_A_Lect._Wednesday_3",
+      "courseName": "Operation Research - EIM4204",
+      "courseCode": "EIM4204",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. باسم حسام عمر رشدى",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EIM4204_J_Sec._Monday_9",
+      "courseName": "Operation Research - EIM4204",
+      "courseCode": "EIM4204",
+      "group": "J",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EIM4204_J_Lect._Tuesday_7",
+      "courseName": "Operation Research - EIM4204",
+      "courseCode": "EIM4204",
+      "group": "J",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. تامر احمد علي علي اسماعيل",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EIM4204_F_Sec._Monday_11",
+      "courseName": "Operation Research - EIM4204",
+      "courseCode": "EIM4204",
+      "group": "F",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EIM4204_F_Lect._Tuesday_5",
+      "courseName": "Operation Research - EIM4204",
+      "courseCode": "EIM4204",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. باسم حسام عمر رشدى",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EIM4204_I_Lect._Tuesday_5",
+      "courseName": "Operation Research - EIM4204",
+      "courseCode": "EIM4204",
+      "group": "I",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. باسم حسام عمر رشدى",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EIM4204_I_Sec._Wednesday_11",
+      "courseName": "Operation Research - EIM4204",
+      "courseCode": "EIM4204",
+      "group": "I",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EIM4204_G_Lect._Tuesday_7",
+      "courseName": "Operation Research - EIM4204",
+      "courseCode": "EIM4204",
+      "group": "G",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. تامر احمد علي علي اسماعيل",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EIM4204_G_Sec._Tuesday_11",
+      "courseName": "Operation Research - EIM4204",
+      "courseCode": "EIM4204",
+      "group": "G",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "تامر احمد علي علي اسماعيل",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EIM4204_E_Sec._Tuesday_9",
+      "courseName": "Operation Research - EIM4204",
+      "courseCode": "EIM4204",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EIM4204_E_Lect._Wednesday_1",
+      "courseName": "Operation Research - EIM4204",
+      "courseCode": "EIM4204",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. باسم حسام عمر رشدى",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EIM4204_R_Lect._Tuesday_5",
+      "courseName": "Operation Research - EIM4204",
+      "courseCode": "EIM4204",
+      "group": "R",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. باسم حسام عمر رشدى",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EIM4204_R_Sec._Wednesday_11",
+      "courseName": "Operation Research - EIM4204",
+      "courseCode": "EIM4204",
+      "group": "R",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    }
+  ],
+  "color": "#84CC16",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "حاسبات ق م - Northampton*",
+    "ميكانيكا ق م -Northampton*",
+    "هـ.الكترونات واتصالات ق.م*",
+    "هـ.ميكانيكية ق.م*",
+    "هندسة الحاسبات ق.م*",
+    "هندسة كهربية ق م -Northampton*",
+    "هندسة كهربية وتحكم ق.م*"
+  ],
+  "periods": [
+    "6",
+    "7"
+  ]
+}

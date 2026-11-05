@@ -1,0 +1,85 @@
+{
+  "id": "CCS4204",
+  "name": "Computer System Security - CCS4204",
+  "code": "CCS4204",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "CCS4204_E_Sec._Sunday_11",
+          "courseName": "Computer System Security - CCS4204",
+          "courseCode": "CCS4204",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "CCS4204_E_Lect._Tuesday_7",
+          "courseName": "Computer System Security - CCS4204",
+          "courseCode": "CCS4204",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CCS4204_E_Sec._Sunday_11",
+      "courseName": "Computer System Security - CCS4204",
+      "courseCode": "CCS4204",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "CCS4204_E_Lect._Tuesday_7",
+      "courseName": "Computer System Security - CCS4204",
+      "courseCode": "CCS4204",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    }
+  ],
+  "color": "#06B6D4",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "هندسة البرمجيات - ق.م"
+  ],
+  "periods": [
+    "8"
+  ]
+}

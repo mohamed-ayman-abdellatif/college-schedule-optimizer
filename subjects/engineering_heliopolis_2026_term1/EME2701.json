@@ -1,0 +1,696 @@
+{
+  "id": "EME2701",
+  "name": "Material Science - EME2701",
+  "code": "EME2701",
+  "instructors": [
+    "د. علاء الدين زكريا حسن خفاجي",
+    "ايمان احمد عوض احمد"
+  ],
+  "groups": [
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "EME2701_G_Lect._Saturday_7",
+          "courseName": "Material Science - EME2701",
+          "courseCode": "EME2701",
+          "group": "G",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. علاء الدين زكريا حسن خفاجي",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EME2701_G_Sec._Monday_9",
+          "courseName": "Material Science - EME2701",
+          "courseCode": "EME2701",
+          "group": "G",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "ايمان احمد عوض احمد",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. علاء الدين زكريا حسن خفاجي",
+        "ايمان احمد عوض احمد"
+      ]
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "EME2701_E_Lect._Saturday_9",
+          "courseName": "Material Science - EME2701",
+          "courseCode": "EME2701",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. علاء الدين زكريا حسن خفاجي",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EME2701_E_Sec._Tuesday_5",
+          "courseName": "Material Science - EME2701",
+          "courseCode": "EME2701",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "ايمان احمد عوض احمد",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. علاء الدين زكريا حسن خفاجي",
+        "ايمان احمد عوض احمد"
+      ]
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "EME2701_F_Lect._Saturday_11",
+          "courseName": "Material Science - EME2701",
+          "courseCode": "EME2701",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "د. علاء الدين زكريا حسن خفاجي",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EME2701_F_Sec._Monday_7",
+          "courseName": "Material Science - EME2701",
+          "courseCode": "EME2701",
+          "group": "F",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "ايمان احمد عوض احمد",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. علاء الدين زكريا حسن خفاجي",
+        "ايمان احمد عوض احمد"
+      ]
+    },
+    {
+      "group": "2",
+      "sessions": [
+        {
+          "id": "EME2701_2_Lect._Saturday_7",
+          "courseName": "Material Science - EME2701",
+          "courseCode": "EME2701",
+          "group": "2",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. علاء الدين زكريا حسن خفاجي",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EME2701_2_Sec._Monday_9",
+          "courseName": "Material Science - EME2701",
+          "courseCode": "EME2701",
+          "group": "2",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "ايمان احمد عوض احمد",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. علاء الدين زكريا حسن خفاجي",
+        "ايمان احمد عوض احمد"
+      ]
+    },
+    {
+      "group": "0",
+      "sessions": [
+        {
+          "id": "EME2701_0_Lect._Saturday_9",
+          "courseName": "Material Science - EME2701",
+          "courseCode": "EME2701",
+          "group": "0",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. علاء الدين زكريا حسن خفاجي",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EME2701_0_Sec._Tuesday_5",
+          "courseName": "Material Science - EME2701",
+          "courseCode": "EME2701",
+          "group": "0",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "ايمان احمد عوض احمد",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. علاء الدين زكريا حسن خفاجي",
+        "ايمان احمد عوض احمد"
+      ]
+    },
+    {
+      "group": "1",
+      "sessions": [
+        {
+          "id": "EME2701_1_Lect._Saturday_11",
+          "courseName": "Material Science - EME2701",
+          "courseCode": "EME2701",
+          "group": "1",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "د. علاء الدين زكريا حسن خفاجي",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EME2701_1_Sec._Monday_7",
+          "courseName": "Material Science - EME2701",
+          "courseCode": "EME2701",
+          "group": "1",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "ايمان احمد عوض احمد",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. علاء الدين زكريا حسن خفاجي",
+        "ايمان احمد عوض احمد"
+      ]
+    },
+    {
+      "group": "I",
+      "sessions": [
+        {
+          "id": "EME2701_I_Sec._Tuesday_3",
+          "courseName": "Material Science - EME2701",
+          "courseCode": "EME2701",
+          "group": "I",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "ايمان احمد عوض احمد",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EME2701_I_Lect._Tuesday_9",
+          "courseName": "Material Science - EME2701",
+          "courseCode": "EME2701",
+          "group": "I",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. علاء الدين زكريا حسن خفاجي",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ايمان احمد عوض احمد",
+        "د. علاء الدين زكريا حسن خفاجي"
+      ]
+    },
+    {
+      "group": "H",
+      "sessions": [
+        {
+          "id": "EME2701_H_Sec._Tuesday_9",
+          "courseName": "Material Science - EME2701",
+          "courseCode": "EME2701",
+          "group": "H",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "ايمان احمد عوض احمد",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EME2701_H_Lect._Tuesday_11",
+          "courseName": "Material Science - EME2701",
+          "courseCode": "EME2701",
+          "group": "H",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "د. علاء الدين زكريا حسن خفاجي",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ايمان احمد عوض احمد",
+        "د. علاء الدين زكريا حسن خفاجي"
+      ]
+    },
+    {
+      "group": "4",
+      "sessions": [
+        {
+          "id": "EME2701_4_Sec._Tuesday_3",
+          "courseName": "Material Science - EME2701",
+          "courseCode": "EME2701",
+          "group": "4",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "ايمان احمد عوض احمد",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EME2701_4_Lect._Tuesday_9",
+          "courseName": "Material Science - EME2701",
+          "courseCode": "EME2701",
+          "group": "4",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. علاء الدين زكريا حسن خفاجي",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ايمان احمد عوض احمد",
+        "د. علاء الدين زكريا حسن خفاجي"
+      ]
+    },
+    {
+      "group": "3",
+      "sessions": [
+        {
+          "id": "EME2701_3_Sec._Tuesday_9",
+          "courseName": "Material Science - EME2701",
+          "courseCode": "EME2701",
+          "group": "3",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "ايمان احمد عوض احمد",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EME2701_3_Lect._Tuesday_11",
+          "courseName": "Material Science - EME2701",
+          "courseCode": "EME2701",
+          "group": "3",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "د. علاء الدين زكريا حسن خفاجي",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ايمان احمد عوض احمد",
+        "د. علاء الدين زكريا حسن خفاجي"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EME2701_G_Lect._Saturday_7",
+      "courseName": "Material Science - EME2701",
+      "courseCode": "EME2701",
+      "group": "G",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. علاء الدين زكريا حسن خفاجي",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME2701_G_Sec._Monday_9",
+      "courseName": "Material Science - EME2701",
+      "courseCode": "EME2701",
+      "group": "G",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "ايمان احمد عوض احمد",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME2701_E_Lect._Saturday_9",
+      "courseName": "Material Science - EME2701",
+      "courseCode": "EME2701",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. علاء الدين زكريا حسن خفاجي",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME2701_E_Sec._Tuesday_5",
+      "courseName": "Material Science - EME2701",
+      "courseCode": "EME2701",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "ايمان احمد عوض احمد",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME2701_F_Lect._Saturday_11",
+      "courseName": "Material Science - EME2701",
+      "courseCode": "EME2701",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "د. علاء الدين زكريا حسن خفاجي",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME2701_F_Sec._Monday_7",
+      "courseName": "Material Science - EME2701",
+      "courseCode": "EME2701",
+      "group": "F",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "ايمان احمد عوض احمد",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME2701_2_Lect._Saturday_7",
+      "courseName": "Material Science - EME2701",
+      "courseCode": "EME2701",
+      "group": "2",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. علاء الدين زكريا حسن خفاجي",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME2701_2_Sec._Monday_9",
+      "courseName": "Material Science - EME2701",
+      "courseCode": "EME2701",
+      "group": "2",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "ايمان احمد عوض احمد",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME2701_0_Lect._Saturday_9",
+      "courseName": "Material Science - EME2701",
+      "courseCode": "EME2701",
+      "group": "0",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. علاء الدين زكريا حسن خفاجي",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME2701_0_Sec._Tuesday_5",
+      "courseName": "Material Science - EME2701",
+      "courseCode": "EME2701",
+      "group": "0",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "ايمان احمد عوض احمد",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME2701_1_Lect._Saturday_11",
+      "courseName": "Material Science - EME2701",
+      "courseCode": "EME2701",
+      "group": "1",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "د. علاء الدين زكريا حسن خفاجي",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME2701_1_Sec._Monday_7",
+      "courseName": "Material Science - EME2701",
+      "courseCode": "EME2701",
+      "group": "1",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "ايمان احمد عوض احمد",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME2701_I_Sec._Tuesday_3",
+      "courseName": "Material Science - EME2701",
+      "courseCode": "EME2701",
+      "group": "I",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "ايمان احمد عوض احمد",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME2701_I_Lect._Tuesday_9",
+      "courseName": "Material Science - EME2701",
+      "courseCode": "EME2701",
+      "group": "I",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. علاء الدين زكريا حسن خفاجي",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME2701_H_Sec._Tuesday_9",
+      "courseName": "Material Science - EME2701",
+      "courseCode": "EME2701",
+      "group": "H",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "ايمان احمد عوض احمد",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME2701_H_Lect._Tuesday_11",
+      "courseName": "Material Science - EME2701",
+      "courseCode": "EME2701",
+      "group": "H",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "د. علاء الدين زكريا حسن خفاجي",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME2701_4_Sec._Tuesday_3",
+      "courseName": "Material Science - EME2701",
+      "courseCode": "EME2701",
+      "group": "4",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "ايمان احمد عوض احمد",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME2701_4_Lect._Tuesday_9",
+      "courseName": "Material Science - EME2701",
+      "courseCode": "EME2701",
+      "group": "4",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. علاء الدين زكريا حسن خفاجي",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME2701_3_Sec._Tuesday_9",
+      "courseName": "Material Science - EME2701",
+      "courseCode": "EME2701",
+      "group": "3",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "ايمان احمد عوض احمد",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EME2701_3_Lect._Tuesday_11",
+      "courseName": "Material Science - EME2701",
+      "courseCode": "EME2701",
+      "group": "3",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "د. علاء الدين زكريا حسن خفاجي",
+      "color": "#F59E0B",
+      "room": ""
+    }
+  ],
+  "color": "#F59E0B",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "ميكانيكا ق م -Northampton",
+    "هـ.ميكانيكية ق.م*",
+    "هندسة ميكانيكية-ق م //"
+  ],
+  "periods": [
+    "3"
+  ]
+}

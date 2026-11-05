@@ -1,0 +1,105 @@
+{
+  "id": "UNR1501",
+  "name": "Art Appreciation - UNR1501",
+  "code": "UNR1501",
+  "instructors": [
+    "د. اسلام احمد محمد اسماعيل"
+  ],
+  "groups": [
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "UNR1501_D_Lect._Sunday_7",
+          "courseName": "Art Appreciation - UNR1501",
+          "courseCode": "UNR1501",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. اسلام احمد محمد اسماعيل",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. اسلام احمد محمد اسماعيل"
+      ]
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "UNR1501_F_Lect._Wednesday_5",
+          "courseName": "Art Appreciation - UNR1501",
+          "courseCode": "UNR1501",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. اسلام احمد محمد اسماعيل",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. اسلام احمد محمد اسماعيل"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "UNR1501_D_Lect._Sunday_7",
+      "courseName": "Art Appreciation - UNR1501",
+      "courseCode": "UNR1501",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. اسلام احمد محمد اسماعيل",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "UNR1501_F_Lect._Wednesday_5",
+      "courseName": "Art Appreciation - UNR1501",
+      "courseCode": "UNR1501",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. اسلام احمد محمد اسماعيل",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية ق م -Northampton //",
+    "هندسة كهربية ق م -Northampton*",
+    "هندسة كهربية وتحكم ق.م*",
+    "هندسة معمارية ق.م",
+    "هندسة معمارية-Cardiff-ق م //"
+  ],
+  "periods": [
+    "1",
+    "8",
+    "3"
+  ]
+}

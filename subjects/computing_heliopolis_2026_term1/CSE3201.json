@@ -1,0 +1,85 @@
+{
+  "id": "CSE3201",
+  "name": "Designing Human Centered Software - CSE3201",
+  "code": "CSE3201",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CSE3201_A_Sec._Monday_3",
+          "courseName": "Designing Human Centered Software - CSE3201",
+          "courseCode": "CSE3201",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "CSE3201_A_Lect._Tuesday_11",
+          "courseName": "Designing Human Centered Software - CSE3201",
+          "courseCode": "CSE3201",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CSE3201_A_Sec._Monday_3",
+      "courseName": "Designing Human Centered Software - CSE3201",
+      "courseCode": "CSE3201",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "CSE3201_A_Lect._Tuesday_11",
+      "courseName": "Designing Human Centered Software - CSE3201",
+      "courseCode": "CSE3201",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    }
+  ],
+  "color": "#F59E0B",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "هندسة البرمجيات - ق.م"
+  ],
+  "periods": [
+    "6"
+  ]
+}

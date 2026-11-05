@@ -1,0 +1,92 @@
+{
+  "id": "EEE5102",
+  "name": "Automated Industrial Systems I - EEE5102",
+  "code": "EEE5102",
+  "instructors": [
+    "احمد علاء الدين ابراهيم حسين متولي دهشان",
+    "د. ابراهيم عبدالله محمد عبدالسلام"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEE5102_A_Lab._Tuesday_9",
+          "courseName": "Automated Industrial Systems I - EEE5102",
+          "courseCode": "EEE5102",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "احمد علاء الدين ابراهيم حسين متولي دهشان",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EEE5102_A_Lect._Wednesday_3",
+          "courseName": "Automated Industrial Systems I - EEE5102",
+          "courseCode": "EEE5102",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. ابراهيم عبدالله محمد عبدالسلام",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "احمد علاء الدين ابراهيم حسين متولي دهشان",
+        "د. ابراهيم عبدالله محمد عبدالسلام"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE5102_A_Lab._Tuesday_9",
+      "courseName": "Automated Industrial Systems I - EEE5102",
+      "courseCode": "EEE5102",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "احمد علاء الدين ابراهيم حسين متولي دهشان",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EEE5102_A_Lect._Wednesday_3",
+      "courseName": "Automated Industrial Systems I - EEE5102",
+      "courseCode": "EEE5102",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. ابراهيم عبدالله محمد عبدالسلام",
+      "color": "#F59E0B",
+      "room": ""
+    }
+  ],
+  "color": "#F59E0B",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية ق م -Northampton*",
+    "هندسة كهربية وتحكم ق.م*"
+  ],
+  "periods": [
+    "7"
+  ]
+}

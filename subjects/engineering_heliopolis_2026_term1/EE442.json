@@ -1,0 +1,119 @@
+{
+  "id": "EE442",
+  "name": "POWER SYSTEMS PROTECTION I - EE442",
+  "code": "EE442",
+  "instructors": [
+    "أسماء أبوبكر أحمد حسانين",
+    "د. خالد محمد سيد احمد البحراوى"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EE442_A_Lab._Sunday_3",
+          "courseName": "POWER SYSTEMS PROTECTION I - EE442",
+          "courseCode": "EE442",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "أسماء أبوبكر أحمد حسانين",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EE442_A_Sec._Sunday_5",
+          "courseName": "POWER SYSTEMS PROTECTION I - EE442",
+          "courseCode": "EE442",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "أسماء أبوبكر أحمد حسانين",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EE442_A_Lect._Thursday_3",
+          "courseName": "POWER SYSTEMS PROTECTION I - EE442",
+          "courseCode": "EE442",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. خالد محمد سيد احمد البحراوى",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "أسماء أبوبكر أحمد حسانين",
+        "د. خالد محمد سيد احمد البحراوى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EE442_A_Lab._Sunday_3",
+      "courseName": "POWER SYSTEMS PROTECTION I - EE442",
+      "courseCode": "EE442",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "أسماء أبوبكر أحمد حسانين",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EE442_A_Sec._Sunday_5",
+      "courseName": "POWER SYSTEMS PROTECTION I - EE442",
+      "courseCode": "EE442",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "أسماء أبوبكر أحمد حسانين",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EE442_A_Lect._Thursday_3",
+      "courseName": "POWER SYSTEMS PROTECTION I - EE442",
+      "courseCode": "EE442",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. خالد محمد سيد احمد البحراوى",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية وتحكم ق.م"
+  ],
+  "periods": [
+    "8"
+  ]
+}

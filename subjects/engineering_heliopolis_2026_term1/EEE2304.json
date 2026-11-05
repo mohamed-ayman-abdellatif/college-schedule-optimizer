@@ -1,0 +1,755 @@
+{
+  "id": "EEE2304",
+  "name": "Electrical Circuits I - EEE2304",
+  "code": "EEE2304",
+  "instructors": [
+    "حازم مجدي احمد محمد",
+    "د. هادى ماجد راغب الحلو",
+    "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+    "د. بسنت احمد السيد خليل"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEE2304_A_Sec._Saturday_1",
+          "courseName": "Electrical Circuits I - EEE2304",
+          "courseCode": "EEE2304",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "حازم مجدي احمد محمد",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEE2304_A_Lect._Sunday_3",
+          "courseName": "Electrical Circuits I - EEE2304",
+          "courseCode": "EEE2304",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. هادى ماجد راغب الحلو",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "حازم مجدي احمد محمد",
+        "د. هادى ماجد راغب الحلو"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EEE2304_B_Sec._Saturday_3",
+          "courseName": "Electrical Circuits I - EEE2304",
+          "courseCode": "EEE2304",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "حازم مجدي احمد محمد",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEE2304_B_Lect._Sunday_3",
+          "courseName": "Electrical Circuits I - EEE2304",
+          "courseCode": "EEE2304",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. هادى ماجد راغب الحلو",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "حازم مجدي احمد محمد",
+        "د. هادى ماجد راغب الحلو"
+      ]
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "EEE2304_C_Lect._Sunday_5",
+          "courseName": "Electrical Circuits I - EEE2304",
+          "courseCode": "EEE2304",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. هادى ماجد راغب الحلو",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEE2304_C_Sec._Thursday_3",
+          "courseName": "Electrical Circuits I - EEE2304",
+          "courseCode": "EEE2304",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. هادى ماجد راغب الحلو"
+      ]
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "EEE2304_F_Sec._Sunday_7",
+          "courseName": "Electrical Circuits I - EEE2304",
+          "courseCode": "EEE2304",
+          "group": "F",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEE2304_F_Lect._Wednesday_1",
+          "courseName": "Electrical Circuits I - EEE2304",
+          "courseCode": "EEE2304",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. ميرنا فؤاد عبدالسلام عبدالمعطى على"
+      ]
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "EEE2304_D_Lect._Sunday_5",
+          "courseName": "Electrical Circuits I - EEE2304",
+          "courseCode": "EEE2304",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. هادى ماجد راغب الحلو",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEE2304_D_Sec._Wednesday_5",
+          "courseName": "Electrical Circuits I - EEE2304",
+          "courseCode": "EEE2304",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. هادى ماجد راغب الحلو"
+      ]
+    },
+    {
+      "group": "K",
+      "sessions": [
+        {
+          "id": "EEE2304_K_Sec._Sunday_5",
+          "courseName": "Electrical Circuits I - EEE2304",
+          "courseCode": "EEE2304",
+          "group": "K",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEE2304_K_Lect._Wednesday_7",
+          "courseName": "Electrical Circuits I - EEE2304",
+          "courseCode": "EEE2304",
+          "group": "K",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. بسنت احمد السيد خليل",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. بسنت احمد السيد خليل"
+      ]
+    },
+    {
+      "group": "J",
+      "sessions": [
+        {
+          "id": "EEE2304_J_Sec._Monday_5",
+          "courseName": "Electrical Circuits I - EEE2304",
+          "courseCode": "EEE2304",
+          "group": "J",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEE2304_J_Lect._Wednesday_5",
+          "courseName": "Electrical Circuits I - EEE2304",
+          "courseCode": "EEE2304",
+          "group": "J",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. بسنت احمد السيد خليل",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. بسنت احمد السيد خليل"
+      ]
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "EEE2304_E_Sec._Monday_7",
+          "courseName": "Electrical Circuits I - EEE2304",
+          "courseCode": "EEE2304",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEE2304_E_Lect._Wednesday_1",
+          "courseName": "Electrical Circuits I - EEE2304",
+          "courseCode": "EEE2304",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. ميرنا فؤاد عبدالسلام عبدالمعطى على"
+      ]
+    },
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "EEE2304_G_Sec._Monday_9",
+          "courseName": "Electrical Circuits I - EEE2304",
+          "courseCode": "EEE2304",
+          "group": "G",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEE2304_G_Lect._Wednesday_3",
+          "courseName": "Electrical Circuits I - EEE2304",
+          "courseCode": "EEE2304",
+          "group": "G",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. ميرنا فؤاد عبدالسلام عبدالمعطى على"
+      ]
+    },
+    {
+      "group": "H",
+      "sessions": [
+        {
+          "id": "EEE2304_H_Sec._Wednesday_7",
+          "courseName": "Electrical Circuits I - EEE2304",
+          "courseCode": "EEE2304",
+          "group": "H",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEE2304_H_Lect._Wednesday_3",
+          "courseName": "Electrical Circuits I - EEE2304",
+          "courseCode": "EEE2304",
+          "group": "H",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. ميرنا فؤاد عبدالسلام عبدالمعطى على"
+      ]
+    },
+    {
+      "group": "I",
+      "sessions": [
+        {
+          "id": "EEE2304_I_Sec._Wednesday_9",
+          "courseName": "Electrical Circuits I - EEE2304",
+          "courseCode": "EEE2304",
+          "group": "I",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEE2304_I_Lect._Wednesday_5",
+          "courseName": "Electrical Circuits I - EEE2304",
+          "courseCode": "EEE2304",
+          "group": "I",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. بسنت احمد السيد خليل",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. بسنت احمد السيد خليل"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE2304_A_Sec._Saturday_1",
+      "courseName": "Electrical Circuits I - EEE2304",
+      "courseCode": "EEE2304",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "حازم مجدي احمد محمد",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE2304_A_Lect._Sunday_3",
+      "courseName": "Electrical Circuits I - EEE2304",
+      "courseCode": "EEE2304",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. هادى ماجد راغب الحلو",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE2304_B_Sec._Saturday_3",
+      "courseName": "Electrical Circuits I - EEE2304",
+      "courseCode": "EEE2304",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "حازم مجدي احمد محمد",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE2304_B_Lect._Sunday_3",
+      "courseName": "Electrical Circuits I - EEE2304",
+      "courseCode": "EEE2304",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. هادى ماجد راغب الحلو",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE2304_C_Lect._Sunday_5",
+      "courseName": "Electrical Circuits I - EEE2304",
+      "courseCode": "EEE2304",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. هادى ماجد راغب الحلو",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE2304_C_Sec._Thursday_3",
+      "courseName": "Electrical Circuits I - EEE2304",
+      "courseCode": "EEE2304",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE2304_F_Sec._Sunday_7",
+      "courseName": "Electrical Circuits I - EEE2304",
+      "courseCode": "EEE2304",
+      "group": "F",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE2304_F_Lect._Wednesday_1",
+      "courseName": "Electrical Circuits I - EEE2304",
+      "courseCode": "EEE2304",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE2304_D_Lect._Sunday_5",
+      "courseName": "Electrical Circuits I - EEE2304",
+      "courseCode": "EEE2304",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. هادى ماجد راغب الحلو",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE2304_D_Sec._Wednesday_5",
+      "courseName": "Electrical Circuits I - EEE2304",
+      "courseCode": "EEE2304",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE2304_K_Sec._Sunday_5",
+      "courseName": "Electrical Circuits I - EEE2304",
+      "courseCode": "EEE2304",
+      "group": "K",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE2304_K_Lect._Wednesday_7",
+      "courseName": "Electrical Circuits I - EEE2304",
+      "courseCode": "EEE2304",
+      "group": "K",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. بسنت احمد السيد خليل",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE2304_J_Sec._Monday_5",
+      "courseName": "Electrical Circuits I - EEE2304",
+      "courseCode": "EEE2304",
+      "group": "J",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE2304_J_Lect._Wednesday_5",
+      "courseName": "Electrical Circuits I - EEE2304",
+      "courseCode": "EEE2304",
+      "group": "J",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. بسنت احمد السيد خليل",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE2304_E_Sec._Monday_7",
+      "courseName": "Electrical Circuits I - EEE2304",
+      "courseCode": "EEE2304",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE2304_E_Lect._Wednesday_1",
+      "courseName": "Electrical Circuits I - EEE2304",
+      "courseCode": "EEE2304",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE2304_G_Sec._Monday_9",
+      "courseName": "Electrical Circuits I - EEE2304",
+      "courseCode": "EEE2304",
+      "group": "G",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE2304_G_Lect._Wednesday_3",
+      "courseName": "Electrical Circuits I - EEE2304",
+      "courseCode": "EEE2304",
+      "group": "G",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE2304_H_Sec._Wednesday_7",
+      "courseName": "Electrical Circuits I - EEE2304",
+      "courseCode": "EEE2304",
+      "group": "H",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE2304_H_Lect._Wednesday_3",
+      "courseName": "Electrical Circuits I - EEE2304",
+      "courseCode": "EEE2304",
+      "group": "H",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE2304_I_Sec._Wednesday_9",
+      "courseName": "Electrical Circuits I - EEE2304",
+      "courseCode": "EEE2304",
+      "group": "I",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE2304_I_Lect._Wednesday_5",
+      "courseName": "Electrical Circuits I - EEE2304",
+      "courseCode": "EEE2304",
+      "group": "I",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. بسنت احمد السيد خليل",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "حاسبات ق م - Northampton",
+    "هندسة الحاسبات ق.م"
+  ],
+  "periods": [
+    "3"
+  ]
+}

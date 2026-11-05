@@ -1,0 +1,98 @@
+{
+  "id": "NE364",
+  "name": "Engineering Economy - NE364",
+  "code": "NE364",
+  "instructors": [
+    "د. محمود مصطفى محمد الاشوح",
+    "محمود مصطفى محمد الاشوح"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "NE364_A_Lect._Sunday_7",
+          "courseName": "Engineering Economy - NE364",
+          "courseCode": "NE364",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. محمود مصطفى محمد الاشوح",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "NE364_A_Sec._Wednesday_9",
+          "courseName": "Engineering Economy - NE364",
+          "courseCode": "NE364",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "محمود مصطفى محمد الاشوح",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمود مصطفى محمد الاشوح",
+        "محمود مصطفى محمد الاشوح"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "NE364_A_Lect._Sunday_7",
+      "courseName": "Engineering Economy - NE364",
+      "courseCode": "NE364",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. محمود مصطفى محمد الاشوح",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "NE364_A_Sec._Wednesday_9",
+      "courseName": "Engineering Economy - NE364",
+      "courseCode": "NE364",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "محمود مصطفى محمد الاشوح",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "حاسبات ق م - Northampton",
+    "ميكانيكا ق م -Northampton",
+    "هـ.الكترونات واتصالات ق.م",
+    "هـ.ميكانيكية ق.م",
+    "هندسة الحاسبات ق.م",
+    "هندسة كهربية وتحكم ق.م"
+  ],
+  "periods": [
+    "6",
+    "9",
+    "8"
+  ]
+}

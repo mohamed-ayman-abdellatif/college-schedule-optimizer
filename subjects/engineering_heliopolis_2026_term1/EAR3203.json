@@ -1,0 +1,119 @@
+{
+  "id": "EAR3203",
+  "name": "Building Technology Studio (3) - EAR3203",
+  "code": "EAR3203",
+  "instructors": [
+    "د. عبدالعزيز فاروق عبدالعزيز محمد",
+    "عبدالعزيز فاروق عبدالعزيز محمد"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EAR3203_B_Lect._Monday_1",
+          "courseName": "Building Technology Studio (3) - EAR3203",
+          "courseCode": "EAR3203",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. عبدالعزيز فاروق عبدالعزيز محمد",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EAR3203_B_Lect._Monday_3",
+          "courseName": "Building Technology Studio (3) - EAR3203",
+          "courseCode": "EAR3203",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. عبدالعزيز فاروق عبدالعزيز محمد",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EAR3203_B_Sec._Monday_5",
+          "courseName": "Building Technology Studio (3) - EAR3203",
+          "courseCode": "EAR3203",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "عبدالعزيز فاروق عبدالعزيز محمد",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. عبدالعزيز فاروق عبدالعزيز محمد",
+        "عبدالعزيز فاروق عبدالعزيز محمد"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EAR3203_B_Lect._Monday_1",
+      "courseName": "Building Technology Studio (3) - EAR3203",
+      "courseCode": "EAR3203",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. عبدالعزيز فاروق عبدالعزيز محمد",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EAR3203_B_Lect._Monday_3",
+      "courseName": "Building Technology Studio (3) - EAR3203",
+      "courseCode": "EAR3203",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. عبدالعزيز فاروق عبدالعزيز محمد",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EAR3203_B_Sec._Monday_5",
+      "courseName": "Building Technology Studio (3) - EAR3203",
+      "courseCode": "EAR3203",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "عبدالعزيز فاروق عبدالعزيز محمد",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م*"
+  ],
+  "periods": [
+    "5"
+  ]
+}

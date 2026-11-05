@@ -1,0 +1,215 @@
+{
+  "id": "ECB3602",
+  "name": "Soil Mechanics - ECB3602*",
+  "code": "ECB3602",
+  "instructors": [
+    "رويد ابو بكر يوسف ابراهيم",
+    "د. احمد محمد جمال الدين محمد منصور"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECB3602_A_Sec._Sunday_5",
+          "courseName": "Soil Mechanics - ECB3602*",
+          "courseCode": "ECB3602",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "رويد ابو بكر يوسف ابراهيم",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "ECB3602_A_Lab._Sunday_7",
+          "courseName": "Soil Mechanics - ECB3602*",
+          "courseCode": "ECB3602",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "رويد ابو بكر يوسف ابراهيم",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "ECB3602_A_Lect._Tuesday_7",
+          "courseName": "Soil Mechanics - ECB3602*",
+          "courseCode": "ECB3602",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. احمد محمد جمال الدين محمد منصور",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "رويد ابو بكر يوسف ابراهيم",
+        "د. احمد محمد جمال الدين محمد منصور"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECB3602_B_Sec._Sunday_5",
+          "courseName": "Soil Mechanics - ECB3602*",
+          "courseCode": "ECB3602",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "رويد ابو بكر يوسف ابراهيم",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "ECB3602_B_Lab._Sunday_7",
+          "courseName": "Soil Mechanics - ECB3602*",
+          "courseCode": "ECB3602",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "رويد ابو بكر يوسف ابراهيم",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "ECB3602_B_Lect._Tuesday_7",
+          "courseName": "Soil Mechanics - ECB3602*",
+          "courseCode": "ECB3602",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. احمد محمد جمال الدين محمد منصور",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "رويد ابو بكر يوسف ابراهيم",
+        "د. احمد محمد جمال الدين محمد منصور"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECB3602_A_Sec._Sunday_5",
+      "courseName": "Soil Mechanics - ECB3602*",
+      "courseCode": "ECB3602",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "رويد ابو بكر يوسف ابراهيم",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "ECB3602_A_Lab._Sunday_7",
+      "courseName": "Soil Mechanics - ECB3602*",
+      "courseCode": "ECB3602",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "رويد ابو بكر يوسف ابراهيم",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "ECB3602_A_Lect._Tuesday_7",
+      "courseName": "Soil Mechanics - ECB3602*",
+      "courseCode": "ECB3602",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. احمد محمد جمال الدين محمد منصور",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "ECB3602_B_Sec._Sunday_5",
+      "courseName": "Soil Mechanics - ECB3602*",
+      "courseCode": "ECB3602",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "رويد ابو بكر يوسف ابراهيم",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "ECB3602_B_Lab._Sunday_7",
+      "courseName": "Soil Mechanics - ECB3602*",
+      "courseCode": "ECB3602",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "رويد ابو بكر يوسف ابراهيم",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "ECB3602_B_Lect._Tuesday_7",
+      "courseName": "Soil Mechanics - ECB3602*",
+      "courseCode": "ECB3602",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. احمد محمد جمال الدين محمد منصور",
+      "color": "#06B6D4",
+      "room": ""
+    }
+  ],
+  "color": "#06B6D4",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م",
+    "هندسة التشيد والبناء ق.م*"
+  ],
+  "periods": [
+    "5"
+  ]
+}

@@ -1,0 +1,406 @@
+{
+  "id": "CSE4403",
+  "name": "Agile Software Development - CSE4403",
+  "code": "CSE4403",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "J",
+      "sessions": [
+        {
+          "id": "CSE4403_J_Sec._Saturday_3",
+          "courseName": "Agile Software Development - CSE4403",
+          "courseCode": "CSE4403",
+          "group": "J",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "CSE4403_J_Lect._Monday_3",
+          "courseName": "Agile Software Development - CSE4403",
+          "courseCode": "CSE4403",
+          "group": "J",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "I",
+      "sessions": [
+        {
+          "id": "CSE4403_I_Sec._Saturday_5",
+          "courseName": "Agile Software Development - CSE4403",
+          "courseCode": "CSE4403",
+          "group": "I",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "CSE4403_I_Lect._Monday_5",
+          "courseName": "Agile Software Development - CSE4403",
+          "courseCode": "CSE4403",
+          "group": "I",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "K",
+      "sessions": [
+        {
+          "id": "CSE4403_K_Sec._Saturday_7",
+          "courseName": "Agile Software Development - CSE4403",
+          "courseCode": "CSE4403",
+          "group": "K",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "CSE4403_K_Lect._Wednesday_7",
+          "courseName": "Agile Software Development - CSE4403",
+          "courseCode": "CSE4403",
+          "group": "K",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "L",
+      "sessions": [
+        {
+          "id": "CSE4403_L_Lect._Sunday_7",
+          "courseName": "Agile Software Development - CSE4403",
+          "courseCode": "CSE4403",
+          "group": "L",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "CSE4403_L_Sec._Wednesday_3",
+          "courseName": "Agile Software Development - CSE4403",
+          "courseCode": "CSE4403",
+          "group": "L",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "N",
+      "sessions": [
+        {
+          "id": "CSE4403_N_Lect._Sunday_7",
+          "courseName": "Agile Software Development - CSE4403",
+          "courseCode": "CSE4403",
+          "group": "N",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "CSE4403_N_Sec._Wednesday_3",
+          "courseName": "Agile Software Development - CSE4403",
+          "courseCode": "CSE4403",
+          "group": "N",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "M",
+      "sessions": [
+        {
+          "id": "CSE4403_M_Sec._Wednesday_5",
+          "courseName": "Agile Software Development - CSE4403",
+          "courseCode": "CSE4403",
+          "group": "M",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "CSE4403_M_Lect._Wednesday_7",
+          "courseName": "Agile Software Development - CSE4403",
+          "courseCode": "CSE4403",
+          "group": "M",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CSE4403_J_Sec._Saturday_3",
+      "courseName": "Agile Software Development - CSE4403",
+      "courseCode": "CSE4403",
+      "group": "J",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "CSE4403_J_Lect._Monday_3",
+      "courseName": "Agile Software Development - CSE4403",
+      "courseCode": "CSE4403",
+      "group": "J",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "CSE4403_I_Sec._Saturday_5",
+      "courseName": "Agile Software Development - CSE4403",
+      "courseCode": "CSE4403",
+      "group": "I",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "CSE4403_I_Lect._Monday_5",
+      "courseName": "Agile Software Development - CSE4403",
+      "courseCode": "CSE4403",
+      "group": "I",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "CSE4403_K_Sec._Saturday_7",
+      "courseName": "Agile Software Development - CSE4403",
+      "courseCode": "CSE4403",
+      "group": "K",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "CSE4403_K_Lect._Wednesday_7",
+      "courseName": "Agile Software Development - CSE4403",
+      "courseCode": "CSE4403",
+      "group": "K",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "CSE4403_L_Lect._Sunday_7",
+      "courseName": "Agile Software Development - CSE4403",
+      "courseCode": "CSE4403",
+      "group": "L",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "CSE4403_L_Sec._Wednesday_3",
+      "courseName": "Agile Software Development - CSE4403",
+      "courseCode": "CSE4403",
+      "group": "L",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "CSE4403_N_Lect._Sunday_7",
+      "courseName": "Agile Software Development - CSE4403",
+      "courseCode": "CSE4403",
+      "group": "N",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "CSE4403_N_Sec._Wednesday_3",
+      "courseName": "Agile Software Development - CSE4403",
+      "courseCode": "CSE4403",
+      "group": "N",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "CSE4403_M_Sec._Wednesday_5",
+      "courseName": "Agile Software Development - CSE4403",
+      "courseCode": "CSE4403",
+      "group": "M",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "CSE4403_M_Lect._Wednesday_7",
+      "courseName": "Agile Software Development - CSE4403",
+      "courseCode": "CSE4403",
+      "group": "M",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    }
+  ],
+  "color": "#6366F1",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "هندسة البرمجيات - ق.م",
+    "هندسة برمجيات ق.م -Northampton //"
+  ],
+  "periods": [
+    "7"
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "id": "UNR1501",
+  "name": "Art Appreciation - UNR1501",
+  "code": "UNR1501",
+  "instructors": [
+    "د. اسلام احمد محمد اسماعيل"
+  ],
+  "groups": [
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "UNR1501_D_Lect._Sunday_7",
+          "courseName": "Art Appreciation - UNR1501",
+          "courseCode": "UNR1501",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. اسلام احمد محمد اسماعيل",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. اسلام احمد محمد اسماعيل"
+      ]
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "UNR1501_F_Lect._Wednesday_5",
+          "courseName": "Art Appreciation - UNR1501",
+          "courseCode": "UNR1501",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. اسلام احمد محمد اسماعيل",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. اسلام احمد محمد اسماعيل"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "UNR1501_D_Lect._Sunday_7",
+      "courseName": "Art Appreciation - UNR1501",
+      "courseCode": "UNR1501",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. اسلام احمد محمد اسماعيل",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "UNR1501_F_Lect._Wednesday_5",
+      "courseName": "Art Appreciation - UNR1501",
+      "courseCode": "UNR1501",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. اسلام احمد محمد اسماعيل",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "علوم الحاسب ق.م //"
+  ],
+  "periods": [
+    "1"
+  ]
+}

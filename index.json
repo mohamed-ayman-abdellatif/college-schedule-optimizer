@@ -1,0 +1,52 @@
+{
+  "version": "1.0",
+  "updatedAt": "2026-11-05T21:17:14.166Z",
+  "defaultMajorId": "",
+  "majors": [
+    {
+      "id": "computing_heliopolis_2026_term1",
+      "title": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+      "titleEn": "Faculty of Computing & Information Technology - Heliopolis",
+      "semester": "الأول 2027/2026",
+      "semesterEn": "Term 1 (2026/2027)",
+      "file": "colleges/computing_heliopolis_2026_term1.json",
+      "totalDepartments": 7,
+      "totalSchedules": 218,
+      "departments": [
+        "الأمن السيبرانى - ق.م",
+        "الذكاء الإصطناعي - ق.م",
+        "علوم الحاسب ق.م",
+        "علوم حاسب ق.م-Northampton",
+        "نظم معلومات -ق م",
+        "هندسة البرمجيات - ق.م",
+        "هندسة برمجيات ق.م -Northampton"
+      ],
+      "updatedAt": "2026-09-08T01:16:11.120Z",
+      "subjectsCount": 114
+    },
+    {
+      "id": "engineering_heliopolis_2026_term1",
+      "title": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+      "titleEn": "Faculty of Engineering & Technology - Heliopolis",
+      "semester": "الأول 2027/2026",
+      "semesterEn": "Term 1 (2026/2027)",
+      "file": "colleges/engineering_heliopolis_2026_term1.json",
+      "totalDepartments": 22,
+      "totalSchedules": 1228,
+      "departments": [
+        "الكترونيات ق م - Northamption",
+        "حاسبات ق م - Northampton",
+        "ميكانيكا ق م -Northampton",
+        "هـ.الكترونات واتصالات ق.م",
+        "هـ.ميكانيكية ق.م",
+        "هندسة التشيد والبناء ق.م",
+        "هندسة الحاسبات ق.م",
+        "هندسة كهربية ق م -Northampton"
+      ],
+      "updatedAt": "2026-09-08T01:17:34.904Z",
+      "subjectsCount": 497
+    }
+  ],
+  "subjectsIndexFile": "subjects_index.json",
+  "totalSubjects": 593
+}

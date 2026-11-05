@@ -1,0 +1,57 @@
+{
+  "id": "EAR5502",
+  "name": "Building Regulations & Law - EAR5502",
+  "code": "EAR5502",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EAR5502_B_Lect._Sunday_3",
+          "courseName": "Building Regulations & Law - EAR5502",
+          "courseCode": "EAR5502",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "EAR5502_B_Lect._Sunday_3",
+      "courseName": "Building Regulations & Law - EAR5502",
+      "courseCode": "EAR5502",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    }
+  ],
+  "color": "#3B82F6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م*"
+  ],
+  "periods": [
+    "9"
+  ]
+}

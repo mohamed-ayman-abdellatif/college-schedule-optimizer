@@ -1,0 +1,89 @@
+{
+  "id": "EEE3404",
+  "name": "Electrical Installations in Buildings - EEE3404*",
+  "code": "EEE3404",
+  "instructors": [
+    "د. محمد احمد محمد صبحى خليفة"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EEE3404_B_Sec._Saturday_9",
+          "courseName": "Electrical Installations in Buildings - EEE3404*",
+          "courseCode": "EEE3404",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "EEE3404_B_Lect._Thursday_3",
+          "courseName": "Electrical Installations in Buildings - EEE3404*",
+          "courseCode": "EEE3404",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. محمد احمد محمد صبحى خليفة",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد احمد محمد صبحى خليفة"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE3404_B_Sec._Saturday_9",
+      "courseName": "Electrical Installations in Buildings - EEE3404*",
+      "courseCode": "EEE3404",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "EEE3404_B_Lect._Thursday_3",
+      "courseName": "Electrical Installations in Buildings - EEE3404*",
+      "courseCode": "EEE3404",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. محمد احمد محمد صبحى خليفة",
+      "color": "#3B82F6",
+      "room": ""
+    }
+  ],
+  "color": "#3B82F6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م*"
+  ],
+  "periods": [
+    "8"
+  ]
+}

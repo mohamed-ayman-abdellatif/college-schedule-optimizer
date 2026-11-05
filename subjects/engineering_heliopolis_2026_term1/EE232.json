@@ -1,0 +1,92 @@
+{
+  "id": "EE232",
+  "name": "ELECTRICAL CIRCUITS II - EE232",
+  "code": "EE232",
+  "instructors": [
+    "شهاب علاء محمد علي",
+    "د. ميرنا فؤاد عبدالسلام عبدالمعطى على"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EE232_A_Sec._Saturday_5",
+          "courseName": "ELECTRICAL CIRCUITS II - EE232",
+          "courseCode": "EE232",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "شهاب علاء محمد علي",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EE232_A_Lect._Monday_3",
+          "courseName": "ELECTRICAL CIRCUITS II - EE232",
+          "courseCode": "EE232",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "شهاب علاء محمد علي",
+        "د. ميرنا فؤاد عبدالسلام عبدالمعطى على"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EE232_A_Sec._Saturday_5",
+      "courseName": "ELECTRICAL CIRCUITS II - EE232",
+      "courseCode": "EE232",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "شهاب علاء محمد علي",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EE232_A_Lect._Monday_3",
+      "courseName": "ELECTRICAL CIRCUITS II - EE232",
+      "courseCode": "EE232",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+      "color": "#84CC16",
+      "room": ""
+    }
+  ],
+  "color": "#84CC16",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "حاسبات ق م - Northampton",
+    "هندسة الحاسبات ق.م"
+  ],
+  "periods": [
+    "4"
+  ]
+}

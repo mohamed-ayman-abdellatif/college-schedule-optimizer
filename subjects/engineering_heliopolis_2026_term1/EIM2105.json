@@ -1,0 +1,222 @@
+{
+  "id": "EIM2105",
+  "name": "Manufacturing Processes - EIM2105",
+  "code": "EIM2105",
+  "instructors": [
+    "د. يحيى محمود عبدالوهاب حسن العطار"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EIM2105_A_Lect._Saturday_1",
+          "courseName": "Manufacturing Processes - EIM2105",
+          "courseCode": "EIM2105",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. يحيى محمود عبدالوهاب حسن العطار",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EIM2105_A_Lab._Saturday_3",
+          "courseName": "Manufacturing Processes - EIM2105",
+          "courseCode": "EIM2105",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. يحيى محمود عبدالوهاب حسن العطار"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EIM2105_B_Lab._Saturday_5",
+          "courseName": "Manufacturing Processes - EIM2105",
+          "courseCode": "EIM2105",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EIM2105_B_Lect._Saturday_1",
+          "courseName": "Manufacturing Processes - EIM2105",
+          "courseCode": "EIM2105",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. يحيى محمود عبدالوهاب حسن العطار",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. يحيى محمود عبدالوهاب حسن العطار"
+      ]
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "EIM2105_C_Lab._Saturday_1",
+          "courseName": "Manufacturing Processes - EIM2105",
+          "courseCode": "EIM2105",
+          "group": "C",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EIM2105_C_Lect._Tuesday_3",
+          "courseName": "Manufacturing Processes - EIM2105",
+          "courseCode": "EIM2105",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. يحيى محمود عبدالوهاب حسن العطار",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. يحيى محمود عبدالوهاب حسن العطار"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EIM2105_A_Lect._Saturday_1",
+      "courseName": "Manufacturing Processes - EIM2105",
+      "courseCode": "EIM2105",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. يحيى محمود عبدالوهاب حسن العطار",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EIM2105_A_Lab._Saturday_3",
+      "courseName": "Manufacturing Processes - EIM2105",
+      "courseCode": "EIM2105",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EIM2105_B_Lab._Saturday_5",
+      "courseName": "Manufacturing Processes - EIM2105",
+      "courseCode": "EIM2105",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EIM2105_B_Lect._Saturday_1",
+      "courseName": "Manufacturing Processes - EIM2105",
+      "courseCode": "EIM2105",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. يحيى محمود عبدالوهاب حسن العطار",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EIM2105_C_Lab._Saturday_1",
+      "courseName": "Manufacturing Processes - EIM2105",
+      "courseCode": "EIM2105",
+      "group": "C",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EIM2105_C_Lect._Tuesday_3",
+      "courseName": "Manufacturing Processes - EIM2105",
+      "courseCode": "EIM2105",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. يحيى محمود عبدالوهاب حسن العطار",
+      "color": "#10B981",
+      "room": ""
+    }
+  ],
+  "color": "#10B981",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "ميكانيكا ق م -Northampton",
+    "هندسة ميكانيكية-ق م //"
+  ],
+  "periods": [
+    "4"
+  ]
+}

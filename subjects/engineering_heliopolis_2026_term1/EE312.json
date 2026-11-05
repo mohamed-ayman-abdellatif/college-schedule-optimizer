@@ -1,0 +1,117 @@
+{
+  "id": "EE312",
+  "name": "ELEC.MEASUR.& INSTROM. II - EE312",
+  "code": "EE312",
+  "instructors": [
+    "احمد علاء الدين ابراهيم حسين متولي دهشان"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EE312_A_Lect._Saturday_9",
+          "courseName": "ELEC.MEASUR.& INSTROM. II - EE312",
+          "courseCode": "EE312",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "EE312_A_Sec._Tuesday_7",
+          "courseName": "ELEC.MEASUR.& INSTROM. II - EE312",
+          "courseCode": "EE312",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "EE312_A_Lab._Wednesday_3",
+          "courseName": "ELEC.MEASUR.& INSTROM. II - EE312",
+          "courseCode": "EE312",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "احمد علاء الدين ابراهيم حسين متولي دهشان",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "احمد علاء الدين ابراهيم حسين متولي دهشان"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EE312_A_Lect._Saturday_9",
+      "courseName": "ELEC.MEASUR.& INSTROM. II - EE312",
+      "courseCode": "EE312",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EE312_A_Sec._Tuesday_7",
+      "courseName": "ELEC.MEASUR.& INSTROM. II - EE312",
+      "courseCode": "EE312",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EE312_A_Lab._Wednesday_3",
+      "courseName": "ELEC.MEASUR.& INSTROM. II - EE312",
+      "courseCode": "EE312",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "احمد علاء الدين ابراهيم حسين متولي دهشان",
+      "color": "#6366F1",
+      "room": ""
+    }
+  ],
+  "color": "#6366F1",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية وتحكم ق.م"
+  ],
+  "periods": [
+    "5"
+  ]
+}

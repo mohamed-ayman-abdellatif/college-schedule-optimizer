@@ -1,0 +1,279 @@
+{
+  "id": "CCY2001",
+  "name": "Introduction to Cybersecurity - CCY2001",
+  "code": "CCY2001",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "H",
+      "sessions": [
+        {
+          "id": "CCY2001_H_Sec._Saturday_3",
+          "courseName": "Introduction to Cybersecurity - CCY2001",
+          "courseCode": "CCY2001",
+          "group": "H",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "CCY2001_H_Lect._Sunday_11",
+          "courseName": "Introduction to Cybersecurity - CCY2001",
+          "courseCode": "CCY2001",
+          "group": "H",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "CCY2001_G_Sec._Saturday_5",
+          "courseName": "Introduction to Cybersecurity - CCY2001",
+          "courseCode": "CCY2001",
+          "group": "G",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "CCY2001_G_Lect._Sunday_9",
+          "courseName": "Introduction to Cybersecurity - CCY2001",
+          "courseCode": "CCY2001",
+          "group": "G",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "CCY2001_F_Sec._Monday_9",
+          "courseName": "Introduction to Cybersecurity - CCY2001",
+          "courseCode": "CCY2001",
+          "group": "F",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "CCY2001_F_Lect._Wednesday_11",
+          "courseName": "Introduction to Cybersecurity - CCY2001",
+          "courseCode": "CCY2001",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "CCY2001_E_Sec._Monday_11",
+          "courseName": "Introduction to Cybersecurity - CCY2001",
+          "courseCode": "CCY2001",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "CCY2001_E_Lect._Wednesday_9",
+          "courseName": "Introduction to Cybersecurity - CCY2001",
+          "courseCode": "CCY2001",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CCY2001_H_Sec._Saturday_3",
+      "courseName": "Introduction to Cybersecurity - CCY2001",
+      "courseCode": "CCY2001",
+      "group": "H",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "CCY2001_H_Lect._Sunday_11",
+      "courseName": "Introduction to Cybersecurity - CCY2001",
+      "courseCode": "CCY2001",
+      "group": "H",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "CCY2001_G_Sec._Saturday_5",
+      "courseName": "Introduction to Cybersecurity - CCY2001",
+      "courseCode": "CCY2001",
+      "group": "G",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "CCY2001_G_Lect._Sunday_9",
+      "courseName": "Introduction to Cybersecurity - CCY2001",
+      "courseCode": "CCY2001",
+      "group": "G",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "CCY2001_F_Sec._Monday_9",
+      "courseName": "Introduction to Cybersecurity - CCY2001",
+      "courseCode": "CCY2001",
+      "group": "F",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "CCY2001_F_Lect._Wednesday_11",
+      "courseName": "Introduction to Cybersecurity - CCY2001",
+      "courseCode": "CCY2001",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "CCY2001_E_Sec._Monday_11",
+      "courseName": "Introduction to Cybersecurity - CCY2001",
+      "courseCode": "CCY2001",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "CCY2001_E_Lect._Wednesday_9",
+      "courseName": "Introduction to Cybersecurity - CCY2001",
+      "courseCode": "CCY2001",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "علوم الحاسب ق.م //",
+    "نظم معلومات -ق م"
+  ],
+  "periods": [
+    "4",
+    "5"
+  ]
+}

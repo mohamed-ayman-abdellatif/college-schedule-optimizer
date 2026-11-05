@@ -1,0 +1,92 @@
+{
+  "id": "EEC5210",
+  "name": "Advanced Communication Networks - EEC5210",
+  "code": "EEC5210",
+  "instructors": [
+    "منه الله نبيل احمد مراد",
+    "د. حسين مصطفى صبحى العطار"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEC5210_A_Sec._Sunday_11",
+          "courseName": "Advanced Communication Networks - EEC5210",
+          "courseCode": "EEC5210",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "منه الله نبيل احمد مراد",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EEC5210_A_Lect._Monday_3",
+          "courseName": "Advanced Communication Networks - EEC5210",
+          "courseCode": "EEC5210",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. حسين مصطفى صبحى العطار",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "منه الله نبيل احمد مراد",
+        "د. حسين مصطفى صبحى العطار"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEC5210_A_Sec._Sunday_11",
+      "courseName": "Advanced Communication Networks - EEC5210",
+      "courseCode": "EEC5210",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "منه الله نبيل احمد مراد",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EEC5210_A_Lect._Monday_3",
+      "courseName": "Advanced Communication Networks - EEC5210",
+      "courseCode": "EEC5210",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. حسين مصطفى صبحى العطار",
+      "color": "#06B6D4",
+      "room": ""
+    }
+  ],
+  "color": "#06B6D4",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "الكترونيات ق م - Northamption*",
+    "هـ.الكترونات واتصالات ق.م*"
+  ],
+  "periods": [
+    "9"
+  ]
+}

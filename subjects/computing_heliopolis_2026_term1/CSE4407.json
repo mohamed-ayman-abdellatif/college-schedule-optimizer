@@ -1,0 +1,406 @@
+{
+  "id": "CSE4407",
+  "name": "Software Risk Management - CSE4407",
+  "code": "CSE4407",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "CSE4407_D_Lect._Saturday_3",
+          "courseName": "Software Risk Management - CSE4407",
+          "courseCode": "CSE4407",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "CSE4407_D_Sec._Wednesday_5",
+          "courseName": "Software Risk Management - CSE4407",
+          "courseCode": "CSE4407",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "CSE4407_C_Lect._Saturday_5",
+          "courseName": "Software Risk Management - CSE4407",
+          "courseCode": "CSE4407",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "CSE4407_C_Sec._Monday_7",
+          "courseName": "Software Risk Management - CSE4407",
+          "courseCode": "CSE4407",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "CSE4407_E_Lect._Saturday_7",
+          "courseName": "Software Risk Management - CSE4407",
+          "courseCode": "CSE4407",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "CSE4407_E_Sec._Tuesday_5",
+          "courseName": "Software Risk Management - CSE4407",
+          "courseCode": "CSE4407",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "CSE4407_F_Lect._Saturday_3",
+          "courseName": "Software Risk Management - CSE4407",
+          "courseCode": "CSE4407",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "CSE4407_F_Sec._Wednesday_5",
+          "courseName": "Software Risk Management - CSE4407",
+          "courseCode": "CSE4407",
+          "group": "F",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "CSE4407_B_Lect._Sunday_11",
+          "courseName": "Software Risk Management - CSE4407",
+          "courseCode": "CSE4407",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "CSE4407_B_Sec._Monday_5",
+          "courseName": "Software Risk Management - CSE4407",
+          "courseCode": "CSE4407",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CSE4407_A_Sec._Tuesday_7",
+          "courseName": "Software Risk Management - CSE4407",
+          "courseCode": "CSE4407",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "CSE4407_A_Lect._Wednesday_11",
+          "courseName": "Software Risk Management - CSE4407",
+          "courseCode": "CSE4407",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CSE4407_D_Lect._Saturday_3",
+      "courseName": "Software Risk Management - CSE4407",
+      "courseCode": "CSE4407",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CSE4407_D_Sec._Wednesday_5",
+      "courseName": "Software Risk Management - CSE4407",
+      "courseCode": "CSE4407",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CSE4407_C_Lect._Saturday_5",
+      "courseName": "Software Risk Management - CSE4407",
+      "courseCode": "CSE4407",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CSE4407_C_Sec._Monday_7",
+      "courseName": "Software Risk Management - CSE4407",
+      "courseCode": "CSE4407",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CSE4407_E_Lect._Saturday_7",
+      "courseName": "Software Risk Management - CSE4407",
+      "courseCode": "CSE4407",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CSE4407_E_Sec._Tuesday_5",
+      "courseName": "Software Risk Management - CSE4407",
+      "courseCode": "CSE4407",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CSE4407_F_Lect._Saturday_3",
+      "courseName": "Software Risk Management - CSE4407",
+      "courseCode": "CSE4407",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CSE4407_F_Sec._Wednesday_5",
+      "courseName": "Software Risk Management - CSE4407",
+      "courseCode": "CSE4407",
+      "group": "F",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CSE4407_B_Lect._Sunday_11",
+      "courseName": "Software Risk Management - CSE4407",
+      "courseCode": "CSE4407",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CSE4407_B_Sec._Monday_5",
+      "courseName": "Software Risk Management - CSE4407",
+      "courseCode": "CSE4407",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CSE4407_A_Sec._Tuesday_7",
+      "courseName": "Software Risk Management - CSE4407",
+      "courseCode": "CSE4407",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CSE4407_A_Lect._Wednesday_11",
+      "courseName": "Software Risk Management - CSE4407",
+      "courseCode": "CSE4407",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "هندسة البرمجيات - ق.م",
+    "هندسة برمجيات ق.م -Northampton //"
+  ],
+  "periods": [
+    "7"
+  ]
+}

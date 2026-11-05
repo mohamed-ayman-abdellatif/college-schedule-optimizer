@@ -1,0 +1,92 @@
+{
+  "id": "CC524",
+  "name": "NEURAL NETWORKS - CC524",
+  "code": "CC524",
+  "instructors": [
+    "د. محمد وليد طلعت اسماعيل فخر",
+    "رقيه محمود السيد التحيوى"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CC524_A_Lect._Saturday_7",
+          "courseName": "NEURAL NETWORKS - CC524",
+          "courseCode": "CC524",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. محمد وليد طلعت اسماعيل فخر",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "CC524_A_Lab._Monday_1",
+          "courseName": "NEURAL NETWORKS - CC524",
+          "courseCode": "CC524",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "رقيه محمود السيد التحيوى",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد وليد طلعت اسماعيل فخر",
+        "رقيه محمود السيد التحيوى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "CC524_A_Lect._Saturday_7",
+      "courseName": "NEURAL NETWORKS - CC524",
+      "courseCode": "CC524",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. محمد وليد طلعت اسماعيل فخر",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "CC524_A_Lab._Monday_1",
+      "courseName": "NEURAL NETWORKS - CC524",
+      "courseCode": "CC524",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "رقيه محمود السيد التحيوى",
+      "color": "#84CC16",
+      "room": ""
+    }
+  ],
+  "color": "#84CC16",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "حاسبات ق م - Northampton",
+    "هندسة الحاسبات ق.م"
+  ],
+  "periods": [
+    "7"
+  ]
+}

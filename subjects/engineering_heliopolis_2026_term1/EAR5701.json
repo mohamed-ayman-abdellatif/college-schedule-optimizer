@@ -1,0 +1,61 @@
+{
+  "id": "EAR5701",
+  "name": "Furniture Design - EAR5701",
+  "code": "EAR5701",
+  "instructors": [
+    "د. سارة سمير حلمى ابوعلى"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EAR5701_A_Lect._Tuesday_7",
+          "courseName": "Furniture Design - EAR5701",
+          "courseCode": "EAR5701",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. سارة سمير حلمى ابوعلى",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. سارة سمير حلمى ابوعلى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EAR5701_A_Lect._Tuesday_7",
+      "courseName": "Furniture Design - EAR5701",
+      "courseCode": "EAR5701",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. سارة سمير حلمى ابوعلى",
+      "color": "#84CC16",
+      "room": ""
+    }
+  ],
+  "color": "#84CC16",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م*"
+  ],
+  "periods": [
+    "9"
+  ]
+}

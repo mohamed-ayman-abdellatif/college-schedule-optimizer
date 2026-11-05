@@ -1,0 +1,57 @@
+{
+  "id": "CIT4903",
+  "name": "Professional Training in Data ScienceIII - CIT4903",
+  "code": "CIT4903",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CIT4903_A_Lect._Saturday_9",
+          "courseName": "Professional Training in Data ScienceIII - CIT4903",
+          "courseCode": "CIT4903",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CIT4903_A_Lect._Saturday_9",
+      "courseName": "Professional Training in Data ScienceIII - CIT4903",
+      "courseCode": "CIT4903",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    }
+  ],
+  "color": "#6366F1",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "نظم معلومات -ق م"
+  ],
+  "periods": [
+    "8"
+  ]
+}

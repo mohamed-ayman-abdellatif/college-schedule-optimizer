@@ -1,0 +1,57 @@
+{
+  "id": "IT321",
+  "name": "Professional Training in Programming I - IT321",
+  "code": "IT321",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "IT321_A_Lab._Monday_7",
+          "courseName": "Professional Training in Programming I - IT321",
+          "courseCode": "IT321",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": false,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "IT321_A_Lab._Monday_7",
+      "courseName": "Professional Training in Programming I - IT321",
+      "courseCode": "IT321",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    }
+  ],
+  "color": "#14B8A6",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "نظم معلومات -ق م"
+  ],
+  "periods": [
+    "5"
+  ]
+}

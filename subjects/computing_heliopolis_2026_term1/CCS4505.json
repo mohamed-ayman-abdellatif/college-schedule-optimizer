@@ -1,0 +1,406 @@
+{
+  "id": "CCS4505",
+  "name": "Digital Image Processing - CCS4505",
+  "code": "CCS4505",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "CCS4505_F_Sec._Sunday_5",
+          "courseName": "Digital Image Processing - CCS4505",
+          "courseCode": "CCS4505",
+          "group": "F",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "CCS4505_F_Lect._Tuesday_7",
+          "courseName": "Digital Image Processing - CCS4505",
+          "courseCode": "CCS4505",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "K",
+      "sessions": [
+        {
+          "id": "CCS4505_K_Sec._Monday_3",
+          "courseName": "Digital Image Processing - CCS4505",
+          "courseCode": "CCS4505",
+          "group": "K",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "CCS4505_K_Lect._Tuesday_5",
+          "courseName": "Digital Image Processing - CCS4505",
+          "courseCode": "CCS4505",
+          "group": "K",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "CCS4505_G_Sec._Monday_7",
+          "courseName": "Digital Image Processing - CCS4505",
+          "courseCode": "CCS4505",
+          "group": "G",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "CCS4505_G_Lect._Tuesday_7",
+          "courseName": "Digital Image Processing - CCS4505",
+          "courseCode": "CCS4505",
+          "group": "G",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "I",
+      "sessions": [
+        {
+          "id": "CCS4505_I_Lect._Tuesday_5",
+          "courseName": "Digital Image Processing - CCS4505",
+          "courseCode": "CCS4505",
+          "group": "I",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "CCS4505_I_Sec._Thursday_1",
+          "courseName": "Digital Image Processing - CCS4505",
+          "courseCode": "CCS4505",
+          "group": "I",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "H",
+      "sessions": [
+        {
+          "id": "CCS4505_H_Lect._Tuesday_9",
+          "courseName": "Digital Image Processing - CCS4505",
+          "courseCode": "CCS4505",
+          "group": "H",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "CCS4505_H_Sec._Thursday_3",
+          "courseName": "Digital Image Processing - CCS4505",
+          "courseCode": "CCS4505",
+          "group": "H",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "J",
+      "sessions": [
+        {
+          "id": "CCS4505_J_Lect._Tuesday_9",
+          "courseName": "Digital Image Processing - CCS4505",
+          "courseCode": "CCS4505",
+          "group": "J",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "CCS4505_J_Sec._Thursday_1",
+          "courseName": "Digital Image Processing - CCS4505",
+          "courseCode": "CCS4505",
+          "group": "J",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CCS4505_F_Sec._Sunday_5",
+      "courseName": "Digital Image Processing - CCS4505",
+      "courseCode": "CCS4505",
+      "group": "F",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "CCS4505_F_Lect._Tuesday_7",
+      "courseName": "Digital Image Processing - CCS4505",
+      "courseCode": "CCS4505",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "CCS4505_K_Sec._Monday_3",
+      "courseName": "Digital Image Processing - CCS4505",
+      "courseCode": "CCS4505",
+      "group": "K",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "CCS4505_K_Lect._Tuesday_5",
+      "courseName": "Digital Image Processing - CCS4505",
+      "courseCode": "CCS4505",
+      "group": "K",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "CCS4505_G_Sec._Monday_7",
+      "courseName": "Digital Image Processing - CCS4505",
+      "courseCode": "CCS4505",
+      "group": "G",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "CCS4505_G_Lect._Tuesday_7",
+      "courseName": "Digital Image Processing - CCS4505",
+      "courseCode": "CCS4505",
+      "group": "G",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "CCS4505_I_Lect._Tuesday_5",
+      "courseName": "Digital Image Processing - CCS4505",
+      "courseCode": "CCS4505",
+      "group": "I",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "CCS4505_I_Sec._Thursday_1",
+      "courseName": "Digital Image Processing - CCS4505",
+      "courseCode": "CCS4505",
+      "group": "I",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "CCS4505_H_Lect._Tuesday_9",
+      "courseName": "Digital Image Processing - CCS4505",
+      "courseCode": "CCS4505",
+      "group": "H",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "CCS4505_H_Sec._Thursday_3",
+      "courseName": "Digital Image Processing - CCS4505",
+      "courseCode": "CCS4505",
+      "group": "H",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "CCS4505_J_Lect._Tuesday_9",
+      "courseName": "Digital Image Processing - CCS4505",
+      "courseCode": "CCS4505",
+      "group": "J",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "CCS4505_J_Sec._Thursday_1",
+      "courseName": "Digital Image Processing - CCS4505",
+      "courseCode": "CCS4505",
+      "group": "J",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    }
+  ],
+  "color": "#84CC16",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "الذكاء الإصطناعي - ق.م",
+    "علوم الحاسب ق.م //"
+  ],
+  "periods": [
+    "7"
+  ]
+}

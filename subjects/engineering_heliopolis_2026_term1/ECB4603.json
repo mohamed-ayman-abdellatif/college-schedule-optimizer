@@ -1,0 +1,119 @@
+{
+  "id": "ECB4603",
+  "name": "Earth Structures and Foundations - ECB4603",
+  "code": "ECB4603",
+  "instructors": [
+    "د. احمد محمد جمال الدين محمد منصور",
+    "رويد ابو بكر يوسف ابراهيم"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECB4603_B_Lect._Sunday_1",
+          "courseName": "Earth Structures and Foundations - ECB4603",
+          "courseCode": "ECB4603",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. احمد محمد جمال الدين محمد منصور",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "ECB4603_B_Lect._Sunday_3",
+          "courseName": "Earth Structures and Foundations - ECB4603",
+          "courseCode": "ECB4603",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. احمد محمد جمال الدين محمد منصور",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "ECB4603_B_Sec._Monday_7",
+          "courseName": "Earth Structures and Foundations - ECB4603",
+          "courseCode": "ECB4603",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "رويد ابو بكر يوسف ابراهيم",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. احمد محمد جمال الدين محمد منصور",
+        "رويد ابو بكر يوسف ابراهيم"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECB4603_B_Lect._Sunday_1",
+      "courseName": "Earth Structures and Foundations - ECB4603",
+      "courseCode": "ECB4603",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. احمد محمد جمال الدين محمد منصور",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "ECB4603_B_Lect._Sunday_3",
+      "courseName": "Earth Structures and Foundations - ECB4603",
+      "courseCode": "ECB4603",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. احمد محمد جمال الدين محمد منصور",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "ECB4603_B_Sec._Monday_7",
+      "courseName": "Earth Structures and Foundations - ECB4603",
+      "courseCode": "ECB4603",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "رويد ابو بكر يوسف ابراهيم",
+      "color": "#F59E0B",
+      "room": ""
+    }
+  ],
+  "color": "#F59E0B",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م*"
+  ],
+  "periods": [
+    "7"
+  ]
+}

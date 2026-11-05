@@ -1,0 +1,469 @@
+{
+  "id": "CCY3002",
+  "name": "Introduction to Cryptography - CCY3002",
+  "code": "CCY3002",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "L",
+      "sessions": [
+        {
+          "id": "CCY3002_L_Lect._Saturday_9",
+          "courseName": "Introduction to Cryptography - CCY3002",
+          "courseCode": "CCY3002",
+          "group": "L",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "CCY3002_L_Sec._Sunday_7",
+          "courseName": "Introduction to Cryptography - CCY3002",
+          "courseCode": "CCY3002",
+          "group": "L",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "M",
+      "sessions": [
+        {
+          "id": "CCY3002_M_Lect._Saturday_11",
+          "courseName": "Introduction to Cryptography - CCY3002",
+          "courseCode": "CCY3002",
+          "group": "M",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "CCY3002_M_Sec._Sunday_9",
+          "courseName": "Introduction to Cryptography - CCY3002",
+          "courseCode": "CCY3002",
+          "group": "M",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "N",
+      "sessions": [
+        {
+          "id": "CCY3002_N_Sec._Saturday_9",
+          "courseName": "Introduction to Cryptography - CCY3002",
+          "courseCode": "CCY3002",
+          "group": "N",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "CCY3002_N_Lect._Tuesday_9",
+          "courseName": "Introduction to Cryptography - CCY3002",
+          "courseCode": "CCY3002",
+          "group": "N",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "P",
+      "sessions": [
+        {
+          "id": "CCY3002_P_Sec._Saturday_11",
+          "courseName": "Introduction to Cryptography - CCY3002",
+          "courseCode": "CCY3002",
+          "group": "P",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "CCY3002_P_Lect._Monday_9",
+          "courseName": "Introduction to Cryptography - CCY3002",
+          "courseCode": "CCY3002",
+          "group": "P",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "O",
+      "sessions": [
+        {
+          "id": "CCY3002_O_Sec._Sunday_11",
+          "courseName": "Introduction to Cryptography - CCY3002",
+          "courseCode": "CCY3002",
+          "group": "O",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "CCY3002_O_Lect._Tuesday_9",
+          "courseName": "Introduction to Cryptography - CCY3002",
+          "courseCode": "CCY3002",
+          "group": "O",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "J",
+      "sessions": [
+        {
+          "id": "CCY3002_J_Lect._Monday_11",
+          "courseName": "Introduction to Cryptography - CCY3002",
+          "courseCode": "CCY3002",
+          "group": "J",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "CCY3002_J_Sec._Thursday_3",
+          "courseName": "Introduction to Cryptography - CCY3002",
+          "courseCode": "CCY3002",
+          "group": "J",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "K",
+      "sessions": [
+        {
+          "id": "CCY3002_K_Lect._Tuesday_11",
+          "courseName": "Introduction to Cryptography - CCY3002",
+          "courseCode": "CCY3002",
+          "group": "K",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "CCY3002_K_Sec._Thursday_5",
+          "courseName": "Introduction to Cryptography - CCY3002",
+          "courseCode": "CCY3002",
+          "group": "K",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CCY3002_L_Lect._Saturday_9",
+      "courseName": "Introduction to Cryptography - CCY3002",
+      "courseCode": "CCY3002",
+      "group": "L",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CCY3002_M_Lect._Saturday_11",
+      "courseName": "Introduction to Cryptography - CCY3002",
+      "courseCode": "CCY3002",
+      "group": "M",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CCY3002_N_Sec._Saturday_9",
+      "courseName": "Introduction to Cryptography - CCY3002",
+      "courseCode": "CCY3002",
+      "group": "N",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CCY3002_P_Sec._Saturday_11",
+      "courseName": "Introduction to Cryptography - CCY3002",
+      "courseCode": "CCY3002",
+      "group": "P",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CCY3002_L_Sec._Sunday_7",
+      "courseName": "Introduction to Cryptography - CCY3002",
+      "courseCode": "CCY3002",
+      "group": "L",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CCY3002_M_Sec._Sunday_9",
+      "courseName": "Introduction to Cryptography - CCY3002",
+      "courseCode": "CCY3002",
+      "group": "M",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CCY3002_O_Sec._Sunday_11",
+      "courseName": "Introduction to Cryptography - CCY3002",
+      "courseCode": "CCY3002",
+      "group": "O",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CCY3002_P_Lect._Monday_9",
+      "courseName": "Introduction to Cryptography - CCY3002",
+      "courseCode": "CCY3002",
+      "group": "P",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CCY3002_J_Lect._Monday_11",
+      "courseName": "Introduction to Cryptography - CCY3002",
+      "courseCode": "CCY3002",
+      "group": "J",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CCY3002_N_Lect._Tuesday_9",
+      "courseName": "Introduction to Cryptography - CCY3002",
+      "courseCode": "CCY3002",
+      "group": "N",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CCY3002_K_Lect._Tuesday_11",
+      "courseName": "Introduction to Cryptography - CCY3002",
+      "courseCode": "CCY3002",
+      "group": "K",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CCY3002_O_Lect._Tuesday_9",
+      "courseName": "Introduction to Cryptography - CCY3002",
+      "courseCode": "CCY3002",
+      "group": "O",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CCY3002_J_Sec._Thursday_3",
+      "courseName": "Introduction to Cryptography - CCY3002",
+      "courseCode": "CCY3002",
+      "group": "J",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CCY3002_K_Sec._Thursday_5",
+      "courseName": "Introduction to Cryptography - CCY3002",
+      "courseCode": "CCY3002",
+      "group": "K",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "الأمن السيبرانى - ق.م"
+  ],
+  "periods": [
+    "5"
+  ]
+}

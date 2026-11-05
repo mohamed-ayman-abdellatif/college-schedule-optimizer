@@ -1,0 +1,159 @@
+{
+  "id": "ECE5606",
+  "name": "Computer Forensics - ECE5606",
+  "code": "ECE5606",
+  "instructors": [
+    "ريم محمد ابراهيم مصطفي",
+    "د. احمد ماهر مصطفى حامد"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECE5606_A_Lab._Saturday_9",
+          "courseName": "Computer Forensics - ECE5606",
+          "courseCode": "ECE5606",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "ريم محمد ابراهيم مصطفي",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "ECE5606_A_Lect._Wednesday_11",
+          "courseName": "Computer Forensics - ECE5606",
+          "courseCode": "ECE5606",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "د. احمد ماهر مصطفى حامد",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ريم محمد ابراهيم مصطفي",
+        "د. احمد ماهر مصطفى حامد"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECE5606_B_Lab._Saturday_11",
+          "courseName": "Computer Forensics - ECE5606",
+          "courseCode": "ECE5606",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "ريم محمد ابراهيم مصطفي",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "ECE5606_B_Lect._Wednesday_11",
+          "courseName": "Computer Forensics - ECE5606",
+          "courseCode": "ECE5606",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "د. احمد ماهر مصطفى حامد",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ريم محمد ابراهيم مصطفي",
+        "د. احمد ماهر مصطفى حامد"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECE5606_A_Lab._Saturday_9",
+      "courseName": "Computer Forensics - ECE5606",
+      "courseCode": "ECE5606",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "ريم محمد ابراهيم مصطفي",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE5606_A_Lect._Wednesday_11",
+      "courseName": "Computer Forensics - ECE5606",
+      "courseCode": "ECE5606",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "د. احمد ماهر مصطفى حامد",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE5606_B_Lab._Saturday_11",
+      "courseName": "Computer Forensics - ECE5606",
+      "courseCode": "ECE5606",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "ريم محمد ابراهيم مصطفي",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE5606_B_Lect._Wednesday_11",
+      "courseName": "Computer Forensics - ECE5606",
+      "courseCode": "ECE5606",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "د. احمد ماهر مصطفى حامد",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "حاسبات ق م - Northampton*",
+    "هندسة الحاسبات ق.م*"
+  ],
+  "periods": [
+    "9"
+  ]
+}

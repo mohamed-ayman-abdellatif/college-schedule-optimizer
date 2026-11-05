@@ -1,0 +1,755 @@
+{
+  "id": "EBA3208",
+  "name": "Probability & Statistics - EBA3208*",
+  "code": "EBA3208",
+  "instructors": [
+    "د. محمد مجدى عبد الفتاح محمد غازى",
+    "د. محمد احمد عبد الحكيم مهنى"
+  ],
+  "groups": [
+    {
+      "group": "L",
+      "sessions": [
+        {
+          "id": "EBA3208_L_Lect._Sunday_1",
+          "courseName": "Probability & Statistics - EBA3208*",
+          "courseCode": "EBA3208",
+          "group": "L",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. محمد مجدى عبد الفتاح محمد غازى",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EBA3208_L_Sec._Sunday_7",
+          "courseName": "Probability & Statistics - EBA3208*",
+          "courseCode": "EBA3208",
+          "group": "L",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد مجدى عبد الفتاح محمد غازى"
+      ]
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "EBA3208_D_Lect._Sunday_3",
+          "courseName": "Probability & Statistics - EBA3208*",
+          "courseCode": "EBA3208",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. محمد مجدى عبد الفتاح محمد غازى",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EBA3208_D_Sec._Sunday_7",
+          "courseName": "Probability & Statistics - EBA3208*",
+          "courseCode": "EBA3208",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد مجدى عبد الفتاح محمد غازى"
+      ]
+    },
+    {
+      "group": "I",
+      "sessions": [
+        {
+          "id": "EBA3208_I_Sec._Sunday_5",
+          "courseName": "Probability & Statistics - EBA3208*",
+          "courseCode": "EBA3208",
+          "group": "I",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EBA3208_I_Lect._Tuesday_3",
+          "courseName": "Probability & Statistics - EBA3208*",
+          "courseCode": "EBA3208",
+          "group": "I",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. محمد احمد عبد الحكيم مهنى",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد احمد عبد الحكيم مهنى"
+      ]
+    },
+    {
+      "group": "V",
+      "sessions": [
+        {
+          "id": "EBA3208_V_Lect._Sunday_1",
+          "courseName": "Probability & Statistics - EBA3208*",
+          "courseCode": "EBA3208",
+          "group": "V",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. محمد مجدى عبد الفتاح محمد غازى",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EBA3208_V_Sec._Sunday_3",
+          "courseName": "Probability & Statistics - EBA3208*",
+          "courseCode": "EBA3208",
+          "group": "V",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد مجدى عبد الفتاح محمد غازى"
+      ]
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "EBA3208_E_Lect._Sunday_3",
+          "courseName": "Probability & Statistics - EBA3208*",
+          "courseCode": "EBA3208",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. محمد مجدى عبد الفتاح محمد غازى",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EBA3208_E_Sec._Tuesday_7",
+          "courseName": "Probability & Statistics - EBA3208*",
+          "courseCode": "EBA3208",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد مجدى عبد الفتاح محمد غازى"
+      ]
+    },
+    {
+      "group": "H",
+      "sessions": [
+        {
+          "id": "EBA3208_H_Sec._Sunday_3",
+          "courseName": "Probability & Statistics - EBA3208*",
+          "courseCode": "EBA3208",
+          "group": "H",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EBA3208_H_Lect._Tuesday_3",
+          "courseName": "Probability & Statistics - EBA3208*",
+          "courseCode": "EBA3208",
+          "group": "H",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. محمد احمد عبد الحكيم مهنى",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد احمد عبد الحكيم مهنى"
+      ]
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "EBA3208_F_Lect._Tuesday_1",
+          "courseName": "Probability & Statistics - EBA3208*",
+          "courseCode": "EBA3208",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. محمد احمد عبد الحكيم مهنى",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EBA3208_F_Sec._Tuesday_3",
+          "courseName": "Probability & Statistics - EBA3208*",
+          "courseCode": "EBA3208",
+          "group": "F",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد احمد عبد الحكيم مهنى"
+      ]
+    },
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "EBA3208_G_Sec._Tuesday_5",
+          "courseName": "Probability & Statistics - EBA3208*",
+          "courseCode": "EBA3208",
+          "group": "G",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EBA3208_G_Lect._Tuesday_1",
+          "courseName": "Probability & Statistics - EBA3208*",
+          "courseCode": "EBA3208",
+          "group": "G",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. محمد احمد عبد الحكيم مهنى",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد احمد عبد الحكيم مهنى"
+      ]
+    },
+    {
+      "group": "J",
+      "sessions": [
+        {
+          "id": "EBA3208_J_Lect._Tuesday_5",
+          "courseName": "Probability & Statistics - EBA3208*",
+          "courseCode": "EBA3208",
+          "group": "J",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. محمد احمد عبد الحكيم مهنى",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EBA3208_J_Sec._Thursday_3",
+          "courseName": "Probability & Statistics - EBA3208*",
+          "courseCode": "EBA3208",
+          "group": "J",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد احمد عبد الحكيم مهنى"
+      ]
+    },
+    {
+      "group": "K",
+      "sessions": [
+        {
+          "id": "EBA3208_K_Lect._Tuesday_5",
+          "courseName": "Probability & Statistics - EBA3208*",
+          "courseCode": "EBA3208",
+          "group": "K",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. محمد احمد عبد الحكيم مهنى",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EBA3208_K_Sec._Thursday_7",
+          "courseName": "Probability & Statistics - EBA3208*",
+          "courseCode": "EBA3208",
+          "group": "K",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد احمد عبد الحكيم مهنى"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EBA3208_B_Lect._Sunday_1",
+          "courseName": "Probability & Statistics - EBA3208",
+          "courseCode": "EBA3208",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. محمد مجدى عبد الفتاح محمد غازى",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EBA3208_B_Sec._Sunday_3",
+          "courseName": "Probability & Statistics - EBA3208",
+          "courseCode": "EBA3208",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد مجدى عبد الفتاح محمد غازى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EBA3208_L_Lect._Sunday_1",
+      "courseName": "Probability & Statistics - EBA3208*",
+      "courseCode": "EBA3208",
+      "group": "L",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. محمد مجدى عبد الفتاح محمد غازى",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EBA3208_L_Sec._Sunday_7",
+      "courseName": "Probability & Statistics - EBA3208*",
+      "courseCode": "EBA3208",
+      "group": "L",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EBA3208_D_Lect._Sunday_3",
+      "courseName": "Probability & Statistics - EBA3208*",
+      "courseCode": "EBA3208",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. محمد مجدى عبد الفتاح محمد غازى",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EBA3208_D_Sec._Sunday_7",
+      "courseName": "Probability & Statistics - EBA3208*",
+      "courseCode": "EBA3208",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EBA3208_I_Sec._Sunday_5",
+      "courseName": "Probability & Statistics - EBA3208*",
+      "courseCode": "EBA3208",
+      "group": "I",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EBA3208_I_Lect._Tuesday_3",
+      "courseName": "Probability & Statistics - EBA3208*",
+      "courseCode": "EBA3208",
+      "group": "I",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. محمد احمد عبد الحكيم مهنى",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EBA3208_V_Lect._Sunday_1",
+      "courseName": "Probability & Statistics - EBA3208*",
+      "courseCode": "EBA3208",
+      "group": "V",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. محمد مجدى عبد الفتاح محمد غازى",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EBA3208_V_Sec._Sunday_3",
+      "courseName": "Probability & Statistics - EBA3208*",
+      "courseCode": "EBA3208",
+      "group": "V",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EBA3208_E_Lect._Sunday_3",
+      "courseName": "Probability & Statistics - EBA3208*",
+      "courseCode": "EBA3208",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. محمد مجدى عبد الفتاح محمد غازى",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EBA3208_E_Sec._Tuesday_7",
+      "courseName": "Probability & Statistics - EBA3208*",
+      "courseCode": "EBA3208",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EBA3208_H_Sec._Sunday_3",
+      "courseName": "Probability & Statistics - EBA3208*",
+      "courseCode": "EBA3208",
+      "group": "H",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EBA3208_H_Lect._Tuesday_3",
+      "courseName": "Probability & Statistics - EBA3208*",
+      "courseCode": "EBA3208",
+      "group": "H",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. محمد احمد عبد الحكيم مهنى",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EBA3208_F_Lect._Tuesday_1",
+      "courseName": "Probability & Statistics - EBA3208*",
+      "courseCode": "EBA3208",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. محمد احمد عبد الحكيم مهنى",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EBA3208_F_Sec._Tuesday_3",
+      "courseName": "Probability & Statistics - EBA3208*",
+      "courseCode": "EBA3208",
+      "group": "F",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EBA3208_G_Sec._Tuesday_5",
+      "courseName": "Probability & Statistics - EBA3208*",
+      "courseCode": "EBA3208",
+      "group": "G",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EBA3208_G_Lect._Tuesday_1",
+      "courseName": "Probability & Statistics - EBA3208*",
+      "courseCode": "EBA3208",
+      "group": "G",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. محمد احمد عبد الحكيم مهنى",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EBA3208_J_Lect._Tuesday_5",
+      "courseName": "Probability & Statistics - EBA3208*",
+      "courseCode": "EBA3208",
+      "group": "J",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. محمد احمد عبد الحكيم مهنى",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EBA3208_J_Sec._Thursday_3",
+      "courseName": "Probability & Statistics - EBA3208*",
+      "courseCode": "EBA3208",
+      "group": "J",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EBA3208_K_Lect._Tuesday_5",
+      "courseName": "Probability & Statistics - EBA3208*",
+      "courseCode": "EBA3208",
+      "group": "K",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. محمد احمد عبد الحكيم مهنى",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EBA3208_K_Sec._Thursday_7",
+      "courseName": "Probability & Statistics - EBA3208*",
+      "courseCode": "EBA3208",
+      "group": "K",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EBA3208_B_Lect._Sunday_1",
+      "courseName": "Probability & Statistics - EBA3208",
+      "courseCode": "EBA3208",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. محمد مجدى عبد الفتاح محمد غازى",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EBA3208_B_Sec._Sunday_3",
+      "courseName": "Probability & Statistics - EBA3208",
+      "courseCode": "EBA3208",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    }
+  ],
+  "color": "#06B6D4",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "ميكانيكا ق م -Northampton",
+    "هـ.ميكانيكية ق.م*",
+    "هندسة التشيد والبناء ق.م",
+    "هندسة التشيد والبناء ق.م*",
+    "هندسة ميكانيكية-ق م //"
+  ],
+  "periods": [
+    "5",
+    "6"
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "id": "EEE4107",
+  "name": "Applied Control Systems - EEE4107*",
+  "code": "EEE4107",
+  "instructors": [
+    "محمد تامر احمد حجاج",
+    "نهى مجدى عبدالخالق عبدالمجيد",
+    "د. امام فتحى محمد الزعيطى"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EEE4107_B_Sec._Tuesday_1",
+          "courseName": "Applied Control Systems - EEE4107*",
+          "courseCode": "EEE4107",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "محمد تامر احمد حجاج",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EEE4107_B_Lab._Wednesday_3",
+          "courseName": "Applied Control Systems - EEE4107*",
+          "courseCode": "EEE4107",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "نهى مجدى عبدالخالق عبدالمجيد",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EEE4107_B_Lect._Wednesday_7",
+          "courseName": "Applied Control Systems - EEE4107*",
+          "courseCode": "EEE4107",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. امام فتحى محمد الزعيطى",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "محمد تامر احمد حجاج",
+        "نهى مجدى عبدالخالق عبدالمجيد",
+        "د. امام فتحى محمد الزعيطى"
+      ]
+    },
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEE4107_A_Sec._Tuesday_5",
+          "courseName": "Applied Control Systems - EEE4107*",
+          "courseCode": "EEE4107",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "محمد تامر احمد حجاج",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EEE4107_A_Lect._Wednesday_7",
+          "courseName": "Applied Control Systems - EEE4107*",
+          "courseCode": "EEE4107",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. امام فتحى محمد الزعيطى",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EEE4107_A_Lab._Thursday_5",
+          "courseName": "Applied Control Systems - EEE4107*",
+          "courseCode": "EEE4107",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "نهى مجدى عبدالخالق عبدالمجيد",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "محمد تامر احمد حجاج",
+        "د. امام فتحى محمد الزعيطى",
+        "نهى مجدى عبدالخالق عبدالمجيد"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE4107_B_Sec._Tuesday_1",
+      "courseName": "Applied Control Systems - EEE4107*",
+      "courseCode": "EEE4107",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "محمد تامر احمد حجاج",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EEE4107_B_Lab._Wednesday_3",
+      "courseName": "Applied Control Systems - EEE4107*",
+      "courseCode": "EEE4107",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "نهى مجدى عبدالخالق عبدالمجيد",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EEE4107_B_Lect._Wednesday_7",
+      "courseName": "Applied Control Systems - EEE4107*",
+      "courseCode": "EEE4107",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. امام فتحى محمد الزعيطى",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EEE4107_A_Sec._Tuesday_5",
+      "courseName": "Applied Control Systems - EEE4107*",
+      "courseCode": "EEE4107",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "محمد تامر احمد حجاج",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EEE4107_A_Lect._Wednesday_7",
+      "courseName": "Applied Control Systems - EEE4107*",
+      "courseCode": "EEE4107",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. امام فتحى محمد الزعيطى",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EEE4107_A_Lab._Thursday_5",
+      "courseName": "Applied Control Systems - EEE4107*",
+      "courseCode": "EEE4107",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "نهى مجدى عبدالخالق عبدالمجيد",
+      "color": "#84CC16",
+      "room": ""
+    }
+  ],
+  "color": "#84CC16",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "ميكانيكا ق م -Northampton*",
+    "هـ.ميكانيكية ق.م*"
+  ],
+  "periods": [
+    "5"
+  ]
+}

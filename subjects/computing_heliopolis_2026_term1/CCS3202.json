@@ -1,0 +1,214 @@
+{
+  "id": "CCS3202",
+  "name": "Systems Programming - CCS3202",
+  "code": "CCS3202",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "L",
+      "sessions": [
+        {
+          "id": "CCS3202_L_Sec._Saturday_3",
+          "courseName": "Systems Programming - CCS3202",
+          "courseCode": "CCS3202",
+          "group": "L",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "CCS3202_L_Lect._Thursday_11",
+          "courseName": "Systems Programming - CCS3202",
+          "courseCode": "CCS3202",
+          "group": "L",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "M",
+      "sessions": [
+        {
+          "id": "CCS3202_M_Sec._Monday_5",
+          "courseName": "Systems Programming - CCS3202",
+          "courseCode": "CCS3202",
+          "group": "M",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "CCS3202_M_Lect._Thursday_9",
+          "courseName": "Systems Programming - CCS3202",
+          "courseCode": "CCS3202",
+          "group": "M",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "N",
+      "sessions": [
+        {
+          "id": "CCS3202_N_Sec._Monday_5",
+          "courseName": "Systems Programming - CCS3202",
+          "courseCode": "CCS3202",
+          "group": "N",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "CCS3202_N_Lect._Thursday_9",
+          "courseName": "Systems Programming - CCS3202",
+          "courseCode": "CCS3202",
+          "group": "N",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CCS3202_L_Sec._Saturday_3",
+      "courseName": "Systems Programming - CCS3202",
+      "courseCode": "CCS3202",
+      "group": "L",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CCS3202_L_Lect._Thursday_11",
+      "courseName": "Systems Programming - CCS3202",
+      "courseCode": "CCS3202",
+      "group": "L",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CCS3202_M_Sec._Monday_5",
+      "courseName": "Systems Programming - CCS3202",
+      "courseCode": "CCS3202",
+      "group": "M",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CCS3202_M_Lect._Thursday_9",
+      "courseName": "Systems Programming - CCS3202",
+      "courseCode": "CCS3202",
+      "group": "M",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CCS3202_N_Sec._Monday_5",
+      "courseName": "Systems Programming - CCS3202",
+      "courseCode": "CCS3202",
+      "group": "N",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CCS3202_N_Lect._Thursday_9",
+      "courseName": "Systems Programming - CCS3202",
+      "courseCode": "CCS3202",
+      "group": "N",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "علوم الحاسب ق.م //",
+    "علوم حاسب ق.م-Northampton //"
+  ],
+  "periods": [
+    "5"
+  ]
+}

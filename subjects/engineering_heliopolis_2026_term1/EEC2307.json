@@ -1,0 +1,92 @@
+{
+  "id": "EEC2307",
+  "name": "Electronic Engineering - EEC2307",
+  "code": "EEC2307",
+  "instructors": [
+    "ايناس رافت رمسيس لبيب",
+    "د. محمد حسن عبدالعظيم حسن"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEC2307_A_Sec._Sunday_1",
+          "courseName": "Electronic Engineering - EEC2307",
+          "courseCode": "EEC2307",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "ايناس رافت رمسيس لبيب",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EEC2307_A_Lect._Monday_5",
+          "courseName": "Electronic Engineering - EEC2307",
+          "courseCode": "EEC2307",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. محمد حسن عبدالعظيم حسن",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ايناس رافت رمسيس لبيب",
+        "د. محمد حسن عبدالعظيم حسن"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEC2307_A_Sec._Sunday_1",
+      "courseName": "Electronic Engineering - EEC2307",
+      "courseCode": "EEC2307",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "ايناس رافت رمسيس لبيب",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EEC2307_A_Lect._Monday_5",
+      "courseName": "Electronic Engineering - EEC2307",
+      "courseCode": "EEC2307",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. محمد حسن عبدالعظيم حسن",
+      "color": "#10B981",
+      "room": ""
+    }
+  ],
+  "color": "#10B981",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية ق م -Northampton //",
+    "هندسة كهربية وتحكم ق.م"
+  ],
+  "periods": [
+    "4"
+  ]
+}

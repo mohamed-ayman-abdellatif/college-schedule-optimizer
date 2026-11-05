@@ -1,0 +1,312 @@
+{
+  "id": "EEC4103",
+  "name": "Data Acquisition & Signal Conditioning - EEC4103",
+  "code": "EEC4103",
+  "instructors": [
+    "مريم صبري عيسى بيومي",
+    "د. عزة كمال مهدي عبدالعزيز عزيز معوض",
+    "عزة كمال مهدي عبدالعزيز عزيز معوض"
+  ],
+  "groups": [
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "EEC4103_E_Sec._Saturday_7",
+          "courseName": "Data Acquisition & Signal Conditioning - EEC4103",
+          "courseCode": "EEC4103",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "مريم صبري عيسى بيومي",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EEC4103_E_Lab._Tuesday_5",
+          "courseName": "Data Acquisition & Signal Conditioning - EEC4103",
+          "courseCode": "EEC4103",
+          "group": "E",
+          "type": "Lab.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EEC4103_E_Lect._Wednesday_3",
+          "courseName": "Data Acquisition & Signal Conditioning - EEC4103",
+          "courseCode": "EEC4103",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. عزة كمال مهدي عبدالعزيز عزيز معوض",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "مريم صبري عيسى بيومي",
+        "د. عزة كمال مهدي عبدالعزيز عزيز معوض"
+      ]
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "EEC4103_C_Lect._Monday_1",
+          "courseName": "Data Acquisition & Signal Conditioning - EEC4103",
+          "courseCode": "EEC4103",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. عزة كمال مهدي عبدالعزيز عزيز معوض",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EEC4103_C_Sec._Tuesday_5",
+          "courseName": "Data Acquisition & Signal Conditioning - EEC4103",
+          "courseCode": "EEC4103",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "مريم صبري عيسى بيومي",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EEC4103_C_Lab._Tuesday_7",
+          "courseName": "Data Acquisition & Signal Conditioning - EEC4103",
+          "courseCode": "EEC4103",
+          "group": "C",
+          "type": "Lab.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "عزة كمال مهدي عبدالعزيز عزيز معوض",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. عزة كمال مهدي عبدالعزيز عزيز معوض",
+        "مريم صبري عيسى بيومي",
+        "عزة كمال مهدي عبدالعزيز عزيز معوض"
+      ]
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "EEC4103_D_Lect._Monday_1",
+          "courseName": "Data Acquisition & Signal Conditioning - EEC4103",
+          "courseCode": "EEC4103",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. عزة كمال مهدي عبدالعزيز عزيز معوض",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EEC4103_D_Lab._Tuesday_3",
+          "courseName": "Data Acquisition & Signal Conditioning - EEC4103",
+          "courseCode": "EEC4103",
+          "group": "D",
+          "type": "Lab.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EEC4103_D_Sec._Tuesday_7",
+          "courseName": "Data Acquisition & Signal Conditioning - EEC4103",
+          "courseCode": "EEC4103",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "مريم صبري عيسى بيومي",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. عزة كمال مهدي عبدالعزيز عزيز معوض",
+        "مريم صبري عيسى بيومي"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEC4103_E_Sec._Saturday_7",
+      "courseName": "Data Acquisition & Signal Conditioning - EEC4103",
+      "courseCode": "EEC4103",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "مريم صبري عيسى بيومي",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EEC4103_E_Lab._Tuesday_5",
+      "courseName": "Data Acquisition & Signal Conditioning - EEC4103",
+      "courseCode": "EEC4103",
+      "group": "E",
+      "type": "Lab.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EEC4103_E_Lect._Wednesday_3",
+      "courseName": "Data Acquisition & Signal Conditioning - EEC4103",
+      "courseCode": "EEC4103",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. عزة كمال مهدي عبدالعزيز عزيز معوض",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EEC4103_C_Lect._Monday_1",
+      "courseName": "Data Acquisition & Signal Conditioning - EEC4103",
+      "courseCode": "EEC4103",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. عزة كمال مهدي عبدالعزيز عزيز معوض",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EEC4103_C_Sec._Tuesday_5",
+      "courseName": "Data Acquisition & Signal Conditioning - EEC4103",
+      "courseCode": "EEC4103",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "مريم صبري عيسى بيومي",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EEC4103_C_Lab._Tuesday_7",
+      "courseName": "Data Acquisition & Signal Conditioning - EEC4103",
+      "courseCode": "EEC4103",
+      "group": "C",
+      "type": "Lab.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "عزة كمال مهدي عبدالعزيز عزيز معوض",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EEC4103_D_Lect._Monday_1",
+      "courseName": "Data Acquisition & Signal Conditioning - EEC4103",
+      "courseCode": "EEC4103",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. عزة كمال مهدي عبدالعزيز عزيز معوض",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EEC4103_D_Lab._Tuesday_3",
+      "courseName": "Data Acquisition & Signal Conditioning - EEC4103",
+      "courseCode": "EEC4103",
+      "group": "D",
+      "type": "Lab.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EEC4103_D_Sec._Tuesday_7",
+      "courseName": "Data Acquisition & Signal Conditioning - EEC4103",
+      "courseCode": "EEC4103",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "مريم صبري عيسى بيومي",
+      "color": "#06B6D4",
+      "room": ""
+    }
+  ],
+  "color": "#06B6D4",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "الكترونيات ق م - Northamption*",
+    "هـ.الكترونات واتصالات ق.م*"
+  ],
+  "periods": [
+    "7"
+  ]
+}

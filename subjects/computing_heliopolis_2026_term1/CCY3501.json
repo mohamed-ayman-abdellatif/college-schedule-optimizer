@@ -1,0 +1,405 @@
+{
+  "id": "CCY3501",
+  "name": "Cybersecurity Law and Ethics - CCY3501",
+  "code": "CCY3501",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "H",
+      "sessions": [
+        {
+          "id": "CCY3501_H_Sec._Saturday_5",
+          "courseName": "Cybersecurity Law and Ethics - CCY3501",
+          "courseCode": "CCY3501",
+          "group": "H",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "CCY3501_H_Lect._Sunday_7",
+          "courseName": "Cybersecurity Law and Ethics - CCY3501",
+          "courseCode": "CCY3501",
+          "group": "H",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "L",
+      "sessions": [
+        {
+          "id": "CCY3501_L_Sec._Saturday_7",
+          "courseName": "Cybersecurity Law and Ethics - CCY3501",
+          "courseCode": "CCY3501",
+          "group": "L",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "CCY3501_L_Lect._Sunday_9",
+          "courseName": "Cybersecurity Law and Ethics - CCY3501",
+          "courseCode": "CCY3501",
+          "group": "L",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "J",
+      "sessions": [
+        {
+          "id": "CCY3501_J_Lect._Sunday_11",
+          "courseName": "Cybersecurity Law and Ethics - CCY3501",
+          "courseCode": "CCY3501",
+          "group": "J",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "CCY3501_J_Sec._Thursday_11",
+          "courseName": "Cybersecurity Law and Ethics - CCY3501",
+          "courseCode": "CCY3501",
+          "group": "J",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "N",
+      "sessions": [
+        {
+          "id": "CCY3501_N_Sec._Monday_7",
+          "courseName": "Cybersecurity Law and Ethics - CCY3501",
+          "courseCode": "CCY3501",
+          "group": "N",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "CCY3501_N_Lect._Tuesday_11",
+          "courseName": "Cybersecurity Law and Ethics - CCY3501",
+          "courseCode": "CCY3501",
+          "group": "N",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "K",
+      "sessions": [
+        {
+          "id": "CCY3501_K_Sec._Monday_9",
+          "courseName": "Cybersecurity Law and Ethics - CCY3501",
+          "courseCode": "CCY3501",
+          "group": "K",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "CCY3501_K_Lect._Thursday_9",
+          "courseName": "Cybersecurity Law and Ethics - CCY3501",
+          "courseCode": "CCY3501",
+          "group": "K",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "I",
+      "sessions": [
+        {
+          "id": "CCY3501_I_Sec._Thursday_9",
+          "courseName": "Cybersecurity Law and Ethics - CCY3501",
+          "courseCode": "CCY3501",
+          "group": "I",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "CCY3501_I_Lect._Thursday_11",
+          "courseName": "Cybersecurity Law and Ethics - CCY3501",
+          "courseCode": "CCY3501",
+          "group": "I",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CCY3501_H_Sec._Saturday_5",
+      "courseName": "Cybersecurity Law and Ethics - CCY3501",
+      "courseCode": "CCY3501",
+      "group": "H",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "CCY3501_L_Sec._Saturday_7",
+      "courseName": "Cybersecurity Law and Ethics - CCY3501",
+      "courseCode": "CCY3501",
+      "group": "L",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "CCY3501_H_Lect._Sunday_7",
+      "courseName": "Cybersecurity Law and Ethics - CCY3501",
+      "courseCode": "CCY3501",
+      "group": "H",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "CCY3501_L_Lect._Sunday_9",
+      "courseName": "Cybersecurity Law and Ethics - CCY3501",
+      "courseCode": "CCY3501",
+      "group": "L",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "CCY3501_J_Lect._Sunday_11",
+      "courseName": "Cybersecurity Law and Ethics - CCY3501",
+      "courseCode": "CCY3501",
+      "group": "J",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "CCY3501_N_Sec._Monday_7",
+      "courseName": "Cybersecurity Law and Ethics - CCY3501",
+      "courseCode": "CCY3501",
+      "group": "N",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "CCY3501_K_Sec._Monday_9",
+      "courseName": "Cybersecurity Law and Ethics - CCY3501",
+      "courseCode": "CCY3501",
+      "group": "K",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "CCY3501_N_Lect._Tuesday_11",
+      "courseName": "Cybersecurity Law and Ethics - CCY3501",
+      "courseCode": "CCY3501",
+      "group": "N",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "CCY3501_I_Sec._Thursday_9",
+      "courseName": "Cybersecurity Law and Ethics - CCY3501",
+      "courseCode": "CCY3501",
+      "group": "I",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "CCY3501_I_Lect._Thursday_11",
+      "courseName": "Cybersecurity Law and Ethics - CCY3501",
+      "courseCode": "CCY3501",
+      "group": "I",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "CCY3501_K_Lect._Thursday_9",
+      "courseName": "Cybersecurity Law and Ethics - CCY3501",
+      "courseCode": "CCY3501",
+      "group": "K",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "CCY3501_J_Sec._Thursday_11",
+      "courseName": "Cybersecurity Law and Ethics - CCY3501",
+      "courseCode": "CCY3501",
+      "group": "J",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    }
+  ],
+  "color": "#3B82F6",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "الأمن السيبرانى - ق.م"
+  ],
+  "periods": [
+    "5"
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "id": "EAR2810",
+  "name": "Computer Applications in Architecture - EAR2810",
+  "code": "EAR2810",
+  "instructors": [
+    "د. محمد يس عبد العظيم محمد",
+    "د. اسر محمد بدوى بخاتى"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EAR2810_B_Lect._Sunday_1",
+          "courseName": "Computer Applications in Architecture - EAR2810",
+          "courseCode": "EAR2810",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 3,
+          "duration": 3,
+          "instructor": "د. محمد يس عبد العظيم محمد",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. محمد يس عبد العظيم محمد"
+      ]
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "EAR2810_C_Lect._Sunday_4",
+          "courseName": "Computer Applications in Architecture - EAR2810",
+          "courseCode": "EAR2810",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 4,
+          "endSlot": 6,
+          "duration": 3,
+          "instructor": "د. محمد يس عبد العظيم محمد",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. محمد يس عبد العظيم محمد"
+      ]
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "EAR2810_D_Lect._Wednesday_7",
+          "courseName": "Computer Applications in Architecture - EAR2810",
+          "courseCode": "EAR2810",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 9,
+          "duration": 3,
+          "instructor": "د. اسر محمد بدوى بخاتى",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. اسر محمد بدوى بخاتى"
+      ]
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "EAR2810_E_Lect._Wednesday_10",
+          "courseName": "Computer Applications in Architecture - EAR2810",
+          "courseCode": "EAR2810",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 10,
+          "endSlot": 12,
+          "duration": 3,
+          "instructor": "د. اسر محمد بدوى بخاتى",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. اسر محمد بدوى بخاتى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EAR2810_B_Lect._Sunday_1",
+      "courseName": "Computer Applications in Architecture - EAR2810",
+      "courseCode": "EAR2810",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 3,
+      "duration": 3,
+      "instructor": "د. محمد يس عبد العظيم محمد",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EAR2810_C_Lect._Sunday_4",
+      "courseName": "Computer Applications in Architecture - EAR2810",
+      "courseCode": "EAR2810",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 4,
+      "endSlot": 6,
+      "duration": 3,
+      "instructor": "د. محمد يس عبد العظيم محمد",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EAR2810_D_Lect._Wednesday_7",
+      "courseName": "Computer Applications in Architecture - EAR2810",
+      "courseCode": "EAR2810",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 9,
+      "duration": 3,
+      "instructor": "د. اسر محمد بدوى بخاتى",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EAR2810_E_Lect._Wednesday_10",
+      "courseName": "Computer Applications in Architecture - EAR2810",
+      "courseCode": "EAR2810",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 10,
+      "endSlot": 12,
+      "duration": 3,
+      "instructor": "د. اسر محمد بدوى بخاتى",
+      "color": "#10B981",
+      "room": ""
+    }
+  ],
+  "color": "#10B981",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م",
+    "هندسة معمارية-Cardiff-ق م //"
+  ],
+  "periods": [
+    "3"
+  ]
+}

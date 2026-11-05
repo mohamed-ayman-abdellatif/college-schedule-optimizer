@@ -1,0 +1,57 @@
+{
+  "id": "CSE4902",
+  "name": "Project II - CSE4902",
+  "code": "CSE4902",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "CSE4902_B_Lect._Monday_11",
+          "courseName": "Project II - CSE4902",
+          "courseCode": "CSE4902",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CSE4902_B_Lect._Monday_11",
+      "courseName": "Project II - CSE4902",
+      "courseCode": "CSE4902",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "هندسة البرمجيات - ق.م"
+  ],
+  "periods": [
+    "8"
+  ]
+}

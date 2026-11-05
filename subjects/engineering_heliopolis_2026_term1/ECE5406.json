@@ -1,0 +1,156 @@
+{
+  "id": "ECE5406",
+  "name": "Introduction to Data Mining - ECE5406",
+  "code": "ECE5406",
+  "instructors": [
+    "د. احمد فاروق ابراهيم جعفر"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECE5406_B_Lab._Saturday_1",
+          "courseName": "Introduction to Data Mining - ECE5406",
+          "courseCode": "ECE5406",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "ECE5406_B_Lect._Tuesday_11",
+          "courseName": "Introduction to Data Mining - ECE5406",
+          "courseCode": "ECE5406",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "د. احمد فاروق ابراهيم جعفر",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. احمد فاروق ابراهيم جعفر"
+      ]
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "ECE5406_C_Lab._Saturday_3",
+          "courseName": "Introduction to Data Mining - ECE5406",
+          "courseCode": "ECE5406",
+          "group": "C",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "ECE5406_C_Lect._Tuesday_11",
+          "courseName": "Introduction to Data Mining - ECE5406",
+          "courseCode": "ECE5406",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "د. احمد فاروق ابراهيم جعفر",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. احمد فاروق ابراهيم جعفر"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECE5406_B_Lab._Saturday_1",
+      "courseName": "Introduction to Data Mining - ECE5406",
+      "courseCode": "ECE5406",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE5406_B_Lect._Tuesday_11",
+      "courseName": "Introduction to Data Mining - ECE5406",
+      "courseCode": "ECE5406",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "د. احمد فاروق ابراهيم جعفر",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE5406_C_Lab._Saturday_3",
+      "courseName": "Introduction to Data Mining - ECE5406",
+      "courseCode": "ECE5406",
+      "group": "C",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE5406_C_Lect._Tuesday_11",
+      "courseName": "Introduction to Data Mining - ECE5406",
+      "courseCode": "ECE5406",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "د. احمد فاروق ابراهيم جعفر",
+      "color": "#6366F1",
+      "room": ""
+    }
+  ],
+  "color": "#6366F1",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "حاسبات ق م - Northampton*",
+    "هندسة الحاسبات ق.م*"
+  ],
+  "periods": [
+    "9"
+  ]
+}

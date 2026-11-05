@@ -1,0 +1,58 @@
+{
+  "id": "EEC5002",
+  "name": "Graduation Project (2) - EEC5002",
+  "code": "EEC5002",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EEC5002_B_Lect._Thursday_13",
+          "courseName": "Graduation Project (2) - EEC5002",
+          "courseCode": "EEC5002",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 13,
+          "endSlot": 14,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEC5002_B_Lect._Thursday_13",
+      "courseName": "Graduation Project (2) - EEC5002",
+      "courseCode": "EEC5002",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 13,
+      "endSlot": 14,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "الكترونيات ق م - Northamption*",
+    "هـ.الكترونات واتصالات ق.م*"
+  ],
+  "periods": [
+    "9"
+  ]
+}

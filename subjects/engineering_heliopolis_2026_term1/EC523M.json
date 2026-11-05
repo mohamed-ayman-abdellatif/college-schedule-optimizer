@@ -1,0 +1,91 @@
+{
+  "id": "EC523M",
+  "name": "ADVANCED COMMUNICATION SYSTEMS - EC523M",
+  "code": "EC523M",
+  "instructors": [
+    "احمد محمد عبدالوهاب دعبس",
+    "د. محمد خالد على شحاته"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EC523M_B_Sec._Sunday_5",
+          "courseName": "ADVANCED COMMUNICATION SYSTEMS - EC523M",
+          "courseCode": "EC523M",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "احمد محمد عبدالوهاب دعبس",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "EC523M_B_Lect._Sunday_7",
+          "courseName": "ADVANCED COMMUNICATION SYSTEMS - EC523M",
+          "courseCode": "EC523M",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. محمد خالد على شحاته",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "احمد محمد عبدالوهاب دعبس",
+        "د. محمد خالد على شحاته"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EC523M_B_Sec._Sunday_5",
+      "courseName": "ADVANCED COMMUNICATION SYSTEMS - EC523M",
+      "courseCode": "EC523M",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "احمد محمد عبدالوهاب دعبس",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "EC523M_B_Lect._Sunday_7",
+      "courseName": "ADVANCED COMMUNICATION SYSTEMS - EC523M",
+      "courseCode": "EC523M",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. محمد خالد على شحاته",
+      "color": "#14B8A6",
+      "room": ""
+    }
+  ],
+  "color": "#14B8A6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هـ.الكترونات واتصالات ق.م"
+  ],
+  "periods": [
+    "9"
+  ]
+}

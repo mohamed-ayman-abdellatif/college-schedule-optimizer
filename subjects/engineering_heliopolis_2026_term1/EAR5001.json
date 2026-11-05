@@ -1,0 +1,99 @@
+{
+  "id": "EAR5001",
+  "name": "Research And Programming - EAR5001",
+  "code": "EAR5001",
+  "instructors": [
+    "د. مى محمد على ابو الدهب"
+  ],
+  "groups": [
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "EAR5001_C_Lect._Monday_5",
+          "courseName": "Research And Programming - EAR5001",
+          "courseCode": "EAR5001",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. مى محمد على ابو الدهب",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. مى محمد على ابو الدهب"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EAR5001_B_Lect._Wednesday_5",
+          "courseName": "Research And Programming - EAR5001",
+          "courseCode": "EAR5001",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. مى محمد على ابو الدهب",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. مى محمد على ابو الدهب"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EAR5001_C_Lect._Monday_5",
+      "courseName": "Research And Programming - EAR5001",
+      "courseCode": "EAR5001",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. مى محمد على ابو الدهب",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EAR5001_B_Lect._Wednesday_5",
+      "courseName": "Research And Programming - EAR5001",
+      "courseCode": "EAR5001",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. مى محمد على ابو الدهب",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م*"
+  ],
+  "periods": [
+    "9"
+  ]
+}

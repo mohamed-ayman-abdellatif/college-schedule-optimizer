@@ -1,0 +1,91 @@
+{
+  "id": "CC536",
+  "name": "Cyber Security - CC536",
+  "code": "CC536",
+  "instructors": [
+    "د. يحيى زكريا محسب حسين",
+    "ريم محمد ابراهيم مصطفي"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CC536_A_Lect._Sunday_1",
+          "courseName": "Cyber Security - CC536",
+          "courseCode": "CC536",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. يحيى زكريا محسب حسين",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "CC536_A_Sec._Monday_11",
+          "courseName": "Cyber Security - CC536",
+          "courseCode": "CC536",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "ريم محمد ابراهيم مصطفي",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. يحيى زكريا محسب حسين",
+        "ريم محمد ابراهيم مصطفي"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "CC536_A_Lect._Sunday_1",
+      "courseName": "Cyber Security - CC536",
+      "courseCode": "CC536",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. يحيى زكريا محسب حسين",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CC536_A_Sec._Monday_11",
+      "courseName": "Cyber Security - CC536",
+      "courseCode": "CC536",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "ريم محمد ابراهيم مصطفي",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة الحاسبات ق.م"
+  ],
+  "periods": [
+    "10"
+  ]
+}

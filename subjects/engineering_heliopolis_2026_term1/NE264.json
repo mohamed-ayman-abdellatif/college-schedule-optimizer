@@ -1,0 +1,64 @@
+{
+  "id": "NE264",
+  "name": "Scientific Thinking - NE264",
+  "code": "NE264",
+  "instructors": [
+    "د. محمد محمود محمد حماده"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "NE264_A_Lect._Tuesday_9",
+          "courseName": "Scientific Thinking - NE264",
+          "courseCode": "NE264",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. محمد محمود محمد حماده",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. محمد محمود محمد حماده"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "NE264_A_Lect._Tuesday_9",
+      "courseName": "Scientific Thinking - NE264",
+      "courseCode": "NE264",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. محمد محمود محمد حماده",
+      "color": "#F59E0B",
+      "room": ""
+    }
+  ],
+  "color": "#F59E0B",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "ميكانيكا ق م -Northampton",
+    "هـ.ميكانيكية ق.م",
+    "هندسة كهربية وتحكم ق.م"
+  ],
+  "periods": [
+    "9",
+    "4"
+  ]
+}

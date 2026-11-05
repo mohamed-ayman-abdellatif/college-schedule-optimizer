@@ -1,0 +1,159 @@
+{
+  "id": "ECB2402",
+  "name": "Strength of Materials - ECB2402",
+  "code": "ECB2402",
+  "instructors": [
+    "د. مصطفى يوسف عبداللطيف يوسف",
+    "ندى خالد محمد شوقى على"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECB2402_A_Lect._Monday_1",
+          "courseName": "Strength of Materials - ECB2402",
+          "courseCode": "ECB2402",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 4,
+          "duration": 4,
+          "instructor": "د. مصطفى يوسف عبداللطيف يوسف",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "ECB2402_A_Sec._Monday_7",
+          "courseName": "Strength of Materials - ECB2402",
+          "courseCode": "ECB2402",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "ندى خالد محمد شوقى على",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. مصطفى يوسف عبداللطيف يوسف",
+        "ندى خالد محمد شوقى على"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECB2402_B_Lect._Monday_1",
+          "courseName": "Strength of Materials - ECB2402",
+          "courseCode": "ECB2402",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 4,
+          "duration": 4,
+          "instructor": "د. مصطفى يوسف عبداللطيف يوسف",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "ECB2402_B_Sec._Monday_7",
+          "courseName": "Strength of Materials - ECB2402",
+          "courseCode": "ECB2402",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "ندى خالد محمد شوقى على",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. مصطفى يوسف عبداللطيف يوسف",
+        "ندى خالد محمد شوقى على"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECB2402_A_Lect._Monday_1",
+      "courseName": "Strength of Materials - ECB2402",
+      "courseCode": "ECB2402",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 4,
+      "duration": 4,
+      "instructor": "د. مصطفى يوسف عبداللطيف يوسف",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECB2402_A_Sec._Monday_7",
+      "courseName": "Strength of Materials - ECB2402",
+      "courseCode": "ECB2402",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "ندى خالد محمد شوقى على",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECB2402_B_Lect._Monday_1",
+      "courseName": "Strength of Materials - ECB2402",
+      "courseCode": "ECB2402",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 4,
+      "duration": 4,
+      "instructor": "د. مصطفى يوسف عبداللطيف يوسف",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECB2402_B_Sec._Monday_7",
+      "courseName": "Strength of Materials - ECB2402",
+      "courseCode": "ECB2402",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "ندى خالد محمد شوقى على",
+      "color": "#6366F1",
+      "room": ""
+    }
+  ],
+  "color": "#6366F1",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م",
+    "هندسة التشيد والبناء ق.م*"
+  ],
+  "periods": [
+    "4"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "id": "CB503",
+  "name": "SENIOR PROJECT 2 - CB503",
+  "code": "CB503",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "CB503_B_Lect._Sunday_11",
+          "courseName": "SENIOR PROJECT 2 - CB503",
+          "courseCode": "CB503",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CB503_B_Lect._Sunday_11",
+      "courseName": "SENIOR PROJECT 2 - CB503",
+      "courseCode": "CB503",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    }
+  ],
+  "color": "#06B6D4",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م"
+  ],
+  "periods": [
+    "10"
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "id": "EE342",
+  "name": "POWER SYSTEMS I - EE342",
+  "code": "EE342",
+  "instructors": [
+    "دعاء ابوبكر حسين محمد",
+    "د. سلوى محمد يسرى متولى عطية"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EE342_A_Sec._Monday_7",
+          "courseName": "POWER SYSTEMS I - EE342",
+          "courseCode": "EE342",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "دعاء ابوبكر حسين محمد",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EE342_A_Lect._Tuesday_3",
+          "courseName": "POWER SYSTEMS I - EE342",
+          "courseCode": "EE342",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. سلوى محمد يسرى متولى عطية",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "دعاء ابوبكر حسين محمد",
+        "د. سلوى محمد يسرى متولى عطية"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EE342_A_Sec._Monday_7",
+      "courseName": "POWER SYSTEMS I - EE342",
+      "courseCode": "EE342",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "دعاء ابوبكر حسين محمد",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EE342_A_Lect._Tuesday_3",
+      "courseName": "POWER SYSTEMS I - EE342",
+      "courseCode": "EE342",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. سلوى محمد يسرى متولى عطية",
+      "color": "#10B981",
+      "room": ""
+    }
+  ],
+  "color": "#10B981",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية وتحكم ق.م"
+  ],
+  "periods": [
+    "6"
+  ]
+}

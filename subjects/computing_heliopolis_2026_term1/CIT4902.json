@@ -1,0 +1,57 @@
+{
+  "id": "CIT4902",
+  "name": "Professional Training in Data Science II - CIT4902",
+  "code": "CIT4902",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "CIT4902_G_Lab._Sunday_11",
+          "courseName": "Professional Training in Data Science II - CIT4902",
+          "courseCode": "CIT4902",
+          "group": "G",
+          "type": "Lab.",
+          "day": "Sunday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": false,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CIT4902_G_Lab._Sunday_11",
+      "courseName": "Professional Training in Data Science II - CIT4902",
+      "courseCode": "CIT4902",
+      "group": "G",
+      "type": "Lab.",
+      "day": "Sunday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    }
+  ],
+  "color": "#14B8A6",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "نظم معلومات -ق م"
+  ],
+  "periods": [
+    "7"
+  ]
+}

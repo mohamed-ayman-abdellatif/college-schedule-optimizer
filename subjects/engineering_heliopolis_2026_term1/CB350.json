@@ -1,0 +1,91 @@
+{
+  "id": "CB350",
+  "name": "BUILDING MATERIAL & TESTING - CB350",
+  "code": "CB350",
+  "instructors": [
+    "د. حسن احمد حسن احمد سعد",
+    "محمد خالد عبدالرحيم محمد محمد حسان"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CB350_A_Lect._Tuesday_3",
+          "courseName": "BUILDING MATERIAL & TESTING - CB350",
+          "courseCode": "CB350",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. حسن احمد حسن احمد سعد",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "CB350_A_Sec._Wednesday_5",
+          "courseName": "BUILDING MATERIAL & TESTING - CB350",
+          "courseCode": "CB350",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "محمد خالد عبدالرحيم محمد محمد حسان",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. حسن احمد حسن احمد سعد",
+        "محمد خالد عبدالرحيم محمد محمد حسان"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "CB350_A_Lect._Tuesday_3",
+      "courseName": "BUILDING MATERIAL & TESTING - CB350",
+      "courseCode": "CB350",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. حسن احمد حسن احمد سعد",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "CB350_A_Sec._Wednesday_5",
+      "courseName": "BUILDING MATERIAL & TESTING - CB350",
+      "courseCode": "CB350",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "محمد خالد عبدالرحيم محمد محمد حسان",
+      "color": "#06B6D4",
+      "room": ""
+    }
+  ],
+  "color": "#06B6D4",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م"
+  ],
+  "periods": [
+    "5"
+  ]
+}

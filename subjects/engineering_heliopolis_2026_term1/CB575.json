@@ -1,0 +1,91 @@
+{
+  "id": "CB575",
+  "name": "SPECIAL TOPICS IN TRANSP. ENG. - CB575",
+  "code": "CB575",
+  "instructors": [
+    "شيماء علي عبدالحميد محمد",
+    "د. هيثم نور الدين ذهنى طه يوسف"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CB575_A_Sec._Monday_7",
+          "courseName": "SPECIAL TOPICS IN TRANSP. ENG. - CB575",
+          "courseCode": "CB575",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "شيماء علي عبدالحميد محمد",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "CB575_A_Lect._Wednesday_9",
+          "courseName": "SPECIAL TOPICS IN TRANSP. ENG. - CB575",
+          "courseCode": "CB575",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. هيثم نور الدين ذهنى طه يوسف",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "شيماء علي عبدالحميد محمد",
+        "د. هيثم نور الدين ذهنى طه يوسف"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "CB575_A_Sec._Monday_7",
+      "courseName": "SPECIAL TOPICS IN TRANSP. ENG. - CB575",
+      "courseCode": "CB575",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "شيماء علي عبدالحميد محمد",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "CB575_A_Lect._Wednesday_9",
+      "courseName": "SPECIAL TOPICS IN TRANSP. ENG. - CB575",
+      "courseCode": "CB575",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. هيثم نور الدين ذهنى طه يوسف",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م"
+  ],
+  "periods": [
+    "10"
+  ]
+}

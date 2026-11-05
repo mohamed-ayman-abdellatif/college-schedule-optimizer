@@ -1,0 +1,119 @@
+{
+  "id": "EAR3202",
+  "name": "Building Technology Studio (2) - EAR3202",
+  "code": "EAR3202",
+  "instructors": [
+    "د. محمد حسن زكي عمارة",
+    "محمد حسن زكي عمارة"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EAR3202_A_Lect._Tuesday_5",
+          "courseName": "Building Technology Studio (2) - EAR3202",
+          "courseCode": "EAR3202",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. محمد حسن زكي عمارة",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EAR3202_A_Lect._Tuesday_7",
+          "courseName": "Building Technology Studio (2) - EAR3202",
+          "courseCode": "EAR3202",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. محمد حسن زكي عمارة",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EAR3202_A_Sec._Tuesday_9",
+          "courseName": "Building Technology Studio (2) - EAR3202",
+          "courseCode": "EAR3202",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "محمد حسن زكي عمارة",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد حسن زكي عمارة",
+        "محمد حسن زكي عمارة"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EAR3202_A_Lect._Tuesday_5",
+      "courseName": "Building Technology Studio (2) - EAR3202",
+      "courseCode": "EAR3202",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. محمد حسن زكي عمارة",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EAR3202_A_Lect._Tuesday_7",
+      "courseName": "Building Technology Studio (2) - EAR3202",
+      "courseCode": "EAR3202",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. محمد حسن زكي عمارة",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EAR3202_A_Sec._Tuesday_9",
+      "courseName": "Building Technology Studio (2) - EAR3202",
+      "courseCode": "EAR3202",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "محمد حسن زكي عمارة",
+      "color": "#06B6D4",
+      "room": ""
+    }
+  ],
+  "color": "#06B6D4",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م*"
+  ],
+  "periods": [
+    "4"
+  ]
+}

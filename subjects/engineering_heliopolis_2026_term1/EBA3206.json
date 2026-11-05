@@ -1,0 +1,757 @@
+{
+  "id": "EBA3206",
+  "name": "Probability & Statistical Analysis - EBA3206",
+  "code": "EBA3206",
+  "instructors": [
+    "د. محمد احمد السيد احمد",
+    "عادل السيد راتب محمد"
+  ],
+  "groups": [
+    {
+      "group": "H",
+      "sessions": [
+        {
+          "id": "EBA3206_H_Sec._Saturday_1",
+          "courseName": "Probability & Statistical Analysis - EBA3206",
+          "courseCode": "EBA3206",
+          "group": "H",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "EBA3206_H_Lect._Thursday_5",
+          "courseName": "Probability & Statistical Analysis - EBA3206",
+          "courseCode": "EBA3206",
+          "group": "H",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. محمد احمد السيد احمد",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد احمد السيد احمد"
+      ]
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "EBA3206_E_Lect._Saturday_3",
+          "courseName": "Probability & Statistical Analysis - EBA3206",
+          "courseCode": "EBA3206",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. محمد احمد السيد احمد",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "EBA3206_E_Sec._Saturday_5",
+          "courseName": "Probability & Statistical Analysis - EBA3206",
+          "courseCode": "EBA3206",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "عادل السيد راتب محمد",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد احمد السيد احمد",
+        "عادل السيد راتب محمد"
+      ]
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "EBA3206_D_Sec._Saturday_7",
+          "courseName": "Probability & Statistical Analysis - EBA3206",
+          "courseCode": "EBA3206",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "عادل السيد راتب محمد",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "EBA3206_D_Lect._Thursday_3",
+          "courseName": "Probability & Statistical Analysis - EBA3206",
+          "courseCode": "EBA3206",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. محمد احمد السيد احمد",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "عادل السيد راتب محمد",
+        "د. محمد احمد السيد احمد"
+      ]
+    },
+    {
+      "group": "I",
+      "sessions": [
+        {
+          "id": "EBA3206_I_Lect._Saturday_1",
+          "courseName": "Probability & Statistical Analysis - EBA3206",
+          "courseCode": "EBA3206",
+          "group": "I",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. محمد احمد السيد احمد",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "EBA3206_I_Sec._Saturday_5",
+          "courseName": "Probability & Statistical Analysis - EBA3206",
+          "courseCode": "EBA3206",
+          "group": "I",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد احمد السيد احمد"
+      ]
+    },
+    {
+      "group": "J",
+      "sessions": [
+        {
+          "id": "EBA3206_J_Lect._Saturday_1",
+          "courseName": "Probability & Statistical Analysis - EBA3206",
+          "courseCode": "EBA3206",
+          "group": "J",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. محمد احمد السيد احمد",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "EBA3206_J_Sec._Tuesday_3",
+          "courseName": "Probability & Statistical Analysis - EBA3206",
+          "courseCode": "EBA3206",
+          "group": "J",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد احمد السيد احمد"
+      ]
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "EBA3206_F_Lect._Saturday_3",
+          "courseName": "Probability & Statistical Analysis - EBA3206",
+          "courseCode": "EBA3206",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. محمد احمد السيد احمد",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "EBA3206_F_Sec._Tuesday_1",
+          "courseName": "Probability & Statistical Analysis - EBA3206",
+          "courseCode": "EBA3206",
+          "group": "F",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "عادل السيد راتب محمد",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد احمد السيد احمد",
+        "عادل السيد راتب محمد"
+      ]
+    },
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "EBA3206_G_Sec._Saturday_3",
+          "courseName": "Probability & Statistical Analysis - EBA3206",
+          "courseCode": "EBA3206",
+          "group": "G",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "EBA3206_G_Lect._Thursday_5",
+          "courseName": "Probability & Statistical Analysis - EBA3206",
+          "courseCode": "EBA3206",
+          "group": "G",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. محمد احمد السيد احمد",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد احمد السيد احمد"
+      ]
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "EBA3206_C_Sec._Tuesday_3",
+          "courseName": "Probability & Statistical Analysis - EBA3206",
+          "courseCode": "EBA3206",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "عادل السيد راتب محمد",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "EBA3206_C_Lect._Thursday_3",
+          "courseName": "Probability & Statistical Analysis - EBA3206",
+          "courseCode": "EBA3206",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. محمد احمد السيد احمد",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "عادل السيد راتب محمد",
+        "د. محمد احمد السيد احمد"
+      ]
+    },
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EBA3206_A_Sec._Tuesday_5",
+          "courseName": "Probability & Statistical Analysis - EBA3206",
+          "courseCode": "EBA3206",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "EBA3206_A_Lect._Thursday_1",
+          "courseName": "Probability & Statistical Analysis - EBA3206",
+          "courseCode": "EBA3206",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. محمد احمد السيد احمد",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد احمد السيد احمد"
+      ]
+    },
+    {
+      "group": "K",
+      "sessions": [
+        {
+          "id": "EBA3206_K_Sec._Tuesday_1",
+          "courseName": "Probability & Statistical Analysis - EBA3206",
+          "courseCode": "EBA3206",
+          "group": "K",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "EBA3206_K_Lect._Thursday_1",
+          "courseName": "Probability & Statistical Analysis - EBA3206",
+          "courseCode": "EBA3206",
+          "group": "K",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. محمد احمد السيد احمد",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد احمد السيد احمد"
+      ]
+    },
+    {
+      "group": "L",
+      "sessions": [
+        {
+          "id": "EBA3206_L_Sec._Tuesday_5",
+          "courseName": "Probability & Statistical Analysis - EBA3206",
+          "courseCode": "EBA3206",
+          "group": "L",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "EBA3206_L_Lect._Thursday_1",
+          "courseName": "Probability & Statistical Analysis - EBA3206",
+          "courseCode": "EBA3206",
+          "group": "L",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. محمد احمد السيد احمد",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد احمد السيد احمد"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EBA3206_H_Sec._Saturday_1",
+      "courseName": "Probability & Statistical Analysis - EBA3206",
+      "courseCode": "EBA3206",
+      "group": "H",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "EBA3206_H_Lect._Thursday_5",
+      "courseName": "Probability & Statistical Analysis - EBA3206",
+      "courseCode": "EBA3206",
+      "group": "H",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. محمد احمد السيد احمد",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "EBA3206_E_Lect._Saturday_3",
+      "courseName": "Probability & Statistical Analysis - EBA3206",
+      "courseCode": "EBA3206",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. محمد احمد السيد احمد",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "EBA3206_E_Sec._Saturday_5",
+      "courseName": "Probability & Statistical Analysis - EBA3206",
+      "courseCode": "EBA3206",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "عادل السيد راتب محمد",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "EBA3206_D_Sec._Saturday_7",
+      "courseName": "Probability & Statistical Analysis - EBA3206",
+      "courseCode": "EBA3206",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "عادل السيد راتب محمد",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "EBA3206_D_Lect._Thursday_3",
+      "courseName": "Probability & Statistical Analysis - EBA3206",
+      "courseCode": "EBA3206",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. محمد احمد السيد احمد",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "EBA3206_I_Lect._Saturday_1",
+      "courseName": "Probability & Statistical Analysis - EBA3206",
+      "courseCode": "EBA3206",
+      "group": "I",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. محمد احمد السيد احمد",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "EBA3206_I_Sec._Saturday_5",
+      "courseName": "Probability & Statistical Analysis - EBA3206",
+      "courseCode": "EBA3206",
+      "group": "I",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "EBA3206_J_Lect._Saturday_1",
+      "courseName": "Probability & Statistical Analysis - EBA3206",
+      "courseCode": "EBA3206",
+      "group": "J",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. محمد احمد السيد احمد",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "EBA3206_J_Sec._Tuesday_3",
+      "courseName": "Probability & Statistical Analysis - EBA3206",
+      "courseCode": "EBA3206",
+      "group": "J",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "EBA3206_F_Lect._Saturday_3",
+      "courseName": "Probability & Statistical Analysis - EBA3206",
+      "courseCode": "EBA3206",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. محمد احمد السيد احمد",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "EBA3206_F_Sec._Tuesday_1",
+      "courseName": "Probability & Statistical Analysis - EBA3206",
+      "courseCode": "EBA3206",
+      "group": "F",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "عادل السيد راتب محمد",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "EBA3206_G_Sec._Saturday_3",
+      "courseName": "Probability & Statistical Analysis - EBA3206",
+      "courseCode": "EBA3206",
+      "group": "G",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "EBA3206_G_Lect._Thursday_5",
+      "courseName": "Probability & Statistical Analysis - EBA3206",
+      "courseCode": "EBA3206",
+      "group": "G",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. محمد احمد السيد احمد",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "EBA3206_C_Sec._Tuesday_3",
+      "courseName": "Probability & Statistical Analysis - EBA3206",
+      "courseCode": "EBA3206",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "عادل السيد راتب محمد",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "EBA3206_C_Lect._Thursday_3",
+      "courseName": "Probability & Statistical Analysis - EBA3206",
+      "courseCode": "EBA3206",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. محمد احمد السيد احمد",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "EBA3206_A_Sec._Tuesday_5",
+      "courseName": "Probability & Statistical Analysis - EBA3206",
+      "courseCode": "EBA3206",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "EBA3206_A_Lect._Thursday_1",
+      "courseName": "Probability & Statistical Analysis - EBA3206",
+      "courseCode": "EBA3206",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. محمد احمد السيد احمد",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "EBA3206_K_Sec._Tuesday_1",
+      "courseName": "Probability & Statistical Analysis - EBA3206",
+      "courseCode": "EBA3206",
+      "group": "K",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "EBA3206_K_Lect._Thursday_1",
+      "courseName": "Probability & Statistical Analysis - EBA3206",
+      "courseCode": "EBA3206",
+      "group": "K",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. محمد احمد السيد احمد",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "EBA3206_L_Sec._Tuesday_5",
+      "courseName": "Probability & Statistical Analysis - EBA3206",
+      "courseCode": "EBA3206",
+      "group": "L",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "EBA3206_L_Lect._Thursday_1",
+      "courseName": "Probability & Statistical Analysis - EBA3206",
+      "courseCode": "EBA3206",
+      "group": "L",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. محمد احمد السيد احمد",
+      "color": "#14B8A6",
+      "room": ""
+    }
+  ],
+  "color": "#14B8A6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "حاسبات ق م - Northampton",
+    "حاسبات ق م - Northampton*",
+    "هندسة الحاسبات ق.م",
+    "هندسة الحاسبات ق.م*"
+  ],
+  "periods": [
+    "5"
+  ]
+}

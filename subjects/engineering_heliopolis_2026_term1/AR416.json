@@ -1,0 +1,91 @@
+{
+  "id": "AR416",
+  "name": "INTERIOR DESIGN I - AR416",
+  "code": "AR416",
+  "instructors": [
+    "د. هالة بركات على النجار",
+    "هالة بركات على النجار"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "AR416_B_Lect._Monday_1",
+          "courseName": "INTERIOR DESIGN I - AR416",
+          "courseCode": "AR416",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. هالة بركات على النجار",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "AR416_B_Sec._Monday_3",
+          "courseName": "INTERIOR DESIGN I - AR416",
+          "courseCode": "AR416",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "هالة بركات على النجار",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. هالة بركات على النجار",
+        "هالة بركات على النجار"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "AR416_B_Lect._Monday_1",
+      "courseName": "INTERIOR DESIGN I - AR416",
+      "courseCode": "AR416",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. هالة بركات على النجار",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "AR416_B_Sec._Monday_3",
+      "courseName": "INTERIOR DESIGN I - AR416",
+      "courseCode": "AR416",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "هالة بركات على النجار",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م"
+  ],
+  "periods": [
+    "8"
+  ]
+}

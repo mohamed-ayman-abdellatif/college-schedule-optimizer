@@ -1,0 +1,85 @@
+{
+  "id": "CIS4303",
+  "name": "Decision Support Systems - CIS4303",
+  "code": "CIS4303",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "CIS4303_B_Sec._Wednesday_11",
+          "courseName": "Decision Support Systems - CIS4303",
+          "courseCode": "CIS4303",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "CIS4303_B_Lect._Thursday_5",
+          "courseName": "Decision Support Systems - CIS4303",
+          "courseCode": "CIS4303",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CIS4303_B_Sec._Wednesday_11",
+      "courseName": "Decision Support Systems - CIS4303",
+      "courseCode": "CIS4303",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "CIS4303_B_Lect._Thursday_5",
+      "courseName": "Decision Support Systems - CIS4303",
+      "courseCode": "CIS4303",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    }
+  ],
+  "color": "#10B981",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "نظم معلومات -ق م"
+  ],
+  "periods": [
+    "8"
+  ]
+}

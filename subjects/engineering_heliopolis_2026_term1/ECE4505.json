@@ -1,0 +1,159 @@
+{
+  "id": "ECE4505",
+  "name": "Computing Algorithms - ECE4505",
+  "code": "ECE4505",
+  "instructors": [
+    "د. ريهام طاهر عبدالمجيد سالم المغربى",
+    "ريهام طاهر عبدالمجيد سالم المغربى"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECE4505_A_Lect._Monday_3",
+          "courseName": "Computing Algorithms - ECE4505",
+          "courseCode": "ECE4505",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. ريهام طاهر عبدالمجيد سالم المغربى",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "ECE4505_A_Lab._Thursday_9",
+          "courseName": "Computing Algorithms - ECE4505",
+          "courseCode": "ECE4505",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "ريهام طاهر عبدالمجيد سالم المغربى",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. ريهام طاهر عبدالمجيد سالم المغربى",
+        "ريهام طاهر عبدالمجيد سالم المغربى"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECE4505_B_Lect._Monday_3",
+          "courseName": "Computing Algorithms - ECE4505",
+          "courseCode": "ECE4505",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. ريهام طاهر عبدالمجيد سالم المغربى",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "ECE4505_B_Lab._Thursday_9",
+          "courseName": "Computing Algorithms - ECE4505",
+          "courseCode": "ECE4505",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "ريهام طاهر عبدالمجيد سالم المغربى",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. ريهام طاهر عبدالمجيد سالم المغربى",
+        "ريهام طاهر عبدالمجيد سالم المغربى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECE4505_A_Lect._Monday_3",
+      "courseName": "Computing Algorithms - ECE4505",
+      "courseCode": "ECE4505",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. ريهام طاهر عبدالمجيد سالم المغربى",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "ECE4505_A_Lab._Thursday_9",
+      "courseName": "Computing Algorithms - ECE4505",
+      "courseCode": "ECE4505",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "ريهام طاهر عبدالمجيد سالم المغربى",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "ECE4505_B_Lect._Monday_3",
+      "courseName": "Computing Algorithms - ECE4505",
+      "courseCode": "ECE4505",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. ريهام طاهر عبدالمجيد سالم المغربى",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "ECE4505_B_Lab._Thursday_9",
+      "courseName": "Computing Algorithms - ECE4505",
+      "courseCode": "ECE4505",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "ريهام طاهر عبدالمجيد سالم المغربى",
+      "color": "#84CC16",
+      "room": ""
+    }
+  ],
+  "color": "#84CC16",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "حاسبات ق م - Northampton*",
+    "هندسة الحاسبات ق.م*"
+  ],
+  "periods": [
+    "6"
+  ]
+}

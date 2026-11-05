@@ -1,0 +1,206 @@
+{
+  "id": "CCS1302",
+  "name": "Problem Solving and Programming - CCS1302",
+  "code": "CCS1302",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "N",
+      "sessions": [
+        {
+          "id": "CCS1302_N_Lab._Saturday_1",
+          "courseName": "Problem Solving and Programming - CCS1302",
+          "courseCode": "CCS1302",
+          "group": "N",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "CCS1302_N_Lect._Monday_11",
+          "courseName": "Problem Solving and Programming - CCS1302",
+          "courseCode": "CCS1302",
+          "group": "N",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "CCS1302_N_Sec._Wednesday_5",
+          "courseName": "Problem Solving and Programming - CCS1302",
+          "courseCode": "CCS1302",
+          "group": "N",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "M",
+      "sessions": [
+        {
+          "id": "CCS1302_M_Lab._Saturday_3",
+          "courseName": "Problem Solving and Programming - CCS1302",
+          "courseCode": "CCS1302",
+          "group": "M",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "CCS1302_M_Sec._Sunday_7",
+          "courseName": "Problem Solving and Programming - CCS1302",
+          "courseCode": "CCS1302",
+          "group": "M",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "CCS1302_M_Lect._Thursday_11",
+          "courseName": "Problem Solving and Programming - CCS1302",
+          "courseCode": "CCS1302",
+          "group": "M",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CCS1302_N_Lab._Saturday_1",
+      "courseName": "Problem Solving and Programming - CCS1302",
+      "courseCode": "CCS1302",
+      "group": "N",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "CCS1302_N_Lect._Monday_11",
+      "courseName": "Problem Solving and Programming - CCS1302",
+      "courseCode": "CCS1302",
+      "group": "N",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "CCS1302_N_Sec._Wednesday_5",
+      "courseName": "Problem Solving and Programming - CCS1302",
+      "courseCode": "CCS1302",
+      "group": "N",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "CCS1302_M_Lab._Saturday_3",
+      "courseName": "Problem Solving and Programming - CCS1302",
+      "courseCode": "CCS1302",
+      "group": "M",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "CCS1302_M_Sec._Sunday_7",
+      "courseName": "Problem Solving and Programming - CCS1302",
+      "courseCode": "CCS1302",
+      "group": "M",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "CCS1302_M_Lect._Thursday_11",
+      "courseName": "Problem Solving and Programming - CCS1302",
+      "courseCode": "CCS1302",
+      "group": "M",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    }
+  ],
+  "color": "#10B981",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "علوم الحاسب ق.م //"
+  ],
+  "periods": [
+    "1",
+    "2"
+  ]
+}

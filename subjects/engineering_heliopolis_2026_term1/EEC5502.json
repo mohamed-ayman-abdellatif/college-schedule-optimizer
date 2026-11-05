@@ -1,0 +1,218 @@
+{
+  "id": "EEC5502",
+  "name": "Digital Signal Processing - EEC5502",
+  "code": "EEC5502",
+  "instructors": [
+    "امير محمد عبد الحميد عبد اللطيف",
+    "د. محمد سعد مصطفى المحلاوي",
+    "فرح مصطفى السيد علي"
+  ],
+  "groups": [
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "EEC5502_C_Lab._Saturday_7",
+          "courseName": "Digital Signal Processing - EEC5502",
+          "courseCode": "EEC5502",
+          "group": "C",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "امير محمد عبد الحميد عبد اللطيف",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EEC5502_C_Lect._Tuesday_3",
+          "courseName": "Digital Signal Processing - EEC5502",
+          "courseCode": "EEC5502",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. محمد سعد مصطفى المحلاوي",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EEC5502_C_Sec._Thursday_7",
+          "courseName": "Digital Signal Processing - EEC5502",
+          "courseCode": "EEC5502",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "فرح مصطفى السيد علي",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "امير محمد عبد الحميد عبد اللطيف",
+        "د. محمد سعد مصطفى المحلاوي",
+        "فرح مصطفى السيد علي"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EEC5502_B_Lab._Saturday_9",
+          "courseName": "Digital Signal Processing - EEC5502",
+          "courseCode": "EEC5502",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "امير محمد عبد الحميد عبد اللطيف",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EEC5502_B_Lect._Tuesday_3",
+          "courseName": "Digital Signal Processing - EEC5502",
+          "courseCode": "EEC5502",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. محمد سعد مصطفى المحلاوي",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EEC5502_B_Sec._Thursday_5",
+          "courseName": "Digital Signal Processing - EEC5502",
+          "courseCode": "EEC5502",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "فرح مصطفى السيد علي",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "امير محمد عبد الحميد عبد اللطيف",
+        "د. محمد سعد مصطفى المحلاوي",
+        "فرح مصطفى السيد علي"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEC5502_C_Lab._Saturday_7",
+      "courseName": "Digital Signal Processing - EEC5502",
+      "courseCode": "EEC5502",
+      "group": "C",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "امير محمد عبد الحميد عبد اللطيف",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EEC5502_C_Lect._Tuesday_3",
+      "courseName": "Digital Signal Processing - EEC5502",
+      "courseCode": "EEC5502",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. محمد سعد مصطفى المحلاوي",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EEC5502_C_Sec._Thursday_7",
+      "courseName": "Digital Signal Processing - EEC5502",
+      "courseCode": "EEC5502",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "فرح مصطفى السيد علي",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EEC5502_B_Lab._Saturday_9",
+      "courseName": "Digital Signal Processing - EEC5502",
+      "courseCode": "EEC5502",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "امير محمد عبد الحميد عبد اللطيف",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EEC5502_B_Lect._Tuesday_3",
+      "courseName": "Digital Signal Processing - EEC5502",
+      "courseCode": "EEC5502",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. محمد سعد مصطفى المحلاوي",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EEC5502_B_Sec._Thursday_5",
+      "courseName": "Digital Signal Processing - EEC5502",
+      "courseCode": "EEC5502",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "فرح مصطفى السيد علي",
+      "color": "#10B981",
+      "room": ""
+    }
+  ],
+  "color": "#10B981",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "الكترونيات ق م - Northamption*",
+    "هـ.الكترونات واتصالات ق.م*"
+  ],
+  "periods": [
+    "9"
+  ]
+}

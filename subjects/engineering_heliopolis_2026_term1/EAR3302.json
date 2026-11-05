@@ -1,0 +1,138 @@
+{
+  "id": "EAR3302",
+  "name": "Electromechanical Control Systems - EAR3302",
+  "code": "EAR3302",
+  "instructors": [
+    "د. طارق محمد عبدالحميد محمد كامل"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EAR3302_B_Lect._Monday_1",
+          "courseName": "Electromechanical Control Systems - EAR3302",
+          "courseCode": "EAR3302",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 3,
+          "duration": 3,
+          "instructor": "د. طارق محمد عبدالحميد محمد كامل",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. طارق محمد عبدالحميد محمد كامل"
+      ]
+    },
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EAR3302_A_Lect._Monday_4",
+          "courseName": "Electromechanical Control Systems - EAR3302",
+          "courseCode": "EAR3302",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 4,
+          "endSlot": 6,
+          "duration": 3,
+          "instructor": "د. طارق محمد عبدالحميد محمد كامل",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. طارق محمد عبدالحميد محمد كامل"
+      ]
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "EAR3302_C_Lect._Wednesday_6",
+          "courseName": "Electromechanical Control Systems - EAR3302",
+          "courseCode": "EAR3302",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 6,
+          "endSlot": 8,
+          "duration": 3,
+          "instructor": "د. طارق محمد عبدالحميد محمد كامل",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. طارق محمد عبدالحميد محمد كامل"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EAR3302_B_Lect._Monday_1",
+      "courseName": "Electromechanical Control Systems - EAR3302",
+      "courseCode": "EAR3302",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 3,
+      "duration": 3,
+      "instructor": "د. طارق محمد عبدالحميد محمد كامل",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EAR3302_A_Lect._Monday_4",
+      "courseName": "Electromechanical Control Systems - EAR3302",
+      "courseCode": "EAR3302",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 4,
+      "endSlot": 6,
+      "duration": 3,
+      "instructor": "د. طارق محمد عبدالحميد محمد كامل",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EAR3302_C_Lect._Wednesday_6",
+      "courseName": "Electromechanical Control Systems - EAR3302",
+      "courseCode": "EAR3302",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 6,
+      "endSlot": 8,
+      "duration": 3,
+      "instructor": "د. طارق محمد عبدالحميد محمد كامل",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م*"
+  ],
+  "periods": [
+    "6",
+    "7"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "id": "ECB4803",
+  "name": "Water Resources & Irrigation Engineering - ECB4803",
+  "code": "ECB4803",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECB4803_A_Sec._Monday_9",
+          "courseName": "Water Resources & Irrigation Engineering - ECB4803",
+          "courseCode": "ECB4803",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": false,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECB4803_A_Sec._Monday_9",
+      "courseName": "Water Resources & Irrigation Engineering - ECB4803",
+      "courseCode": "ECB4803",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    }
+  ],
+  "color": "#10B981",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م*"
+  ],
+  "periods": [
+    "4"
+  ]
+}

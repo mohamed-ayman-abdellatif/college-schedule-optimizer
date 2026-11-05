@@ -1,0 +1,962 @@
+{
+  "id": "EEE2308",
+  "name": "Electrical Engineering Fundementals - EEE2308",
+  "code": "EEE2308",
+  "instructors": [
+    "يوسف حسام محمد عبدالفتاح",
+    "د. سلوى محمد يسرى متولى عطية",
+    "مروه احمد عبدالحميد على حسن",
+    "د. مروه احمد عبدالحميد على حسن",
+    "سلوى محمد يسرى متولى عطية",
+    "د. محمد احمد احمد مهنى"
+  ],
+  "groups": [
+    {
+      "group": "H",
+      "sessions": [
+        {
+          "id": "EEE2308_H_Sec._Sunday_1",
+          "courseName": "Electrical Engineering Fundementals - EEE2308",
+          "courseCode": "EEE2308",
+          "group": "H",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "يوسف حسام محمد عبدالفتاح",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "EEE2308_H_Lect._Monday_7",
+          "courseName": "Electrical Engineering Fundementals - EEE2308",
+          "courseCode": "EEE2308",
+          "group": "H",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. سلوى محمد يسرى متولى عطية",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "يوسف حسام محمد عبدالفتاح",
+        "د. سلوى محمد يسرى متولى عطية"
+      ]
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "EEE2308_E_Sec._Sunday_3",
+          "courseName": "Electrical Engineering Fundementals - EEE2308",
+          "courseCode": "EEE2308",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "EEE2308_E_Lect._Sunday_7",
+          "courseName": "Electrical Engineering Fundementals - EEE2308",
+          "courseCode": "EEE2308",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. سلوى محمد يسرى متولى عطية",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. سلوى محمد يسرى متولى عطية"
+      ]
+    },
+    {
+      "group": "L",
+      "sessions": [
+        {
+          "id": "EEE2308_L_Sec._Sunday_5",
+          "courseName": "Electrical Engineering Fundementals - EEE2308",
+          "courseCode": "EEE2308",
+          "group": "L",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "مروه احمد عبدالحميد على حسن",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "EEE2308_L_Lect._Thursday_1",
+          "courseName": "Electrical Engineering Fundementals - EEE2308",
+          "courseCode": "EEE2308",
+          "group": "L",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. مروه احمد عبدالحميد على حسن",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "مروه احمد عبدالحميد على حسن",
+        "د. مروه احمد عبدالحميد على حسن"
+      ]
+    },
+    {
+      "group": "N",
+      "sessions": [
+        {
+          "id": "EEE2308_N_Sec._Sunday_1",
+          "courseName": "Electrical Engineering Fundementals - EEE2308",
+          "courseCode": "EEE2308",
+          "group": "N",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "EEE2308_N_Lect._Thursday_3",
+          "courseName": "Electrical Engineering Fundementals - EEE2308",
+          "courseCode": "EEE2308",
+          "group": "N",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. مروه احمد عبدالحميد على حسن",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. مروه احمد عبدالحميد على حسن"
+      ]
+    },
+    {
+      "group": "M",
+      "sessions": [
+        {
+          "id": "EEE2308_M_Sec._Sunday_3",
+          "courseName": "Electrical Engineering Fundementals - EEE2308",
+          "courseCode": "EEE2308",
+          "group": "M",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "EEE2308_M_Lect._Thursday_3",
+          "courseName": "Electrical Engineering Fundementals - EEE2308",
+          "courseCode": "EEE2308",
+          "group": "M",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. مروه احمد عبدالحميد على حسن",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. مروه احمد عبدالحميد على حسن"
+      ]
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "EEE2308_F_Lect._Sunday_7",
+          "courseName": "Electrical Engineering Fundementals - EEE2308",
+          "courseCode": "EEE2308",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. سلوى محمد يسرى متولى عطية",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "EEE2308_F_Sec._Wednesday_1",
+          "courseName": "Electrical Engineering Fundementals - EEE2308",
+          "courseCode": "EEE2308",
+          "group": "F",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "سلوى محمد يسرى متولى عطية",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. سلوى محمد يسرى متولى عطية",
+        "سلوى محمد يسرى متولى عطية"
+      ]
+    },
+    {
+      "group": "I",
+      "sessions": [
+        {
+          "id": "EEE2308_I_Lect._Monday_3",
+          "courseName": "Electrical Engineering Fundementals - EEE2308",
+          "courseCode": "EEE2308",
+          "group": "I",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. مروه احمد عبدالحميد على حسن",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "EEE2308_I_Sec._Wednesday_3",
+          "courseName": "Electrical Engineering Fundementals - EEE2308",
+          "courseCode": "EEE2308",
+          "group": "I",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "يوسف حسام محمد عبدالفتاح",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. مروه احمد عبدالحميد على حسن",
+        "يوسف حسام محمد عبدالفتاح"
+      ]
+    },
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "EEE2308_G_Lect._Monday_7",
+          "courseName": "Electrical Engineering Fundementals - EEE2308",
+          "courseCode": "EEE2308",
+          "group": "G",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. سلوى محمد يسرى متولى عطية",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "EEE2308_G_Sec._Thursday_5",
+          "courseName": "Electrical Engineering Fundementals - EEE2308",
+          "courseCode": "EEE2308",
+          "group": "G",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. سلوى محمد يسرى متولى عطية"
+      ]
+    },
+    {
+      "group": "J",
+      "sessions": [
+        {
+          "id": "EEE2308_J_Lect._Monday_3",
+          "courseName": "Electrical Engineering Fundementals - EEE2308",
+          "courseCode": "EEE2308",
+          "group": "J",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. مروه احمد عبدالحميد على حسن",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "EEE2308_J_Sec._Wednesday_5",
+          "courseName": "Electrical Engineering Fundementals - EEE2308",
+          "courseCode": "EEE2308",
+          "group": "J",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "يوسف حسام محمد عبدالفتاح",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. مروه احمد عبدالحميد على حسن",
+        "يوسف حسام محمد عبدالفتاح"
+      ]
+    },
+    {
+      "group": "K",
+      "sessions": [
+        {
+          "id": "EEE2308_K_Sec._Monday_3",
+          "courseName": "Electrical Engineering Fundementals - EEE2308",
+          "courseCode": "EEE2308",
+          "group": "K",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "يوسف حسام محمد عبدالفتاح",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "EEE2308_K_Lect._Thursday_1",
+          "courseName": "Electrical Engineering Fundementals - EEE2308",
+          "courseCode": "EEE2308",
+          "group": "K",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. مروه احمد عبدالحميد على حسن",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "يوسف حسام محمد عبدالفتاح",
+        "د. مروه احمد عبدالحميد على حسن"
+      ]
+    },
+    {
+      "group": "O",
+      "sessions": [
+        {
+          "id": "EEE2308_O_Sec._Tuesday_5",
+          "courseName": "Electrical Engineering Fundementals - EEE2308",
+          "courseCode": "EEE2308",
+          "group": "O",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "EEE2308_O_Lect._Thursday_3",
+          "courseName": "Electrical Engineering Fundementals - EEE2308",
+          "courseCode": "EEE2308",
+          "group": "O",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. محمد احمد احمد مهنى",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد احمد احمد مهنى"
+      ]
+    },
+    {
+      "group": "Q",
+      "sessions": [
+        {
+          "id": "EEE2308_Q_Sec._Tuesday_5",
+          "courseName": "Electrical Engineering Fundementals - EEE2308",
+          "courseCode": "EEE2308",
+          "group": "Q",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "EEE2308_Q_Lect._Thursday_3",
+          "courseName": "Electrical Engineering Fundementals - EEE2308",
+          "courseCode": "EEE2308",
+          "group": "Q",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. محمد احمد احمد مهنى",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد احمد احمد مهنى"
+      ]
+    },
+    {
+      "group": "P",
+      "sessions": [
+        {
+          "id": "EEE2308_P_Sec._Wednesday_3",
+          "courseName": "Electrical Engineering Fundementals - EEE2308",
+          "courseCode": "EEE2308",
+          "group": "P",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "EEE2308_P_Lect._Thursday_1",
+          "courseName": "Electrical Engineering Fundementals - EEE2308",
+          "courseCode": "EEE2308",
+          "group": "P",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. محمد احمد احمد مهنى",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد احمد احمد مهنى"
+      ]
+    },
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEE2308_A_Sec._Sunday_1",
+          "courseName": "Electrical Eng. Fundmentals - EEE2308*",
+          "courseCode": "EEE2308",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "EEE2308_A_Lect._Thursday_3",
+          "courseName": "Electrical Eng. Fundmentals - EEE2308*",
+          "courseCode": "EEE2308",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. مروه احمد عبدالحميد على حسن",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. مروه احمد عبدالحميد على حسن"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE2308_H_Sec._Sunday_1",
+      "courseName": "Electrical Engineering Fundementals - EEE2308",
+      "courseCode": "EEE2308",
+      "group": "H",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "يوسف حسام محمد عبدالفتاح",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2308_H_Lect._Monday_7",
+      "courseName": "Electrical Engineering Fundementals - EEE2308",
+      "courseCode": "EEE2308",
+      "group": "H",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. سلوى محمد يسرى متولى عطية",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2308_E_Sec._Sunday_3",
+      "courseName": "Electrical Engineering Fundementals - EEE2308",
+      "courseCode": "EEE2308",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2308_E_Lect._Sunday_7",
+      "courseName": "Electrical Engineering Fundementals - EEE2308",
+      "courseCode": "EEE2308",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. سلوى محمد يسرى متولى عطية",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2308_L_Sec._Sunday_5",
+      "courseName": "Electrical Engineering Fundementals - EEE2308",
+      "courseCode": "EEE2308",
+      "group": "L",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "مروه احمد عبدالحميد على حسن",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2308_L_Lect._Thursday_1",
+      "courseName": "Electrical Engineering Fundementals - EEE2308",
+      "courseCode": "EEE2308",
+      "group": "L",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. مروه احمد عبدالحميد على حسن",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2308_N_Sec._Sunday_1",
+      "courseName": "Electrical Engineering Fundementals - EEE2308",
+      "courseCode": "EEE2308",
+      "group": "N",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2308_N_Lect._Thursday_3",
+      "courseName": "Electrical Engineering Fundementals - EEE2308",
+      "courseCode": "EEE2308",
+      "group": "N",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. مروه احمد عبدالحميد على حسن",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2308_M_Sec._Sunday_3",
+      "courseName": "Electrical Engineering Fundementals - EEE2308",
+      "courseCode": "EEE2308",
+      "group": "M",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2308_M_Lect._Thursday_3",
+      "courseName": "Electrical Engineering Fundementals - EEE2308",
+      "courseCode": "EEE2308",
+      "group": "M",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. مروه احمد عبدالحميد على حسن",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2308_F_Lect._Sunday_7",
+      "courseName": "Electrical Engineering Fundementals - EEE2308",
+      "courseCode": "EEE2308",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. سلوى محمد يسرى متولى عطية",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2308_F_Sec._Wednesday_1",
+      "courseName": "Electrical Engineering Fundementals - EEE2308",
+      "courseCode": "EEE2308",
+      "group": "F",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "سلوى محمد يسرى متولى عطية",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2308_I_Lect._Monday_3",
+      "courseName": "Electrical Engineering Fundementals - EEE2308",
+      "courseCode": "EEE2308",
+      "group": "I",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. مروه احمد عبدالحميد على حسن",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2308_I_Sec._Wednesday_3",
+      "courseName": "Electrical Engineering Fundementals - EEE2308",
+      "courseCode": "EEE2308",
+      "group": "I",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "يوسف حسام محمد عبدالفتاح",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2308_G_Lect._Monday_7",
+      "courseName": "Electrical Engineering Fundementals - EEE2308",
+      "courseCode": "EEE2308",
+      "group": "G",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. سلوى محمد يسرى متولى عطية",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2308_G_Sec._Thursday_5",
+      "courseName": "Electrical Engineering Fundementals - EEE2308",
+      "courseCode": "EEE2308",
+      "group": "G",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2308_J_Lect._Monday_3",
+      "courseName": "Electrical Engineering Fundementals - EEE2308",
+      "courseCode": "EEE2308",
+      "group": "J",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. مروه احمد عبدالحميد على حسن",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2308_J_Sec._Wednesday_5",
+      "courseName": "Electrical Engineering Fundementals - EEE2308",
+      "courseCode": "EEE2308",
+      "group": "J",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "يوسف حسام محمد عبدالفتاح",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2308_K_Sec._Monday_3",
+      "courseName": "Electrical Engineering Fundementals - EEE2308",
+      "courseCode": "EEE2308",
+      "group": "K",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "يوسف حسام محمد عبدالفتاح",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2308_K_Lect._Thursday_1",
+      "courseName": "Electrical Engineering Fundementals - EEE2308",
+      "courseCode": "EEE2308",
+      "group": "K",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. مروه احمد عبدالحميد على حسن",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2308_O_Sec._Tuesday_5",
+      "courseName": "Electrical Engineering Fundementals - EEE2308",
+      "courseCode": "EEE2308",
+      "group": "O",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2308_O_Lect._Thursday_3",
+      "courseName": "Electrical Engineering Fundementals - EEE2308",
+      "courseCode": "EEE2308",
+      "group": "O",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. محمد احمد احمد مهنى",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2308_Q_Sec._Tuesday_5",
+      "courseName": "Electrical Engineering Fundementals - EEE2308",
+      "courseCode": "EEE2308",
+      "group": "Q",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2308_Q_Lect._Thursday_3",
+      "courseName": "Electrical Engineering Fundementals - EEE2308",
+      "courseCode": "EEE2308",
+      "group": "Q",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. محمد احمد احمد مهنى",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2308_P_Sec._Wednesday_3",
+      "courseName": "Electrical Engineering Fundementals - EEE2308",
+      "courseCode": "EEE2308",
+      "group": "P",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2308_P_Lect._Thursday_1",
+      "courseName": "Electrical Engineering Fundementals - EEE2308",
+      "courseCode": "EEE2308",
+      "group": "P",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. محمد احمد احمد مهنى",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2308_A_Sec._Sunday_1",
+      "courseName": "Electrical Eng. Fundmentals - EEE2308*",
+      "courseCode": "EEE2308",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2308_A_Lect._Thursday_3",
+      "courseName": "Electrical Eng. Fundmentals - EEE2308*",
+      "courseCode": "EEE2308",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. مروه احمد عبدالحميد على حسن",
+      "color": "#6366F1",
+      "room": ""
+    }
+  ],
+  "color": "#6366F1",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "ميكانيكا ق م -Northampton",
+    "هندسة التشيد والبناء ق.م",
+    "هندسة التشيد والبناء ق.م*",
+    "هندسة ميكانيكية-ق م //"
+  ],
+  "periods": [
+    "3",
+    "4"
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "id": "CRS",
+  "name": "Practical Training - IM400CC",
+  "code": "CRS",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CRS_A_Lect._Sunday_3",
+          "courseName": "Practical Training - IM400CC",
+          "courseCode": "CRS",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "CRS_A_Lect._Thursday_13",
+          "courseName": "Practical Training - IM400ME",
+          "courseCode": "CRS",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 13,
+          "endSlot": 14,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "CRS_A_Lect._Monday_11",
+          "courseName": "Practical Training - IM400CB",
+          "courseCode": "CRS",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "CRS_A_Lect._Thursday_11",
+          "courseName": "Practical Training - IM400EE",
+          "courseCode": "CRS",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "CRS_B_Lect._Tuesday_11",
+          "courseName": "Practical Training - IM400CB",
+          "courseCode": "CRS",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CRS_A_Lect._Sunday_3",
+      "courseName": "Practical Training - IM400CC",
+      "courseCode": "CRS",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CRS_A_Lect._Thursday_13",
+      "courseName": "Practical Training - IM400ME",
+      "courseCode": "CRS",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 13,
+      "endSlot": 14,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CRS_A_Lect._Monday_11",
+      "courseName": "Practical Training - IM400CB",
+      "courseCode": "CRS",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CRS_A_Lect._Thursday_11",
+      "courseName": "Practical Training - IM400EE",
+      "courseCode": "CRS",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CRS_B_Lect._Tuesday_11",
+      "courseName": "Practical Training - IM400CB",
+      "courseCode": "CRS",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "حاسبات ق م - Northampton",
+    "هـ.ميكانيكية ق.م",
+    "هندسة التشيد والبناء ق.م",
+    "هندسة الحاسبات ق.م",
+    "هندسة كهربية وتحكم ق.م",
+    "هندسة معمارية ق.م"
+  ],
+  "periods": [
+    "8",
+    "10"
+  ]
+}

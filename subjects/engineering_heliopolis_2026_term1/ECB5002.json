@@ -1,0 +1,57 @@
+{
+  "id": "ECB5002",
+  "name": "Graduation Project II - ECB5002",
+  "code": "ECB5002",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "ECB5002_C_Lect._Saturday_11",
+          "courseName": "Graduation Project II - ECB5002",
+          "courseCode": "ECB5002",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECB5002_C_Lect._Saturday_11",
+      "courseName": "Graduation Project II - ECB5002",
+      "courseCode": "ECB5002",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    }
+  ],
+  "color": "#84CC16",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م*"
+  ],
+  "periods": [
+    "9"
+  ]
+}

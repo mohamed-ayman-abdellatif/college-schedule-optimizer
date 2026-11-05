@@ -1,0 +1,57 @@
+{
+  "id": "CIT3501",
+  "name": "Professional Training in Cybersecurity I - CIT3501",
+  "code": "CIT3501",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "CIT3501_B_Lab._Monday_9",
+          "courseName": "Professional Training in Cybersecurity I - CIT3501",
+          "courseCode": "CIT3501",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": false,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CIT3501_B_Lab._Monday_9",
+      "courseName": "Professional Training in Cybersecurity I - CIT3501",
+      "courseCode": "CIT3501",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    }
+  ],
+  "color": "#10B981",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "الأمن السيبرانى - ق.م"
+  ],
+  "periods": [
+    "6"
+  ]
+}

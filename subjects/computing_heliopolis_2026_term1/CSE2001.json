@@ -1,0 +1,278 @@
+{
+  "id": "CSE2001",
+  "name": "Introduction to Software Engineering - CSE2001",
+  "code": "CSE2001",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "CSE2001_G_Sec._Saturday_5",
+          "courseName": "Introduction to Software Engineering - CSE2001",
+          "courseCode": "CSE2001",
+          "group": "G",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "CSE2001_G_Lect._Wednesday_3",
+          "courseName": "Introduction to Software Engineering - CSE2001",
+          "courseCode": "CSE2001",
+          "group": "G",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "CSE2001_E_Sec._Saturday_7",
+          "courseName": "Introduction to Software Engineering - CSE2001",
+          "courseCode": "CSE2001",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "CSE2001_E_Lect._Sunday_3",
+          "courseName": "Introduction to Software Engineering - CSE2001",
+          "courseCode": "CSE2001",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "CSE2001_D_Sec._Saturday_9",
+          "courseName": "Introduction to Software Engineering - CSE2001",
+          "courseCode": "CSE2001",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "CSE2001_D_Lect._Sunday_5",
+          "courseName": "Introduction to Software Engineering - CSE2001",
+          "courseCode": "CSE2001",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "CSE2001_F_Lect._Wednesday_5",
+          "courseName": "Introduction to Software Engineering - CSE2001",
+          "courseCode": "CSE2001",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "CSE2001_F_Sec._Wednesday_9",
+          "courseName": "Introduction to Software Engineering - CSE2001",
+          "courseCode": "CSE2001",
+          "group": "F",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CSE2001_G_Sec._Saturday_5",
+      "courseName": "Introduction to Software Engineering - CSE2001",
+      "courseCode": "CSE2001",
+      "group": "G",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "CSE2001_G_Lect._Wednesday_3",
+      "courseName": "Introduction to Software Engineering - CSE2001",
+      "courseCode": "CSE2001",
+      "group": "G",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "CSE2001_E_Sec._Saturday_7",
+      "courseName": "Introduction to Software Engineering - CSE2001",
+      "courseCode": "CSE2001",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "CSE2001_E_Lect._Sunday_3",
+      "courseName": "Introduction to Software Engineering - CSE2001",
+      "courseCode": "CSE2001",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "CSE2001_D_Sec._Saturday_9",
+      "courseName": "Introduction to Software Engineering - CSE2001",
+      "courseCode": "CSE2001",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "CSE2001_D_Lect._Sunday_5",
+      "courseName": "Introduction to Software Engineering - CSE2001",
+      "courseCode": "CSE2001",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "CSE2001_F_Lect._Wednesday_5",
+      "courseName": "Introduction to Software Engineering - CSE2001",
+      "courseCode": "CSE2001",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "CSE2001_F_Sec._Wednesday_9",
+      "courseName": "Introduction to Software Engineering - CSE2001",
+      "courseCode": "CSE2001",
+      "group": "F",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    }
+  ],
+  "color": "#3B82F6",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "الأمن السيبرانى - ق.م",
+    "علوم الحاسب ق.م //"
+  ],
+  "periods": [
+    "4"
+  ]
+}

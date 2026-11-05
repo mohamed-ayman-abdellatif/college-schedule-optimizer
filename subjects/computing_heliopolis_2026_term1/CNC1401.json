@@ -1,0 +1,58 @@
+{
+  "id": "CNC1401",
+  "name": "Entrepreneurship Skills - CNC1401",
+  "code": "CNC1401",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "CNC1401_G_Lect._Thursday_5",
+          "courseName": "Entrepreneurship Skills - CNC1401",
+          "courseCode": "CNC1401",
+          "group": "G",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CNC1401_G_Lect._Thursday_5",
+      "courseName": "Entrepreneurship Skills - CNC1401",
+      "courseCode": "CNC1401",
+      "group": "G",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "الذكاء الإصطناعي - ق.م",
+    "علوم الحاسب ق.م //"
+  ],
+  "periods": [
+    "2"
+  ]
+}

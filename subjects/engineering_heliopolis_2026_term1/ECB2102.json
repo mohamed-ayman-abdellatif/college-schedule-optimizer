@@ -1,0 +1,91 @@
+{
+  "id": "ECB2102",
+  "name": "Introduction to Systems Analysis and Dec - ECB2102",
+  "code": "ECB2102",
+  "instructors": [
+    "ياسمين خالد ابو الفتوح شاهين",
+    "د. احمد عبدالمعطى محمد الانور الحكيم"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECB2102_A_Sec._Sunday_5",
+          "courseName": "Introduction to Systems Analysis and Dec - ECB2102",
+          "courseCode": "ECB2102",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "ياسمين خالد ابو الفتوح شاهين",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "ECB2102_A_Lect._Tuesday_5",
+          "courseName": "Introduction to Systems Analysis and Dec - ECB2102",
+          "courseCode": "ECB2102",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. احمد عبدالمعطى محمد الانور الحكيم",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ياسمين خالد ابو الفتوح شاهين",
+        "د. احمد عبدالمعطى محمد الانور الحكيم"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECB2102_A_Sec._Sunday_5",
+      "courseName": "Introduction to Systems Analysis and Dec - ECB2102",
+      "courseCode": "ECB2102",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "ياسمين خالد ابو الفتوح شاهين",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "ECB2102_A_Lect._Tuesday_5",
+      "courseName": "Introduction to Systems Analysis and Dec - ECB2102",
+      "courseCode": "ECB2102",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. احمد عبدالمعطى محمد الانور الحكيم",
+      "color": "#10B981",
+      "room": ""
+    }
+  ],
+  "color": "#10B981",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م"
+  ],
+  "periods": [
+    "4"
+  ]
+}

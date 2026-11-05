@@ -1,0 +1,91 @@
+{
+  "id": "ECB3802",
+  "name": "Design & Construction of Coastal Structu - ECB3802",
+  "code": "ECB3802",
+  "instructors": [
+    "د. ياسر محمد صادق عبد العزيز الساعى",
+    "محمد عرفات ابراهيم حسين"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECB3802_B_Lect._Monday_9",
+          "courseName": "Design & Construction of Coastal Structu - ECB3802",
+          "courseCode": "ECB3802",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. ياسر محمد صادق عبد العزيز الساعى",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "ECB3802_B_Sec._Thursday_11",
+          "courseName": "Design & Construction of Coastal Structu - ECB3802",
+          "courseCode": "ECB3802",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "محمد عرفات ابراهيم حسين",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. ياسر محمد صادق عبد العزيز الساعى",
+        "محمد عرفات ابراهيم حسين"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECB3802_B_Lect._Monday_9",
+      "courseName": "Design & Construction of Coastal Structu - ECB3802",
+      "courseCode": "ECB3802",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. ياسر محمد صادق عبد العزيز الساعى",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "ECB3802_B_Sec._Thursday_11",
+      "courseName": "Design & Construction of Coastal Structu - ECB3802",
+      "courseCode": "ECB3802",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "محمد عرفات ابراهيم حسين",
+      "color": "#F59E0B",
+      "room": ""
+    }
+  ],
+  "color": "#F59E0B",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م*"
+  ],
+  "periods": [
+    "5"
+  ]
+}

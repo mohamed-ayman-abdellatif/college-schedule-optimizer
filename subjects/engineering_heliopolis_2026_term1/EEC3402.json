@@ -1,0 +1,91 @@
+{
+  "id": "EEC3402",
+  "name": "Electromagnetic Wave Propagation - EEC3402",
+  "code": "EEC3402",
+  "instructors": [
+    "د. شريف خيرى عبدالحى الدياسطى",
+    "مروة محمود شريف احمد الوزان"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EEC3402_B_Lect._Monday_3",
+          "courseName": "Electromagnetic Wave Propagation - EEC3402",
+          "courseCode": "EEC3402",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. شريف خيرى عبدالحى الدياسطى",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EEC3402_B_Sec._Tuesday_11",
+          "courseName": "Electromagnetic Wave Propagation - EEC3402",
+          "courseCode": "EEC3402",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "مروة محمود شريف احمد الوزان",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. شريف خيرى عبدالحى الدياسطى",
+        "مروة محمود شريف احمد الوزان"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEC3402_B_Lect._Monday_3",
+      "courseName": "Electromagnetic Wave Propagation - EEC3402",
+      "courseCode": "EEC3402",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. شريف خيرى عبدالحى الدياسطى",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EEC3402_B_Sec._Tuesday_11",
+      "courseName": "Electromagnetic Wave Propagation - EEC3402",
+      "courseCode": "EEC3402",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "مروة محمود شريف احمد الوزان",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هـ.الكترونات واتصالات ق.م*"
+  ],
+  "periods": [
+    "6"
+  ]
+}

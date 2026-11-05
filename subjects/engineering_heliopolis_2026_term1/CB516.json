@@ -1,0 +1,121 @@
+{
+  "id": "CB516",
+  "name": "Construction Project Management (1) - CB 516",
+  "code": "CB516",
+  "instructors": [
+    "احمد عمرو منير مصطفي",
+    "ياسمين خالد ابو الفتوح شاهين",
+    "د. احمد عبدالمعطى محمد الانور الحكيم"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CB516_A_Lab._Saturday_5",
+          "courseName": "Construction Project Management (1) - CB 516",
+          "courseCode": "CB516",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "احمد عمرو منير مصطفي",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "CB516_A_Sec._Monday_5",
+          "courseName": "Construction Project Management (1) - CB 516",
+          "courseCode": "CB516",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "ياسمين خالد ابو الفتوح شاهين",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "CB516_A_Lect._Tuesday_7",
+          "courseName": "Construction Project Management (1) - CB 516",
+          "courseCode": "CB516",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. احمد عبدالمعطى محمد الانور الحكيم",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "احمد عمرو منير مصطفي",
+        "ياسمين خالد ابو الفتوح شاهين",
+        "د. احمد عبدالمعطى محمد الانور الحكيم"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "CB516_A_Lab._Saturday_5",
+      "courseName": "Construction Project Management (1) - CB 516",
+      "courseCode": "CB516",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "احمد عمرو منير مصطفي",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "CB516_A_Sec._Monday_5",
+      "courseName": "Construction Project Management (1) - CB 516",
+      "courseCode": "CB516",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "ياسمين خالد ابو الفتوح شاهين",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "CB516_A_Lect._Tuesday_7",
+      "courseName": "Construction Project Management (1) - CB 516",
+      "courseCode": "CB516",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. احمد عبدالمعطى محمد الانور الحكيم",
+      "color": "#84CC16",
+      "room": ""
+    }
+  ],
+  "color": "#84CC16",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م"
+  ],
+  "periods": [
+    "9"
+  ]
+}

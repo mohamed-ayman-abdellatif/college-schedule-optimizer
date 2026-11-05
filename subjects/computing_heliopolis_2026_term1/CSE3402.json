@@ -1,0 +1,87 @@
+{
+  "id": "CSE3402",
+  "name": "Project Management - CSE3402",
+  "code": "CSE3402",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "W",
+      "sessions": [
+        {
+          "id": "CSE3402_W_Lect._Sunday_5",
+          "courseName": "Project Management - CSE3402",
+          "courseCode": "CSE3402",
+          "group": "W",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "CSE3402_W_Sec._Wednesday_5",
+          "courseName": "Project Management - CSE3402",
+          "courseCode": "CSE3402",
+          "group": "W",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CSE3402_W_Lect._Sunday_5",
+      "courseName": "Project Management - CSE3402",
+      "courseCode": "CSE3402",
+      "group": "W",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CSE3402_W_Sec._Wednesday_5",
+      "courseName": "Project Management - CSE3402",
+      "courseCode": "CSE3402",
+      "group": "W",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "نظم معلومات -ق م",
+    "هندسة البرمجيات - ق.م"
+  ],
+  "periods": [
+    "6",
+    "5"
+  ]
+}

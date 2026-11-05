@@ -1,0 +1,93 @@
+{
+  "id": "EEE2303",
+  "name": "Magnetic and Electrical Fields - EEE2303",
+  "code": "EEE2303",
+  "instructors": [
+    "د. رزق محمد السيد حمودة",
+    "اسلام ممدوح محمد منصور"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEE2303_A_Lect._Monday_3",
+          "courseName": "Magnetic and Electrical Fields - EEE2303",
+          "courseCode": "EEE2303",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. رزق محمد السيد حمودة",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EEE2303_A_Sec._Monday_9",
+          "courseName": "Magnetic and Electrical Fields - EEE2303",
+          "courseCode": "EEE2303",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "اسلام ممدوح محمد منصور",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. رزق محمد السيد حمودة",
+        "اسلام ممدوح محمد منصور"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE2303_A_Lect._Monday_3",
+      "courseName": "Magnetic and Electrical Fields - EEE2303",
+      "courseCode": "EEE2303",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. رزق محمد السيد حمودة",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EEE2303_A_Sec._Monday_9",
+      "courseName": "Magnetic and Electrical Fields - EEE2303",
+      "courseCode": "EEE2303",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "اسلام ممدوح محمد منصور",
+      "color": "#F59E0B",
+      "room": ""
+    }
+  ],
+  "color": "#F59E0B",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية ق م -Northampton //",
+    "هندسة كهربية وتحكم ق.م",
+    "هندسة كهربية وتحكم ق.م*"
+  ],
+  "periods": [
+    "4"
+  ]
+}

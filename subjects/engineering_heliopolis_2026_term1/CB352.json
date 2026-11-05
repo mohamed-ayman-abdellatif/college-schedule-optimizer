@@ -1,0 +1,91 @@
+{
+  "id": "CB352",
+  "name": "CONSTRUCTON MATERIALS - CB352",
+  "code": "CB352",
+  "instructors": [
+    "محمد خالد عبدالرحيم محمد محمد حسان",
+    "د. عصام محمد على عبدالقوى التحيوى"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "CB352_B_Lab._Monday_5",
+          "courseName": "CONSTRUCTON MATERIALS - CB352",
+          "courseCode": "CB352",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "محمد خالد عبدالرحيم محمد محمد حسان",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "CB352_B_Lect._Tuesday_1",
+          "courseName": "CONSTRUCTON MATERIALS - CB352",
+          "courseCode": "CB352",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 4,
+          "duration": 4,
+          "instructor": "د. عصام محمد على عبدالقوى التحيوى",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "محمد خالد عبدالرحيم محمد محمد حسان",
+        "د. عصام محمد على عبدالقوى التحيوى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "CB352_B_Lab._Monday_5",
+      "courseName": "CONSTRUCTON MATERIALS - CB352",
+      "courseCode": "CB352",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "محمد خالد عبدالرحيم محمد محمد حسان",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "CB352_B_Lect._Tuesday_1",
+      "courseName": "CONSTRUCTON MATERIALS - CB352",
+      "courseCode": "CB352",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 4,
+      "duration": 4,
+      "instructor": "د. عصام محمد على عبدالقوى التحيوى",
+      "color": "#14B8A6",
+      "room": ""
+    }
+  ],
+  "color": "#14B8A6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م"
+  ],
+  "periods": [
+    "5"
+  ]
+}

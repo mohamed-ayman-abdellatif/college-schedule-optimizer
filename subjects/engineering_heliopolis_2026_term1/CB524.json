@@ -1,0 +1,91 @@
+{
+  "id": "CB524",
+  "name": "METHODS & EQUIPMENT FOR CONSTRUCTION 2 - CB524",
+  "code": "CB524",
+  "instructors": [
+    "د. ابانوب شنودة عبدالملك",
+    "محمد خالد عبدالرحيم محمد محمد حسان"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "CB524_B_Lect._Saturday_11",
+          "courseName": "METHODS & EQUIPMENT FOR CONSTRUCTION 2 - CB524",
+          "courseCode": "CB524",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "د. ابانوب شنودة عبدالملك",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "CB524_B_Sec._Sunday_5",
+          "courseName": "METHODS & EQUIPMENT FOR CONSTRUCTION 2 - CB524",
+          "courseCode": "CB524",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "محمد خالد عبدالرحيم محمد محمد حسان",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. ابانوب شنودة عبدالملك",
+        "محمد خالد عبدالرحيم محمد محمد حسان"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "CB524_B_Lect._Saturday_11",
+      "courseName": "METHODS & EQUIPMENT FOR CONSTRUCTION 2 - CB524",
+      "courseCode": "CB524",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "د. ابانوب شنودة عبدالملك",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "CB524_B_Sec._Sunday_5",
+      "courseName": "METHODS & EQUIPMENT FOR CONSTRUCTION 2 - CB524",
+      "courseCode": "CB524",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "محمد خالد عبدالرحيم محمد محمد حسان",
+      "color": "#6366F1",
+      "room": ""
+    }
+  ],
+  "color": "#6366F1",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م"
+  ],
+  "periods": [
+    "10"
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "id": "EAR4402",
+  "name": "Introduction To Urban Design - EAR4402",
+  "code": "EAR4402",
+  "instructors": [
+    "د. نوران عزوز اسماعيل عزوز",
+    "نوران عزوز اسماعيل عزوز"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EAR4402_B_Lect._Monday_5",
+          "courseName": "Introduction To Urban Design - EAR4402",
+          "courseCode": "EAR4402",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. نوران عزوز اسماعيل عزوز",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EAR4402_B_Sec._Monday_7",
+          "courseName": "Introduction To Urban Design - EAR4402",
+          "courseCode": "EAR4402",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "نوران عزوز اسماعيل عزوز",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. نوران عزوز اسماعيل عزوز",
+        "نوران عزوز اسماعيل عزوز"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EAR4402_B_Lect._Monday_5",
+      "courseName": "Introduction To Urban Design - EAR4402",
+      "courseCode": "EAR4402",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. نوران عزوز اسماعيل عزوز",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EAR4402_B_Sec._Monday_7",
+      "courseName": "Introduction To Urban Design - EAR4402",
+      "courseCode": "EAR4402",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "نوران عزوز اسماعيل عزوز",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م*"
+  ],
+  "periods": [
+    "8"
+  ]
+}

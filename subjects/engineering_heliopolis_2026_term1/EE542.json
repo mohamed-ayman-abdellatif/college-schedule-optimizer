@@ -1,0 +1,91 @@
+{
+  "id": "EE542",
+  "name": "ELECTRICAL POWER STATIONS - EE542",
+  "code": "EE542",
+  "instructors": [
+    "محمد مرزوق نادي محمد",
+    "د. سلوى محمد يسرى متولى عطية"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EE542_A_Sec._Tuesday_9",
+          "courseName": "ELECTRICAL POWER STATIONS - EE542",
+          "courseCode": "EE542",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "محمد مرزوق نادي محمد",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EE542_A_Lect._Thursday_5",
+          "courseName": "ELECTRICAL POWER STATIONS - EE542",
+          "courseCode": "EE542",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. سلوى محمد يسرى متولى عطية",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "محمد مرزوق نادي محمد",
+        "د. سلوى محمد يسرى متولى عطية"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EE542_A_Sec._Tuesday_9",
+      "courseName": "ELECTRICAL POWER STATIONS - EE542",
+      "courseCode": "EE542",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "محمد مرزوق نادي محمد",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EE542_A_Lect._Thursday_5",
+      "courseName": "ELECTRICAL POWER STATIONS - EE542",
+      "courseCode": "EE542",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. سلوى محمد يسرى متولى عطية",
+      "color": "#F59E0B",
+      "room": ""
+    }
+  ],
+  "color": "#F59E0B",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية وتحكم ق.م"
+  ],
+  "periods": [
+    "9"
+  ]
+}

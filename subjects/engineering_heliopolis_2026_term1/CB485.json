@@ -1,0 +1,91 @@
+{
+  "id": "CB485",
+  "name": "DESIGN & CONSTRUCTION OF COASTAL STRUC. - CB485",
+  "code": "CB485",
+  "instructors": [
+    "د. ياسر محمد صادق عبد العزيز الساعى",
+    "محمد عرفات ابراهيم حسين"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CB485_A_Lect._Monday_9",
+          "courseName": "DESIGN & CONSTRUCTION OF COASTAL STRUC. - CB485",
+          "courseCode": "CB485",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. ياسر محمد صادق عبد العزيز الساعى",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "CB485_A_Sec._Thursday_11",
+          "courseName": "DESIGN & CONSTRUCTION OF COASTAL STRUC. - CB485",
+          "courseCode": "CB485",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "محمد عرفات ابراهيم حسين",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. ياسر محمد صادق عبد العزيز الساعى",
+        "محمد عرفات ابراهيم حسين"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "CB485_A_Lect._Monday_9",
+      "courseName": "DESIGN & CONSTRUCTION OF COASTAL STRUC. - CB485",
+      "courseCode": "CB485",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. ياسر محمد صادق عبد العزيز الساعى",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "CB485_A_Sec._Thursday_11",
+      "courseName": "DESIGN & CONSTRUCTION OF COASTAL STRUC. - CB485",
+      "courseCode": "CB485",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "محمد عرفات ابراهيم حسين",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م"
+  ],
+  "periods": [
+    "8"
+  ]
+}

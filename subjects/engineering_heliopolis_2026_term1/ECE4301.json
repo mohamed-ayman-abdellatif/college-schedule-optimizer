@@ -1,0 +1,120 @@
+{
+  "id": "ECE4301",
+  "name": "Computer Networks - ECE4301",
+  "code": "ECE4301",
+  "instructors": [
+    "روان محمد صلاح عواد",
+    "د. محمود هاني احمد مندور"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECE4301_B_Lab._Saturday_1",
+          "courseName": "Computer Networks - ECE4301",
+          "courseCode": "ECE4301",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "روان محمد صلاح عواد",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "ECE4301_B_Sec._Monday_5",
+          "courseName": "Computer Networks - ECE4301",
+          "courseCode": "ECE4301",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "ECE4301_B_Lect._Monday_11",
+          "courseName": "Computer Networks - ECE4301",
+          "courseCode": "ECE4301",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "د. محمود هاني احمد مندور",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "روان محمد صلاح عواد",
+        "د. محمود هاني احمد مندور"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECE4301_B_Lab._Saturday_1",
+      "courseName": "Computer Networks - ECE4301",
+      "courseCode": "ECE4301",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "روان محمد صلاح عواد",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "ECE4301_B_Sec._Monday_5",
+      "courseName": "Computer Networks - ECE4301",
+      "courseCode": "ECE4301",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "ECE4301_B_Lect._Monday_11",
+      "courseName": "Computer Networks - ECE4301",
+      "courseCode": "ECE4301",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "د. محمود هاني احمد مندور",
+      "color": "#06B6D4",
+      "room": ""
+    }
+  ],
+  "color": "#06B6D4",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "حاسبات ق م - Northampton*",
+    "هندسة الحاسبات ق.م*"
+  ],
+  "periods": [
+    "5"
+  ]
+}

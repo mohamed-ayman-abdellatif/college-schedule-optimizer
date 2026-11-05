@@ -1,0 +1,159 @@
+{
+  "id": "EEC5404",
+  "name": "Microwave Technology - EEC5404",
+  "code": "EEC5404",
+  "instructors": [
+    "احمد عبدالمحسن محمد محمود",
+    "د. محمد فتحى محمد ابوسريع على"
+  ],
+  "groups": [
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "EEC5404_C_Sec._Saturday_9",
+          "courseName": "Microwave Technology - EEC5404",
+          "courseCode": "EEC5404",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "احمد عبدالمحسن محمد محمود",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "EEC5404_C_Lect._Monday_1",
+          "courseName": "Microwave Technology - EEC5404",
+          "courseCode": "EEC5404",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. محمد فتحى محمد ابوسريع على",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "احمد عبدالمحسن محمد محمود",
+        "د. محمد فتحى محمد ابوسريع على"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EEC5404_B_Sec._Saturday_11",
+          "courseName": "Microwave Technology - EEC5404",
+          "courseCode": "EEC5404",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "احمد عبدالمحسن محمد محمود",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "EEC5404_B_Lect._Monday_1",
+          "courseName": "Microwave Technology - EEC5404",
+          "courseCode": "EEC5404",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. محمد فتحى محمد ابوسريع على",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "احمد عبدالمحسن محمد محمود",
+        "د. محمد فتحى محمد ابوسريع على"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEC5404_C_Sec._Saturday_9",
+      "courseName": "Microwave Technology - EEC5404",
+      "courseCode": "EEC5404",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "احمد عبدالمحسن محمد محمود",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "EEC5404_C_Lect._Monday_1",
+      "courseName": "Microwave Technology - EEC5404",
+      "courseCode": "EEC5404",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. محمد فتحى محمد ابوسريع على",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "EEC5404_B_Sec._Saturday_11",
+      "courseName": "Microwave Technology - EEC5404",
+      "courseCode": "EEC5404",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "احمد عبدالمحسن محمد محمود",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "EEC5404_B_Lect._Monday_1",
+      "courseName": "Microwave Technology - EEC5404",
+      "courseCode": "EEC5404",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. محمد فتحى محمد ابوسريع على",
+      "color": "#3B82F6",
+      "room": ""
+    }
+  ],
+  "color": "#3B82F6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "الكترونيات ق م - Northamption*",
+    "هـ.الكترونات واتصالات ق.م*"
+  ],
+  "periods": [
+    "9"
+  ]
+}

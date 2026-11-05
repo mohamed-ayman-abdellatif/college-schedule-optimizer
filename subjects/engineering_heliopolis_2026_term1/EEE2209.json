@@ -1,0 +1,159 @@
+{
+  "id": "EEE2209",
+  "name": "Electrical Machines - EEE2209",
+  "code": "EEE2209",
+  "instructors": [
+    "احمد علاء الدين ابراهيم حسين متولي دهشان",
+    "د. سلوى محمد يسرى متولى عطية"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEE2209_A_Sec._Wednesday_5",
+          "courseName": "Electrical Machines - EEE2209",
+          "courseCode": "EEE2209",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "احمد علاء الدين ابراهيم حسين متولي دهشان",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "EEE2209_A_Lect._Thursday_3",
+          "courseName": "Electrical Machines - EEE2209",
+          "courseCode": "EEE2209",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. سلوى محمد يسرى متولى عطية",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "احمد علاء الدين ابراهيم حسين متولي دهشان",
+        "د. سلوى محمد يسرى متولى عطية"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EEE2209_B_Sec._Wednesday_7",
+          "courseName": "Electrical Machines - EEE2209",
+          "courseCode": "EEE2209",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "احمد علاء الدين ابراهيم حسين متولي دهشان",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "EEE2209_B_Lect._Thursday_3",
+          "courseName": "Electrical Machines - EEE2209",
+          "courseCode": "EEE2209",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. سلوى محمد يسرى متولى عطية",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "احمد علاء الدين ابراهيم حسين متولي دهشان",
+        "د. سلوى محمد يسرى متولى عطية"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE2209_A_Sec._Wednesday_5",
+      "courseName": "Electrical Machines - EEE2209",
+      "courseCode": "EEE2209",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "احمد علاء الدين ابراهيم حسين متولي دهشان",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2209_A_Lect._Thursday_3",
+      "courseName": "Electrical Machines - EEE2209",
+      "courseCode": "EEE2209",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. سلوى محمد يسرى متولى عطية",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2209_B_Sec._Wednesday_7",
+      "courseName": "Electrical Machines - EEE2209",
+      "courseCode": "EEE2209",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "احمد علاء الدين ابراهيم حسين متولي دهشان",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE2209_B_Lect._Thursday_3",
+      "courseName": "Electrical Machines - EEE2209",
+      "courseCode": "EEE2209",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. سلوى محمد يسرى متولى عطية",
+      "color": "#6366F1",
+      "room": ""
+    }
+  ],
+  "color": "#6366F1",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "ميكانيكا ق م -Northampton",
+    "هندسة ميكانيكية-ق م //"
+  ],
+  "periods": [
+    "4"
+  ]
+}

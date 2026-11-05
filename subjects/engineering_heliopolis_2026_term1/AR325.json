@@ -1,0 +1,91 @@
+{
+  "id": "AR325",
+  "name": "RENDERING & ANIMATION - AR325",
+  "code": "AR325",
+  "instructors": [
+    "د. اسر محمد بدوى بخاتى",
+    "اسر محمد بدوى بخاتى"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "AR325_A_Lect._Sunday_5",
+          "courseName": "RENDERING & ANIMATION - AR325",
+          "courseCode": "AR325",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. اسر محمد بدوى بخاتى",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "AR325_A_Sec._Sunday_7",
+          "courseName": "RENDERING & ANIMATION - AR325",
+          "courseCode": "AR325",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "اسر محمد بدوى بخاتى",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. اسر محمد بدوى بخاتى",
+        "اسر محمد بدوى بخاتى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "AR325_A_Lect._Sunday_5",
+      "courseName": "RENDERING & ANIMATION - AR325",
+      "courseCode": "AR325",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. اسر محمد بدوى بخاتى",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "AR325_A_Sec._Sunday_7",
+      "courseName": "RENDERING & ANIMATION - AR325",
+      "courseCode": "AR325",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "اسر محمد بدوى بخاتى",
+      "color": "#10B981",
+      "room": ""
+    }
+  ],
+  "color": "#10B981",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م"
+  ],
+  "periods": [
+    "10"
+  ]
+}

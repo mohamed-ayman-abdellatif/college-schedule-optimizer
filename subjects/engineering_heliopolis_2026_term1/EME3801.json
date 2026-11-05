@@ -1,0 +1,1063 @@
+{
+  "id": "EME3801",
+  "name": "Internal Combustion Engines 1 - EME3801",
+  "code": "EME3801",
+  "instructors": [
+    "د. ماجد محمد جلال الدين محمد",
+    "زياد احمد انور الخولى"
+  ],
+  "groups": [
+    {
+      "group": "I",
+      "sessions": [
+        {
+          "id": "EME3801_I_Lab._Saturday_1",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "I",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME3801_I_Sec._Sunday_9",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "I",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME3801_I_Lect._Thursday_11",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "I",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "د. ماجد محمد جلال الدين محمد",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. ماجد محمد جلال الدين محمد"
+      ]
+    },
+    {
+      "group": "N",
+      "sessions": [
+        {
+          "id": "EME3801_N_Sec._Saturday_7",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "N",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "زياد احمد انور الخولى",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME3801_N_Lab._Thursday_3",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "N",
+          "type": "Lab.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME3801_N_Lect._Thursday_5",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "N",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. ماجد محمد جلال الدين محمد",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "زياد احمد انور الخولى",
+        "د. ماجد محمد جلال الدين محمد"
+      ]
+    },
+    {
+      "group": "K",
+      "sessions": [
+        {
+          "id": "EME3801_K_Sec._Saturday_9",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "K",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME3801_K_Lect._Wednesday_9",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "K",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. ماجد محمد جلال الدين محمد",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME3801_K_Lab._Thursday_5",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "K",
+          "type": "Lab.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. ماجد محمد جلال الدين محمد"
+      ]
+    },
+    {
+      "group": "L",
+      "sessions": [
+        {
+          "id": "EME3801_L_Sec._Saturday_11",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "L",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME3801_L_Lect._Wednesday_9",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "L",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. ماجد محمد جلال الدين محمد",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME3801_L_Lab._Thursday_5",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "L",
+          "type": "Lab.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. ماجد محمد جلال الدين محمد"
+      ]
+    },
+    {
+      "group": "O",
+      "sessions": [
+        {
+          "id": "EME3801_O_Sec._Saturday_9",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "O",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "زياد احمد انور الخولى",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME3801_O_Lab._Thursday_3",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "O",
+          "type": "Lab.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME3801_O_Lect._Thursday_5",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "O",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. ماجد محمد جلال الدين محمد",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "زياد احمد انور الخولى",
+        "د. ماجد محمد جلال الدين محمد"
+      ]
+    },
+    {
+      "group": "J",
+      "sessions": [
+        {
+          "id": "EME3801_J_Lab._Saturday_1",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "J",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME3801_J_Sec._Sunday_11",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "J",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME3801_J_Lect._Thursday_11",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "J",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "د. ماجد محمد جلال الدين محمد",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. ماجد محمد جلال الدين محمد"
+      ]
+    },
+    {
+      "group": "M",
+      "sessions": [
+        {
+          "id": "EME3801_M_Sec._Saturday_11",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "M",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "زياد احمد انور الخولى",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME3801_M_Lab._Monday_9",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "M",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME3801_M_Lect._Wednesday_11",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "M",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "د. ماجد محمد جلال الدين محمد",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "زياد احمد انور الخولى",
+        "د. ماجد محمد جلال الدين محمد"
+      ]
+    },
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "EME3801_G_Lab._Monday_11",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "G",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME3801_G_Sec._Tuesday_7",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "G",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME3801_G_Lect._Thursday_9",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "G",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. ماجد محمد جلال الدين محمد",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. ماجد محمد جلال الدين محمد"
+      ]
+    },
+    {
+      "group": "H",
+      "sessions": [
+        {
+          "id": "EME3801_H_Lab._Monday_11",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "H",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME3801_H_Sec._Wednesday_3",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "H",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME3801_H_Lect._Thursday_9",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "H",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. ماجد محمد جلال الدين محمد",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. ماجد محمد جلال الدين محمد"
+      ]
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "EME3801_F_Sec._Tuesday_5",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "F",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME3801_F_Lect._Wednesday_7",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. ماجد محمد جلال الدين محمد",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME3801_F_Lab._Wednesday_11",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "F",
+          "type": "Lab.",
+          "day": "Wednesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. ماجد محمد جلال الدين محمد"
+      ]
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "EME3801_E_Sec._Wednesday_5",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME3801_E_Lect._Wednesday_7",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. ماجد محمد جلال الدين محمد",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME3801_E_Lab._Wednesday_11",
+          "courseName": "Internal Combustion Engines 1 - EME3801",
+          "courseCode": "EME3801",
+          "group": "E",
+          "type": "Lab.",
+          "day": "Wednesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. ماجد محمد جلال الدين محمد"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EME3801_I_Lab._Saturday_1",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "I",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_I_Sec._Sunday_9",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "I",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_I_Lect._Thursday_11",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "I",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "د. ماجد محمد جلال الدين محمد",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_N_Sec._Saturday_7",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "N",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "زياد احمد انور الخولى",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_N_Lab._Thursday_3",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "N",
+      "type": "Lab.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_N_Lect._Thursday_5",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "N",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. ماجد محمد جلال الدين محمد",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_K_Sec._Saturday_9",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "K",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_K_Lect._Wednesday_9",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "K",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. ماجد محمد جلال الدين محمد",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_K_Lab._Thursday_5",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "K",
+      "type": "Lab.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_L_Sec._Saturday_11",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "L",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_L_Lect._Wednesday_9",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "L",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. ماجد محمد جلال الدين محمد",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_L_Lab._Thursday_5",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "L",
+      "type": "Lab.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_O_Sec._Saturday_9",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "O",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "زياد احمد انور الخولى",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_O_Lab._Thursday_3",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "O",
+      "type": "Lab.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_O_Lect._Thursday_5",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "O",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. ماجد محمد جلال الدين محمد",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_J_Lab._Saturday_1",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "J",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_J_Sec._Sunday_11",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "J",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_J_Lect._Thursday_11",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "J",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "د. ماجد محمد جلال الدين محمد",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_M_Sec._Saturday_11",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "M",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "زياد احمد انور الخولى",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_M_Lab._Monday_9",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "M",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_M_Lect._Wednesday_11",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "M",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "د. ماجد محمد جلال الدين محمد",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_G_Lab._Monday_11",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "G",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_G_Sec._Tuesday_7",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "G",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_G_Lect._Thursday_9",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "G",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. ماجد محمد جلال الدين محمد",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_H_Lab._Monday_11",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "H",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_H_Sec._Wednesday_3",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "H",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_H_Lect._Thursday_9",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "H",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. ماجد محمد جلال الدين محمد",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_F_Sec._Tuesday_5",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "F",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_F_Lect._Wednesday_7",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. ماجد محمد جلال الدين محمد",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_F_Lab._Wednesday_11",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "F",
+      "type": "Lab.",
+      "day": "Wednesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_E_Sec._Wednesday_5",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_E_Lect._Wednesday_7",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. ماجد محمد جلال الدين محمد",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME3801_E_Lab._Wednesday_11",
+      "courseName": "Internal Combustion Engines 1 - EME3801",
+      "courseCode": "EME3801",
+      "group": "E",
+      "type": "Lab.",
+      "day": "Wednesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    }
+  ],
+  "color": "#10B981",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "ميكانيكا ق م -Northampton",
+    "هـ.ميكانيكية ق.م*",
+    "هندسة ميكانيكية-ق م //"
+  ],
+  "periods": [
+    "5"
+  ]
+}

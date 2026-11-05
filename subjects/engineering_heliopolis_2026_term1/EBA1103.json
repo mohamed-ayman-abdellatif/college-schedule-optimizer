@@ -1,0 +1,167 @@
+{
+  "id": "EBA1103",
+  "name": "Physics I - EBA1103",
+  "code": "EBA1103",
+  "instructors": [
+    "د. اسلام عماد دسوقى قطب",
+    "شروق عبدالراضي السيد طلب"
+  ],
+  "groups": [
+    {
+      "group": "T",
+      "sessions": [
+        {
+          "id": "EBA1103_T_Lect._Sunday_1",
+          "courseName": "Physics I - EBA1103",
+          "courseCode": "EBA1103",
+          "group": "T",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. اسلام عماد دسوقى قطب",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA1103_T_Sec._Tuesday_7",
+          "courseName": "Physics I - EBA1103",
+          "courseCode": "EBA1103",
+          "group": "T",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "شروق عبدالراضي السيد طلب",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA1103_T_Lect._Wednesday_1",
+          "courseName": "Physics I - EBA1103",
+          "courseCode": "EBA1103",
+          "group": "T",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. اسلام عماد دسوقى قطب",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA1103_T_Lab._Wednesday_3",
+          "courseName": "Physics I - EBA1103",
+          "courseCode": "EBA1103",
+          "group": "T",
+          "type": "Lab.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. اسلام عماد دسوقى قطب",
+        "شروق عبدالراضي السيد طلب"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EBA1103_T_Lect._Sunday_1",
+      "courseName": "Physics I - EBA1103",
+      "courseCode": "EBA1103",
+      "group": "T",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. اسلام عماد دسوقى قطب",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA1103_T_Sec._Tuesday_7",
+      "courseName": "Physics I - EBA1103",
+      "courseCode": "EBA1103",
+      "group": "T",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "شروق عبدالراضي السيد طلب",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA1103_T_Lect._Wednesday_1",
+      "courseName": "Physics I - EBA1103",
+      "courseCode": "EBA1103",
+      "group": "T",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. اسلام عماد دسوقى قطب",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA1103_T_Lab._Wednesday_3",
+      "courseName": "Physics I - EBA1103",
+      "courseCode": "EBA1103",
+      "group": "T",
+      "type": "Lab.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    }
+  ],
+  "color": "#F59E0B",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "الكترونيات ق م - Northamption //",
+    "الكترونيات ق م - Northamption*",
+    "حاسبات ق م - Northampton",
+    "حاسبات ق م - Northampton*",
+    "ميكانيكا ق م -Northampton",
+    "ميكانيكا ق م -Northampton*",
+    "هـ.الكترونات واتصالات ق.م",
+    "هـ.الكترونات واتصالات ق.م*",
+    "هـ.ميكانيكية ق.م*",
+    "هندسة التشيد والبناء ق.م",
+    "هندسة التشيد والبناء ق.م*",
+    "هندسة الحاسبات ق.م",
+    "هندسة الحاسبات ق.م*",
+    "هندسة كهربية ق م -Northampton //",
+    "هندسة كهربية ق م -Northampton*",
+    "هندسة كهربية وتحكم ق.م",
+    "هندسة كهربية وتحكم ق.م*",
+    "هندسة معمارية ق.م",
+    "هندسة معمارية ق.م*",
+    "هندسة معمارية-Cardiff-ق م //",
+    "هندسة ميكانيكية-ق م //"
+  ],
+  "periods": [
+    "1"
+  ]
+}

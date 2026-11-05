@@ -1,0 +1,214 @@
+{
+  "id": "CCS3402",
+  "name": "Theory of Computation - CCS3402",
+  "code": "CCS3402",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "L",
+      "sessions": [
+        {
+          "id": "CCS3402_L_Sec._Sunday_1",
+          "courseName": "Theory of Computation - CCS3402",
+          "courseCode": "CCS3402",
+          "group": "L",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "CCS3402_L_Lect._Tuesday_9",
+          "courseName": "Theory of Computation - CCS3402",
+          "courseCode": "CCS3402",
+          "group": "L",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "M",
+      "sessions": [
+        {
+          "id": "CCS3402_M_Sec._Sunday_3",
+          "courseName": "Theory of Computation - CCS3402",
+          "courseCode": "CCS3402",
+          "group": "M",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "CCS3402_M_Lect._Tuesday_11",
+          "courseName": "Theory of Computation - CCS3402",
+          "courseCode": "CCS3402",
+          "group": "M",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "N",
+      "sessions": [
+        {
+          "id": "CCS3402_N_Sec._Sunday_3",
+          "courseName": "Theory of Computation - CCS3402",
+          "courseCode": "CCS3402",
+          "group": "N",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "CCS3402_N_Lect._Tuesday_11",
+          "courseName": "Theory of Computation - CCS3402",
+          "courseCode": "CCS3402",
+          "group": "N",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CCS3402_L_Sec._Sunday_1",
+      "courseName": "Theory of Computation - CCS3402",
+      "courseCode": "CCS3402",
+      "group": "L",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "CCS3402_L_Lect._Tuesday_9",
+      "courseName": "Theory of Computation - CCS3402",
+      "courseCode": "CCS3402",
+      "group": "L",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "CCS3402_M_Sec._Sunday_3",
+      "courseName": "Theory of Computation - CCS3402",
+      "courseCode": "CCS3402",
+      "group": "M",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "CCS3402_M_Lect._Tuesday_11",
+      "courseName": "Theory of Computation - CCS3402",
+      "courseCode": "CCS3402",
+      "group": "M",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "CCS3402_N_Sec._Sunday_3",
+      "courseName": "Theory of Computation - CCS3402",
+      "courseCode": "CCS3402",
+      "group": "N",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "CCS3402_N_Lect._Tuesday_11",
+      "courseName": "Theory of Computation - CCS3402",
+      "courseCode": "CCS3402",
+      "group": "N",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "علوم الحاسب ق.م //",
+    "علوم حاسب ق.م-Northampton //"
+  ],
+  "periods": [
+    "5"
+  ]
+}

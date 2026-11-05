@@ -1,0 +1,92 @@
+{
+  "id": "EEE3403",
+  "name": "Experimental Methods - EEE3403*",
+  "code": "EEE3403",
+  "instructors": [
+    "يوسف حسام محمد عبدالفتاح",
+    "د. ابراهيم عبدالله محمد عبدالسلام"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEE3403_A_Lab._Sunday_5",
+          "courseName": "Experimental Methods - EEE3403*",
+          "courseCode": "EEE3403",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "يوسف حسام محمد عبدالفتاح",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EEE3403_A_Lect._Monday_3",
+          "courseName": "Experimental Methods - EEE3403*",
+          "courseCode": "EEE3403",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. ابراهيم عبدالله محمد عبدالسلام",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "يوسف حسام محمد عبدالفتاح",
+        "د. ابراهيم عبدالله محمد عبدالسلام"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE3403_A_Lab._Sunday_5",
+      "courseName": "Experimental Methods - EEE3403*",
+      "courseCode": "EEE3403",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "يوسف حسام محمد عبدالفتاح",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EEE3403_A_Lect._Monday_3",
+      "courseName": "Experimental Methods - EEE3403*",
+      "courseCode": "EEE3403",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. ابراهيم عبدالله محمد عبدالسلام",
+      "color": "#10B981",
+      "room": ""
+    }
+  ],
+  "color": "#10B981",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية ق م -Northampton*",
+    "هندسة كهربية وتحكم ق.م*"
+  ],
+  "periods": [
+    "6"
+  ]
+}

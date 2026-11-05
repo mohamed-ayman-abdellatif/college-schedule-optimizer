@@ -1,0 +1,165 @@
+{
+  "id": "CCY4901",
+  "name": "Project I - CCY4901",
+  "code": "CCY4901",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "CCY4901_B_Lect._Saturday_11",
+          "courseName": "Project I - CCY4901",
+          "courseCode": "CCY4901",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    },
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "CCY4901_G_Lect._Saturday_11",
+          "courseName": "Project I - CCY4901",
+          "courseCode": "CCY4901",
+          "group": "G",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "CCY4901_C_Lect._Monday_7",
+          "courseName": "Project I - CCY4901",
+          "courseCode": "CCY4901",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    },
+    {
+      "group": "H",
+      "sessions": [
+        {
+          "id": "CCY4901_H_Lect._Monday_9",
+          "courseName": "Project I - CCY4901",
+          "courseCode": "CCY4901",
+          "group": "H",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CCY4901_B_Lect._Saturday_11",
+      "courseName": "Project I - CCY4901",
+      "courseCode": "CCY4901",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "CCY4901_G_Lect._Saturday_11",
+      "courseName": "Project I - CCY4901",
+      "courseCode": "CCY4901",
+      "group": "G",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "CCY4901_C_Lect._Monday_7",
+      "courseName": "Project I - CCY4901",
+      "courseCode": "CCY4901",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "CCY4901_H_Lect._Monday_9",
+      "courseName": "Project I - CCY4901",
+      "courseCode": "CCY4901",
+      "group": "H",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    }
+  ],
+  "color": "#06B6D4",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "الأمن السيبرانى - ق.م"
+  ],
+  "periods": [
+    "7"
+  ]
+}

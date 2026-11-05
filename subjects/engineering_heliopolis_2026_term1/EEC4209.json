@@ -1,0 +1,92 @@
+{
+  "id": "EEC4209",
+  "name": "Applied Telecommunication - EEC4209*",
+  "code": "EEC4209",
+  "instructors": [
+    "د. شريف خيرى عبدالحى الدياسطى",
+    "مروة محمود شريف احمد الوزان"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEC4209_A_Lect._Sunday_1",
+          "courseName": "Applied Telecommunication - EEC4209*",
+          "courseCode": "EEC4209",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. شريف خيرى عبدالحى الدياسطى",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "EEC4209_A_Sec._Monday_1",
+          "courseName": "Applied Telecommunication - EEC4209*",
+          "courseCode": "EEC4209",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "مروة محمود شريف احمد الوزان",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. شريف خيرى عبدالحى الدياسطى",
+        "مروة محمود شريف احمد الوزان"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEC4209_A_Lect._Sunday_1",
+      "courseName": "Applied Telecommunication - EEC4209*",
+      "courseCode": "EEC4209",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. شريف خيرى عبدالحى الدياسطى",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEC4209_A_Sec._Monday_1",
+      "courseName": "Applied Telecommunication - EEC4209*",
+      "courseCode": "EEC4209",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "مروة محمود شريف احمد الوزان",
+      "color": "#6366F1",
+      "room": ""
+    }
+  ],
+  "color": "#6366F1",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "الكترونيات ق م - Northamption*",
+    "هـ.الكترونات واتصالات ق.م*"
+  ],
+  "periods": [
+    "7"
+  ]
+}

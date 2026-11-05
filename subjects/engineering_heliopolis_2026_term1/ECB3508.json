@@ -1,0 +1,159 @@
+{
+  "id": "ECB3508",
+  "name": "Reinforced Concrete & Metallic Structure - ECB3508",
+  "code": "ECB3508",
+  "instructors": [
+    "محمد خالد عبدالرحيم محمد محمد حسان",
+    "د. حسن احمد حسن احمد سعد",
+    "ندى خالد محمد شوقى على"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECB3508_B_Sec._Tuesday_5",
+          "courseName": "Reinforced Concrete & Metallic Structure - ECB3508",
+          "courseCode": "ECB3508",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "محمد خالد عبدالرحيم محمد محمد حسان",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "ECB3508_B_Lect._Wednesday_3",
+          "courseName": "Reinforced Concrete & Metallic Structure - ECB3508",
+          "courseCode": "ECB3508",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. حسن احمد حسن احمد سعد",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "محمد خالد عبدالرحيم محمد محمد حسان",
+        "د. حسن احمد حسن احمد سعد"
+      ]
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "ECB3508_D_Lect._Wednesday_3",
+          "courseName": "Reinforced Concrete & Metallic Structure - ECB3508",
+          "courseCode": "ECB3508",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. حسن احمد حسن احمد سعد",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "ECB3508_D_Sec._Thursday_5",
+          "courseName": "Reinforced Concrete & Metallic Structure - ECB3508",
+          "courseCode": "ECB3508",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "ندى خالد محمد شوقى على",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. حسن احمد حسن احمد سعد",
+        "ندى خالد محمد شوقى على"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECB3508_B_Sec._Tuesday_5",
+      "courseName": "Reinforced Concrete & Metallic Structure - ECB3508",
+      "courseCode": "ECB3508",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "محمد خالد عبدالرحيم محمد محمد حسان",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "ECB3508_B_Lect._Wednesday_3",
+      "courseName": "Reinforced Concrete & Metallic Structure - ECB3508",
+      "courseCode": "ECB3508",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. حسن احمد حسن احمد سعد",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "ECB3508_D_Lect._Wednesday_3",
+      "courseName": "Reinforced Concrete & Metallic Structure - ECB3508",
+      "courseCode": "ECB3508",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. حسن احمد حسن احمد سعد",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "ECB3508_D_Sec._Thursday_5",
+      "courseName": "Reinforced Concrete & Metallic Structure - ECB3508",
+      "courseCode": "ECB3508",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "ندى خالد محمد شوقى على",
+      "color": "#3B82F6",
+      "room": ""
+    }
+  ],
+  "color": "#3B82F6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م*"
+  ],
+  "periods": [
+    "5"
+  ]
+}

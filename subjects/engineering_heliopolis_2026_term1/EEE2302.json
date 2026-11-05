@@ -1,0 +1,307 @@
+{
+  "id": "EEE2302",
+  "name": "Electrical Circuits 2 - EEE2302*",
+  "code": "EEE2302",
+  "instructors": [
+    "أحمد عبدالرحيم جمال عتلم",
+    "احمد محمد الدسوقي شهاب",
+    "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+    "د. بسنت احمد السيد خليل"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEE2302_A_Lab._Saturday_7",
+          "courseName": "Electrical Circuits 2 - EEE2302*",
+          "courseCode": "EEE2302",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "أحمد عبدالرحيم جمال عتلم",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EEE2302_A_Sec._Sunday_7",
+          "courseName": "Electrical Circuits 2 - EEE2302*",
+          "courseCode": "EEE2302",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "احمد محمد الدسوقي شهاب",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EEE2302_A_Lect._Monday_1",
+          "courseName": "Electrical Circuits 2 - EEE2302*",
+          "courseCode": "EEE2302",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EEE2302_A_Sec._Sunday_9",
+          "courseName": "Advanced Circuit Analysis - EEE2302",
+          "courseCode": "EEE2302",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "احمد محمد الدسوقي شهاب",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EEE2302_A_Lab._Tuesday_1",
+          "courseName": "Advanced Circuit Analysis - EEE2302",
+          "courseCode": "EEE2302",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "احمد محمد الدسوقي شهاب",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EEE2302_A_Lect._Wednesday_3",
+          "courseName": "Advanced Circuit Analysis - EEE2302",
+          "courseCode": "EEE2302",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. بسنت احمد السيد خليل",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "أحمد عبدالرحيم جمال عتلم",
+        "احمد محمد الدسوقي شهاب",
+        "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+        "د. بسنت احمد السيد خليل"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EEE2302_B_Lab._Saturday_7",
+          "courseName": "Electrical Circuits 2 - EEE2302*",
+          "courseCode": "EEE2302",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "أحمد عبدالرحيم جمال عتلم",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EEE2302_B_Sec._Sunday_7",
+          "courseName": "Electrical Circuits 2 - EEE2302*",
+          "courseCode": "EEE2302",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "احمد محمد الدسوقي شهاب",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EEE2302_B_Lect._Monday_1",
+          "courseName": "Electrical Circuits 2 - EEE2302*",
+          "courseCode": "EEE2302",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "أحمد عبدالرحيم جمال عتلم",
+        "احمد محمد الدسوقي شهاب",
+        "د. ميرنا فؤاد عبدالسلام عبدالمعطى على"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE2302_A_Lab._Saturday_7",
+      "courseName": "Electrical Circuits 2 - EEE2302*",
+      "courseCode": "EEE2302",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "أحمد عبدالرحيم جمال عتلم",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EEE2302_A_Sec._Sunday_7",
+      "courseName": "Electrical Circuits 2 - EEE2302*",
+      "courseCode": "EEE2302",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "احمد محمد الدسوقي شهاب",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EEE2302_A_Lect._Monday_1",
+      "courseName": "Electrical Circuits 2 - EEE2302*",
+      "courseCode": "EEE2302",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EEE2302_A_Sec._Sunday_9",
+      "courseName": "Advanced Circuit Analysis - EEE2302",
+      "courseCode": "EEE2302",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "احمد محمد الدسوقي شهاب",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EEE2302_A_Lab._Tuesday_1",
+      "courseName": "Advanced Circuit Analysis - EEE2302",
+      "courseCode": "EEE2302",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "احمد محمد الدسوقي شهاب",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EEE2302_A_Lect._Wednesday_3",
+      "courseName": "Advanced Circuit Analysis - EEE2302",
+      "courseCode": "EEE2302",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. بسنت احمد السيد خليل",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EEE2302_B_Lab._Saturday_7",
+      "courseName": "Electrical Circuits 2 - EEE2302*",
+      "courseCode": "EEE2302",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "أحمد عبدالرحيم جمال عتلم",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EEE2302_B_Sec._Sunday_7",
+      "courseName": "Electrical Circuits 2 - EEE2302*",
+      "courseCode": "EEE2302",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "احمد محمد الدسوقي شهاب",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EEE2302_B_Lect._Monday_1",
+      "courseName": "Electrical Circuits 2 - EEE2302*",
+      "courseCode": "EEE2302",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "حاسبات ق م - Northampton*",
+    "هندسة الحاسبات ق.م*",
+    "هندسة كهربية ق م -Northampton //",
+    "هندسة كهربية وتحكم ق.م",
+    "هندسة كهربية وتحكم ق.م*"
+  ],
+  "periods": [
+    "4"
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "id": "CAI4901",
+  "name": "Project I - CAI4901",
+  "code": "CAI4901",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "CAI4901_B_Lect._Saturday_5",
+          "courseName": "Project I - CAI4901",
+          "courseCode": "CAI4901",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "CAI4901_C_Lect._Saturday_7",
+          "courseName": "Project I - CAI4901",
+          "courseCode": "CAI4901",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "CAI4901_D_Lect._Sunday_7",
+          "courseName": "Project I - CAI4901",
+          "courseCode": "CAI4901",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CAI4901_B_Lect._Saturday_5",
+      "courseName": "Project I - CAI4901",
+      "courseCode": "CAI4901",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "CAI4901_C_Lect._Saturday_7",
+      "courseName": "Project I - CAI4901",
+      "courseCode": "CAI4901",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "CAI4901_D_Lect._Sunday_7",
+      "courseName": "Project I - CAI4901",
+      "courseCode": "CAI4901",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    }
+  ],
+  "color": "#14B8A6",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "الذكاء الإصطناعي - ق.م"
+  ],
+  "periods": [
+    "7"
+  ]
+}

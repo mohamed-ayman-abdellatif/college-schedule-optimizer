@@ -1,0 +1,406 @@
+{
+  "id": "CSE4203",
+  "name": "Principles of Software Architecture - CSE4203",
+  "code": "CSE4203",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "R",
+      "sessions": [
+        {
+          "id": "CSE4203_R_Lect._Sunday_3",
+          "courseName": "Principles of Software Architecture - CSE4203",
+          "courseCode": "CSE4203",
+          "group": "R",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "CSE4203_R_Sec._Tuesday_3",
+          "courseName": "Principles of Software Architecture - CSE4203",
+          "courseCode": "CSE4203",
+          "group": "R",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "P",
+      "sessions": [
+        {
+          "id": "CSE4203_P_Sec._Sunday_7",
+          "courseName": "Principles of Software Architecture - CSE4203",
+          "courseCode": "CSE4203",
+          "group": "P",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "CSE4203_P_Lect._Monday_5",
+          "courseName": "Principles of Software Architecture - CSE4203",
+          "courseCode": "CSE4203",
+          "group": "P",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "N",
+      "sessions": [
+        {
+          "id": "CSE4203_N_Lect._Monday_1",
+          "courseName": "Principles of Software Architecture - CSE4203",
+          "courseCode": "CSE4203",
+          "group": "N",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "CSE4203_N_Sec._Monday_3",
+          "courseName": "Principles of Software Architecture - CSE4203",
+          "courseCode": "CSE4203",
+          "group": "N",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "Q",
+      "sessions": [
+        {
+          "id": "CSE4203_Q_Lect._Tuesday_5",
+          "courseName": "Principles of Software Architecture - CSE4203",
+          "courseCode": "CSE4203",
+          "group": "Q",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "CSE4203_Q_Sec._Tuesday_7",
+          "courseName": "Principles of Software Architecture - CSE4203",
+          "courseCode": "CSE4203",
+          "group": "Q",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "S",
+      "sessions": [
+        {
+          "id": "CSE4203_S_Lect._Tuesday_5",
+          "courseName": "Principles of Software Architecture - CSE4203",
+          "courseCode": "CSE4203",
+          "group": "S",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "CSE4203_S_Sec._Tuesday_7",
+          "courseName": "Principles of Software Architecture - CSE4203",
+          "courseCode": "CSE4203",
+          "group": "S",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "O",
+      "sessions": [
+        {
+          "id": "CSE4203_O_Lect._Thursday_1",
+          "courseName": "Principles of Software Architecture - CSE4203",
+          "courseCode": "CSE4203",
+          "group": "O",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "CSE4203_O_Sec._Thursday_3",
+          "courseName": "Principles of Software Architecture - CSE4203",
+          "courseCode": "CSE4203",
+          "group": "O",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CSE4203_R_Lect._Sunday_3",
+      "courseName": "Principles of Software Architecture - CSE4203",
+      "courseCode": "CSE4203",
+      "group": "R",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CSE4203_R_Sec._Tuesday_3",
+      "courseName": "Principles of Software Architecture - CSE4203",
+      "courseCode": "CSE4203",
+      "group": "R",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CSE4203_P_Sec._Sunday_7",
+      "courseName": "Principles of Software Architecture - CSE4203",
+      "courseCode": "CSE4203",
+      "group": "P",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CSE4203_P_Lect._Monday_5",
+      "courseName": "Principles of Software Architecture - CSE4203",
+      "courseCode": "CSE4203",
+      "group": "P",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CSE4203_N_Lect._Monday_1",
+      "courseName": "Principles of Software Architecture - CSE4203",
+      "courseCode": "CSE4203",
+      "group": "N",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CSE4203_N_Sec._Monday_3",
+      "courseName": "Principles of Software Architecture - CSE4203",
+      "courseCode": "CSE4203",
+      "group": "N",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CSE4203_Q_Lect._Tuesday_5",
+      "courseName": "Principles of Software Architecture - CSE4203",
+      "courseCode": "CSE4203",
+      "group": "Q",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CSE4203_Q_Sec._Tuesday_7",
+      "courseName": "Principles of Software Architecture - CSE4203",
+      "courseCode": "CSE4203",
+      "group": "Q",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CSE4203_S_Lect._Tuesday_5",
+      "courseName": "Principles of Software Architecture - CSE4203",
+      "courseCode": "CSE4203",
+      "group": "S",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CSE4203_S_Sec._Tuesday_7",
+      "courseName": "Principles of Software Architecture - CSE4203",
+      "courseCode": "CSE4203",
+      "group": "S",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CSE4203_O_Lect._Thursday_1",
+      "courseName": "Principles of Software Architecture - CSE4203",
+      "courseCode": "CSE4203",
+      "group": "O",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CSE4203_O_Sec._Thursday_3",
+      "courseName": "Principles of Software Architecture - CSE4203",
+      "courseCode": "CSE4203",
+      "group": "O",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "هندسة البرمجيات - ق.م",
+    "هندسة برمجيات ق.م -Northampton //"
+  ],
+  "periods": [
+    "7"
+  ]
+}

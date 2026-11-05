@@ -1,0 +1,57 @@
+{
+  "id": "ECB4000",
+  "name": "Practical Training I - ECB4000*",
+  "code": "ECB4000",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "ECB4000_C_Lect._Thursday_9",
+          "courseName": "Practical Training I - ECB4000*",
+          "courseCode": "ECB4000",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECB4000_C_Lect._Thursday_9",
+      "courseName": "Practical Training I - ECB4000*",
+      "courseCode": "ECB4000",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م*"
+  ],
+  "periods": [
+    "7"
+  ]
+}

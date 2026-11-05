@@ -1,0 +1,119 @@
+{
+  "id": "CB362",
+  "name": "SOIL MECHANICS - CB362",
+  "code": "CB362",
+  "instructors": [
+    "رويد ابو بكر يوسف ابراهيم",
+    "د. احمد محمد جمال الدين محمد منصور"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CB362_A_Sec._Saturday_9",
+          "courseName": "SOIL MECHANICS - CB362",
+          "courseCode": "CB362",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "رويد ابو بكر يوسف ابراهيم",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "CB362_A_Lab._Monday_5",
+          "courseName": "SOIL MECHANICS - CB362",
+          "courseCode": "CB362",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "رويد ابو بكر يوسف ابراهيم",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "CB362_A_Lect._Tuesday_9",
+          "courseName": "SOIL MECHANICS - CB362",
+          "courseCode": "CB362",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. احمد محمد جمال الدين محمد منصور",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "رويد ابو بكر يوسف ابراهيم",
+        "د. احمد محمد جمال الدين محمد منصور"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "CB362_A_Sec._Saturday_9",
+      "courseName": "SOIL MECHANICS - CB362",
+      "courseCode": "CB362",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "رويد ابو بكر يوسف ابراهيم",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "CB362_A_Lab._Monday_5",
+      "courseName": "SOIL MECHANICS - CB362",
+      "courseCode": "CB362",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "رويد ابو بكر يوسف ابراهيم",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "CB362_A_Lect._Tuesday_9",
+      "courseName": "SOIL MECHANICS - CB362",
+      "courseCode": "CB362",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. احمد محمد جمال الدين محمد منصور",
+      "color": "#6366F1",
+      "room": ""
+    }
+  ],
+  "color": "#6366F1",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م"
+  ],
+  "periods": [
+    "6"
+  ]
+}

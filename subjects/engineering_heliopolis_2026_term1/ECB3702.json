@@ -1,0 +1,91 @@
+{
+  "id": "ECB3702",
+  "name": "Introduction to Transportation Engineer. - ECB3702",
+  "code": "ECB3702",
+  "instructors": [
+    "د. محمد رفعت زكى البحيرى",
+    "رانيا عادل سليمان امين عز الدين"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECB3702_A_Lect._Tuesday_5",
+          "courseName": "Introduction to Transportation Engineer. - ECB3702",
+          "courseCode": "ECB3702",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 8,
+          "duration": 4,
+          "instructor": "د. محمد رفعت زكى البحيرى",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "ECB3702_A_Sec._Wednesday_5",
+          "courseName": "Introduction to Transportation Engineer. - ECB3702",
+          "courseCode": "ECB3702",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "رانيا عادل سليمان امين عز الدين",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد رفعت زكى البحيرى",
+        "رانيا عادل سليمان امين عز الدين"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECB3702_A_Lect._Tuesday_5",
+      "courseName": "Introduction to Transportation Engineer. - ECB3702",
+      "courseCode": "ECB3702",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 8,
+      "duration": 4,
+      "instructor": "د. محمد رفعت زكى البحيرى",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "ECB3702_A_Sec._Wednesday_5",
+      "courseName": "Introduction to Transportation Engineer. - ECB3702",
+      "courseCode": "ECB3702",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "رانيا عادل سليمان امين عز الدين",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م*"
+  ],
+  "periods": [
+    "6"
+  ]
+}

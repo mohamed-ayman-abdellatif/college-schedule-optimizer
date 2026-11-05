@@ -1,0 +1,91 @@
+{
+  "id": "EEC3501",
+  "name": "Machine Learning - EEC3501",
+  "code": "EEC3501",
+  "instructors": [
+    "مصطفي ممدوح حسن محمدي",
+    "د. عزة كمال مهدي عبدالعزيز عزيز معوض"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EEC3501_B_Lab._Saturday_11",
+          "courseName": "Machine Learning - EEC3501",
+          "courseCode": "EEC3501",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "مصطفي ممدوح حسن محمدي",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EEC3501_B_Lect._Thursday_1",
+          "courseName": "Machine Learning - EEC3501",
+          "courseCode": "EEC3501",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. عزة كمال مهدي عبدالعزيز عزيز معوض",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "مصطفي ممدوح حسن محمدي",
+        "د. عزة كمال مهدي عبدالعزيز عزيز معوض"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEC3501_B_Lab._Saturday_11",
+      "courseName": "Machine Learning - EEC3501",
+      "courseCode": "EEC3501",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "مصطفي ممدوح حسن محمدي",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EEC3501_B_Lect._Thursday_1",
+      "courseName": "Machine Learning - EEC3501",
+      "courseCode": "EEC3501",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. عزة كمال مهدي عبدالعزيز عزيز معوض",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هـ.الكترونات واتصالات ق.م*"
+  ],
+  "periods": [
+    "5"
+  ]
+}

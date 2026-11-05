@@ -1,0 +1,91 @@
+{
+  "id": "CB584",
+  "name": "SPECIAL TOPICS IN HYDRAULIC& COASTAL ST. - CB584",
+  "code": "CB584",
+  "instructors": [
+    "د. ياسر محمد صادق عبد العزيز الساعى",
+    "محمد عرفات ابراهيم حسين"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CB584_A_Lect._Monday_11",
+          "courseName": "SPECIAL TOPICS IN HYDRAULIC& COASTAL ST. - CB584",
+          "courseCode": "CB584",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "د. ياسر محمد صادق عبد العزيز الساعى",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "CB584_A_Sec._Wednesday_3",
+          "courseName": "SPECIAL TOPICS IN HYDRAULIC& COASTAL ST. - CB584",
+          "courseCode": "CB584",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "محمد عرفات ابراهيم حسين",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. ياسر محمد صادق عبد العزيز الساعى",
+        "محمد عرفات ابراهيم حسين"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "CB584_A_Lect._Monday_11",
+      "courseName": "SPECIAL TOPICS IN HYDRAULIC& COASTAL ST. - CB584",
+      "courseCode": "CB584",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "د. ياسر محمد صادق عبد العزيز الساعى",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "CB584_A_Sec._Wednesday_3",
+      "courseName": "SPECIAL TOPICS IN HYDRAULIC& COASTAL ST. - CB584",
+      "courseCode": "CB584",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "محمد عرفات ابراهيم حسين",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م"
+  ],
+  "periods": [
+    "9"
+  ]
+}

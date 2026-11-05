@@ -1,0 +1,469 @@
+{
+  "id": "CCY3101",
+  "name": "Software Security - CCY3101",
+  "code": "CCY3101",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "K",
+      "sessions": [
+        {
+          "id": "CCY3101_K_Sec._Saturday_5",
+          "courseName": "Software Security - CCY3101",
+          "courseCode": "CCY3101",
+          "group": "K",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "CCY3101_K_Lect._Monday_11",
+          "courseName": "Software Security - CCY3101",
+          "courseCode": "CCY3101",
+          "group": "K",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "O",
+      "sessions": [
+        {
+          "id": "CCY3101_O_Sec._Saturday_7",
+          "courseName": "Software Security - CCY3101",
+          "courseCode": "CCY3101",
+          "group": "O",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "CCY3101_O_Lect._Tuesday_9",
+          "courseName": "Software Security - CCY3101",
+          "courseCode": "CCY3101",
+          "group": "O",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "I",
+      "sessions": [
+        {
+          "id": "CCY3101_I_Lect._Saturday_9",
+          "courseName": "Software Security - CCY3101",
+          "courseCode": "CCY3101",
+          "group": "I",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "CCY3101_I_Sec._Sunday_3",
+          "courseName": "Software Security - CCY3101",
+          "courseCode": "CCY3101",
+          "group": "I",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "M",
+      "sessions": [
+        {
+          "id": "CCY3101_M_Lect._Saturday_11",
+          "courseName": "Software Security - CCY3101",
+          "courseCode": "CCY3101",
+          "group": "M",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "CCY3101_M_Sec._Monday_7",
+          "courseName": "Software Security - CCY3101",
+          "courseCode": "CCY3101",
+          "group": "M",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "N",
+      "sessions": [
+        {
+          "id": "CCY3101_N_Lect._Saturday_11",
+          "courseName": "Software Security - CCY3101",
+          "courseCode": "CCY3101",
+          "group": "N",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "CCY3101_N_Sec._Monday_3",
+          "courseName": "Software Security - CCY3101",
+          "courseCode": "CCY3101",
+          "group": "N",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "J",
+      "sessions": [
+        {
+          "id": "CCY3101_J_Sec._Sunday_5",
+          "courseName": "Software Security - CCY3101",
+          "courseCode": "CCY3101",
+          "group": "J",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "CCY3101_J_Lect._Monday_9",
+          "courseName": "Software Security - CCY3101",
+          "courseCode": "CCY3101",
+          "group": "J",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "L",
+      "sessions": [
+        {
+          "id": "CCY3101_L_Sec._Sunday_7",
+          "courseName": "Software Security - CCY3101",
+          "courseCode": "CCY3101",
+          "group": "L",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "CCY3101_L_Lect._Monday_11",
+          "courseName": "Software Security - CCY3101",
+          "courseCode": "CCY3101",
+          "group": "L",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CCY3101_K_Sec._Saturday_5",
+      "courseName": "Software Security - CCY3101",
+      "courseCode": "CCY3101",
+      "group": "K",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CCY3101_O_Sec._Saturday_7",
+      "courseName": "Software Security - CCY3101",
+      "courseCode": "CCY3101",
+      "group": "O",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CCY3101_I_Lect._Saturday_9",
+      "courseName": "Software Security - CCY3101",
+      "courseCode": "CCY3101",
+      "group": "I",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CCY3101_M_Lect._Saturday_11",
+      "courseName": "Software Security - CCY3101",
+      "courseCode": "CCY3101",
+      "group": "M",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CCY3101_N_Lect._Saturday_11",
+      "courseName": "Software Security - CCY3101",
+      "courseCode": "CCY3101",
+      "group": "N",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CCY3101_I_Sec._Sunday_3",
+      "courseName": "Software Security - CCY3101",
+      "courseCode": "CCY3101",
+      "group": "I",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CCY3101_J_Sec._Sunday_5",
+      "courseName": "Software Security - CCY3101",
+      "courseCode": "CCY3101",
+      "group": "J",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CCY3101_L_Sec._Sunday_7",
+      "courseName": "Software Security - CCY3101",
+      "courseCode": "CCY3101",
+      "group": "L",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CCY3101_N_Sec._Monday_3",
+      "courseName": "Software Security - CCY3101",
+      "courseCode": "CCY3101",
+      "group": "N",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CCY3101_M_Sec._Monday_7",
+      "courseName": "Software Security - CCY3101",
+      "courseCode": "CCY3101",
+      "group": "M",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CCY3101_J_Lect._Monday_9",
+      "courseName": "Software Security - CCY3101",
+      "courseCode": "CCY3101",
+      "group": "J",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CCY3101_K_Lect._Monday_11",
+      "courseName": "Software Security - CCY3101",
+      "courseCode": "CCY3101",
+      "group": "K",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CCY3101_L_Lect._Monday_11",
+      "courseName": "Software Security - CCY3101",
+      "courseCode": "CCY3101",
+      "group": "L",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CCY3101_O_Lect._Tuesday_9",
+      "courseName": "Software Security - CCY3101",
+      "courseCode": "CCY3101",
+      "group": "O",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "الأمن السيبرانى - ق.م"
+  ],
+  "periods": [
+    "5"
+  ]
+}

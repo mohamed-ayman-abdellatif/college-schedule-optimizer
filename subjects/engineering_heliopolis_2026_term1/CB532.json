@@ -1,0 +1,91 @@
+{
+  "id": "CB532",
+  "name": "ENVIRONMENTAL& SANITARY ENGINEERING - CB532",
+  "code": "CB532",
+  "instructors": [
+    "د. علا ضياء صلاح الدين المنيرى",
+    "احمد محمد عبدالحميد عبدالهادى بلطيه"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CB532_A_Lect._Sunday_5",
+          "courseName": "ENVIRONMENTAL& SANITARY ENGINEERING - CB532",
+          "courseCode": "CB532",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. علا ضياء صلاح الدين المنيرى",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "CB532_A_Sec._Sunday_7",
+          "courseName": "ENVIRONMENTAL& SANITARY ENGINEERING - CB532",
+          "courseCode": "CB532",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "احمد محمد عبدالحميد عبدالهادى بلطيه",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. علا ضياء صلاح الدين المنيرى",
+        "احمد محمد عبدالحميد عبدالهادى بلطيه"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "CB532_A_Lect._Sunday_5",
+      "courseName": "ENVIRONMENTAL& SANITARY ENGINEERING - CB532",
+      "courseCode": "CB532",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. علا ضياء صلاح الدين المنيرى",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "CB532_A_Sec._Sunday_7",
+      "courseName": "ENVIRONMENTAL& SANITARY ENGINEERING - CB532",
+      "courseCode": "CB532",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "احمد محمد عبدالحميد عبدالهادى بلطيه",
+      "color": "#14B8A6",
+      "room": ""
+    }
+  ],
+  "color": "#14B8A6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م"
+  ],
+  "periods": [
+    "9"
+  ]
+}

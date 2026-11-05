@@ -1,0 +1,91 @@
+{
+  "id": "AR444",
+  "name": "INTRO. TO MANAGEMENT, PRACTICE & LAW - AR444",
+  "code": "AR444",
+  "instructors": [
+    "د. ريهام عثمان السيد ابوالسعود",
+    "ريهام عثمان السيد ابوالسعود"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "AR444_A_Lect._Thursday_3",
+          "courseName": "INTRO. TO MANAGEMENT, PRACTICE & LAW - AR444",
+          "courseCode": "AR444",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. ريهام عثمان السيد ابوالسعود",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "AR444_A_Sec._Thursday_5",
+          "courseName": "INTRO. TO MANAGEMENT, PRACTICE & LAW - AR444",
+          "courseCode": "AR444",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "ريهام عثمان السيد ابوالسعود",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. ريهام عثمان السيد ابوالسعود",
+        "ريهام عثمان السيد ابوالسعود"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "AR444_A_Lect._Thursday_3",
+      "courseName": "INTRO. TO MANAGEMENT, PRACTICE & LAW - AR444",
+      "courseCode": "AR444",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. ريهام عثمان السيد ابوالسعود",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "AR444_A_Sec._Thursday_5",
+      "courseName": "INTRO. TO MANAGEMENT, PRACTICE & LAW - AR444",
+      "courseCode": "AR444",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "ريهام عثمان السيد ابوالسعود",
+      "color": "#F59E0B",
+      "room": ""
+    }
+  ],
+  "color": "#F59E0B",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م"
+  ],
+  "periods": [
+    "8"
+  ]
+}

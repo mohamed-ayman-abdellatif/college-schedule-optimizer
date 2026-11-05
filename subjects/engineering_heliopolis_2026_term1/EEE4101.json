@@ -1,0 +1,120 @@
+{
+  "id": "EEE4101",
+  "name": "Embedded Control Systems - EEE4101*",
+  "code": "EEE4101",
+  "instructors": [
+    "يوسف حسام محمد عبدالفتاح",
+    "د. مصطفى ابراهيم محمد مصطفى مرعى"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEE4101_A_Lab._Sunday_7",
+          "courseName": "Embedded Control Systems - EEE4101*",
+          "courseCode": "EEE4101",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "يوسف حسام محمد عبدالفتاح",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EEE4101_A_Sec._Tuesday_1",
+          "courseName": "Embedded Control Systems - EEE4101*",
+          "courseCode": "EEE4101",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "يوسف حسام محمد عبدالفتاح",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EEE4101_A_Lect._Thursday_1",
+          "courseName": "Embedded Control Systems - EEE4101*",
+          "courseCode": "EEE4101",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. مصطفى ابراهيم محمد مصطفى مرعى",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "يوسف حسام محمد عبدالفتاح",
+        "د. مصطفى ابراهيم محمد مصطفى مرعى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE4101_A_Lab._Sunday_7",
+      "courseName": "Embedded Control Systems - EEE4101*",
+      "courseCode": "EEE4101",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "يوسف حسام محمد عبدالفتاح",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EEE4101_A_Sec._Tuesday_1",
+      "courseName": "Embedded Control Systems - EEE4101*",
+      "courseCode": "EEE4101",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "يوسف حسام محمد عبدالفتاح",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EEE4101_A_Lect._Thursday_1",
+      "courseName": "Embedded Control Systems - EEE4101*",
+      "courseCode": "EEE4101",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. مصطفى ابراهيم محمد مصطفى مرعى",
+      "color": "#06B6D4",
+      "room": ""
+    }
+  ],
+  "color": "#06B6D4",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية ق م -Northampton*",
+    "هندسة كهربية وتحكم ق.م*"
+  ],
+  "periods": [
+    "6"
+  ]
+}

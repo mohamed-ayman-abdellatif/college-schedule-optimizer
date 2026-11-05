@@ -1,0 +1,285 @@
+{
+  "id": "ECE3403",
+  "name": "Data Analytics & Optimiz. using Python - ECE3403",
+  "code": "ECE3403",
+  "instructors": [
+    "باتريك نشات نعيم محارب",
+    "د. احمد فاروق ابراهيم جعفر"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECE3403_A_Lab._Saturday_11",
+          "courseName": "Data Analytics & Optimiz. using Python - ECE3403",
+          "courseCode": "ECE3403",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "باتريك نشات نعيم محارب",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "ECE3403_A_Lect._Tuesday_7",
+          "courseName": "Data Analytics & Optimiz. using Python - ECE3403",
+          "courseCode": "ECE3403",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. احمد فاروق ابراهيم جعفر",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "باتريك نشات نعيم محارب",
+        "د. احمد فاروق ابراهيم جعفر"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECE3403_B_Lab._Sunday_11",
+          "courseName": "Data Analytics & Optimiz. using Python - ECE3403",
+          "courseCode": "ECE3403",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Sunday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "ECE3403_B_Lect._Tuesday_7",
+          "courseName": "Data Analytics & Optimiz. using Python - ECE3403",
+          "courseCode": "ECE3403",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. احمد فاروق ابراهيم جعفر",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "ECE3403_B_Lab._Saturday_7",
+          "courseName": "Data Analytics & Optimiz. using Python - ECE3403*",
+          "courseCode": "ECE3403",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "باتريك نشات نعيم محارب",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "ECE3403_B_Lect._Monday_9",
+          "courseName": "Data Analytics & Optimiz. using Python - ECE3403*",
+          "courseCode": "ECE3403",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. احمد فاروق ابراهيم جعفر",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. احمد فاروق ابراهيم جعفر",
+        "باتريك نشات نعيم محارب"
+      ]
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "ECE3403_C_Lab._Saturday_9",
+          "courseName": "Data Analytics & Optimiz. using Python - ECE3403*",
+          "courseCode": "ECE3403",
+          "group": "C",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "باتريك نشات نعيم محارب",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "ECE3403_C_Lect._Monday_9",
+          "courseName": "Data Analytics & Optimiz. using Python - ECE3403*",
+          "courseCode": "ECE3403",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. احمد فاروق ابراهيم جعفر",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "باتريك نشات نعيم محارب",
+        "د. احمد فاروق ابراهيم جعفر"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECE3403_A_Lab._Saturday_11",
+      "courseName": "Data Analytics & Optimiz. using Python - ECE3403",
+      "courseCode": "ECE3403",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "باتريك نشات نعيم محارب",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "ECE3403_A_Lect._Tuesday_7",
+      "courseName": "Data Analytics & Optimiz. using Python - ECE3403",
+      "courseCode": "ECE3403",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. احمد فاروق ابراهيم جعفر",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "ECE3403_B_Lab._Sunday_11",
+      "courseName": "Data Analytics & Optimiz. using Python - ECE3403",
+      "courseCode": "ECE3403",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Sunday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "ECE3403_B_Lect._Tuesday_7",
+      "courseName": "Data Analytics & Optimiz. using Python - ECE3403",
+      "courseCode": "ECE3403",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. احمد فاروق ابراهيم جعفر",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "ECE3403_B_Lab._Saturday_7",
+      "courseName": "Data Analytics & Optimiz. using Python - ECE3403*",
+      "courseCode": "ECE3403",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "باتريك نشات نعيم محارب",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "ECE3403_B_Lect._Monday_9",
+      "courseName": "Data Analytics & Optimiz. using Python - ECE3403*",
+      "courseCode": "ECE3403",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. احمد فاروق ابراهيم جعفر",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "ECE3403_C_Lab._Saturday_9",
+      "courseName": "Data Analytics & Optimiz. using Python - ECE3403*",
+      "courseCode": "ECE3403",
+      "group": "C",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "باتريك نشات نعيم محارب",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "ECE3403_C_Lect._Monday_9",
+      "courseName": "Data Analytics & Optimiz. using Python - ECE3403*",
+      "courseCode": "ECE3403",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. احمد فاروق ابراهيم جعفر",
+      "color": "#F59E0B",
+      "room": ""
+    }
+  ],
+  "color": "#F59E0B",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "حاسبات ق م - Northampton",
+    "حاسبات ق م - Northampton*",
+    "هندسة الحاسبات ق.م",
+    "هندسة الحاسبات ق.م*"
+  ],
+  "periods": [
+    "5",
+    "6"
+  ]
+}

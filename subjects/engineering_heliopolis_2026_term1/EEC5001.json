@@ -1,0 +1,57 @@
+{
+  "id": "EEC5001",
+  "name": "Graduation Project (1) - EEC5001",
+  "code": "EEC5001",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EEC5001_B_Lect._Thursday_13",
+          "courseName": "Graduation Project (1) - EEC5001",
+          "courseCode": "EEC5001",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 13,
+          "endSlot": 14,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEC5001_B_Lect._Thursday_13",
+      "courseName": "Graduation Project (1) - EEC5001",
+      "courseCode": "EEC5001",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 13,
+      "endSlot": 14,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    }
+  ],
+  "color": "#14B8A6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هـ.الكترونات واتصالات ق.م*"
+  ],
+  "periods": [
+    "8"
+  ]
+}

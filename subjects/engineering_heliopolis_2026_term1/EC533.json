@@ -1,0 +1,113 @@
+{
+  "id": "EC533",
+  "name": "DIGITAL SIGNAL PROCESSING - EC533",
+  "code": "EC533",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EC533_B_Lab._Saturday_11",
+          "courseName": "DIGITAL SIGNAL PROCESSING - EC533",
+          "courseCode": "EC533",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EC533_B_Lect._Monday_3",
+          "courseName": "DIGITAL SIGNAL PROCESSING - EC533",
+          "courseCode": "EC533",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EC533_B_Sec._Tuesday_7",
+          "courseName": "DIGITAL SIGNAL PROCESSING - EC533",
+          "courseCode": "EC533",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "EC533_B_Lab._Saturday_11",
+      "courseName": "DIGITAL SIGNAL PROCESSING - EC533",
+      "courseCode": "EC533",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EC533_B_Lect._Monday_3",
+      "courseName": "DIGITAL SIGNAL PROCESSING - EC533",
+      "courseCode": "EC533",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EC533_B_Sec._Tuesday_7",
+      "courseName": "DIGITAL SIGNAL PROCESSING - EC533",
+      "courseCode": "EC533",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    }
+  ],
+  "color": "#10B981",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هـ.الكترونات واتصالات ق.م"
+  ],
+  "periods": [
+    "10"
+  ]
+}

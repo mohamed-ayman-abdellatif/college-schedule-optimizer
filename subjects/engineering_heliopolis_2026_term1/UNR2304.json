@@ -1,0 +1,219 @@
+{
+  "id": "UNR2304",
+  "name": "Introduction to leadership - UNR2304",
+  "code": "UNR2304",
+  "instructors": [
+    "د. مجد الدين عبدالواحد محمد"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "UNR2304_A_Lect._Sunday_5",
+          "courseName": "Introduction to leadership - UNR2304",
+          "courseCode": "UNR2304",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. مجد الدين عبدالواحد محمد",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. مجد الدين عبدالواحد محمد"
+      ]
+    },
+    {
+      "group": "M",
+      "sessions": [
+        {
+          "id": "UNR2304_M_Lect._Sunday_9",
+          "courseName": "Introduction to leadership - UNR2304",
+          "courseCode": "UNR2304",
+          "group": "M",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. مجد الدين عبدالواحد محمد",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. مجد الدين عبدالواحد محمد"
+      ]
+    },
+    {
+      "group": "V",
+      "sessions": [
+        {
+          "id": "UNR2304_V_Lect._Sunday_9",
+          "courseName": "Introduction to leadership - UNR2304",
+          "courseCode": "UNR2304",
+          "group": "V",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. مجد الدين عبدالواحد محمد",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. مجد الدين عبدالواحد محمد"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "UNR2304_B_Lect._Tuesday_3",
+          "courseName": "Introduction to leadership - UNR2304",
+          "courseCode": "UNR2304",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. مجد الدين عبدالواحد محمد",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. مجد الدين عبدالواحد محمد"
+      ]
+    },
+    {
+      "group": "L",
+      "sessions": [
+        {
+          "id": "UNR2304_L_Lect._Tuesday_5",
+          "courseName": "Introduction to leadership - UNR2304",
+          "courseCode": "UNR2304",
+          "group": "L",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. مجد الدين عبدالواحد محمد",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. مجد الدين عبدالواحد محمد"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "UNR2304_A_Lect._Sunday_5",
+      "courseName": "Introduction to leadership - UNR2304",
+      "courseCode": "UNR2304",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. مجد الدين عبدالواحد محمد",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "UNR2304_M_Lect._Sunday_9",
+      "courseName": "Introduction to leadership - UNR2304",
+      "courseCode": "UNR2304",
+      "group": "M",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. مجد الدين عبدالواحد محمد",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "UNR2304_V_Lect._Sunday_9",
+      "courseName": "Introduction to leadership - UNR2304",
+      "courseCode": "UNR2304",
+      "group": "V",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. مجد الدين عبدالواحد محمد",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "UNR2304_B_Lect._Tuesday_3",
+      "courseName": "Introduction to leadership - UNR2304",
+      "courseCode": "UNR2304",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. مجد الدين عبدالواحد محمد",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "UNR2304_L_Lect._Tuesday_5",
+      "courseName": "Introduction to leadership - UNR2304",
+      "courseCode": "UNR2304",
+      "group": "L",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. مجد الدين عبدالواحد محمد",
+      "color": "#6366F1",
+      "room": ""
+    }
+  ],
+  "color": "#6366F1",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "ميكانيكا ق م -Northampton*",
+    "هـ.ميكانيكية ق.م*",
+    "هندسة التشيد والبناء ق.م*",
+    "هندسة كهربية ق م -Northampton*",
+    "هندسة كهربية وتحكم ق.م*",
+    "هندسة معمارية ق.م*"
+  ],
+  "periods": [
+    "9",
+    "7"
+  ]
+}

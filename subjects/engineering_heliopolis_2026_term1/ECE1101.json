@@ -1,0 +1,581 @@
+{
+  "id": "ECE1101",
+  "name": "Programming Fundamentals&Problem Solving - ECE1101",
+  "code": "ECE1101",
+  "instructors": [
+    "محمد حسام محمد علي",
+    "د. صلاح امين محمد عليوة",
+    "د. اشرف فاروق محمود تمام",
+    "ندى حسام محمد شرقاوى",
+    "د. سارة صابر بيومى الباجورى",
+    "اشرف فاروق محمود تمام",
+    "احمد زكريا نور محمد طلحه",
+    "رقيه محمود السيد التحيوى",
+    "مجد نبيل نصرى نعمه"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECE1101_B_Lab._Saturday_5",
+          "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+          "courseCode": "ECE1101",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "محمد حسام محمد علي",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "ECE1101_B_Lect._Sunday_7",
+          "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+          "courseCode": "ECE1101",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. صلاح امين محمد عليوة",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "محمد حسام محمد علي",
+        "د. صلاح امين محمد عليوة"
+      ]
+    },
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECE1101_A_Lab._Saturday_11",
+          "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+          "courseCode": "ECE1101",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "ECE1101_A_Lect._Monday_5",
+          "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+          "courseCode": "ECE1101",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. اشرف فاروق محمود تمام",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. اشرف فاروق محمود تمام"
+      ]
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "ECE1101_F_Lab._Sunday_1",
+          "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+          "courseCode": "ECE1101",
+          "group": "F",
+          "type": "Lab.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "ندى حسام محمد شرقاوى",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "ECE1101_F_Lect._Wednesday_1",
+          "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+          "courseCode": "ECE1101",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. سارة صابر بيومى الباجورى",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ندى حسام محمد شرقاوى",
+        "د. سارة صابر بيومى الباجورى"
+      ]
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "ECE1101_E_Lab._Sunday_3",
+          "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+          "courseCode": "ECE1101",
+          "group": "E",
+          "type": "Lab.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "ندى حسام محمد شرقاوى",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "ECE1101_E_Lect._Sunday_7",
+          "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+          "courseCode": "ECE1101",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. صلاح امين محمد عليوة",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ندى حسام محمد شرقاوى",
+        "د. صلاح امين محمد عليوة"
+      ]
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "ECE1101_C_Lab._Sunday_9",
+          "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+          "courseCode": "ECE1101",
+          "group": "C",
+          "type": "Lab.",
+          "day": "Sunday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "اشرف فاروق محمود تمام",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "ECE1101_C_Lect._Monday_5",
+          "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+          "courseCode": "ECE1101",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. اشرف فاروق محمود تمام",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "اشرف فاروق محمود تمام",
+        "د. اشرف فاروق محمود تمام"
+      ]
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "ECE1101_D_Lect._Sunday_3",
+          "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+          "courseCode": "ECE1101",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. صلاح امين محمد عليوة",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "ECE1101_D_Lab._Wednesday_7",
+          "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+          "courseCode": "ECE1101",
+          "group": "D",
+          "type": "Lab.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "احمد زكريا نور محمد طلحه",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. صلاح امين محمد عليوة",
+        "احمد زكريا نور محمد طلحه"
+      ]
+    },
+    {
+      "group": "H",
+      "sessions": [
+        {
+          "id": "ECE1101_H_Lect._Sunday_3",
+          "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+          "courseCode": "ECE1101",
+          "group": "H",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. صلاح امين محمد عليوة",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "ECE1101_H_Lab._Tuesday_5",
+          "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+          "courseCode": "ECE1101",
+          "group": "H",
+          "type": "Lab.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "رقيه محمود السيد التحيوى",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. صلاح امين محمد عليوة",
+        "رقيه محمود السيد التحيوى"
+      ]
+    },
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "ECE1101_G_Lect._Wednesday_1",
+          "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+          "courseCode": "ECE1101",
+          "group": "G",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. سارة صابر بيومى الباجورى",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "ECE1101_G_Lab._Wednesday_7",
+          "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+          "courseCode": "ECE1101",
+          "group": "G",
+          "type": "Lab.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "مجد نبيل نصرى نعمه",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. سارة صابر بيومى الباجورى",
+        "مجد نبيل نصرى نعمه"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECE1101_B_Lab._Saturday_5",
+      "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+      "courseCode": "ECE1101",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "محمد حسام محمد علي",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "ECE1101_B_Lect._Sunday_7",
+      "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+      "courseCode": "ECE1101",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. صلاح امين محمد عليوة",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "ECE1101_A_Lab._Saturday_11",
+      "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+      "courseCode": "ECE1101",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "ECE1101_A_Lect._Monday_5",
+      "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+      "courseCode": "ECE1101",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. اشرف فاروق محمود تمام",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "ECE1101_F_Lab._Sunday_1",
+      "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+      "courseCode": "ECE1101",
+      "group": "F",
+      "type": "Lab.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "ندى حسام محمد شرقاوى",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "ECE1101_F_Lect._Wednesday_1",
+      "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+      "courseCode": "ECE1101",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. سارة صابر بيومى الباجورى",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "ECE1101_E_Lab._Sunday_3",
+      "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+      "courseCode": "ECE1101",
+      "group": "E",
+      "type": "Lab.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "ندى حسام محمد شرقاوى",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "ECE1101_E_Lect._Sunday_7",
+      "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+      "courseCode": "ECE1101",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. صلاح امين محمد عليوة",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "ECE1101_C_Lab._Sunday_9",
+      "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+      "courseCode": "ECE1101",
+      "group": "C",
+      "type": "Lab.",
+      "day": "Sunday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "اشرف فاروق محمود تمام",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "ECE1101_C_Lect._Monday_5",
+      "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+      "courseCode": "ECE1101",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. اشرف فاروق محمود تمام",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "ECE1101_D_Lect._Sunday_3",
+      "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+      "courseCode": "ECE1101",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. صلاح امين محمد عليوة",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "ECE1101_D_Lab._Wednesday_7",
+      "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+      "courseCode": "ECE1101",
+      "group": "D",
+      "type": "Lab.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "احمد زكريا نور محمد طلحه",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "ECE1101_H_Lect._Sunday_3",
+      "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+      "courseCode": "ECE1101",
+      "group": "H",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. صلاح امين محمد عليوة",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "ECE1101_H_Lab._Tuesday_5",
+      "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+      "courseCode": "ECE1101",
+      "group": "H",
+      "type": "Lab.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "رقيه محمود السيد التحيوى",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "ECE1101_G_Lect._Wednesday_1",
+      "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+      "courseCode": "ECE1101",
+      "group": "G",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. سارة صابر بيومى الباجورى",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "ECE1101_G_Lab._Wednesday_7",
+      "courseName": "Programming Fundamentals&Problem Solving - ECE1101",
+      "courseCode": "ECE1101",
+      "group": "G",
+      "type": "Lab.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "مجد نبيل نصرى نعمه",
+      "color": "#3B82F6",
+      "room": ""
+    }
+  ],
+  "color": "#3B82F6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "الكترونيات ق م - Northamption //",
+    "الكترونيات ق م - Northamption*",
+    "حاسبات ق م - Northampton",
+    "ميكانيكا ق م -Northampton",
+    "ميكانيكا ق م -Northampton*",
+    "هـ.الكترونات واتصالات ق.م",
+    "هـ.الكترونات واتصالات ق.م*",
+    "هـ.ميكانيكية ق.م*",
+    "هندسة التشيد والبناء ق.م",
+    "هندسة الحاسبات ق.م",
+    "هندسة الحاسبات ق.م*",
+    "هندسة كهربية وتحكم ق.م",
+    "هندسة معمارية ق.م",
+    "هندسة معمارية ق.م*",
+    "هندسة معمارية-Cardiff-ق م //",
+    "هندسة ميكانيكية-ق م //"
+  ],
+  "periods": [
+    "2"
+  ]
+}

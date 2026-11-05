@@ -1,0 +1,57 @@
+{
+  "id": "CIT3901",
+  "name": "Professional Training in Data Science I - CIT3901",
+  "code": "CIT3901",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CIT3901_A_Lab._Sunday_9",
+          "courseName": "Professional Training in Data Science I - CIT3901",
+          "courseCode": "CIT3901",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Sunday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": false,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CIT3901_A_Lab._Sunday_9",
+      "courseName": "Professional Training in Data Science I - CIT3901",
+      "courseCode": "CIT3901",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Sunday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    }
+  ],
+  "color": "#06B6D4",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "نظم معلومات -ق م"
+  ],
+  "periods": [
+    "6"
+  ]
+}

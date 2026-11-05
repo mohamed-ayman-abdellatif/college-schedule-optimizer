@@ -1,0 +1,92 @@
+{
+  "id": "EEC4601",
+  "name": "Introduction to Biomedical Engineering - EEC4601*",
+  "code": "EEC4601",
+  "instructors": [
+    "مصطفى محمد السيد جودة",
+    "د. اسماعيل محمد ابراهيم البدوى"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEC4601_A_Sec._Monday_5",
+          "courseName": "Introduction to Biomedical Engineering - EEC4601*",
+          "courseCode": "EEC4601",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "مصطفى محمد السيد جودة",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEC4601_A_Lect._Wednesday_5",
+          "courseName": "Introduction to Biomedical Engineering - EEC4601*",
+          "courseCode": "EEC4601",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. اسماعيل محمد ابراهيم البدوى",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "مصطفى محمد السيد جودة",
+        "د. اسماعيل محمد ابراهيم البدوى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEC4601_A_Sec._Monday_5",
+      "courseName": "Introduction to Biomedical Engineering - EEC4601*",
+      "courseCode": "EEC4601",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "مصطفى محمد السيد جودة",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEC4601_A_Lect._Wednesday_5",
+      "courseName": "Introduction to Biomedical Engineering - EEC4601*",
+      "courseCode": "EEC4601",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. اسماعيل محمد ابراهيم البدوى",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "الكترونيات ق م - Northamption*",
+    "هـ.الكترونات واتصالات ق.م*"
+  ],
+  "periods": [
+    "7"
+  ]
+}

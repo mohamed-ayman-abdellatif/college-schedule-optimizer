@@ -1,0 +1,119 @@
+{
+  "id": "BA123",
+  "name": "MATHEMATICS I - BA123",
+  "code": "BA123",
+  "instructors": [
+    "فاطمة الزهراء جمعة عبد الحليم ابراهيم",
+    "د. محمد السيد محمد علي غياض"
+  ],
+  "groups": [
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "BA123_D_Sec._Saturday_5",
+          "courseName": "MATHEMATICS I - BA123",
+          "courseCode": "BA123",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "فاطمة الزهراء جمعة عبد الحليم ابراهيم",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "BA123_D_Lect._Thursday_5",
+          "courseName": "MATHEMATICS I - BA123",
+          "courseCode": "BA123",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. محمد السيد محمد علي غياض",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "BA123_D_Lect._Thursday_7",
+          "courseName": "MATHEMATICS I - BA123",
+          "courseCode": "BA123",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. محمد السيد محمد علي غياض",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "فاطمة الزهراء جمعة عبد الحليم ابراهيم",
+        "د. محمد السيد محمد علي غياض"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "BA123_D_Sec._Saturday_5",
+      "courseName": "MATHEMATICS I - BA123",
+      "courseCode": "BA123",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "فاطمة الزهراء جمعة عبد الحليم ابراهيم",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "BA123_D_Lect._Thursday_5",
+      "courseName": "MATHEMATICS I - BA123",
+      "courseCode": "BA123",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. محمد السيد محمد علي غياض",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "BA123_D_Lect._Thursday_7",
+      "courseName": "MATHEMATICS I - BA123",
+      "courseCode": "BA123",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. محمد السيد محمد علي غياض",
+      "color": "#10B981",
+      "room": ""
+    }
+  ],
+  "color": "#10B981",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م"
+  ],
+  "periods": [
+    "1"
+  ]
+}

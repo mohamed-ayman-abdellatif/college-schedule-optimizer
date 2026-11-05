@@ -1,0 +1,153 @@
+{
+  "id": "CC532",
+  "name": "Cloud Computing - CC532",
+  "code": "CC532",
+  "instructors": [
+    "سيف الدين هانيء اسماعيل عبدالرازق"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "CC532_B_Lab._Sunday_3",
+          "courseName": "Cloud Computing - CC532",
+          "courseCode": "CC532",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "CC532_B_Lect._Sunday_9",
+          "courseName": "Cloud Computing - CC532",
+          "courseCode": "CC532",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CC532_A_Lect._Sunday_11",
+          "courseName": "Cloud Computing - CC532",
+          "courseCode": "CC532",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "CC532_A_Lab._Tuesday_9",
+          "courseName": "Cloud Computing - CC532",
+          "courseCode": "CC532",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "سيف الدين هانيء اسماعيل عبدالرازق",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "سيف الدين هانيء اسماعيل عبدالرازق"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "CC532_B_Lab._Sunday_3",
+      "courseName": "Cloud Computing - CC532",
+      "courseCode": "CC532",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "CC532_B_Lect._Sunday_9",
+      "courseName": "Cloud Computing - CC532",
+      "courseCode": "CC532",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "CC532_A_Lect._Sunday_11",
+      "courseName": "Cloud Computing - CC532",
+      "courseCode": "CC532",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "CC532_A_Lab._Tuesday_9",
+      "courseName": "Cloud Computing - CC532",
+      "courseCode": "CC532",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "سيف الدين هانيء اسماعيل عبدالرازق",
+      "color": "#6366F1",
+      "room": ""
+    }
+  ],
+  "color": "#6366F1",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة الحاسبات ق.م"
+  ],
+  "periods": [
+    "10"
+  ]
+}

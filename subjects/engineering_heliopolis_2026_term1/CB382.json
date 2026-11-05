@@ -1,0 +1,91 @@
+{
+  "id": "CB382",
+  "name": "WATER RESOURCES ENGINEERING - CB382",
+  "code": "CB382",
+  "instructors": [
+    "د. محمد انس محمد الملا",
+    "محمد احمد عبدالرازق علي"
+  ],
+  "groups": [
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "CB382_C_Lect._Thursday_5",
+          "courseName": "WATER RESOURCES ENGINEERING - CB382",
+          "courseCode": "CB382",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 8,
+          "duration": 4,
+          "instructor": "د. محمد انس محمد الملا",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "CB382_C_Sec._Thursday_9",
+          "courseName": "WATER RESOURCES ENGINEERING - CB382",
+          "courseCode": "CB382",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "محمد احمد عبدالرازق علي",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد انس محمد الملا",
+        "محمد احمد عبدالرازق علي"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "CB382_C_Lect._Thursday_5",
+      "courseName": "WATER RESOURCES ENGINEERING - CB382",
+      "courseCode": "CB382",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 8,
+      "duration": 4,
+      "instructor": "د. محمد انس محمد الملا",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "CB382_C_Sec._Thursday_9",
+      "courseName": "WATER RESOURCES ENGINEERING - CB382",
+      "courseCode": "CB382",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "محمد احمد عبدالرازق علي",
+      "color": "#3B82F6",
+      "room": ""
+    }
+  ],
+  "color": "#3B82F6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م"
+  ],
+  "periods": [
+    "5"
+  ]
+}

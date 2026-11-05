@@ -1,0 +1,159 @@
+{
+  "id": "ME455",
+  "name": "COMPUTER AIDED DESIGN - ME455",
+  "code": "ME455",
+  "instructors": [
+    "د. وائل جلال محمد قطب ابوعطا",
+    "اسلام ربيع عبدالعزيز محمد",
+    "وائل جلال محمد قطب ابوعطا"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ME455_A_Lect._Wednesday_7",
+          "courseName": "COMPUTER AIDED DESIGN - ME455",
+          "courseCode": "ME455",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. وائل جلال محمد قطب ابوعطا",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "ME455_A_Sec._Wednesday_9",
+          "courseName": "COMPUTER AIDED DESIGN - ME455",
+          "courseCode": "ME455",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 12,
+          "duration": 4,
+          "instructor": "اسلام ربيع عبدالعزيز محمد",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. وائل جلال محمد قطب ابوعطا",
+        "اسلام ربيع عبدالعزيز محمد"
+      ]
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "ME455_D_Lect._Thursday_7",
+          "courseName": "COMPUTER AIDED DESIGN - ME455",
+          "courseCode": "ME455",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. وائل جلال محمد قطب ابوعطا",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "ME455_D_Sec._Thursday_9",
+          "courseName": "COMPUTER AIDED DESIGN - ME455",
+          "courseCode": "ME455",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 12,
+          "duration": 4,
+          "instructor": "وائل جلال محمد قطب ابوعطا",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. وائل جلال محمد قطب ابوعطا",
+        "وائل جلال محمد قطب ابوعطا"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ME455_A_Lect._Wednesday_7",
+      "courseName": "COMPUTER AIDED DESIGN - ME455",
+      "courseCode": "ME455",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. وائل جلال محمد قطب ابوعطا",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "ME455_A_Sec._Wednesday_9",
+      "courseName": "COMPUTER AIDED DESIGN - ME455",
+      "courseCode": "ME455",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 12,
+      "duration": 4,
+      "instructor": "اسلام ربيع عبدالعزيز محمد",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "ME455_D_Lect._Thursday_7",
+      "courseName": "COMPUTER AIDED DESIGN - ME455",
+      "courseCode": "ME455",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. وائل جلال محمد قطب ابوعطا",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "ME455_D_Sec._Thursday_9",
+      "courseName": "COMPUTER AIDED DESIGN - ME455",
+      "courseCode": "ME455",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 12,
+      "duration": 4,
+      "instructor": "وائل جلال محمد قطب ابوعطا",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هـ.ميكانيكية ق.م"
+  ],
+  "periods": [
+    "8"
+  ]
+}

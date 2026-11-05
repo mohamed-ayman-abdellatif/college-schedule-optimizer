@@ -1,0 +1,279 @@
+{
+  "id": "CCS2401",
+  "name": "Data Structures and Algorithms - CCS2401",
+  "code": "CCS2401",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "CCS2401_D_Sec._Saturday_7",
+          "courseName": "Data Structures and Algorithms - CCS2401",
+          "courseCode": "CCS2401",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "CCS2401_D_Lect._Tuesday_5",
+          "courseName": "Data Structures and Algorithms - CCS2401",
+          "courseCode": "CCS2401",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "CCS2401_E_Sec._Saturday_9",
+          "courseName": "Data Structures and Algorithms - CCS2401",
+          "courseCode": "CCS2401",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "CCS2401_E_Lect._Tuesday_3",
+          "courseName": "Data Structures and Algorithms - CCS2401",
+          "courseCode": "CCS2401",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "CCS2401_F_Sec._Sunday_5",
+          "courseName": "Data Structures and Algorithms - CCS2401",
+          "courseCode": "CCS2401",
+          "group": "F",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "CCS2401_F_Lect._Tuesday_1",
+          "courseName": "Data Structures and Algorithms - CCS2401",
+          "courseCode": "CCS2401",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "CCS2401_G_Sec._Sunday_7",
+          "courseName": "Data Structures and Algorithms - CCS2401",
+          "courseCode": "CCS2401",
+          "group": "G",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "CCS2401_G_Lect._Tuesday_1",
+          "courseName": "Data Structures and Algorithms - CCS2401",
+          "courseCode": "CCS2401",
+          "group": "G",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CCS2401_D_Sec._Saturday_7",
+      "courseName": "Data Structures and Algorithms - CCS2401",
+      "courseCode": "CCS2401",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CCS2401_D_Lect._Tuesday_5",
+      "courseName": "Data Structures and Algorithms - CCS2401",
+      "courseCode": "CCS2401",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CCS2401_E_Sec._Saturday_9",
+      "courseName": "Data Structures and Algorithms - CCS2401",
+      "courseCode": "CCS2401",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CCS2401_E_Lect._Tuesday_3",
+      "courseName": "Data Structures and Algorithms - CCS2401",
+      "courseCode": "CCS2401",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CCS2401_F_Sec._Sunday_5",
+      "courseName": "Data Structures and Algorithms - CCS2401",
+      "courseCode": "CCS2401",
+      "group": "F",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CCS2401_F_Lect._Tuesday_1",
+      "courseName": "Data Structures and Algorithms - CCS2401",
+      "courseCode": "CCS2401",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CCS2401_G_Sec._Sunday_7",
+      "courseName": "Data Structures and Algorithms - CCS2401",
+      "courseCode": "CCS2401",
+      "group": "G",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CCS2401_G_Lect._Tuesday_1",
+      "courseName": "Data Structures and Algorithms - CCS2401",
+      "courseCode": "CCS2401",
+      "group": "G",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "الأمن السيبرانى - ق.م",
+    "علوم الحاسب ق.م //",
+    "هندسة البرمجيات - ق.م"
+  ],
+  "periods": [
+    "4"
+  ]
+}

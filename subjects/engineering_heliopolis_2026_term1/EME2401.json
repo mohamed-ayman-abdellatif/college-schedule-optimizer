@@ -1,0 +1,227 @@
+{
+  "id": "EME2401",
+  "name": "Experimental Methods and Instrumentation - EME2401",
+  "code": "EME2401",
+  "instructors": [
+    "عبد الرحمن خالد فاروق محمد",
+    "د. مصطفى احمد عبدالحفيظ فوز"
+  ],
+  "groups": [
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "EME2401_D_Lab._Saturday_7",
+          "courseName": "Experimental Methods and Instrumentation - EME2401",
+          "courseCode": "EME2401",
+          "group": "D",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "عبد الرحمن خالد فاروق محمد",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EME2401_D_Lect._Sunday_3",
+          "courseName": "Experimental Methods and Instrumentation - EME2401",
+          "courseCode": "EME2401",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. مصطفى احمد عبدالحفيظ فوز",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "عبد الرحمن خالد فاروق محمد",
+        "د. مصطفى احمد عبدالحفيظ فوز"
+      ]
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "EME2401_C_Lab._Sunday_5",
+          "courseName": "Experimental Methods and Instrumentation - EME2401",
+          "courseCode": "EME2401",
+          "group": "C",
+          "type": "Lab.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "عبد الرحمن خالد فاروق محمد",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EME2401_C_Lect._Thursday_9",
+          "courseName": "Experimental Methods and Instrumentation - EME2401",
+          "courseCode": "EME2401",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. مصطفى احمد عبدالحفيظ فوز",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "عبد الرحمن خالد فاروق محمد",
+        "د. مصطفى احمد عبدالحفيظ فوز"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EME2401_B_Lab._Thursday_7",
+          "courseName": "Experimental Methods and Instrumentation - EME2401",
+          "courseCode": "EME2401",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "عبد الرحمن خالد فاروق محمد",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EME2401_B_Lect._Thursday_9",
+          "courseName": "Experimental Methods and Instrumentation - EME2401",
+          "courseCode": "EME2401",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. مصطفى احمد عبدالحفيظ فوز",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "عبد الرحمن خالد فاروق محمد",
+        "د. مصطفى احمد عبدالحفيظ فوز"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EME2401_D_Lab._Saturday_7",
+      "courseName": "Experimental Methods and Instrumentation - EME2401",
+      "courseCode": "EME2401",
+      "group": "D",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "عبد الرحمن خالد فاروق محمد",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EME2401_D_Lect._Sunday_3",
+      "courseName": "Experimental Methods and Instrumentation - EME2401",
+      "courseCode": "EME2401",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. مصطفى احمد عبدالحفيظ فوز",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EME2401_C_Lab._Sunday_5",
+      "courseName": "Experimental Methods and Instrumentation - EME2401",
+      "courseCode": "EME2401",
+      "group": "C",
+      "type": "Lab.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "عبد الرحمن خالد فاروق محمد",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EME2401_C_Lect._Thursday_9",
+      "courseName": "Experimental Methods and Instrumentation - EME2401",
+      "courseCode": "EME2401",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. مصطفى احمد عبدالحفيظ فوز",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EME2401_B_Lab._Thursday_7",
+      "courseName": "Experimental Methods and Instrumentation - EME2401",
+      "courseCode": "EME2401",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "عبد الرحمن خالد فاروق محمد",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EME2401_B_Lect._Thursday_9",
+      "courseName": "Experimental Methods and Instrumentation - EME2401",
+      "courseCode": "EME2401",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. مصطفى احمد عبدالحفيظ فوز",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "ميكانيكا ق م -Northampton",
+    "هـ.ميكانيكية ق.م*",
+    "هندسة ميكانيكية-ق م //"
+  ],
+  "periods": [
+    "4"
+  ]
+}

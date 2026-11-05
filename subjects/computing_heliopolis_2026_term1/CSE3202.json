@@ -1,0 +1,85 @@
+{
+  "id": "CSE3202",
+  "name": "Software Component Design - CSE3202",
+  "code": "CSE3202",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CSE3202_A_Sec._Saturday_3",
+          "courseName": "Software Component Design - CSE3202",
+          "courseCode": "CSE3202",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "CSE3202_A_Lect._Tuesday_3",
+          "courseName": "Software Component Design - CSE3202",
+          "courseCode": "CSE3202",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CSE3202_A_Sec._Saturday_3",
+      "courseName": "Software Component Design - CSE3202",
+      "courseCode": "CSE3202",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "CSE3202_A_Lect._Tuesday_3",
+      "courseName": "Software Component Design - CSE3202",
+      "courseCode": "CSE3202",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "هندسة البرمجيات - ق.م"
+  ],
+  "periods": [
+    "6"
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "EME4602",
+  "name": "Turbomachinery Concept, App. and Design - EME4602",
+  "code": "EME4602",
+  "instructors": [
+    "عمر احمد رضا سيد",
+    "د. محمد محمود سالم عبدالجواد"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EME4602_A_Sec._Sunday_7",
+          "courseName": "Turbomachinery Concept, App. and Design - EME4602",
+          "courseCode": "EME4602",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "عمر احمد رضا سيد",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EME4602_A_Lect._Sunday_11",
+          "courseName": "Turbomachinery Concept, App. and Design - EME4602",
+          "courseCode": "EME4602",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "د. محمد محمود سالم عبدالجواد",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "عمر احمد رضا سيد",
+        "د. محمد محمود سالم عبدالجواد"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EME4602_A_Sec._Sunday_7",
+      "courseName": "Turbomachinery Concept, App. and Design - EME4602",
+      "courseCode": "EME4602",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "عمر احمد رضا سيد",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EME4602_A_Lect._Sunday_11",
+      "courseName": "Turbomachinery Concept, App. and Design - EME4602",
+      "courseCode": "EME4602",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "د. محمد محمود سالم عبدالجواد",
+      "color": "#10B981",
+      "room": ""
+    }
+  ],
+  "color": "#10B981",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية ق م -Northampton*",
+    "هندسة كهربية وتحكم ق.م*"
+  ],
+  "periods": [
+    "7"
+  ]
+}

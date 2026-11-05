@@ -1,0 +1,119 @@
+{
+  "id": "ECB3403",
+  "name": "Structural Analysis 2 - ECB3403",
+  "code": "ECB3403",
+  "instructors": [
+    "ايه محمود عبدالحفيظ عبدالله",
+    "د. الحسين ابراهيم هلال ابراهيم"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECB3403_A_Sec._Monday_3",
+          "courseName": "Structural Analysis 2 - ECB3403",
+          "courseCode": "ECB3403",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "ايه محمود عبدالحفيظ عبدالله",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "ECB3403_A_Lect._Wednesday_5",
+          "courseName": "Structural Analysis 2 - ECB3403",
+          "courseCode": "ECB3403",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. الحسين ابراهيم هلال ابراهيم",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "ECB3403_A_Lect._Wednesday_7",
+          "courseName": "Structural Analysis 2 - ECB3403",
+          "courseCode": "ECB3403",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. الحسين ابراهيم هلال ابراهيم",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ايه محمود عبدالحفيظ عبدالله",
+        "د. الحسين ابراهيم هلال ابراهيم"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECB3403_A_Sec._Monday_3",
+      "courseName": "Structural Analysis 2 - ECB3403",
+      "courseCode": "ECB3403",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "ايه محمود عبدالحفيظ عبدالله",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECB3403_A_Lect._Wednesday_5",
+      "courseName": "Structural Analysis 2 - ECB3403",
+      "courseCode": "ECB3403",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. الحسين ابراهيم هلال ابراهيم",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECB3403_A_Lect._Wednesday_7",
+      "courseName": "Structural Analysis 2 - ECB3403",
+      "courseCode": "ECB3403",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. الحسين ابراهيم هلال ابراهيم",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م*"
+  ],
+  "periods": [
+    "5"
+  ]
+}

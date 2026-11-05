@@ -1,0 +1,92 @@
+{
+  "id": "EME4605",
+  "name": "Computational Fluid Dynamics - EME4605",
+  "code": "EME4605",
+  "instructors": [
+    "د. سامح محمود عبدالحميد ابراهيم شعبان",
+    "محمد حسن علي علي"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EME4605_A_Lect._Sunday_1",
+          "courseName": "Computational Fluid Dynamics - EME4605",
+          "courseCode": "EME4605",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. سامح محمود عبدالحميد ابراهيم شعبان",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "EME4605_A_Sec._Tuesday_9",
+          "courseName": "Computational Fluid Dynamics - EME4605",
+          "courseCode": "EME4605",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "محمد حسن علي علي",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. سامح محمود عبدالحميد ابراهيم شعبان",
+        "محمد حسن علي علي"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EME4605_A_Lect._Sunday_1",
+      "courseName": "Computational Fluid Dynamics - EME4605",
+      "courseCode": "EME4605",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. سامح محمود عبدالحميد ابراهيم شعبان",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EME4605_A_Sec._Tuesday_9",
+      "courseName": "Computational Fluid Dynamics - EME4605",
+      "courseCode": "EME4605",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "محمد حسن علي علي",
+      "color": "#6366F1",
+      "room": ""
+    }
+  ],
+  "color": "#6366F1",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "ميكانيكا ق م -Northampton*",
+    "هـ.ميكانيكية ق.م*"
+  ],
+  "periods": [
+    "7"
+  ]
+}

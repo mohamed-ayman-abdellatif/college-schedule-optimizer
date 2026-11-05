@@ -1,0 +1,118 @@
+{
+  "id": "CC431",
+  "name": "COMPUTER NETWORKS - CC431",
+  "code": "CC431",
+  "instructors": [
+    "روان محمد صلاح عواد"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CC431_A_Lab._Saturday_5",
+          "courseName": "COMPUTER NETWORKS - CC431",
+          "courseCode": "CC431",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "روان محمد صلاح عواد",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "CC431_A_Sec._Thursday_7",
+          "courseName": "COMPUTER NETWORKS - CC431",
+          "courseCode": "CC431",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "CC431_A_Lect._Thursday_11",
+          "courseName": "COMPUTER NETWORKS - CC431",
+          "courseCode": "CC431",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "روان محمد صلاح عواد"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "CC431_A_Lab._Saturday_5",
+      "courseName": "COMPUTER NETWORKS - CC431",
+      "courseCode": "CC431",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "روان محمد صلاح عواد",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CC431_A_Sec._Thursday_7",
+      "courseName": "COMPUTER NETWORKS - CC431",
+      "courseCode": "CC431",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CC431_A_Lect._Thursday_11",
+      "courseName": "COMPUTER NETWORKS - CC431",
+      "courseCode": "CC431",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "حاسبات ق م - Northampton",
+    "هندسة الحاسبات ق.م"
+  ],
+  "periods": [
+    "8"
+  ]
+}

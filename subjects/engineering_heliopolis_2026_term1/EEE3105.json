@@ -1,0 +1,403 @@
+{
+  "id": "EEE3105",
+  "name": "Control Systems 1 - EEE3105",
+  "code": "EEE3105",
+  "instructors": [
+    "د. جوزيف سمير صدقي سليمان",
+    "عبدالرحمن محمد عبدالوهاب ابوشنب"
+  ],
+  "groups": [
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "EEE3105_C_Sec._Saturday_1",
+          "courseName": "Control Systems 1 - EEE3105",
+          "courseCode": "EEE3105",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEE3105_C_Lab._Saturday_3",
+          "courseName": "Control Systems 1 - EEE3105",
+          "courseCode": "EEE3105",
+          "group": "C",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEE3105_C_Lect._Wednesday_3",
+          "courseName": "Control Systems 1 - EEE3105",
+          "courseCode": "EEE3105",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. جوزيف سمير صدقي سليمان",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. جوزيف سمير صدقي سليمان"
+      ]
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "EEE3105_D_Sec._Saturday_5",
+          "courseName": "Control Systems 1 - EEE3105",
+          "courseCode": "EEE3105",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEE3105_D_Lab._Wednesday_1",
+          "courseName": "Control Systems 1 - EEE3105",
+          "courseCode": "EEE3105",
+          "group": "D",
+          "type": "Lab.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEE3105_D_Lect._Wednesday_3",
+          "courseName": "Control Systems 1 - EEE3105",
+          "courseCode": "EEE3105",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. جوزيف سمير صدقي سليمان",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. جوزيف سمير صدقي سليمان"
+      ]
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "EEE3105_E_Lab._Tuesday_1",
+          "courseName": "Control Systems 1 - EEE3105",
+          "courseCode": "EEE3105",
+          "group": "E",
+          "type": "Lab.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEE3105_E_Lect._Wednesday_1",
+          "courseName": "Control Systems 1 - EEE3105",
+          "courseCode": "EEE3105",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. جوزيف سمير صدقي سليمان",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEE3105_E_Sec._Thursday_11",
+          "courseName": "Control Systems 1 - EEE3105",
+          "courseCode": "EEE3105",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "عبدالرحمن محمد عبدالوهاب ابوشنب",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. جوزيف سمير صدقي سليمان",
+        "عبدالرحمن محمد عبدالوهاب ابوشنب"
+      ]
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "EEE3105_F_Lab._Tuesday_3",
+          "courseName": "Control Systems 1 - EEE3105",
+          "courseCode": "EEE3105",
+          "group": "F",
+          "type": "Lab.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEE3105_F_Lect._Wednesday_1",
+          "courseName": "Control Systems 1 - EEE3105",
+          "courseCode": "EEE3105",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. جوزيف سمير صدقي سليمان",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEE3105_F_Sec._Thursday_9",
+          "courseName": "Control Systems 1 - EEE3105",
+          "courseCode": "EEE3105",
+          "group": "F",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "عبدالرحمن محمد عبدالوهاب ابوشنب",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. جوزيف سمير صدقي سليمان",
+        "عبدالرحمن محمد عبدالوهاب ابوشنب"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE3105_C_Sec._Saturday_1",
+      "courseName": "Control Systems 1 - EEE3105",
+      "courseCode": "EEE3105",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE3105_C_Lab._Saturday_3",
+      "courseName": "Control Systems 1 - EEE3105",
+      "courseCode": "EEE3105",
+      "group": "C",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE3105_C_Lect._Wednesday_3",
+      "courseName": "Control Systems 1 - EEE3105",
+      "courseCode": "EEE3105",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. جوزيف سمير صدقي سليمان",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE3105_D_Sec._Saturday_5",
+      "courseName": "Control Systems 1 - EEE3105",
+      "courseCode": "EEE3105",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE3105_D_Lab._Wednesday_1",
+      "courseName": "Control Systems 1 - EEE3105",
+      "courseCode": "EEE3105",
+      "group": "D",
+      "type": "Lab.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE3105_D_Lect._Wednesday_3",
+      "courseName": "Control Systems 1 - EEE3105",
+      "courseCode": "EEE3105",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. جوزيف سمير صدقي سليمان",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE3105_E_Lab._Tuesday_1",
+      "courseName": "Control Systems 1 - EEE3105",
+      "courseCode": "EEE3105",
+      "group": "E",
+      "type": "Lab.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE3105_E_Lect._Wednesday_1",
+      "courseName": "Control Systems 1 - EEE3105",
+      "courseCode": "EEE3105",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. جوزيف سمير صدقي سليمان",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE3105_E_Sec._Thursday_11",
+      "courseName": "Control Systems 1 - EEE3105",
+      "courseCode": "EEE3105",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "عبدالرحمن محمد عبدالوهاب ابوشنب",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE3105_F_Lab._Tuesday_3",
+      "courseName": "Control Systems 1 - EEE3105",
+      "courseCode": "EEE3105",
+      "group": "F",
+      "type": "Lab.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE3105_F_Lect._Wednesday_1",
+      "courseName": "Control Systems 1 - EEE3105",
+      "courseCode": "EEE3105",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. جوزيف سمير صدقي سليمان",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE3105_F_Sec._Thursday_9",
+      "courseName": "Control Systems 1 - EEE3105",
+      "courseCode": "EEE3105",
+      "group": "F",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "عبدالرحمن محمد عبدالوهاب ابوشنب",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "الكترونيات ق م - Northamption //",
+    "هـ.الكترونات واتصالات ق.م"
+  ],
+  "periods": [
+    "5"
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "id": "EEE3102",
+  "name": "Control Systems I - EEE3102*",
+  "code": "EEE3102",
+  "instructors": [
+    "يوسف يحيى زكريا عبدالباسط",
+    "د. حسن السيد احمد ابراهيم"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEE3102_A_Sec._Sunday_5",
+          "courseName": "Control Systems I - EEE3102*",
+          "courseCode": "EEE3102",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "يوسف يحيى زكريا عبدالباسط",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EEE3102_A_Lab._Monday_1",
+          "courseName": "Control Systems I - EEE3102*",
+          "courseCode": "EEE3102",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "يوسف يحيى زكريا عبدالباسط",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EEE3102_A_Lect._Thursday_3",
+          "courseName": "Control Systems I - EEE3102*",
+          "courseCode": "EEE3102",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. حسن السيد احمد ابراهيم",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "يوسف يحيى زكريا عبدالباسط",
+        "د. حسن السيد احمد ابراهيم"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE3102_A_Sec._Sunday_5",
+      "courseName": "Control Systems I - EEE3102*",
+      "courseCode": "EEE3102",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "يوسف يحيى زكريا عبدالباسط",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EEE3102_A_Lab._Monday_1",
+      "courseName": "Control Systems I - EEE3102*",
+      "courseCode": "EEE3102",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "يوسف يحيى زكريا عبدالباسط",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EEE3102_A_Lect._Thursday_3",
+      "courseName": "Control Systems I - EEE3102*",
+      "courseCode": "EEE3102",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. حسن السيد احمد ابراهيم",
+      "color": "#06B6D4",
+      "room": ""
+    }
+  ],
+  "color": "#06B6D4",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية وتحكم ق.م*"
+  ],
+  "periods": [
+    "5"
+  ]
+}

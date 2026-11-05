@@ -1,0 +1,310 @@
+{
+  "id": "EEC4304",
+  "name": "Microelectronic Circuits - EEC4304*",
+  "code": "EEC4304",
+  "instructors": [
+    "سلمى باسم انور عبدالوهاب",
+    "د. عمرو ممدوح احمد بيومى"
+  ],
+  "groups": [
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "EEC4304_C_Sec._Monday_5",
+          "courseName": "Microelectronic Circuits - EEC4304*",
+          "courseCode": "EEC4304",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "سلمى باسم انور عبدالوهاب",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEC4304_C_Lect._Wednesday_7",
+          "courseName": "Microelectronic Circuits - EEC4304*",
+          "courseCode": "EEC4304",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. عمرو ممدوح احمد بيومى",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEC4304_C_Lab._Wednesday_11",
+          "courseName": "Microelectronic Circuits - EEC4304*",
+          "courseCode": "EEC4304",
+          "group": "C",
+          "type": "Lab.",
+          "day": "Wednesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "سلمى باسم انور عبدالوهاب",
+        "د. عمرو ممدوح احمد بيومى"
+      ]
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "EEC4304_D_Sec._Monday_7",
+          "courseName": "Microelectronic Circuits - EEC4304*",
+          "courseCode": "EEC4304",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "سلمى باسم انور عبدالوهاب",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEC4304_D_Lab._Wednesday_9",
+          "courseName": "Microelectronic Circuits - EEC4304*",
+          "courseCode": "EEC4304",
+          "group": "D",
+          "type": "Lab.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEC4304_D_Lect._Wednesday_7",
+          "courseName": "Microelectronic Circuits - EEC4304*",
+          "courseCode": "EEC4304",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. عمرو ممدوح احمد بيومى",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "سلمى باسم انور عبدالوهاب",
+        "د. عمرو ممدوح احمد بيومى"
+      ]
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "EEC4304_E_Lab._Monday_9",
+          "courseName": "Microelectronic Circuits - EEC4304*",
+          "courseCode": "EEC4304",
+          "group": "E",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEC4304_E_Lect._Monday_7",
+          "courseName": "Microelectronic Circuits - EEC4304*",
+          "courseCode": "EEC4304",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. عمرو ممدوح احمد بيومى",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEC4304_E_Sec._Wednesday_1",
+          "courseName": "Microelectronic Circuits - EEC4304*",
+          "courseCode": "EEC4304",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "سلمى باسم انور عبدالوهاب",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. عمرو ممدوح احمد بيومى",
+        "سلمى باسم انور عبدالوهاب"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEC4304_C_Sec._Monday_5",
+      "courseName": "Microelectronic Circuits - EEC4304*",
+      "courseCode": "EEC4304",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "سلمى باسم انور عبدالوهاب",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEC4304_C_Lect._Wednesday_7",
+      "courseName": "Microelectronic Circuits - EEC4304*",
+      "courseCode": "EEC4304",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. عمرو ممدوح احمد بيومى",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEC4304_C_Lab._Wednesday_11",
+      "courseName": "Microelectronic Circuits - EEC4304*",
+      "courseCode": "EEC4304",
+      "group": "C",
+      "type": "Lab.",
+      "day": "Wednesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEC4304_D_Sec._Monday_7",
+      "courseName": "Microelectronic Circuits - EEC4304*",
+      "courseCode": "EEC4304",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "سلمى باسم انور عبدالوهاب",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEC4304_D_Lab._Wednesday_9",
+      "courseName": "Microelectronic Circuits - EEC4304*",
+      "courseCode": "EEC4304",
+      "group": "D",
+      "type": "Lab.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEC4304_D_Lect._Wednesday_7",
+      "courseName": "Microelectronic Circuits - EEC4304*",
+      "courseCode": "EEC4304",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. عمرو ممدوح احمد بيومى",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEC4304_E_Lab._Monday_9",
+      "courseName": "Microelectronic Circuits - EEC4304*",
+      "courseCode": "EEC4304",
+      "group": "E",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEC4304_E_Lect._Monday_7",
+      "courseName": "Microelectronic Circuits - EEC4304*",
+      "courseCode": "EEC4304",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. عمرو ممدوح احمد بيومى",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEC4304_E_Sec._Wednesday_1",
+      "courseName": "Microelectronic Circuits - EEC4304*",
+      "courseCode": "EEC4304",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "سلمى باسم انور عبدالوهاب",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "الكترونيات ق م - Northamption*",
+    "هـ.الكترونات واتصالات ق.م*"
+  ],
+  "periods": [
+    "7"
+  ]
+}

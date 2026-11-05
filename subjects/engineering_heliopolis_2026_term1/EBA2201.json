@@ -1,0 +1,2105 @@
+{
+  "id": "EBA2201",
+  "name": "Differential Equations - EBA2201",
+  "code": "EBA2201",
+  "instructors": [
+    "رزان ايهاب جمال الدين محمد برعى",
+    "د. سعيد انور محمد جوده",
+    "بيتر وجيه رشدى شاكر",
+    "جمال كرم مصطفي محمد",
+    "جمانة محمد اغيد الدقاق",
+    "د. عصام احمد سليمان الصعيدى",
+    "علا مصطفى محى الدين",
+    "د. علا مصطفى محى الدين",
+    "د. عبدالوهاب عباس رجب",
+    "د. الهيثم محمود عارف شبانة"
+  ],
+  "groups": [
+    {
+      "group": "3",
+      "sessions": [
+        {
+          "id": "EBA2201_3_Lect._Saturday_1",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "3",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. سعيد انور محمد جوده",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_3_Sec._Wednesday_9",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "3",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "رزان ايهاب جمال الدين محمد برعى",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. سعيد انور محمد جوده",
+        "رزان ايهاب جمال الدين محمد برعى"
+      ]
+    },
+    {
+      "group": "A8",
+      "sessions": [
+        {
+          "id": "EBA2201_A8_Lect._Saturday_3",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "A8",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. سعيد انور محمد جوده",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_A8_Sec._Monday_3",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "A8",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. سعيد انور محمد جوده"
+      ]
+    },
+    {
+      "group": "I",
+      "sessions": [
+        {
+          "id": "EBA2201_I_Lect._Saturday_5",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "I",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_I_Sec._Saturday_3",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "I",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "بيتر وجيه رشدى شاكر",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "بيتر وجيه رشدى شاكر"
+      ]
+    },
+    {
+      "group": "J",
+      "sessions": [
+        {
+          "id": "EBA2201_J_Sec._Saturday_7",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "J",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "بيتر وجيه رشدى شاكر",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_J_Lect._Saturday_5",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "J",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "بيتر وجيه رشدى شاكر"
+      ]
+    },
+    {
+      "group": "4",
+      "sessions": [
+        {
+          "id": "EBA2201_4_Lect._Saturday_1",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "4",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. سعيد انور محمد جوده",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_4_Sec._Thursday_5",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "4",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. سعيد انور محمد جوده"
+      ]
+    },
+    {
+      "group": "L",
+      "sessions": [
+        {
+          "id": "EBA2201_L_Sec._Saturday_1",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "L",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "جمال كرم مصطفي محمد",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_L_Lect._Saturday_3",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "L",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "جمال كرم مصطفي محمد"
+      ]
+    },
+    {
+      "group": "A9",
+      "sessions": [
+        {
+          "id": "EBA2201_A9_Lect._Saturday_3",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "A9",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. سعيد انور محمد جوده",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_A9_Sec._Sunday_5",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "A9",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "جمانة محمد اغيد الدقاق",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. سعيد انور محمد جوده",
+        "جمانة محمد اغيد الدقاق"
+      ]
+    },
+    {
+      "group": "K",
+      "sessions": [
+        {
+          "id": "EBA2201_K_Lect._Saturday_3",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "K",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_K_Sec._Saturday_5",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "K",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "بيتر وجيه رشدى شاكر",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "بيتر وجيه رشدى شاكر"
+      ]
+    },
+    {
+      "group": "N",
+      "sessions": [
+        {
+          "id": "EBA2201_N_Sec._Saturday_3",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "N",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "جمال كرم مصطفي محمد",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_N_Lect._Tuesday_1",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "N",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. عصام احمد سليمان الصعيدى",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "جمال كرم مصطفي محمد",
+        "د. عصام احمد سليمان الصعيدى"
+      ]
+    },
+    {
+      "group": "M",
+      "sessions": [
+        {
+          "id": "EBA2201_M_Sec._Saturday_5",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "M",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "جمال كرم مصطفي محمد",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_M_Lect._Tuesday_1",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "M",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. عصام احمد سليمان الصعيدى",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "جمال كرم مصطفي محمد",
+        "د. عصام احمد سليمان الصعيدى"
+      ]
+    },
+    {
+      "group": "2",
+      "sessions": [
+        {
+          "id": "EBA2201_2_Sec._Sunday_3",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "2",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "رزان ايهاب جمال الدين محمد برعى",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_2_Lect._Tuesday_3",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "2",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. سعيد انور محمد جوده",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "رزان ايهاب جمال الدين محمد برعى",
+        "د. سعيد انور محمد جوده"
+      ]
+    },
+    {
+      "group": "A2",
+      "sessions": [
+        {
+          "id": "EBA2201_A2_Sec._Sunday_5",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "A2",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "علا مصطفى محى الدين",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_A2_Lect._Sunday_9",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "A2",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. علا مصطفى محى الدين",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "علا مصطفى محى الدين",
+        "د. علا مصطفى محى الدين"
+      ]
+    },
+    {
+      "group": "0",
+      "sessions": [
+        {
+          "id": "EBA2201_0_Sec._Sunday_7",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "0",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "رزان ايهاب جمال الدين محمد برعى",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_0_Lect._Tuesday_3",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "0",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. سعيد انور محمد جوده",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "رزان ايهاب جمال الدين محمد برعى",
+        "د. سعيد انور محمد جوده"
+      ]
+    },
+    {
+      "group": "V",
+      "sessions": [
+        {
+          "id": "EBA2201_V_Sec._Sunday_9",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "V",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "جمانة محمد اغيد الدقاق",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_V_Lect._Wednesday_5",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "V",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. عبدالوهاب عباس رجب",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "جمانة محمد اغيد الدقاق",
+        "د. عبدالوهاب عباس رجب"
+      ]
+    },
+    {
+      "group": "O",
+      "sessions": [
+        {
+          "id": "EBA2201_O_Lect._Sunday_3",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "O",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. الهيثم محمود عارف شبانة",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_O_Sec._Tuesday_5",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "O",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "رزان ايهاب جمال الدين محمد برعى",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. الهيثم محمود عارف شبانة",
+        "رزان ايهاب جمال الدين محمد برعى"
+      ]
+    },
+    {
+      "group": "P",
+      "sessions": [
+        {
+          "id": "EBA2201_P_Lect._Sunday_3",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "P",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. الهيثم محمود عارف شبانة",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_P_Sec._Tuesday_3",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "P",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "رزان ايهاب جمال الدين محمد برعى",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. الهيثم محمود عارف شبانة",
+        "رزان ايهاب جمال الدين محمد برعى"
+      ]
+    },
+    {
+      "group": "R",
+      "sessions": [
+        {
+          "id": "EBA2201_R_Sec._Sunday_3",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "R",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_R_Lect._Sunday_5",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "R",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. الهيثم محمود عارف شبانة",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. الهيثم محمود عارف شبانة"
+      ]
+    },
+    {
+      "group": "Q",
+      "sessions": [
+        {
+          "id": "EBA2201_Q_Lect._Sunday_5",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "Q",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. الهيثم محمود عارف شبانة",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_Q_Sec._Sunday_7",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "Q",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. الهيثم محمود عارف شبانة"
+      ]
+    },
+    {
+      "group": "B2",
+      "sessions": [
+        {
+          "id": "EBA2201_B2_Sec._Sunday_7",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "B2",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "رزان ايهاب جمال الدين محمد برعى",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_B2_Lect._Tuesday_3",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "B2",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. سعيد انور محمد جوده",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "رزان ايهاب جمال الدين محمد برعى",
+        "د. سعيد انور محمد جوده"
+      ]
+    },
+    {
+      "group": "W",
+      "sessions": [
+        {
+          "id": "EBA2201_W_Sec._Sunday_9",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "W",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "جمانة محمد اغيد الدقاق",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_W_Lect._Wednesday_5",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "W",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. عبدالوهاب عباس رجب",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "جمانة محمد اغيد الدقاق",
+        "د. عبدالوهاب عباس رجب"
+      ]
+    },
+    {
+      "group": "A3",
+      "sessions": [
+        {
+          "id": "EBA2201_A3_Lect._Sunday_9",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "A3",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. علا مصطفى محى الدين",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_A3_Sec._Tuesday_5",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "A3",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. علا مصطفى محى الدين"
+      ]
+    },
+    {
+      "group": "H",
+      "sessions": [
+        {
+          "id": "EBA2201_H_Sec._Monday_5",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "H",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_H_Lect._Wednesday_3",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "H",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. عبدالوهاب عباس رجب",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. عبدالوهاب عباس رجب"
+      ]
+    },
+    {
+      "group": "B0",
+      "sessions": [
+        {
+          "id": "EBA2201_B0_Lect._Tuesday_1",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "B0",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. سعيد انور محمد جوده",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_B0_Sec._Wednesday_1",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "B0",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "جمانة محمد اغيد الدقاق",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. سعيد انور محمد جوده",
+        "جمانة محمد اغيد الدقاق"
+      ]
+    },
+    {
+      "group": "A4",
+      "sessions": [
+        {
+          "id": "EBA2201_A4_Sec._Tuesday_7",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "A4",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_A4_Lect._Wednesday_1",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "A4",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. علا مصطفى محى الدين",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. علا مصطفى محى الدين"
+      ]
+    },
+    {
+      "group": "B1",
+      "sessions": [
+        {
+          "id": "EBA2201_B1_Lect._Tuesday_1",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "B1",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. سعيد انور محمد جوده",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_B1_Sec._Thursday_5",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "B1",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "جمانة محمد اغيد الدقاق",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. سعيد انور محمد جوده",
+        "جمانة محمد اغيد الدقاق"
+      ]
+    },
+    {
+      "group": "A5",
+      "sessions": [
+        {
+          "id": "EBA2201_A5_Sec._Tuesday_3",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "A5",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_A5_Lect._Wednesday_1",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "A5",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. علا مصطفى محى الدين",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. علا مصطفى محى الدين"
+      ]
+    },
+    {
+      "group": "A6",
+      "sessions": [
+        {
+          "id": "EBA2201_A6_Lect._Tuesday_3",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "A6",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. عصام احمد سليمان الصعيدى",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_A6_Sec._Wednesday_5",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "A6",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. عصام احمد سليمان الصعيدى"
+      ]
+    },
+    {
+      "group": "A7",
+      "sessions": [
+        {
+          "id": "EBA2201_A7_Lect._Tuesday_3",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "A7",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. عصام احمد سليمان الصعيدى",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_A7_Sec._Wednesday_3",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "A7",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. عصام احمد سليمان الصعيدى"
+      ]
+    },
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "EBA2201_G_Sec._Wednesday_1",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "G",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_G_Lect._Wednesday_3",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "G",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. عبدالوهاب عباس رجب",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. عبدالوهاب عباس رجب"
+      ]
+    },
+    {
+      "group": "S",
+      "sessions": [
+        {
+          "id": "EBA2201_S_Sec._Wednesday_1",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "S",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_S_Lect._Wednesday_3",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "S",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. عبدالوهاب عباس رجب",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. عبدالوهاب عباس رجب"
+      ]
+    },
+    {
+      "group": "X",
+      "sessions": [
+        {
+          "id": "EBA2201_X_Lect._Wednesday_5",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "X",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. عبدالوهاب عباس رجب",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EBA2201_X_Sec._Thursday_3",
+          "courseName": "Differential Equations - EBA2201",
+          "courseCode": "EBA2201",
+          "group": "X",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. عبدالوهاب عباس رجب"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EBA2201_3_Lect._Saturday_1",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "3",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. سعيد انور محمد جوده",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_3_Sec._Wednesday_9",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "3",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "رزان ايهاب جمال الدين محمد برعى",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_A8_Lect._Saturday_3",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "A8",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. سعيد انور محمد جوده",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_A8_Sec._Monday_3",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "A8",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_I_Lect._Saturday_5",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "I",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_I_Sec._Saturday_3",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "I",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "بيتر وجيه رشدى شاكر",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_J_Sec._Saturday_7",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "J",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "بيتر وجيه رشدى شاكر",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_J_Lect._Saturday_5",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "J",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_4_Lect._Saturday_1",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "4",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. سعيد انور محمد جوده",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_4_Sec._Thursday_5",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "4",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_L_Sec._Saturday_1",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "L",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "جمال كرم مصطفي محمد",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_L_Lect._Saturday_3",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "L",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_A9_Lect._Saturday_3",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "A9",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. سعيد انور محمد جوده",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_A9_Sec._Sunday_5",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "A9",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "جمانة محمد اغيد الدقاق",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_K_Lect._Saturday_3",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "K",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_K_Sec._Saturday_5",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "K",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "بيتر وجيه رشدى شاكر",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_N_Sec._Saturday_3",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "N",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "جمال كرم مصطفي محمد",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_N_Lect._Tuesday_1",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "N",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. عصام احمد سليمان الصعيدى",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_M_Sec._Saturday_5",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "M",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "جمال كرم مصطفي محمد",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_M_Lect._Tuesday_1",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "M",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. عصام احمد سليمان الصعيدى",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_2_Sec._Sunday_3",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "2",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "رزان ايهاب جمال الدين محمد برعى",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_2_Lect._Tuesday_3",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "2",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. سعيد انور محمد جوده",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_A2_Sec._Sunday_5",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "A2",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "علا مصطفى محى الدين",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_A2_Lect._Sunday_9",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "A2",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. علا مصطفى محى الدين",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_0_Sec._Sunday_7",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "0",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "رزان ايهاب جمال الدين محمد برعى",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_0_Lect._Tuesday_3",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "0",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. سعيد انور محمد جوده",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_V_Sec._Sunday_9",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "V",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "جمانة محمد اغيد الدقاق",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_V_Lect._Wednesday_5",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "V",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. عبدالوهاب عباس رجب",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_O_Lect._Sunday_3",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "O",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. الهيثم محمود عارف شبانة",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_O_Sec._Tuesday_5",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "O",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "رزان ايهاب جمال الدين محمد برعى",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_P_Lect._Sunday_3",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "P",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. الهيثم محمود عارف شبانة",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_P_Sec._Tuesday_3",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "P",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "رزان ايهاب جمال الدين محمد برعى",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_R_Sec._Sunday_3",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "R",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_R_Lect._Sunday_5",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "R",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. الهيثم محمود عارف شبانة",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_Q_Lect._Sunday_5",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "Q",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. الهيثم محمود عارف شبانة",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_Q_Sec._Sunday_7",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "Q",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_B2_Sec._Sunday_7",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "B2",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "رزان ايهاب جمال الدين محمد برعى",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_B2_Lect._Tuesday_3",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "B2",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. سعيد انور محمد جوده",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_W_Sec._Sunday_9",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "W",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "جمانة محمد اغيد الدقاق",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_W_Lect._Wednesday_5",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "W",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. عبدالوهاب عباس رجب",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_A3_Lect._Sunday_9",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "A3",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. علا مصطفى محى الدين",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_A3_Sec._Tuesday_5",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "A3",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_H_Sec._Monday_5",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "H",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_H_Lect._Wednesday_3",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "H",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. عبدالوهاب عباس رجب",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_B0_Lect._Tuesday_1",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "B0",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. سعيد انور محمد جوده",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_B0_Sec._Wednesday_1",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "B0",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "جمانة محمد اغيد الدقاق",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_A4_Sec._Tuesday_7",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "A4",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_A4_Lect._Wednesday_1",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "A4",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. علا مصطفى محى الدين",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_B1_Lect._Tuesday_1",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "B1",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. سعيد انور محمد جوده",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_B1_Sec._Thursday_5",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "B1",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "جمانة محمد اغيد الدقاق",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_A5_Sec._Tuesday_3",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "A5",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_A5_Lect._Wednesday_1",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "A5",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. علا مصطفى محى الدين",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_A6_Lect._Tuesday_3",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "A6",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. عصام احمد سليمان الصعيدى",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_A6_Sec._Wednesday_5",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "A6",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_A7_Lect._Tuesday_3",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "A7",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. عصام احمد سليمان الصعيدى",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_A7_Sec._Wednesday_3",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "A7",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_G_Sec._Wednesday_1",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "G",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_G_Lect._Wednesday_3",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "G",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. عبدالوهاب عباس رجب",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_S_Sec._Wednesday_1",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "S",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_S_Lect._Wednesday_3",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "S",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. عبدالوهاب عباس رجب",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_X_Lect._Wednesday_5",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "X",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. عبدالوهاب عباس رجب",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EBA2201_X_Sec._Thursday_3",
+      "courseName": "Differential Equations - EBA2201",
+      "courseCode": "EBA2201",
+      "group": "X",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    }
+  ],
+  "color": "#F59E0B",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "الكترونيات ق م - Northamption //",
+    "حاسبات ق م - Northampton",
+    "حاسبات ق م - Northampton*",
+    "ميكانيكا ق م -Northampton",
+    "هـ.الكترونات واتصالات ق.م",
+    "هـ.ميكانيكية ق.م*",
+    "هندسة التشيد والبناء ق.م",
+    "هندسة التشيد والبناء ق.م*",
+    "هندسة الحاسبات ق.م",
+    "هندسة الحاسبات ق.م*",
+    "هندسة كهربية ق م -Northampton //",
+    "هندسة كهربية وتحكم ق.م",
+    "هندسة كهربية وتحكم ق.م*",
+    "هندسة ميكانيكية-ق م //"
+  ],
+  "periods": [
+    "3"
+  ]
+}

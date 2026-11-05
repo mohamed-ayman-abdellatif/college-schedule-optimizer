@@ -1,0 +1,90 @@
+{
+  "id": "EEE5103",
+  "name": "Control Application In Power Eng - EEE5103",
+  "code": "EEE5103",
+  "instructors": [
+    "د. نهى هانى يسرى على العمارى"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEE5103_A_Lect._Tuesday_5",
+          "courseName": "Control Application In Power Eng - EEE5103",
+          "courseCode": "EEE5103",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. نهى هانى يسرى على العمارى",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEE5103_A_Sec._Thursday_9",
+          "courseName": "Control Application In Power Eng - EEE5103",
+          "courseCode": "EEE5103",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. نهى هانى يسرى على العمارى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE5103_A_Lect._Tuesday_5",
+      "courseName": "Control Application In Power Eng - EEE5103",
+      "courseCode": "EEE5103",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. نهى هانى يسرى على العمارى",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE5103_A_Sec._Thursday_9",
+      "courseName": "Control Application In Power Eng - EEE5103",
+      "courseCode": "EEE5103",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية ق م -Northampton*",
+    "هندسة كهربية وتحكم ق.م*"
+  ],
+  "periods": [
+    "9"
+  ]
+}

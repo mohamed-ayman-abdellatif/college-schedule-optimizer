@@ -1,0 +1,120 @@
+{
+  "id": "EEC3220",
+  "name": "Introduction to Communication Systems - EEC3220",
+  "code": "EEC3220",
+  "instructors": [
+    "احمد محمد عبدالوهاب دعبس",
+    "د. البشير عادل يوسف محمد يوسف"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEC3220_A_Lab._Saturday_9",
+          "courseName": "Introduction to Communication Systems - EEC3220",
+          "courseCode": "EEC3220",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "احمد محمد عبدالوهاب دعبس",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EEC3220_A_Sec._Sunday_9",
+          "courseName": "Introduction to Communication Systems - EEC3220",
+          "courseCode": "EEC3220",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "احمد محمد عبدالوهاب دعبس",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EEC3220_A_Lect._Monday_3",
+          "courseName": "Introduction to Communication Systems - EEC3220",
+          "courseCode": "EEC3220",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. البشير عادل يوسف محمد يوسف",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "احمد محمد عبدالوهاب دعبس",
+        "د. البشير عادل يوسف محمد يوسف"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEC3220_A_Lab._Saturday_9",
+      "courseName": "Introduction to Communication Systems - EEC3220",
+      "courseCode": "EEC3220",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "احمد محمد عبدالوهاب دعبس",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EEC3220_A_Sec._Sunday_9",
+      "courseName": "Introduction to Communication Systems - EEC3220",
+      "courseCode": "EEC3220",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "احمد محمد عبدالوهاب دعبس",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EEC3220_A_Lect._Monday_3",
+      "courseName": "Introduction to Communication Systems - EEC3220",
+      "courseCode": "EEC3220",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. البشير عادل يوسف محمد يوسف",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "حاسبات ق م - Northampton*",
+    "هندسة الحاسبات ق.م*"
+  ],
+  "periods": [
+    "4"
+  ]
+}

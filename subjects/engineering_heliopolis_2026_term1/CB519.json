@@ -1,0 +1,91 @@
+{
+  "id": "CB519",
+  "name": "Construction Project Management (2) - CB519",
+  "code": "CB519",
+  "instructors": [
+    "ياسمين خالد ابو الفتوح شاهين",
+    "د. محمد سعيد محمد عيد"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "CB519_B_Sec._Sunday_1",
+          "courseName": "Construction Project Management (2) - CB519",
+          "courseCode": "CB519",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "ياسمين خالد ابو الفتوح شاهين",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "CB519_B_Lect._Tuesday_1",
+          "courseName": "Construction Project Management (2) - CB519",
+          "courseCode": "CB519",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. محمد سعيد محمد عيد",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ياسمين خالد ابو الفتوح شاهين",
+        "د. محمد سعيد محمد عيد"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "CB519_B_Sec._Sunday_1",
+      "courseName": "Construction Project Management (2) - CB519",
+      "courseCode": "CB519",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "ياسمين خالد ابو الفتوح شاهين",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CB519_B_Lect._Tuesday_1",
+      "courseName": "Construction Project Management (2) - CB519",
+      "courseCode": "CB519",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. محمد سعيد محمد عيد",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م"
+  ],
+  "periods": [
+    "10"
+  ]
+}

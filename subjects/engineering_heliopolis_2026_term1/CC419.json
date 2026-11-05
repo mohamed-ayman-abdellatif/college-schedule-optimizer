@@ -1,0 +1,90 @@
+{
+  "id": "CC419",
+  "name": "Numerical Methods - CC419*",
+  "code": "CC419",
+  "instructors": [
+    "د. ريهام طاهر عبدالمجيد سالم المغربى"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CC419_A_Lect._Wednesday_1",
+          "courseName": "Numerical Methods - CC419*",
+          "courseCode": "CC419",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. ريهام طاهر عبدالمجيد سالم المغربى",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "CC419_A_Sec._Thursday_9",
+          "courseName": "Numerical Methods - CC419*",
+          "courseCode": "CC419",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. ريهام طاهر عبدالمجيد سالم المغربى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "CC419_A_Lect._Wednesday_1",
+      "courseName": "Numerical Methods - CC419*",
+      "courseCode": "CC419",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. ريهام طاهر عبدالمجيد سالم المغربى",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CC419_A_Sec._Thursday_9",
+      "courseName": "Numerical Methods - CC419*",
+      "courseCode": "CC419",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "حاسبات ق م - Northampton",
+    "هندسة الحاسبات ق.م"
+  ],
+  "periods": [
+    "7"
+  ]
+}

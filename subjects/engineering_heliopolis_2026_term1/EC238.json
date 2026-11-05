@@ -1,0 +1,92 @@
+{
+  "id": "EC238",
+  "name": "Electronics I - EC238",
+  "code": "EC238",
+  "instructors": [
+    "ايناس رافت رمسيس لبيب",
+    "د. شيرى حشمت حارث قريصة"
+  ],
+  "groups": [
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "EC238_C_Sec._Sunday_5",
+          "courseName": "Electronics I - EC238",
+          "courseCode": "EC238",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "ايناس رافت رمسيس لبيب",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EC238_C_Lect._Tuesday_1",
+          "courseName": "Electronics I - EC238",
+          "courseCode": "EC238",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. شيرى حشمت حارث قريصة",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ايناس رافت رمسيس لبيب",
+        "د. شيرى حشمت حارث قريصة"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EC238_C_Sec._Sunday_5",
+      "courseName": "Electronics I - EC238",
+      "courseCode": "EC238",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "ايناس رافت رمسيس لبيب",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EC238_C_Lect._Tuesday_1",
+      "courseName": "Electronics I - EC238",
+      "courseCode": "EC238",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. شيرى حشمت حارث قريصة",
+      "color": "#F59E0B",
+      "room": ""
+    }
+  ],
+  "color": "#F59E0B",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "حاسبات ق م - Northampton",
+    "هندسة الحاسبات ق.م"
+  ],
+  "periods": [
+    "4"
+  ]
+}

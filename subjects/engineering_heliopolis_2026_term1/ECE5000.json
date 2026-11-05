@@ -1,0 +1,202 @@
+{
+  "id": "ECE5000",
+  "name": "Practical Training II - ECE5000",
+  "code": "ECE5000",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "ECE5000_D_Lect._Saturday_3",
+          "courseName": "Practical Training II - ECE5000",
+          "courseCode": "ECE5000",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "ECE5000_F_Lect._Sunday_5",
+          "courseName": "Practical Training II - ECE5000",
+          "courseCode": "ECE5000",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "ECE5000_E_Lect._Sunday_7",
+          "courseName": "Practical Training II - ECE5000",
+          "courseCode": "ECE5000",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    },
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECE5000_A_Lect._Monday_11",
+          "courseName": "Practical Training II - ECE5000",
+          "courseCode": "ECE5000",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECE5000_B_Lect._Monday_11",
+          "courseName": "Practical Training II - ECE5000",
+          "courseCode": "ECE5000",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECE5000_D_Lect._Saturday_3",
+      "courseName": "Practical Training II - ECE5000",
+      "courseCode": "ECE5000",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE5000_F_Lect._Sunday_5",
+      "courseName": "Practical Training II - ECE5000",
+      "courseCode": "ECE5000",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE5000_E_Lect._Sunday_7",
+      "courseName": "Practical Training II - ECE5000",
+      "courseCode": "ECE5000",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE5000_A_Lect._Monday_11",
+      "courseName": "Practical Training II - ECE5000",
+      "courseCode": "ECE5000",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE5000_B_Lect._Monday_11",
+      "courseName": "Practical Training II - ECE5000",
+      "courseCode": "ECE5000",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    }
+  ],
+  "color": "#6366F1",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "حاسبات ق م - Northampton*",
+    "هندسة الحاسبات ق.م*"
+  ],
+  "periods": [
+    "9"
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "id": "AR524",
+  "name": "E. I. A. IN URBAN PLANNING - AR524",
+  "code": "AR524",
+  "instructors": [
+    "د. محمد السيد عبد الرحمن محمد شريف",
+    "محمد السيد عبد الرحمن محمد شريف"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "AR524_A_Lect._Wednesday_5",
+          "courseName": "E. I. A. IN URBAN PLANNING - AR524",
+          "courseCode": "AR524",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. محمد السيد عبد الرحمن محمد شريف",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "AR524_A_Sec._Wednesday_7",
+          "courseName": "E. I. A. IN URBAN PLANNING - AR524",
+          "courseCode": "AR524",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "محمد السيد عبد الرحمن محمد شريف",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد السيد عبد الرحمن محمد شريف",
+        "محمد السيد عبد الرحمن محمد شريف"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "AR524_A_Lect._Wednesday_5",
+      "courseName": "E. I. A. IN URBAN PLANNING - AR524",
+      "courseCode": "AR524",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. محمد السيد عبد الرحمن محمد شريف",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "AR524_A_Sec._Wednesday_7",
+      "courseName": "E. I. A. IN URBAN PLANNING - AR524",
+      "courseCode": "AR524",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "محمد السيد عبد الرحمن محمد شريف",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م"
+  ],
+  "periods": [
+    "10"
+  ]
+}

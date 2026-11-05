@@ -1,0 +1,92 @@
+{
+  "id": "ECE3105",
+  "name": "JAVA Programming - ECE3105",
+  "code": "ECE3105",
+  "instructors": [
+    "احمد احمد السيد مرسي",
+    "د. هشام صلاح الدين محمد رشاد"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECE3105_A_Lab._Saturday_5",
+          "courseName": "JAVA Programming - ECE3105",
+          "courseCode": "ECE3105",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "احمد احمد السيد مرسي",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "ECE3105_A_Lect._Sunday_1",
+          "courseName": "JAVA Programming - ECE3105",
+          "courseCode": "ECE3105",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. هشام صلاح الدين محمد رشاد",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "احمد احمد السيد مرسي",
+        "د. هشام صلاح الدين محمد رشاد"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECE3105_A_Lab._Saturday_5",
+      "courseName": "JAVA Programming - ECE3105",
+      "courseCode": "ECE3105",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "احمد احمد السيد مرسي",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "ECE3105_A_Lect._Sunday_1",
+      "courseName": "JAVA Programming - ECE3105",
+      "courseCode": "ECE3105",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. هشام صلاح الدين محمد رشاد",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "حاسبات ق م - Northampton*",
+    "هندسة الحاسبات ق.م*"
+  ],
+  "periods": [
+    "5"
+  ]
+}

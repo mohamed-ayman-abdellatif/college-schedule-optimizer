@@ -1,0 +1,166 @@
+{
+  "id": "CIT4602",
+  "name": "Professional Training in AI II - CIT4602",
+  "code": "CIT4602",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "CIT4602_D_Sec._Saturday_5",
+          "courseName": "Professional Training in AI II - CIT4602",
+          "courseCode": "CIT4602",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": false,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CIT4602_A_Sec._Sunday_3",
+          "courseName": "Professional Training in AI II - CIT4602",
+          "courseCode": "CIT4602",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": false,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "CIT4602_B_Sec._Thursday_1",
+          "courseName": "Professional Training in AI II - CIT4602",
+          "courseCode": "CIT4602",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": false,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "CIT4602_C_Sec._Thursday_3",
+          "courseName": "Professional Training in AI II - CIT4602",
+          "courseCode": "CIT4602",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": false,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CIT4602_D_Sec._Saturday_5",
+      "courseName": "Professional Training in AI II - CIT4602",
+      "courseCode": "CIT4602",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "CIT4602_A_Sec._Sunday_3",
+      "courseName": "Professional Training in AI II - CIT4602",
+      "courseCode": "CIT4602",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "CIT4602_B_Sec._Thursday_1",
+      "courseName": "Professional Training in AI II - CIT4602",
+      "courseCode": "CIT4602",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "CIT4602_C_Sec._Thursday_3",
+      "courseName": "Professional Training in AI II - CIT4602",
+      "courseCode": "CIT4602",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "الذكاء الإصطناعي - ق.م",
+    "علوم الحاسب ق.م //"
+  ],
+  "periods": [
+    "7"
+  ]
+}

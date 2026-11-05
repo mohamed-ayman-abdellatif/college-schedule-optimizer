@@ -1,0 +1,119 @@
+{
+  "id": "CC216",
+  "name": "DIGITAL LOGIC DESIGN      - CC216",
+  "code": "CC216",
+  "instructors": [
+    "د. محمد عادل راشد سالم",
+    "محمد المدثر حسين احمد"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CC216_A_Lect._Saturday_3",
+          "courseName": "DIGITAL LOGIC DESIGN      - CC216",
+          "courseCode": "CC216",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. محمد عادل راشد سالم",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "CC216_A_Lab._Monday_9",
+          "courseName": "DIGITAL LOGIC DESIGN      - CC216",
+          "courseCode": "CC216",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "محمد المدثر حسين احمد",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "CC216_A_Sec._Thursday_9",
+          "courseName": "DIGITAL LOGIC DESIGN      - CC216",
+          "courseCode": "CC216",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "محمد المدثر حسين احمد",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد عادل راشد سالم",
+        "محمد المدثر حسين احمد"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "CC216_A_Lect._Saturday_3",
+      "courseName": "DIGITAL LOGIC DESIGN      - CC216",
+      "courseCode": "CC216",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. محمد عادل راشد سالم",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "CC216_A_Lab._Monday_9",
+      "courseName": "DIGITAL LOGIC DESIGN      - CC216",
+      "courseCode": "CC216",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "محمد المدثر حسين احمد",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "CC216_A_Sec._Thursday_9",
+      "courseName": "DIGITAL LOGIC DESIGN      - CC216",
+      "courseCode": "CC216",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "محمد المدثر حسين احمد",
+      "color": "#14B8A6",
+      "room": ""
+    }
+  ],
+  "color": "#14B8A6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية وتحكم ق.م"
+  ],
+  "periods": [
+    "3"
+  ]
+}

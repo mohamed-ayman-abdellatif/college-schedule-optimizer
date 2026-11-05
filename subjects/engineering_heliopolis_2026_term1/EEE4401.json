@@ -1,0 +1,92 @@
+{
+  "id": "EEE4401",
+  "name": "Power Systems II - EEE4401*",
+  "code": "EEE4401",
+  "instructors": [
+    "دعاء ابوبكر حسين محمد",
+    "د. رانيا متولى عوض الشرقاوى"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEE4401_A_Sec._Monday_3",
+          "courseName": "Power Systems II - EEE4401*",
+          "courseCode": "EEE4401",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "دعاء ابوبكر حسين محمد",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEE4401_A_Lect._Wednesday_5",
+          "courseName": "Power Systems II - EEE4401*",
+          "courseCode": "EEE4401",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. رانيا متولى عوض الشرقاوى",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "دعاء ابوبكر حسين محمد",
+        "د. رانيا متولى عوض الشرقاوى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE4401_A_Sec._Monday_3",
+      "courseName": "Power Systems II - EEE4401*",
+      "courseCode": "EEE4401",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "دعاء ابوبكر حسين محمد",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEE4401_A_Lect._Wednesday_5",
+      "courseName": "Power Systems II - EEE4401*",
+      "courseCode": "EEE4401",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. رانيا متولى عوض الشرقاوى",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية ق م -Northampton*",
+    "هندسة كهربية وتحكم ق.م*"
+  ],
+  "periods": [
+    "7"
+  ]
+}

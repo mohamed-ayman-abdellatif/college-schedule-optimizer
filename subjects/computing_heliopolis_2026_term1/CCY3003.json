@@ -1,0 +1,85 @@
+{
+  "id": "CCY3003",
+  "name": "Digital Forensics and Incident Response - CCY3003",
+  "code": "CCY3003",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CCY3003_A_Sec._Saturday_9",
+          "courseName": "Digital Forensics and Incident Response - CCY3003",
+          "courseCode": "CCY3003",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "CCY3003_A_Lect._Tuesday_9",
+          "courseName": "Digital Forensics and Incident Response - CCY3003",
+          "courseCode": "CCY3003",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CCY3003_A_Sec._Saturday_9",
+      "courseName": "Digital Forensics and Incident Response - CCY3003",
+      "courseCode": "CCY3003",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "CCY3003_A_Lect._Tuesday_9",
+      "courseName": "Digital Forensics and Incident Response - CCY3003",
+      "courseCode": "CCY3003",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    }
+  ],
+  "color": "#14B8A6",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "الأمن السيبرانى - ق.م"
+  ],
+  "periods": [
+    "6"
+  ]
+}

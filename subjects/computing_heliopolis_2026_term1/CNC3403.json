@@ -1,0 +1,85 @@
+{
+  "id": "CNC3403",
+  "name": "Principles of Marketing - CNC3403",
+  "code": "CNC3403",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "CNC3403_B_Lect._Monday_11",
+          "courseName": "Principles of Marketing - CNC3403",
+          "courseCode": "CNC3403",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        },
+        {
+          "id": "CNC3403_B_Sec._Thursday_3",
+          "courseName": "Principles of Marketing - CNC3403",
+          "courseCode": "CNC3403",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#3B82F6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CNC3403_B_Lect._Monday_11",
+      "courseName": "Principles of Marketing - CNC3403",
+      "courseCode": "CNC3403",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    },
+    {
+      "id": "CNC3403_B_Sec._Thursday_3",
+      "courseName": "Principles of Marketing - CNC3403",
+      "courseCode": "CNC3403",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#3B82F6",
+      "room": ""
+    }
+  ],
+  "color": "#3B82F6",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "نظم معلومات -ق م"
+  ],
+  "periods": [
+    "6"
+  ]
+}

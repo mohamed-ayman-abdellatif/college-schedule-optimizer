@@ -1,0 +1,159 @@
+{
+  "id": "ECB2700",
+  "name": "Surveying - ECB2700",
+  "code": "ECB2700",
+  "instructors": [
+    "كريم طارق رافت عبدالحليم",
+    "د. محمد رفعت زكى البحيرى",
+    "مؤمن على محمد على محمد"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECB2700_A_Sec._Saturday_7",
+          "courseName": "Surveying - ECB2700",
+          "courseCode": "ECB2700",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "كريم طارق رافت عبدالحليم",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "ECB2700_A_Lect._Wednesday_7",
+          "courseName": "Surveying - ECB2700",
+          "courseCode": "ECB2700",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. محمد رفعت زكى البحيرى",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "كريم طارق رافت عبدالحليم",
+        "د. محمد رفعت زكى البحيرى"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECB2700_B_Sec._Wednesday_5",
+          "courseName": "Surveying - ECB2700",
+          "courseCode": "ECB2700",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "مؤمن على محمد على محمد",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "ECB2700_B_Lect._Wednesday_7",
+          "courseName": "Surveying - ECB2700",
+          "courseCode": "ECB2700",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. محمد رفعت زكى البحيرى",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "مؤمن على محمد على محمد",
+        "د. محمد رفعت زكى البحيرى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECB2700_A_Sec._Saturday_7",
+      "courseName": "Surveying - ECB2700",
+      "courseCode": "ECB2700",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "كريم طارق رافت عبدالحليم",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "ECB2700_B_Sec._Wednesday_5",
+      "courseName": "Surveying - ECB2700",
+      "courseCode": "ECB2700",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "مؤمن على محمد على محمد",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "ECB2700_A_Lect._Wednesday_7",
+      "courseName": "Surveying - ECB2700",
+      "courseCode": "ECB2700",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. محمد رفعت زكى البحيرى",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "ECB2700_B_Lect._Wednesday_7",
+      "courseName": "Surveying - ECB2700",
+      "courseCode": "ECB2700",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. محمد رفعت زكى البحيرى",
+      "color": "#14B8A6",
+      "room": ""
+    }
+  ],
+  "color": "#14B8A6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م*"
+  ],
+  "periods": [
+    "4"
+  ]
+}

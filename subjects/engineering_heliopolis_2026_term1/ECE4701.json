@@ -1,0 +1,687 @@
+{
+  "id": "ECE4701",
+  "name": "Computer Graphics - ECE4701",
+  "code": "ECE4701",
+  "instructors": [
+    "د. احمد محمد عبد الخالق شمس",
+    "د. وسام عطيه عباس عسكر",
+    "خالد مجدى حنفى محمود"
+  ],
+  "groups": [
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "ECE4701_G_Lect._Saturday_9",
+          "courseName": "Computer Graphics - ECE4701",
+          "courseCode": "ECE4701",
+          "group": "G",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. احمد محمد عبد الخالق شمس",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "ECE4701_G_Sec._Wednesday_9",
+          "courseName": "Computer Graphics - ECE4701",
+          "courseCode": "ECE4701",
+          "group": "G",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "ECE4701_G_Lab._Thursday_5",
+          "courseName": "Computer Graphics - ECE4701",
+          "courseCode": "ECE4701",
+          "group": "G",
+          "type": "Lab.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. احمد محمد عبد الخالق شمس"
+      ]
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "ECE4701_E_Lect._Saturday_11",
+          "courseName": "Computer Graphics - ECE4701",
+          "courseCode": "ECE4701",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "د. احمد محمد عبد الخالق شمس",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "ECE4701_E_Sec._Wednesday_11",
+          "courseName": "Computer Graphics - ECE4701",
+          "courseCode": "ECE4701",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "ECE4701_E_Lab._Thursday_7",
+          "courseName": "Computer Graphics - ECE4701",
+          "courseCode": "ECE4701",
+          "group": "E",
+          "type": "Lab.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. احمد محمد عبد الخالق شمس"
+      ]
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "ECE4701_F_Lect._Saturday_11",
+          "courseName": "Computer Graphics - ECE4701",
+          "courseCode": "ECE4701",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "د. احمد محمد عبد الخالق شمس",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "ECE4701_F_Sec._Tuesday_11",
+          "courseName": "Computer Graphics - ECE4701",
+          "courseCode": "ECE4701",
+          "group": "F",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "ECE4701_F_Lab._Thursday_11",
+          "courseName": "Computer Graphics - ECE4701",
+          "courseCode": "ECE4701",
+          "group": "F",
+          "type": "Lab.",
+          "day": "Thursday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. احمد محمد عبد الخالق شمس"
+      ]
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "ECE4701_D_Lab._Monday_7",
+          "courseName": "Computer Graphics - ECE4701",
+          "courseCode": "ECE4701",
+          "group": "D",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "ECE4701_D_Lect._Monday_11",
+          "courseName": "Computer Graphics - ECE4701",
+          "courseCode": "ECE4701",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "د. وسام عطيه عباس عسكر",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "ECE4701_D_Sec._Tuesday_9",
+          "courseName": "Computer Graphics - ECE4701",
+          "courseCode": "ECE4701",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. وسام عطيه عباس عسكر"
+      ]
+    },
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECE4701_A_Lect._Monday_9",
+          "courseName": "Computer Graphics - ECE4701",
+          "courseCode": "ECE4701",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. وسام عطيه عباس عسكر",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "ECE4701_A_Lab._Wednesday_9",
+          "courseName": "Computer Graphics - ECE4701",
+          "courseCode": "ECE4701",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "خالد مجدى حنفى محمود",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "ECE4701_A_Sec._Thursday_11",
+          "courseName": "Computer Graphics - ECE4701",
+          "courseCode": "ECE4701",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "خالد مجدى حنفى محمود",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. وسام عطيه عباس عسكر",
+        "خالد مجدى حنفى محمود"
+      ]
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "ECE4701_C_Lect._Monday_11",
+          "courseName": "Computer Graphics - ECE4701",
+          "courseCode": "ECE4701",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "د. وسام عطيه عباس عسكر",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "ECE4701_C_Sec._Tuesday_11",
+          "courseName": "Computer Graphics - ECE4701",
+          "courseCode": "ECE4701",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "خالد مجدى حنفى محمود",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "ECE4701_C_Lab._Wednesday_11",
+          "courseName": "Computer Graphics - ECE4701",
+          "courseCode": "ECE4701",
+          "group": "C",
+          "type": "Lab.",
+          "day": "Wednesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "خالد مجدى حنفى محمود",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. وسام عطيه عباس عسكر",
+        "خالد مجدى حنفى محمود"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECE4701_B_Lect._Monday_9",
+          "courseName": "Computer Graphics - ECE4701",
+          "courseCode": "ECE4701",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. وسام عطيه عباس عسكر",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "ECE4701_B_Lab._Wednesday_7",
+          "courseName": "Computer Graphics - ECE4701",
+          "courseCode": "ECE4701",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "خالد مجدى حنفى محمود",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "ECE4701_B_Sec._Thursday_7",
+          "courseName": "Computer Graphics - ECE4701",
+          "courseCode": "ECE4701",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "خالد مجدى حنفى محمود",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. وسام عطيه عباس عسكر",
+        "خالد مجدى حنفى محمود"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECE4701_G_Lect._Saturday_9",
+      "courseName": "Computer Graphics - ECE4701",
+      "courseCode": "ECE4701",
+      "group": "G",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. احمد محمد عبد الخالق شمس",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "ECE4701_G_Sec._Wednesday_9",
+      "courseName": "Computer Graphics - ECE4701",
+      "courseCode": "ECE4701",
+      "group": "G",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "ECE4701_G_Lab._Thursday_5",
+      "courseName": "Computer Graphics - ECE4701",
+      "courseCode": "ECE4701",
+      "group": "G",
+      "type": "Lab.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "ECE4701_E_Lect._Saturday_11",
+      "courseName": "Computer Graphics - ECE4701",
+      "courseCode": "ECE4701",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "د. احمد محمد عبد الخالق شمس",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "ECE4701_E_Sec._Wednesday_11",
+      "courseName": "Computer Graphics - ECE4701",
+      "courseCode": "ECE4701",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "ECE4701_E_Lab._Thursday_7",
+      "courseName": "Computer Graphics - ECE4701",
+      "courseCode": "ECE4701",
+      "group": "E",
+      "type": "Lab.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "ECE4701_F_Lect._Saturday_11",
+      "courseName": "Computer Graphics - ECE4701",
+      "courseCode": "ECE4701",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "د. احمد محمد عبد الخالق شمس",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "ECE4701_F_Sec._Tuesday_11",
+      "courseName": "Computer Graphics - ECE4701",
+      "courseCode": "ECE4701",
+      "group": "F",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "ECE4701_F_Lab._Thursday_11",
+      "courseName": "Computer Graphics - ECE4701",
+      "courseCode": "ECE4701",
+      "group": "F",
+      "type": "Lab.",
+      "day": "Thursday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "ECE4701_D_Lab._Monday_7",
+      "courseName": "Computer Graphics - ECE4701",
+      "courseCode": "ECE4701",
+      "group": "D",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "ECE4701_D_Lect._Monday_11",
+      "courseName": "Computer Graphics - ECE4701",
+      "courseCode": "ECE4701",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "د. وسام عطيه عباس عسكر",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "ECE4701_D_Sec._Tuesday_9",
+      "courseName": "Computer Graphics - ECE4701",
+      "courseCode": "ECE4701",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "ECE4701_A_Lect._Monday_9",
+      "courseName": "Computer Graphics - ECE4701",
+      "courseCode": "ECE4701",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. وسام عطيه عباس عسكر",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "ECE4701_A_Lab._Wednesday_9",
+      "courseName": "Computer Graphics - ECE4701",
+      "courseCode": "ECE4701",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "خالد مجدى حنفى محمود",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "ECE4701_A_Sec._Thursday_11",
+      "courseName": "Computer Graphics - ECE4701",
+      "courseCode": "ECE4701",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "خالد مجدى حنفى محمود",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "ECE4701_C_Lect._Monday_11",
+      "courseName": "Computer Graphics - ECE4701",
+      "courseCode": "ECE4701",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "د. وسام عطيه عباس عسكر",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "ECE4701_C_Sec._Tuesday_11",
+      "courseName": "Computer Graphics - ECE4701",
+      "courseCode": "ECE4701",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "خالد مجدى حنفى محمود",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "ECE4701_C_Lab._Wednesday_11",
+      "courseName": "Computer Graphics - ECE4701",
+      "courseCode": "ECE4701",
+      "group": "C",
+      "type": "Lab.",
+      "day": "Wednesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "خالد مجدى حنفى محمود",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "ECE4701_B_Lect._Monday_9",
+      "courseName": "Computer Graphics - ECE4701",
+      "courseCode": "ECE4701",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. وسام عطيه عباس عسكر",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "ECE4701_B_Lab._Wednesday_7",
+      "courseName": "Computer Graphics - ECE4701",
+      "courseCode": "ECE4701",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "خالد مجدى حنفى محمود",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "ECE4701_B_Sec._Thursday_7",
+      "courseName": "Computer Graphics - ECE4701",
+      "courseCode": "ECE4701",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "خالد مجدى حنفى محمود",
+      "color": "#10B981",
+      "room": ""
+    }
+  ],
+  "color": "#10B981",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "حاسبات ق م - Northampton*",
+    "هندسة الحاسبات ق.م*"
+  ],
+  "periods": [
+    "7"
+  ]
+}

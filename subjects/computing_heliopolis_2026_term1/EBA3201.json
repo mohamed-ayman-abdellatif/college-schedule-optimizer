@@ -1,0 +1,344 @@
+{
+  "id": "EBA3201",
+  "name": "Advanced Statistics - EBA3201",
+  "code": "EBA3201",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "EBA3201_G_Lect._Sunday_1",
+          "courseName": "Advanced Statistics - EBA3201",
+          "courseCode": "EBA3201",
+          "group": "G",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA3201_G_Sec._Monday_7",
+          "courseName": "Advanced Statistics - EBA3201",
+          "courseCode": "EBA3201",
+          "group": "G",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "EBA3201_C_Lect._Sunday_3",
+          "courseName": "Advanced Statistics - EBA3201",
+          "courseCode": "EBA3201",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA3201_C_Sec._Monday_9",
+          "courseName": "Advanced Statistics - EBA3201",
+          "courseCode": "EBA3201",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "EBA3201_D_Lect._Sunday_5",
+          "courseName": "Advanced Statistics - EBA3201",
+          "courseCode": "EBA3201",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA3201_D_Sec._Sunday_3",
+          "courseName": "Advanced Statistics - EBA3201",
+          "courseCode": "EBA3201",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "EBA3201_E_Sec._Sunday_7",
+          "courseName": "Advanced Statistics - EBA3201",
+          "courseCode": "EBA3201",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA3201_E_Lect._Tuesday_3",
+          "courseName": "Advanced Statistics - EBA3201",
+          "courseCode": "EBA3201",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "EBA3201_F_Sec._Sunday_7",
+          "courseName": "Advanced Statistics - EBA3201",
+          "courseCode": "EBA3201",
+          "group": "F",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EBA3201_F_Lect._Tuesday_3",
+          "courseName": "Advanced Statistics - EBA3201",
+          "courseCode": "EBA3201",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "EBA3201_G_Lect._Sunday_1",
+      "courseName": "Advanced Statistics - EBA3201",
+      "courseCode": "EBA3201",
+      "group": "G",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA3201_G_Sec._Monday_7",
+      "courseName": "Advanced Statistics - EBA3201",
+      "courseCode": "EBA3201",
+      "group": "G",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA3201_C_Lect._Sunday_3",
+      "courseName": "Advanced Statistics - EBA3201",
+      "courseCode": "EBA3201",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA3201_C_Sec._Monday_9",
+      "courseName": "Advanced Statistics - EBA3201",
+      "courseCode": "EBA3201",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA3201_D_Lect._Sunday_5",
+      "courseName": "Advanced Statistics - EBA3201",
+      "courseCode": "EBA3201",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA3201_D_Sec._Sunday_3",
+      "courseName": "Advanced Statistics - EBA3201",
+      "courseCode": "EBA3201",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA3201_E_Sec._Sunday_7",
+      "courseName": "Advanced Statistics - EBA3201",
+      "courseCode": "EBA3201",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA3201_E_Lect._Tuesday_3",
+      "courseName": "Advanced Statistics - EBA3201",
+      "courseCode": "EBA3201",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA3201_F_Sec._Sunday_7",
+      "courseName": "Advanced Statistics - EBA3201",
+      "courseCode": "EBA3201",
+      "group": "F",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EBA3201_F_Lect._Tuesday_3",
+      "courseName": "Advanced Statistics - EBA3201",
+      "courseCode": "EBA3201",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "الذكاء الإصطناعي - ق.م",
+    "علوم الحاسب ق.م //",
+    "هندسة البرمجيات - ق.م"
+  ],
+  "periods": [
+    "5",
+    "6"
+  ]
+}

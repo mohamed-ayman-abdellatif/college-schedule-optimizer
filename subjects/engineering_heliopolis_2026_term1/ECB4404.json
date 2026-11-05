@@ -1,0 +1,91 @@
+{
+  "id": "ECB4404",
+  "name": "Design of Metallic Structures - ECB4404",
+  "code": "ECB4404",
+  "instructors": [
+    "ندى خالد محمد شوقى على",
+    "د. مصطفى يوسف عبداللطيف يوسف"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECB4404_A_Sec._Monday_5",
+          "courseName": "Design of Metallic Structures - ECB4404",
+          "courseCode": "ECB4404",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "ندى خالد محمد شوقى على",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "ECB4404_A_Lect._Tuesday_1",
+          "courseName": "Design of Metallic Structures - ECB4404",
+          "courseCode": "ECB4404",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 4,
+          "duration": 4,
+          "instructor": "د. مصطفى يوسف عبداللطيف يوسف",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ندى خالد محمد شوقى على",
+        "د. مصطفى يوسف عبداللطيف يوسف"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECB4404_A_Sec._Monday_5",
+      "courseName": "Design of Metallic Structures - ECB4404",
+      "courseCode": "ECB4404",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "ندى خالد محمد شوقى على",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "ECB4404_A_Lect._Tuesday_1",
+      "courseName": "Design of Metallic Structures - ECB4404",
+      "courseCode": "ECB4404",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 4,
+      "duration": 4,
+      "instructor": "د. مصطفى يوسف عبداللطيف يوسف",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م*"
+  ],
+  "periods": [
+    "6"
+  ]
+}

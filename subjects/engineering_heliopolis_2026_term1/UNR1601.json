@@ -1,0 +1,136 @@
+{
+  "id": "UNR1601",
+  "name": "Climate Change and Water Management - UNR1601",
+  "code": "UNR1601",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "UNR1601_A_Lect._Saturday_3",
+          "courseName": "Climate Change and Water Management - UNR1601",
+          "courseCode": "UNR1601",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "UNR1601_B_Lect._Sunday_3",
+          "courseName": "Climate Change and Water Management - UNR1601",
+          "courseCode": "UNR1601",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "UNR1601_E_Lect._Tuesday_5",
+          "courseName": "Climate Change and Water Management - UNR1601",
+          "courseCode": "UNR1601",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "UNR1601_A_Lect._Saturday_3",
+      "courseName": "Climate Change and Water Management - UNR1601",
+      "courseCode": "UNR1601",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1601_B_Lect._Sunday_3",
+      "courseName": "Climate Change and Water Management - UNR1601",
+      "courseCode": "UNR1601",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1601_E_Lect._Tuesday_5",
+      "courseName": "Climate Change and Water Management - UNR1601",
+      "courseCode": "UNR1601",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    }
+  ],
+  "color": "#14B8A6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "الكترونيات ق م - Northamption //",
+    "الكترونيات ق م - Northamption*",
+    "هـ.الكترونات واتصالات ق.م",
+    "هـ.الكترونات واتصالات ق.م*",
+    "هندسة التشيد والبناء ق.م",
+    "هندسة التشيد والبناء ق.م*",
+    "هندسة معمارية ق.م*"
+  ],
+  "periods": [
+    "1",
+    "5"
+  ]
+}

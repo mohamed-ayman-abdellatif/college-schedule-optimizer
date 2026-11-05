@@ -1,0 +1,630 @@
+{
+  "id": "GLA0001",
+  "name": "Remedial English - GLA0001",
+  "code": "GLA0001",
+  "instructors": [
+    "ندى اسامة حامد محمد",
+    "د. رانيا رفعت محمد رضوان السيد عفيفى",
+    "د. سها محمود عبد المجيد شريف",
+    "الاء حسام الدين وهبه حسن عمارة",
+    "نورين هشام حسن حافظ",
+    "يوسف حسن مسعد محمد فارس",
+    "د. لمياء فاروق محمد فهيم الغمرى"
+  ],
+  "groups": [
+    {
+      "group": "R",
+      "sessions": [
+        {
+          "id": "GLA0001_R_Lect._Saturday_5",
+          "courseName": "Remedial English - GLA0001",
+          "courseCode": "GLA0001",
+          "group": "R",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "GLA0001_R_Sec._Monday_3",
+          "courseName": "Remedial English - GLA0001",
+          "courseCode": "GLA0001",
+          "group": "R",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "نورين هشام حسن حافظ",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "نورين هشام حسن حافظ"
+      ]
+    },
+    {
+      "group": "U",
+      "sessions": [
+        {
+          "id": "GLA0001_U_Lect._Saturday_9",
+          "courseName": "Remedial English - GLA0001",
+          "courseCode": "GLA0001",
+          "group": "U",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "GLA0001_U_Sec._Tuesday_9",
+          "courseName": "Remedial English - GLA0001",
+          "courseCode": "GLA0001",
+          "group": "U",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "يوسف حسن مسعد محمد فارس",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "يوسف حسن مسعد محمد فارس"
+      ]
+    },
+    {
+      "group": "M",
+      "sessions": [
+        {
+          "id": "GLA0001_M_Sec._Sunday_3",
+          "courseName": "Remedial English - GLA0001",
+          "courseCode": "GLA0001",
+          "group": "M",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "ندى اسامة حامد محمد",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "GLA0001_M_Lect._Thursday_1",
+          "courseName": "Remedial English - GLA0001",
+          "courseCode": "GLA0001",
+          "group": "M",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. رانيا رفعت محمد رضوان السيد عفيفى",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ندى اسامة حامد محمد",
+        "د. رانيا رفعت محمد رضوان السيد عفيفى"
+      ]
+    },
+    {
+      "group": "1",
+      "sessions": [
+        {
+          "id": "GLA0001_1_Sec._Sunday_5",
+          "courseName": "Remedial English - GLA0001",
+          "courseCode": "GLA0001",
+          "group": "1",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "ندى اسامة حامد محمد",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "GLA0001_1_Lect._Thursday_3",
+          "courseName": "Remedial English - GLA0001",
+          "courseCode": "GLA0001",
+          "group": "1",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. رانيا رفعت محمد رضوان السيد عفيفى",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ندى اسامة حامد محمد",
+        "د. رانيا رفعت محمد رضوان السيد عفيفى"
+      ]
+    },
+    {
+      "group": "5",
+      "sessions": [
+        {
+          "id": "GLA0001_5_Lect._Sunday_7",
+          "courseName": "Remedial English - GLA0001",
+          "courseCode": "GLA0001",
+          "group": "5",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. سها محمود عبد المجيد شريف",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "GLA0001_5_Sec._Thursday_3",
+          "courseName": "Remedial English - GLA0001",
+          "courseCode": "GLA0001",
+          "group": "5",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "الاء حسام الدين وهبه حسن عمارة",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. سها محمود عبد المجيد شريف",
+        "الاء حسام الدين وهبه حسن عمارة"
+      ]
+    },
+    {
+      "group": "S",
+      "sessions": [
+        {
+          "id": "GLA0001_S_Lect._Sunday_9",
+          "courseName": "Remedial English - GLA0001",
+          "courseCode": "GLA0001",
+          "group": "S",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "GLA0001_S_Sec._Monday_5",
+          "courseName": "Remedial English - GLA0001",
+          "courseCode": "GLA0001",
+          "group": "S",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "نورين هشام حسن حافظ",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "نورين هشام حسن حافظ"
+      ]
+    },
+    {
+      "group": "A2",
+      "sessions": [
+        {
+          "id": "GLA0001_A2_Lect._Monday_3",
+          "courseName": "Remedial English - GLA0001",
+          "courseCode": "GLA0001",
+          "group": "A2",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "GLA0001_A2_Sec._Wednesday_7",
+          "courseName": "Remedial English - GLA0001",
+          "courseCode": "GLA0001",
+          "group": "A2",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "T",
+      "sessions": [
+        {
+          "id": "GLA0001_T_Lect._Tuesday_1",
+          "courseName": "Remedial English - GLA0001",
+          "courseCode": "GLA0001",
+          "group": "T",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. سها محمود عبد المجيد شريف",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "GLA0001_T_Sec._Thursday_7",
+          "courseName": "Remedial English - GLA0001",
+          "courseCode": "GLA0001",
+          "group": "T",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "يوسف حسن مسعد محمد فارس",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. سها محمود عبد المجيد شريف",
+        "يوسف حسن مسعد محمد فارس"
+      ]
+    },
+    {
+      "group": "Q",
+      "sessions": [
+        {
+          "id": "GLA0001_Q_Lect._Tuesday_7",
+          "courseName": "Remedial English - GLA0001",
+          "courseCode": "GLA0001",
+          "group": "Q",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. لمياء فاروق محمد فهيم الغمرى",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "GLA0001_Q_Sec._Wednesday_7",
+          "courseName": "Remedial English - GLA0001",
+          "courseCode": "GLA0001",
+          "group": "Q",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "يوسف حسن مسعد محمد فارس",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. لمياء فاروق محمد فهيم الغمرى",
+        "يوسف حسن مسعد محمد فارس"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "GLA0001_R_Lect._Saturday_5",
+      "courseName": "Remedial English - GLA0001",
+      "courseCode": "GLA0001",
+      "group": "R",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "GLA0001_R_Sec._Monday_3",
+      "courseName": "Remedial English - GLA0001",
+      "courseCode": "GLA0001",
+      "group": "R",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "نورين هشام حسن حافظ",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "GLA0001_U_Lect._Saturday_9",
+      "courseName": "Remedial English - GLA0001",
+      "courseCode": "GLA0001",
+      "group": "U",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "GLA0001_U_Sec._Tuesday_9",
+      "courseName": "Remedial English - GLA0001",
+      "courseCode": "GLA0001",
+      "group": "U",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "يوسف حسن مسعد محمد فارس",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "GLA0001_M_Sec._Sunday_3",
+      "courseName": "Remedial English - GLA0001",
+      "courseCode": "GLA0001",
+      "group": "M",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "ندى اسامة حامد محمد",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "GLA0001_M_Lect._Thursday_1",
+      "courseName": "Remedial English - GLA0001",
+      "courseCode": "GLA0001",
+      "group": "M",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. رانيا رفعت محمد رضوان السيد عفيفى",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "GLA0001_1_Sec._Sunday_5",
+      "courseName": "Remedial English - GLA0001",
+      "courseCode": "GLA0001",
+      "group": "1",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "ندى اسامة حامد محمد",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "GLA0001_1_Lect._Thursday_3",
+      "courseName": "Remedial English - GLA0001",
+      "courseCode": "GLA0001",
+      "group": "1",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. رانيا رفعت محمد رضوان السيد عفيفى",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "GLA0001_5_Lect._Sunday_7",
+      "courseName": "Remedial English - GLA0001",
+      "courseCode": "GLA0001",
+      "group": "5",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. سها محمود عبد المجيد شريف",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "GLA0001_5_Sec._Thursday_3",
+      "courseName": "Remedial English - GLA0001",
+      "courseCode": "GLA0001",
+      "group": "5",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "الاء حسام الدين وهبه حسن عمارة",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "GLA0001_S_Lect._Sunday_9",
+      "courseName": "Remedial English - GLA0001",
+      "courseCode": "GLA0001",
+      "group": "S",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "GLA0001_S_Sec._Monday_5",
+      "courseName": "Remedial English - GLA0001",
+      "courseCode": "GLA0001",
+      "group": "S",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "نورين هشام حسن حافظ",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "GLA0001_A2_Lect._Monday_3",
+      "courseName": "Remedial English - GLA0001",
+      "courseCode": "GLA0001",
+      "group": "A2",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "GLA0001_A2_Sec._Wednesday_7",
+      "courseName": "Remedial English - GLA0001",
+      "courseCode": "GLA0001",
+      "group": "A2",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "GLA0001_T_Lect._Tuesday_1",
+      "courseName": "Remedial English - GLA0001",
+      "courseCode": "GLA0001",
+      "group": "T",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. سها محمود عبد المجيد شريف",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "GLA0001_T_Sec._Thursday_7",
+      "courseName": "Remedial English - GLA0001",
+      "courseCode": "GLA0001",
+      "group": "T",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "يوسف حسن مسعد محمد فارس",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "GLA0001_Q_Lect._Tuesday_7",
+      "courseName": "Remedial English - GLA0001",
+      "courseCode": "GLA0001",
+      "group": "Q",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. لمياء فاروق محمد فهيم الغمرى",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "GLA0001_Q_Sec._Wednesday_7",
+      "courseName": "Remedial English - GLA0001",
+      "courseCode": "GLA0001",
+      "group": "Q",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "يوسف حسن مسعد محمد فارس",
+      "color": "#06B6D4",
+      "room": ""
+    }
+  ],
+  "color": "#06B6D4",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هـ.الكترونات واتصالات ق.م",
+    "هندسة التشيد والبناء ق.م",
+    "هندسة الحاسبات ق.م",
+    "هندسة معمارية ق.م",
+    "هندسة ميكانيكية-ق م //"
+  ],
+  "periods": [
+    "1"
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "id": "ECB3504",
+  "name": "Desi. of Reinforced Concrete StructuresI - ECB3504",
+  "code": "ECB3504",
+  "instructors": [
+    "اميره احمد عبدالمتعال احمد",
+    "د. ابتسام عبدالعزيز يحيى محمد احمد زكى"
+  ],
+  "groups": [
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "ECB3504_C_Sec._Saturday_3",
+          "courseName": "Desi. of Reinforced Concrete StructuresI - ECB3504",
+          "courseCode": "ECB3504",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "اميره احمد عبدالمتعال احمد",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "ECB3504_C_Lect._Monday_1",
+          "courseName": "Desi. of Reinforced Concrete StructuresI - ECB3504",
+          "courseCode": "ECB3504",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 4,
+          "duration": 4,
+          "instructor": "د. ابتسام عبدالعزيز يحيى محمد احمد زكى",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "اميره احمد عبدالمتعال احمد",
+        "د. ابتسام عبدالعزيز يحيى محمد احمد زكى"
+      ]
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "ECB3504_D_Sec._Saturday_7",
+          "courseName": "Desi. of Reinforced Concrete StructuresI - ECB3504",
+          "courseCode": "ECB3504",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "اميره احمد عبدالمتعال احمد",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "ECB3504_D_Lect._Monday_1",
+          "courseName": "Desi. of Reinforced Concrete StructuresI - ECB3504",
+          "courseCode": "ECB3504",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 4,
+          "duration": 4,
+          "instructor": "د. ابتسام عبدالعزيز يحيى محمد احمد زكى",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "اميره احمد عبدالمتعال احمد",
+        "د. ابتسام عبدالعزيز يحيى محمد احمد زكى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECB3504_C_Sec._Saturday_3",
+      "courseName": "Desi. of Reinforced Concrete StructuresI - ECB3504",
+      "courseCode": "ECB3504",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "اميره احمد عبدالمتعال احمد",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "ECB3504_C_Lect._Monday_1",
+      "courseName": "Desi. of Reinforced Concrete StructuresI - ECB3504",
+      "courseCode": "ECB3504",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 4,
+      "duration": 4,
+      "instructor": "د. ابتسام عبدالعزيز يحيى محمد احمد زكى",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "ECB3504_D_Sec._Saturday_7",
+      "courseName": "Desi. of Reinforced Concrete StructuresI - ECB3504",
+      "courseCode": "ECB3504",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "اميره احمد عبدالمتعال احمد",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "ECB3504_D_Lect._Monday_1",
+      "courseName": "Desi. of Reinforced Concrete StructuresI - ECB3504",
+      "courseCode": "ECB3504",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 4,
+      "duration": 4,
+      "instructor": "د. ابتسام عبدالعزيز يحيى محمد احمد زكى",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م",
+    "هندسة التشيد والبناء ق.م*"
+  ],
+  "periods": [
+    "5",
+    "6"
+  ]
+}

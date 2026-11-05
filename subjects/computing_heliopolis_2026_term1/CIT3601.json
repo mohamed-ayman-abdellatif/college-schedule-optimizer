@@ -1,0 +1,57 @@
+{
+  "id": "CIT3601",
+  "name": "Professional Training in AI I - CIT3601",
+  "code": "CIT3601",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CIT3601_A_Lab._Tuesday_5",
+          "courseName": "Professional Training in AI I - CIT3601",
+          "courseCode": "CIT3601",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": false,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CIT3601_A_Lab._Tuesday_5",
+      "courseName": "Professional Training in AI I - CIT3601",
+      "courseCode": "CIT3601",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "علوم الحاسب ق.م //"
+  ],
+  "periods": [
+    "6"
+  ]
+}

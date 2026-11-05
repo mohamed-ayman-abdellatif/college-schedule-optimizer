@@ -1,0 +1,158 @@
+{
+  "id": "ME524",
+  "name": "RENEWABLE ENERGY RESOURCE - ME524",
+  "code": "ME524",
+  "instructors": [
+    "سامح محمود عبدالحميد ابراهيم شعبان",
+    "د. سامح محمود عبدالحميد ابراهيم شعبان"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ME524_A_Sec._Sunday_7",
+          "courseName": "RENEWABLE ENERGY RESOURCE - ME524",
+          "courseCode": "ME524",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "سامح محمود عبدالحميد ابراهيم شعبان",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "ME524_A_Lect._Wednesday_1",
+          "courseName": "RENEWABLE ENERGY RESOURCE - ME524",
+          "courseCode": "ME524",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. سامح محمود عبدالحميد ابراهيم شعبان",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "سامح محمود عبدالحميد ابراهيم شعبان",
+        "د. سامح محمود عبدالحميد ابراهيم شعبان"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ME524_B_Sec._Wednesday_7",
+          "courseName": "RENEWABLE ENERGY RESOURCE - ME524",
+          "courseCode": "ME524",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "ME524_B_Lect._Wednesday_1",
+          "courseName": "RENEWABLE ENERGY RESOURCE - ME524",
+          "courseCode": "ME524",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. سامح محمود عبدالحميد ابراهيم شعبان",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. سامح محمود عبدالحميد ابراهيم شعبان"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ME524_A_Sec._Sunday_7",
+      "courseName": "RENEWABLE ENERGY RESOURCE - ME524",
+      "courseCode": "ME524",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "سامح محمود عبدالحميد ابراهيم شعبان",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "ME524_A_Lect._Wednesday_1",
+      "courseName": "RENEWABLE ENERGY RESOURCE - ME524",
+      "courseCode": "ME524",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. سامح محمود عبدالحميد ابراهيم شعبان",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "ME524_B_Sec._Wednesday_7",
+      "courseName": "RENEWABLE ENERGY RESOURCE - ME524",
+      "courseCode": "ME524",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "ME524_B_Lect._Wednesday_1",
+      "courseName": "RENEWABLE ENERGY RESOURCE - ME524",
+      "courseCode": "ME524",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. سامح محمود عبدالحميد ابراهيم شعبان",
+      "color": "#10B981",
+      "room": ""
+    }
+  ],
+  "color": "#10B981",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "ميكانيكا ق م -Northampton",
+    "هـ.ميكانيكية ق.م"
+  ],
+  "periods": [
+    "10"
+  ]
+}

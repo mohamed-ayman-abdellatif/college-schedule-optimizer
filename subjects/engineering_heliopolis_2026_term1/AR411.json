@@ -1,0 +1,91 @@
+{
+  "id": "AR411",
+  "name": "ARCHITECTURAL DESIGN & URBAN LANDSCAPE - AR411",
+  "code": "AR411",
+  "instructors": [
+    "د. إيمان فايز ماهر باسيلي",
+    "إيمان فايز ماهر باسيلي"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "AR411_A_Lect._Monday_7",
+          "courseName": "ARCHITECTURAL DESIGN & URBAN LANDSCAPE - AR411",
+          "courseCode": "AR411",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. إيمان فايز ماهر باسيلي",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "AR411_A_Sec._Monday_9",
+          "courseName": "ARCHITECTURAL DESIGN & URBAN LANDSCAPE - AR411",
+          "courseCode": "AR411",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 12,
+          "duration": 4,
+          "instructor": "إيمان فايز ماهر باسيلي",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. إيمان فايز ماهر باسيلي",
+        "إيمان فايز ماهر باسيلي"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "AR411_A_Lect._Monday_7",
+      "courseName": "ARCHITECTURAL DESIGN & URBAN LANDSCAPE - AR411",
+      "courseCode": "AR411",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. إيمان فايز ماهر باسيلي",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "AR411_A_Sec._Monday_9",
+      "courseName": "ARCHITECTURAL DESIGN & URBAN LANDSCAPE - AR411",
+      "courseCode": "AR411",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 12,
+      "duration": 4,
+      "instructor": "إيمان فايز ماهر باسيلي",
+      "color": "#14B8A6",
+      "room": ""
+    }
+  ],
+  "color": "#14B8A6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م"
+  ],
+  "periods": [
+    "7"
+  ]
+}

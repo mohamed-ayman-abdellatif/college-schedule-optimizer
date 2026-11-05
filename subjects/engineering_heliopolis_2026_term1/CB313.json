@@ -1,0 +1,91 @@
+{
+  "id": "CB313",
+  "name": "QUALITY CONTROL IN CONSTRUCTION - CB313",
+  "code": "CB313",
+  "instructors": [
+    "د. حسن احمد حسن احمد سعد",
+    "محمد احمد عبدالرازق علي"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "CB313_B_Lect._Tuesday_7",
+          "courseName": "QUALITY CONTROL IN CONSTRUCTION - CB313",
+          "courseCode": "CB313",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. حسن احمد حسن احمد سعد",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "CB313_B_Sec._Thursday_7",
+          "courseName": "QUALITY CONTROL IN CONSTRUCTION - CB313",
+          "courseCode": "CB313",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "محمد احمد عبدالرازق علي",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. حسن احمد حسن احمد سعد",
+        "محمد احمد عبدالرازق علي"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "CB313_B_Lect._Tuesday_7",
+      "courseName": "QUALITY CONTROL IN CONSTRUCTION - CB313",
+      "courseCode": "CB313",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. حسن احمد حسن احمد سعد",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "CB313_B_Sec._Thursday_7",
+      "courseName": "QUALITY CONTROL IN CONSTRUCTION - CB313",
+      "courseCode": "CB313",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "محمد احمد عبدالرازق علي",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م"
+  ],
+  "periods": [
+    "6"
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "id": "ECE2111",
+  "name": "Programming Application - ECE2111",
+  "code": "ECE2111",
+  "instructors": [
+    "احمد زكريا نور محمد طلحه",
+    "د. نورالدين سامي محمد كمال عيسى"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECE2111_B_Lab._Monday_3",
+          "courseName": "Programming Application - ECE2111",
+          "courseCode": "ECE2111",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "احمد زكريا نور محمد طلحه",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "ECE2111_B_Lect._Wednesday_5",
+          "courseName": "Programming Application - ECE2111",
+          "courseCode": "ECE2111",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. نورالدين سامي محمد كمال عيسى",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "احمد زكريا نور محمد طلحه",
+        "د. نورالدين سامي محمد كمال عيسى"
+      ]
+    },
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECE2111_A_Lect._Wednesday_5",
+          "courseName": "Programming Application - ECE2111",
+          "courseCode": "ECE2111",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. نورالدين سامي محمد كمال عيسى",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "ECE2111_A_Lab._Thursday_1",
+          "courseName": "Programming Application - ECE2111",
+          "courseCode": "ECE2111",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "احمد زكريا نور محمد طلحه",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. نورالدين سامي محمد كمال عيسى",
+        "احمد زكريا نور محمد طلحه"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECE2111_B_Lab._Monday_3",
+      "courseName": "Programming Application - ECE2111",
+      "courseCode": "ECE2111",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "احمد زكريا نور محمد طلحه",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE2111_B_Lect._Wednesday_5",
+      "courseName": "Programming Application - ECE2111",
+      "courseCode": "ECE2111",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. نورالدين سامي محمد كمال عيسى",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE2111_A_Lect._Wednesday_5",
+      "courseName": "Programming Application - ECE2111",
+      "courseCode": "ECE2111",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. نورالدين سامي محمد كمال عيسى",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE2111_A_Lab._Thursday_1",
+      "courseName": "Programming Application - ECE2111",
+      "courseCode": "ECE2111",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "احمد زكريا نور محمد طلحه",
+      "color": "#6366F1",
+      "room": ""
+    }
+  ],
+  "color": "#6366F1",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية ق م -Northampton //",
+    "هندسة كهربية وتحكم ق.م"
+  ],
+  "periods": [
+    "3"
+  ]
+}

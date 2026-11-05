@@ -1,0 +1,213 @@
+{
+  "id": "CAI3002",
+  "name": "Mathematical Foundations for Al - CAI3002",
+  "code": "CAI3002",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "CAI3002_E_Sec._Monday_3",
+          "courseName": "Mathematical Foundations for Al - CAI3002",
+          "courseCode": "CAI3002",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "CAI3002_E_Lect._Tuesday_9",
+          "courseName": "Mathematical Foundations for Al - CAI3002",
+          "courseCode": "CAI3002",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "CAI3002_C_Sec._Monday_5",
+          "courseName": "Mathematical Foundations for Al - CAI3002",
+          "courseCode": "CAI3002",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "CAI3002_C_Lect._Tuesday_11",
+          "courseName": "Mathematical Foundations for Al - CAI3002",
+          "courseCode": "CAI3002",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "CAI3002_D_Sec._Monday_7",
+          "courseName": "Mathematical Foundations for Al - CAI3002",
+          "courseCode": "CAI3002",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "CAI3002_D_Lect._Tuesday_11",
+          "courseName": "Mathematical Foundations for Al - CAI3002",
+          "courseCode": "CAI3002",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CAI3002_E_Sec._Monday_3",
+      "courseName": "Mathematical Foundations for Al - CAI3002",
+      "courseCode": "CAI3002",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "CAI3002_C_Sec._Monday_5",
+      "courseName": "Mathematical Foundations for Al - CAI3002",
+      "courseCode": "CAI3002",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "CAI3002_D_Sec._Monday_7",
+      "courseName": "Mathematical Foundations for Al - CAI3002",
+      "courseCode": "CAI3002",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "CAI3002_E_Lect._Tuesday_9",
+      "courseName": "Mathematical Foundations for Al - CAI3002",
+      "courseCode": "CAI3002",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "CAI3002_C_Lect._Tuesday_11",
+      "courseName": "Mathematical Foundations for Al - CAI3002",
+      "courseCode": "CAI3002",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "CAI3002_D_Lect._Tuesday_11",
+      "courseName": "Mathematical Foundations for Al - CAI3002",
+      "courseCode": "CAI3002",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    }
+  ],
+  "color": "#6366F1",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "الذكاء الإصطناعي - ق.م"
+  ],
+  "periods": [
+    "5"
+  ]
+}

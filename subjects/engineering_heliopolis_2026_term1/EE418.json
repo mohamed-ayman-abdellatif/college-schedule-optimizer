@@ -1,0 +1,123 @@
+{
+  "id": "EE418",
+  "name": "AUTOMATIC CONTROL SYSTEMS - EE418",
+  "code": "EE418",
+  "instructors": [
+    "يوسف يحيى زكريا عبدالباسط",
+    "كريم محمد مجاهد الدغيدي",
+    "د. امام فتحى محمد الزعيطى"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EE418_A_Sec._Sunday_1",
+          "courseName": "AUTOMATIC CONTROL SYSTEMS - EE418",
+          "courseCode": "EE418",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "يوسف يحيى زكريا عبدالباسط",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EE418_A_Lab._Sunday_5",
+          "courseName": "AUTOMATIC CONTROL SYSTEMS - EE418",
+          "courseCode": "EE418",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "كريم محمد مجاهد الدغيدي",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EE418_A_Lect._Wednesday_9",
+          "courseName": "AUTOMATIC CONTROL SYSTEMS - EE418",
+          "courseCode": "EE418",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. امام فتحى محمد الزعيطى",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "يوسف يحيى زكريا عبدالباسط",
+        "كريم محمد مجاهد الدغيدي",
+        "د. امام فتحى محمد الزعيطى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EE418_A_Sec._Sunday_1",
+      "courseName": "AUTOMATIC CONTROL SYSTEMS - EE418",
+      "courseCode": "EE418",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "يوسف يحيى زكريا عبدالباسط",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EE418_A_Lab._Sunday_5",
+      "courseName": "AUTOMATIC CONTROL SYSTEMS - EE418",
+      "courseCode": "EE418",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "كريم محمد مجاهد الدغيدي",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EE418_A_Lect._Wednesday_9",
+      "courseName": "AUTOMATIC CONTROL SYSTEMS - EE418",
+      "courseCode": "EE418",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. امام فتحى محمد الزعيطى",
+      "color": "#06B6D4",
+      "room": ""
+    }
+  ],
+  "color": "#06B6D4",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "حاسبات ق م - Northampton",
+    "هـ.الكترونات واتصالات ق.م",
+    "هندسة الحاسبات ق.م"
+  ],
+  "periods": [
+    "7"
+  ]
+}

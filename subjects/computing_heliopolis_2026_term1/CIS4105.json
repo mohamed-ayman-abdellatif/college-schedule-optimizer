@@ -1,0 +1,85 @@
+{
+  "id": "CIS4105",
+  "name": "Knowledge Management - CIS4105",
+  "code": "CIS4105",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CIS4105_A_Sec._Sunday_7",
+          "courseName": "Knowledge Management - CIS4105",
+          "courseCode": "CIS4105",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "CIS4105_A_Lect._Thursday_1",
+          "courseName": "Knowledge Management - CIS4105",
+          "courseCode": "CIS4105",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CIS4105_A_Sec._Sunday_7",
+      "courseName": "Knowledge Management - CIS4105",
+      "courseCode": "CIS4105",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "CIS4105_A_Lect._Thursday_1",
+      "courseName": "Knowledge Management - CIS4105",
+      "courseCode": "CIS4105",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    }
+  ],
+  "color": "#10B981",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "نظم معلومات -ق م"
+  ],
+  "periods": [
+    "7"
+  ]
+}

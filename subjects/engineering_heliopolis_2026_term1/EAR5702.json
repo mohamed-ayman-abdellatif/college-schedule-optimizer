@@ -1,0 +1,61 @@
+{
+  "id": "EAR5702",
+  "name": "Interior Design Principles - EAR5702",
+  "code": "EAR5702",
+  "instructors": [
+    "د. سارة احمد لبيب الحسينى"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EAR5702_A_Lect._Sunday_3",
+          "courseName": "Interior Design Principles - EAR5702",
+          "courseCode": "EAR5702",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. سارة احمد لبيب الحسينى",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. سارة احمد لبيب الحسينى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EAR5702_A_Lect._Sunday_3",
+      "courseName": "Interior Design Principles - EAR5702",
+      "courseCode": "EAR5702",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. سارة احمد لبيب الحسينى",
+      "color": "#6366F1",
+      "room": ""
+    }
+  ],
+  "color": "#6366F1",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م*"
+  ],
+  "periods": [
+    "9"
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "EEE2401",
+  "name": "Power Engineering Fundamentals - EEE2401",
+  "code": "EEE2401",
+  "instructors": [
+    "د. محمود مجدى بهجت عتيبة",
+    "عبدالرحمن محمد عبدالوهاب ابوشنب"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEE2401_A_Lect._Saturday_3",
+          "courseName": "Power Engineering Fundamentals - EEE2401",
+          "courseCode": "EEE2401",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. محمود مجدى بهجت عتيبة",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EEE2401_A_Sec._Saturday_5",
+          "courseName": "Power Engineering Fundamentals - EEE2401",
+          "courseCode": "EEE2401",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "عبدالرحمن محمد عبدالوهاب ابوشنب",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمود مجدى بهجت عتيبة",
+        "عبدالرحمن محمد عبدالوهاب ابوشنب"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE2401_A_Lect._Saturday_3",
+      "courseName": "Power Engineering Fundamentals - EEE2401",
+      "courseCode": "EEE2401",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. محمود مجدى بهجت عتيبة",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EEE2401_A_Sec._Saturday_5",
+      "courseName": "Power Engineering Fundamentals - EEE2401",
+      "courseCode": "EEE2401",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "عبدالرحمن محمد عبدالوهاب ابوشنب",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية ق م -Northampton //",
+    "هندسة كهربية وتحكم ق.م"
+  ],
+  "periods": [
+    "4"
+  ]
+}

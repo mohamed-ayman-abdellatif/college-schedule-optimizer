@@ -1,0 +1,89 @@
+{
+  "id": "CC519",
+  "name": "Introduction to Data Mining - CC519",
+  "code": "CC519",
+  "instructors": [
+    "د. احمد فاروق ابراهيم جعفر"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "CC519_B_Lab._Saturday_3",
+          "courseName": "Introduction to Data Mining - CC519",
+          "courseCode": "CC519",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "CC519_B_Lect._Tuesday_11",
+          "courseName": "Introduction to Data Mining - CC519",
+          "courseCode": "CC519",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "د. احمد فاروق ابراهيم جعفر",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. احمد فاروق ابراهيم جعفر"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "CC519_B_Lab._Saturday_3",
+      "courseName": "Introduction to Data Mining - CC519",
+      "courseCode": "CC519",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "CC519_B_Lect._Tuesday_11",
+      "courseName": "Introduction to Data Mining - CC519",
+      "courseCode": "CC519",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "د. احمد فاروق ابراهيم جعفر",
+      "color": "#F59E0B",
+      "room": ""
+    }
+  ],
+  "color": "#F59E0B",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة الحاسبات ق.م"
+  ],
+  "periods": [
+    "10"
+  ]
+}

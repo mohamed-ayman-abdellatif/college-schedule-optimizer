@@ -1,0 +1,91 @@
+{
+  "id": "ECB2702",
+  "name": "Introduction to Transportation Engineeri - ECB2702",
+  "code": "ECB2702",
+  "instructors": [
+    "د. اكرم سلطان محمود قطب",
+    "رانيا عادل سليمان امين عز الدين"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECB2702_A_Lect._Saturday_5",
+          "courseName": "Introduction to Transportation Engineeri - ECB2702",
+          "courseCode": "ECB2702",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 8,
+          "duration": 4,
+          "instructor": "د. اكرم سلطان محمود قطب",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "ECB2702_A_Sec._Sunday_7",
+          "courseName": "Introduction to Transportation Engineeri - ECB2702",
+          "courseCode": "ECB2702",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "رانيا عادل سليمان امين عز الدين",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. اكرم سلطان محمود قطب",
+        "رانيا عادل سليمان امين عز الدين"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECB2702_A_Lect._Saturday_5",
+      "courseName": "Introduction to Transportation Engineeri - ECB2702",
+      "courseCode": "ECB2702",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 8,
+      "duration": 4,
+      "instructor": "د. اكرم سلطان محمود قطب",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "ECB2702_A_Sec._Sunday_7",
+      "courseName": "Introduction to Transportation Engineeri - ECB2702",
+      "courseCode": "ECB2702",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "رانيا عادل سليمان امين عز الدين",
+      "color": "#06B6D4",
+      "room": ""
+    }
+  ],
+  "color": "#06B6D4",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م"
+  ],
+  "periods": [
+    "4"
+  ]
+}

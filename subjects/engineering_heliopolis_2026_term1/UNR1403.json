@@ -1,0 +1,1373 @@
+{
+  "id": "UNR1403",
+  "name": "Academic English - UNR1403",
+  "code": "UNR1403",
+  "instructors": [
+    "د. هبة محمد عبدالعزيز عبدالرحيم",
+    "ندى اسامة حامد محمد",
+    "ابتهال انس محمد محمد البطشة",
+    "د. سها محمود عبد المجيد شريف",
+    "نورين هشام حسن حافظ",
+    "د. لمياء فاروق محمد فهيم الغمرى",
+    "د. سمر سيد محمد مصطفى",
+    "يوسف حسن مسعد محمد فارس",
+    "د. ميادة محمود سعد الدين القشلان"
+  ],
+  "groups": [
+    {
+      "group": "A6",
+      "sessions": [
+        {
+          "id": "UNR1403_A6_Sec._Saturday_1",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "A6",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "ابتهال انس محمد محمد البطشة",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "UNR1403_A6_Lect._Thursday_5",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "A6",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. سها محمود عبد المجيد شريف",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ابتهال انس محمد محمد البطشة",
+        "د. سها محمود عبد المجيد شريف"
+      ]
+    },
+    {
+      "group": "A4",
+      "sessions": [
+        {
+          "id": "UNR1403_A4_Lect._Saturday_3",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "A4",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "UNR1403_A4_Sec._Wednesday_1",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "A4",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "نورين هشام حسن حافظ",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "نورين هشام حسن حافظ"
+      ]
+    },
+    {
+      "group": "B3",
+      "sessions": [
+        {
+          "id": "UNR1403_B3_Sec._Saturday_9",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "B3",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "ابتهال انس محمد محمد البطشة",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "UNR1403_B3_Lect._Tuesday_9",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "B3",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. لمياء فاروق محمد فهيم الغمرى",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ابتهال انس محمد محمد البطشة",
+        "د. لمياء فاروق محمد فهيم الغمرى"
+      ]
+    },
+    {
+      "group": "A8",
+      "sessions": [
+        {
+          "id": "UNR1403_A8_Sec._Saturday_3",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "A8",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "ابتهال انس محمد محمد البطشة",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "UNR1403_A8_Lect._Thursday_1",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "A8",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. سها محمود عبد المجيد شريف",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ابتهال انس محمد محمد البطشة",
+        "د. سها محمود عبد المجيد شريف"
+      ]
+    },
+    {
+      "group": "G3",
+      "sessions": [
+        {
+          "id": "UNR1403_G3_Lect._Sunday_1",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "G3",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "UNR1403_G3_Sec._Monday_7",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "G3",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "A2",
+      "sessions": [
+        {
+          "id": "UNR1403_A2_Sec._Sunday_3",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "A2",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "نورين هشام حسن حافظ",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "UNR1403_A2_Lect._Thursday_7",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "A2",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "نورين هشام حسن حافظ"
+      ]
+    },
+    {
+      "group": "G2",
+      "sessions": [
+        {
+          "id": "UNR1403_G2_Sec._Sunday_5",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "G2",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "UNR1403_G2_Lect._Wednesday_1",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "G2",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "I5",
+      "sessions": [
+        {
+          "id": "UNR1403_I5_Lect._Sunday_7",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "I5",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "UNR1403_I5_Sec._Monday_5",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "I5",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "I3",
+      "sessions": [
+        {
+          "id": "UNR1403_I3_Lect._Sunday_3",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "I3",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "UNR1403_I3_Sec._Monday_7",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "I3",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "I6",
+      "sessions": [
+        {
+          "id": "UNR1403_I6_Lect._Sunday_7",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "I6",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "UNR1403_I6_Sec._Monday_1",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "I6",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "4",
+      "sessions": [
+        {
+          "id": "UNR1403_4_Lect._Monday_5",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "4",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. هبة محمد عبدالعزيز عبدالرحيم",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "UNR1403_4_Sec._Thursday_1",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "4",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "ندى اسامة حامد محمد",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. هبة محمد عبدالعزيز عبدالرحيم",
+        "ندى اسامة حامد محمد"
+      ]
+    },
+    {
+      "group": "F0",
+      "sessions": [
+        {
+          "id": "UNR1403_F0_Lect._Monday_7",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "F0",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. هبة محمد عبدالعزيز عبدالرحيم",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "UNR1403_F0_Sec._Thursday_3",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "F0",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "ندى اسامة حامد محمد",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. هبة محمد عبدالعزيز عبدالرحيم",
+        "ندى اسامة حامد محمد"
+      ]
+    },
+    {
+      "group": "A1",
+      "sessions": [
+        {
+          "id": "UNR1403_A1_Lect._Monday_9",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "A1",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. سمر سيد محمد مصطفى",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "UNR1403_A1_Sec._Thursday_9",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "A1",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "يوسف حسن مسعد محمد فارس",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. سمر سيد محمد مصطفى",
+        "يوسف حسن مسعد محمد فارس"
+      ]
+    },
+    {
+      "group": "B1",
+      "sessions": [
+        {
+          "id": "UNR1403_B1_Lect._Monday_5",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "B1",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. سمر سيد محمد مصطفى",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "UNR1403_B1_Sec._Tuesday_5",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "B1",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "يوسف حسن مسعد محمد فارس",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. سمر سيد محمد مصطفى",
+        "يوسف حسن مسعد محمد فارس"
+      ]
+    },
+    {
+      "group": "A3",
+      "sessions": [
+        {
+          "id": "UNR1403_A3_Sec._Monday_7",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "A3",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "نورين هشام حسن حافظ",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "UNR1403_A3_Lect._Wednesday_3",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "A3",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. ميادة محمود سعد الدين القشلان",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "نورين هشام حسن حافظ",
+        "د. ميادة محمود سعد الدين القشلان"
+      ]
+    },
+    {
+      "group": "A7",
+      "sessions": [
+        {
+          "id": "UNR1403_A7_Lect._Monday_7",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "A7",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. سمر سيد محمد مصطفى",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "UNR1403_A7_Sec._Thursday_1",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "A7",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "نورين هشام حسن حافظ",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. سمر سيد محمد مصطفى",
+        "نورين هشام حسن حافظ"
+      ]
+    },
+    {
+      "group": "B0",
+      "sessions": [
+        {
+          "id": "UNR1403_B0_Sec._Monday_9",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "B0",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "ابتهال انس محمد محمد البطشة",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "UNR1403_B0_Lect._Thursday_1",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "B0",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. ميادة محمود سعد الدين القشلان",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ابتهال انس محمد محمد البطشة",
+        "د. ميادة محمود سعد الدين القشلان"
+      ]
+    },
+    {
+      "group": "A5",
+      "sessions": [
+        {
+          "id": "UNR1403_A5_Lect._Tuesday_7",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "A5",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. سها محمود عبد المجيد شريف",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "UNR1403_A5_Sec._Wednesday_1",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "A5",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "يوسف حسن مسعد محمد فارس",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. سها محمود عبد المجيد شريف",
+        "يوسف حسن مسعد محمد فارس"
+      ]
+    },
+    {
+      "group": "A0",
+      "sessions": [
+        {
+          "id": "UNR1403_A0_Lect._Wednesday_1",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "A0",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. ميادة محمود سعد الدين القشلان",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "UNR1403_A0_Sec._Thursday_1",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "A0",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "يوسف حسن مسعد محمد فارس",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. ميادة محمود سعد الدين القشلان",
+        "يوسف حسن مسعد محمد فارس"
+      ]
+    },
+    {
+      "group": "A9",
+      "sessions": [
+        {
+          "id": "UNR1403_A9_Sec._Wednesday_9",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "A9",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "ابتهال انس محمد محمد البطشة",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "UNR1403_A9_Lect._Thursday_9",
+          "courseName": "Academic English - UNR1403",
+          "courseCode": "UNR1403",
+          "group": "A9",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ابتهال انس محمد محمد البطشة"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "UNR1403_A6_Sec._Saturday_1",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "A6",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "ابتهال انس محمد محمد البطشة",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_A6_Lect._Thursday_5",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "A6",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. سها محمود عبد المجيد شريف",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_A4_Lect._Saturday_3",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "A4",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_A4_Sec._Wednesday_1",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "A4",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "نورين هشام حسن حافظ",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_B3_Sec._Saturday_9",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "B3",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "ابتهال انس محمد محمد البطشة",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_B3_Lect._Tuesday_9",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "B3",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. لمياء فاروق محمد فهيم الغمرى",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_A8_Sec._Saturday_3",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "A8",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "ابتهال انس محمد محمد البطشة",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_A8_Lect._Thursday_1",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "A8",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. سها محمود عبد المجيد شريف",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_G3_Lect._Sunday_1",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "G3",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_G3_Sec._Monday_7",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "G3",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_A2_Sec._Sunday_3",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "A2",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "نورين هشام حسن حافظ",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_A2_Lect._Thursday_7",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "A2",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_G2_Sec._Sunday_5",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "G2",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_G2_Lect._Wednesday_1",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "G2",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_I5_Lect._Sunday_7",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "I5",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_I5_Sec._Monday_5",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "I5",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_I3_Lect._Sunday_3",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "I3",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_I3_Sec._Monday_7",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "I3",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_I6_Lect._Sunday_7",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "I6",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_I6_Sec._Monday_1",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "I6",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_4_Lect._Monday_5",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "4",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. هبة محمد عبدالعزيز عبدالرحيم",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_4_Sec._Thursday_1",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "4",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "ندى اسامة حامد محمد",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_F0_Lect._Monday_7",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "F0",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. هبة محمد عبدالعزيز عبدالرحيم",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_F0_Sec._Thursday_3",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "F0",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "ندى اسامة حامد محمد",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_A1_Lect._Monday_9",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "A1",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. سمر سيد محمد مصطفى",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_A1_Sec._Thursday_9",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "A1",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "يوسف حسن مسعد محمد فارس",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_B1_Lect._Monday_5",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "B1",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. سمر سيد محمد مصطفى",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_B1_Sec._Tuesday_5",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "B1",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "يوسف حسن مسعد محمد فارس",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_A3_Sec._Monday_7",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "A3",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "نورين هشام حسن حافظ",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_A3_Lect._Wednesday_3",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "A3",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. ميادة محمود سعد الدين القشلان",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_A7_Lect._Monday_7",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "A7",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. سمر سيد محمد مصطفى",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_A7_Sec._Thursday_1",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "A7",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "نورين هشام حسن حافظ",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_B0_Sec._Monday_9",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "B0",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "ابتهال انس محمد محمد البطشة",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_B0_Lect._Thursday_1",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "B0",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. ميادة محمود سعد الدين القشلان",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_A5_Lect._Tuesday_7",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "A5",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. سها محمود عبد المجيد شريف",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_A5_Sec._Wednesday_1",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "A5",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "يوسف حسن مسعد محمد فارس",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_A0_Lect._Wednesday_1",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "A0",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. ميادة محمود سعد الدين القشلان",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_A0_Sec._Thursday_1",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "A0",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "يوسف حسن مسعد محمد فارس",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_A9_Sec._Wednesday_9",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "A9",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "ابتهال انس محمد محمد البطشة",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "UNR1403_A9_Lect._Thursday_9",
+      "courseName": "Academic English - UNR1403",
+      "courseCode": "UNR1403",
+      "group": "A9",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    }
+  ],
+  "color": "#14B8A6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "الكترونيات ق م - Northamption //",
+    "الكترونيات ق م - Northamption*",
+    "حاسبات ق م - Northampton",
+    "حاسبات ق م - Northampton*",
+    "ميكانيكا ق م -Northampton",
+    "ميكانيكا ق م -Northampton*",
+    "هـ.الكترونات واتصالات ق.م",
+    "هـ.الكترونات واتصالات ق.م*",
+    "هـ.ميكانيكية ق.م*",
+    "هندسة التشيد والبناء ق.م",
+    "هندسة التشيد والبناء ق.م*",
+    "هندسة الحاسبات ق.م",
+    "هندسة الحاسبات ق.م*",
+    "هندسة كهربية ق م -Northampton //",
+    "هندسة كهربية ق م -Northampton*",
+    "هندسة كهربية وتحكم ق.م",
+    "هندسة كهربية وتحكم ق.م*",
+    "هندسة معمارية ق.م",
+    "هندسة معمارية ق.م*",
+    "هندسة معمارية-Cardiff-ق م //",
+    "هندسة ميكانيكية-ق م //"
+  ],
+  "periods": [
+    "1"
+  ]
+}

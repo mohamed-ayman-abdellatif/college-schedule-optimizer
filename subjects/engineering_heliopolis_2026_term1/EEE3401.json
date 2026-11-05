@@ -1,0 +1,91 @@
+{
+  "id": "EEE3401",
+  "name": "Intro. to Power engineering. - EEE3401*",
+  "code": "EEE3401",
+  "instructors": [
+    "د. محمود مجدى بهجت عتيبة",
+    "عبدالرحمن محمد عبدالوهاب ابوشنب"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEE3401_A_Lect._Saturday_3",
+          "courseName": "Intro. to Power engineering. - EEE3401*",
+          "courseCode": "EEE3401",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. محمود مجدى بهجت عتيبة",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EEE3401_A_Sec._Saturday_5",
+          "courseName": "Intro. to Power engineering. - EEE3401*",
+          "courseCode": "EEE3401",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "عبدالرحمن محمد عبدالوهاب ابوشنب",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمود مجدى بهجت عتيبة",
+        "عبدالرحمن محمد عبدالوهاب ابوشنب"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE3401_A_Lect._Saturday_3",
+      "courseName": "Intro. to Power engineering. - EEE3401*",
+      "courseCode": "EEE3401",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. محمود مجدى بهجت عتيبة",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EEE3401_A_Sec._Saturday_5",
+      "courseName": "Intro. to Power engineering. - EEE3401*",
+      "courseCode": "EEE3401",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "عبدالرحمن محمد عبدالوهاب ابوشنب",
+      "color": "#F59E0B",
+      "room": ""
+    }
+  ],
+  "color": "#F59E0B",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية وتحكم ق.م*"
+  ],
+  "periods": [
+    "5"
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "EEC4511",
+  "name": "Internet of Things - EEC4511",
+  "code": "EEC4511",
+  "instructors": [
+    "د. محمد عاطف شفيق عبدالحميد عباس",
+    "احمد محمد احمد مرسى"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EEC4511_B_Lect._Monday_7",
+          "courseName": "Internet of Things - EEC4511",
+          "courseCode": "EEC4511",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. محمد عاطف شفيق عبدالحميد عباس",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EEC4511_B_Sec._Monday_9",
+          "courseName": "Internet of Things - EEC4511",
+          "courseCode": "EEC4511",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "احمد محمد احمد مرسى",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد عاطف شفيق عبدالحميد عباس",
+        "احمد محمد احمد مرسى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEC4511_B_Lect._Monday_7",
+      "courseName": "Internet of Things - EEC4511",
+      "courseCode": "EEC4511",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. محمد عاطف شفيق عبدالحميد عباس",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EEC4511_B_Sec._Monday_9",
+      "courseName": "Internet of Things - EEC4511",
+      "courseCode": "EEC4511",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "احمد محمد احمد مرسى",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "الكترونيات ق م - Northamption*",
+    "هـ.الكترونات واتصالات ق.م*"
+  ],
+  "periods": [
+    "7"
+  ]
+}

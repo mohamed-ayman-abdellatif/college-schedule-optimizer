@@ -1,0 +1,90 @@
+{
+  "id": "CC412",
+  "name": "Computing Algorithms - CC412",
+  "code": "CC412",
+  "instructors": [
+    "د. ريهام طاهر عبدالمجيد سالم المغربى"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CC412_A_Lect._Monday_3",
+          "courseName": "Computing Algorithms - CC412",
+          "courseCode": "CC412",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. ريهام طاهر عبدالمجيد سالم المغربى",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "CC412_A_Lab._Thursday_11",
+          "courseName": "Computing Algorithms - CC412",
+          "courseCode": "CC412",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Thursday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. ريهام طاهر عبدالمجيد سالم المغربى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "CC412_A_Lect._Monday_3",
+      "courseName": "Computing Algorithms - CC412",
+      "courseCode": "CC412",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. ريهام طاهر عبدالمجيد سالم المغربى",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "CC412_A_Lab._Thursday_11",
+      "courseName": "Computing Algorithms - CC412",
+      "courseCode": "CC412",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Thursday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    }
+  ],
+  "color": "#06B6D4",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "حاسبات ق م - Northampton",
+    "هندسة الحاسبات ق.م"
+  ],
+  "periods": [
+    "9"
+  ]
+}

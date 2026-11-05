@@ -1,0 +1,92 @@
+{
+  "id": "EEE5404",
+  "name": "Advanced Topics in Power Systems - EEE5404",
+  "code": "EEE5404",
+  "instructors": [
+    "عبدالرحمن محمد عبدالوهاب ابوشنب",
+    "د. ميرنا فؤاد عبدالسلام عبدالمعطى على"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEE5404_A_Sec._Tuesday_11",
+          "courseName": "Advanced Topics in Power Systems - EEE5404",
+          "courseCode": "EEE5404",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "عبدالرحمن محمد عبدالوهاب ابوشنب",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "EEE5404_A_Lect._Thursday_3",
+          "courseName": "Advanced Topics in Power Systems - EEE5404",
+          "courseCode": "EEE5404",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "عبدالرحمن محمد عبدالوهاب ابوشنب",
+        "د. ميرنا فؤاد عبدالسلام عبدالمعطى على"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE5404_A_Sec._Tuesday_11",
+      "courseName": "Advanced Topics in Power Systems - EEE5404",
+      "courseCode": "EEE5404",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "عبدالرحمن محمد عبدالوهاب ابوشنب",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EEE5404_A_Lect._Thursday_3",
+      "courseName": "Advanced Topics in Power Systems - EEE5404",
+      "courseCode": "EEE5404",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+      "color": "#6366F1",
+      "room": ""
+    }
+  ],
+  "color": "#6366F1",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية ق م -Northampton*",
+    "هندسة كهربية وتحكم ق.م*"
+  ],
+  "periods": [
+    "9"
+  ]
+}

@@ -1,0 +1,277 @@
+{
+  "id": "CCY4301",
+  "name": "Cyber Physical Systems Security - CCY4301",
+  "code": "CCY4301",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "I",
+      "sessions": [
+        {
+          "id": "CCY4301_I_Lect._Monday_7",
+          "courseName": "Cyber Physical Systems Security - CCY4301",
+          "courseCode": "CCY4301",
+          "group": "I",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "CCY4301_I_Sec._Tuesday_9",
+          "courseName": "Cyber Physical Systems Security - CCY4301",
+          "courseCode": "CCY4301",
+          "group": "I",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "H",
+      "sessions": [
+        {
+          "id": "CCY4301_H_Lect._Monday_9",
+          "courseName": "Cyber Physical Systems Security - CCY4301",
+          "courseCode": "CCY4301",
+          "group": "H",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "CCY4301_H_Sec._Tuesday_7",
+          "courseName": "Cyber Physical Systems Security - CCY4301",
+          "courseCode": "CCY4301",
+          "group": "H",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "J",
+      "sessions": [
+        {
+          "id": "CCY4301_J_Lect._Monday_11",
+          "courseName": "Cyber Physical Systems Security - CCY4301",
+          "courseCode": "CCY4301",
+          "group": "J",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "CCY4301_J_Sec._Thursday_7",
+          "courseName": "Cyber Physical Systems Security - CCY4301",
+          "courseCode": "CCY4301",
+          "group": "J",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "CCY4301_G_Lect._Tuesday_9",
+          "courseName": "Cyber Physical Systems Security - CCY4301",
+          "courseCode": "CCY4301",
+          "group": "G",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "CCY4301_G_Sec._Thursday_9",
+          "courseName": "Cyber Physical Systems Security - CCY4301",
+          "courseCode": "CCY4301",
+          "group": "G",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CCY4301_I_Lect._Monday_7",
+      "courseName": "Cyber Physical Systems Security - CCY4301",
+      "courseCode": "CCY4301",
+      "group": "I",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "CCY4301_H_Lect._Monday_9",
+      "courseName": "Cyber Physical Systems Security - CCY4301",
+      "courseCode": "CCY4301",
+      "group": "H",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "CCY4301_J_Lect._Monday_11",
+      "courseName": "Cyber Physical Systems Security - CCY4301",
+      "courseCode": "CCY4301",
+      "group": "J",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "CCY4301_H_Sec._Tuesday_7",
+      "courseName": "Cyber Physical Systems Security - CCY4301",
+      "courseCode": "CCY4301",
+      "group": "H",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "CCY4301_G_Lect._Tuesday_9",
+      "courseName": "Cyber Physical Systems Security - CCY4301",
+      "courseCode": "CCY4301",
+      "group": "G",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "CCY4301_I_Sec._Tuesday_9",
+      "courseName": "Cyber Physical Systems Security - CCY4301",
+      "courseCode": "CCY4301",
+      "group": "I",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "CCY4301_J_Sec._Thursday_7",
+      "courseName": "Cyber Physical Systems Security - CCY4301",
+      "courseCode": "CCY4301",
+      "group": "J",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "CCY4301_G_Sec._Thursday_9",
+      "courseName": "Cyber Physical Systems Security - CCY4301",
+      "courseCode": "CCY4301",
+      "group": "G",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    }
+  ],
+  "color": "#84CC16",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "الأمن السيبرانى - ق.م"
+  ],
+  "periods": [
+    "7"
+  ]
+}

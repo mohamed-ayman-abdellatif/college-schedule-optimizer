@@ -1,0 +1,310 @@
+{
+  "id": "ECE2212",
+  "name": "Digital Logic Design and HDL - ECE2212",
+  "code": "ECE2212",
+  "instructors": [
+    "رودينا حسن محمود رجب",
+    "د. ياسمين غريب محمد موسي"
+  ],
+  "groups": [
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "ECE2212_G_Lab._Saturday_7",
+          "courseName": "Digital Logic Design and HDL - ECE2212",
+          "courseCode": "ECE2212",
+          "group": "G",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "رودينا حسن محمود رجب",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "ECE2212_G_Sec._Tuesday_9",
+          "courseName": "Digital Logic Design and HDL - ECE2212",
+          "courseCode": "ECE2212",
+          "group": "G",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "رودينا حسن محمود رجب",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "ECE2212_G_Lect._Thursday_7",
+          "courseName": "Digital Logic Design and HDL - ECE2212",
+          "courseCode": "ECE2212",
+          "group": "G",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. ياسمين غريب محمد موسي",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "رودينا حسن محمود رجب",
+        "د. ياسمين غريب محمد موسي"
+      ]
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "ECE2212_F_Lab._Saturday_9",
+          "courseName": "Digital Logic Design and HDL - ECE2212",
+          "courseCode": "ECE2212",
+          "group": "F",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "رودينا حسن محمود رجب",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "ECE2212_F_Sec._Saturday_11",
+          "courseName": "Digital Logic Design and HDL - ECE2212",
+          "courseCode": "ECE2212",
+          "group": "F",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "رودينا حسن محمود رجب",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "ECE2212_F_Lect._Thursday_7",
+          "courseName": "Digital Logic Design and HDL - ECE2212",
+          "courseCode": "ECE2212",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. ياسمين غريب محمد موسي",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "رودينا حسن محمود رجب",
+        "د. ياسمين غريب محمد موسي"
+      ]
+    },
+    {
+      "group": "H",
+      "sessions": [
+        {
+          "id": "ECE2212_H_Sec._Tuesday_5",
+          "courseName": "Digital Logic Design and HDL - ECE2212",
+          "courseCode": "ECE2212",
+          "group": "H",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "رودينا حسن محمود رجب",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "ECE2212_H_Lab._Tuesday_7",
+          "courseName": "Digital Logic Design and HDL - ECE2212",
+          "courseCode": "ECE2212",
+          "group": "H",
+          "type": "Lab.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "رودينا حسن محمود رجب",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "ECE2212_H_Lect._Thursday_9",
+          "courseName": "Digital Logic Design and HDL - ECE2212",
+          "courseCode": "ECE2212",
+          "group": "H",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. ياسمين غريب محمد موسي",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "رودينا حسن محمود رجب",
+        "د. ياسمين غريب محمد موسي"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECE2212_G_Lab._Saturday_7",
+      "courseName": "Digital Logic Design and HDL - ECE2212",
+      "courseCode": "ECE2212",
+      "group": "G",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "رودينا حسن محمود رجب",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE2212_G_Sec._Tuesday_9",
+      "courseName": "Digital Logic Design and HDL - ECE2212",
+      "courseCode": "ECE2212",
+      "group": "G",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "رودينا حسن محمود رجب",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE2212_G_Lect._Thursday_7",
+      "courseName": "Digital Logic Design and HDL - ECE2212",
+      "courseCode": "ECE2212",
+      "group": "G",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. ياسمين غريب محمد موسي",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE2212_F_Lab._Saturday_9",
+      "courseName": "Digital Logic Design and HDL - ECE2212",
+      "courseCode": "ECE2212",
+      "group": "F",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "رودينا حسن محمود رجب",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE2212_F_Sec._Saturday_11",
+      "courseName": "Digital Logic Design and HDL - ECE2212",
+      "courseCode": "ECE2212",
+      "group": "F",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "رودينا حسن محمود رجب",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE2212_F_Lect._Thursday_7",
+      "courseName": "Digital Logic Design and HDL - ECE2212",
+      "courseCode": "ECE2212",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. ياسمين غريب محمد موسي",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE2212_H_Sec._Tuesday_5",
+      "courseName": "Digital Logic Design and HDL - ECE2212",
+      "courseCode": "ECE2212",
+      "group": "H",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "رودينا حسن محمود رجب",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE2212_H_Lab._Tuesday_7",
+      "courseName": "Digital Logic Design and HDL - ECE2212",
+      "courseCode": "ECE2212",
+      "group": "H",
+      "type": "Lab.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "رودينا حسن محمود رجب",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE2212_H_Lect._Thursday_9",
+      "courseName": "Digital Logic Design and HDL - ECE2212",
+      "courseCode": "ECE2212",
+      "group": "H",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. ياسمين غريب محمد موسي",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "الكترونيات ق م - Northamption //",
+    "هـ.الكترونات واتصالات ق.م"
+  ],
+  "periods": [
+    "3"
+  ]
+}

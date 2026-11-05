@@ -1,0 +1,407 @@
+{
+  "id": "EEC3302",
+  "name": "Electronic Circuit Design - EEC3302",
+  "code": "EEC3302",
+  "instructors": [
+    "سلمى خالد فوزى جمعة",
+    "د. هنادى حسين عبدالقادر صالح",
+    "سلمى باسم انور عبدالوهاب",
+    "د. محمد شريف حسن صلاح الدين"
+  ],
+  "groups": [
+    {
+      "group": "H",
+      "sessions": [
+        {
+          "id": "EEC3302_H_Sec._Saturday_1",
+          "courseName": "Electronic Circuit Design - EEC3302",
+          "courseCode": "EEC3302",
+          "group": "H",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "سلمى خالد فوزى جمعة",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EEC3302_H_Lab._Monday_7",
+          "courseName": "Electronic Circuit Design - EEC3302",
+          "courseCode": "EEC3302",
+          "group": "H",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EEC3302_H_Lect._Tuesday_5",
+          "courseName": "Electronic Circuit Design - EEC3302",
+          "courseCode": "EEC3302",
+          "group": "H",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. هنادى حسين عبدالقادر صالح",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "سلمى خالد فوزى جمعة",
+        "د. هنادى حسين عبدالقادر صالح"
+      ]
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "EEC3302_F_Sec._Saturday_3",
+          "courseName": "Electronic Circuit Design - EEC3302",
+          "courseCode": "EEC3302",
+          "group": "F",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "سلمى خالد فوزى جمعة",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EEC3302_F_Lab._Monday_3",
+          "courseName": "Electronic Circuit Design - EEC3302",
+          "courseCode": "EEC3302",
+          "group": "F",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EEC3302_F_Lect._Tuesday_5",
+          "courseName": "Electronic Circuit Design - EEC3302",
+          "courseCode": "EEC3302",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. هنادى حسين عبدالقادر صالح",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "سلمى خالد فوزى جمعة",
+        "د. هنادى حسين عبدالقادر صالح"
+      ]
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "EEC3302_E_Lab._Tuesday_5",
+          "courseName": "Electronic Circuit Design - EEC3302",
+          "courseCode": "EEC3302",
+          "group": "E",
+          "type": "Lab.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EEC3302_E_Sec._Tuesday_7",
+          "courseName": "Electronic Circuit Design - EEC3302",
+          "courseCode": "EEC3302",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "سلمى باسم انور عبدالوهاب",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EEC3302_E_Lect._Thursday_9",
+          "courseName": "Electronic Circuit Design - EEC3302",
+          "courseCode": "EEC3302",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. محمد شريف حسن صلاح الدين",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "سلمى باسم انور عبدالوهاب",
+        "د. محمد شريف حسن صلاح الدين"
+      ]
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "EEC3302_D_Lab._Tuesday_7",
+          "courseName": "Electronic Circuit Design - EEC3302",
+          "courseCode": "EEC3302",
+          "group": "D",
+          "type": "Lab.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EEC3302_D_Sec._Thursday_3",
+          "courseName": "Electronic Circuit Design - EEC3302",
+          "courseCode": "EEC3302",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "سلمى باسم انور عبدالوهاب",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EEC3302_D_Lect._Thursday_9",
+          "courseName": "Electronic Circuit Design - EEC3302",
+          "courseCode": "EEC3302",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. محمد شريف حسن صلاح الدين",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "سلمى باسم انور عبدالوهاب",
+        "د. محمد شريف حسن صلاح الدين"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEC3302_H_Sec._Saturday_1",
+      "courseName": "Electronic Circuit Design - EEC3302",
+      "courseCode": "EEC3302",
+      "group": "H",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "سلمى خالد فوزى جمعة",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EEC3302_H_Lab._Monday_7",
+      "courseName": "Electronic Circuit Design - EEC3302",
+      "courseCode": "EEC3302",
+      "group": "H",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EEC3302_H_Lect._Tuesday_5",
+      "courseName": "Electronic Circuit Design - EEC3302",
+      "courseCode": "EEC3302",
+      "group": "H",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. هنادى حسين عبدالقادر صالح",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EEC3302_F_Sec._Saturday_3",
+      "courseName": "Electronic Circuit Design - EEC3302",
+      "courseCode": "EEC3302",
+      "group": "F",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "سلمى خالد فوزى جمعة",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EEC3302_F_Lab._Monday_3",
+      "courseName": "Electronic Circuit Design - EEC3302",
+      "courseCode": "EEC3302",
+      "group": "F",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EEC3302_F_Lect._Tuesday_5",
+      "courseName": "Electronic Circuit Design - EEC3302",
+      "courseCode": "EEC3302",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. هنادى حسين عبدالقادر صالح",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EEC3302_E_Lab._Tuesday_5",
+      "courseName": "Electronic Circuit Design - EEC3302",
+      "courseCode": "EEC3302",
+      "group": "E",
+      "type": "Lab.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EEC3302_E_Sec._Tuesday_7",
+      "courseName": "Electronic Circuit Design - EEC3302",
+      "courseCode": "EEC3302",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "سلمى باسم انور عبدالوهاب",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EEC3302_E_Lect._Thursday_9",
+      "courseName": "Electronic Circuit Design - EEC3302",
+      "courseCode": "EEC3302",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. محمد شريف حسن صلاح الدين",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EEC3302_D_Lab._Tuesday_7",
+      "courseName": "Electronic Circuit Design - EEC3302",
+      "courseCode": "EEC3302",
+      "group": "D",
+      "type": "Lab.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EEC3302_D_Sec._Thursday_3",
+      "courseName": "Electronic Circuit Design - EEC3302",
+      "courseCode": "EEC3302",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "سلمى باسم انور عبدالوهاب",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EEC3302_D_Lect._Thursday_9",
+      "courseName": "Electronic Circuit Design - EEC3302",
+      "courseCode": "EEC3302",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. محمد شريف حسن صلاح الدين",
+      "color": "#06B6D4",
+      "room": ""
+    }
+  ],
+  "color": "#06B6D4",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "الكترونيات ق م - Northamption //",
+    "هـ.الكترونات واتصالات ق.م"
+  ],
+  "periods": [
+    "5"
+  ]
+}

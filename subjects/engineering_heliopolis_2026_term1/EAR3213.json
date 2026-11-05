@@ -1,0 +1,411 @@
+{
+  "id": "EAR3213",
+  "name": "Execution Design (1) - EAR3213",
+  "code": "EAR3213",
+  "instructors": [
+    "د. عبدالعزيز فاروق عبدالعزيز محمد",
+    "عبدالعزيز فاروق عبدالعزيز محمد",
+    "د. محمد السيد عبد الرحمن محمد شريف",
+    "محمد السيد عبد الرحمن محمد شريف",
+    "د. محمد عبدالمجيد سيد دياب",
+    "محمد عبدالمجيد سيد دياب",
+    "د. احمد حليم حسين عبدالعزيز",
+    "احمد حليم حسين عبدالعزيز"
+  ],
+  "groups": [
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "EAR3213_E_Lect._Sunday_7",
+          "courseName": "Execution Design (1) - EAR3213",
+          "courseCode": "EAR3213",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. عبدالعزيز فاروق عبدالعزيز محمد",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EAR3213_E_Lect._Sunday_9",
+          "courseName": "Execution Design (1) - EAR3213",
+          "courseCode": "EAR3213",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. عبدالعزيز فاروق عبدالعزيز محمد",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EAR3213_E_Sec._Sunday_11",
+          "courseName": "Execution Design (1) - EAR3213",
+          "courseCode": "EAR3213",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "عبدالعزيز فاروق عبدالعزيز محمد",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. عبدالعزيز فاروق عبدالعزيز محمد",
+        "عبدالعزيز فاروق عبدالعزيز محمد"
+      ]
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "EAR3213_D_Lect._Monday_7",
+          "courseName": "Execution Design (1) - EAR3213",
+          "courseCode": "EAR3213",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. محمد السيد عبد الرحمن محمد شريف",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EAR3213_D_Lect._Monday_9",
+          "courseName": "Execution Design (1) - EAR3213",
+          "courseCode": "EAR3213",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. محمد السيد عبد الرحمن محمد شريف",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EAR3213_D_Sec._Monday_11",
+          "courseName": "Execution Design (1) - EAR3213",
+          "courseCode": "EAR3213",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "محمد السيد عبد الرحمن محمد شريف",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد السيد عبد الرحمن محمد شريف",
+        "محمد السيد عبد الرحمن محمد شريف"
+      ]
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "EAR3213_C_Lect._Tuesday_7",
+          "courseName": "Execution Design (1) - EAR3213",
+          "courseCode": "EAR3213",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. محمد عبدالمجيد سيد دياب",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EAR3213_C_Lect._Tuesday_9",
+          "courseName": "Execution Design (1) - EAR3213",
+          "courseCode": "EAR3213",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. محمد عبدالمجيد سيد دياب",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EAR3213_C_Sec._Tuesday_11",
+          "courseName": "Execution Design (1) - EAR3213",
+          "courseCode": "EAR3213",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "محمد عبدالمجيد سيد دياب",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد عبدالمجيد سيد دياب",
+        "محمد عبدالمجيد سيد دياب"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EAR3213_B_Lect._Thursday_7",
+          "courseName": "Execution Design (1) - EAR3213",
+          "courseCode": "EAR3213",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. احمد حليم حسين عبدالعزيز",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EAR3213_B_Lect._Thursday_9",
+          "courseName": "Execution Design (1) - EAR3213",
+          "courseCode": "EAR3213",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. احمد حليم حسين عبدالعزيز",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "EAR3213_B_Sec._Thursday_11",
+          "courseName": "Execution Design (1) - EAR3213",
+          "courseCode": "EAR3213",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "احمد حليم حسين عبدالعزيز",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. احمد حليم حسين عبدالعزيز",
+        "احمد حليم حسين عبدالعزيز"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EAR3213_E_Lect._Sunday_7",
+      "courseName": "Execution Design (1) - EAR3213",
+      "courseCode": "EAR3213",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. عبدالعزيز فاروق عبدالعزيز محمد",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EAR3213_E_Lect._Sunday_9",
+      "courseName": "Execution Design (1) - EAR3213",
+      "courseCode": "EAR3213",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. عبدالعزيز فاروق عبدالعزيز محمد",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EAR3213_E_Sec._Sunday_11",
+      "courseName": "Execution Design (1) - EAR3213",
+      "courseCode": "EAR3213",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "عبدالعزيز فاروق عبدالعزيز محمد",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EAR3213_D_Lect._Monday_7",
+      "courseName": "Execution Design (1) - EAR3213",
+      "courseCode": "EAR3213",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. محمد السيد عبد الرحمن محمد شريف",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EAR3213_D_Lect._Monday_9",
+      "courseName": "Execution Design (1) - EAR3213",
+      "courseCode": "EAR3213",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. محمد السيد عبد الرحمن محمد شريف",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EAR3213_D_Sec._Monday_11",
+      "courseName": "Execution Design (1) - EAR3213",
+      "courseCode": "EAR3213",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "محمد السيد عبد الرحمن محمد شريف",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EAR3213_C_Lect._Tuesday_7",
+      "courseName": "Execution Design (1) - EAR3213",
+      "courseCode": "EAR3213",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. محمد عبدالمجيد سيد دياب",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EAR3213_C_Lect._Tuesday_9",
+      "courseName": "Execution Design (1) - EAR3213",
+      "courseCode": "EAR3213",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. محمد عبدالمجيد سيد دياب",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EAR3213_C_Sec._Tuesday_11",
+      "courseName": "Execution Design (1) - EAR3213",
+      "courseCode": "EAR3213",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "محمد عبدالمجيد سيد دياب",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EAR3213_B_Lect._Thursday_7",
+      "courseName": "Execution Design (1) - EAR3213",
+      "courseCode": "EAR3213",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. احمد حليم حسين عبدالعزيز",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EAR3213_B_Lect._Thursday_9",
+      "courseName": "Execution Design (1) - EAR3213",
+      "courseCode": "EAR3213",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. احمد حليم حسين عبدالعزيز",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "EAR3213_B_Sec._Thursday_11",
+      "courseName": "Execution Design (1) - EAR3213",
+      "courseCode": "EAR3213",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "احمد حليم حسين عبدالعزيز",
+      "color": "#F59E0B",
+      "room": ""
+    }
+  ],
+  "color": "#F59E0B",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م",
+    "هندسة معمارية-Cardiff-ق م //"
+  ],
+  "periods": [
+    "5"
+  ]
+}

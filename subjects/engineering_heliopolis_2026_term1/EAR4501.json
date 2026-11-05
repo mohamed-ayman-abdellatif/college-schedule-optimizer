@@ -1,0 +1,137 @@
+{
+  "id": "EAR4501",
+  "name": "Building Specifications And Quantities - EAR4501",
+  "code": "EAR4501",
+  "instructors": [
+    "د. ريهام عثمان السيد ابوالسعود"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EAR4501_B_Lect._Tuesday_1",
+          "courseName": "Building Specifications And Quantities - EAR4501",
+          "courseCode": "EAR4501",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 3,
+          "duration": 3,
+          "instructor": "د. ريهام عثمان السيد ابوالسعود",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. ريهام عثمان السيد ابوالسعود"
+      ]
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "EAR4501_D_Lect._Tuesday_4",
+          "courseName": "Building Specifications And Quantities - EAR4501",
+          "courseCode": "EAR4501",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 4,
+          "endSlot": 6,
+          "duration": 3,
+          "instructor": "د. ريهام عثمان السيد ابوالسعود",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. ريهام عثمان السيد ابوالسعود"
+      ]
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "EAR4501_C_Lect._Thursday_7",
+          "courseName": "Building Specifications And Quantities - EAR4501",
+          "courseCode": "EAR4501",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 9,
+          "duration": 3,
+          "instructor": "د. ريهام عثمان السيد ابوالسعود",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. ريهام عثمان السيد ابوالسعود"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EAR4501_B_Lect._Tuesday_1",
+      "courseName": "Building Specifications And Quantities - EAR4501",
+      "courseCode": "EAR4501",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 3,
+      "duration": 3,
+      "instructor": "د. ريهام عثمان السيد ابوالسعود",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EAR4501_D_Lect._Tuesday_4",
+      "courseName": "Building Specifications And Quantities - EAR4501",
+      "courseCode": "EAR4501",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 4,
+      "endSlot": 6,
+      "duration": 3,
+      "instructor": "د. ريهام عثمان السيد ابوالسعود",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EAR4501_C_Lect._Thursday_7",
+      "courseName": "Building Specifications And Quantities - EAR4501",
+      "courseCode": "EAR4501",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 9,
+      "duration": 3,
+      "instructor": "د. ريهام عثمان السيد ابوالسعود",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م*"
+  ],
+  "periods": [
+    "7"
+  ]
+}

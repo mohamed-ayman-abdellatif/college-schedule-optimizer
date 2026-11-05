@@ -1,0 +1,90 @@
+{
+  "id": "ECE3402",
+  "name": "Numerical Methods - ECE3402",
+  "code": "ECE3402",
+  "instructors": [
+    "د. فاطمه محمود مراد محمود"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECE3402_A_Lect._Wednesday_3",
+          "courseName": "Numerical Methods - ECE3402",
+          "courseCode": "ECE3402",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. فاطمه محمود مراد محمود",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "ECE3402_A_Sec._Thursday_11",
+          "courseName": "Numerical Methods - ECE3402",
+          "courseCode": "ECE3402",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. فاطمه محمود مراد محمود"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECE3402_A_Lect._Wednesday_3",
+      "courseName": "Numerical Methods - ECE3402",
+      "courseCode": "ECE3402",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. فاطمه محمود مراد محمود",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "ECE3402_A_Sec._Thursday_11",
+      "courseName": "Numerical Methods - ECE3402",
+      "courseCode": "ECE3402",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "حاسبات ق م - Northampton*",
+    "هندسة الحاسبات ق.م*"
+  ],
+  "periods": [
+    "3"
+  ]
+}

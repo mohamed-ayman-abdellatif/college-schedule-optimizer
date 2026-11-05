@@ -1,0 +1,61 @@
+{
+  "id": "EAR2402",
+  "name": "Theories Of Architecture (1) - EAR2402",
+  "code": "EAR2402",
+  "instructors": [
+    "د. مروة حسن محمد عثمان خليل"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EAR2402_A_Lect._Thursday_7",
+          "courseName": "Theories Of Architecture (1) - EAR2402",
+          "courseCode": "EAR2402",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 9,
+          "duration": 3,
+          "instructor": "د. مروة حسن محمد عثمان خليل",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. مروة حسن محمد عثمان خليل"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EAR2402_A_Lect._Thursday_7",
+      "courseName": "Theories Of Architecture (1) - EAR2402",
+      "courseCode": "EAR2402",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 9,
+      "duration": 3,
+      "instructor": "د. مروة حسن محمد عثمان خليل",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م*"
+  ],
+  "periods": [
+    "3"
+  ]
+}

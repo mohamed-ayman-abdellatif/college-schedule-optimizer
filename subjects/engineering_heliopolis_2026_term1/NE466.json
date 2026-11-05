@@ -1,0 +1,97 @@
+{
+  "id": "NE466",
+  "name": "ENVIRONMENTAL SCIENCE & TECH. - NE466",
+  "code": "NE466",
+  "instructors": [
+    "د. محمد اشرف محمد عبد العزيز الصياد",
+    "احمد محمد عبدالحميد عبدالهادى بلطيه"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "NE466_A_Lect._Sunday_5",
+          "courseName": "ENVIRONMENTAL SCIENCE & TECH. - NE466",
+          "courseCode": "NE466",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. محمد اشرف محمد عبد العزيز الصياد",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "NE466_A_Sec._Tuesday_9",
+          "courseName": "ENVIRONMENTAL SCIENCE & TECH. - NE466",
+          "courseCode": "NE466",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "احمد محمد عبدالحميد عبدالهادى بلطيه",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد اشرف محمد عبد العزيز الصياد",
+        "احمد محمد عبدالحميد عبدالهادى بلطيه"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "NE466_A_Lect._Sunday_5",
+      "courseName": "ENVIRONMENTAL SCIENCE & TECH. - NE466",
+      "courseCode": "NE466",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. محمد اشرف محمد عبد العزيز الصياد",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "NE466_A_Sec._Tuesday_9",
+      "courseName": "ENVIRONMENTAL SCIENCE & TECH. - NE466",
+      "courseCode": "NE466",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "احمد محمد عبدالحميد عبدالهادى بلطيه",
+      "color": "#14B8A6",
+      "room": ""
+    }
+  ],
+  "color": "#14B8A6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "حاسبات ق م - Northampton",
+    "ميكانيكا ق م -Northampton",
+    "هـ.ميكانيكية ق.م",
+    "هندسة التشيد والبناء ق.م",
+    "هندسة الحاسبات ق.م"
+  ],
+  "periods": [
+    "9",
+    "10",
+    "7"
+  ]
+}

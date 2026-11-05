@@ -1,0 +1,159 @@
+{
+  "id": "ECE3211",
+  "name": "Microprocessors - ECE3211",
+  "code": "ECE3211",
+  "instructors": [
+    "ماجدة يوسف محمد يوسف",
+    "د. احمد حسن عبدالله الديب"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECE3211_A_Sec._Saturday_5",
+          "courseName": "Microprocessors - ECE3211",
+          "courseCode": "ECE3211",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "ماجدة يوسف محمد يوسف",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "ECE3211_A_Lect._Tuesday_11",
+          "courseName": "Microprocessors - ECE3211",
+          "courseCode": "ECE3211",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "د. احمد حسن عبدالله الديب",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ماجدة يوسف محمد يوسف",
+        "د. احمد حسن عبدالله الديب"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECE3211_B_Sec._Sunday_7",
+          "courseName": "Microprocessors - ECE3211",
+          "courseCode": "ECE3211",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "ماجدة يوسف محمد يوسف",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "ECE3211_B_Lect._Tuesday_11",
+          "courseName": "Microprocessors - ECE3211",
+          "courseCode": "ECE3211",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "د. احمد حسن عبدالله الديب",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ماجدة يوسف محمد يوسف",
+        "د. احمد حسن عبدالله الديب"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECE3211_A_Sec._Saturday_5",
+      "courseName": "Microprocessors - ECE3211",
+      "courseCode": "ECE3211",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "ماجدة يوسف محمد يوسف",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE3211_A_Lect._Tuesday_11",
+      "courseName": "Microprocessors - ECE3211",
+      "courseCode": "ECE3211",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "د. احمد حسن عبدالله الديب",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE3211_B_Sec._Sunday_7",
+      "courseName": "Microprocessors - ECE3211",
+      "courseCode": "ECE3211",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "ماجدة يوسف محمد يوسف",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE3211_B_Lect._Tuesday_11",
+      "courseName": "Microprocessors - ECE3211",
+      "courseCode": "ECE3211",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "د. احمد حسن عبدالله الديب",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية ق م -Northampton //",
+    "هندسة كهربية وتحكم ق.م"
+  ],
+  "periods": [
+    "5"
+  ]
+}

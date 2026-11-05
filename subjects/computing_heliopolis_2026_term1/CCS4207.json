@@ -1,0 +1,149 @@
+{
+  "id": "CCS4207",
+  "name": "Embedded Systems Programming - CCS4207",
+  "code": "CCS4207",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "I",
+      "sessions": [
+        {
+          "id": "CCS4207_I_Lect._Wednesday_5",
+          "courseName": "Embedded Systems Programming - CCS4207",
+          "courseCode": "CCS4207",
+          "group": "I",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "CCS4207_I_Sec._Wednesday_7",
+          "courseName": "Embedded Systems Programming - CCS4207",
+          "courseCode": "CCS4207",
+          "group": "I",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "H",
+      "sessions": [
+        {
+          "id": "CCS4207_H_Lect._Wednesday_7",
+          "courseName": "Embedded Systems Programming - CCS4207",
+          "courseCode": "CCS4207",
+          "group": "H",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "CCS4207_H_Sec._Wednesday_9",
+          "courseName": "Embedded Systems Programming - CCS4207",
+          "courseCode": "CCS4207",
+          "group": "H",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CCS4207_I_Lect._Wednesday_5",
+      "courseName": "Embedded Systems Programming - CCS4207",
+      "courseCode": "CCS4207",
+      "group": "I",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "CCS4207_H_Lect._Wednesday_7",
+      "courseName": "Embedded Systems Programming - CCS4207",
+      "courseCode": "CCS4207",
+      "group": "H",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "CCS4207_H_Sec._Wednesday_9",
+      "courseName": "Embedded Systems Programming - CCS4207",
+      "courseCode": "CCS4207",
+      "group": "H",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "CCS4207_I_Sec._Wednesday_7",
+      "courseName": "Embedded Systems Programming - CCS4207",
+      "courseCode": "CCS4207",
+      "group": "I",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    }
+  ],
+  "color": "#6366F1",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "علوم الحاسب ق.م //"
+  ],
+  "periods": [
+    "7"
+  ]
+}

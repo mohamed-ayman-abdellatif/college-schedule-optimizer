@@ -1,0 +1,92 @@
+{
+  "id": "CC410",
+  "name": "Systems Programming - CC410",
+  "code": "CC410",
+  "instructors": [
+    "د. محمد حجازى محمد السيد",
+    "محمد سامى احمد نافع"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CC410_A_Lect._Saturday_11",
+          "courseName": "Systems Programming - CC410",
+          "courseCode": "CC410",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "د. محمد حجازى محمد السيد",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "CC410_A_Sec._Wednesday_5",
+          "courseName": "Systems Programming - CC410",
+          "courseCode": "CC410",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "محمد سامى احمد نافع",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد حجازى محمد السيد",
+        "محمد سامى احمد نافع"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "CC410_A_Lect._Saturday_11",
+      "courseName": "Systems Programming - CC410",
+      "courseCode": "CC410",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "د. محمد حجازى محمد السيد",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "CC410_A_Sec._Wednesday_5",
+      "courseName": "Systems Programming - CC410",
+      "courseCode": "CC410",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "محمد سامى احمد نافع",
+      "color": "#F59E0B",
+      "room": ""
+    }
+  ],
+  "color": "#F59E0B",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "حاسبات ق م - Northampton",
+    "هندسة الحاسبات ق.م"
+  ],
+  "periods": [
+    "7"
+  ]
+}

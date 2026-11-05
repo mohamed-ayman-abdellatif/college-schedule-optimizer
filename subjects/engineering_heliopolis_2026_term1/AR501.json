@@ -1,0 +1,145 @@
+{
+  "id": "AR501",
+  "name": "GRADUATION PROJECT - AR501",
+  "code": "AR501",
+  "instructors": [
+    "د. منى عبدالعظيم عبدالوهاب"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "AR501_A_Sec._Saturday_7",
+          "courseName": "GRADUATION PROJECT - AR501",
+          "courseCode": "AR501",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 12,
+          "duration": 6,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "AR501_A_Lect._Monday_1",
+          "courseName": "GRADUATION PROJECT - AR501",
+          "courseCode": "AR501",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 6,
+          "duration": 6,
+          "instructor": "د. منى عبدالعظيم عبدالوهاب",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "AR501_A_Lect._Tuesday_1",
+          "courseName": "GRADUATION PROJECT - AR501",
+          "courseCode": "AR501",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 6,
+          "duration": 6,
+          "instructor": "د. منى عبدالعظيم عبدالوهاب",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "AR501_A_Sec._Thursday_1",
+          "courseName": "GRADUATION PROJECT - AR501",
+          "courseCode": "AR501",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 6,
+          "duration": 6,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. منى عبدالعظيم عبدالوهاب"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "AR501_A_Sec._Saturday_7",
+      "courseName": "GRADUATION PROJECT - AR501",
+      "courseCode": "AR501",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 12,
+      "duration": 6,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "AR501_A_Lect._Monday_1",
+      "courseName": "GRADUATION PROJECT - AR501",
+      "courseCode": "AR501",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 6,
+      "duration": 6,
+      "instructor": "د. منى عبدالعظيم عبدالوهاب",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "AR501_A_Lect._Tuesday_1",
+      "courseName": "GRADUATION PROJECT - AR501",
+      "courseCode": "AR501",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 6,
+      "duration": 6,
+      "instructor": "د. منى عبدالعظيم عبدالوهاب",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "AR501_A_Sec._Thursday_1",
+      "courseName": "GRADUATION PROJECT - AR501",
+      "courseCode": "AR501",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 6,
+      "duration": 6,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    }
+  ],
+  "color": "#14B8A6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م"
+  ],
+  "periods": [
+    "10"
+  ]
+}

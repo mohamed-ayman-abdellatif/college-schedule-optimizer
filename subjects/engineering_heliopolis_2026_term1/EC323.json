@@ -1,0 +1,91 @@
+{
+  "id": "EC323",
+  "name": "Intro.To Communi.Systems - EC323",
+  "code": "EC323",
+  "instructors": [
+    "احمد محمد عبدالوهاب دعبس",
+    "د. محمد خالد على شحاته"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EC323_A_Sec._Sunday_7",
+          "courseName": "Intro.To Communi.Systems - EC323",
+          "courseCode": "EC323",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "احمد محمد عبدالوهاب دعبس",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "EC323_A_Lect._Monday_3",
+          "courseName": "Intro.To Communi.Systems - EC323",
+          "courseCode": "EC323",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. محمد خالد على شحاته",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "احمد محمد عبدالوهاب دعبس",
+        "د. محمد خالد على شحاته"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EC323_A_Sec._Sunday_7",
+      "courseName": "Intro.To Communi.Systems - EC323",
+      "courseCode": "EC323",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "احمد محمد عبدالوهاب دعبس",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EC323_A_Lect._Monday_3",
+      "courseName": "Intro.To Communi.Systems - EC323",
+      "courseCode": "EC323",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. محمد خالد على شحاته",
+      "color": "#6366F1",
+      "room": ""
+    }
+  ],
+  "color": "#6366F1",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية وتحكم ق.م"
+  ],
+  "periods": [
+    "5"
+  ]
+}

@@ -1,0 +1,827 @@
+{
+  "id": "ECE2102",
+  "name": "Applied Programming - ECE2102",
+  "code": "ECE2102",
+  "instructors": [
+    "د. هشام صلاح الدين محمد رشاد",
+    "مجد نبيل نصرى نعمه",
+    "احمد زكريا نور محمد طلحه",
+    "د. دينا محمد علي ابو الدهب",
+    "محمد حسام محمد علي",
+    "د. يارا اشرف كامل محمد"
+  ],
+  "groups": [
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "ECE2102_E_Lab._Saturday_1",
+          "courseName": "Applied Programming - ECE2102",
+          "courseCode": "ECE2102",
+          "group": "E",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "ECE2102_E_Lect._Wednesday_3",
+          "courseName": "Applied Programming - ECE2102",
+          "courseCode": "ECE2102",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. هشام صلاح الدين محمد رشاد",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. هشام صلاح الدين محمد رشاد"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECE2102_B_Lab._Sunday_7",
+          "courseName": "Applied Programming - ECE2102",
+          "courseCode": "ECE2102",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "مجد نبيل نصرى نعمه",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "ECE2102_B_Lect._Tuesday_3",
+          "courseName": "Applied Programming - ECE2102",
+          "courseCode": "ECE2102",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. هشام صلاح الدين محمد رشاد",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "مجد نبيل نصرى نعمه",
+        "د. هشام صلاح الدين محمد رشاد"
+      ]
+    },
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECE2102_A_Lab._Sunday_11",
+          "courseName": "Applied Programming - ECE2102",
+          "courseCode": "ECE2102",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Sunday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "ECE2102_A_Lect._Thursday_7",
+          "courseName": "Applied Programming - ECE2102",
+          "courseCode": "ECE2102",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "L",
+      "sessions": [
+        {
+          "id": "ECE2102_L_Lab._Sunday_11",
+          "courseName": "Applied Programming - ECE2102",
+          "courseCode": "ECE2102",
+          "group": "L",
+          "type": "Lab.",
+          "day": "Sunday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "ECE2102_L_Lect._Thursday_7",
+          "courseName": "Applied Programming - ECE2102",
+          "courseCode": "ECE2102",
+          "group": "L",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "I",
+      "sessions": [
+        {
+          "id": "ECE2102_I_Lab._Monday_5",
+          "courseName": "Applied Programming - ECE2102",
+          "courseCode": "ECE2102",
+          "group": "I",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "احمد زكريا نور محمد طلحه",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "ECE2102_I_Lect._Tuesday_5",
+          "courseName": "Applied Programming - ECE2102",
+          "courseCode": "ECE2102",
+          "group": "I",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. دينا محمد علي ابو الدهب",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "احمد زكريا نور محمد طلحه",
+        "د. دينا محمد علي ابو الدهب"
+      ]
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "ECE2102_F_Lect._Tuesday_1",
+          "courseName": "Applied Programming - ECE2102",
+          "courseCode": "ECE2102",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. هشام صلاح الدين محمد رشاد",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "ECE2102_F_Lab._Thursday_3",
+          "courseName": "Applied Programming - ECE2102",
+          "courseCode": "ECE2102",
+          "group": "F",
+          "type": "Lab.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "محمد حسام محمد علي",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. هشام صلاح الدين محمد رشاد",
+        "محمد حسام محمد علي"
+      ]
+    },
+    {
+      "group": "H",
+      "sessions": [
+        {
+          "id": "ECE2102_H_Lect._Tuesday_5",
+          "courseName": "Applied Programming - ECE2102",
+          "courseCode": "ECE2102",
+          "group": "H",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. دينا محمد علي ابو الدهب",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "ECE2102_H_Lab._Wednesday_1",
+          "courseName": "Applied Programming - ECE2102",
+          "courseCode": "ECE2102",
+          "group": "H",
+          "type": "Lab.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "احمد زكريا نور محمد طلحه",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. دينا محمد علي ابو الدهب",
+        "احمد زكريا نور محمد طلحه"
+      ]
+    },
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "ECE2102_G_Lect._Tuesday_1",
+          "courseName": "Applied Programming - ECE2102",
+          "courseCode": "ECE2102",
+          "group": "G",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. هشام صلاح الدين محمد رشاد",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "ECE2102_G_Lab._Thursday_1",
+          "courseName": "Applied Programming - ECE2102",
+          "courseCode": "ECE2102",
+          "group": "G",
+          "type": "Lab.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "محمد حسام محمد علي",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. هشام صلاح الدين محمد رشاد",
+        "محمد حسام محمد علي"
+      ]
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "ECE2102_C_Lect._Tuesday_3",
+          "courseName": "Applied Programming - ECE2102",
+          "courseCode": "ECE2102",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. هشام صلاح الدين محمد رشاد",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "ECE2102_C_Lab._Thursday_5",
+          "courseName": "Applied Programming - ECE2102",
+          "courseCode": "ECE2102",
+          "group": "C",
+          "type": "Lab.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "مجد نبيل نصرى نعمه",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. هشام صلاح الدين محمد رشاد",
+        "مجد نبيل نصرى نعمه"
+      ]
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "ECE2102_D_Lect._Wednesday_3",
+          "courseName": "Applied Programming - ECE2102",
+          "courseCode": "ECE2102",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. هشام صلاح الدين محمد رشاد",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "ECE2102_D_Lab._Wednesday_5",
+          "courseName": "Applied Programming - ECE2102",
+          "courseCode": "ECE2102",
+          "group": "D",
+          "type": "Lab.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "مجد نبيل نصرى نعمه",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. هشام صلاح الدين محمد رشاد",
+        "مجد نبيل نصرى نعمه"
+      ]
+    },
+    {
+      "group": "J",
+      "sessions": [
+        {
+          "id": "ECE2102_J_Lect._Wednesday_7",
+          "courseName": "Applied Programming - ECE2102",
+          "courseCode": "ECE2102",
+          "group": "J",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. يارا اشرف كامل محمد",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "ECE2102_J_Lab._Thursday_7",
+          "courseName": "Applied Programming - ECE2102",
+          "courseCode": "ECE2102",
+          "group": "J",
+          "type": "Lab.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "محمد حسام محمد علي",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. يارا اشرف كامل محمد",
+        "محمد حسام محمد علي"
+      ]
+    },
+    {
+      "group": "K",
+      "sessions": [
+        {
+          "id": "ECE2102_K_Lab._Wednesday_11",
+          "courseName": "Applied Programming - ECE2102",
+          "courseCode": "ECE2102",
+          "group": "K",
+          "type": "Lab.",
+          "day": "Wednesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        },
+        {
+          "id": "ECE2102_K_Lect._Wednesday_7",
+          "courseName": "Applied Programming - ECE2102",
+          "courseCode": "ECE2102",
+          "group": "K",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. يارا اشرف كامل محمد",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. يارا اشرف كامل محمد"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECE2102_E_Lab._Saturday_1",
+      "courseName": "Applied Programming - ECE2102",
+      "courseCode": "ECE2102",
+      "group": "E",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE2102_E_Lect._Wednesday_3",
+      "courseName": "Applied Programming - ECE2102",
+      "courseCode": "ECE2102",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. هشام صلاح الدين محمد رشاد",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE2102_B_Lab._Sunday_7",
+      "courseName": "Applied Programming - ECE2102",
+      "courseCode": "ECE2102",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "مجد نبيل نصرى نعمه",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE2102_B_Lect._Tuesday_3",
+      "courseName": "Applied Programming - ECE2102",
+      "courseCode": "ECE2102",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. هشام صلاح الدين محمد رشاد",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE2102_A_Lab._Sunday_11",
+      "courseName": "Applied Programming - ECE2102",
+      "courseCode": "ECE2102",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Sunday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE2102_A_Lect._Thursday_7",
+      "courseName": "Applied Programming - ECE2102",
+      "courseCode": "ECE2102",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE2102_L_Lab._Sunday_11",
+      "courseName": "Applied Programming - ECE2102",
+      "courseCode": "ECE2102",
+      "group": "L",
+      "type": "Lab.",
+      "day": "Sunday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE2102_L_Lect._Thursday_7",
+      "courseName": "Applied Programming - ECE2102",
+      "courseCode": "ECE2102",
+      "group": "L",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE2102_I_Lab._Monday_5",
+      "courseName": "Applied Programming - ECE2102",
+      "courseCode": "ECE2102",
+      "group": "I",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "احمد زكريا نور محمد طلحه",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE2102_I_Lect._Tuesday_5",
+      "courseName": "Applied Programming - ECE2102",
+      "courseCode": "ECE2102",
+      "group": "I",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. دينا محمد علي ابو الدهب",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE2102_F_Lect._Tuesday_1",
+      "courseName": "Applied Programming - ECE2102",
+      "courseCode": "ECE2102",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. هشام صلاح الدين محمد رشاد",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE2102_F_Lab._Thursday_3",
+      "courseName": "Applied Programming - ECE2102",
+      "courseCode": "ECE2102",
+      "group": "F",
+      "type": "Lab.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "محمد حسام محمد علي",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE2102_H_Lect._Tuesday_5",
+      "courseName": "Applied Programming - ECE2102",
+      "courseCode": "ECE2102",
+      "group": "H",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. دينا محمد علي ابو الدهب",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE2102_H_Lab._Wednesday_1",
+      "courseName": "Applied Programming - ECE2102",
+      "courseCode": "ECE2102",
+      "group": "H",
+      "type": "Lab.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "احمد زكريا نور محمد طلحه",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE2102_G_Lect._Tuesday_1",
+      "courseName": "Applied Programming - ECE2102",
+      "courseCode": "ECE2102",
+      "group": "G",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. هشام صلاح الدين محمد رشاد",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE2102_G_Lab._Thursday_1",
+      "courseName": "Applied Programming - ECE2102",
+      "courseCode": "ECE2102",
+      "group": "G",
+      "type": "Lab.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "محمد حسام محمد علي",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE2102_C_Lect._Tuesday_3",
+      "courseName": "Applied Programming - ECE2102",
+      "courseCode": "ECE2102",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. هشام صلاح الدين محمد رشاد",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE2102_C_Lab._Thursday_5",
+      "courseName": "Applied Programming - ECE2102",
+      "courseCode": "ECE2102",
+      "group": "C",
+      "type": "Lab.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "مجد نبيل نصرى نعمه",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE2102_D_Lect._Wednesday_3",
+      "courseName": "Applied Programming - ECE2102",
+      "courseCode": "ECE2102",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. هشام صلاح الدين محمد رشاد",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE2102_D_Lab._Wednesday_5",
+      "courseName": "Applied Programming - ECE2102",
+      "courseCode": "ECE2102",
+      "group": "D",
+      "type": "Lab.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "مجد نبيل نصرى نعمه",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE2102_J_Lect._Wednesday_7",
+      "courseName": "Applied Programming - ECE2102",
+      "courseCode": "ECE2102",
+      "group": "J",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. يارا اشرف كامل محمد",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE2102_J_Lab._Thursday_7",
+      "courseName": "Applied Programming - ECE2102",
+      "courseCode": "ECE2102",
+      "group": "J",
+      "type": "Lab.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "محمد حسام محمد علي",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE2102_K_Lab._Wednesday_11",
+      "courseName": "Applied Programming - ECE2102",
+      "courseCode": "ECE2102",
+      "group": "K",
+      "type": "Lab.",
+      "day": "Wednesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "ECE2102_K_Lect._Wednesday_7",
+      "courseName": "Applied Programming - ECE2102",
+      "courseCode": "ECE2102",
+      "group": "K",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. يارا اشرف كامل محمد",
+      "color": "#6366F1",
+      "room": ""
+    }
+  ],
+  "color": "#6366F1",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "حاسبات ق م - Northampton",
+    "حاسبات ق م - Northampton*",
+    "هندسة الحاسبات ق.م",
+    "هندسة الحاسبات ق.م*"
+  ],
+  "periods": [
+    "3"
+  ]
+}

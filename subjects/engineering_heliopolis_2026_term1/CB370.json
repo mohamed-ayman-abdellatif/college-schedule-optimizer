@@ -1,0 +1,91 @@
+{
+  "id": "CB370",
+  "name": "SURVEYING - CB370",
+  "code": "CB370",
+  "instructors": [
+    "د. محمد رفعت زكى البحيرى",
+    "مؤمن على محمد على محمد"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CB370_A_Lect._Wednesday_9",
+          "courseName": "SURVEYING - CB370",
+          "courseCode": "CB370",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. محمد رفعت زكى البحيرى",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "CB370_A_Sec._Thursday_3",
+          "courseName": "SURVEYING - CB370",
+          "courseCode": "CB370",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "مؤمن على محمد على محمد",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد رفعت زكى البحيرى",
+        "مؤمن على محمد على محمد"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "CB370_A_Lect._Wednesday_9",
+      "courseName": "SURVEYING - CB370",
+      "courseCode": "CB370",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. محمد رفعت زكى البحيرى",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "CB370_A_Sec._Thursday_3",
+      "courseName": "SURVEYING - CB370",
+      "courseCode": "CB370",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "مؤمن على محمد على محمد",
+      "color": "#14B8A6",
+      "room": ""
+    }
+  ],
+  "color": "#14B8A6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م"
+  ],
+  "periods": [
+    "5"
+  ]
+}

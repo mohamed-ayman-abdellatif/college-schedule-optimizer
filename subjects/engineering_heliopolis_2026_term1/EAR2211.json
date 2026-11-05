@@ -1,0 +1,409 @@
+{
+  "id": "EAR2211",
+  "name": "Building Technology (1) - EAR2211",
+  "code": "EAR2211",
+  "instructors": [
+    "د. شيماء حسن زكي ابراهيم",
+    "شيماء حسن زكي ابراهيم",
+    "د. سلمي طارق السيد محمد على",
+    "سلمي طارق السيد محمد على",
+    "د. عزة جمال الدين محمود حجاج",
+    "عزة جمال الدين محمود حجاج"
+  ],
+  "groups": [
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "EAR2211_C_Lect._Saturday_7",
+          "courseName": "Building Technology (1) - EAR2211",
+          "courseCode": "EAR2211",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. شيماء حسن زكي ابراهيم",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EAR2211_C_Lect._Saturday_9",
+          "courseName": "Building Technology (1) - EAR2211",
+          "courseCode": "EAR2211",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. شيماء حسن زكي ابراهيم",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EAR2211_C_Sec._Saturday_11",
+          "courseName": "Building Technology (1) - EAR2211",
+          "courseCode": "EAR2211",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "شيماء حسن زكي ابراهيم",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. شيماء حسن زكي ابراهيم",
+        "شيماء حسن زكي ابراهيم"
+      ]
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "EAR2211_D_Lect._Sunday_7",
+          "courseName": "Building Technology (1) - EAR2211",
+          "courseCode": "EAR2211",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. سلمي طارق السيد محمد على",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EAR2211_D_Lect._Sunday_9",
+          "courseName": "Building Technology (1) - EAR2211",
+          "courseCode": "EAR2211",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. سلمي طارق السيد محمد على",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EAR2211_D_Sec._Sunday_11",
+          "courseName": "Building Technology (1) - EAR2211",
+          "courseCode": "EAR2211",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "سلمي طارق السيد محمد على",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. سلمي طارق السيد محمد على",
+        "سلمي طارق السيد محمد على"
+      ]
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "EAR2211_E_Lect._Monday_1",
+          "courseName": "Building Technology (1) - EAR2211",
+          "courseCode": "EAR2211",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. عزة جمال الدين محمود حجاج",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EAR2211_E_Lect._Monday_3",
+          "courseName": "Building Technology (1) - EAR2211",
+          "courseCode": "EAR2211",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. عزة جمال الدين محمود حجاج",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EAR2211_E_Sec._Monday_5",
+          "courseName": "Building Technology (1) - EAR2211",
+          "courseCode": "EAR2211",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "عزة جمال الدين محمود حجاج",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. عزة جمال الدين محمود حجاج",
+        "عزة جمال الدين محمود حجاج"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EAR2211_B_Lect._Tuesday_1",
+          "courseName": "Building Technology (1) - EAR2211",
+          "courseCode": "EAR2211",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. سلمي طارق السيد محمد على",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EAR2211_B_Lect._Tuesday_3",
+          "courseName": "Building Technology (1) - EAR2211",
+          "courseCode": "EAR2211",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. سلمي طارق السيد محمد على",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EAR2211_B_Sec._Tuesday_5",
+          "courseName": "Building Technology (1) - EAR2211",
+          "courseCode": "EAR2211",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "سلمي طارق السيد محمد على",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. سلمي طارق السيد محمد على",
+        "سلمي طارق السيد محمد على"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EAR2211_C_Lect._Saturday_7",
+      "courseName": "Building Technology (1) - EAR2211",
+      "courseCode": "EAR2211",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. شيماء حسن زكي ابراهيم",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EAR2211_C_Lect._Saturday_9",
+      "courseName": "Building Technology (1) - EAR2211",
+      "courseCode": "EAR2211",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. شيماء حسن زكي ابراهيم",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EAR2211_C_Sec._Saturday_11",
+      "courseName": "Building Technology (1) - EAR2211",
+      "courseCode": "EAR2211",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "شيماء حسن زكي ابراهيم",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EAR2211_D_Lect._Sunday_7",
+      "courseName": "Building Technology (1) - EAR2211",
+      "courseCode": "EAR2211",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. سلمي طارق السيد محمد على",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EAR2211_D_Lect._Sunday_9",
+      "courseName": "Building Technology (1) - EAR2211",
+      "courseCode": "EAR2211",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. سلمي طارق السيد محمد على",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EAR2211_D_Sec._Sunday_11",
+      "courseName": "Building Technology (1) - EAR2211",
+      "courseCode": "EAR2211",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "سلمي طارق السيد محمد على",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EAR2211_E_Lect._Monday_1",
+      "courseName": "Building Technology (1) - EAR2211",
+      "courseCode": "EAR2211",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. عزة جمال الدين محمود حجاج",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EAR2211_E_Lect._Monday_3",
+      "courseName": "Building Technology (1) - EAR2211",
+      "courseCode": "EAR2211",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. عزة جمال الدين محمود حجاج",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EAR2211_E_Sec._Monday_5",
+      "courseName": "Building Technology (1) - EAR2211",
+      "courseCode": "EAR2211",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "عزة جمال الدين محمود حجاج",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EAR2211_B_Lect._Tuesday_1",
+      "courseName": "Building Technology (1) - EAR2211",
+      "courseCode": "EAR2211",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. سلمي طارق السيد محمد على",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EAR2211_B_Lect._Tuesday_3",
+      "courseName": "Building Technology (1) - EAR2211",
+      "courseCode": "EAR2211",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. سلمي طارق السيد محمد على",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EAR2211_B_Sec._Tuesday_5",
+      "courseName": "Building Technology (1) - EAR2211",
+      "courseCode": "EAR2211",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "سلمي طارق السيد محمد على",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م",
+    "هندسة معمارية-Cardiff-ق م //"
+  ],
+  "periods": [
+    "3"
+  ]
+}

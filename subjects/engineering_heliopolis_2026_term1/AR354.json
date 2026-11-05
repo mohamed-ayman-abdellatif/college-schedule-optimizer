@@ -1,0 +1,119 @@
+{
+  "id": "AR354",
+  "name": "BUILDING TECHNOLOGY 4 - AR354",
+  "code": "AR354",
+  "instructors": [
+    "د. محمد حسن زكي عمارة",
+    "محمد حسن زكي عمارة"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "AR354_A_Lect._Tuesday_5",
+          "courseName": "BUILDING TECHNOLOGY 4 - AR354",
+          "courseCode": "AR354",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. محمد حسن زكي عمارة",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "AR354_A_Lect._Tuesday_7",
+          "courseName": "BUILDING TECHNOLOGY 4 - AR354",
+          "courseCode": "AR354",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. محمد حسن زكي عمارة",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "AR354_A_Sec._Tuesday_9",
+          "courseName": "BUILDING TECHNOLOGY 4 - AR354",
+          "courseCode": "AR354",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "محمد حسن زكي عمارة",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد حسن زكي عمارة",
+        "محمد حسن زكي عمارة"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "AR354_A_Lect._Tuesday_5",
+      "courseName": "BUILDING TECHNOLOGY 4 - AR354",
+      "courseCode": "AR354",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. محمد حسن زكي عمارة",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "AR354_A_Lect._Tuesday_7",
+      "courseName": "BUILDING TECHNOLOGY 4 - AR354",
+      "courseCode": "AR354",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. محمد حسن زكي عمارة",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "AR354_A_Sec._Tuesday_9",
+      "courseName": "BUILDING TECHNOLOGY 4 - AR354",
+      "courseCode": "AR354",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "محمد حسن زكي عمارة",
+      "color": "#F59E0B",
+      "room": ""
+    }
+  ],
+  "color": "#F59E0B",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م"
+  ],
+  "periods": [
+    "6"
+  ]
+}

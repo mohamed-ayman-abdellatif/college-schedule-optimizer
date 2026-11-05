@@ -1,0 +1,91 @@
+{
+  "id": "CB351",
+  "name": "REINFORCED CONCRETE & METALLIC STRUC. - CB351",
+  "code": "CB351",
+  "instructors": [
+    "د. حسن احمد حسن احمد سعد",
+    "ندى خالد محمد شوقى على"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "CB351_B_Lect._Wednesday_3",
+          "courseName": "REINFORCED CONCRETE & METALLIC STRUC. - CB351",
+          "courseCode": "CB351",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. حسن احمد حسن احمد سعد",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "CB351_B_Sec._Thursday_5",
+          "courseName": "REINFORCED CONCRETE & METALLIC STRUC. - CB351",
+          "courseCode": "CB351",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "ندى خالد محمد شوقى على",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. حسن احمد حسن احمد سعد",
+        "ندى خالد محمد شوقى على"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "CB351_B_Lect._Wednesday_3",
+      "courseName": "REINFORCED CONCRETE & METALLIC STRUC. - CB351",
+      "courseCode": "CB351",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. حسن احمد حسن احمد سعد",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "CB351_B_Sec._Thursday_5",
+      "courseName": "REINFORCED CONCRETE & METALLIC STRUC. - CB351",
+      "courseCode": "CB351",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "ندى خالد محمد شوقى على",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م"
+  ],
+  "periods": [
+    "6"
+  ]
+}

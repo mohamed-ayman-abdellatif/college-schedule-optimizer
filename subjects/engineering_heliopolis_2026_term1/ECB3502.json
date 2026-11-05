@@ -1,0 +1,159 @@
+{
+  "id": "ECB3502",
+  "name": "Construction Materials - ECB3502",
+  "code": "ECB3502",
+  "instructors": [
+    "محمد خالد عبدالرحيم محمد محمد حسان",
+    "د. عصام محمد على عبدالقوى التحيوى"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECB3502_B_Lab._Monday_5",
+          "courseName": "Construction Materials - ECB3502",
+          "courseCode": "ECB3502",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "محمد خالد عبدالرحيم محمد محمد حسان",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "ECB3502_B_Lect._Tuesday_1",
+          "courseName": "Construction Materials - ECB3502",
+          "courseCode": "ECB3502",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 4,
+          "duration": 4,
+          "instructor": "د. عصام محمد على عبدالقوى التحيوى",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "محمد خالد عبدالرحيم محمد محمد حسان",
+        "د. عصام محمد على عبدالقوى التحيوى"
+      ]
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "ECB3502_D_Lab._Monday_5",
+          "courseName": "Construction Materials - ECB3502",
+          "courseCode": "ECB3502",
+          "group": "D",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "محمد خالد عبدالرحيم محمد محمد حسان",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "ECB3502_D_Lect._Tuesday_1",
+          "courseName": "Construction Materials - ECB3502",
+          "courseCode": "ECB3502",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 4,
+          "duration": 4,
+          "instructor": "د. عصام محمد على عبدالقوى التحيوى",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "محمد خالد عبدالرحيم محمد محمد حسان",
+        "د. عصام محمد على عبدالقوى التحيوى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECB3502_B_Lab._Monday_5",
+      "courseName": "Construction Materials - ECB3502",
+      "courseCode": "ECB3502",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "محمد خالد عبدالرحيم محمد محمد حسان",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECB3502_B_Lect._Tuesday_1",
+      "courseName": "Construction Materials - ECB3502",
+      "courseCode": "ECB3502",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 4,
+      "duration": 4,
+      "instructor": "د. عصام محمد على عبدالقوى التحيوى",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECB3502_D_Lab._Monday_5",
+      "courseName": "Construction Materials - ECB3502",
+      "courseCode": "ECB3502",
+      "group": "D",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "محمد خالد عبدالرحيم محمد محمد حسان",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECB3502_D_Lect._Tuesday_1",
+      "courseName": "Construction Materials - ECB3502",
+      "courseCode": "ECB3502",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 4,
+      "duration": 4,
+      "instructor": "د. عصام محمد على عبدالقوى التحيوى",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م",
+    "هندسة التشيد والبناء ق.م*"
+  ],
+  "periods": [
+    "5"
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "id": "ECB4106",
+  "name": "Construction Project Management I - ECB4106",
+  "code": "ECB4106",
+  "instructors": [
+    "احمد عمرو منير مصطفي",
+    "ياسمين خالد ابو الفتوح شاهين",
+    "د. احمد عبدالمعطى محمد الانور الحكيم"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECB4106_B_Lab._Saturday_5",
+          "courseName": "Construction Project Management I - ECB4106",
+          "courseCode": "ECB4106",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "احمد عمرو منير مصطفي",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "ECB4106_B_Sec._Monday_5",
+          "courseName": "Construction Project Management I - ECB4106",
+          "courseCode": "ECB4106",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "ياسمين خالد ابو الفتوح شاهين",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "ECB4106_B_Lect._Tuesday_7",
+          "courseName": "Construction Project Management I - ECB4106",
+          "courseCode": "ECB4106",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. احمد عبدالمعطى محمد الانور الحكيم",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "احمد عمرو منير مصطفي",
+        "ياسمين خالد ابو الفتوح شاهين",
+        "د. احمد عبدالمعطى محمد الانور الحكيم"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECB4106_B_Lab._Saturday_5",
+      "courseName": "Construction Project Management I - ECB4106",
+      "courseCode": "ECB4106",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "احمد عمرو منير مصطفي",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "ECB4106_B_Sec._Monday_5",
+      "courseName": "Construction Project Management I - ECB4106",
+      "courseCode": "ECB4106",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "ياسمين خالد ابو الفتوح شاهين",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "ECB4106_B_Lect._Tuesday_7",
+      "courseName": "Construction Project Management I - ECB4106",
+      "courseCode": "ECB4106",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. احمد عبدالمعطى محمد الانور الحكيم",
+      "color": "#06B6D4",
+      "room": ""
+    }
+  ],
+  "color": "#06B6D4",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م*"
+  ],
+  "periods": [
+    "8"
+  ]
+}

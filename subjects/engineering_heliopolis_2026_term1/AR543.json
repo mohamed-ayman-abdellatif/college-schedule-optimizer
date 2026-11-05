@@ -1,0 +1,91 @@
+{
+  "id": "AR543",
+  "name": "INTR. TO SITE PLANNING & HOUSING - AR543",
+  "code": "AR543",
+  "instructors": [
+    "د. رنا مصطفى أحمد همام",
+    "رنا مصطفى أحمد همام"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "AR543_A_Lect._Tuesday_5",
+          "courseName": "INTR. TO SITE PLANNING & HOUSING - AR543",
+          "courseCode": "AR543",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. رنا مصطفى أحمد همام",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "AR543_A_Sec._Tuesday_7",
+          "courseName": "INTR. TO SITE PLANNING & HOUSING - AR543",
+          "courseCode": "AR543",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "رنا مصطفى أحمد همام",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. رنا مصطفى أحمد همام",
+        "رنا مصطفى أحمد همام"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "AR543_A_Lect._Tuesday_5",
+      "courseName": "INTR. TO SITE PLANNING & HOUSING - AR543",
+      "courseCode": "AR543",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. رنا مصطفى أحمد همام",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "AR543_A_Sec._Tuesday_7",
+      "courseName": "INTR. TO SITE PLANNING & HOUSING - AR543",
+      "courseCode": "AR543",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "رنا مصطفى أحمد همام",
+      "color": "#F59E0B",
+      "room": ""
+    }
+  ],
+  "color": "#F59E0B",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م"
+  ],
+  "periods": [
+    "9"
+  ]
+}

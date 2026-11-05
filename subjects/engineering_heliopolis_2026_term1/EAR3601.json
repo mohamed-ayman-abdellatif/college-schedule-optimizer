@@ -1,0 +1,61 @@
+{
+  "id": "EAR3601",
+  "name": "Scientific Thinking For Architects - EAR3601",
+  "code": "EAR3601",
+  "instructors": [
+    "د. مروة حسن محمد عثمان خليل"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EAR3601_A_Lect._Thursday_5",
+          "courseName": "Scientific Thinking For Architects - EAR3601",
+          "courseCode": "EAR3601",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. مروة حسن محمد عثمان خليل",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. مروة حسن محمد عثمان خليل"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EAR3601_A_Lect._Thursday_5",
+      "courseName": "Scientific Thinking For Architects - EAR3601",
+      "courseCode": "EAR3601",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. مروة حسن محمد عثمان خليل",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م*"
+  ],
+  "periods": [
+    "6"
+  ]
+}

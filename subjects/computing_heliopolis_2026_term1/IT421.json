@@ -1,0 +1,57 @@
+{
+  "id": "IT421",
+  "name": "Professional Training in Programming III - IT421",
+  "code": "IT421",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "IT421_A_Lab._Sunday_11",
+          "courseName": "Professional Training in Programming III - IT421",
+          "courseCode": "IT421",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Sunday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": false,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "IT421_A_Lab._Sunday_11",
+      "courseName": "Professional Training in Programming III - IT421",
+      "courseCode": "IT421",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Sunday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#6366F1",
+      "room": ""
+    }
+  ],
+  "color": "#6366F1",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "نظم معلومات -ق م"
+  ],
+  "periods": [
+    "7"
+  ]
+}

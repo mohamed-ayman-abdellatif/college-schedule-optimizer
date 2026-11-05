@@ -1,0 +1,91 @@
+{
+  "id": "ECB4105",
+  "name": "Quantity Surveying Cost Estimating &Spe. - ECB4105*",
+  "code": "ECB4105",
+  "instructors": [
+    "د. كريم عادل عبد المنعم ابراهيم",
+    "امنية مجدي محمد حسانين"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECB4105_B_Lect._Saturday_5",
+          "courseName": "Quantity Surveying Cost Estimating &Spe. - ECB4105*",
+          "courseCode": "ECB4105",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. كريم عادل عبد المنعم ابراهيم",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "ECB4105_B_Sec._Monday_3",
+          "courseName": "Quantity Surveying Cost Estimating &Spe. - ECB4105*",
+          "courseCode": "ECB4105",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "امنية مجدي محمد حسانين",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. كريم عادل عبد المنعم ابراهيم",
+        "امنية مجدي محمد حسانين"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECB4105_B_Lect._Saturday_5",
+      "courseName": "Quantity Surveying Cost Estimating &Spe. - ECB4105*",
+      "courseCode": "ECB4105",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. كريم عادل عبد المنعم ابراهيم",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECB4105_B_Sec._Monday_3",
+      "courseName": "Quantity Surveying Cost Estimating &Spe. - ECB4105*",
+      "courseCode": "ECB4105",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "امنية مجدي محمد حسانين",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م*"
+  ],
+  "periods": [
+    "7"
+  ]
+}

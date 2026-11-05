@@ -1,0 +1,547 @@
+{
+  "id": "ECE3112",
+  "name": "Programming Applications - ECE3112",
+  "code": "ECE3112",
+  "instructors": [
+    "د. دينا محمد علي ابو الدهب",
+    "احمد زكريا نور محمد طلحه",
+    "د. يارا اشرف كامل محمد"
+  ],
+  "groups": [
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "ECE3112_C_Lab._Monday_9",
+          "courseName": "Programming Applications - ECE3112",
+          "courseCode": "ECE3112",
+          "group": "C",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "ECE3112_C_Lect._Thursday_5",
+          "courseName": "Programming Applications - ECE3112",
+          "courseCode": "ECE3112",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "ECE3112_D_Lab._Monday_11",
+          "courseName": "Programming Applications - ECE3112",
+          "courseCode": "ECE3112",
+          "group": "D",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "ECE3112_D_Lect._Thursday_5",
+          "courseName": "Programming Applications - ECE3112",
+          "courseCode": "ECE3112",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "ECE3112_G_Lab._Monday_9",
+          "courseName": "Programming Applications - ECE3112",
+          "courseCode": "ECE3112",
+          "group": "G",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "ECE3112_G_Lect._Thursday_9",
+          "courseName": "Programming Applications - ECE3112",
+          "courseCode": "ECE3112",
+          "group": "G",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "I",
+      "sessions": [
+        {
+          "id": "ECE3112_I_Lect._Tuesday_3",
+          "courseName": "Programming Applications - ECE3112",
+          "courseCode": "ECE3112",
+          "group": "I",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. دينا محمد علي ابو الدهب",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "ECE3112_I_Lab._Tuesday_7",
+          "courseName": "Programming Applications - ECE3112",
+          "courseCode": "ECE3112",
+          "group": "I",
+          "type": "Lab.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. دينا محمد علي ابو الدهب"
+      ]
+    },
+    {
+      "group": "H",
+      "sessions": [
+        {
+          "id": "ECE3112_H_Lab._Tuesday_9",
+          "courseName": "Programming Applications - ECE3112",
+          "courseCode": "ECE3112",
+          "group": "H",
+          "type": "Lab.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "ECE3112_H_Lect._Thursday_9",
+          "courseName": "Programming Applications - ECE3112",
+          "courseCode": "ECE3112",
+          "group": "H",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "J",
+      "sessions": [
+        {
+          "id": "ECE3112_J_Lect._Tuesday_3",
+          "courseName": "Programming Applications - ECE3112",
+          "courseCode": "ECE3112",
+          "group": "J",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. دينا محمد علي ابو الدهب",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "ECE3112_J_Lab._Wednesday_5",
+          "courseName": "Programming Applications - ECE3112",
+          "courseCode": "ECE3112",
+          "group": "J",
+          "type": "Lab.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "احمد زكريا نور محمد طلحه",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. دينا محمد علي ابو الدهب",
+        "احمد زكريا نور محمد طلحه"
+      ]
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "ECE3112_E_Lect._Wednesday_5",
+          "courseName": "Programming Applications - ECE3112",
+          "courseCode": "ECE3112",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. يارا اشرف كامل محمد",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "ECE3112_E_Lab._Wednesday_11",
+          "courseName": "Programming Applications - ECE3112",
+          "courseCode": "ECE3112",
+          "group": "E",
+          "type": "Lab.",
+          "day": "Wednesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. يارا اشرف كامل محمد"
+      ]
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "ECE3112_F_Lect._Wednesday_5",
+          "courseName": "Programming Applications - ECE3112",
+          "courseCode": "ECE3112",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. يارا اشرف كامل محمد",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "ECE3112_F_Lab._Thursday_7",
+          "courseName": "Programming Applications - ECE3112",
+          "courseCode": "ECE3112",
+          "group": "F",
+          "type": "Lab.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. يارا اشرف كامل محمد"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECE3112_C_Lab._Monday_9",
+      "courseName": "Programming Applications - ECE3112",
+      "courseCode": "ECE3112",
+      "group": "C",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE3112_C_Lect._Thursday_5",
+      "courseName": "Programming Applications - ECE3112",
+      "courseCode": "ECE3112",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE3112_D_Lab._Monday_11",
+      "courseName": "Programming Applications - ECE3112",
+      "courseCode": "ECE3112",
+      "group": "D",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE3112_D_Lect._Thursday_5",
+      "courseName": "Programming Applications - ECE3112",
+      "courseCode": "ECE3112",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE3112_G_Lab._Monday_9",
+      "courseName": "Programming Applications - ECE3112",
+      "courseCode": "ECE3112",
+      "group": "G",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE3112_G_Lect._Thursday_9",
+      "courseName": "Programming Applications - ECE3112",
+      "courseCode": "ECE3112",
+      "group": "G",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE3112_I_Lect._Tuesday_3",
+      "courseName": "Programming Applications - ECE3112",
+      "courseCode": "ECE3112",
+      "group": "I",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. دينا محمد علي ابو الدهب",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE3112_I_Lab._Tuesday_7",
+      "courseName": "Programming Applications - ECE3112",
+      "courseCode": "ECE3112",
+      "group": "I",
+      "type": "Lab.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE3112_H_Lab._Tuesday_9",
+      "courseName": "Programming Applications - ECE3112",
+      "courseCode": "ECE3112",
+      "group": "H",
+      "type": "Lab.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE3112_H_Lect._Thursday_9",
+      "courseName": "Programming Applications - ECE3112",
+      "courseCode": "ECE3112",
+      "group": "H",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE3112_J_Lect._Tuesday_3",
+      "courseName": "Programming Applications - ECE3112",
+      "courseCode": "ECE3112",
+      "group": "J",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. دينا محمد علي ابو الدهب",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE3112_J_Lab._Wednesday_5",
+      "courseName": "Programming Applications - ECE3112",
+      "courseCode": "ECE3112",
+      "group": "J",
+      "type": "Lab.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "احمد زكريا نور محمد طلحه",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE3112_E_Lect._Wednesday_5",
+      "courseName": "Programming Applications - ECE3112",
+      "courseCode": "ECE3112",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. يارا اشرف كامل محمد",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE3112_E_Lab._Wednesday_11",
+      "courseName": "Programming Applications - ECE3112",
+      "courseCode": "ECE3112",
+      "group": "E",
+      "type": "Lab.",
+      "day": "Wednesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE3112_F_Lect._Wednesday_5",
+      "courseName": "Programming Applications - ECE3112",
+      "courseCode": "ECE3112",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. يارا اشرف كامل محمد",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "ECE3112_F_Lab._Thursday_7",
+      "courseName": "Programming Applications - ECE3112",
+      "courseCode": "ECE3112",
+      "group": "F",
+      "type": "Lab.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "ميكانيكا ق م -Northampton",
+    "هندسة ميكانيكية-ق م //"
+  ],
+  "periods": [
+    "5"
+  ]
+}

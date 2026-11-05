@@ -1,0 +1,156 @@
+{
+  "id": "EAR3404",
+  "name": "Theories Of Architecture (2) - EAR3404",
+  "code": "EAR3404",
+  "instructors": [
+    "د. سلمى محمد حامد محمد غانم",
+    "د. اميرة ناجى محمود السملاوى"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EAR3404_B_Lect._Sunday_5",
+          "courseName": "Theories Of Architecture (2) - EAR3404",
+          "courseCode": "EAR3404",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. سلمى محمد حامد محمد غانم",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EAR3404_B_Lect._Sunday_7",
+          "courseName": "Theories Of Architecture (2) - EAR3404",
+          "courseCode": "EAR3404",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 7,
+          "duration": 1,
+          "instructor": "د. سلمى محمد حامد محمد غانم",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. سلمى محمد حامد محمد غانم"
+      ]
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "EAR3404_D_Lect._Monday_7",
+          "courseName": "Theories Of Architecture (2) - EAR3404",
+          "courseCode": "EAR3404",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. اميرة ناجى محمود السملاوى",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EAR3404_D_Lect._Monday_9",
+          "courseName": "Theories Of Architecture (2) - EAR3404",
+          "courseCode": "EAR3404",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. اميرة ناجى محمود السملاوى",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. اميرة ناجى محمود السملاوى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EAR3404_B_Lect._Sunday_5",
+      "courseName": "Theories Of Architecture (2) - EAR3404",
+      "courseCode": "EAR3404",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. سلمى محمد حامد محمد غانم",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EAR3404_B_Lect._Sunday_7",
+      "courseName": "Theories Of Architecture (2) - EAR3404",
+      "courseCode": "EAR3404",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 7,
+      "duration": 1,
+      "instructor": "د. سلمى محمد حامد محمد غانم",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EAR3404_D_Lect._Monday_7",
+      "courseName": "Theories Of Architecture (2) - EAR3404",
+      "courseCode": "EAR3404",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. اميرة ناجى محمود السملاوى",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EAR3404_D_Lect._Monday_9",
+      "courseName": "Theories Of Architecture (2) - EAR3404",
+      "courseCode": "EAR3404",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. اميرة ناجى محمود السملاوى",
+      "color": "#10B981",
+      "room": ""
+    }
+  ],
+  "color": "#10B981",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م*"
+  ],
+  "periods": [
+    "5"
+  ]
+}

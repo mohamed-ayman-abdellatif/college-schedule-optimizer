@@ -1,0 +1,129 @@
+{
+  "id": "UNR1302",
+  "name": "Fundamentals of Business - UNR1302",
+  "code": "UNR1302",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "Z",
+      "sessions": [
+        {
+          "id": "UNR1302_Z_Lect._Sunday_3",
+          "courseName": "Fundamentals of Business - UNR1302",
+          "courseCode": "UNR1302",
+          "group": "Z",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    },
+    {
+      "group": "A2",
+      "sessions": [
+        {
+          "id": "UNR1302_A2_Lect._Sunday_5",
+          "courseName": "Fundamentals of Business - UNR1302",
+          "courseCode": "UNR1302",
+          "group": "A2",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    },
+    {
+      "group": "W",
+      "sessions": [
+        {
+          "id": "UNR1302_W_Lect._Thursday_5",
+          "courseName": "Fundamentals of Business - UNR1302",
+          "courseCode": "UNR1302",
+          "group": "W",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "UNR1302_Z_Lect._Sunday_3",
+      "courseName": "Fundamentals of Business - UNR1302",
+      "courseCode": "UNR1302",
+      "group": "Z",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "UNR1302_A2_Lect._Sunday_5",
+      "courseName": "Fundamentals of Business - UNR1302",
+      "courseCode": "UNR1302",
+      "group": "A2",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "UNR1302_W_Lect._Thursday_5",
+      "courseName": "Fundamentals of Business - UNR1302",
+      "courseCode": "UNR1302",
+      "group": "W",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    }
+  ],
+  "color": "#06B6D4",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "علوم الحاسب ق.م //"
+  ],
+  "periods": [
+    "1"
+  ]
+}

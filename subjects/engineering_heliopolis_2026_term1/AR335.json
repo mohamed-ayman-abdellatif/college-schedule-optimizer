@@ -1,0 +1,91 @@
+{
+  "id": "AR335",
+  "name": "HISTORY & THEORY OF ARCHITECTURE 5 - AR335",
+  "code": "AR335",
+  "instructors": [
+    "د. ميرام محمود عبدالمنعم السيد",
+    "محمد احمد رزق على الشربينى"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "AR335_B_Lect._Saturday_11",
+          "courseName": "HISTORY & THEORY OF ARCHITECTURE 5 - AR335",
+          "courseCode": "AR335",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "د. ميرام محمود عبدالمنعم السيد",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "AR335_B_Sec._Wednesday_5",
+          "courseName": "HISTORY & THEORY OF ARCHITECTURE 5 - AR335",
+          "courseCode": "AR335",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "محمد احمد رزق على الشربينى",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. ميرام محمود عبدالمنعم السيد",
+        "محمد احمد رزق على الشربينى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "AR335_B_Lect._Saturday_11",
+      "courseName": "HISTORY & THEORY OF ARCHITECTURE 5 - AR335",
+      "courseCode": "AR335",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "د. ميرام محمود عبدالمنعم السيد",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "AR335_B_Sec._Wednesday_5",
+      "courseName": "HISTORY & THEORY OF ARCHITECTURE 5 - AR335",
+      "courseCode": "AR335",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "محمد احمد رزق على الشربينى",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م"
+  ],
+  "periods": [
+    "6"
+  ]
+}

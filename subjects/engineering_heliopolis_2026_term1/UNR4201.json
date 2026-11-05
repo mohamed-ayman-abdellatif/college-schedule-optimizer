@@ -1,0 +1,448 @@
+{
+  "id": "UNR4201",
+  "name": "Professional Ethics and Practice Law - UNR4201",
+  "code": "UNR4201",
+  "instructors": [
+    "د. يحيى محمود عبدالوهاب حسن العطار",
+    "طارق السيد احمد عبدالغني",
+    "د. هادى عمر طه احمد ابوزيد",
+    "د. محمود مصطفى محمد الاشوح"
+  ],
+  "groups": [
+    {
+      "group": "I",
+      "sessions": [
+        {
+          "id": "UNR4201_I_Lect._Saturday_3",
+          "courseName": "Professional Ethics and Practice Law - UNR4201",
+          "courseCode": "UNR4201",
+          "group": "I",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. يحيى محمود عبدالوهاب حسن العطار",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. يحيى محمود عبدالوهاب حسن العطار"
+      ]
+    },
+    {
+      "group": "Q",
+      "sessions": [
+        {
+          "id": "UNR4201_Q_Lect._Saturday_5",
+          "courseName": "Professional Ethics and Practice Law - UNR4201",
+          "courseCode": "UNR4201",
+          "group": "Q",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. يحيى محمود عبدالوهاب حسن العطار",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. يحيى محمود عبدالوهاب حسن العطار"
+      ]
+    },
+    {
+      "group": "A4",
+      "sessions": [
+        {
+          "id": "UNR4201_A4_Sec._Saturday_11",
+          "courseName": "Professional Ethics and Practice Law - UNR4201",
+          "courseCode": "UNR4201",
+          "group": "A4",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "طارق السيد احمد عبدالغني",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "UNR4201_A4_Lect._Wednesday_3",
+          "courseName": "Professional Ethics and Practice Law - UNR4201",
+          "courseCode": "UNR4201",
+          "group": "A4",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. هادى عمر طه احمد ابوزيد",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "طارق السيد احمد عبدالغني",
+        "د. هادى عمر طه احمد ابوزيد"
+      ]
+    },
+    {
+      "group": "R",
+      "sessions": [
+        {
+          "id": "UNR4201_R_Lect._Saturday_5",
+          "courseName": "Professional Ethics and Practice Law - UNR4201",
+          "courseCode": "UNR4201",
+          "group": "R",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. يحيى محمود عبدالوهاب حسن العطار",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. يحيى محمود عبدالوهاب حسن العطار"
+      ]
+    },
+    {
+      "group": "J",
+      "sessions": [
+        {
+          "id": "UNR4201_J_Lect._Tuesday_1",
+          "courseName": "Professional Ethics and Practice Law - UNR4201",
+          "courseCode": "UNR4201",
+          "group": "J",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. يحيى محمود عبدالوهاب حسن العطار",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. يحيى محمود عبدالوهاب حسن العطار"
+      ]
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "UNR4201_C_Lect._Tuesday_5",
+          "courseName": "Professional Ethics and Practice Law - UNR4201",
+          "courseCode": "UNR4201",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. يحيى محمود عبدالوهاب حسن العطار",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. يحيى محمود عبدالوهاب حسن العطار"
+      ]
+    },
+    {
+      "group": "M",
+      "sessions": [
+        {
+          "id": "UNR4201_M_Lect._Tuesday_9",
+          "courseName": "Professional Ethics and Practice Law - UNR4201",
+          "courseCode": "UNR4201",
+          "group": "M",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. محمود مصطفى محمد الاشوح",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. محمود مصطفى محمد الاشوح"
+      ]
+    },
+    {
+      "group": "N",
+      "sessions": [
+        {
+          "id": "UNR4201_N_Lect._Tuesday_9",
+          "courseName": "Professional Ethics and Practice Law - UNR4201",
+          "courseCode": "UNR4201",
+          "group": "N",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. محمود مصطفى محمد الاشوح",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. محمود مصطفى محمد الاشوح"
+      ]
+    },
+    {
+      "group": "O",
+      "sessions": [
+        {
+          "id": "UNR4201_O_Lect._Wednesday_3",
+          "courseName": "Professional Ethics and Practice Law - UNR4201",
+          "courseCode": "UNR4201",
+          "group": "O",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. محمود مصطفى محمد الاشوح",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. محمود مصطفى محمد الاشوح"
+      ]
+    },
+    {
+      "group": "P",
+      "sessions": [
+        {
+          "id": "UNR4201_P_Lect._Wednesday_3",
+          "courseName": "Professional Ethics and Practice Law - UNR4201",
+          "courseCode": "UNR4201",
+          "group": "P",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. محمود مصطفى محمد الاشوح",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. محمود مصطفى محمد الاشوح"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "UNR4201_I_Lect._Saturday_3",
+      "courseName": "Professional Ethics and Practice Law - UNR4201",
+      "courseCode": "UNR4201",
+      "group": "I",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. يحيى محمود عبدالوهاب حسن العطار",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "UNR4201_Q_Lect._Saturday_5",
+      "courseName": "Professional Ethics and Practice Law - UNR4201",
+      "courseCode": "UNR4201",
+      "group": "Q",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. يحيى محمود عبدالوهاب حسن العطار",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "UNR4201_A4_Sec._Saturday_11",
+      "courseName": "Professional Ethics and Practice Law - UNR4201",
+      "courseCode": "UNR4201",
+      "group": "A4",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "طارق السيد احمد عبدالغني",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "UNR4201_A4_Lect._Wednesday_3",
+      "courseName": "Professional Ethics and Practice Law - UNR4201",
+      "courseCode": "UNR4201",
+      "group": "A4",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. هادى عمر طه احمد ابوزيد",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "UNR4201_R_Lect._Saturday_5",
+      "courseName": "Professional Ethics and Practice Law - UNR4201",
+      "courseCode": "UNR4201",
+      "group": "R",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. يحيى محمود عبدالوهاب حسن العطار",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "UNR4201_J_Lect._Tuesday_1",
+      "courseName": "Professional Ethics and Practice Law - UNR4201",
+      "courseCode": "UNR4201",
+      "group": "J",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. يحيى محمود عبدالوهاب حسن العطار",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "UNR4201_C_Lect._Tuesday_5",
+      "courseName": "Professional Ethics and Practice Law - UNR4201",
+      "courseCode": "UNR4201",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. يحيى محمود عبدالوهاب حسن العطار",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "UNR4201_M_Lect._Tuesday_9",
+      "courseName": "Professional Ethics and Practice Law - UNR4201",
+      "courseCode": "UNR4201",
+      "group": "M",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. محمود مصطفى محمد الاشوح",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "UNR4201_N_Lect._Tuesday_9",
+      "courseName": "Professional Ethics and Practice Law - UNR4201",
+      "courseCode": "UNR4201",
+      "group": "N",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. محمود مصطفى محمد الاشوح",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "UNR4201_O_Lect._Wednesday_3",
+      "courseName": "Professional Ethics and Practice Law - UNR4201",
+      "courseCode": "UNR4201",
+      "group": "O",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. محمود مصطفى محمد الاشوح",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "UNR4201_P_Lect._Wednesday_3",
+      "courseName": "Professional Ethics and Practice Law - UNR4201",
+      "courseCode": "UNR4201",
+      "group": "P",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. محمود مصطفى محمد الاشوح",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "الكترونيات ق م - Northamption //",
+    "الكترونيات ق م - Northamption*",
+    "حاسبات ق م - Northampton*",
+    "ميكانيكا ق م -Northampton*",
+    "هـ.الكترونات واتصالات ق.م",
+    "هـ.الكترونات واتصالات ق.م*",
+    "هـ.ميكانيكية ق.م*",
+    "هندسة التشيد والبناء ق.م*",
+    "هندسة الحاسبات ق.م*",
+    "هندسة كهربية وتحكم ق.م*",
+    "هندسة معمارية ق.م*"
+  ],
+  "periods": [
+    "5",
+    "7",
+    "8",
+    "9"
+  ]
+}

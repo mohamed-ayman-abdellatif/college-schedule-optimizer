@@ -1,0 +1,312 @@
+{
+  "id": "EEE2305",
+  "name": "Electrical Circuits Analysis 2 - EEE2305*",
+  "code": "EEE2305",
+  "instructors": [
+    "ميرنا فؤاد عبدالسلام عبدالمعطى على",
+    "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+    "شهاب علاء محمد علي"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EEE2305_B_Lab._Saturday_3",
+          "courseName": "Electrical Circuits Analysis 2 - EEE2305*",
+          "courseCode": "EEE2305",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EEE2305_B_Sec._Saturday_7",
+          "courseName": "Electrical Circuits Analysis 2 - EEE2305*",
+          "courseCode": "EEE2305",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "ميرنا فؤاد عبدالسلام عبدالمعطى على",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EEE2305_B_Lect._Thursday_5",
+          "courseName": "Electrical Circuits Analysis 2 - EEE2305*",
+          "courseCode": "EEE2305",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EEE2305_B_Sec._Saturday_5",
+          "courseName": "Electrical Circuits II - EEE2305",
+          "courseCode": "EEE2305",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "شهاب علاء محمد علي",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EEE2305_B_Lect._Monday_3",
+          "courseName": "Electrical Circuits II - EEE2305",
+          "courseCode": "EEE2305",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ميرنا فؤاد عبدالسلام عبدالمعطى على",
+        "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+        "شهاب علاء محمد علي"
+      ]
+    },
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEE2305_A_Sec._Saturday_1",
+          "courseName": "Electrical Circuits II - EEE2305",
+          "courseCode": "EEE2305",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "شهاب علاء محمد علي",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EEE2305_A_Lect._Monday_3",
+          "courseName": "Electrical Circuits II - EEE2305",
+          "courseCode": "EEE2305",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "شهاب علاء محمد علي",
+        "د. ميرنا فؤاد عبدالسلام عبدالمعطى على"
+      ]
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "EEE2305_C_Sec._Saturday_5",
+          "courseName": "Electrical Circuits II - EEE2305",
+          "courseCode": "EEE2305",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "شهاب علاء محمد علي",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EEE2305_C_Lect._Monday_3",
+          "courseName": "Electrical Circuits II - EEE2305",
+          "courseCode": "EEE2305",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "شهاب علاء محمد علي",
+        "د. ميرنا فؤاد عبدالسلام عبدالمعطى على"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE2305_B_Lab._Saturday_3",
+      "courseName": "Electrical Circuits Analysis 2 - EEE2305*",
+      "courseCode": "EEE2305",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EEE2305_B_Sec._Saturday_7",
+      "courseName": "Electrical Circuits Analysis 2 - EEE2305*",
+      "courseCode": "EEE2305",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "ميرنا فؤاد عبدالسلام عبدالمعطى على",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EEE2305_B_Lect._Thursday_5",
+      "courseName": "Electrical Circuits Analysis 2 - EEE2305*",
+      "courseCode": "EEE2305",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EEE2305_B_Sec._Saturday_5",
+      "courseName": "Electrical Circuits II - EEE2305",
+      "courseCode": "EEE2305",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "شهاب علاء محمد علي",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EEE2305_B_Lect._Monday_3",
+      "courseName": "Electrical Circuits II - EEE2305",
+      "courseCode": "EEE2305",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EEE2305_A_Sec._Saturday_1",
+      "courseName": "Electrical Circuits II - EEE2305",
+      "courseCode": "EEE2305",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "شهاب علاء محمد علي",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EEE2305_A_Lect._Monday_3",
+      "courseName": "Electrical Circuits II - EEE2305",
+      "courseCode": "EEE2305",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EEE2305_C_Sec._Saturday_5",
+      "courseName": "Electrical Circuits II - EEE2305",
+      "courseCode": "EEE2305",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "شهاب علاء محمد علي",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EEE2305_C_Lect._Monday_3",
+      "courseName": "Electrical Circuits II - EEE2305",
+      "courseCode": "EEE2305",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+      "color": "#10B981",
+      "room": ""
+    }
+  ],
+  "color": "#10B981",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هـ.الكترونات واتصالات ق.م*",
+    "هندسة الحاسبات ق.م"
+  ],
+  "periods": [
+    "4"
+  ]
+}

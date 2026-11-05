@@ -1,0 +1,91 @@
+{
+  "id": "CB474",
+  "name": "Highway Design and Construction - CB 474",
+  "code": "CB474",
+  "instructors": [
+    "رانيا عادل سليمان امين عز الدين",
+    "د. محمد رفعت زكى البحيرى"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "CB474_B_Sec._Sunday_5",
+          "courseName": "Highway Design and Construction - CB 474",
+          "courseCode": "CB474",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "رانيا عادل سليمان امين عز الدين",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "CB474_B_Lect._Monday_1",
+          "courseName": "Highway Design and Construction - CB 474",
+          "courseCode": "CB474",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. محمد رفعت زكى البحيرى",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "رانيا عادل سليمان امين عز الدين",
+        "د. محمد رفعت زكى البحيرى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "CB474_B_Sec._Sunday_5",
+      "courseName": "Highway Design and Construction - CB 474",
+      "courseCode": "CB474",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "رانيا عادل سليمان امين عز الدين",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "CB474_B_Lect._Monday_1",
+      "courseName": "Highway Design and Construction - CB 474",
+      "courseCode": "CB474",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. محمد رفعت زكى البحيرى",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م"
+  ],
+  "periods": [
+    "8"
+  ]
+}

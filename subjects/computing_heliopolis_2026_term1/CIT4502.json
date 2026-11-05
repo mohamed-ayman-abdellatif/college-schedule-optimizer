@@ -1,0 +1,202 @@
+{
+  "id": "CIT4502",
+  "name": "Professional Tr. in Cybersecurity II - CIT4502",
+  "code": "CIT4502",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "CIT4502_E_Lab._Saturday_11",
+          "courseName": "Professional Tr. in Cybersecurity II - CIT4502",
+          "courseCode": "CIT4502",
+          "group": "E",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": false,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "CIT4502_G_Lab._Monday_9",
+          "courseName": "Professional Tr. in Cybersecurity II - CIT4502",
+          "courseCode": "CIT4502",
+          "group": "G",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": false,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "CIT4502_F_Lab._Monday_11",
+          "courseName": "Professional Tr. in Cybersecurity II - CIT4502",
+          "courseCode": "CIT4502",
+          "group": "F",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": false,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "H",
+      "sessions": [
+        {
+          "id": "CIT4502_H_Lab._Monday_11",
+          "courseName": "Professional Tr. in Cybersecurity II - CIT4502",
+          "courseCode": "CIT4502",
+          "group": "H",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": false,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "CIT4502_D_Lab._Thursday_11",
+          "courseName": "Professional Tr. in Cybersecurity II - CIT4502",
+          "courseCode": "CIT4502",
+          "group": "D",
+          "type": "Lab.",
+          "day": "Thursday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": false,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CIT4502_E_Lab._Saturday_11",
+      "courseName": "Professional Tr. in Cybersecurity II - CIT4502",
+      "courseCode": "CIT4502",
+      "group": "E",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "CIT4502_G_Lab._Monday_9",
+      "courseName": "Professional Tr. in Cybersecurity II - CIT4502",
+      "courseCode": "CIT4502",
+      "group": "G",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "CIT4502_F_Lab._Monday_11",
+      "courseName": "Professional Tr. in Cybersecurity II - CIT4502",
+      "courseCode": "CIT4502",
+      "group": "F",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "CIT4502_H_Lab._Monday_11",
+      "courseName": "Professional Tr. in Cybersecurity II - CIT4502",
+      "courseCode": "CIT4502",
+      "group": "H",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "CIT4502_D_Lab._Thursday_11",
+      "courseName": "Professional Tr. in Cybersecurity II - CIT4502",
+      "courseCode": "CIT4502",
+      "group": "D",
+      "type": "Lab.",
+      "day": "Thursday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    }
+  ],
+  "color": "#F59E0B",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "الأمن السيبرانى - ق.م",
+    "علوم الحاسب ق.م //"
+  ],
+  "periods": [
+    "7"
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "EEE4204",
+  "name": "Electric Drives I - EEE4204*",
+  "code": "EEE4204",
+  "instructors": [
+    "د. ابراهيم عبدالله محمد عبدالسلام",
+    "نهى مجدى عبدالخالق عبدالمجيد"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEE4204_A_Lect._Wednesday_1",
+          "courseName": "Electric Drives I - EEE4204*",
+          "courseCode": "EEE4204",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. ابراهيم عبدالله محمد عبدالسلام",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EEE4204_A_Sec._Wednesday_5",
+          "courseName": "Electric Drives I - EEE4204*",
+          "courseCode": "EEE4204",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "نهى مجدى عبدالخالق عبدالمجيد",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. ابراهيم عبدالله محمد عبدالسلام",
+        "نهى مجدى عبدالخالق عبدالمجيد"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE4204_A_Lect._Wednesday_1",
+      "courseName": "Electric Drives I - EEE4204*",
+      "courseCode": "EEE4204",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. ابراهيم عبدالله محمد عبدالسلام",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EEE4204_A_Sec._Wednesday_5",
+      "courseName": "Electric Drives I - EEE4204*",
+      "courseCode": "EEE4204",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "نهى مجدى عبدالخالق عبدالمجيد",
+      "color": "#10B981",
+      "room": ""
+    }
+  ],
+  "color": "#10B981",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية ق م -Northampton*",
+    "هندسة كهربية وتحكم ق.م*"
+  ],
+  "periods": [
+    "8"
+  ]
+}

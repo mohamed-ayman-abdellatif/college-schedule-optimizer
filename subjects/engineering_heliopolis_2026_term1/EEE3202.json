@@ -1,0 +1,122 @@
+{
+  "id": "EEE3202",
+  "name": "Electrical Machines II - EEE3202*",
+  "code": "EEE3202",
+  "instructors": [
+    "شهاب علاء محمد علي",
+    "د. احمد محمد عبدالمحسن محمد",
+    "دعاء ابوبكر حسين محمد"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEE3202_A_Sec._Saturday_3",
+          "courseName": "Electrical Machines II - EEE3202*",
+          "courseCode": "EEE3202",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "شهاب علاء محمد علي",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EEE3202_A_Lect._Sunday_3",
+          "courseName": "Electrical Machines II - EEE3202*",
+          "courseCode": "EEE3202",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. احمد محمد عبدالمحسن محمد",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EEE3202_A_Lab._Tuesday_5",
+          "courseName": "Electrical Machines II - EEE3202*",
+          "courseCode": "EEE3202",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "دعاء ابوبكر حسين محمد",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "شهاب علاء محمد علي",
+        "د. احمد محمد عبدالمحسن محمد",
+        "دعاء ابوبكر حسين محمد"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE3202_A_Sec._Saturday_3",
+      "courseName": "Electrical Machines II - EEE3202*",
+      "courseCode": "EEE3202",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "شهاب علاء محمد علي",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EEE3202_A_Lect._Sunday_3",
+      "courseName": "Electrical Machines II - EEE3202*",
+      "courseCode": "EEE3202",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. احمد محمد عبدالمحسن محمد",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EEE3202_A_Lab._Tuesday_5",
+      "courseName": "Electrical Machines II - EEE3202*",
+      "courseCode": "EEE3202",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "دعاء ابوبكر حسين محمد",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية ق م -Northampton*",
+    "هندسة كهربية وتحكم ق.م*"
+  ],
+  "periods": [
+    "6"
+  ]
+}

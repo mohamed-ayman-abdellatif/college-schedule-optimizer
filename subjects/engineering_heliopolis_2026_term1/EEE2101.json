@@ -1,0 +1,94 @@
+{
+  "id": "EEE2101",
+  "name": "Electrical Measurements - EEE2101",
+  "code": "EEE2101",
+  "instructors": [
+    "د. نهى هانى يسرى على العمارى",
+    "نهى هانى يسرى على العمارى"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEE2101_A_Lect._Sunday_3",
+          "courseName": "Electrical Measurements - EEE2101",
+          "courseCode": "EEE2101",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. نهى هانى يسرى على العمارى",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "EEE2101_A_Sec._Wednesday_5",
+          "courseName": "Electrical Measurements - EEE2101",
+          "courseCode": "EEE2101",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "نهى هانى يسرى على العمارى",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. نهى هانى يسرى على العمارى",
+        "نهى هانى يسرى على العمارى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE2101_A_Lect._Sunday_3",
+      "courseName": "Electrical Measurements - EEE2101",
+      "courseCode": "EEE2101",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. نهى هانى يسرى على العمارى",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "EEE2101_A_Sec._Wednesday_5",
+      "courseName": "Electrical Measurements - EEE2101",
+      "courseCode": "EEE2101",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "نهى هانى يسرى على العمارى",
+      "color": "#14B8A6",
+      "room": ""
+    }
+  ],
+  "color": "#14B8A6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية ق م -Northampton //",
+    "هندسة كهربية وتحكم ق.م",
+    "هندسة كهربية وتحكم ق.م*"
+  ],
+  "periods": [
+    "4",
+    "3"
+  ]
+}

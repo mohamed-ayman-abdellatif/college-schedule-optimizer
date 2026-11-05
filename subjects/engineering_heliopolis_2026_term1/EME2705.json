@@ -1,0 +1,227 @@
+{
+  "id": "EME2705",
+  "name": "Stress Analysis - EME2705",
+  "code": "EME2705",
+  "instructors": [
+    "د. عبد الجواد حامد عبد الجواد مطر",
+    "مؤمن شمس الدين على محمد خليل"
+  ],
+  "groups": [
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "EME2705_C_Lect._Saturday_7",
+          "courseName": "Stress Analysis - EME2705",
+          "courseCode": "EME2705",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. عبد الجواد حامد عبد الجواد مطر",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EME2705_C_Sec._Monday_3",
+          "courseName": "Stress Analysis - EME2705",
+          "courseCode": "EME2705",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "مؤمن شمس الدين على محمد خليل",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. عبد الجواد حامد عبد الجواد مطر",
+        "مؤمن شمس الدين على محمد خليل"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EME2705_B_Lect._Saturday_7",
+          "courseName": "Stress Analysis - EME2705",
+          "courseCode": "EME2705",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. عبد الجواد حامد عبد الجواد مطر",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EME2705_B_Sec._Wednesday_7",
+          "courseName": "Stress Analysis - EME2705",
+          "courseCode": "EME2705",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "مؤمن شمس الدين على محمد خليل",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. عبد الجواد حامد عبد الجواد مطر",
+        "مؤمن شمس الدين على محمد خليل"
+      ]
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "EME2705_D_Sec._Sunday_1",
+          "courseName": "Stress Analysis - EME2705",
+          "courseCode": "EME2705",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "مؤمن شمس الدين على محمد خليل",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EME2705_D_Lect._Wednesday_9",
+          "courseName": "Stress Analysis - EME2705",
+          "courseCode": "EME2705",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. عبد الجواد حامد عبد الجواد مطر",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "مؤمن شمس الدين على محمد خليل",
+        "د. عبد الجواد حامد عبد الجواد مطر"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EME2705_C_Lect._Saturday_7",
+      "courseName": "Stress Analysis - EME2705",
+      "courseCode": "EME2705",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. عبد الجواد حامد عبد الجواد مطر",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EME2705_C_Sec._Monday_3",
+      "courseName": "Stress Analysis - EME2705",
+      "courseCode": "EME2705",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "مؤمن شمس الدين على محمد خليل",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EME2705_B_Lect._Saturday_7",
+      "courseName": "Stress Analysis - EME2705",
+      "courseCode": "EME2705",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. عبد الجواد حامد عبد الجواد مطر",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EME2705_B_Sec._Wednesday_7",
+      "courseName": "Stress Analysis - EME2705",
+      "courseCode": "EME2705",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "مؤمن شمس الدين على محمد خليل",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EME2705_D_Sec._Sunday_1",
+      "courseName": "Stress Analysis - EME2705",
+      "courseCode": "EME2705",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "مؤمن شمس الدين على محمد خليل",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EME2705_D_Lect._Wednesday_9",
+      "courseName": "Stress Analysis - EME2705",
+      "courseCode": "EME2705",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. عبد الجواد حامد عبد الجواد مطر",
+      "color": "#84CC16",
+      "room": ""
+    }
+  ],
+  "color": "#84CC16",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "ميكانيكا ق م -Northampton",
+    "هـ.ميكانيكية ق.م*",
+    "هندسة ميكانيكية-ق م //"
+  ],
+  "periods": [
+    "4"
+  ]
+}

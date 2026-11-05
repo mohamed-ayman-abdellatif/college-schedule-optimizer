@@ -1,0 +1,94 @@
+{
+  "id": "CS481",
+  "name": "Computers & Society - CS481",
+  "code": "CS481",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "CS481_A_Lect._Thursday_11",
+          "courseName": "Computers & Society - CS481",
+          "courseCode": "CS481",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "CS481_B_Lect._Thursday_11",
+          "courseName": "Computers & Society - CS481",
+          "courseCode": "CS481",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "CS481_A_Lect._Thursday_11",
+      "courseName": "Computers & Society - CS481",
+      "courseCode": "CS481",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "CS481_B_Lect._Thursday_11",
+      "courseName": "Computers & Society - CS481",
+      "courseCode": "CS481",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#14B8A6",
+      "room": ""
+    }
+  ],
+  "color": "#14B8A6",
+  "scheduleType": "group",
+  "facultyId": "computing_heliopolis_2026_term1",
+  "facultyTitle": "كلية الحاسبات وتكنولوجيا المعلومات - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Computing & Information Technology - Heliopolis",
+  "departments": [
+    "نظم معلومات -ق م",
+    "هندسة البرمجيات - ق.م"
+  ],
+  "periods": [
+    "7"
+  ]
+}

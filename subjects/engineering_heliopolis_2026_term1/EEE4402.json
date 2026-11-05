@@ -1,0 +1,120 @@
+{
+  "id": "EEE4402",
+  "name": "Power Systems Protection - EEE4402*",
+  "code": "EEE4402",
+  "instructors": [
+    "أسماء أبوبكر أحمد حسانين",
+    "د. خالد محمد سيد احمد البحراوى"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEE4402_A_Lab._Sunday_3",
+          "courseName": "Power Systems Protection - EEE4402*",
+          "courseCode": "EEE4402",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "أسماء أبوبكر أحمد حسانين",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EEE4402_A_Sec._Sunday_5",
+          "courseName": "Power Systems Protection - EEE4402*",
+          "courseCode": "EEE4402",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "أسماء أبوبكر أحمد حسانين",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "EEE4402_A_Lect._Thursday_3",
+          "courseName": "Power Systems Protection - EEE4402*",
+          "courseCode": "EEE4402",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. خالد محمد سيد احمد البحراوى",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "أسماء أبوبكر أحمد حسانين",
+        "د. خالد محمد سيد احمد البحراوى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE4402_A_Lab._Sunday_3",
+      "courseName": "Power Systems Protection - EEE4402*",
+      "courseCode": "EEE4402",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "أسماء أبوبكر أحمد حسانين",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EEE4402_A_Sec._Sunday_5",
+      "courseName": "Power Systems Protection - EEE4402*",
+      "courseCode": "EEE4402",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "أسماء أبوبكر أحمد حسانين",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "EEE4402_A_Lect._Thursday_3",
+      "courseName": "Power Systems Protection - EEE4402*",
+      "courseCode": "EEE4402",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. خالد محمد سيد احمد البحراوى",
+      "color": "#10B981",
+      "room": ""
+    }
+  ],
+  "color": "#10B981",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية ق م -Northampton*",
+    "هندسة كهربية وتحكم ق.م*"
+  ],
+  "periods": [
+    "8"
+  ]
+}

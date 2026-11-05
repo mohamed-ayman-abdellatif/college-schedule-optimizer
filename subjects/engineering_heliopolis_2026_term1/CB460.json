@@ -1,0 +1,159 @@
+{
+  "id": "CB460",
+  "name": "SOIL MECHANICS & FOUNDATIONS - CB460",
+  "code": "CB460",
+  "instructors": [
+    "رويد ابو بكر يوسف ابراهيم",
+    "د. احمد محمد جمال الدين محمد منصور",
+    "د. عادل محمود سيد احمد بلال"
+  ],
+  "groups": [
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "CB460_D_Sec._Saturday_5",
+          "courseName": "SOIL MECHANICS & FOUNDATIONS - CB460",
+          "courseCode": "CB460",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "رويد ابو بكر يوسف ابراهيم",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "CB460_D_Lect._Wednesday_7",
+          "courseName": "SOIL MECHANICS & FOUNDATIONS - CB460",
+          "courseCode": "CB460",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. احمد محمد جمال الدين محمد منصور",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "رويد ابو بكر يوسف ابراهيم",
+        "د. احمد محمد جمال الدين محمد منصور"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "CB460_B_Sec._Sunday_1",
+          "courseName": "SOIL MECHANICS & FOUNDATIONS - CB460",
+          "courseCode": "CB460",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "رويد ابو بكر يوسف ابراهيم",
+          "color": "#14B8A6",
+          "room": ""
+        },
+        {
+          "id": "CB460_B_Lect._Sunday_3",
+          "courseName": "SOIL MECHANICS & FOUNDATIONS - CB460",
+          "courseCode": "CB460",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. عادل محمود سيد احمد بلال",
+          "color": "#14B8A6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "رويد ابو بكر يوسف ابراهيم",
+        "د. عادل محمود سيد احمد بلال"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "CB460_D_Sec._Saturday_5",
+      "courseName": "SOIL MECHANICS & FOUNDATIONS - CB460",
+      "courseCode": "CB460",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "رويد ابو بكر يوسف ابراهيم",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "CB460_B_Sec._Sunday_1",
+      "courseName": "SOIL MECHANICS & FOUNDATIONS - CB460",
+      "courseCode": "CB460",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "رويد ابو بكر يوسف ابراهيم",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "CB460_B_Lect._Sunday_3",
+      "courseName": "SOIL MECHANICS & FOUNDATIONS - CB460",
+      "courseCode": "CB460",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. عادل محمود سيد احمد بلال",
+      "color": "#14B8A6",
+      "room": ""
+    },
+    {
+      "id": "CB460_D_Lect._Wednesday_7",
+      "courseName": "SOIL MECHANICS & FOUNDATIONS - CB460",
+      "courseCode": "CB460",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. احمد محمد جمال الدين محمد منصور",
+      "color": "#14B8A6",
+      "room": ""
+    }
+  ],
+  "color": "#14B8A6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م"
+  ],
+  "periods": [
+    "7"
+  ]
+}

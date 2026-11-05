@@ -1,0 +1,1573 @@
+{
+  "id": "UNR2101",
+  "name": "Communication and Presentation Skills - UNR2101",
+  "code": "UNR2101",
+  "instructors": [
+    "ابتهال انس محمد محمد البطشة",
+    "د. الشيماء محمد محمد احمد",
+    "د. جيهان سيد احمد ابراهيم يحيى",
+    "ندى اسامة حامد محمد",
+    "د. رانيه محمد سمير حسن يوسف يوسف",
+    "د. دينا ماهر السيد فليفل",
+    "د. منه الله صابر محى الدين عبدالرازق",
+    "د. نيفال نبيل محمود عبد الله",
+    "د. راندا علاء الدين فؤاد محمد"
+  ],
+  "groups": [
+    {
+      "group": "7",
+      "sessions": [
+        {
+          "id": "UNR2101_7_Sec._Saturday_1",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "7",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "UNR2101_7_Lect._Tuesday_7",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "7",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "A4",
+      "sessions": [
+        {
+          "id": "UNR2101_A4_Lect._Saturday_5",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "A4",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "UNR2101_A4_Sec._Sunday_5",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "A4",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "B8",
+      "sessions": [
+        {
+          "id": "UNR2101_B8_Lect._Saturday_7",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "B8",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "UNR2101_B8_Sec._Thursday_7",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "B8",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "6",
+      "sessions": [
+        {
+          "id": "UNR2101_6_Sec._Saturday_9",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "6",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "UNR2101_6_Lect._Tuesday_1",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "6",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "V",
+      "sessions": [
+        {
+          "id": "UNR2101_V_Lect._Saturday_1",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "V",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. جيهان سيد احمد ابراهيم يحيى",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. جيهان سيد احمد ابراهيم يحيى"
+      ]
+    },
+    {
+      "group": "B9",
+      "sessions": [
+        {
+          "id": "UNR2101_B9_Lect._Saturday_7",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "B9",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "UNR2101_B9_Sec._Thursday_7",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "B9",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "2",
+      "sessions": [
+        {
+          "id": "UNR2101_2_Sec._Sunday_1",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "2",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "ابتهال انس محمد محمد البطشة",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "UNR2101_2_Lect._Monday_7",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "2",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. الشيماء محمد محمد احمد",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ابتهال انس محمد محمد البطشة",
+        "د. الشيماء محمد محمد احمد"
+      ]
+    },
+    {
+      "group": "A6",
+      "sessions": [
+        {
+          "id": "UNR2101_A6_Lect._Sunday_5",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "A6",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "UNR2101_A6_Sec._Tuesday_7",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "A6",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "P",
+      "sessions": [
+        {
+          "id": "UNR2101_P_Sec._Sunday_7",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "P",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "ندى اسامة حامد محمد",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "UNR2101_P_Lect._Monday_5",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "P",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. رانيه محمد سمير حسن يوسف يوسف",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ندى اسامة حامد محمد",
+        "د. رانيه محمد سمير حسن يوسف يوسف"
+      ]
+    },
+    {
+      "group": "5",
+      "sessions": [
+        {
+          "id": "UNR2101_5_Sec._Sunday_9",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "5",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "UNR2101_5_Lect._Monday_1",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "5",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "F4",
+      "sessions": [
+        {
+          "id": "UNR2101_F4_Lect._Sunday_5",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "F4",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "UNR2101_F4_Sec._Wednesday_3",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "F4",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "M",
+      "sessions": [
+        {
+          "id": "UNR2101_M_Lect._Monday_3",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "M",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. رانيه محمد سمير حسن يوسف يوسف",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "UNR2101_M_Sec._Wednesday_1",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "M",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "ندى اسامة حامد محمد",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. رانيه محمد سمير حسن يوسف يوسف",
+        "ندى اسامة حامد محمد"
+      ]
+    },
+    {
+      "group": "B3",
+      "sessions": [
+        {
+          "id": "UNR2101_B3_Lect._Monday_9",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "B3",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "UNR2101_B3_Sec._Tuesday_9",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "B3",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "S",
+      "sessions": [
+        {
+          "id": "UNR2101_S_Lect._Monday_1",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "S",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. دينا ماهر السيد فليفل",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. دينا ماهر السيد فليفل"
+      ]
+    },
+    {
+      "group": "B7",
+      "sessions": [
+        {
+          "id": "UNR2101_B7_Sec._Monday_1",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "B7",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "UNR2101_B7_Lect._Wednesday_9",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "B7",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "O",
+      "sessions": [
+        {
+          "id": "UNR2101_O_Lect._Monday_3",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "O",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. الشيماء محمد محمد احمد",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "UNR2101_O_Sec._Wednesday_3",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "O",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "ابتهال انس محمد محمد البطشة",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. الشيماء محمد محمد احمد",
+        "ابتهال انس محمد محمد البطشة"
+      ]
+    },
+    {
+      "group": "T",
+      "sessions": [
+        {
+          "id": "UNR2101_T_Lect._Monday_3",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "T",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. منه الله صابر محى الدين عبدالرازق",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. منه الله صابر محى الدين عبدالرازق"
+      ]
+    },
+    {
+      "group": "B4",
+      "sessions": [
+        {
+          "id": "UNR2101_B4_Lect._Monday_5",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "B4",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "UNR2101_B4_Sec._Monday_7",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "B4",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "B5",
+      "sessions": [
+        {
+          "id": "UNR2101_B5_Lect._Monday_7",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "B5",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "UNR2101_B5_Sec._Tuesday_3",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "B5",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "B6",
+      "sessions": [
+        {
+          "id": "UNR2101_B6_Lect._Monday_7",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "B6",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "UNR2101_B6_Sec._Thursday_7",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "B6",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "N",
+      "sessions": [
+        {
+          "id": "UNR2101_N_Lect._Tuesday_3",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "N",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. نيفال نبيل محمود عبد الله",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "UNR2101_N_Sec._Thursday_5",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "N",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "ندى اسامة حامد محمد",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. نيفال نبيل محمود عبد الله",
+        "ندى اسامة حامد محمد"
+      ]
+    },
+    {
+      "group": "Q",
+      "sessions": [
+        {
+          "id": "UNR2101_Q_Lect._Tuesday_5",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "Q",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. نيفال نبيل محمود عبد الله",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "UNR2101_Q_Sec._Wednesday_5",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "Q",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "ندى اسامة حامد محمد",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. نيفال نبيل محمود عبد الله",
+        "ندى اسامة حامد محمد"
+      ]
+    },
+    {
+      "group": "A2",
+      "sessions": [
+        {
+          "id": "UNR2101_A2_Lect._Tuesday_9",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "A2",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. راندا علاء الدين فؤاد محمد",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. راندا علاء الدين فؤاد محمد"
+      ]
+    },
+    {
+      "group": "4",
+      "sessions": [
+        {
+          "id": "UNR2101_4_Sec._Wednesday_7",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "4",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        },
+        {
+          "id": "UNR2101_4_Lect._Thursday_5",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "4",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "U",
+      "sessions": [
+        {
+          "id": "UNR2101_U_Lect._Wednesday_5",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "U",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. دينا ماهر السيد فليفل",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. دينا ماهر السيد فليفل"
+      ]
+    },
+    {
+      "group": "W",
+      "sessions": [
+        {
+          "id": "UNR2101_W_Lect._Thursday_1",
+          "courseName": "Communication and Presentation Skills - UNR2101",
+          "courseCode": "UNR2101",
+          "group": "W",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. جيهان سيد احمد ابراهيم يحيى",
+          "color": "#F59E0B",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. جيهان سيد احمد ابراهيم يحيى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "UNR2101_7_Sec._Saturday_1",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "7",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_7_Lect._Tuesday_7",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "7",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_A4_Lect._Saturday_5",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "A4",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_A4_Sec._Sunday_5",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "A4",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_B8_Lect._Saturday_7",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "B8",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_B8_Sec._Thursday_7",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "B8",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_6_Sec._Saturday_9",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "6",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_6_Lect._Tuesday_1",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "6",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_V_Lect._Saturday_1",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "V",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. جيهان سيد احمد ابراهيم يحيى",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_B9_Lect._Saturday_7",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "B9",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_B9_Sec._Thursday_7",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "B9",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_2_Sec._Sunday_1",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "2",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "ابتهال انس محمد محمد البطشة",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_2_Lect._Monday_7",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "2",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. الشيماء محمد محمد احمد",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_A6_Lect._Sunday_5",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "A6",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_A6_Sec._Tuesday_7",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "A6",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_P_Sec._Sunday_7",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "P",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "ندى اسامة حامد محمد",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_P_Lect._Monday_5",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "P",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. رانيه محمد سمير حسن يوسف يوسف",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_5_Sec._Sunday_9",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "5",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_5_Lect._Monday_1",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "5",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_F4_Lect._Sunday_5",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "F4",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_F4_Sec._Wednesday_3",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "F4",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_M_Lect._Monday_3",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "M",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. رانيه محمد سمير حسن يوسف يوسف",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_M_Sec._Wednesday_1",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "M",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "ندى اسامة حامد محمد",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_B3_Lect._Monday_9",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "B3",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_B3_Sec._Tuesday_9",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "B3",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_S_Lect._Monday_1",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "S",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. دينا ماهر السيد فليفل",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_B7_Sec._Monday_1",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "B7",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_B7_Lect._Wednesday_9",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "B7",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_O_Lect._Monday_3",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "O",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. الشيماء محمد محمد احمد",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_O_Sec._Wednesday_3",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "O",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "ابتهال انس محمد محمد البطشة",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_T_Lect._Monday_3",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "T",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. منه الله صابر محى الدين عبدالرازق",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_B4_Lect._Monday_5",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "B4",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_B4_Sec._Monday_7",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "B4",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_B5_Lect._Monday_7",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "B5",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_B5_Sec._Tuesday_3",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "B5",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_B6_Lect._Monday_7",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "B6",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_B6_Sec._Thursday_7",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "B6",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_N_Lect._Tuesday_3",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "N",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. نيفال نبيل محمود عبد الله",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_N_Sec._Thursday_5",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "N",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "ندى اسامة حامد محمد",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_Q_Lect._Tuesday_5",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "Q",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. نيفال نبيل محمود عبد الله",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_Q_Sec._Wednesday_5",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "Q",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "ندى اسامة حامد محمد",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_A2_Lect._Tuesday_9",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "A2",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. راندا علاء الدين فؤاد محمد",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_4_Sec._Wednesday_7",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "4",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_4_Lect._Thursday_5",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "4",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_U_Lect._Wednesday_5",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "U",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. دينا ماهر السيد فليفل",
+      "color": "#F59E0B",
+      "room": ""
+    },
+    {
+      "id": "UNR2101_W_Lect._Thursday_1",
+      "courseName": "Communication and Presentation Skills - UNR2101",
+      "courseCode": "UNR2101",
+      "group": "W",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. جيهان سيد احمد ابراهيم يحيى",
+      "color": "#F59E0B",
+      "room": ""
+    }
+  ],
+  "color": "#F59E0B",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "الكترونيات ق م - Northamption //",
+    "الكترونيات ق م - Northamption*",
+    "حاسبات ق م - Northampton",
+    "ميكانيكا ق م -Northampton",
+    "ميكانيكا ق م -Northampton*",
+    "هـ.الكترونات واتصالات ق.م",
+    "هـ.الكترونات واتصالات ق.م*",
+    "هـ.ميكانيكية ق.م*",
+    "هندسة التشيد والبناء ق.م",
+    "هندسة الحاسبات ق.م",
+    "هندسة الحاسبات ق.م*",
+    "هندسة كهربية وتحكم ق.م",
+    "هندسة معمارية ق.م",
+    "هندسة معمارية ق.م*",
+    "هندسة معمارية-Cardiff-ق م //",
+    "هندسة ميكانيكية-ق م //"
+  ],
+  "periods": [
+    "2",
+    "4"
+  ]
+}

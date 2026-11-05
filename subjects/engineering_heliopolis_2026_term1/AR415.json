@@ -1,0 +1,175 @@
+{
+  "id": "AR415",
+  "name": "ARCHITECTURAL DESIGN 5 - AR415",
+  "code": "AR415",
+  "instructors": [
+    "د. اسر محمد بدوى بخاتى",
+    "اسر محمد بدوى بخاتى"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "AR415_B_Lect._Sunday_1",
+          "courseName": "ARCHITECTURAL DESIGN 5 - AR415",
+          "courseCode": "AR415",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. اسر محمد بدوى بخاتى",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "AR415_B_Lect._Sunday_3",
+          "courseName": "ARCHITECTURAL DESIGN 5 - AR415",
+          "courseCode": "AR415",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 3,
+          "duration": 1,
+          "instructor": "د. اسر محمد بدوى بخاتى",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "AR415_B_Lect._Sunday_4",
+          "courseName": "ARCHITECTURAL DESIGN 5 - AR415",
+          "courseCode": "AR415",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 4,
+          "endSlot": 4,
+          "duration": 1,
+          "instructor": "Not Specified",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "AR415_B_Sec._Tuesday_9",
+          "courseName": "ARCHITECTURAL DESIGN 5 - AR415",
+          "courseCode": "AR415",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "اسر محمد بدوى بخاتى",
+          "color": "#10B981",
+          "room": ""
+        },
+        {
+          "id": "AR415_B_Sec._Tuesday_11",
+          "courseName": "ARCHITECTURAL DESIGN 5 - AR415",
+          "courseCode": "AR415",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "اسر محمد بدوى بخاتى",
+          "color": "#10B981",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. اسر محمد بدوى بخاتى",
+        "اسر محمد بدوى بخاتى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "AR415_B_Lect._Sunday_1",
+      "courseName": "ARCHITECTURAL DESIGN 5 - AR415",
+      "courseCode": "AR415",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. اسر محمد بدوى بخاتى",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "AR415_B_Lect._Sunday_3",
+      "courseName": "ARCHITECTURAL DESIGN 5 - AR415",
+      "courseCode": "AR415",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 3,
+      "duration": 1,
+      "instructor": "د. اسر محمد بدوى بخاتى",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "AR415_B_Lect._Sunday_4",
+      "courseName": "ARCHITECTURAL DESIGN 5 - AR415",
+      "courseCode": "AR415",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 4,
+      "endSlot": 4,
+      "duration": 1,
+      "instructor": "Not Specified",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "AR415_B_Sec._Tuesday_9",
+      "courseName": "ARCHITECTURAL DESIGN 5 - AR415",
+      "courseCode": "AR415",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "اسر محمد بدوى بخاتى",
+      "color": "#10B981",
+      "room": ""
+    },
+    {
+      "id": "AR415_B_Sec._Tuesday_11",
+      "courseName": "ARCHITECTURAL DESIGN 5 - AR415",
+      "courseCode": "AR415",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "اسر محمد بدوى بخاتى",
+      "color": "#10B981",
+      "room": ""
+    }
+  ],
+  "color": "#10B981",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م"
+  ],
+  "periods": [
+    "8"
+  ]
+}

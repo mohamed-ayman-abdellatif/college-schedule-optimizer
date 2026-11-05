@@ -1,0 +1,157 @@
+{
+  "id": "EEE2307",
+  "name": "Electrical Circuits Analysis II - EEE2307",
+  "code": "EEE2307",
+  "instructors": [
+    "ميرنا فؤاد عبدالسلام عبدالمعطى على",
+    "د. ميرنا فؤاد عبدالسلام عبدالمعطى على"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EEE2307_B_Sec._Saturday_7",
+          "courseName": "Electrical Circuits Analysis II - EEE2307",
+          "courseCode": "EEE2307",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "ميرنا فؤاد عبدالسلام عبدالمعطى على",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EEE2307_B_Lect._Thursday_5",
+          "courseName": "Electrical Circuits Analysis II - EEE2307",
+          "courseCode": "EEE2307",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "ميرنا فؤاد عبدالسلام عبدالمعطى على",
+        "د. ميرنا فؤاد عبدالسلام عبدالمعطى على"
+      ]
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "EEE2307_C_Sec._Saturday_11",
+          "courseName": "Electrical Circuits Analysis II - EEE2307",
+          "courseCode": "EEE2307",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "EEE2307_C_Lect._Thursday_5",
+          "courseName": "Electrical Circuits Analysis II - EEE2307",
+          "courseCode": "EEE2307",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. ميرنا فؤاد عبدالسلام عبدالمعطى على"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE2307_B_Sec._Saturday_7",
+      "courseName": "Electrical Circuits Analysis II - EEE2307",
+      "courseCode": "EEE2307",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "ميرنا فؤاد عبدالسلام عبدالمعطى على",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EEE2307_C_Sec._Saturday_11",
+      "courseName": "Electrical Circuits Analysis II - EEE2307",
+      "courseCode": "EEE2307",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EEE2307_B_Lect._Thursday_5",
+      "courseName": "Electrical Circuits Analysis II - EEE2307",
+      "courseCode": "EEE2307",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "EEE2307_C_Lect._Thursday_5",
+      "courseName": "Electrical Circuits Analysis II - EEE2307",
+      "courseCode": "EEE2307",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. ميرنا فؤاد عبدالسلام عبدالمعطى على",
+      "color": "#84CC16",
+      "room": ""
+    }
+  ],
+  "color": "#84CC16",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هـ.الكترونات واتصالات ق.م"
+  ],
+  "periods": [
+    "4"
+  ]
+}

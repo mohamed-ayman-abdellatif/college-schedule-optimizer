@@ -1,0 +1,150 @@
+{
+  "id": "ECE5702",
+  "name": "Multimedia and Virtual Reality - ECE5702",
+  "code": "ECE5702",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECE5702_A_Lab._Saturday_7",
+          "courseName": "Multimedia and Virtual Reality - ECE5702",
+          "courseCode": "ECE5702",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "ECE5702_A_Lect._Saturday_11",
+          "courseName": "Multimedia and Virtual Reality - ECE5702",
+          "courseCode": "ECE5702",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECE5702_B_Lect._Saturday_11",
+          "courseName": "Multimedia and Virtual Reality - ECE5702",
+          "courseCode": "ECE5702",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "ECE5702_B_Lab._Thursday_3",
+          "courseName": "Multimedia and Virtual Reality - ECE5702",
+          "courseCode": "ECE5702",
+          "group": "B",
+          "type": "Lab.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECE5702_A_Lab._Saturday_7",
+      "courseName": "Multimedia and Virtual Reality - ECE5702",
+      "courseCode": "ECE5702",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "ECE5702_A_Lect._Saturday_11",
+      "courseName": "Multimedia and Virtual Reality - ECE5702",
+      "courseCode": "ECE5702",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "ECE5702_B_Lect._Saturday_11",
+      "courseName": "Multimedia and Virtual Reality - ECE5702",
+      "courseCode": "ECE5702",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "ECE5702_B_Lab._Thursday_3",
+      "courseName": "Multimedia and Virtual Reality - ECE5702",
+      "courseCode": "ECE5702",
+      "group": "B",
+      "type": "Lab.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#84CC16",
+      "room": ""
+    }
+  ],
+  "color": "#84CC16",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "حاسبات ق م - Northampton*",
+    "هندسة الحاسبات ق.م*"
+  ],
+  "periods": [
+    "9"
+  ]
+}

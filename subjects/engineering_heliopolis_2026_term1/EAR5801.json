@@ -1,0 +1,99 @@
+{
+  "id": "EAR5801",
+  "name": "Social Dimensions In Urban Design - EAR5801",
+  "code": "EAR5801",
+  "instructors": [
+    "د. أشرف سامى محمود ابوزيد"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EAR5801_A_Lect._Saturday_5",
+          "courseName": "Social Dimensions In Urban Design - EAR5801",
+          "courseCode": "EAR5801",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. أشرف سامى محمود ابوزيد",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. أشرف سامى محمود ابوزيد"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EAR5801_B_Lect._Saturday_7",
+          "courseName": "Social Dimensions In Urban Design - EAR5801",
+          "courseCode": "EAR5801",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. أشرف سامى محمود ابوزيد",
+          "color": "#6366F1",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": false,
+      "instructors": [
+        "د. أشرف سامى محمود ابوزيد"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EAR5801_A_Lect._Saturday_5",
+      "courseName": "Social Dimensions In Urban Design - EAR5801",
+      "courseCode": "EAR5801",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. أشرف سامى محمود ابوزيد",
+      "color": "#6366F1",
+      "room": ""
+    },
+    {
+      "id": "EAR5801_B_Lect._Saturday_7",
+      "courseName": "Social Dimensions In Urban Design - EAR5801",
+      "courseCode": "EAR5801",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. أشرف سامى محمود ابوزيد",
+      "color": "#6366F1",
+      "room": ""
+    }
+  ],
+  "color": "#6366F1",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م*"
+  ],
+  "periods": [
+    "9"
+  ]
+}

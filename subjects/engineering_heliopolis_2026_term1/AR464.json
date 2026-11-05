@@ -1,0 +1,113 @@
+{
+  "id": "AR464",
+  "name": "ENVIROMENTAL STUDIES II - AR464",
+  "code": "AR464",
+  "instructors": [],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "AR464_A_Lect._Wednesday_5",
+          "courseName": "ENVIROMENTAL STUDIES II - AR464",
+          "courseCode": "AR464",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 5,
+          "endSlot": 5,
+          "duration": 1,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "AR464_A_Lect._Wednesday_6",
+          "courseName": "ENVIROMENTAL STUDIES II - AR464",
+          "courseCode": "AR464",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 6,
+          "endSlot": 6,
+          "duration": 1,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "AR464_A_Sec._Wednesday_7",
+          "courseName": "ENVIROMENTAL STUDIES II - AR464",
+          "courseCode": "AR464",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": []
+    }
+  ],
+  "slots": [
+    {
+      "id": "AR464_A_Lect._Wednesday_5",
+      "courseName": "ENVIROMENTAL STUDIES II - AR464",
+      "courseCode": "AR464",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 5,
+      "endSlot": 5,
+      "duration": 1,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "AR464_A_Lect._Wednesday_6",
+      "courseName": "ENVIROMENTAL STUDIES II - AR464",
+      "courseCode": "AR464",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 6,
+      "endSlot": 6,
+      "duration": 1,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "AR464_A_Sec._Wednesday_7",
+      "courseName": "ENVIROMENTAL STUDIES II - AR464",
+      "courseCode": "AR464",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    }
+  ],
+  "color": "#06B6D4",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م"
+  ],
+  "periods": [
+    "7"
+  ]
+}

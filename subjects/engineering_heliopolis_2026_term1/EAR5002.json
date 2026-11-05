@@ -1,0 +1,117 @@
+{
+  "id": "EAR5002",
+  "name": "Graduation Project - EAR5002",
+  "code": "EAR5002",
+  "instructors": [
+    "د. منى عبدالعظيم عبدالوهاب"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EAR5002_B_Lect._Monday_1",
+          "courseName": "Graduation Project - EAR5002",
+          "courseCode": "EAR5002",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 6,
+          "duration": 6,
+          "instructor": "د. منى عبدالعظيم عبدالوهاب",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EAR5002_B_Lect._Tuesday_1",
+          "courseName": "Graduation Project - EAR5002",
+          "courseCode": "EAR5002",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 6,
+          "duration": 6,
+          "instructor": "د. منى عبدالعظيم عبدالوهاب",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EAR5002_B_Sec._Thursday_1",
+          "courseName": "Graduation Project - EAR5002",
+          "courseCode": "EAR5002",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 6,
+          "duration": 6,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. منى عبدالعظيم عبدالوهاب"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EAR5002_B_Lect._Monday_1",
+      "courseName": "Graduation Project - EAR5002",
+      "courseCode": "EAR5002",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 6,
+      "duration": 6,
+      "instructor": "د. منى عبدالعظيم عبدالوهاب",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EAR5002_B_Lect._Tuesday_1",
+      "courseName": "Graduation Project - EAR5002",
+      "courseCode": "EAR5002",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 6,
+      "duration": 6,
+      "instructor": "د. منى عبدالعظيم عبدالوهاب",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EAR5002_B_Sec._Thursday_1",
+      "courseName": "Graduation Project - EAR5002",
+      "courseCode": "EAR5002",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 6,
+      "duration": 6,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    }
+  ],
+  "color": "#06B6D4",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م*"
+  ],
+  "periods": [
+    "9"
+  ]
+}

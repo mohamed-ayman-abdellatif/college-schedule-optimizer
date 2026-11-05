@@ -1,0 +1,92 @@
+{
+  "id": "EEE2102",
+  "name": "Fundamental Control Engineering - EEE2102",
+  "code": "EEE2102",
+  "instructors": [
+    "د. احمد حسن ياقوت عبده",
+    "محمد تامر احمد حجاج"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EEE2102_A_Lect._Sunday_7",
+          "courseName": "Fundamental Control Engineering - EEE2102",
+          "courseCode": "EEE2102",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. احمد حسن ياقوت عبده",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EEE2102_A_Sec._Tuesday_3",
+          "courseName": "Fundamental Control Engineering - EEE2102",
+          "courseCode": "EEE2102",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "محمد تامر احمد حجاج",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. احمد حسن ياقوت عبده",
+        "محمد تامر احمد حجاج"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EEE2102_A_Lect._Sunday_7",
+      "courseName": "Fundamental Control Engineering - EEE2102",
+      "courseCode": "EEE2102",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. احمد حسن ياقوت عبده",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EEE2102_A_Sec._Tuesday_3",
+      "courseName": "Fundamental Control Engineering - EEE2102",
+      "courseCode": "EEE2102",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "محمد تامر احمد حجاج",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة كهربية ق م -Northampton //",
+    "هندسة كهربية وتحكم ق.م"
+  ],
+  "periods": [
+    "4"
+  ]
+}

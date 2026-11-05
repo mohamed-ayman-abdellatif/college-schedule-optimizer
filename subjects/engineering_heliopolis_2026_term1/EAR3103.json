@@ -1,0 +1,175 @@
+{
+  "id": "EAR3103",
+  "name": "Architectural Design Studio (3) - EAR3103",
+  "code": "EAR3103",
+  "instructors": [
+    "د. اسر محمد بدوى بخاتى",
+    "اسر محمد بدوى بخاتى"
+  ],
+  "groups": [
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "EAR3103_C_Lect._Sunday_1",
+          "courseName": "Architectural Design Studio (3) - EAR3103",
+          "courseCode": "EAR3103",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. اسر محمد بدوى بخاتى",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EAR3103_C_Lect._Sunday_3",
+          "courseName": "Architectural Design Studio (3) - EAR3103",
+          "courseCode": "EAR3103",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 3,
+          "duration": 1,
+          "instructor": "د. اسر محمد بدوى بخاتى",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EAR3103_C_Lect._Sunday_4",
+          "courseName": "Architectural Design Studio (3) - EAR3103",
+          "courseCode": "EAR3103",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 4,
+          "endSlot": 4,
+          "duration": 1,
+          "instructor": "Not Specified",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EAR3103_C_Sec._Tuesday_9",
+          "courseName": "Architectural Design Studio (3) - EAR3103",
+          "courseCode": "EAR3103",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "اسر محمد بدوى بخاتى",
+          "color": "#06B6D4",
+          "room": ""
+        },
+        {
+          "id": "EAR3103_C_Sec._Tuesday_11",
+          "courseName": "Architectural Design Studio (3) - EAR3103",
+          "courseCode": "EAR3103",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "اسر محمد بدوى بخاتى",
+          "color": "#06B6D4",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. اسر محمد بدوى بخاتى",
+        "اسر محمد بدوى بخاتى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EAR3103_C_Lect._Sunday_1",
+      "courseName": "Architectural Design Studio (3) - EAR3103",
+      "courseCode": "EAR3103",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. اسر محمد بدوى بخاتى",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EAR3103_C_Lect._Sunday_3",
+      "courseName": "Architectural Design Studio (3) - EAR3103",
+      "courseCode": "EAR3103",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 3,
+      "duration": 1,
+      "instructor": "د. اسر محمد بدوى بخاتى",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EAR3103_C_Lect._Sunday_4",
+      "courseName": "Architectural Design Studio (3) - EAR3103",
+      "courseCode": "EAR3103",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 4,
+      "endSlot": 4,
+      "duration": 1,
+      "instructor": "Not Specified",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EAR3103_C_Sec._Tuesday_9",
+      "courseName": "Architectural Design Studio (3) - EAR3103",
+      "courseCode": "EAR3103",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "اسر محمد بدوى بخاتى",
+      "color": "#06B6D4",
+      "room": ""
+    },
+    {
+      "id": "EAR3103_C_Sec._Tuesday_11",
+      "courseName": "Architectural Design Studio (3) - EAR3103",
+      "courseCode": "EAR3103",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "اسر محمد بدوى بخاتى",
+      "color": "#06B6D4",
+      "room": ""
+    }
+  ],
+  "color": "#06B6D4",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة معمارية ق.م*"
+  ],
+  "periods": [
+    "5"
+  ]
+}

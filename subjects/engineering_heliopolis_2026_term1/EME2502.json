@@ -1,0 +1,1105 @@
+{
+  "id": "EME2502",
+  "name": "Mechanical Eng. Drawing - EME2502",
+  "code": "EME2502",
+  "instructors": [
+    "د. عبد الجواد حامد عبد الجواد مطر",
+    "عبد الجواد حامد عبد الجواد مطر",
+    "د. مصطفى محمود عبدالوهاب محمد",
+    "مجدى زين العابدين زينهم سالم",
+    "د. ادهم محمد عبدالقادر حسن",
+    "ادهم محمد عبدالقادر حسن",
+    "د. عبدالفتاح عبدالحميد محمد ابراهيم",
+    "عادل اشرف ابوالوفا الجندي",
+    "د. هند محمود حمدى صالح عبدالهادى",
+    "هند محمود حمدى صالح عبدالهادى",
+    "اسلام ربيع عبدالعزيز محمد",
+    "د. عادل اشرف ابوالوفا الجندي",
+    "د. السيد خضرى السيد على",
+    "السيد خضرى السيد على",
+    "د. عمرو عادل محمد حسين",
+    "وليد بهجت مصطفي ابراهيم",
+    "د. احمد على محمد على",
+    "احمد على محمد على",
+    "د. حسين اشرف حسين ابراهيم",
+    "حسين اشرف حسين ابراهيم"
+  ],
+  "groups": [
+    {
+      "group": "R",
+      "sessions": [
+        {
+          "id": "EME2502_R_Lect._Saturday_1",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "R",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. عبد الجواد حامد عبد الجواد مطر",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EME2502_R_Sec._Saturday_3",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "R",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "عبد الجواد حامد عبد الجواد مطر",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EME2502_R_Sec._Saturday_5",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "R",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. عبد الجواد حامد عبد الجواد مطر",
+        "عبد الجواد حامد عبد الجواد مطر"
+      ]
+    },
+    {
+      "group": "O",
+      "sessions": [
+        {
+          "id": "EME2502_O_Lect._Saturday_7",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "O",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. مصطفى محمود عبدالوهاب محمد",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EME2502_O_Sec._Saturday_9",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "O",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 12,
+          "duration": 4,
+          "instructor": "مجدى زين العابدين زينهم سالم",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. مصطفى محمود عبدالوهاب محمد",
+        "مجدى زين العابدين زينهم سالم"
+      ]
+    },
+    {
+      "group": "S",
+      "sessions": [
+        {
+          "id": "EME2502_S_Lect._Saturday_1",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "S",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. ادهم محمد عبدالقادر حسن",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EME2502_S_Sec._Saturday_3",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "S",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 6,
+          "duration": 4,
+          "instructor": "ادهم محمد عبدالقادر حسن",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. ادهم محمد عبدالقادر حسن",
+        "ادهم محمد عبدالقادر حسن"
+      ]
+    },
+    {
+      "group": "P",
+      "sessions": [
+        {
+          "id": "EME2502_P_Lect._Saturday_7",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "P",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. عبدالفتاح عبدالحميد محمد ابراهيم",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EME2502_P_Sec._Saturday_9",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "P",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 12,
+          "duration": 4,
+          "instructor": "عادل اشرف ابوالوفا الجندي",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. عبدالفتاح عبدالحميد محمد ابراهيم",
+        "عادل اشرف ابوالوفا الجندي"
+      ]
+    },
+    {
+      "group": "N",
+      "sessions": [
+        {
+          "id": "EME2502_N_Lect._Sunday_7",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "N",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. هند محمود حمدى صالح عبدالهادى",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EME2502_N_Sec._Sunday_9",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "N",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 9,
+          "endSlot": 12,
+          "duration": 4,
+          "instructor": "مجدى زين العابدين زينهم سالم",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. هند محمود حمدى صالح عبدالهادى",
+        "مجدى زين العابدين زينهم سالم"
+      ]
+    },
+    {
+      "group": "Q",
+      "sessions": [
+        {
+          "id": "EME2502_Q_Lect._Monday_1",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "Q",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. هند محمود حمدى صالح عبدالهادى",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EME2502_Q_Sec._Monday_3",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "Q",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "هند محمود حمدى صالح عبدالهادى",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EME2502_Q_Sec._Monday_5",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "Q",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "هند محمود حمدى صالح عبدالهادى",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. هند محمود حمدى صالح عبدالهادى",
+        "هند محمود حمدى صالح عبدالهادى"
+      ]
+    },
+    {
+      "group": "K",
+      "sessions": [
+        {
+          "id": "EME2502_K_Lect._Monday_7",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "K",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. مصطفى محمود عبدالوهاب محمد",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EME2502_K_Sec._Monday_9",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "K",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 12,
+          "duration": 4,
+          "instructor": "اسلام ربيع عبدالعزيز محمد",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. مصطفى محمود عبدالوهاب محمد",
+        "اسلام ربيع عبدالعزيز محمد"
+      ]
+    },
+    {
+      "group": "H",
+      "sessions": [
+        {
+          "id": "EME2502_H_Lect._Tuesday_1",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "H",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. ادهم محمد عبدالقادر حسن",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EME2502_H_Sec._Tuesday_3",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "H",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 6,
+          "duration": 4,
+          "instructor": "ادهم محمد عبدالقادر حسن",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. ادهم محمد عبدالقادر حسن",
+        "ادهم محمد عبدالقادر حسن"
+      ]
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "EME2502_E_Lect._Tuesday_7",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. مصطفى محمود عبدالوهاب محمد",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EME2502_E_Sec._Tuesday_9",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 12,
+          "duration": 4,
+          "instructor": "مجدى زين العابدين زينهم سالم",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. مصطفى محمود عبدالوهاب محمد",
+        "مجدى زين العابدين زينهم سالم"
+      ]
+    },
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "EME2502_F_Lect._Tuesday_7",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. عادل اشرف ابوالوفا الجندي",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EME2502_F_Sec._Tuesday_9",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "F",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 9,
+          "endSlot": 12,
+          "duration": 4,
+          "instructor": "عادل اشرف ابوالوفا الجندي",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. عادل اشرف ابوالوفا الجندي",
+        "عادل اشرف ابوالوفا الجندي"
+      ]
+    },
+    {
+      "group": "J",
+      "sessions": [
+        {
+          "id": "EME2502_J_Lect._Wednesday_1",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "J",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. السيد خضرى السيد على",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EME2502_J_Sec._Wednesday_3",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "J",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 6,
+          "duration": 4,
+          "instructor": "السيد خضرى السيد على",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. السيد خضرى السيد على",
+        "السيد خضرى السيد على"
+      ]
+    },
+    {
+      "group": "M",
+      "sessions": [
+        {
+          "id": "EME2502_M_Lect._Wednesday_7",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "M",
+          "type": "Lect.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. عمرو عادل محمد حسين",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EME2502_M_Sec._Wednesday_9",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "M",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 12,
+          "duration": 4,
+          "instructor": "وليد بهجت مصطفي ابراهيم",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. عمرو عادل محمد حسين",
+        "وليد بهجت مصطفي ابراهيم"
+      ]
+    },
+    {
+      "group": "G",
+      "sessions": [
+        {
+          "id": "EME2502_G_Lect._Thursday_1",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "G",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. احمد على محمد على",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EME2502_G_Sec._Thursday_3",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "G",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 6,
+          "duration": 4,
+          "instructor": "احمد على محمد على",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. احمد على محمد على",
+        "احمد على محمد على"
+      ]
+    },
+    {
+      "group": "I",
+      "sessions": [
+        {
+          "id": "EME2502_I_Lect._Thursday_7",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "I",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. السيد خضرى السيد على",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EME2502_I_Sec._Thursday_9",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "I",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 9,
+          "endSlot": 12,
+          "duration": 4,
+          "instructor": "وليد بهجت مصطفي ابراهيم",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. السيد خضرى السيد على",
+        "وليد بهجت مصطفي ابراهيم"
+      ]
+    },
+    {
+      "group": "L",
+      "sessions": [
+        {
+          "id": "EME2502_L_Lect._Thursday_1",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "L",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. حسين اشرف حسين ابراهيم",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "EME2502_L_Sec._Thursday_3",
+          "courseName": "Mechanical Eng. Drawing - EME2502",
+          "courseCode": "EME2502",
+          "group": "L",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 6,
+          "duration": 4,
+          "instructor": "حسين اشرف حسين ابراهيم",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. حسين اشرف حسين ابراهيم",
+        "حسين اشرف حسين ابراهيم"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EME2502_R_Lect._Saturday_1",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "R",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. عبد الجواد حامد عبد الجواد مطر",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_R_Sec._Saturday_3",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "R",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "عبد الجواد حامد عبد الجواد مطر",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_R_Sec._Saturday_5",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "R",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_O_Lect._Saturday_7",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "O",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. مصطفى محمود عبدالوهاب محمد",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_O_Sec._Saturday_9",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "O",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 12,
+      "duration": 4,
+      "instructor": "مجدى زين العابدين زينهم سالم",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_S_Lect._Saturday_1",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "S",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. ادهم محمد عبدالقادر حسن",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_S_Sec._Saturday_3",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "S",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 6,
+      "duration": 4,
+      "instructor": "ادهم محمد عبدالقادر حسن",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_P_Lect._Saturday_7",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "P",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. عبدالفتاح عبدالحميد محمد ابراهيم",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_P_Sec._Saturday_9",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "P",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 12,
+      "duration": 4,
+      "instructor": "عادل اشرف ابوالوفا الجندي",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_N_Lect._Sunday_7",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "N",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. هند محمود حمدى صالح عبدالهادى",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_N_Sec._Sunday_9",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "N",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 9,
+      "endSlot": 12,
+      "duration": 4,
+      "instructor": "مجدى زين العابدين زينهم سالم",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_Q_Lect._Monday_1",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "Q",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. هند محمود حمدى صالح عبدالهادى",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_Q_Sec._Monday_3",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "Q",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "هند محمود حمدى صالح عبدالهادى",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_Q_Sec._Monday_5",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "Q",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "هند محمود حمدى صالح عبدالهادى",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_K_Lect._Monday_7",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "K",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. مصطفى محمود عبدالوهاب محمد",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_K_Sec._Monday_9",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "K",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 12,
+      "duration": 4,
+      "instructor": "اسلام ربيع عبدالعزيز محمد",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_H_Lect._Tuesday_1",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "H",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. ادهم محمد عبدالقادر حسن",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_H_Sec._Tuesday_3",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "H",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 6,
+      "duration": 4,
+      "instructor": "ادهم محمد عبدالقادر حسن",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_E_Lect._Tuesday_7",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. مصطفى محمود عبدالوهاب محمد",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_E_Sec._Tuesday_9",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 12,
+      "duration": 4,
+      "instructor": "مجدى زين العابدين زينهم سالم",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_F_Lect._Tuesday_7",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. عادل اشرف ابوالوفا الجندي",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_F_Sec._Tuesday_9",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "F",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 9,
+      "endSlot": 12,
+      "duration": 4,
+      "instructor": "عادل اشرف ابوالوفا الجندي",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_J_Lect._Wednesday_1",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "J",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. السيد خضرى السيد على",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_J_Sec._Wednesday_3",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "J",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 6,
+      "duration": 4,
+      "instructor": "السيد خضرى السيد على",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_M_Lect._Wednesday_7",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "M",
+      "type": "Lect.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. عمرو عادل محمد حسين",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_M_Sec._Wednesday_9",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "M",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 12,
+      "duration": 4,
+      "instructor": "وليد بهجت مصطفي ابراهيم",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_G_Lect._Thursday_1",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "G",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. احمد على محمد على",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_G_Sec._Thursday_3",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "G",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 6,
+      "duration": 4,
+      "instructor": "احمد على محمد على",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_I_Lect._Thursday_7",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "I",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. السيد خضرى السيد على",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_I_Sec._Thursday_9",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "I",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 9,
+      "endSlot": 12,
+      "duration": 4,
+      "instructor": "وليد بهجت مصطفي ابراهيم",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_L_Lect._Thursday_1",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "L",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. حسين اشرف حسين ابراهيم",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "EME2502_L_Sec._Thursday_3",
+      "courseName": "Mechanical Eng. Drawing - EME2502",
+      "courseCode": "EME2502",
+      "group": "L",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 6,
+      "duration": 4,
+      "instructor": "حسين اشرف حسين ابراهيم",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "ميكانيكا ق م -Northampton",
+    "هـ.ميكانيكية ق.م*",
+    "هندسة ميكانيكية-ق م //"
+  ],
+  "periods": [
+    "3"
+  ]
+}

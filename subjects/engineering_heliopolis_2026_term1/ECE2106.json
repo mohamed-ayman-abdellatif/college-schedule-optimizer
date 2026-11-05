@@ -1,0 +1,226 @@
+{
+  "id": "ECE2106",
+  "name": "Python & Algorithms - ECE2106",
+  "code": "ECE2106",
+  "instructors": [
+    "الاء ياسر سمير ذو الفقار",
+    "د. احمد فاروق ابراهيم جعفر"
+  ],
+  "groups": [
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "ECE2106_D_Sec._Saturday_9",
+          "courseName": "Python & Algorithms - ECE2106",
+          "courseCode": "ECE2106",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "الاء ياسر سمير ذو الفقار",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "ECE2106_D_Lect._Monday_7",
+          "courseName": "Python & Algorithms - ECE2106",
+          "courseCode": "ECE2106",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. احمد فاروق ابراهيم جعفر",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "الاء ياسر سمير ذو الفقار",
+        "د. احمد فاروق ابراهيم جعفر"
+      ]
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "ECE2106_C_Sec._Saturday_11",
+          "courseName": "Python & Algorithms - ECE2106",
+          "courseCode": "ECE2106",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "الاء ياسر سمير ذو الفقار",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "ECE2106_C_Lect._Monday_7",
+          "courseName": "Python & Algorithms - ECE2106",
+          "courseCode": "ECE2106",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. احمد فاروق ابراهيم جعفر",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "الاء ياسر سمير ذو الفقار",
+        "د. احمد فاروق ابراهيم جعفر"
+      ]
+    },
+    {
+      "group": "E",
+      "sessions": [
+        {
+          "id": "ECE2106_E_Sec._Saturday_11",
+          "courseName": "Python & Algorithms - ECE2106",
+          "courseCode": "ECE2106",
+          "group": "E",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "الاء ياسر سمير ذو الفقار",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "ECE2106_E_Lect._Monday_7",
+          "courseName": "Python & Algorithms - ECE2106",
+          "courseCode": "ECE2106",
+          "group": "E",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "د. احمد فاروق ابراهيم جعفر",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "الاء ياسر سمير ذو الفقار",
+        "د. احمد فاروق ابراهيم جعفر"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECE2106_D_Sec._Saturday_9",
+      "courseName": "Python & Algorithms - ECE2106",
+      "courseCode": "ECE2106",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "الاء ياسر سمير ذو الفقار",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "ECE2106_D_Lect._Monday_7",
+      "courseName": "Python & Algorithms - ECE2106",
+      "courseCode": "ECE2106",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. احمد فاروق ابراهيم جعفر",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "ECE2106_C_Sec._Saturday_11",
+      "courseName": "Python & Algorithms - ECE2106",
+      "courseCode": "ECE2106",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "الاء ياسر سمير ذو الفقار",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "ECE2106_C_Lect._Monday_7",
+      "courseName": "Python & Algorithms - ECE2106",
+      "courseCode": "ECE2106",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. احمد فاروق ابراهيم جعفر",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "ECE2106_E_Sec._Saturday_11",
+      "courseName": "Python & Algorithms - ECE2106",
+      "courseCode": "ECE2106",
+      "group": "E",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "الاء ياسر سمير ذو الفقار",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "ECE2106_E_Lect._Monday_7",
+      "courseName": "Python & Algorithms - ECE2106",
+      "courseCode": "ECE2106",
+      "group": "E",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "د. احمد فاروق ابراهيم جعفر",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هـ.الكترونات واتصالات ق.م",
+    "هـ.الكترونات واتصالات ق.م*"
+  ],
+  "periods": [
+    "4"
+  ]
+}

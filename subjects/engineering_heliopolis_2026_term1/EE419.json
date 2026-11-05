@@ -1,0 +1,215 @@
+{
+  "id": "EE419",
+  "name": "MODERN CONTROL ENGINEERING - EE419",
+  "code": "EE419",
+  "instructors": [
+    "يوسف يحيى زكريا عبدالباسط",
+    "د. امام فتحى محمد الزعيطى"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EE419_A_Sec._Saturday_3",
+          "courseName": "MODERN CONTROL ENGINEERING - EE419",
+          "courseCode": "EE419",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Saturday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "يوسف يحيى زكريا عبدالباسط",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EE419_A_Lab._Monday_3",
+          "courseName": "MODERN CONTROL ENGINEERING - EE419",
+          "courseCode": "EE419",
+          "group": "A",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "يوسف يحيى زكريا عبدالباسط",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EE419_A_Lect._Monday_9",
+          "courseName": "MODERN CONTROL ENGINEERING - EE419",
+          "courseCode": "EE419",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. امام فتحى محمد الزعيطى",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "يوسف يحيى زكريا عبدالباسط",
+        "د. امام فتحى محمد الزعيطى"
+      ]
+    },
+    {
+      "group": "D",
+      "sessions": [
+        {
+          "id": "EE419_D_Lab._Monday_3",
+          "courseName": "MODERN CONTROL ENGINEERING - EE419",
+          "courseCode": "EE419",
+          "group": "D",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "يوسف يحيى زكريا عبدالباسط",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EE419_D_Sec._Monday_5",
+          "courseName": "MODERN CONTROL ENGINEERING - EE419",
+          "courseCode": "EE419",
+          "group": "D",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "يوسف يحيى زكريا عبدالباسط",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EE419_D_Lect._Monday_9",
+          "courseName": "MODERN CONTROL ENGINEERING - EE419",
+          "courseCode": "EE419",
+          "group": "D",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. امام فتحى محمد الزعيطى",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "يوسف يحيى زكريا عبدالباسط",
+        "د. امام فتحى محمد الزعيطى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EE419_A_Sec._Saturday_3",
+      "courseName": "MODERN CONTROL ENGINEERING - EE419",
+      "courseCode": "EE419",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Saturday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "يوسف يحيى زكريا عبدالباسط",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EE419_A_Lab._Monday_3",
+      "courseName": "MODERN CONTROL ENGINEERING - EE419",
+      "courseCode": "EE419",
+      "group": "A",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "يوسف يحيى زكريا عبدالباسط",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EE419_A_Lect._Monday_9",
+      "courseName": "MODERN CONTROL ENGINEERING - EE419",
+      "courseCode": "EE419",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. امام فتحى محمد الزعيطى",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EE419_D_Lab._Monday_3",
+      "courseName": "MODERN CONTROL ENGINEERING - EE419",
+      "courseCode": "EE419",
+      "group": "D",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "يوسف يحيى زكريا عبدالباسط",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EE419_D_Sec._Monday_5",
+      "courseName": "MODERN CONTROL ENGINEERING - EE419",
+      "courseCode": "EE419",
+      "group": "D",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "يوسف يحيى زكريا عبدالباسط",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EE419_D_Lect._Monday_9",
+      "courseName": "MODERN CONTROL ENGINEERING - EE419",
+      "courseCode": "EE419",
+      "group": "D",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. امام فتحى محمد الزعيطى",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هـ.الكترونات واتصالات ق.م",
+    "هـ.ميكانيكية ق.م"
+  ],
+  "periods": [
+    "8"
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "id": "EME4304",
+  "name": "Refrigeration and Air Conditioning - EME4304",
+  "code": "EME4304",
+  "instructors": [
+    "د. عصام محروس الجنيدى الجندى",
+    "محمد جمال محمود على علام"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "EME4304_A_Lect._Saturday_9",
+          "courseName": "Refrigeration and Air Conditioning - EME4304",
+          "courseCode": "EME4304",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. عصام محروس الجنيدى الجندى",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EME4304_A_Sec._Tuesday_5",
+          "courseName": "Refrigeration and Air Conditioning - EME4304",
+          "courseCode": "EME4304",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "محمد جمال محمود على علام",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. عصام محروس الجنيدى الجندى",
+        "محمد جمال محمود على علام"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "EME4304_B_Lect._Saturday_9",
+          "courseName": "Refrigeration and Air Conditioning - EME4304",
+          "courseCode": "EME4304",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Saturday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "د. عصام محروس الجنيدى الجندى",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "EME4304_B_Sec._Monday_7",
+          "courseName": "Refrigeration and Air Conditioning - EME4304",
+          "courseCode": "EME4304",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "محمد جمال محمود على علام",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. عصام محروس الجنيدى الجندى",
+        "محمد جمال محمود على علام"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EME4304_A_Lect._Saturday_9",
+      "courseName": "Refrigeration and Air Conditioning - EME4304",
+      "courseCode": "EME4304",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. عصام محروس الجنيدى الجندى",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EME4304_A_Sec._Tuesday_5",
+      "courseName": "Refrigeration and Air Conditioning - EME4304",
+      "courseCode": "EME4304",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "محمد جمال محمود على علام",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EME4304_B_Lect._Saturday_9",
+      "courseName": "Refrigeration and Air Conditioning - EME4304",
+      "courseCode": "EME4304",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Saturday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "د. عصام محروس الجنيدى الجندى",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "EME4304_B_Sec._Monday_7",
+      "courseName": "Refrigeration and Air Conditioning - EME4304",
+      "courseCode": "EME4304",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "محمد جمال محمود على علام",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "ميكانيكا ق م -Northampton*",
+    "هـ.ميكانيكية ق.م*"
+  ],
+  "periods": [
+    "6",
+    "7"
+  ]
+}

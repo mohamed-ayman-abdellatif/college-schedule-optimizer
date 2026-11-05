@@ -1,0 +1,244 @@
+{
+  "id": "EBA1308",
+  "name": "Chemistry - EBA1308",
+  "code": "EBA1308",
+  "instructors": [
+    "د. زينب محمد بدر صالح احمد الحسيني محمد زهدي",
+    "زينب محمد بدر صالح احمد الحسيني محمد زهدي",
+    "د. مروة سعيد محمد ابراهيم شلبى"
+  ],
+  "groups": [
+    {
+      "group": "F",
+      "sessions": [
+        {
+          "id": "EBA1308_F_Lab._Sunday_1",
+          "courseName": "Chemistry - EBA1308",
+          "courseCode": "EBA1308",
+          "group": "F",
+          "type": "Lab.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EBA1308_F_Lect._Sunday_3",
+          "courseName": "Chemistry - EBA1308",
+          "courseCode": "EBA1308",
+          "group": "F",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. زينب محمد بدر صالح احمد الحسيني محمد زهدي",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. زينب محمد بدر صالح احمد الحسيني محمد زهدي"
+      ]
+    },
+    {
+      "group": "W",
+      "sessions": [
+        {
+          "id": "EBA1308_W_Lect._Sunday_1",
+          "courseName": "Chemistry - EBA1308",
+          "courseCode": "EBA1308",
+          "group": "W",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. زينب محمد بدر صالح احمد الحسيني محمد زهدي",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EBA1308_W_Lab._Monday_3",
+          "courseName": "Chemistry - EBA1308",
+          "courseCode": "EBA1308",
+          "group": "W",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "زينب محمد بدر صالح احمد الحسيني محمد زهدي",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. زينب محمد بدر صالح احمد الحسيني محمد زهدي",
+        "زينب محمد بدر صالح احمد الحسيني محمد زهدي"
+      ]
+    },
+    {
+      "group": "X",
+      "sessions": [
+        {
+          "id": "EBA1308_X_Lab._Monday_1",
+          "courseName": "Chemistry - EBA1308",
+          "courseCode": "EBA1308",
+          "group": "X",
+          "type": "Lab.",
+          "day": "Monday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EF4444",
+          "room": ""
+        },
+        {
+          "id": "EBA1308_X_Lect._Tuesday_3",
+          "courseName": "Chemistry - EBA1308",
+          "courseCode": "EBA1308",
+          "group": "X",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. مروة سعيد محمد ابراهيم شلبى",
+          "color": "#EF4444",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. مروة سعيد محمد ابراهيم شلبى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "EBA1308_F_Lab._Sunday_1",
+      "courseName": "Chemistry - EBA1308",
+      "courseCode": "EBA1308",
+      "group": "F",
+      "type": "Lab.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EBA1308_F_Lect._Sunday_3",
+      "courseName": "Chemistry - EBA1308",
+      "courseCode": "EBA1308",
+      "group": "F",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. زينب محمد بدر صالح احمد الحسيني محمد زهدي",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EBA1308_W_Lect._Sunday_1",
+      "courseName": "Chemistry - EBA1308",
+      "courseCode": "EBA1308",
+      "group": "W",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. زينب محمد بدر صالح احمد الحسيني محمد زهدي",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EBA1308_W_Lab._Monday_3",
+      "courseName": "Chemistry - EBA1308",
+      "courseCode": "EBA1308",
+      "group": "W",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "زينب محمد بدر صالح احمد الحسيني محمد زهدي",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EBA1308_X_Lab._Monday_1",
+      "courseName": "Chemistry - EBA1308",
+      "courseCode": "EBA1308",
+      "group": "X",
+      "type": "Lab.",
+      "day": "Monday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EF4444",
+      "room": ""
+    },
+    {
+      "id": "EBA1308_X_Lect._Tuesday_3",
+      "courseName": "Chemistry - EBA1308",
+      "courseCode": "EBA1308",
+      "group": "X",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. مروة سعيد محمد ابراهيم شلبى",
+      "color": "#EF4444",
+      "room": ""
+    }
+  ],
+  "color": "#EF4444",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "الكترونيات ق م - Northamption //",
+    "الكترونيات ق م - Northamption*",
+    "حاسبات ق م - Northampton",
+    "ميكانيكا ق م -Northampton",
+    "ميكانيكا ق م -Northampton*",
+    "هـ.الكترونات واتصالات ق.م",
+    "هـ.الكترونات واتصالات ق.م*",
+    "هـ.ميكانيكية ق.م*",
+    "هندسة التشيد والبناء ق.م",
+    "هندسة التشيد والبناء ق.م*",
+    "هندسة الحاسبات ق.م",
+    "هندسة الحاسبات ق.م*",
+    "هندسة كهربية ق م -Northampton //",
+    "هندسة كهربية ق م -Northampton*",
+    "هندسة كهربية وتحكم ق.م",
+    "هندسة كهربية وتحكم ق.م*",
+    "هندسة معمارية ق.م",
+    "هندسة معمارية ق.م*",
+    "هندسة معمارية-Cardiff-ق م //",
+    "هندسة ميكانيكية-ق م //"
+  ],
+  "periods": [
+    "1",
+    "2"
+  ]
+}

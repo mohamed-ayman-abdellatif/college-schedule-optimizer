@@ -1,0 +1,214 @@
+{
+  "id": "ECB2101",
+  "name": "Introduction to Construction Management - ECB2101",
+  "code": "ECB2101",
+  "instructors": [
+    "د. كريم عادل عبد المنعم ابراهيم",
+    "محمد عرفات ابراهيم حسين"
+  ],
+  "groups": [
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECB2101_B_Lect._Sunday_5",
+          "courseName": "Introduction to Construction Management - ECB2101",
+          "courseCode": "ECB2101",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. كريم عادل عبد المنعم ابراهيم",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "ECB2101_B_Sec._Wednesday_9",
+          "courseName": "Introduction to Construction Management - ECB2101",
+          "courseCode": "ECB2101",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "محمد عرفات ابراهيم حسين",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "ECB2101_B_Sec._Thursday_5",
+          "courseName": "Introduction to Construction Management - ECB2101",
+          "courseCode": "ECB2101",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Thursday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "محمد عرفات ابراهيم حسين",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. كريم عادل عبد المنعم ابراهيم",
+        "محمد عرفات ابراهيم حسين"
+      ]
+    },
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "ECB2101_C_Lect._Sunday_5",
+          "courseName": "Introduction to Construction Management - ECB2101",
+          "courseCode": "ECB2101",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. كريم عادل عبد المنعم ابراهيم",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "ECB2101_C_Sec._Tuesday_11",
+          "courseName": "Introduction to Construction Management - ECB2101",
+          "courseCode": "ECB2101",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Tuesday",
+          "startSlot": 11,
+          "endSlot": 12,
+          "duration": 2,
+          "instructor": "محمد عرفات ابراهيم حسين",
+          "color": "#8B5CF6",
+          "room": ""
+        },
+        {
+          "id": "ECB2101_C_Sec._Wednesday_7",
+          "courseName": "Introduction to Construction Management - ECB2101",
+          "courseCode": "ECB2101",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "محمد عرفات ابراهيم حسين",
+          "color": "#8B5CF6",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. كريم عادل عبد المنعم ابراهيم",
+        "محمد عرفات ابراهيم حسين"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECB2101_B_Lect._Sunday_5",
+      "courseName": "Introduction to Construction Management - ECB2101",
+      "courseCode": "ECB2101",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. كريم عادل عبد المنعم ابراهيم",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "ECB2101_C_Lect._Sunday_5",
+      "courseName": "Introduction to Construction Management - ECB2101",
+      "courseCode": "ECB2101",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. كريم عادل عبد المنعم ابراهيم",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "ECB2101_C_Sec._Tuesday_11",
+      "courseName": "Introduction to Construction Management - ECB2101",
+      "courseCode": "ECB2101",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Tuesday",
+      "startSlot": 11,
+      "endSlot": 12,
+      "duration": 2,
+      "instructor": "محمد عرفات ابراهيم حسين",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "ECB2101_C_Sec._Wednesday_7",
+      "courseName": "Introduction to Construction Management - ECB2101",
+      "courseCode": "ECB2101",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "محمد عرفات ابراهيم حسين",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "ECB2101_B_Sec._Wednesday_9",
+      "courseName": "Introduction to Construction Management - ECB2101",
+      "courseCode": "ECB2101",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "محمد عرفات ابراهيم حسين",
+      "color": "#8B5CF6",
+      "room": ""
+    },
+    {
+      "id": "ECB2101_B_Sec._Thursday_5",
+      "courseName": "Introduction to Construction Management - ECB2101",
+      "courseCode": "ECB2101",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Thursday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "محمد عرفات ابراهيم حسين",
+      "color": "#8B5CF6",
+      "room": ""
+    }
+  ],
+  "color": "#8B5CF6",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م"
+  ],
+  "periods": [
+    "3"
+  ]
+}

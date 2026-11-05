@@ -1,0 +1,224 @@
+{
+  "id": "ECE2205",
+  "name": "Digital Logic & Introduction to Microprocessors - ECE2205",
+  "code": "ECE2205",
+  "instructors": [
+    "د. سارة صابر بيومى الباجورى",
+    "سارة صابر بيومى الباجورى"
+  ],
+  "groups": [
+    {
+      "group": "C",
+      "sessions": [
+        {
+          "id": "ECE2205_C_Sec._Sunday_5",
+          "courseName": "Digital Logic & Introduction to Microprocessors - ECE2205",
+          "courseCode": "ECE2205",
+          "group": "C",
+          "type": "Sec.",
+          "day": "Sunday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "ECE2205_C_Lect._Thursday_3",
+          "courseName": "Digital Logic & Introduction to Microprocessors - ECE2205",
+          "courseCode": "ECE2205",
+          "group": "C",
+          "type": "Lect.",
+          "day": "Thursday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "د. سارة صابر بيومى الباجورى",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. سارة صابر بيومى الباجورى"
+      ]
+    },
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECE2205_A_Lect._Monday_5",
+          "courseName": "Digital Logic & Introduction to Microprocessors - ECE2205",
+          "courseCode": "ECE2205",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. سارة صابر بيومى الباجورى",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "ECE2205_A_Sec._Monday_9",
+          "courseName": "Digital Logic & Introduction to Microprocessors - ECE2205",
+          "courseCode": "ECE2205",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 9,
+          "endSlot": 10,
+          "duration": 2,
+          "instructor": "سارة صابر بيومى الباجورى",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. سارة صابر بيومى الباجورى",
+        "سارة صابر بيومى الباجورى"
+      ]
+    },
+    {
+      "group": "B",
+      "sessions": [
+        {
+          "id": "ECE2205_B_Sec._Monday_7",
+          "courseName": "Digital Logic & Introduction to Microprocessors - ECE2205",
+          "courseCode": "ECE2205",
+          "group": "B",
+          "type": "Sec.",
+          "day": "Monday",
+          "startSlot": 7,
+          "endSlot": 8,
+          "duration": 2,
+          "instructor": "Not Specified",
+          "color": "#EC4899",
+          "room": ""
+        },
+        {
+          "id": "ECE2205_B_Lect._Monday_5",
+          "courseName": "Digital Logic & Introduction to Microprocessors - ECE2205",
+          "courseCode": "ECE2205",
+          "group": "B",
+          "type": "Lect.",
+          "day": "Monday",
+          "startSlot": 5,
+          "endSlot": 6,
+          "duration": 2,
+          "instructor": "د. سارة صابر بيومى الباجورى",
+          "color": "#EC4899",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. سارة صابر بيومى الباجورى"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECE2205_C_Sec._Sunday_5",
+      "courseName": "Digital Logic & Introduction to Microprocessors - ECE2205",
+      "courseCode": "ECE2205",
+      "group": "C",
+      "type": "Sec.",
+      "day": "Sunday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "ECE2205_C_Lect._Thursday_3",
+      "courseName": "Digital Logic & Introduction to Microprocessors - ECE2205",
+      "courseCode": "ECE2205",
+      "group": "C",
+      "type": "Lect.",
+      "day": "Thursday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "د. سارة صابر بيومى الباجورى",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "ECE2205_A_Lect._Monday_5",
+      "courseName": "Digital Logic & Introduction to Microprocessors - ECE2205",
+      "courseCode": "ECE2205",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. سارة صابر بيومى الباجورى",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "ECE2205_A_Sec._Monday_9",
+      "courseName": "Digital Logic & Introduction to Microprocessors - ECE2205",
+      "courseCode": "ECE2205",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 9,
+      "endSlot": 10,
+      "duration": 2,
+      "instructor": "سارة صابر بيومى الباجورى",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "ECE2205_B_Sec._Monday_7",
+      "courseName": "Digital Logic & Introduction to Microprocessors - ECE2205",
+      "courseCode": "ECE2205",
+      "group": "B",
+      "type": "Sec.",
+      "day": "Monday",
+      "startSlot": 7,
+      "endSlot": 8,
+      "duration": 2,
+      "instructor": "Not Specified",
+      "color": "#EC4899",
+      "room": ""
+    },
+    {
+      "id": "ECE2205_B_Lect._Monday_5",
+      "courseName": "Digital Logic & Introduction to Microprocessors - ECE2205",
+      "courseCode": "ECE2205",
+      "group": "B",
+      "type": "Lect.",
+      "day": "Monday",
+      "startSlot": 5,
+      "endSlot": 6,
+      "duration": 2,
+      "instructor": "د. سارة صابر بيومى الباجورى",
+      "color": "#EC4899",
+      "room": ""
+    }
+  ],
+  "color": "#EC4899",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "ميكانيكا ق م -Northampton",
+    "هندسة ميكانيكية-ق م //"
+  ],
+  "periods": [
+    "4"
+  ]
+}

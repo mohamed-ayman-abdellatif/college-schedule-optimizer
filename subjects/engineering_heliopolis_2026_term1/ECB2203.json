@@ -1,0 +1,119 @@
+{
+  "id": "ECB2203",
+  "name": "Introduction to Building Info. Modeling - ECB2203",
+  "code": "ECB2203",
+  "instructors": [
+    "د. محمد اشرف محمد عبد العزيز الصياد",
+    "ياسمين خالد ابو الفتوح شاهين"
+  ],
+  "groups": [
+    {
+      "group": "A",
+      "sessions": [
+        {
+          "id": "ECB2203_A_Lect._Tuesday_1",
+          "courseName": "Introduction to Building Info. Modeling - ECB2203",
+          "courseCode": "ECB2203",
+          "group": "A",
+          "type": "Lect.",
+          "day": "Tuesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "د. محمد اشرف محمد عبد العزيز الصياد",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "ECB2203_A_Sec._Wednesday_1",
+          "courseName": "Introduction to Building Info. Modeling - ECB2203",
+          "courseCode": "ECB2203",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 1,
+          "endSlot": 2,
+          "duration": 2,
+          "instructor": "ياسمين خالد ابو الفتوح شاهين",
+          "color": "#84CC16",
+          "room": ""
+        },
+        {
+          "id": "ECB2203_A_Sec._Wednesday_3",
+          "courseName": "Introduction to Building Info. Modeling - ECB2203",
+          "courseCode": "ECB2203",
+          "group": "A",
+          "type": "Sec.",
+          "day": "Wednesday",
+          "startSlot": 3,
+          "endSlot": 4,
+          "duration": 2,
+          "instructor": "ياسمين خالد ابو الفتوح شاهين",
+          "color": "#84CC16",
+          "room": ""
+        }
+      ],
+      "hasLecture": true,
+      "hasLab": true,
+      "instructors": [
+        "د. محمد اشرف محمد عبد العزيز الصياد",
+        "ياسمين خالد ابو الفتوح شاهين"
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "ECB2203_A_Lect._Tuesday_1",
+      "courseName": "Introduction to Building Info. Modeling - ECB2203",
+      "courseCode": "ECB2203",
+      "group": "A",
+      "type": "Lect.",
+      "day": "Tuesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "د. محمد اشرف محمد عبد العزيز الصياد",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "ECB2203_A_Sec._Wednesday_1",
+      "courseName": "Introduction to Building Info. Modeling - ECB2203",
+      "courseCode": "ECB2203",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 1,
+      "endSlot": 2,
+      "duration": 2,
+      "instructor": "ياسمين خالد ابو الفتوح شاهين",
+      "color": "#84CC16",
+      "room": ""
+    },
+    {
+      "id": "ECB2203_A_Sec._Wednesday_3",
+      "courseName": "Introduction to Building Info. Modeling - ECB2203",
+      "courseCode": "ECB2203",
+      "group": "A",
+      "type": "Sec.",
+      "day": "Wednesday",
+      "startSlot": 3,
+      "endSlot": 4,
+      "duration": 2,
+      "instructor": "ياسمين خالد ابو الفتوح شاهين",
+      "color": "#84CC16",
+      "room": ""
+    }
+  ],
+  "color": "#84CC16",
+  "scheduleType": "group",
+  "facultyId": "engineering_heliopolis_2026_term1",
+  "facultyTitle": "كلية الهندسة والتكنولوجيا - مصر الجديدة",
+  "facultyTitleEn": "Faculty of Engineering & Technology - Heliopolis",
+  "departments": [
+    "هندسة التشيد والبناء ق.م*"
+  ],
+  "periods": [
+    "4"
+  ]
+}
