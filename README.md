@@ -5,8 +5,6 @@
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-brightgreen?style=flat&logo=github)](https://mohamed-ayman-abdellatif.github.io/college-schedule-optimizer/)
 [![Schedules Data Branch](https://img.shields.io/badge/Schedules%20Data-schedules--data-blue?style=flat&logo=github)](https://github.com/mohamed-ayman-abdellatif/college-schedule-optimizer/tree/schedules-data)
 
-> 🤲 **متنساش تدعيلي دعوة حلوة** ❤️
-
 🌐 **Live App**: [https://mohamed-ayman-abdellatif.github.io/college-schedule-optimizer/](https://mohamed-ayman-abdellatif.github.io/college-schedule-optimizer/)
 
 An interactive, responsive, client-side web application designed for university students (specifically tuned for the **Arab Academy for Science, Technology & Maritime Transport (AASTMT)** and universities with period-based schedules). It retrieves live faculty and subject schedules directly from the repository's dedicated [`schedules-data`](https://github.com/mohamed-ayman-abdellatif/college-schedule-optimizer/tree/schedules-data) branch via an instant global subject searcher, converts portal HTML, PDFs, and timetable screenshots into structured data, eliminates time clashes, prioritizes preferred doctors/TAs, and finds the best schedules that minimize gaps between lectures.
