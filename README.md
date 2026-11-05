@@ -3,92 +3,83 @@
 
 [![Deploy to GitHub Pages](https://github.com/mohamed-ayman-abdellatif/college-schedule-optimizer/actions/workflows/deploy.yml/badge.svg)](https://github.com/mohamed-ayman-abdellatif/college-schedule-optimizer/actions/workflows/deploy.yml)
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-brightgreen?style=flat&logo=github)](https://mohamed-ayman-abdellatif.github.io/college-schedule-optimizer/)
+[![Schedules Data Branch](https://img.shields.io/badge/Schedules%20Data-schedules--data-blue?style=flat&logo=github)](https://github.com/mohamed-ayman-abdellatif/college-schedule-optimizer/tree/schedules-data)
 
 > 🤲 **متنساش تدعيلي دعوة حلوة** ❤️
 
 🌐 **Live App**: [https://mohamed-ayman-abdellatif.github.io/college-schedule-optimizer/](https://mohamed-ayman-abdellatif.github.io/college-schedule-optimizer/)
 
-An interactive, responsive, client-side web application designed for university students (specifically tuned for the **Arab Academy for Science, Technology & Maritime Transport (AASTMT)** and universities with period-based schedules). It converts college schedule HTML and photos into structured data, eliminates time clashes, allows prioritizing preferred doctors/instructors, and finds the best schedules that minimize gaps between lectures.
+An interactive, responsive, client-side web application designed for university students (specifically tuned for the **Arab Academy for Science, Technology & Maritime Transport (AASTMT)** and universities with period-based schedules). It retrieves live faculty and subject schedules directly from the repository's dedicated [`schedules-data`](https://github.com/mohamed-ayman-abdellatif/college-schedule-optimizer/tree/schedules-data) branch via an instant global subject searcher, converts portal HTML, PDFs, and timetable screenshots into structured data, eliminates time clashes, prioritizes preferred doctors/TAs, and finds the best schedules that minimize gaps between lectures.
 
 ---
 
 ## ✨ Features
 
-### 1. 📥 HTML Schedule Parser
-- **2D Dynamic Grid Matrix**: Accurately parses ASP.NET table grids, resolving complex nested `rowspan` and `colspan` across rows.
-- **Data Extracted**:
-  - Course Title & Course Code (e.g., `Applied Programming - ECE2102`)
-  - Days: `Saturday`, `Sunday`, `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday` (Arabic & English support)
-  - Time Slots: **1 to 16** (mapped to academic periods 1 to 8, with configurable clock hours e.g. `08:30 - 10:20`)
-  - Group Letters: `Group A`, `Group B`, `Group C` ... `Group L`, etc.
-  - Session Types: `Lect.` (محاضرة), `Lab.` (معمل), `Sec.` (تمارين / سكشن)
-  - Instructors: Arabic/English professor and TA names (e.g. `د. هشام صلاح الدين`, `د. دينا محمد علي`, `م. مجد نبيل`, etc.)
-  - Color styling: Captures university portal group color codes.
-- Supports pasting raw HTML text or uploading `.html` files directly.
+### 1. 🔍 Live Global Subject Searcher & Cloud Catalog (`schedules-data`)
+- **Instant Global Subject Search**: Search across **593+ unified subjects** immediately on startup by **course code** (e.g., `ECE2102`, `CCS1001`), **subject name**, **doctor / TA name** (Arabic or English), or **department**—without needing to download huge schedule bundles first.
+- **Unified Subject Entries**: All groups (`Group A`, `Group B`, `Group 1`, etc.), sessions, doctors, and TAs of a course within a faculty are merged into a single subject entry (`subjects/<facultyId>/<code.json>`), so clicking **`+ Add Subject`** gives you every available group and instructor at once.
+- **Faculty / Department / Period Browser**: Optionally filter by Faculty (e.g., *Faculty of Engineering & Technology - Heliopolis*, *Faculty of Computing & Information Technology - Heliopolis*), Department, and Term/Period to batch-submit all subjects for your cohort.
+- **Dedicated Data Branch**: All schedules live on the orphan [`schedules-data`](https://github.com/mohamed-ayman-abdellatif/college-schedule-optimizer/tree/schedules-data) branch, keeping the `main` application branch clean and lightweight with zero bundled example/demo courses.
 
-### 2. 📷 Photo / Screenshot Extractor
-- Drag and drop or upload screenshots/photos of university timetables (like the Arab Academy schedule portal).
-- Automatic Canvas color-segmentation: locates active session blocks on the 7-day $\times$ 16-slot grid.
-- Interactive **Calibration & Verification Studio**: Review detected slots, adjust group letters, and edit doctor names with 100% confidence.
+### 2. 📥 HTML, PDF & Photo Schedule Parsers
+- **HTML Schedule Parser**:
+  - Parses ASP.NET portal table grids (`rowspan` / `colspan`), extracting course codes, titles, days (`Saturday` – `Thursday`), 6 academic periods (Slots 1–12, `08:30 – 20:30`), group letters, session types (`Lect.`, `Lab.`, `Sec.`), and Arabic/English doctor & TA names.
+- **PDF Timetable Parser**:
+  - Extracts multi-page university PDF schedules using spatial coordinate grid mapping and text extraction (`pdf.js`).
+- **Photo / Screenshot Extractor**:
+  - Drag-and-drop timetable screenshots for automatic Canvas color-segmentation + OCR (`tesseract.js`), complete with an interactive **Calibration & Verification Studio**.
 
-### 3. ⚡ Smart Schedule Optimizer
-- High-speed **Constraint Satisfaction Problem (CSP)** backtracking solver.
+### 3. ⚡ Smart Schedule Optimizer & Manual Builder
+- **Constraint Satisfaction Problem (CSP)** backtracking solver with 3-tier intelligent fallback.
 - **Zero Clashes**: Mathematically guarantees no overlapping sessions across registered courses.
 - **Minimizes Gaps**: Calculates exact idle slots between the day's first and last classes to eliminate waiting on campus.
-- **Doctor / Instructor Matching**:
-  - Rank professors: ⭐ **Favorite**, ⚪ **Neutral**, 🚫 **Avoid**.
-  - Prioritizes schedules featuring your favorite doctors.
-- **Campus Days Optimization**:
-  - Option to pack classes into 3 or 4 days to maximize full days off!
-  - Target Free Days selector (e.g. "I want Thursday or Sunday completely off").
-- **Group Uniformity**: Option to prefer keeping the same group letter across multiple subjects.
-- Generates a ranked list of top clash-free solutions with smart badges:
-  - `⭐ Best Overall`
-  - `⚡ Zero Gaps (No Waiting)`
-  - `🏖️ Only 3 Days On Campus`
-  - `👨‍🏫 Top Doctor Match`
-  - `🎯 100% Same Group Letter`
+- **Doctor / TA Preferences**:
+  - Rank professors and TAs: ⭐ **Favorite**, ⚪ **Neutral**, 🚫 **Avoid** (plus **Strict Doctor Mode**).
+- **Campus Days & Blocked Times**:
+  - Pack classes into fewer campus days (e.g., 2, 3, or 4 days) and click slots on the interactive mini-grid to block personal busy times.
+- **Interactive Manual Builder**:
+  - Build or tweak your timetable slot-by-slot with live clash detection and instant swap suggestions.
 
 ### 4. 🗓️ Interactive Timetable & Export Tools
-- Visual weekly calendar grid (Periods 1 to 16, Saturday through Friday).
-- Clear session cards with course code, group badge, session badge, doctor name, and time range.
+- Visual weekly calendar grid (6 periods / 12 slots, `08:30 AM – 08:30 PM`, Saturday through Thursday) plus a responsive mobile Agenda view.
 - Visual **Coffee-Break Gap Indicators** showing idle time between classes.
 - **Export Options**:
-  - 🖼️ **Export PNG**: High-resolution image snapshot generated directly via HTML5 Canvas.
-  - 📲 **Google Calendar (.ics)**: Synchronize your classes with Google Calendar, Apple Calendar, or Outlook.
-  - 🖨️ **Print View**: Clean, high-contrast print stylesheet ready for A4 printing.
-  - 💾 **Save / Load JSON**: Backup your courses and schedules to share with friends.
-- **Bilingual & Themes**: Instant toggle between English and Arabic (RTL / LTR) and Dark / Light modes.
+  - 🖼️ **Export PNG**: High-resolution image snapshot generated via HTML5 Canvas.
+  - 📄 **Export PDF & Print View**: Clean, high-contrast A4 layout.
+  - 📊 **Export Excel (`.xlsx`)**: Structured spreadsheet of your timetable.
+  - 📲 **Google Calendar (`.ics`)**: Sync classes with Google Calendar, Apple Calendar, or Outlook.
+  - 💾 **Save / Load JSON**: Backup and share your courses and schedules.
+- **Bilingual & Themes**: Instant toggle between Arabic (`RTL`) and English (`LTR`), plus Dark and Light themes.
+
+---
+
+## 🗂️ Repository Branch Structure
+
+| Branch | Purpose |
+| :--- | :--- |
+| **`main`** | Lightweight client-side web application (`index.html`, `css/`, `js/`, `test_suite.html`) with no bundled example or default courses. |
+| **[`schedules-data`](https://github.com/mohamed-ayman-abdellatif/college-schedule-optimizer/tree/schedules-data)** | Dedicated data branch serving `index.json` (faculty manifest), `subjects_index.json` (global searcher index of 593 subjects), `subjects/<facultyId>/<code.json>` (per-subject unified group JSONs), and `colleges/<facultyId>.json` (full faculty schedules). |
 
 ---
 
 ## 🚀 Quick Start
 
-1. Open `index.html` in any web browser (Google Chrome, Microsoft Edge, Firefox, Safari).
-   - No installation, server, or build step required!
-2. Click **"Load Example Courses"** to instantly test with 5 pre-loaded engineering courses (including `Applied Programming - ECE2102`).
-3. Click **"Find Best Schedules"** to run the optimizer.
-4. Switch to **"Doctor & Goals"** to set your favorite professors or target free days.
-5. Browse the ranked schedules in the **"Timetable Results"** tab!
+1. Open the [Live App](https://mohamed-ayman-abdellatif.github.io/college-schedule-optimizer/) or open `index.html` directly in any modern browser (no build step or local server required).
+2. **Add Your Subjects**:
+   - **Quick Subject Search**: Type any course code (e.g., `ECE2102`, `CCS1001`), course name, or doctor/TA name into the search bar and click **`+ Add Subject`**, **or**
+   - **Browse by Faculty**: Select your **Faculty → Department → Period / Term** and click **`Submit Subjects into Website`**, **or**
+   - **Import Files**: Upload/paste portal HTML, PDF timetables, or schedule screenshots.
+3. Switch to **"Doctor & Goals"** to set your favorite/avoided professors, blocked times, or target campus days.
+4. Click **"Find Best Schedules"** and browse the ranked clash-free timetables in **"Timetable Results"**!
 
 ---
 
-## 🔒 Privacy & Offline Capability
+## 🔒 Privacy & Analytics
 
-- **100% Client-Side**: All parsing, optimization, and exports run entirely inside your browser.
-- No university login credentials or schedule data ever leave your machine.
+- **100% Client-Side Optimization**: All schedule parsing, optimization, and exports run entirely inside your browser. No university credentials ever leave your device.
+- **Anonymous Live Pulse**: Lightweight serverless presence counter showing active students currently optimizing schedules.
 
-### 5. 📊 Real-Time Active Users & Visitor Analytics
-- **Live Active Users Pulse**: Real-time counter of students currently browsing and optimizing schedules using a serverless 45s presence heartbeat.
-- **Total Unique Visitors**: Cumulative count of visitor sessions deduplicated per browser session.
-- **100% Serverless & Anonymous**: Built specifically for static hosting (GitHub Pages) with zero backend maintenance and no tracking cookies.
-- **Third-Party Dashboard Options (Optional)**:
-  - If you'd like deeper analytics (visitor countries, referral domains, OS/browser charts), you can add free, privacy-friendly [GoatCounter](https://www.goatcounter.com/) or Google Analytics 4 (GA4) with a single `<script>` tag.
-
-
+---
 
 ### 🤲 كلمة من المطور
 > **متنساش تدعيلي دعوة حلوة** بالتوفيق والبركة ❤️
-
-
-
